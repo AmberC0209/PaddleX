@@ -164,7 +164,9 @@ for res in output:
 | 图像异常检测       | [图像异常检测产线使用教程](./tutorials/cv_pipelines/image_anomaly_detection.md) |
 | 通用OCR            | [通用OCR产线使用教程](./tutorials/ocr_pipelines/OCR.md) |
 | 通用表格识别       | [通用表格识别产线使用教程](./tutorials/ocr_pipelines/table_recognition.md) |
-| 通用时序预测       | [通用时序预测产线使用教程](./tutorials/time_series_pipelines/time_series_forecasting.md) |
-| 通用时序异常检测   | [通用时序异常检测产线使用教程](./tutorials/time_series_pipelines/time_series_anomaly_detection.md) |
-| 通用时序分类       | [通用时序分类产线使用教程](./tutorials/time_series_pipelines/time_series_classification.md) |
 | 公式识别       | [公式识别产线使用教程](./tutorials/ocr_pipelines/formula_recognition.md) |
+| 印章识别       | [印章识别产线使用教程](./tutorials/ocr_pipelines/seal_recognition.md) |
+| 时序预测       | [通用时序预测产线使用教程](./tutorials/time_series_pipelines/time_series_forecasting.md) |
+| 时序异常检测   | [通用时序异常检测产线使用教程](./tutorials/time_series_pipelines/time_series_anomaly_detection.md) |
+| 时序分类       | [通用时序分类产线使用教程](./tutorials/time_series_pipelines/time_series_classification.md) |
+
