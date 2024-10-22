@@ -1,955 +1,6183 @@
-<!DOCTYPE html>
-<html lang="en" data-bs-theme="light">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        
-        
-        <link rel="shortcut icon" href="../../img/favicon.ico">
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../semantic_segmentation_road_tutorial_en/">
+      
+      
+        <link rel="next" href="../ts_anomaly_detection_en/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+    
+    
+      
         <title>Ts anomaly detection - My Docs</title>
-        <link href="../../css/bootstrap.min.css" rel="stylesheet">
-        <link href="../../css/fontawesome.min.css" rel="stylesheet">
-        <link href="../../css/brands.min.css" rel="stylesheet">
-        <link href="../../css/solid.min.css" rel="stylesheet">
-        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
-        <link href="../../css/base.css" rel="stylesheet">
-        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
-        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
-        <link href="../../css/version-select.css" rel="stylesheet">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-        <script>hljs.highlightAll();</script> 
-    </head>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+  
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+  
+  <style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M1 7.775V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 0 1 0 2.474l-5.026 5.026a1.75 1.75 0 0 1-2.474 0l-6.25-6.25A1.75 1.75 0 0 1 1 7.775m1.5 0c0 .066.026.13.073.177l6.25 6.25a.25.25 0 0 0 .354 0l5.025-5.025a.25.25 0 0 0 0-.354l-6.25-6.25a.25.25 0 0 0-.177-.073H2.75a.25.25 0 0 0-.25.25ZM6 5a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/></svg>');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M2.5 1.75v11.5c0 .138.112.25.25.25h3.17a.75.75 0 0 1 0 1.5H2.75A1.75 1.75 0 0 1 1 13.25V1.75C1 .784 1.784 0 2.75 0h8.5C12.216 0 13 .784 13 1.75v7.736a.75.75 0 0 1-1.5 0V1.75a.25.25 0 0 0-.25-.25h-8.5a.25.25 0 0 0-.25.25m13.274 9.537zl-4.557 4.45a.75.75 0 0 1-1.055-.008l-1.943-1.95a.75.75 0 0 1 1.062-1.058l1.419 1.425 4.026-3.932a.75.75 0 1 1 1.048 1.074M4.75 4h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1 0-1.5M4 7.75A.75.75 0 0 1 4.75 7h2a.75.75 0 0 1 0 1.5h-2A.75.75 0 0 1 4 7.75"/></svg>');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13M6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75M8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2"/></svg>');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3.499.75a.75.75 0 0 1 1.5 0v.996C5.9 2.903 6.793 3.65 7.662 4.376l.24.202c-.036-.694.055-1.422.426-2.163C9.1.873 10.794-.045 12.622.26 14.408.558 16 1.94 16 4.25c0 1.278-.954 2.575-2.44 2.734l.146.508.065.22c.203.701.412 1.455.476 2.226.142 1.707-.4 3.03-1.487 3.898C11.714 14.671 10.27 15 8.75 15h-6a.75.75 0 0 1 0-1.5h1.376a4.5 4.5 0 0 1-.563-1.191 3.84 3.84 0 0 1-.05-2.063 4.65 4.65 0 0 1-2.025-.293.75.75 0 0 1 .525-1.406c1.357.507 2.376-.006 2.698-.318l.009-.01a.747.747 0 0 1 1.06 0 .75.75 0 0 1-.012 1.074c-.912.92-.992 1.835-.768 2.586.221.74.745 1.337 1.196 1.621H8.75c1.343 0 2.398-.296 3.074-.836.635-.507 1.036-1.31.928-2.602-.05-.603-.216-1.224-.422-1.93l-.064-.221c-.12-.407-.246-.84-.353-1.29a2.4 2.4 0 0 1-.507-.441 3.1 3.1 0 0 1-.633-1.248.75.75 0 0 1 1.455-.364c.046.185.144.436.31.627.146.168.353.305.712.305.738 0 1.25-.615 1.25-1.25 0-1.47-.95-2.315-2.123-2.51-1.172-.196-2.227.387-2.706 1.345-.46.92-.27 1.774.019 3.062l.042.19.01.05c.348.443.666.949.94 1.553a.75.75 0 1 1-1.365.62c-.553-1.217-1.32-1.94-2.3-2.768L6.7 5.527c-.814-.68-1.75-1.462-2.692-2.619a3.7 3.7 0 0 0-1.023.88c-.406.495-.663 1.036-.722 1.508.116.122.306.21.591.239.388.038.797-.06 1.032-.19a.75.75 0 0 1 .728 1.31c-.515.287-1.23.439-1.906.373-.682-.067-1.473-.38-1.879-1.193L.75 5.677V5.5c0-.984.48-1.94 1.077-2.664.46-.559 1.05-1.055 1.673-1.353z"/></svg>');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 .018-1.042.75.75 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0"/></svg>');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13M6.92 6.085h.001a.749.749 0 1 1-1.342-.67c.169-.339.436-.701.849-.977C6.845 4.16 7.369 4 8 4a2.76 2.76 0 0 1 1.637.525c.503.377.863.965.863 1.725 0 .448-.115.83-.329 1.15-.205.307-.47.513-.692.662-.109.072-.22.138-.313.195l-.006.004a6 6 0 0 0-.26.16 1 1 0 0 0-.276.245.75.75 0 0 1-1.248-.832c.184-.264.42-.489.692-.661q.154-.1.313-.195l.007-.004c.1-.061.182-.11.258-.161a1 1 0 0 0 .277-.245C8.96 6.514 9 6.427 9 6.25a.61.61 0 0 0-.262-.525A1.27 1.27 0 0 0 8 5.5c-.369 0-.595.09-.74.187a1 1 0 0 0-.34.398M9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/></svg>');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0M9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/></svg>');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M2.344 2.343za8 8 0 0 1 11.314 11.314A8.002 8.002 0 0 1 .234 10.089a8 8 0 0 1 2.11-7.746m1.06 10.253a6.5 6.5 0 1 0 9.108-9.275 6.5 6.5 0 0 0-9.108 9.275M6.03 4.97 8 6.94l1.97-1.97a.749.749 0 0 1 1.275.326.75.75 0 0 1-.215.734L9.06 8l1.97 1.97a.749.749 0 0 1-.326 1.275.75.75 0 0 1-.734-.215L8 9.06l-1.97 1.97a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734L6.94 8 4.97 6.03a.75.75 0 0 1 .018-1.042.75.75 0 0 1 1.042-.018"/></svg>');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M9.504.43a1.516 1.516 0 0 1 2.437 1.713L10.415 5.5h2.123c1.57 0 2.346 1.909 1.22 3.004l-7.34 7.142a1.25 1.25 0 0 1-.871.354h-.302a1.25 1.25 0 0 1-1.157-1.723L5.633 10.5H3.462c-1.57 0-2.346-1.909-1.22-3.004zm1.047 1.074L3.286 8.571A.25.25 0 0 0 3.462 9H6.75a.75.75 0 0 1 .694 1.034l-1.713 4.188 6.982-6.793A.25.25 0 0 0 12.538 7H9.25a.75.75 0 0 1-.683-1.06l2.008-4.418.003-.006-.004-.009-.006-.006-.008-.001q-.005 0-.009.004"/></svg>');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M4.72.22a.75.75 0 0 1 1.06 0l1 .999a3.5 3.5 0 0 1 2.441 0l.999-1a.748.748 0 0 1 1.265.332.75.75 0 0 1-.205.729l-.775.776c.616.63.995 1.493.995 2.444v.327q0 .15-.025.292c.408.14.764.392 1.029.722l1.968-.787a.75.75 0 0 1 .556 1.392L13 7.258V9h2.25a.75.75 0 0 1 0 1.5H13v.5q-.002.615-.141 1.186l2.17.868a.75.75 0 0 1-.557 1.392l-2.184-.873A5 5 0 0 1 8 16a5 5 0 0 1-4.288-2.427l-2.183.873a.75.75 0 0 1-.558-1.392l2.17-.868A5 5 0 0 1 3 11v-.5H.75a.75.75 0 0 1 0-1.5H3V7.258L.971 6.446a.75.75 0 0 1 .558-1.392l1.967.787c.265-.33.62-.583 1.03-.722a1.7 1.7 0 0 1-.026-.292V4.5c0-.951.38-1.814.995-2.444L4.72 1.28a.75.75 0 0 1 0-1.06m.53 6.28a.75.75 0 0 0-.75.75V11a3.5 3.5 0 1 0 7 0V7.25a.75.75 0 0 0-.75-.75ZM6.173 5h3.654A.17.17 0 0 0 10 4.827V4.5a2 2 0 1 0-4 0v.327c0 .096.077.173.173.173"/></svg>');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M5 5.782V2.5h-.25a.75.75 0 0 1 0-1.5h6.5a.75.75 0 0 1 0 1.5H11v3.282l3.666 5.76C15.619 13.04 14.543 15 12.767 15H3.233c-1.776 0-2.852-1.96-1.899-3.458Zm-2.4 6.565a.75.75 0 0 0 .633 1.153h9.534a.75.75 0 0 0 .633-1.153L12.225 10.5h-8.45ZM9.5 2.5h-3V6c0 .143-.04.283-.117.403L4.73 9h6.54L9.617 6.403A.75.75 0 0 1 9.5 6Z"/></svg>');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M1.75 2.5h10.5a.75.75 0 0 1 0 1.5H1.75a.75.75 0 0 1 0-1.5m4 5h8.5a.75.75 0 0 1 0 1.5h-8.5a.75.75 0 0 1 0-1.5m0 5h8.5a.75.75 0 0 1 0 1.5h-8.5a.75.75 0 0 1 0-1.5M2.5 7.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 1.5 0"/></svg>');}</style>
 
-    <body>
-        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
-            <div class="container">
-                <a class="navbar-brand" href="../..">My Docs</a>
-                <!-- Expander button -->
-                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
 
-                <!-- Expanded navigation -->
-                <div id="navbar-collapse" class="navbar-collapse collapse">
-                        <!-- Main navigation -->
-                        <ul class="nav navbar-nav">
-                            <li class="nav-item">
-                                <a href="../.." class="nav-link">Welcome to MkDocs</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="../../CHANGLOG/" class="nav-link">CHANGLOG</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="../../CHANGLOG_en/" class="nav-link">CHANGLOG en</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="../../FAQ/" class="nav-link">FAQ</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="../../FAQ_en/" class="nav-link">FAQ en</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Data annotations</a>
-                                <ul class="dropdown-menu">
-                                    
-  <li class="dropdown-submenu">
-    <a href="#" class="dropdown-item">Cv modules</a>
-    <ul class="dropdown-menu">
-            
-<li>
-    <a href="../../data_annotations/cv_modules/image_classification/" class="dropdown-item">Image classification</a>
-</li>
-            
-<li>
-    <a href="../../data_annotations/cv_modules/image_classification_en/" class="dropdown-item">Image classification en</a>
-</li>
-            
-<li>
-    <a href="../../data_annotations/cv_modules/image_feature/" class="dropdown-item">Image feature</a>
-</li>
-            
-<li>
-    <a href="../../data_annotations/cv_modules/image_feature_en/" class="dropdown-item">Image feature en</a>
-</li>
-            
-<li>
-    <a href="../../data_annotations/cv_modules/instance_segmentation/" class="dropdown-item">Instance segmentation</a>
-</li>
-            
-<li>
-    <a href="../../data_annotations/cv_modules/instance_segmentation_en/" class="dropdown-item">Instance segmentation en</a>
-</li>
-            
-<li>
-    <a href="../../data_annotations/cv_modules/ml_classification/" class="dropdown-item">Ml classification</a>
-</li>
-            
-<li>
-    <a href="../../data_annotations/cv_modules/ml_classification_en/" class="dropdown-item">Ml classification en</a>
-</li>
-            
-<li>
-    <a href="../../data_annotations/cv_modules/object_detection/" class="dropdown-item">Object detection</a>
-</li>
-            
-<li>
-    <a href="../../data_annotations/cv_modules/object_detection_en/" class="dropdown-item">Object detection en</a>
-</li>
-            
-<li>
-    <a href="../../data_annotations/cv_modules/semantic_segmentation/" class="dropdown-item">Semantic segmentation</a>
-</li>
-            
-<li>
-    <a href="../../data_annotations/cv_modules/semantic_segmentation_en/" class="dropdown-item">Semantic segmentation en</a>
-</li>
-    </ul>
-  </li>
-                                    
-  <li class="dropdown-submenu">
-    <a href="#" class="dropdown-item">Ocr modules</a>
-    <ul class="dropdown-menu">
-            
-<li>
-    <a href="../../data_annotations/ocr_modules/table_recognition/" class="dropdown-item">Table recognition</a>
-</li>
-            
-<li>
-    <a href="../../data_annotations/ocr_modules/table_recognition_en/" class="dropdown-item">Table recognition en</a>
-</li>
-            
-<li>
-    <a href="../../data_annotations/ocr_modules/text_detection_recognition/" class="dropdown-item">Text detection recognition</a>
-</li>
-            
-<li>
-    <a href="../../data_annotations/ocr_modules/text_detection_recognition_en/" class="dropdown-item">Text detection recognition en</a>
-</li>
-    </ul>
-  </li>
-                                    
-  <li class="dropdown-submenu">
-    <a href="#" class="dropdown-item">Time series modules</a>
-    <ul class="dropdown-menu">
-            
-<li>
-    <a href="../../data_annotations/time_series_modules/time_series_anomaly_detection/" class="dropdown-item">Time series anomaly detection</a>
-</li>
-            
-<li>
-    <a href="../../data_annotations/time_series_modules/time_series_anomaly_detection_en/" class="dropdown-item">Time series anomaly detection en</a>
-</li>
-            
-<li>
-    <a href="../../data_annotations/time_series_modules/time_series_classification/" class="dropdown-item">Time series classification</a>
-</li>
-            
-<li>
-    <a href="../../data_annotations/time_series_modules/time_series_classification_en/" class="dropdown-item">Time series classification en</a>
-</li>
-            
-<li>
-    <a href="../../data_annotations/time_series_modules/time_series_forecasting/" class="dropdown-item">Time series forecasting</a>
-</li>
-            
-<li>
-    <a href="../../data_annotations/time_series_modules/time_series_forecasting_en/" class="dropdown-item">Time series forecasting en</a>
-</li>
-    </ul>
-  </li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Installation</a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="../../installation/installation/" class="dropdown-item">Installation</a>
-</li>
-                                    
-<li>
-    <a href="../../installation/installation_en/" class="dropdown-item">Installation en</a>
-</li>
-                                    
-<li>
-    <a href="../../installation/paddlepaddle_install/" class="dropdown-item">Paddlepaddle install</a>
-</li>
-                                    
-<li>
-    <a href="../../installation/paddlepaddle_install_en/" class="dropdown-item">Paddlepaddle install en</a>
-</li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Module usage</a>
-                                <ul class="dropdown-menu">
-                                    
-  <li class="dropdown-submenu">
-    <a href="#" class="dropdown-item">Instructions</a>
-    <ul class="dropdown-menu">
-            
-<li>
-    <a href="../../module_usage/instructions/config_parameters_common/" class="dropdown-item">Config parameters common</a>
-</li>
-            
-<li>
-    <a href="../../module_usage/instructions/config_parameters_common_en/" class="dropdown-item">Config parameters common en</a>
-</li>
-            
-<li>
-    <a href="../../module_usage/instructions/config_parameters_time_series/" class="dropdown-item">Config parameters time series</a>
-</li>
-            
-<li>
-    <a href="../../module_usage/instructions/config_parameters_time_series_en/" class="dropdown-item">Config parameters time series en</a>
-</li>
-            
-<li>
-    <a href="../../module_usage/instructions/model_python_API/" class="dropdown-item">model python API</a>
-</li>
-            
-<li>
-    <a href="../../module_usage/instructions/model_python_API_en/" class="dropdown-item">model python API en</a>
-</li>
-    </ul>
-  </li>
-                                    
-  <li class="dropdown-submenu">
-    <a href="#" class="dropdown-item">Tutorials</a>
-    <ul class="dropdown-menu">
-            
-  <li class="dropdown-submenu">
-    <a href="#" class="dropdown-item">Cv modules</a>
-    <ul class="dropdown-menu">
-            
-<li>
-    <a href="../../module_usage/tutorials/cv_modules/anomaly_detection/" class="dropdown-item">Anomaly detection</a>
-</li>
-            
-<li>
-    <a href="../../module_usage/tutorials/cv_modules/anomaly_detection_en/" class="dropdown-item">Anomaly detection en</a>
-</li>
-            
-<li>
-    <a href="../../module_usage/tutorials/cv_modules/face_detection/" class="dropdown-item">Face detection</a>
-</li>
-            
-<li>
-    <a href="../../module_usage/tutorials/cv_modules/face_detection_en/" class="dropdown-item">Face detection en</a>
-</li>
-            
-<li>
-    <a href="../../module_usage/tutorials/cv_modules/human_detection/" class="dropdown-item">Human detection</a>
-</li>
-            
-<li>
-    <a href="../../module_usage/tutorials/cv_modules/human_detection_en/" class="dropdown-item">Human detection en</a>
-</li>
-            
-<li>
-    <a href="../../module_usage/tutorials/cv_modules/image_classification/" class="dropdown-item">Image classification</a>
-</li>
-            
-<li>
-    <a href="../../module_usage/tutorials/cv_modules/image_classification_en/" class="dropdown-item">Image classification en</a>
-</li>
-            
-<li>
-    <a href="../../module_usage/tutorials/cv_modules/image_feature/" class="dropdown-item">Image feature</a>
-</li>
-            
-<li>
-    <a href="../../module_usage/tutorials/cv_modules/image_feature_en/" class="dropdown-item">Image feature en</a>
-</li>
-            
-<li>
-    <a href="../../module_usage/tutorials/cv_modules/instance_segmentation/" class="dropdown-item">Instance segmentation</a>
-</li>
-            
-<li>
-    <a href="../../module_usage/tutorials/cv_modules/instance_segmentation_en/" class="dropdown-item">Instance segmentation en</a>
-</li>
-            
-<li>
-    <a href="../../module_usage/tutorials/cv_modules/mainbody_detection/" class="dropdown-item">Mainbody detection</a>
-</li>
-            
-<li>
-    <a href="../../module_usage/tutorials/cv_modules/mainbody_detection_en/" class="dropdown-item">Mainbody detection en</a>
-</li>
-            
-<li>
-    <a href="../../module_usage/tutorials/cv_modules/ml_classification/" class="dropdown-item">Ml classification</a>
-</li>
-            
-<li>
-    <a href="../../module_usage/tutorials/cv_modules/ml_classification_en/" class="dropdown-item">Ml classification en</a>
-</li>
-            
-<li>
-    <a href="../../module_usage/tutorials/cv_modules/object_detection/" class="dropdown-item">Object detection</a>
-</li>
-            
-<li>
-    <a href="../../module_usage/tutorials/cv_modules/object_detection_en/" class="dropdown-item">Object detection en</a>
-</li>
-            
-<li>
-    <a href="../../module_usage/tutorials/cv_modules/pedestrian_attribute_recognition/" class="dropdown-item">Pedestrian attribute recognition</a>
-</li>
-            
-<li>
-    <a href="../../module_usage/tutorials/cv_modules/pedestrian_attribute_recognition_en/" class="dropdown-item">Pedestrian attribute recognition en</a>
-</li>
-            
-<li>
-    <a href="../../module_usage/tutorials/cv_modules/semantic_segmentation/" class="dropdown-item">Semantic segmentation</a>
-</li>
-            
-<li>
-    <a href="../../module_usage/tutorials/cv_modules/semantic_segmentation_en/" class="dropdown-item">Semantic segmentation en</a>
-</li>
-            
-<li>
-    <a href="../../module_usage/tutorials/cv_modules/small_object_detection/" class="dropdown-item">Small object detection</a>
-</li>
-            
-<li>
-    <a href="../../module_usage/tutorials/cv_modules/small_object_detection_en/" class="dropdown-item">Small object detection en</a>
-</li>
-            
-<li>
-    <a href="../../module_usage/tutorials/cv_modules/vehicle_attribute_recognition/" class="dropdown-item">Vehicle attribute recognition</a>
-</li>
-            
-<li>
-    <a href="../../module_usage/tutorials/cv_modules/vehicle_attribute_recognition_en/" class="dropdown-item">Vehicle attribute recognition en</a>
-</li>
-            
-<li>
-    <a href="../../module_usage/tutorials/cv_modules/vehicle_detection/" class="dropdown-item">Vehicle detection</a>
-</li>
-            
-<li>
-    <a href="../../module_usage/tutorials/cv_modules/vehicle_detection_en/" class="dropdown-item">Vehicle detection en</a>
-</li>
-    </ul>
-  </li>
-            
-  <li class="dropdown-submenu">
-    <a href="#" class="dropdown-item">Ocr modules</a>
-    <ul class="dropdown-menu">
-            
-<li>
-    <a href="../../module_usage/tutorials/ocr_modules/doc_img_orientation_classification/" class="dropdown-item">Doc img orientation classification</a>
-</li>
-            
-<li>
-    <a href="../../module_usage/tutorials/ocr_modules/doc_img_orientation_classification_en/" class="dropdown-item">Doc img orientation classification en</a>
-</li>
-            
-<li>
-    <a href="../../module_usage/tutorials/ocr_modules/formula_recognition/" class="dropdown-item">Formula recognition</a>
-</li>
-            
-<li>
-    <a href="../../module_usage/tutorials/ocr_modules/formula_recognition_en/" class="dropdown-item">Formula recognition en</a>
-</li>
-            
-<li>
-    <a href="../../module_usage/tutorials/ocr_modules/layout_detection/" class="dropdown-item">Layout detection</a>
-</li>
-            
-<li>
-    <a href="../../module_usage/tutorials/ocr_modules/layout_detection_en/" class="dropdown-item">Layout detection en</a>
-</li>
-            
-<li>
-    <a href="../../module_usage/tutorials/ocr_modules/seal_text_detection/" class="dropdown-item">Seal text detection</a>
-</li>
-            
-<li>
-    <a href="../../module_usage/tutorials/ocr_modules/seal_text_detection_en/" class="dropdown-item">Seal text detection en</a>
-</li>
-            
-<li>
-    <a href="../../module_usage/tutorials/ocr_modules/table_structure_recognition/" class="dropdown-item">Table structure recognition</a>
-</li>
-            
-<li>
-    <a href="../../module_usage/tutorials/ocr_modules/table_structure_recognition_en/" class="dropdown-item">Table structure recognition en</a>
-</li>
-            
-<li>
-    <a href="../../module_usage/tutorials/ocr_modules/text_detection/" class="dropdown-item">Text detection</a>
-</li>
-            
-<li>
-    <a href="../../module_usage/tutorials/ocr_modules/text_detection_en/" class="dropdown-item">Text detection en</a>
-</li>
-            
-<li>
-    <a href="../../module_usage/tutorials/ocr_modules/text_image_unwarping/" class="dropdown-item">Text image unwarping</a>
-</li>
-            
-<li>
-    <a href="../../module_usage/tutorials/ocr_modules/text_image_unwarping_en/" class="dropdown-item">Text image unwarping en</a>
-</li>
-            
-<li>
-    <a href="../../module_usage/tutorials/ocr_modules/text_recognition/" class="dropdown-item">Text recognition</a>
-</li>
-            
-<li>
-    <a href="../../module_usage/tutorials/ocr_modules/text_recognition_en/" class="dropdown-item">Text recognition en</a>
-</li>
-    </ul>
-  </li>
-            
-  <li class="dropdown-submenu">
-    <a href="#" class="dropdown-item">Time series modules</a>
-    <ul class="dropdown-menu">
-            
-<li>
-    <a href="../../module_usage/tutorials/time_series_modules/time_series_anomaly_detection/" class="dropdown-item">Time series anomaly detection</a>
-</li>
-            
-<li>
-    <a href="../../module_usage/tutorials/time_series_modules/time_series_anomaly_detection_en/" class="dropdown-item">Time series anomaly detection en</a>
-</li>
-            
-<li>
-    <a href="../../module_usage/tutorials/time_series_modules/time_series_classification/" class="dropdown-item">Time series classification</a>
-</li>
-            
-<li>
-    <a href="../../module_usage/tutorials/time_series_modules/time_series_classification_en/" class="dropdown-item">Time series classification en</a>
-</li>
-            
-<li>
-    <a href="../../module_usage/tutorials/time_series_modules/time_series_forecasting/" class="dropdown-item">Time series forecasting</a>
-</li>
-            
-<li>
-    <a href="../../module_usage/tutorials/time_series_modules/time_series_forecasting_en/" class="dropdown-item">Time series forecasting en</a>
-</li>
-    </ul>
-  </li>
-    </ul>
-  </li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Other devices support</a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="../../other_devices_support/multi_devices_use_guide/" class="dropdown-item">Multi devices use guide</a>
-</li>
-                                    
-<li>
-    <a href="../../other_devices_support/multi_devices_use_guide_en/" class="dropdown-item">Multi devices use guide en</a>
-</li>
-                                    
-<li>
-    <a href="../../other_devices_support/paddlepaddle_install_DCU/" class="dropdown-item">paddlepaddle install DCU</a>
-</li>
-                                    
-<li>
-    <a href="../../other_devices_support/paddlepaddle_install_DCU_en/" class="dropdown-item">paddlepaddle install DCU en</a>
-</li>
-                                    
-<li>
-    <a href="../../other_devices_support/paddlepaddle_install_MLU/" class="dropdown-item">paddlepaddle install MLU</a>
-</li>
-                                    
-<li>
-    <a href="../../other_devices_support/paddlepaddle_install_MLU_en/" class="dropdown-item">paddlepaddle install MLU en</a>
-</li>
-                                    
-<li>
-    <a href="../../other_devices_support/paddlepaddle_install_NPU/" class="dropdown-item">paddlepaddle install NPU</a>
-</li>
-                                    
-<li>
-    <a href="../../other_devices_support/paddlepaddle_install_NPU_en/" class="dropdown-item">paddlepaddle install NPU en</a>
-</li>
-                                    
-<li>
-    <a href="../../other_devices_support/paddlepaddle_install_XPU/" class="dropdown-item">paddlepaddle install XPU</a>
-</li>
-                                    
-<li>
-    <a href="../../other_devices_support/paddlepaddle_install_XPU_en/" class="dropdown-item">paddlepaddle install XPU en</a>
-</li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Pipeline deploy</a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="../../pipeline_deploy/edge_deploy/" class="dropdown-item">Edge deploy</a>
-</li>
-                                    
-<li>
-    <a href="../../pipeline_deploy/edge_deploy_en/" class="dropdown-item">Edge deploy en</a>
-</li>
-                                    
-<li>
-    <a href="../../pipeline_deploy/high_performance_inference/" class="dropdown-item">High performance inference</a>
-</li>
-                                    
-<li>
-    <a href="../../pipeline_deploy/high_performance_inference_en/" class="dropdown-item">High performance inference en</a>
-</li>
-                                    
-<li>
-    <a href="../../pipeline_deploy/service_deploy/" class="dropdown-item">Service deploy</a>
-</li>
-                                    
-<li>
-    <a href="../../pipeline_deploy/service_deploy_en/" class="dropdown-item">Service deploy en</a>
-</li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Pipeline usage</a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="../../pipeline_usage/pipeline_develop_guide/" class="dropdown-item">Pipeline develop guide</a>
-</li>
-                                    
-<li>
-    <a href="../../pipeline_usage/pipeline_develop_guide_en/" class="dropdown-item">Pipeline develop guide en</a>
-</li>
-                                    
-  <li class="dropdown-submenu">
-    <a href="#" class="dropdown-item">Instructions</a>
-    <ul class="dropdown-menu">
-            
-<li>
-    <a href="../../pipeline_usage/instructions/pipeline_CLI_usage/" class="dropdown-item">pipeline CLI usage</a>
-</li>
-            
-<li>
-    <a href="../../pipeline_usage/instructions/pipeline_CLI_usage_en/" class="dropdown-item">pipeline CLI usage en</a>
-</li>
-            
-<li>
-    <a href="../../pipeline_usage/instructions/pipeline_python_API/" class="dropdown-item">pipeline python API</a>
-</li>
-            
-<li>
-    <a href="../../pipeline_usage/instructions/pipeline_python_API_en/" class="dropdown-item">pipeline python API en</a>
-</li>
-    </ul>
-  </li>
-                                    
-  <li class="dropdown-submenu">
-    <a href="#" class="dropdown-item">Tutorials</a>
-    <ul class="dropdown-menu">
-            
-  <li class="dropdown-submenu">
-    <a href="#" class="dropdown-item">Cv pipelines</a>
-    <ul class="dropdown-menu">
-            
-<li>
-    <a href="../../pipeline_usage/tutorials/cv_pipelines/image_anomaly_detection/" class="dropdown-item">Image anomaly detection</a>
-</li>
-            
-<li>
-    <a href="../../pipeline_usage/tutorials/cv_pipelines/image_anomaly_detection_en/" class="dropdown-item">Image anomaly detection en</a>
-</li>
-            
-<li>
-    <a href="../../pipeline_usage/tutorials/cv_pipelines/image_classification/" class="dropdown-item">Image classification</a>
-</li>
-            
-<li>
-    <a href="../../pipeline_usage/tutorials/cv_pipelines/image_classification_en/" class="dropdown-item">Image classification en</a>
-</li>
-            
-<li>
-    <a href="../../pipeline_usage/tutorials/cv_pipelines/image_multi_label_classification/" class="dropdown-item">Image multi label classification</a>
-</li>
-            
-<li>
-    <a href="../../pipeline_usage/tutorials/cv_pipelines/image_multi_label_classification_en/" class="dropdown-item">Image multi label classification en</a>
-</li>
-            
-<li>
-    <a href="../../pipeline_usage/tutorials/cv_pipelines/instance_segmentation/" class="dropdown-item">Instance segmentation</a>
-</li>
-            
-<li>
-    <a href="../../pipeline_usage/tutorials/cv_pipelines/instance_segmentation_en/" class="dropdown-item">Instance segmentation en</a>
-</li>
-            
-<li>
-    <a href="../../pipeline_usage/tutorials/cv_pipelines/object_detection/" class="dropdown-item">Object detection</a>
-</li>
-            
-<li>
-    <a href="../../pipeline_usage/tutorials/cv_pipelines/object_detection_en/" class="dropdown-item">Object detection en</a>
-</li>
-            
-<li>
-    <a href="../../pipeline_usage/tutorials/cv_pipelines/semantic_segmentation/" class="dropdown-item">Semantic segmentation</a>
-</li>
-            
-<li>
-    <a href="../../pipeline_usage/tutorials/cv_pipelines/semantic_segmentation_en/" class="dropdown-item">Semantic segmentation en</a>
-</li>
-            
-<li>
-    <a href="../../pipeline_usage/tutorials/cv_pipelines/small_object_detection/" class="dropdown-item">Small object detection</a>
-</li>
-            
-<li>
-    <a href="../../pipeline_usage/tutorials/cv_pipelines/small_object_detection_en/" class="dropdown-item">Small object detection en</a>
-</li>
-    </ul>
-  </li>
-            
-  <li class="dropdown-submenu">
-    <a href="#" class="dropdown-item">Information extraction pipelines</a>
-    <ul class="dropdown-menu">
-            
-<li>
-    <a href="../../pipeline_usage/tutorials/information_extraction_pipelines/document_scene_information_extraction/" class="dropdown-item">Document scene information extraction</a>
-</li>
-            
-<li>
-    <a href="../../pipeline_usage/tutorials/information_extraction_pipelines/document_scene_information_extraction_en/" class="dropdown-item">Document scene information extraction en</a>
-</li>
-    </ul>
-  </li>
-            
-  <li class="dropdown-submenu">
-    <a href="#" class="dropdown-item">Ocr pipelines</a>
-    <ul class="dropdown-menu">
-            
-<li>
-    <a href="../../pipeline_usage/tutorials/ocr_pipelines/OCR/" class="dropdown-item">OCR</a>
-</li>
-            
-<li>
-    <a href="../../pipeline_usage/tutorials/ocr_pipelines/OCR_en/" class="dropdown-item">OCR en</a>
-</li>
-            
-<li>
-    <a href="../../pipeline_usage/tutorials/ocr_pipelines/formula_recognition/" class="dropdown-item">Formula recognition</a>
-</li>
-            
-<li>
-    <a href="../../pipeline_usage/tutorials/ocr_pipelines/formula_recognition_en/" class="dropdown-item">Formula recognition en</a>
-</li>
-            
-<li>
-    <a href="../../pipeline_usage/tutorials/ocr_pipelines/layout_parsing/" class="dropdown-item">Layout parsing</a>
-</li>
-            
-<li>
-    <a href="../../pipeline_usage/tutorials/ocr_pipelines/layout_parsing_en/" class="dropdown-item">Layout parsing en</a>
-</li>
-            
-<li>
-    <a href="../../pipeline_usage/tutorials/ocr_pipelines/seal_recognition/" class="dropdown-item">Seal recognition</a>
-</li>
-            
-<li>
-    <a href="../../pipeline_usage/tutorials/ocr_pipelines/seal_recognition_en/" class="dropdown-item">Seal recognition en</a>
-</li>
-            
-<li>
-    <a href="../../pipeline_usage/tutorials/ocr_pipelines/table_recognition/" class="dropdown-item">Table recognition</a>
-</li>
-            
-<li>
-    <a href="../../pipeline_usage/tutorials/ocr_pipelines/table_recognition_en/" class="dropdown-item">Table recognition en</a>
-</li>
-    </ul>
-  </li>
-            
-  <li class="dropdown-submenu">
-    <a href="#" class="dropdown-item">Time series pipelines</a>
-    <ul class="dropdown-menu">
-            
-<li>
-    <a href="../../pipeline_usage/tutorials/time_series_pipelines/time_series_anomaly_detection/" class="dropdown-item">Time series anomaly detection</a>
-</li>
-            
-<li>
-    <a href="../../pipeline_usage/tutorials/time_series_pipelines/time_series_anomaly_detection_en/" class="dropdown-item">Time series anomaly detection en</a>
-</li>
-            
-<li>
-    <a href="../../pipeline_usage/tutorials/time_series_pipelines/time_series_classification/" class="dropdown-item">Time series classification</a>
-</li>
-            
-<li>
-    <a href="../../pipeline_usage/tutorials/time_series_pipelines/time_series_classification_en/" class="dropdown-item">Time series classification en</a>
-</li>
-            
-<li>
-    <a href="../../pipeline_usage/tutorials/time_series_pipelines/time_series_forecasting/" class="dropdown-item">Time series forecasting</a>
-</li>
-            
-<li>
-    <a href="../../pipeline_usage/tutorials/time_series_pipelines/time_series_forecasting_en/" class="dropdown-item">Time series forecasting en</a>
-</li>
-    </ul>
-  </li>
-    </ul>
-  </li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Practical tutorials</a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="../document_scene_information_extraction%28layout_detection%29_tutorial/" class="dropdown-item">Document scene information extraction(layout detection) tutorial</a>
-</li>
-                                    
-<li>
-    <a href="../document_scene_information_extraction%28layout_detection%29_tutorial_en/" class="dropdown-item">Document scene information extraction(layout detection) tutorial en</a>
-</li>
-                                    
-<li>
-    <a href="../image_classification_garbage_tutorial/" class="dropdown-item">Image classification garbage tutorial</a>
-</li>
-                                    
-<li>
-    <a href="../image_classification_garbage_tutorial_en/" class="dropdown-item">Image classification garbage tutorial en</a>
-</li>
-                                    
-<li>
-    <a href="../instance_segmentation_remote_sensing_tutorial/" class="dropdown-item">Instance segmentation remote sensing tutorial</a>
-</li>
-                                    
-<li>
-    <a href="../instance_segmentation_remote_sensing_tutorial_en/" class="dropdown-item">Instance segmentation remote sensing tutorial en</a>
-</li>
-                                    
-<li>
-    <a href="../object_detection_fall_tutorial/" class="dropdown-item">Object detection fall tutorial</a>
-</li>
-                                    
-<li>
-    <a href="../object_detection_fall_tutorial_en/" class="dropdown-item">Object detection fall tutorial en</a>
-</li>
-                                    
-<li>
-    <a href="../object_detection_fashion_pedia_tutorial/" class="dropdown-item">Object detection fashion pedia tutorial</a>
-</li>
-                                    
-<li>
-    <a href="../object_detection_fashion_pedia_tutorial_en/" class="dropdown-item">Object detection fashion pedia tutorial en</a>
-</li>
-                                    
-<li>
-    <a href="../ocr_det_license_tutorial/" class="dropdown-item">Ocr det license tutorial</a>
-</li>
-                                    
-<li>
-    <a href="../ocr_det_license_tutorial_en/" class="dropdown-item">Ocr det license tutorial en</a>
-</li>
-                                    
-<li>
-    <a href="../ocr_rec_chinese_tutorial/" class="dropdown-item">Ocr rec chinese tutorial</a>
-</li>
-                                    
-<li>
-    <a href="../ocr_rec_chinese_tutorial_en/" class="dropdown-item">Ocr rec chinese tutorial en</a>
-</li>
-                                    
-<li>
-    <a href="../semantic_segmentation_road_tutorial/" class="dropdown-item">Semantic segmentation road tutorial</a>
-</li>
-                                    
-<li>
-    <a href="../semantic_segmentation_road_tutorial_en/" class="dropdown-item">Semantic segmentation road tutorial en</a>
-</li>
-                                    
-<li>
-    <a href="./" class="dropdown-item active" aria-current="page">Ts anomaly detection</a>
-</li>
-                                    
-<li>
-    <a href="../ts_anomaly_detection_en/" class="dropdown-item">Ts anomaly detection en</a>
-</li>
-                                    
-<li>
-    <a href="../ts_classification/" class="dropdown-item">Ts classification</a>
-</li>
-                                    
-<li>
-    <a href="../ts_classification_en/" class="dropdown-item">Ts classification en</a>
-</li>
-                                    
-<li>
-    <a href="../ts_forecast/" class="dropdown-item">Ts forecast</a>
-</li>
-                                    
-<li>
-    <a href="../ts_forecast_en/" class="dropdown-item">Ts forecast en</a>
-</li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Support list</a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="../../support_list/model_list_dcu/" class="dropdown-item">Model list dcu</a>
-</li>
-                                    
-<li>
-    <a href="../../support_list/model_list_dcu_en/" class="dropdown-item">Model list dcu en</a>
-</li>
-                                    
-<li>
-    <a href="../../support_list/model_list_mlu/" class="dropdown-item">Model list mlu</a>
-</li>
-                                    
-<li>
-    <a href="../../support_list/model_list_mlu_en/" class="dropdown-item">Model list mlu en</a>
-</li>
-                                    
-<li>
-    <a href="../../support_list/model_list_npu/" class="dropdown-item">Model list npu</a>
-</li>
-                                    
-<li>
-    <a href="../../support_list/model_list_npu_en/" class="dropdown-item">Model list npu en</a>
-</li>
-                                    
-<li>
-    <a href="../../support_list/model_list_xpu/" class="dropdown-item">Model list xpu</a>
-</li>
-                                    
-<li>
-    <a href="../../support_list/model_list_xpu_en/" class="dropdown-item">Model list xpu en</a>
-</li>
-                                    
-<li>
-    <a href="../../support_list/models_list/" class="dropdown-item">Models list</a>
-</li>
-                                    
-<li>
-    <a href="../../support_list/models_list_en/" class="dropdown-item">Models list en</a>
-</li>
-                                    
-<li>
-    <a href="../../support_list/pipelines_list/" class="dropdown-item">Pipelines list</a>
-</li>
-                                    
-<li>
-    <a href="../../support_list/pipelines_list_dcu/" class="dropdown-item">Pipelines list dcu</a>
-</li>
-                                    
-<li>
-    <a href="../../support_list/pipelines_list_dcu_en/" class="dropdown-item">Pipelines list dcu en</a>
-</li>
-                                    
-<li>
-    <a href="../../support_list/pipelines_list_en/" class="dropdown-item">Pipelines list en</a>
-</li>
-                                    
-<li>
-    <a href="../../support_list/pipelines_list_mlu/" class="dropdown-item">Pipelines list mlu</a>
-</li>
-                                    
-<li>
-    <a href="../../support_list/pipelines_list_mlu_en/" class="dropdown-item">Pipelines list mlu en</a>
-</li>
-                                    
-<li>
-    <a href="../../support_list/pipelines_list_npu/" class="dropdown-item">Pipelines list npu</a>
-</li>
-                                    
-<li>
-    <a href="../../support_list/pipelines_list_npu_en/" class="dropdown-item">Pipelines list npu en</a>
-</li>
-                                    
-<li>
-    <a href="../../support_list/pipelines_list_xpu/" class="dropdown-item">Pipelines list xpu</a>
-</li>
-                                    
-<li>
-    <a href="../../support_list/pipelines_list_xpu_en/" class="dropdown-item">Pipelines list xpu en</a>
-</li>
-                                </ul>
-                            </li>
-                        </ul>
 
-                    <ul class="nav navbar-nav ms-md-auto">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
-                                <i class="fa fa-search"></i> Search
-                            </a>
-                        </li>
-                            <li class="nav-item">
-                                <a rel="prev" href="../semantic_segmentation_road_tutorial_en/" class="nav-link">
-                                    <i class="fa fa-arrow-left"></i> Previous
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a rel="next" href="../ts_anomaly_detection_en/" class="nav-link">
-                                    Next <i class="fa fa-arrow-right"></i>
-                                </a>
-                            </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="row">
-                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
-            <span class="fa fa-angle-down"></span>
-        </button>
-    </div>
+  
+  
+    
+    
+      
+    
+    
+  
+    
+    
+      
+    
+    
+  
+    
+    
+      
+    
+    
+  
+  
+  <style>.md-tag.md-tag--default-tag{--md-tag-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M0 80v149.5c0 17 6.7 33.3 18.7 45.3l176 176c25 25 65.5 25 90.5 0l133.5-133.5c25-25 25-65.5 0-90.5l-176-176c-12-12-28.3-18.7-45.3-18.7L48 32C21.5 32 0 53.5 0 80m112 32a32 32 0 1 1 0 64 32 32 0 1 1 0-64"/></svg>');}.md-tag.md-tag--hardware-tag{--md-tag-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M176 24c0-13.3-10.7-24-24-24s-24 10.7-24 24v40c-35.3 0-64 28.7-64 64H24c-13.3 0-24 10.7-24 24s10.7 24 24 24h40v56H24c-13.3 0-24 10.7-24 24s10.7 24 24 24h40v56H24c-13.3 0-24 10.7-24 24s10.7 24 24 24h40c0 35.3 28.7 64 64 64v40c0 13.3 10.7 24 24 24s24-10.7 24-24v-40h56v40c0 13.3 10.7 24 24 24s24-10.7 24-24v-40h56v40c0 13.3 10.7 24 24 24s24-10.7 24-24v-40c35.3 0 64-28.7 64-64h40c13.3 0 24-10.7 24-24s-10.7-24-24-24h-40v-56h40c13.3 0 24-10.7 24-24s-10.7-24-24-24h-40v-56h40c13.3 0 24-10.7 24-24s-10.7-24-24-24h-40c0-35.3-28.7-64-64-64V24c0-13.3-10.7-24-24-24s-24 10.7-24 24v40h-56V24c0-13.3-10.7-24-24-24s-24 10.7-24 24v40h-56zm-16 104h192c17.7 0 32 14.3 32 32v192c0 17.7-14.3 32-32 32H160c-17.7 0-32-14.3-32-32V160c0-17.7 14.3-32 32-32m192 32H160v192h192z"/></svg>');}.md-tag.md-tag--software-tag{--md-tag-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M64 96c0-35.3 28.7-64 64-64h384c35.3 0 64 28.7 64 64v256h-64V96H128v256H64zM0 403.2C0 392.6 8.6 384 19.2 384h601.6c10.6 0 19.2 8.6 19.2 19.2 0 42.4-34.4 76.8-76.8 76.8H76.8C34.4 480 0 445.6 0 403.2M281 209l-31 31 31 31c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-48-48c-9.4-9.4-9.4-24.6 0-33.9l48-48c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9zm112-34 48 48c9.4 9.4 9.4 24.6 0 33.9l-48 48c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l31-31-31-31c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0z"/></svg>');}</style>
 
     
-    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
-        <ul class="nav flex-column">
-            
-            <li class="nav-item" data-bs-level="1"><a href="#paddlex-30" class="nav-link">PaddleX 3.0 时序异常检测模型产线———设备异常检测应用教程</a>
-              <ul class="nav flex-column">
-            <li class="nav-item" data-bs-level="2"><a href="#1" class="nav-link">1. 选择产线</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-bs-level="2"><a href="#2" class="nav-link">2. 快速体验</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-bs-level="2"><a href="#3" class="nav-link">3. 选择模型</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-bs-level="2"><a href="#5" class="nav-link">5. 模型训练和评估</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-bs-level="2"><a href="#7" class="nav-link">7.开发集成/部署</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-              </ul>
-            </li>
-        </ul>
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#paddlex-30" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
-</div></div>
-                    <div class="col-md-9" role="main">
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
+  <path d="M3.136,17.387l0,42.932l42.932,21.467l-42.932,-64.399Z" />
+  <path d="M21.91,8l42.933,64.398l-18.775,9.388l-42.932,-64.399l18.774,-9.387Z" style="fill-opacity: 0.5" />
+  <path d="M67.535,17.387l-27.262,18.156l21.878,32.818l5.384,2.691l0,-53.665Z" />
+  <path d="M67.535,17.387l0,53.666l18.774,-9.388l0,-53.665l-18.774,9.387Z" style="fill-opacity: 0.25" />
+</svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Ts anomaly detection
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Welcome to MkDocs
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../CHANGLOG/" class="md-tabs__link">
+        
+  
+    
+  
+  CHANGLOG
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../CHANGLOG_en/" class="md-tabs__link">
+        
+  
+    
+  
+  CHANGLOG en
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../FAQ/" class="md-tabs__link">
+        
+  
+    
+  
+  FAQ
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../FAQ_en/" class="md-tabs__link">
+        
+  
+    
+  
+  FAQ en
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../data_annotations/cv_modules/image_classification/" class="md-tabs__link">
+          
+  
+    
+  
+  Data annotations
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../installation/installation/" class="md-tabs__link">
+          
+  
+    
+  
+  Installation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../module_usage/instructions/config_parameters_common/" class="md-tabs__link">
+          
+  
+    
+  
+  Module usage
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../other_devices_support/multi_devices_use_guide/" class="md-tabs__link">
+          
+  
+    
+  
+  Other devices support
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../pipeline_deploy/edge_deploy/" class="md-tabs__link">
+          
+  
+    
+  
+  Pipeline deploy
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../pipeline_usage/pipeline_develop_guide/" class="md-tabs__link">
+          
+  
+    
+  
+  Pipeline usage
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../document_scene_information_extraction%28layout_detection%29_tutorial/" class="md-tabs__link">
+          
+  
+    
+  
+  Practical tutorials
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../support_list/model_list_dcu/" class="md-tabs__link">
+          
+  
+    
+  
+  Support list
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
+  <path d="M3.136,17.387l0,42.932l42.932,21.467l-42.932,-64.399Z" />
+  <path d="M21.91,8l42.933,64.398l-18.775,9.388l-42.932,-64.399l18.774,-9.387Z" style="fill-opacity: 0.5" />
+  <path d="M67.535,17.387l-27.262,18.156l21.878,32.818l5.384,2.691l0,-53.665Z" />
+  <path d="M67.535,17.387l0,53.666l18.774,-9.388l0,-53.665l-18.774,9.387Z" style="fill-opacity: 0.25" />
+</svg>
+
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Welcome to MkDocs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CHANGLOG/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CHANGLOG
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CHANGLOG_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CHANGLOG en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FAQ/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FAQ_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Data annotations
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Data annotations
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cv modules
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            Cv modules
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_annotations/cv_modules/image_classification/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Image classification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_annotations/cv_modules/image_classification_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Image classification en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_annotations/cv_modules/image_feature/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Image feature
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_annotations/cv_modules/image_feature_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Image feature en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_annotations/cv_modules/instance_segmentation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Instance segmentation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_annotations/cv_modules/instance_segmentation_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Instance segmentation en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_annotations/cv_modules/ml_classification/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ml classification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_annotations/cv_modules/ml_classification_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ml classification en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_annotations/cv_modules/object_detection/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Object detection
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_annotations/cv_modules/object_detection_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Object detection en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_annotations/cv_modules/semantic_segmentation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semantic segmentation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_annotations/cv_modules/semantic_segmentation_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semantic segmentation en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Ocr modules
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Ocr modules
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_annotations/ocr_modules/table_recognition/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Table recognition
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_annotations/ocr_modules/table_recognition_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Table recognition en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_annotations/ocr_modules/text_detection_recognition/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Text detection recognition
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_annotations/ocr_modules/text_detection_recognition_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Text detection recognition en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Time series modules
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            Time series modules
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_annotations/time_series_modules/time_series_anomaly_detection/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Time series anomaly detection
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_annotations/time_series_modules/time_series_anomaly_detection_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Time series anomaly detection en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_annotations/time_series_modules/time_series_classification/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Time series classification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_annotations/time_series_modules/time_series_classification_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Time series classification en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_annotations/time_series_modules/time_series_forecasting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Time series forecasting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_annotations/time_series_modules/time_series_forecasting_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Time series forecasting en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Installation
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Installation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/installation_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/paddlepaddle_install/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Paddlepaddle install
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/paddlepaddle_install_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Paddlepaddle install en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Module usage
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Module usage
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_1" id="__nav_8_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Instructions
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_1">
+            <span class="md-nav__icon md-icon"></span>
+            Instructions
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module_usage/instructions/config_parameters_common/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Config parameters common
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module_usage/instructions/config_parameters_common_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Config parameters common en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module_usage/instructions/config_parameters_time_series/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Config parameters time series
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module_usage/instructions/config_parameters_time_series_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Config parameters time series en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module_usage/instructions/model_python_API/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    model python API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module_usage/instructions/model_python_API_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    model python API en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_2" id="__nav_8_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_2">
+            <span class="md-nav__icon md-icon"></span>
+            Tutorials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_2_1" id="__nav_8_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cv modules
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Cv modules
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module_usage/tutorials/cv_modules/anomaly_detection/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Anomaly detection
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module_usage/tutorials/cv_modules/anomaly_detection_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Anomaly detection en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module_usage/tutorials/cv_modules/face_detection/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Face detection
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module_usage/tutorials/cv_modules/face_detection_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Face detection en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module_usage/tutorials/cv_modules/human_detection/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Human detection
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module_usage/tutorials/cv_modules/human_detection_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Human detection en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module_usage/tutorials/cv_modules/image_classification/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Image classification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module_usage/tutorials/cv_modules/image_classification_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Image classification en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module_usage/tutorials/cv_modules/image_feature/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Image feature
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module_usage/tutorials/cv_modules/image_feature_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Image feature en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module_usage/tutorials/cv_modules/instance_segmentation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Instance segmentation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module_usage/tutorials/cv_modules/instance_segmentation_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Instance segmentation en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module_usage/tutorials/cv_modules/mainbody_detection/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mainbody detection
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module_usage/tutorials/cv_modules/mainbody_detection_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mainbody detection en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module_usage/tutorials/cv_modules/ml_classification/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ml classification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module_usage/tutorials/cv_modules/ml_classification_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ml classification en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module_usage/tutorials/cv_modules/object_detection/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Object detection
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module_usage/tutorials/cv_modules/object_detection_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Object detection en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module_usage/tutorials/cv_modules/pedestrian_attribute_recognition/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pedestrian attribute recognition
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module_usage/tutorials/cv_modules/pedestrian_attribute_recognition_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pedestrian attribute recognition en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module_usage/tutorials/cv_modules/semantic_segmentation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semantic segmentation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module_usage/tutorials/cv_modules/semantic_segmentation_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semantic segmentation en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module_usage/tutorials/cv_modules/small_object_detection/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Small object detection
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module_usage/tutorials/cv_modules/small_object_detection_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Small object detection en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module_usage/tutorials/cv_modules/vehicle_attribute_recognition/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vehicle attribute recognition
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module_usage/tutorials/cv_modules/vehicle_attribute_recognition_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vehicle attribute recognition en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module_usage/tutorials/cv_modules/vehicle_detection/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vehicle detection
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module_usage/tutorials/cv_modules/vehicle_detection_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vehicle detection en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_2_2" id="__nav_8_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Ocr modules
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Ocr modules
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module_usage/tutorials/ocr_modules/doc_img_orientation_classification/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Doc img orientation classification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module_usage/tutorials/ocr_modules/doc_img_orientation_classification_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Doc img orientation classification en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module_usage/tutorials/ocr_modules/formula_recognition/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Formula recognition
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module_usage/tutorials/ocr_modules/formula_recognition_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Formula recognition en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module_usage/tutorials/ocr_modules/layout_detection/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Layout detection
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module_usage/tutorials/ocr_modules/layout_detection_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Layout detection en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module_usage/tutorials/ocr_modules/seal_text_detection/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Seal text detection
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module_usage/tutorials/ocr_modules/seal_text_detection_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Seal text detection en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module_usage/tutorials/ocr_modules/table_structure_recognition/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Table structure recognition
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module_usage/tutorials/ocr_modules/table_structure_recognition_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Table structure recognition en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module_usage/tutorials/ocr_modules/text_detection/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Text detection
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module_usage/tutorials/ocr_modules/text_detection_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Text detection en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module_usage/tutorials/ocr_modules/text_image_unwarping/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Text image unwarping
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module_usage/tutorials/ocr_modules/text_image_unwarping_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Text image unwarping en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module_usage/tutorials/ocr_modules/text_recognition/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Text recognition
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module_usage/tutorials/ocr_modules/text_recognition_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Text recognition en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_2_3" id="__nav_8_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Time series modules
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Time series modules
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module_usage/tutorials/time_series_modules/time_series_anomaly_detection/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Time series anomaly detection
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module_usage/tutorials/time_series_modules/time_series_anomaly_detection_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Time series anomaly detection en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module_usage/tutorials/time_series_modules/time_series_classification/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Time series classification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module_usage/tutorials/time_series_modules/time_series_classification_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Time series classification en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module_usage/tutorials/time_series_modules/time_series_forecasting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Time series forecasting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module_usage/tutorials/time_series_modules/time_series_forecasting_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Time series forecasting en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Other devices support
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Other devices support
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../other_devices_support/multi_devices_use_guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Multi devices use guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../other_devices_support/multi_devices_use_guide_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Multi devices use guide en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../other_devices_support/paddlepaddle_install_DCU/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    paddlepaddle install DCU
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../other_devices_support/paddlepaddle_install_DCU_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    paddlepaddle install DCU en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../other_devices_support/paddlepaddle_install_MLU/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    paddlepaddle install MLU
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../other_devices_support/paddlepaddle_install_MLU_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    paddlepaddle install MLU en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../other_devices_support/paddlepaddle_install_NPU/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    paddlepaddle install NPU
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../other_devices_support/paddlepaddle_install_NPU_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    paddlepaddle install NPU en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../other_devices_support/paddlepaddle_install_XPU/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    paddlepaddle install XPU
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../other_devices_support/paddlepaddle_install_XPU_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    paddlepaddle install XPU en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Pipeline deploy
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Pipeline deploy
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pipeline_deploy/edge_deploy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Edge deploy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pipeline_deploy/edge_deploy_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Edge deploy en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pipeline_deploy/high_performance_inference/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    High performance inference
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pipeline_deploy/high_performance_inference_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    High performance inference en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pipeline_deploy/service_deploy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Service deploy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pipeline_deploy/service_deploy_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Service deploy en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Pipeline usage
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            Pipeline usage
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pipeline_usage/pipeline_develop_guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pipeline develop guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pipeline_usage/pipeline_develop_guide_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pipeline develop guide en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_11_3" id="__nav_11_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Instructions
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_3">
+            <span class="md-nav__icon md-icon"></span>
+            Instructions
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pipeline_usage/instructions/pipeline_CLI_usage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    pipeline CLI usage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pipeline_usage/instructions/pipeline_CLI_usage_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    pipeline CLI usage en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pipeline_usage/instructions/pipeline_python_API/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    pipeline python API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pipeline_usage/instructions/pipeline_python_API_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    pipeline python API en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_11_4" id="__nav_11_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_4">
+            <span class="md-nav__icon md-icon"></span>
+            Tutorials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_11_4_1" id="__nav_11_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cv pipelines
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_11_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            Cv pipelines
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pipeline_usage/tutorials/cv_pipelines/image_anomaly_detection/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Image anomaly detection
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pipeline_usage/tutorials/cv_pipelines/image_anomaly_detection_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Image anomaly detection en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pipeline_usage/tutorials/cv_pipelines/image_classification/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Image classification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pipeline_usage/tutorials/cv_pipelines/image_classification_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Image classification en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pipeline_usage/tutorials/cv_pipelines/image_multi_label_classification/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Image multi label classification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pipeline_usage/tutorials/cv_pipelines/image_multi_label_classification_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Image multi label classification en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pipeline_usage/tutorials/cv_pipelines/instance_segmentation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Instance segmentation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pipeline_usage/tutorials/cv_pipelines/instance_segmentation_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Instance segmentation en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pipeline_usage/tutorials/cv_pipelines/object_detection/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Object detection
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pipeline_usage/tutorials/cv_pipelines/object_detection_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Object detection en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pipeline_usage/tutorials/cv_pipelines/semantic_segmentation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semantic segmentation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pipeline_usage/tutorials/cv_pipelines/semantic_segmentation_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semantic segmentation en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pipeline_usage/tutorials/cv_pipelines/small_object_detection/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Small object detection
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pipeline_usage/tutorials/cv_pipelines/small_object_detection_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Small object detection en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_11_4_2" id="__nav_11_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Information extraction pipelines
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_11_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Information extraction pipelines
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pipeline_usage/tutorials/information_extraction_pipelines/document_scene_information_extraction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Document scene information extraction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pipeline_usage/tutorials/information_extraction_pipelines/document_scene_information_extraction_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Document scene information extraction en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_11_4_3" id="__nav_11_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Ocr pipelines
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_11_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Ocr pipelines
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pipeline_usage/tutorials/ocr_pipelines/OCR/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OCR
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pipeline_usage/tutorials/ocr_pipelines/OCR_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OCR en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pipeline_usage/tutorials/ocr_pipelines/formula_recognition/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Formula recognition
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pipeline_usage/tutorials/ocr_pipelines/formula_recognition_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Formula recognition en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pipeline_usage/tutorials/ocr_pipelines/layout_parsing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Layout parsing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pipeline_usage/tutorials/ocr_pipelines/layout_parsing_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Layout parsing en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pipeline_usage/tutorials/ocr_pipelines/seal_recognition/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Seal recognition
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pipeline_usage/tutorials/ocr_pipelines/seal_recognition_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Seal recognition en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pipeline_usage/tutorials/ocr_pipelines/table_recognition/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Table recognition
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pipeline_usage/tutorials/ocr_pipelines/table_recognition_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Table recognition en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_11_4_4" id="__nav_11_4_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Time series pipelines
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_11_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Time series pipelines
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pipeline_usage/tutorials/time_series_pipelines/time_series_anomaly_detection/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Time series anomaly detection
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pipeline_usage/tutorials/time_series_pipelines/time_series_anomaly_detection_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Time series anomaly detection en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pipeline_usage/tutorials/time_series_pipelines/time_series_classification/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Time series classification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pipeline_usage/tutorials/time_series_pipelines/time_series_classification_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Time series classification en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pipeline_usage/tutorials/time_series_pipelines/time_series_forecasting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Time series forecasting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pipeline_usage/tutorials/time_series_pipelines/time_series_forecasting_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Time series forecasting en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Practical tutorials
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            Practical tutorials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../document_scene_information_extraction%28layout_detection%29_tutorial/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Document scene information extraction(layout detection) tutorial
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../document_scene_information_extraction%28layout_detection%29_tutorial_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Document scene information extraction(layout detection) tutorial en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../image_classification_garbage_tutorial/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Image classification garbage tutorial
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../image_classification_garbage_tutorial_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Image classification garbage tutorial en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../instance_segmentation_remote_sensing_tutorial/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Instance segmentation remote sensing tutorial
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../instance_segmentation_remote_sensing_tutorial_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Instance segmentation remote sensing tutorial en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../object_detection_fall_tutorial/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Object detection fall tutorial
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../object_detection_fall_tutorial_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Object detection fall tutorial en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../object_detection_fashion_pedia_tutorial/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Object detection fashion pedia tutorial
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../object_detection_fashion_pedia_tutorial_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Object detection fashion pedia tutorial en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ocr_det_license_tutorial/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ocr det license tutorial
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ocr_det_license_tutorial_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ocr det license tutorial en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ocr_rec_chinese_tutorial/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ocr rec chinese tutorial
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ocr_rec_chinese_tutorial_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ocr rec chinese tutorial en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../semantic_segmentation_road_tutorial/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semantic segmentation road tutorial
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../semantic_segmentation_road_tutorial_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semantic segmentation road tutorial en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Ts anomaly detection
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Ts anomaly detection
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 选择产线
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 快速体验
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 选择模型
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 选择模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 数据集校验
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3 数据集格式转换/数据集划分（非必选）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 模型训练和评估
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 模型训练和评估">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 模型训练
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 模型评估
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3 模型调优
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.开发集成/部署
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ts_anomaly_detection_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ts anomaly detection en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ts_classification/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ts classification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ts_classification_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ts classification en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ts_forecast/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ts forecast
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ts_forecast_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ts forecast en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Support list
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            Support list
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../support_list/model_list_dcu/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Model list dcu
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../support_list/model_list_dcu_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Model list dcu en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../support_list/model_list_mlu/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Model list mlu
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../support_list/model_list_mlu_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Model list mlu en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../support_list/model_list_npu/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Model list npu
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../support_list/model_list_npu_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Model list npu en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../support_list/model_list_xpu/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Model list xpu
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../support_list/model_list_xpu_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Model list xpu en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../support_list/models_list/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Models list
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../support_list/models_list_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Models list en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../support_list/pipelines_list/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pipelines list
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../support_list/pipelines_list_dcu/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pipelines list dcu
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../support_list/pipelines_list_dcu_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pipelines list dcu en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../support_list/pipelines_list_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pipelines list en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../support_list/pipelines_list_mlu/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pipelines list mlu
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../support_list/pipelines_list_mlu_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pipelines list mlu en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../support_list/pipelines_list_npu/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pipelines list npu
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../support_list/pipelines_list_npu_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pipelines list npu en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../support_list/pipelines_list_xpu/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pipelines list xpu
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../support_list/pipelines_list_xpu_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pipelines list xpu en
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 选择产线
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 快速体验
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 选择模型
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 选择模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 数据集校验
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3 数据集格式转换/数据集划分（非必选）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 模型训练和评估
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 模型训练和评估">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 模型训练
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 模型评估
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3 模型调优
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.开发集成/部署
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
 
 <p>简体中文 | <a href="../ts_anomaly_detection_en/">English</a></p>
 <h1 id="paddlex-30">PaddleX 3.0 时序异常检测模型产线———设备异常检测应用教程</h1>
@@ -1312,83 +6540,106 @@ for res in output:
 <li>此外，PaddleX 时序异常检测产线也提供了服务化部署方式，详细说明如下：</li>
 <li>服务化部署：服务化部署是实际生产环境中常见的一种部署形式。通过将推理功能封装为服务，客户端可以通过网络请求来访问这些服务，以获取推理结果。PaddleX 支持用户以低成本实现产线的服务化部署，详细的服务化部署流程请参考<a href="../../pipeline_deploy/service_deploy/">PaddleX 服务化部署指南</a>。
 您可以根据需要选择合适的方式部署模型产线，进而进行后续的 AI 应用集成。</li>
-</ol></div>
-            </div>
-        </div>
+</ol>
 
-        <footer class="col-md-12">
-            <hr>
-            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
-        </footer>
-        <script src="../../js/bootstrap.bundle.min.js"></script>
-        <script>
-            var base_url = "../..",
-                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
-        </script>
-        <script src="../../js/base.js"></script>
-        <script src="../../search/main.js"></script>
-        <script src="../../js/version-select.js"></script>
 
-        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="searchModalLabel">Search</h4>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
             </div>
-            <div class="modal-body">
-                <p>From here you can search these documents. Enter your search terms below.</p>
-                <form>
-                    <div class="form-group">
-                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
-                    </div>
-                </form>
-                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
-            </div>
-            <div class="modal-footer">
-            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
-    </div>
-</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../semantic_segmentation_road_tutorial_en/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Semantic segmentation road tutorial en">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
             </div>
-            <div class="modal-body">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th style="width: 20%;">Keys</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="help shortcut"><kbd>?</kbd></td>
-                    <td>Open this help</td>
-                  </tr>
-                  <tr>
-                    <td class="next shortcut"><kbd>n</kbd></td>
-                    <td>Next page</td>
-                  </tr>
-                  <tr>
-                    <td class="prev shortcut"><kbd>p</kbd></td>
-                    <td>Previous page</td>
-                  </tr>
-                  <tr>
-                    <td class="search shortcut"><kbd>s</kbd></td>
-                    <td>Search</td>
-                  </tr>
-                </tbody>
-              </table>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Semantic segmentation road tutorial en
+              </div>
             </div>
-            <div class="modal-footer">
+          </a>
+        
+        
+          
+          <a href="../ts_anomaly_detection_en/" class="md-footer__link md-footer__link--next" aria-label="Next: Ts anomaly detection en">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Ts anomaly detection en
+              </div>
             </div>
-        </div>
-    </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
 </div>
-
-    </body>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["announce.dismiss", "content.tooltips", "content.code.copy", "content.tabs.link", "content.footnote.tooltips", "content.action.edit", "content.action.view", "navigation.expand", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "navigation.footer", "navigation.indexes", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
 </html>
