@@ -6,62 +6,55 @@ theme:
   # custom_dir: overrides
   features:
     - announce.dismiss
-    - content.tooltips
-    - content.code.copy
-    - content.tabs.link
-    - content.footnote.tooltips
     - content.action.edit
     - content.action.view
-    - navigation.expand  # 默认打开所有的字节
-    - navigation.tabs # 顶级索引被作为tab
-    - navigation.tabs.sticky # tab始终可见
-    - navigation.top # 开启顶部导航栏
-    - navigation.tracking # 导航栏跟踪
+    - content.code.annotate
+    - content.code.copy
+    # - content.code.select
+    # - content.footnote.tooltips
+    # - content.tabs.link
+    - content.tooltips
+    # - header.autohide
+    # - navigation.expand
     - navigation.footer
     - navigation.indexes
-    - search.highlight # 搜索高亮
-    - search.share # 搜索分享
-    - search.suggest # 搜索建议
-    - toc.follow # 目录跟踪-页面右侧的小目录
-
+    # - navigation.instant
+    # - navigation.instant.prefetch
+    # - navigation.instant.progress
+    # - navigation.prune
+    - navigation.sections
+    - navigation.tabs
+    # - navigation.tabs.sticky
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+    # - toc.integrate
   palette:
-    - media: "(prefers-color-scheme: light)" # 浅色
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/link
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
       scheme: default
       primary: indigo
       accent: indigo
       toggle:
-        icon: material/brightness-7
+        icon: material/toggle-switch
         name: Switch to dark mode
-    - media: "(prefers-color-scheme: dark)" # 深色
+    - media: "(prefers-color-scheme: dark)"
       scheme: slate
       primary: black
       accent: indigo
       toggle:
-        icon: material/brightness-4
+        icon: material/toggle-switch-off
         name: Switch to system preference
-
+  font:
+    text: Roboto
+    code: Roboto Mono
+  favicon: assets/favicon.png
   icon:
     logo: logo
-    previous: fontawesome/solid/angle-left
-    next: fontawesome/solid/angle-right
-    repo: fontawesome/brands/github
-    edit: material/pencil
-    view: material/eye
-    tag:
-      default-tag: fontawesome/solid/tag
-      hardware-tag: fontawesome/solid/microchip
-      software-tag: fontawesome/solid/laptop-code
-    admonition:
-      note: octicons/tag-16
-      abstract: octicons/checklist-16
-      info: octicons/info-16
-      tip: octicons/squirrel-16
-      success: octicons/check-16
-      question: octicons/question-16
-      warning: octicons/alert-16
-      failure: octicons/x-circle-16
-      danger: octicons/zap-16
-      bug: octicons/bug-16
-      example: octicons/beaker-16
-      quote: octicons/quote-16
 
