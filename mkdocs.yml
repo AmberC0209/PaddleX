@@ -3,7 +3,7 @@ theme:
   name: material
   # logo: ./static/images/logo.jpg
   # favicon: ./static/images/logo.jpg
-  custom_dir: overrides
+  # custom_dir: overrides
   features:
     - announce.dismiss
     - content.tooltips
