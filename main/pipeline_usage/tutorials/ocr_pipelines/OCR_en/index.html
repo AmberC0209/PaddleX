@@ -1,0 +1,1833 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>OCR en - My Docs</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../../../css/brands.min.css" rel="stylesheet">
+        <link href="../../../../css/solid.min.css" rel="stylesheet">
+        <link href="../../../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../../../../css/version-select.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">My Docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../../../.." class="nav-link">Welcome to MkDocs</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../CHANGLOG/" class="nav-link">CHANGLOG</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../CHANGLOG_en/" class="nav-link">CHANGLOG en</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../FAQ/" class="nav-link">FAQ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../../FAQ_en/" class="nav-link">FAQ en</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Data annotations</a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Cv modules</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../../data_annotations/cv_modules/image_classification/" class="dropdown-item">Image classification</a>
+</li>
+            
+<li>
+    <a href="../../../../data_annotations/cv_modules/image_classification_en/" class="dropdown-item">Image classification en</a>
+</li>
+            
+<li>
+    <a href="../../../../data_annotations/cv_modules/image_feature/" class="dropdown-item">Image feature</a>
+</li>
+            
+<li>
+    <a href="../../../../data_annotations/cv_modules/image_feature_en/" class="dropdown-item">Image feature en</a>
+</li>
+            
+<li>
+    <a href="../../../../data_annotations/cv_modules/instance_segmentation/" class="dropdown-item">Instance segmentation</a>
+</li>
+            
+<li>
+    <a href="../../../../data_annotations/cv_modules/instance_segmentation_en/" class="dropdown-item">Instance segmentation en</a>
+</li>
+            
+<li>
+    <a href="../../../../data_annotations/cv_modules/ml_classification/" class="dropdown-item">Ml classification</a>
+</li>
+            
+<li>
+    <a href="../../../../data_annotations/cv_modules/ml_classification_en/" class="dropdown-item">Ml classification en</a>
+</li>
+            
+<li>
+    <a href="../../../../data_annotations/cv_modules/object_detection/" class="dropdown-item">Object detection</a>
+</li>
+            
+<li>
+    <a href="../../../../data_annotations/cv_modules/object_detection_en/" class="dropdown-item">Object detection en</a>
+</li>
+            
+<li>
+    <a href="../../../../data_annotations/cv_modules/semantic_segmentation/" class="dropdown-item">Semantic segmentation</a>
+</li>
+            
+<li>
+    <a href="../../../../data_annotations/cv_modules/semantic_segmentation_en/" class="dropdown-item">Semantic segmentation en</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Ocr modules</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../../data_annotations/ocr_modules/table_recognition/" class="dropdown-item">Table recognition</a>
+</li>
+            
+<li>
+    <a href="../../../../data_annotations/ocr_modules/table_recognition_en/" class="dropdown-item">Table recognition en</a>
+</li>
+            
+<li>
+    <a href="../../../../data_annotations/ocr_modules/text_detection_recognition/" class="dropdown-item">Text detection recognition</a>
+</li>
+            
+<li>
+    <a href="../../../../data_annotations/ocr_modules/text_detection_recognition_en/" class="dropdown-item">Text detection recognition en</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Time series modules</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../../data_annotations/time_series_modules/time_series_anomaly_detection/" class="dropdown-item">Time series anomaly detection</a>
+</li>
+            
+<li>
+    <a href="../../../../data_annotations/time_series_modules/time_series_anomaly_detection_en/" class="dropdown-item">Time series anomaly detection en</a>
+</li>
+            
+<li>
+    <a href="../../../../data_annotations/time_series_modules/time_series_classification/" class="dropdown-item">Time series classification</a>
+</li>
+            
+<li>
+    <a href="../../../../data_annotations/time_series_modules/time_series_classification_en/" class="dropdown-item">Time series classification en</a>
+</li>
+            
+<li>
+    <a href="../../../../data_annotations/time_series_modules/time_series_forecasting/" class="dropdown-item">Time series forecasting</a>
+</li>
+            
+<li>
+    <a href="../../../../data_annotations/time_series_modules/time_series_forecasting_en/" class="dropdown-item">Time series forecasting en</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Installation</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../../installation/installation/" class="dropdown-item">Installation</a>
+</li>
+                                    
+<li>
+    <a href="../../../../installation/installation_en/" class="dropdown-item">Installation en</a>
+</li>
+                                    
+<li>
+    <a href="../../../../installation/paddlepaddle_install/" class="dropdown-item">Paddlepaddle install</a>
+</li>
+                                    
+<li>
+    <a href="../../../../installation/paddlepaddle_install_en/" class="dropdown-item">Paddlepaddle install en</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Module usage</a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Instructions</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../../module_usage/instructions/config_parameters_common/" class="dropdown-item">Config parameters common</a>
+</li>
+            
+<li>
+    <a href="../../../../module_usage/instructions/config_parameters_common_en/" class="dropdown-item">Config parameters common en</a>
+</li>
+            
+<li>
+    <a href="../../../../module_usage/instructions/config_parameters_time_series/" class="dropdown-item">Config parameters time series</a>
+</li>
+            
+<li>
+    <a href="../../../../module_usage/instructions/config_parameters_time_series_en/" class="dropdown-item">Config parameters time series en</a>
+</li>
+            
+<li>
+    <a href="../../../../module_usage/instructions/model_python_API/" class="dropdown-item">model python API</a>
+</li>
+            
+<li>
+    <a href="../../../../module_usage/instructions/model_python_API_en/" class="dropdown-item">model python API en</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Tutorials</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Cv modules</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../../module_usage/tutorials/cv_modules/anomaly_detection/" class="dropdown-item">Anomaly detection</a>
+</li>
+            
+<li>
+    <a href="../../../../module_usage/tutorials/cv_modules/anomaly_detection_en/" class="dropdown-item">Anomaly detection en</a>
+</li>
+            
+<li>
+    <a href="../../../../module_usage/tutorials/cv_modules/face_detection/" class="dropdown-item">Face detection</a>
+</li>
+            
+<li>
+    <a href="../../../../module_usage/tutorials/cv_modules/face_detection_en/" class="dropdown-item">Face detection en</a>
+</li>
+            
+<li>
+    <a href="../../../../module_usage/tutorials/cv_modules/human_detection/" class="dropdown-item">Human detection</a>
+</li>
+            
+<li>
+    <a href="../../../../module_usage/tutorials/cv_modules/human_detection_en/" class="dropdown-item">Human detection en</a>
+</li>
+            
+<li>
+    <a href="../../../../module_usage/tutorials/cv_modules/image_classification/" class="dropdown-item">Image classification</a>
+</li>
+            
+<li>
+    <a href="../../../../module_usage/tutorials/cv_modules/image_classification_en/" class="dropdown-item">Image classification en</a>
+</li>
+            
+<li>
+    <a href="../../../../module_usage/tutorials/cv_modules/image_feature/" class="dropdown-item">Image feature</a>
+</li>
+            
+<li>
+    <a href="../../../../module_usage/tutorials/cv_modules/image_feature_en/" class="dropdown-item">Image feature en</a>
+</li>
+            
+<li>
+    <a href="../../../../module_usage/tutorials/cv_modules/instance_segmentation/" class="dropdown-item">Instance segmentation</a>
+</li>
+            
+<li>
+    <a href="../../../../module_usage/tutorials/cv_modules/instance_segmentation_en/" class="dropdown-item">Instance segmentation en</a>
+</li>
+            
+<li>
+    <a href="../../../../module_usage/tutorials/cv_modules/mainbody_detection/" class="dropdown-item">Mainbody detection</a>
+</li>
+            
+<li>
+    <a href="../../../../module_usage/tutorials/cv_modules/mainbody_detection_en/" class="dropdown-item">Mainbody detection en</a>
+</li>
+            
+<li>
+    <a href="../../../../module_usage/tutorials/cv_modules/ml_classification/" class="dropdown-item">Ml classification</a>
+</li>
+            
+<li>
+    <a href="../../../../module_usage/tutorials/cv_modules/ml_classification_en/" class="dropdown-item">Ml classification en</a>
+</li>
+            
+<li>
+    <a href="../../../../module_usage/tutorials/cv_modules/object_detection/" class="dropdown-item">Object detection</a>
+</li>
+            
+<li>
+    <a href="../../../../module_usage/tutorials/cv_modules/object_detection_en/" class="dropdown-item">Object detection en</a>
+</li>
+            
+<li>
+    <a href="../../../../module_usage/tutorials/cv_modules/pedestrian_attribute_recognition/" class="dropdown-item">Pedestrian attribute recognition</a>
+</li>
+            
+<li>
+    <a href="../../../../module_usage/tutorials/cv_modules/pedestrian_attribute_recognition_en/" class="dropdown-item">Pedestrian attribute recognition en</a>
+</li>
+            
+<li>
+    <a href="../../../../module_usage/tutorials/cv_modules/semantic_segmentation/" class="dropdown-item">Semantic segmentation</a>
+</li>
+            
+<li>
+    <a href="../../../../module_usage/tutorials/cv_modules/semantic_segmentation_en/" class="dropdown-item">Semantic segmentation en</a>
+</li>
+            
+<li>
+    <a href="../../../../module_usage/tutorials/cv_modules/small_object_detection/" class="dropdown-item">Small object detection</a>
+</li>
+            
+<li>
+    <a href="../../../../module_usage/tutorials/cv_modules/small_object_detection_en/" class="dropdown-item">Small object detection en</a>
+</li>
+            
+<li>
+    <a href="../../../../module_usage/tutorials/cv_modules/vehicle_attribute_recognition/" class="dropdown-item">Vehicle attribute recognition</a>
+</li>
+            
+<li>
+    <a href="../../../../module_usage/tutorials/cv_modules/vehicle_attribute_recognition_en/" class="dropdown-item">Vehicle attribute recognition en</a>
+</li>
+            
+<li>
+    <a href="../../../../module_usage/tutorials/cv_modules/vehicle_detection/" class="dropdown-item">Vehicle detection</a>
+</li>
+            
+<li>
+    <a href="../../../../module_usage/tutorials/cv_modules/vehicle_detection_en/" class="dropdown-item">Vehicle detection en</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Ocr modules</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../../module_usage/tutorials/ocr_modules/doc_img_orientation_classification/" class="dropdown-item">Doc img orientation classification</a>
+</li>
+            
+<li>
+    <a href="../../../../module_usage/tutorials/ocr_modules/doc_img_orientation_classification_en/" class="dropdown-item">Doc img orientation classification en</a>
+</li>
+            
+<li>
+    <a href="../../../../module_usage/tutorials/ocr_modules/formula_recognition/" class="dropdown-item">Formula recognition</a>
+</li>
+            
+<li>
+    <a href="../../../../module_usage/tutorials/ocr_modules/formula_recognition_en/" class="dropdown-item">Formula recognition en</a>
+</li>
+            
+<li>
+    <a href="../../../../module_usage/tutorials/ocr_modules/layout_detection/" class="dropdown-item">Layout detection</a>
+</li>
+            
+<li>
+    <a href="../../../../module_usage/tutorials/ocr_modules/layout_detection_en/" class="dropdown-item">Layout detection en</a>
+</li>
+            
+<li>
+    <a href="../../../../module_usage/tutorials/ocr_modules/seal_text_detection/" class="dropdown-item">Seal text detection</a>
+</li>
+            
+<li>
+    <a href="../../../../module_usage/tutorials/ocr_modules/seal_text_detection_en/" class="dropdown-item">Seal text detection en</a>
+</li>
+            
+<li>
+    <a href="../../../../module_usage/tutorials/ocr_modules/table_structure_recognition/" class="dropdown-item">Table structure recognition</a>
+</li>
+            
+<li>
+    <a href="../../../../module_usage/tutorials/ocr_modules/table_structure_recognition_en/" class="dropdown-item">Table structure recognition en</a>
+</li>
+            
+<li>
+    <a href="../../../../module_usage/tutorials/ocr_modules/text_detection/" class="dropdown-item">Text detection</a>
+</li>
+            
+<li>
+    <a href="../../../../module_usage/tutorials/ocr_modules/text_detection_en/" class="dropdown-item">Text detection en</a>
+</li>
+            
+<li>
+    <a href="../../../../module_usage/tutorials/ocr_modules/text_image_unwarping/" class="dropdown-item">Text image unwarping</a>
+</li>
+            
+<li>
+    <a href="../../../../module_usage/tutorials/ocr_modules/text_image_unwarping_en/" class="dropdown-item">Text image unwarping en</a>
+</li>
+            
+<li>
+    <a href="../../../../module_usage/tutorials/ocr_modules/text_recognition/" class="dropdown-item">Text recognition</a>
+</li>
+            
+<li>
+    <a href="../../../../module_usage/tutorials/ocr_modules/text_recognition_en/" class="dropdown-item">Text recognition en</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Time series modules</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../../module_usage/tutorials/time_series_modules/time_series_anomaly_detection/" class="dropdown-item">Time series anomaly detection</a>
+</li>
+            
+<li>
+    <a href="../../../../module_usage/tutorials/time_series_modules/time_series_anomaly_detection_en/" class="dropdown-item">Time series anomaly detection en</a>
+</li>
+            
+<li>
+    <a href="../../../../module_usage/tutorials/time_series_modules/time_series_classification/" class="dropdown-item">Time series classification</a>
+</li>
+            
+<li>
+    <a href="../../../../module_usage/tutorials/time_series_modules/time_series_classification_en/" class="dropdown-item">Time series classification en</a>
+</li>
+            
+<li>
+    <a href="../../../../module_usage/tutorials/time_series_modules/time_series_forecasting/" class="dropdown-item">Time series forecasting</a>
+</li>
+            
+<li>
+    <a href="../../../../module_usage/tutorials/time_series_modules/time_series_forecasting_en/" class="dropdown-item">Time series forecasting en</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Other devices support</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../../other_devices_support/multi_devices_use_guide/" class="dropdown-item">Multi devices use guide</a>
+</li>
+                                    
+<li>
+    <a href="../../../../other_devices_support/multi_devices_use_guide_en/" class="dropdown-item">Multi devices use guide en</a>
+</li>
+                                    
+<li>
+    <a href="../../../../other_devices_support/paddlepaddle_install_DCU/" class="dropdown-item">paddlepaddle install DCU</a>
+</li>
+                                    
+<li>
+    <a href="../../../../other_devices_support/paddlepaddle_install_DCU_en/" class="dropdown-item">paddlepaddle install DCU en</a>
+</li>
+                                    
+<li>
+    <a href="../../../../other_devices_support/paddlepaddle_install_MLU/" class="dropdown-item">paddlepaddle install MLU</a>
+</li>
+                                    
+<li>
+    <a href="../../../../other_devices_support/paddlepaddle_install_MLU_en/" class="dropdown-item">paddlepaddle install MLU en</a>
+</li>
+                                    
+<li>
+    <a href="../../../../other_devices_support/paddlepaddle_install_NPU/" class="dropdown-item">paddlepaddle install NPU</a>
+</li>
+                                    
+<li>
+    <a href="../../../../other_devices_support/paddlepaddle_install_NPU_en/" class="dropdown-item">paddlepaddle install NPU en</a>
+</li>
+                                    
+<li>
+    <a href="../../../../other_devices_support/paddlepaddle_install_XPU/" class="dropdown-item">paddlepaddle install XPU</a>
+</li>
+                                    
+<li>
+    <a href="../../../../other_devices_support/paddlepaddle_install_XPU_en/" class="dropdown-item">paddlepaddle install XPU en</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Pipeline deploy</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../../pipeline_deploy/edge_deploy/" class="dropdown-item">Edge deploy</a>
+</li>
+                                    
+<li>
+    <a href="../../../../pipeline_deploy/edge_deploy_en/" class="dropdown-item">Edge deploy en</a>
+</li>
+                                    
+<li>
+    <a href="../../../../pipeline_deploy/high_performance_inference/" class="dropdown-item">High performance inference</a>
+</li>
+                                    
+<li>
+    <a href="../../../../pipeline_deploy/high_performance_inference_en/" class="dropdown-item">High performance inference en</a>
+</li>
+                                    
+<li>
+    <a href="../../../../pipeline_deploy/service_deploy/" class="dropdown-item">Service deploy</a>
+</li>
+                                    
+<li>
+    <a href="../../../../pipeline_deploy/service_deploy_en/" class="dropdown-item">Service deploy en</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Pipeline usage</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../pipeline_develop_guide/" class="dropdown-item">Pipeline develop guide</a>
+</li>
+                                    
+<li>
+    <a href="../../../pipeline_develop_guide_en/" class="dropdown-item">Pipeline develop guide en</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Instructions</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../instructions/pipeline_CLI_usage/" class="dropdown-item">pipeline CLI usage</a>
+</li>
+            
+<li>
+    <a href="../../../instructions/pipeline_CLI_usage_en/" class="dropdown-item">pipeline CLI usage en</a>
+</li>
+            
+<li>
+    <a href="../../../instructions/pipeline_python_API/" class="dropdown-item">pipeline python API</a>
+</li>
+            
+<li>
+    <a href="../../../instructions/pipeline_python_API_en/" class="dropdown-item">pipeline python API en</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Tutorials</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Cv pipelines</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../cv_pipelines/image_anomaly_detection/" class="dropdown-item">Image anomaly detection</a>
+</li>
+            
+<li>
+    <a href="../../cv_pipelines/image_anomaly_detection_en/" class="dropdown-item">Image anomaly detection en</a>
+</li>
+            
+<li>
+    <a href="../../cv_pipelines/image_classification/" class="dropdown-item">Image classification</a>
+</li>
+            
+<li>
+    <a href="../../cv_pipelines/image_classification_en/" class="dropdown-item">Image classification en</a>
+</li>
+            
+<li>
+    <a href="../../cv_pipelines/image_multi_label_classification/" class="dropdown-item">Image multi label classification</a>
+</li>
+            
+<li>
+    <a href="../../cv_pipelines/image_multi_label_classification_en/" class="dropdown-item">Image multi label classification en</a>
+</li>
+            
+<li>
+    <a href="../../cv_pipelines/instance_segmentation/" class="dropdown-item">Instance segmentation</a>
+</li>
+            
+<li>
+    <a href="../../cv_pipelines/instance_segmentation_en/" class="dropdown-item">Instance segmentation en</a>
+</li>
+            
+<li>
+    <a href="../../cv_pipelines/object_detection/" class="dropdown-item">Object detection</a>
+</li>
+            
+<li>
+    <a href="../../cv_pipelines/object_detection_en/" class="dropdown-item">Object detection en</a>
+</li>
+            
+<li>
+    <a href="../../cv_pipelines/semantic_segmentation/" class="dropdown-item">Semantic segmentation</a>
+</li>
+            
+<li>
+    <a href="../../cv_pipelines/semantic_segmentation_en/" class="dropdown-item">Semantic segmentation en</a>
+</li>
+            
+<li>
+    <a href="../../cv_pipelines/small_object_detection/" class="dropdown-item">Small object detection</a>
+</li>
+            
+<li>
+    <a href="../../cv_pipelines/small_object_detection_en/" class="dropdown-item">Small object detection en</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Information extraction pipelines</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../information_extraction_pipelines/document_scene_information_extraction/" class="dropdown-item">Document scene information extraction</a>
+</li>
+            
+<li>
+    <a href="../../information_extraction_pipelines/document_scene_information_extraction_en/" class="dropdown-item">Document scene information extraction en</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Ocr pipelines</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../OCR/" class="dropdown-item">OCR</a>
+</li>
+            
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">OCR en</a>
+</li>
+            
+<li>
+    <a href="../formula_recognition/" class="dropdown-item">Formula recognition</a>
+</li>
+            
+<li>
+    <a href="../formula_recognition_en/" class="dropdown-item">Formula recognition en</a>
+</li>
+            
+<li>
+    <a href="../layout_parsing/" class="dropdown-item">Layout parsing</a>
+</li>
+            
+<li>
+    <a href="../layout_parsing_en/" class="dropdown-item">Layout parsing en</a>
+</li>
+            
+<li>
+    <a href="../seal_recognition/" class="dropdown-item">Seal recognition</a>
+</li>
+            
+<li>
+    <a href="../seal_recognition_en/" class="dropdown-item">Seal recognition en</a>
+</li>
+            
+<li>
+    <a href="../table_recognition/" class="dropdown-item">Table recognition</a>
+</li>
+            
+<li>
+    <a href="../table_recognition_en/" class="dropdown-item">Table recognition en</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Time series pipelines</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../time_series_pipelines/time_series_anomaly_detection/" class="dropdown-item">Time series anomaly detection</a>
+</li>
+            
+<li>
+    <a href="../../time_series_pipelines/time_series_anomaly_detection_en/" class="dropdown-item">Time series anomaly detection en</a>
+</li>
+            
+<li>
+    <a href="../../time_series_pipelines/time_series_classification/" class="dropdown-item">Time series classification</a>
+</li>
+            
+<li>
+    <a href="../../time_series_pipelines/time_series_classification_en/" class="dropdown-item">Time series classification en</a>
+</li>
+            
+<li>
+    <a href="../../time_series_pipelines/time_series_forecasting/" class="dropdown-item">Time series forecasting</a>
+</li>
+            
+<li>
+    <a href="../../time_series_pipelines/time_series_forecasting_en/" class="dropdown-item">Time series forecasting en</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Practical tutorials</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../../practical_tutorials/document_scene_information_extraction%28layout_detection%29_tutorial/" class="dropdown-item">Document scene information extraction(layout detection) tutorial</a>
+</li>
+                                    
+<li>
+    <a href="../../../../practical_tutorials/document_scene_information_extraction%28layout_detection%29_tutorial_en/" class="dropdown-item">Document scene information extraction(layout detection) tutorial en</a>
+</li>
+                                    
+<li>
+    <a href="../../../../practical_tutorials/image_classification_garbage_tutorial/" class="dropdown-item">Image classification garbage tutorial</a>
+</li>
+                                    
+<li>
+    <a href="../../../../practical_tutorials/image_classification_garbage_tutorial_en/" class="dropdown-item">Image classification garbage tutorial en</a>
+</li>
+                                    
+<li>
+    <a href="../../../../practical_tutorials/instance_segmentation_remote_sensing_tutorial/" class="dropdown-item">Instance segmentation remote sensing tutorial</a>
+</li>
+                                    
+<li>
+    <a href="../../../../practical_tutorials/instance_segmentation_remote_sensing_tutorial_en/" class="dropdown-item">Instance segmentation remote sensing tutorial en</a>
+</li>
+                                    
+<li>
+    <a href="../../../../practical_tutorials/object_detection_fall_tutorial/" class="dropdown-item">Object detection fall tutorial</a>
+</li>
+                                    
+<li>
+    <a href="../../../../practical_tutorials/object_detection_fall_tutorial_en/" class="dropdown-item">Object detection fall tutorial en</a>
+</li>
+                                    
+<li>
+    <a href="../../../../practical_tutorials/object_detection_fashion_pedia_tutorial/" class="dropdown-item">Object detection fashion pedia tutorial</a>
+</li>
+                                    
+<li>
+    <a href="../../../../practical_tutorials/object_detection_fashion_pedia_tutorial_en/" class="dropdown-item">Object detection fashion pedia tutorial en</a>
+</li>
+                                    
+<li>
+    <a href="../../../../practical_tutorials/ocr_det_license_tutorial/" class="dropdown-item">Ocr det license tutorial</a>
+</li>
+                                    
+<li>
+    <a href="../../../../practical_tutorials/ocr_det_license_tutorial_en/" class="dropdown-item">Ocr det license tutorial en</a>
+</li>
+                                    
+<li>
+    <a href="../../../../practical_tutorials/ocr_rec_chinese_tutorial/" class="dropdown-item">Ocr rec chinese tutorial</a>
+</li>
+                                    
+<li>
+    <a href="../../../../practical_tutorials/ocr_rec_chinese_tutorial_en/" class="dropdown-item">Ocr rec chinese tutorial en</a>
+</li>
+                                    
+<li>
+    <a href="../../../../practical_tutorials/semantic_segmentation_road_tutorial/" class="dropdown-item">Semantic segmentation road tutorial</a>
+</li>
+                                    
+<li>
+    <a href="../../../../practical_tutorials/semantic_segmentation_road_tutorial_en/" class="dropdown-item">Semantic segmentation road tutorial en</a>
+</li>
+                                    
+<li>
+    <a href="../../../../practical_tutorials/ts_anomaly_detection/" class="dropdown-item">Ts anomaly detection</a>
+</li>
+                                    
+<li>
+    <a href="../../../../practical_tutorials/ts_anomaly_detection_en/" class="dropdown-item">Ts anomaly detection en</a>
+</li>
+                                    
+<li>
+    <a href="../../../../practical_tutorials/ts_classification/" class="dropdown-item">Ts classification</a>
+</li>
+                                    
+<li>
+    <a href="../../../../practical_tutorials/ts_classification_en/" class="dropdown-item">Ts classification en</a>
+</li>
+                                    
+<li>
+    <a href="../../../../practical_tutorials/ts_forecast/" class="dropdown-item">Ts forecast</a>
+</li>
+                                    
+<li>
+    <a href="../../../../practical_tutorials/ts_forecast_en/" class="dropdown-item">Ts forecast en</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Support list</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../../support_list/model_list_dcu/" class="dropdown-item">Model list dcu</a>
+</li>
+                                    
+<li>
+    <a href="../../../../support_list/model_list_dcu_en/" class="dropdown-item">Model list dcu en</a>
+</li>
+                                    
+<li>
+    <a href="../../../../support_list/model_list_mlu/" class="dropdown-item">Model list mlu</a>
+</li>
+                                    
+<li>
+    <a href="../../../../support_list/model_list_mlu_en/" class="dropdown-item">Model list mlu en</a>
+</li>
+                                    
+<li>
+    <a href="../../../../support_list/model_list_npu/" class="dropdown-item">Model list npu</a>
+</li>
+                                    
+<li>
+    <a href="../../../../support_list/model_list_npu_en/" class="dropdown-item">Model list npu en</a>
+</li>
+                                    
+<li>
+    <a href="../../../../support_list/model_list_xpu/" class="dropdown-item">Model list xpu</a>
+</li>
+                                    
+<li>
+    <a href="../../../../support_list/model_list_xpu_en/" class="dropdown-item">Model list xpu en</a>
+</li>
+                                    
+<li>
+    <a href="../../../../support_list/models_list/" class="dropdown-item">Models list</a>
+</li>
+                                    
+<li>
+    <a href="../../../../support_list/models_list_en/" class="dropdown-item">Models list en</a>
+</li>
+                                    
+<li>
+    <a href="../../../../support_list/pipelines_list/" class="dropdown-item">Pipelines list</a>
+</li>
+                                    
+<li>
+    <a href="../../../../support_list/pipelines_list_dcu/" class="dropdown-item">Pipelines list dcu</a>
+</li>
+                                    
+<li>
+    <a href="../../../../support_list/pipelines_list_dcu_en/" class="dropdown-item">Pipelines list dcu en</a>
+</li>
+                                    
+<li>
+    <a href="../../../../support_list/pipelines_list_en/" class="dropdown-item">Pipelines list en</a>
+</li>
+                                    
+<li>
+    <a href="../../../../support_list/pipelines_list_mlu/" class="dropdown-item">Pipelines list mlu</a>
+</li>
+                                    
+<li>
+    <a href="../../../../support_list/pipelines_list_mlu_en/" class="dropdown-item">Pipelines list mlu en</a>
+</li>
+                                    
+<li>
+    <a href="../../../../support_list/pipelines_list_npu/" class="dropdown-item">Pipelines list npu</a>
+</li>
+                                    
+<li>
+    <a href="../../../../support_list/pipelines_list_npu_en/" class="dropdown-item">Pipelines list npu en</a>
+</li>
+                                    
+<li>
+    <a href="../../../../support_list/pipelines_list_xpu/" class="dropdown-item">Pipelines list xpu</a>
+</li>
+                                    
+<li>
+    <a href="../../../../support_list/pipelines_list_xpu_en/" class="dropdown-item">Pipelines list xpu en</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../OCR/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../formula_recognition/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#general-ocr-pipeline-tutorial" class="nav-link">General OCR Pipeline Tutorial</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#1-introduction-to-ocr-pipeline" class="nav-link">1. Introduction to OCR Pipeline</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#2-quick-start" class="nav-link">2. Quick Start</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#3-development-integrationdeployment" class="nav-link">3. Development Integration/Deployment</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#4-custom-development" class="nav-link">4. Custom Development</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#5-multi-hardware-support" class="nav-link">5. Multi-Hardware Support</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p><a href="../OCR/">简体中文</a> | English</p>
+<h1 id="general-ocr-pipeline-tutorial">General OCR Pipeline Tutorial</h1>
+<h2 id="1-introduction-to-ocr-pipeline">1. Introduction to OCR Pipeline</h2>
+<p>OCR (Optical Character Recognition) is a technology that converts text in images into editable text. It is widely used in document digitization, information extraction, and data processing. OCR can recognize printed text, handwritten text, and even certain types of fonts and symbols.</p>
+<p>The General OCR Pipeline is designed to solve text recognition tasks, extracting text information from images and outputting it in text form. PP-OCRv4 is an end-to-end OCR system that achieves millisecond-level text content prediction on CPUs, reaching state-of-the-art (SOTA) performance in open-source projects for general scenarios. Based on this project, developers from academia, industry, and research have rapidly deployed various OCR applications across fields such as general use, manufacturing, finance, transportation, and more.</p>
+<p><img alt="" src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/ocr/01.png" /></p>
+<p><strong>The General OCR Pipeline comprises a text detection module and a text recognition module</strong>, each containing several models. The specific models to use can be selected based on the benchmark data provided below. <strong>If you prioritize model accuracy, choose models with higher accuracy. If you prioritize inference speed, choose models with faster inference. If you prioritize model size, choose models with smaller storage requirements.</strong></p>
+<details>
+   <summary> 👉Model List Details</summary>
+
+**Text detection module:**
+| Model | Detection Hmean (%) | GPU Inference Time (ms) | CPU Inference Time (ms) | Model Size (M) | Description |
+|-|-|-|-|-|-|
+| PP-OCRv4_server_det | 82.69 | 83.3501 | 2434.01 | 109 | The server-side text detection model of PP-OCRv4, featuring higher accuracy and suitable for deployment on high-performance servers |
+| PP-OCRv4_mobile_det | 77.79 | 10.6923 | 120.177 | 4.7 | The mobile text detection model of PP-OCRv4, optimized for efficiency and suitable for deployment on edge devices |
+
+
+**Text recognition module:**
+<table>
+  <tr>
+    <th>Model</th>
+    <th>Recognition Avg Accuracy(%)</th>
+    <th>GPU Inference Time (ms)</th>
+    <th>CPU Inference Time (ms)</th>
+    <th>Model Size (M)</th>
+    <th>Description</th>
+  </tr>
+   <tr>
+        <td>PP-OCRv4_mobile_rec</td>
+        <td>78.20</td>
+        <td>7.95018</td>
+        <td>46.7868</td>
+        <td>10.6 M</td>
+        <td rowspan="2">PP-OCRv4, developed by Baidu's PaddlePaddle Vision Team, is the next version of the PP-OCRv3 text recognition model. By introducing data augmentation schemes, GTC-NRTR guidance branches, and other strategies, it further improves text recognition accuracy without compromising model inference speed. The model offers both server and mobile versions to meet industrial needs in different scenarios.</td>
+    </tr>
+    <tr>
+        <td>PP-OCRv4_server_rec </td>
+        <td>79.20</td>
+        <td>7.19439</td>
+        <td>140.179</td>
+        <td>71.2 M</td>
+    </tr>
+</table>
+
+**Note: The evaluation set for the above accuracy metrics is PaddleOCR's self-built Chinese dataset, covering street scenes, web images, documents, handwriting, and more, with 1.1w images for text recognition. GPU inference time for all models is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.**
+
+
+<table>
+  <tr>
+    <th>Model</th>
+    <th>Recognition Avg Accuracy(%)</th>
+    <th>GPU Inference Time (ms)</th>
+    <th>CPU Inference Time</th>
+    <th>Model Size (M)</th>
+    <th>Description</th>
+  </tr>
+   <tr>
+        <td>ch_SVTRv2_rec</td>
+        <td>68.81</td>
+        <td>8.36801</td>
+        <td>165.706</td>
+        <td>73.9 M</td>
+        <td rowspan="1">SVTRv2, a server-side text recognition model developed by the OpenOCR team at the Vision and Learning Lab (FVL) of Fudan University, also won first place in the OCR End-to-End Recognition Task of the PaddleOCR Algorithm Model Challenge. Its A-rank end-to-end recognition accuracy is 6% higher than PP-OCRv4.
+</td>
+    </tr>
+</table>
+
+**Note: The evaluation set for the above accuracy metrics is the [OCR End-to-End Recognition Task of the PaddleOCR Algorithm Model Challenge - Track 1](https://aistudio.baidu.com/competition/detail/1131/0/introduction) A-rank. GPU inference time for all models is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.**
+
+<table>
+  <tr>
+    <th>Model</th>
+    <th>Recognition Avg Accuracy(%)</th>
+    <th>GPU Inference Time (ms)</th>
+    <th>CPU Inference Time</th>
+    <th>Model Size (M)</th>
+    <th>Description</th>
+  </tr>
+   <tr>
+        <td>ch_RepSVTR_rec</td>
+        <td>65.07</td>
+        <td>10.5047</td>
+        <td>51.5647</td>
+        <td>22.1 M</td>
+        <td rowspan="1">  RepSVTR, a mobile text recognition model based on SVTRv2, won first place in the OCR End-to-End Recognition Task of the PaddleOCR Algorithm Model Challenge. Its B-rank end-to-end recognition accuracy is 2.5% higher than PP-OCRv4, with comparable inference speed.</td>
+    </tr>
+</table>
+
+
+**Note: The evaluation set for the above accuracy metrics is the [OCR End-to-End Recognition Task of the PaddleOCR Algorithm Model Challenge - Track 1](https://aistudio.baidu.com/competition/detail/1131/0/introduction) B-rank. GPU inference time for all models is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.**
+
+</details>
+
+<h2 id="2-quick-start">2. Quick Start</h2>
+<p>PaddleX provides pre-trained models for the OCR Pipeline, allowing you to quickly experience its effects. You can try the General OCR Pipeline online or locally using command line or Python.</p>
+<h3 id="21-online-experience">2.1 Online Experience</h3>
+<p>You can <a href="https://aistudio.baidu.com/community/app/91660/webUI?source=appMineRecent">experience the General OCR Pipeline online</a> using the official demo images for recognition, for example:</p>
+<p><img alt="" src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/ocr/02.png" /></p>
+<p>If you are satisfied with the pipeline's performance, you can directly integrate and deploy it. You can download the deployment package from the cloud or use the <a href="#22-Local Experience">local experience method in Section 2.2</a>. If not satisfied, you can also use your private data to <strong>fine-tune the models in the pipeline online</strong>.</p>
+<h3 id="22-local-experience">2.2 Local Experience</h3>
+<blockquote>
+<p>❗ Before using the General OCR Pipeline locally, ensure you have installed the PaddleX wheel package following the <a href="../../../../installation/installation_en/">PaddleX Installation Guide</a>.</p>
+</blockquote>
+<h4 id="221-command-line-experience">2.2.1 Command Line Experience</h4>
+<ul>
+<li>Experience the OCR Pipeline with a single command:</li>
+</ul>
+<p>Experience the image anomaly detection pipeline with a single command，Use the <a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/general_ocr_002.png">test file</a>, and replace <code>--input</code> with the local path to perform prediction.</p>
+<pre><code class="language-bash">paddlex --pipeline OCR --input general_ocr_002.png --device gpu:0
+</code></pre>
+<p>Parameter explanations:</p>
+<pre><code>--pipeline: The name of the pipeline, here it is OCR.
+--input: The local path or URL of the input image to be processed.
+--device: The GPU index to use (e.g., gpu:0 for the first GPU, gpu:1,2 for the second and third GPUs). You can also choose to use CPU (--device cpu).
+</code></pre>
+<p>When executing the above command, the default OCR Pipeline configuration file is loaded. If you need to customize the configuration file, you can use the following command to obtain it:</p>
+<details>
+   <summary> 👉 Click to expand</summary>
+
+
+<pre><code class="language-bash">paddlex --get_pipeline_config OCR
+</code></pre>
+
+
+After execution, the OCR Pipeline configuration file will be saved in the current directory. If you wish to customize the save location, you can execute the following command (assuming the custom save location is `./my_path`):
+
+
+<pre><code class="language-bash">paddlex --get_pipeline_config OCR --save_path ./my_path --device gpu:0
+</code></pre>
+
+
+After obtaining the Pipeline configuration file, replace `--pipeline` with the configuration file's save path to make the configuration file effective. For example, if the configuration file is saved as `./OCR.yaml`, simply execute:
+
+
+<pre><code class="language-bash">paddlex --pipeline ./OCR.yaml --input general_ocr_002.png --device gpu:0
+</code></pre>
+
+
+Here, parameters such as `--model` and `--device` do not need to be specified, as they will use the parameters in the configuration file. If parameters are still specified, the specified parameters will take precedence.
+
+After running, the result is:
+
+
+<pre><code class="language-bash">{'input_path': 'general_ocr_002.png', 'dt_polys': [[[5, 12], [88, 10], [88, 29], [5, 31]], [[208, 14], [249, 14], [249, 22], [208, 22]], [[695, 15], [824, 15], [824, 60], [695, 60]], [[158, 27], [355, 23], [356, 70], [159, 73]], [[421, 25], [659, 19], [660, 59], [422, 64]], [[337, 104], [460, 102], [460, 127], [337, 129]], [[486, 103], [650, 100], [650, 125], [486, 128]], [[675, 98], [835, 94], [835, 119], [675, 124]], [[64, 114], [192, 110], [192, 131], [64, 134]], [[210, 108], [318, 106], [318, 128], [210, 130]], [[82, 140], [214, 138], [214, 163], [82, 165]], [[226, 136], [328, 136], [328, 161], [226, 161]], [[404, 134], [432, 134], [432, 161], [404, 161]], [[509, 131], [570, 131], [570, 158], [509, 158]], [[730, 138], [771, 138], [771, 154], [730, 154]], [[806, 136], [817, 136], [817, 146], [806, 146]], [[342, 175], [470, 173], [470, 197], [342, 199]], [[486, 173], [616, 171], [616, 196], [486, 198]], [[677, 169], [813, 166], [813, 191], [677, 194]], [[65, 181], [170, 177], [171, 202], [66, 205]], [[96, 208], [171, 205], [172, 230], [97, 232]], [[336, 220], [476, 215], [476, 237], [336, 242]], [[507, 217], [554, 217], [554, 236], [507, 236]], [[87, 229], [204, 227], [204, 251], [87, 254]], [[344, 240], [483, 236], [483, 258], [344, 262]], [[66, 252], [174, 249], [174, 271], [66, 273]], [[75, 279], [264, 272], [265, 297], [76, 303]], [[459, 297], [581, 295], [581, 320], [459, 322]], [[101, 314], [210, 311], [210, 337], [101, 339]], [[68, 344], [165, 340], [166, 365], [69, 368]], [[345, 350], [662, 346], [662, 368], [345, 371]], [[100, 459], [832, 444], [832, 465], [100, 480]]], 'dt_scores': [0.8183103704439653, 0.7609575621092027, 0.8662357274035412, 0.8619508290334809, 0.8495855993183273, 0.8676840017933314, 0.8807986687956436, 0.822308525056085, 0.8686617037621976, 0.8279022169854463, 0.952332847006758, 0.8742692553015098, 0.8477013022907575, 0.8528771493227294, 0.7622965906848765, 0.8492388224448705, 0.8344203789965632, 0.8078477124353284, 0.6300434587457232, 0.8359967356998494, 0.7618617265751318, 0.9481573079350023, 0.8712182945408912, 0.837416955846334, 0.8292475059403851, 0.7860382856406026, 0.7350527486717117, 0.8701022267947695, 0.87172526903969, 0.8779847108088126, 0.7020437651809734, 0.6611684983372949], 'rec_text': ['www.997', '151', 'PASS', '登机牌', 'BOARDING', '舱位 CLASS', '序号SERIALNO.', '座位号SEATNO', '航班 FLIGHT', '日期DATE', 'MU 2379', '03DEC', 'W', '035', 'F', '1', '始发地FROM', '登机口 GATE', '登机时间BDT', '目的地TO', '福州', 'TAIYUAN', 'G11', 'FUZHOU', '身份识别IDNO.', '姓名NAME', 'ZHANGQIWEI', '票号TKTNO.', '张祺伟', '票价FARE', 'ETKT7813699238489/1', '登机口于起飞前10分钟关闭GATESCLOSE1OMINUTESBEFOREDEPARTURETIME'], 'rec_score': [0.9617719054222107, 0.4199012815952301, 0.9652514457702637, 0.9978302121162415, 0.9853208661079407, 0.9445787072181702, 0.9714463949203491, 0.9841841459274292, 0.9564052224159241, 0.9959094524383545, 0.9386572241783142, 0.9825271368026733, 0.9356589317321777, 0.9985442161560059, 0.3965512812137604, 0.15236201882362366, 0.9976775050163269, 0.9547433257102966, 0.9974752068519592, 0.9646636843681335, 0.9907559156417847, 0.9895358681678772, 0.9374122023582458, 0.9909093379974365, 0.9796401262283325, 0.9899340271949768, 0.992210865020752, 0.9478569626808167, 0.9982215762138367, 0.9924325942993164, 0.9941263794898987, 0.96443772315979]}
+......
+</code></pre>
+
+
+Among them, `dt_polys` is the detected text box coordinates, `dt_polys` is the detected text box coordinates, `dt_scores` is the confidence of the detected text box, `rec_text` is the detected text, `rec_score` is the detection Confidence in the text.
+
+![](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/ocr/03.png)
+
+The visualized image not saved by default. You can customize the save path through `--save_path`, and then all results will be saved in the specified path.
+
+</details>
+
+<h4 id="222-integration-via-python-script">2.2.2 Integration via Python Script</h4>
+<ul>
+<li>Quickly perform inference on the production line with just a few lines of code, taking the general OCR production line as an example:</li>
+</ul>
+<pre><code class="language-python">from paddlex import create_pipeline
+
+pipeline = create_pipeline(pipeline=&quot;OCR&quot;)
+
+output = pipeline.predict(&quot;general_ocr_002.png&quot;)
+for res in output:
+    res.print()
+    res.save_to_img(&quot;./output/&quot;)
+</code></pre>
+<blockquote>
+<p>❗ The results obtained from running the Python script are the same as those from the command line.</p>
+</blockquote>
+<p>The Python script above executes the following steps:</p>
+<p>（1）Instantiate the OCR production line object using <code>create_pipeline</code>: Specific parameter descriptions are as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pipeline</code></td>
+<td>The name of the production line or the path to the production line configuration file. If it is the name of the production line, it must be supported by PaddleX.</td>
+<td><code>str</code></td>
+<td>None</td>
+</tr>
+<tr>
+<td><code>device</code></td>
+<td>The device for production line model inference. Supports: "gpu", "cpu".</td>
+<td><code>str</code></td>
+<td><code>gpu</code></td>
+</tr>
+<tr>
+<td><code>use_hpip</code></td>
+<td>Whether to enable high-performance inference, only available if the production line supports it.</td>
+<td><code>bool</code></td>
+<td><code>False</code></td>
+</tr>
+</tbody>
+</table>
+<p>（2）Invoke the <code>predict</code> method of the OCR production line object for inference prediction: The <code>predict</code> method parameter is <code>x</code>, which is used to input data to be predicted, supporting multiple input methods, as shown in the following examples:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter Type</th>
+<th>Parameter Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Python Var</td>
+<td>Supports directly passing in Python variables, such as numpy.ndarray representing image data.</td>
+</tr>
+<tr>
+<td>str</td>
+<td>Supports passing in the path of the file to be predicted, such as the local path of an image file: <code>/root/data/img.jpg</code>.</td>
+</tr>
+<tr>
+<td>str</td>
+<td>Supports passing in the URL of the file to be predicted, such as the network URL of an image file: <a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/general_ocr_002.png">Example</a>.</td>
+</tr>
+<tr>
+<td>str</td>
+<td>Supports passing in a local directory, which should contain files to be predicted, such as the local path: <code>/root/data/</code>.</td>
+</tr>
+<tr>
+<td>dict</td>
+<td>Supports passing in a dictionary type, where the key needs to correspond to a specific task, such as "img" for image classification tasks. The value of the dictionary supports the above types of data, for example: <code>{"img": "/root/data1"}</code>.</td>
+</tr>
+<tr>
+<td>list</td>
+<td>Supports passing in a list, where the list elements need to be of the above types of data, such as <code>[numpy.ndarray, numpy.ndarray], ["/root/data/img1.jpg", "/root/data/img2.jpg"], ["/root/data1", "/root/data2"], [{"img": "/root/data1"}, {"img": "/root/data2/img.jpg"}]</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>（3）Obtain the prediction results by calling the <code>predict</code> method: The <code>predict</code> method is a <code>generator</code>, so prediction results need to be obtained through iteration. The <code>predict</code> method predicts data in batches, so the prediction results are in the form of a list.</p>
+<p>（4）Process the prediction results: The prediction result for each sample is of <code>dict</code> type and supports printing or saving to files, with the supported file types depending on the specific pipeline. For example:</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+<th>Method Parameters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>print</td>
+<td>Prints results to the terminal</td>
+<td><code>- format_json</code>: bool, whether to format the output content with json indentation, default is True;<br><code>- indent</code>: int, json formatting setting, only valid when format_json is True, default is 4;<br><code>- ensure_ascii</code>: bool, json formatting setting, only valid when format_json is True, default is False;</td>
+</tr>
+<tr>
+<td>save_to_json</td>
+<td>Saves results as a json file</td>
+<td><code>- save_path</code>: str, the path to save the file, when it's a directory, the saved file name is consistent with the input file type;<br><code>- indent</code>: int, json formatting setting, default is 4;<br><code>- ensure_ascii</code>: bool, json formatting setting, default is False;</td>
+</tr>
+<tr>
+<td>save_to_img</td>
+<td>Saves results as an image file</td>
+<td><code>- save_path</code>: str, the path to save the file, when it's a directory, the saved file name is consistent with the input file type;</td>
+</tr>
+</tbody>
+</table>
+<p>If you have a configuration file, you can customize the configurations of the image anomaly detection pipeline by simply modifying the <code>pipeline</code> parameter in the <code>create_pipeline</code> method to the path of the pipeline configuration file.</p>
+<p>For example, if your configuration file is saved at <code>./my_path/OCR.yaml</code>, you only need to execute:</p>
+<pre><code class="language-python">from paddlex import create_pipeline
+pipeline = create_pipeline(pipeline=&quot;./my_path/OCR.yaml&quot;)
+output = pipeline.predict(&quot;general_ocr_002.png&quot;)
+for res in output:
+    res.print()
+    res.save_to_img(&quot;./output/&quot;)
+</code></pre>
+<h2 id="3-development-integrationdeployment">3. Development Integration/Deployment</h2>
+<p>If the general OCR pipeline meets your requirements for inference speed and accuracy, you can proceed directly with development integration/deployment.</p>
+<p>If you need to apply the general OCR pipeline directly in your Python project, refer to the example code in <a href="#222-Integration-via-Python-Script">2.2.2 Python Script Integration</a>.</p>
+<p>Additionally, PaddleX provides three other deployment methods, detailed as follows:</p>
+<p>🚀 <strong>High-Performance Inference</strong>: In actual production environments, many applications have stringent standards for the performance metrics of deployment strategies (especially response speed) to ensure efficient system operation and smooth user experience. To this end, PaddleX provides high-performance inference plugins aimed at deeply optimizing model inference and pre/post-processing for significant end-to-end speedups. For detailed high-performance inference procedures, refer to the <a href="../../../../pipeline_deploy/high_performance_inference_en/">PaddleX High-Performance Inference Guide</a>.</p>
+<p>☁️ <strong>Service-Oriented Deployment</strong>: Service-oriented deployment is a common deployment form in actual production environments. By encapsulating inference functions as services, clients can access these services through network requests to obtain inference results. PaddleX supports users in achieving low-cost service-oriented deployment of pipelines. For detailed service-oriented deployment procedures, refer to the <a href="../../../../pipeline_deploy/service_deploy_en/">PaddleX Service-Oriented Deployment Guide</a>.</p>
+<p>Below are the API references and multi-language service invocation examples:</p>
+<details>
+<summary>API Reference</summary>
+
+For all operations provided by the service:
+
+- Both the response body and the request body for POST requests are JSON data (JSON objects).
+- When the request is processed successfully, the response status code is `200`, and the response body properties are as follows:
+
+    | Name | Type | Description |
+    |------|------|-------------|
+    |`errorCode`|`integer`|Error code. Fixed as `0`.|
+    |`errorMsg`|`string`|Error description. Fixed as `"Success"`.|
+
+    The response body may also have a `result` property of type `object`, which stores the operation result information.
+
+- When the request is not processed successfully, the response body properties are as follows:
+
+    | Name | Type | Description |
+    |------|------|-------------|
+    |`errorCode`|`integer`|Error code. Same as the response status code.|
+    |`errorMsg`|`string`|Error description.|
+
+Operations provided by the service:
+
+- **`infer`**
+
+    Obtain OCR results from an image.
+
+    `POST /ocr`
+
+    - Request body properties:
+
+        | Name | Type | Description | Required |
+        |------|------|-------------|----------|
+        |`image`|`string`|The URL of an image file accessible by the service or the Base64 encoded result of the image file content.|Yes|
+        |`inferenceParams`|`object`|Inference parameters.|No|
+
+        Properties of `inferenceParams`:
+
+        | Name | Type | Description | Required |
+        |------|------|-------------|----------|
+        |`maxLongSide`|`integer`|During inference, if the length of the longer side of the input image for the text detection model is greater than `maxLongSide`, the image will be scaled so that the length of the longer side equals `maxLongSide`.|No|
+
+    - When the request is processed successfully, the `result` in the response body has the following properties:
+
+        | Name | Type | Description |
+        |------|------|-------------|
+        |`texts`|`array`|Positions, contents, and scores of texts.|
+        |`image`|`string`|OCR result image with detected text positions annotated. The image is in JPEG format and encoded in Base64.|
+
+        Each element in `texts` is an `object` with the following properties:
+
+        | Name | Type | Description |
+        |------|------|-------------|
+        |`poly`|`array`|Text position. Elements in the array are the vertex coordinates of the polygon enclosing the text.|
+        |`text`|`string`|Text content.|
+        |`score`|`number`|Text recognition score.|
+
+        Example of `result`:
+
+        ```json
+        {
+          "texts": [
+            {
+              "poly": [
+                [
+                  444,
+                  244
+                ],
+                [
+                  705,
+                  244
+                ],
+                [
+                  705,
+                  311
+                ],
+                [
+                  444,
+                  311
+                ]
+              ],
+              "text": "Beijing South Railway Station",
+              "score": 0.9
+            },
+            {
+              "poly": [
+                [
+                  992,
+                  248
+                ],
+                [
+                  1263,
+                  251
+                ],
+                [
+                  1263,
+                  318
+                ],
+                [
+                  992,
+                  315
+                ]
+              ],
+              "text": "Tianjin Railway Station",
+              "score": 0.5
+            }
+          ],
+          "image": "xxxxxx"
+        }
+        ```
+
+</details>
+
+<details>
+<summary>Multi-Language Service Invocation Examples</summary>
+
+<details>
+<summary>Python</summary>
+
+
+<pre><code class="language-python">import base64
+import requests
+
+API_URL = &quot;http://localhost:8080/ocr&quot;
+image_path = &quot;./demo.jpg&quot;
+output_image_path = &quot;./out.jpg&quot;
+
+with open(image_path, &quot;rb&quot;) as file:
+    image_bytes = file.read()
+    image_data = base64.b64encode(image_bytes).decode(&quot;ascii&quot;)
+
+payload = {&quot;image&quot;: image_data}
+
+response = requests.post(API_URL, json=payload)
+
+assert response.status_code == 200
+result = response.json()[&quot;result&quot;]
+with open(output_image_path, &quot;wb&quot;) as file:
+    file.write(base64.b64decode(result[&quot;image&quot;]))
+print(f&quot;Output image saved at {output_image_path}&quot;)
+print(&quot;\nDetected texts:&quot;)
+print(result[&quot;texts&quot;])
+</code></pre>
+
+
+</details>
+
+<details>
+<summary>C++</summary>
+
+
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &quot;cpp-httplib/httplib.h&quot; // https://github.com/Huiyicc/cpp-httplib
+#include &quot;nlohmann/json.hpp&quot; // https://github.com/nlohmann/json
+#include &quot;base64.hpp&quot; // https://github.com/tobiaslocker/base64
+
+int main() {
+    httplib::Client client(&quot;localhost:8080&quot;);
+    const std::string imagePath = &quot;./demo.jpg&quot;;
+    const std::string outputImagePath = &quot;./out.jpg&quot;;
+
+    httplib::Headers headers = {
+        {&quot;Content-Type&quot;, &quot;application/json&quot;}
+    };
+
+    std::ifstream file(imagePath, std::ios::binary | std::ios::ate);
+    std::streamsize size = file.tellg();
+    file.seekg(0, std::ios::beg);
+
+    std::vector&lt;char&gt; buffer(size);
+    if (!file.read(buffer.data(), size)) {
+        std::cerr &lt;&lt; &quot;Error reading file.&quot; &lt;&lt; std::endl;
+        return 1;
+    }
+    std::string bufferStr(reinterpret_cast&lt;const char*&gt;(buffer.data()), buffer.size());
+    std::string encodedImage = base64::to_base64(bufferStr);
+
+    nlohmann::json jsonObj;
+    jsonObj[&quot;image&quot;] = encodedImage;
+    std::string body = jsonObj.dump();
+
+    auto response = client.Post(&quot;/ocr&quot;, headers, body, &quot;application/json&quot;);
+    if (response &amp;&amp; response-&gt;status == 200) {
+        nlohmann::json jsonResponse = nlohmann::json::parse(response-&gt;body);
+        auto result = jsonResponse[&quot;result&quot;];
+
+        encodedImage = result[&quot;image&quot;];
+        std::string decodedString = base64::from_base64(encodedImage);
+        std::vector&lt;unsigned char&gt; decodedImage(decodedString.begin(), decodedString.end());
+        std::ofstream outputImage(outPutImagePath, std::ios::binary | std::ios::out);
+        if (outputImage.is_open()) {
+            outputImage.write(reinterpret_cast&lt;char*&gt;(decodedImage.data()), decodedImage.size());
+            outputImage.close();
+            std::cout &lt;&lt; &quot;Output image saved at &quot; &lt;&lt; outPutImagePath &lt;&lt; std::endl;
+        } else {
+            std::cerr &lt;&lt; &quot;Unable to open file for writing: &quot; &lt;&lt; outPutImagePath &lt;&lt; std::endl;
+        }
+
+        auto texts = result[&quot;texts&quot;];
+        std::cout &lt;&lt; &quot;\nDetected texts:&quot; &lt;&lt; std::endl;
+        for (const auto&amp; text : texts) {
+            std::cout &lt;&lt; text &lt;&lt; std::endl;
+        }
+    } else {
+        std::cout &lt;&lt; &quot;Failed to send HTTP request.&quot; &lt;&lt; std::endl;
+        return 1;
+    }
+
+    return 0;
+}
+</code></pre>
+
+
+</details>
+
+<details>
+<summary>Java</summary>
+
+
+<pre><code class="language-java">import okhttp3.*;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.node.ObjectNode;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.Base64;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        String API_URL = &quot;http://localhost:8080/ocr&quot;;
+        String imagePath = &quot;./demo.jpg&quot;;
+        String outputImagePath = &quot;./out.jpg&quot;;
+
+        File file = new File(imagePath);
+        byte[] fileContent = java.nio.file.Files.readAllBytes(file.toPath());
+        String imageData = Base64.getEncoder().encodeToString(fileContent);
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        ObjectNode params = objectMapper.createObjectNode();
+        params.put(&quot;image&quot;, imageData);
+
+        OkHttpClient client = new OkHttpClient();
+        MediaType JSON = MediaType.Companion.get(&quot;application/json; charset=utf-8&quot;);
+        RequestBody body = RequestBody.Companion.create(params.toString(), JSON);
+        Request request = new Request.Builder()
+                .url(API_URL)
+                .post(body)
+                .build();
+
+        try (Response response = client.newCall(request).execute()) {
+            if (response.isSuccessful()) {
+                String responseBody = response.body().string();
+                JsonNode resultNode = objectMapper.readTree(responseBody);
+                JsonNode result = resultNode.get(&quot;result&quot;);
+                String base64Image = result.get(&quot;image&quot;).asText();
+                JsonNode texts = result.get(&quot;texts&quot;);
+
+                byte[] imageBytes = Base64.getDecoder().decode(base64Image);
+                try (FileOutputStream fos = new FileOutputStream(outputImagePath)) {
+                    fos.write(imageBytes);
+                }
+                System.out.println(&quot;Output image saved at &quot; + outputImagePath);
+                System.out.println(&quot;\nDetected texts: &quot; + texts.toString());
+            } else {
+                System.err.println(&quot;Request failed with code: &quot; + response.code());
+            }
+        }
+    }
+}
+</code></pre>
+
+
+</details>
+
+<details>
+<summary>Go</summary>
+
+
+<pre><code class="language-go">package main
+
+import (
+    &quot;bytes&quot;
+    &quot;encoding/base64&quot;
+    &quot;encoding/json&quot;
+    &quot;fmt&quot;
+    &quot;io/ioutil&quot;
+    &quot;net/http&quot;
+)
+
+func main() {
+    API_URL := &quot;http://localhost:8080/ocr&quot;
+    imagePath := &quot;./demo.jpg&quot;
+    outputImagePath := &quot;./out.jpg&quot;
+
+    imageBytes, err := ioutil.ReadFile(imagePath)
+    if err != nil {
+        fmt.Println(&quot;Error reading image file:&quot;, err)
+        return
+    }
+    imageData := base64.StdEncoding.EncodeToString(imageBytes)
+
+    payload := map[string]string{&quot;image&quot;: imageData}
+    payloadBytes, err := json.Marshal(payload)
+    if err != nil {
+        fmt.Println(&quot;Error marshaling payload:&quot;, err)
+        return
+    }
+
+    client := &amp;http.Client{}
+    req, err := http.NewRequest(&quot;POST&quot;, API_URL, bytes.NewBuffer(payloadBytes))
+    if err != nil {
+        fmt.Println(&quot;Error creating request:&quot;, err)
+        return
+    }
+
+    res, err := client.Do(req)
+    if err != nil {
+        fmt.Println(&quot;Error sending request:&quot;, err)
+        return
+    }
+    defer res.Body.Close()
+
+    body, err := ioutil.ReadAll(res.Body)
+    if err != nil {
+        fmt.Println(&quot;Error reading response body:&quot;, err)
+        return
+    }
+    type Response struct {
+        Result struct {
+            Image      string   `json:&quot;image&quot;`
+            Texts []map[string]interface{} `json:&quot;texts&quot;`
+        } `json:&quot;result&quot;`
+    }
+    var respData Response
+    err = json.Unmarshal([]byte(string(body)), &amp;respData)
+    if err != nil {
+        fmt.Println(&quot;Error unmarshaling response body:&quot;, err)
+        return
+    }
+
+    outputImageData, err := base64.StdEncoding.DecodeString(respData.Result.Image)
+    if err != nil {
+        fmt.Println(&quot;Error decoding base64 image data:&quot;, err)
+        return
+    }
+    err = ioutil.WriteFile(outputImagePath, outputImageData, 0644)
+    if err != nil {
+        fmt.Println(&quot;Error writing image to file:&quot;, err)
+        return
+    }
+    fmt.Printf(&quot;Image saved at %s.jpg\n&quot;, outputImagePath)
+    fmt.Println(&quot;\nDetected texts:&quot;)
+    for _, text := range respData.Result.Texts {
+        fmt.Println(text)
+    }
+}
+</code></pre>
+
+
+</details>
+
+<details>
+<summary>C#</summary>
+
+
+<pre><code class="language-csharp">using System;
+using System.IO;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Text;
+using System.Threading.Tasks;
+using Newtonsoft.Json.Linq;
+
+class Program
+{
+    static readonly string API_URL = &quot;http://localhost:8080/ocr&quot;;
+    static readonly string imagePath = &quot;./demo.jpg&quot;;
+    static readonly string outputImagePath = &quot;./out.jpg&quot;;
+
+    static async Task Main(string[] args)
+    {
+        var httpClient = new HttpClient();
+
+        byte[] imageBytes = File.ReadAllBytes(imagePath);
+        string image_data = Convert.ToBase64String(imageBytes);
+
+        var payload = new JObject{ { &quot;image&quot;, image_data } };
+        var content = new StringContent(payload.ToString(), Encoding.UTF8, &quot;application/json&quot;);
+
+        HttpResponseMessage response = await httpClient.PostAsync(API_URL, content);
+        response.EnsureSuccessStatusCode();
+
+        string responseBody = await response.Content.ReadAsStringAsync();
+        JObject jsonResponse = JObject.Parse(responseBody);
+
+        string base64Image = jsonResponse[&quot;result&quot;][&quot;image&quot;].ToString();
+        byte[] outputImageBytes = Convert.FromBase64String(base64Image);
+
+        File.WriteAllBytes(outputImagePath, outputImageBytes);
+        Console.WriteLine($&quot;Output image saved at {outputImagePath}&quot;);
+        Console.WriteLine(&quot;\nDetected texts:&quot;);
+        Console.WriteLine(jsonResponse[&quot;result&quot;][&quot;texts&quot;].ToString());
+    }
+}
+</code></pre>
+
+
+</details>
+
+<details>
+<summary>Node.js</summary>
+
+
+<pre><code class="language-js">const axios = require('axios');
+const fs = require('fs');
+
+const API_URL = 'http://localhost:8080/ocr'
+const imagePath = './demo.jpg'
+const outputImagePath = &quot;./out.jpg&quot;;
+
+let config = {
+   method: 'POST',
+   maxBodyLength: Infinity,
+   url: API_URL,
+   data: JSON.stringify({
+    'image': encodeImageToBase64(imagePath)
+  })
+};
+
+function encodeImageToBase64(filePath) {
+  const bitmap = fs.readFileSync(filePath);
+  return Buffer.from(bitmap).toString('base64');
+}
+
+axios.request(config)
+.then((response) =&gt; {
+    const result = response.data[&quot;result&quot;];
+    const imageBuffer = Buffer.from(result[&quot;image&quot;], 'base64');
+    fs.writeFile(outputImagePath, imageBuffer, (err) =&gt; {
+      if (err) throw err;
+      console.log(`Output image saved at ${outputImagePath}`);
+    });
+    console.log(&quot;\nDetected texts:&quot;);
+    console.log(result[&quot;texts&quot;]);
+})
+.catch((error) =&gt; {
+  console.log(error);
+});
+</code></pre>
+
+
+</details>
+
+<details>
+<summary>PHP</summary>
+
+
+<pre><code class="language-php">&lt;?php
+
+$API_URL = &quot;http://localhost:8080/ocr&quot;;
+$image_path = &quot;./demo.jpg&quot;;
+$output_image_path = &quot;./out.jpg&quot;;
+
+$image_data = base64_encode(file_get_contents($image_path));
+$payload = array(&quot;image&quot; =&gt; $image_data);
+
+$ch = curl_init($API_URL);
+curl_setopt($ch, CURLOPT_POST, true);
+curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($payload));
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+$response = curl_exec($ch);
+curl_close($ch);
+
+$result = json_decode($response, true)[&quot;result&quot;];
+file_put_contents($output_image_path, base64_decode($result[&quot;image&quot;]));
+echo &quot;Output image saved at &quot; . $output_image_path . &quot;\n&quot;;
+echo &quot;\nDetected texts:\n&quot;;
+print_r($result[&quot;texts&quot;]);
+
+?&gt;
+</code></pre>
+
+
+</details>
+</details>
+<p><br/></p>
+<p>📱 <strong>Edge Deployment</strong>: Edge deployment is a method that places computing and data processing capabilities on user devices themselves, allowing devices to process data directly without relying on remote servers. PaddleX supports deploying models on edge devices such as Android. For detailed edge deployment procedures, refer to the <a href="../../../../pipeline_deploy/edge_deploy_en/">PaddleX Edge Deployment Guide</a>.
+You can choose the appropriate deployment method based on your needs to proceed with subsequent AI application integration.</p>
+<h2 id="4-custom-development">4. Custom Development</h2>
+<p>If the default model weights provided by the general OCR pipeline do not meet your requirements for accuracy or speed in your specific scenario, you can try to further fine-tune the existing models using <strong>your own domain-specific or application-specific data</strong> to improve the recognition performance of the general OCR pipeline in your scenario.</p>
+<h3 id="41-model-fine-tuning">4.1 Model Fine-tuning</h3>
+<p>Since the general OCR pipeline consists of two modules (text detection and text recognition), unsatisfactory performance may stem from either module.</p>
+<p>You can analyze images with poor recognition results. If you find that many texts are undetected (i.e., text miss detection), it may indicate that the text detection model needs improvement. You should refer to the <a href="../../../../module_usage/tutorials/ocr_modules/text_detection_en/#customization">Customization</a> section in the <a href="../../../../module_usage/tutorials/ocr_modules/text_detection_en/">Text Detection Module Development Tutorial</a> and use your private dataset to fine-tune the text detection model. If many recognition errors occur in detected texts (i.e., the recognized text content does not match the actual text content), it suggests that the text recognition model requires further refinement. You should refer to the <a href="../../../../module_usage/tutorials/ocr_modules/text_recognition_en/#customization">Customization</a> section in the <a href="../../../../module_usage/tutorials/ocr_modules/text_recognition_en/">Text Recognition Module Development Tutorial</a> and fine-tune the text recognition model.</p>
+<h3 id="42-model-application">4.2 Model Application</h3>
+<p>After fine-tuning with your private dataset, you will obtain local model weights files.</p>
+<p>If you need to use the fine-tuned model weights, simply modify the pipeline configuration file by replacing the local paths of the fine-tuned model weights to the corresponding positions in the pipeline configuration file:</p>
+<pre><code class="language-python">......
+Pipeline:
+  det_model: PP-OCRv4_server_det  # Can be replaced with the local path of the fine-tuned text detection model
+  det_device: &quot;gpu&quot;
+  rec_model: PP-OCRv4_server_rec  # Can be replaced with the local path of the fine-tuned text recognition model
+  rec_batch_size: 1
+  rec_device: &quot;gpu&quot;
+......
+</code></pre>
+<p>Then, refer to the command line method or Python script method in <a href="#22-local-experience">2.2 Local Experience</a> to load the modified pipeline configuration file.</p>
+<h2 id="5-multi-hardware-support">5. Multi-Hardware Support</h2>
+<p>PaddleX supports various mainstream hardware devices such as NVIDIA GPU, Kunlun XPU, Ascend NPU, and Cambricon MLU. <strong>Simply modifying the <code>--device</code> parameter</strong> allows seamless switching between different hardware.</p>
+<p>For example, if you are using an NVIDIA GPU for OCR pipeline inference, the Python command would be:</p>
+<pre><code class="language-bash">paddlex --pipeline OCR --input general_ocr_002.png --device gpu:0
+</code></pre>
+<p>Now, if you want to switch the hardware to Ascend NPU, you only need to modify the <code>--device</code> in the Python command:</p>
+<pre><code class="language-bash">paddlex --pipeline OCR --input general_ocr_002.png --device npu:0
+</code></pre>
+<p>If you want to use the General OCR pipeline on more types of hardware, please refer to the <a href="../../../../other_devices_support/multi_devices_use_guide/">PaddleX Multi-Hardware Usage Guide</a>.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js"></script>
+        <script src="../../../../search/main.js"></script>
+        <script src="../../../../js/version-select.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Edge deploy en - My Docs</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../../css/version-select.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">My Docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Welcome to MkDocs</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../CHANGLOG/" class="nav-link">CHANGLOG</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../CHANGLOG_en/" class="nav-link">CHANGLOG en</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../FAQ/" class="nav-link">FAQ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../FAQ_en/" class="nav-link">FAQ en</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Data annotations</a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Cv modules</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../data_annotations/cv_modules/image_classification/" class="dropdown-item">Image classification</a>
+</li>
+            
+<li>
+    <a href="../../data_annotations/cv_modules/image_classification_en/" class="dropdown-item">Image classification en</a>
+</li>
+            
+<li>
+    <a href="../../data_annotations/cv_modules/image_feature/" class="dropdown-item">Image feature</a>
+</li>
+            
+<li>
+    <a href="../../data_annotations/cv_modules/image_feature_en/" class="dropdown-item">Image feature en</a>
+</li>
+            
+<li>
+    <a href="../../data_annotations/cv_modules/instance_segmentation/" class="dropdown-item">Instance segmentation</a>
+</li>
+            
+<li>
+    <a href="../../data_annotations/cv_modules/instance_segmentation_en/" class="dropdown-item">Instance segmentation en</a>
+</li>
+            
+<li>
+    <a href="../../data_annotations/cv_modules/ml_classification/" class="dropdown-item">Ml classification</a>
+</li>
+            
+<li>
+    <a href="../../data_annotations/cv_modules/ml_classification_en/" class="dropdown-item">Ml classification en</a>
+</li>
+            
+<li>
+    <a href="../../data_annotations/cv_modules/object_detection/" class="dropdown-item">Object detection</a>
+</li>
+            
+<li>
+    <a href="../../data_annotations/cv_modules/object_detection_en/" class="dropdown-item">Object detection en</a>
+</li>
+            
+<li>
+    <a href="../../data_annotations/cv_modules/semantic_segmentation/" class="dropdown-item">Semantic segmentation</a>
+</li>
+            
+<li>
+    <a href="../../data_annotations/cv_modules/semantic_segmentation_en/" class="dropdown-item">Semantic segmentation en</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Ocr modules</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../data_annotations/ocr_modules/table_recognition/" class="dropdown-item">Table recognition</a>
+</li>
+            
+<li>
+    <a href="../../data_annotations/ocr_modules/table_recognition_en/" class="dropdown-item">Table recognition en</a>
+</li>
+            
+<li>
+    <a href="../../data_annotations/ocr_modules/text_detection_recognition/" class="dropdown-item">Text detection recognition</a>
+</li>
+            
+<li>
+    <a href="../../data_annotations/ocr_modules/text_detection_recognition_en/" class="dropdown-item">Text detection recognition en</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Time series modules</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../data_annotations/time_series_modules/time_series_anomaly_detection/" class="dropdown-item">Time series anomaly detection</a>
+</li>
+            
+<li>
+    <a href="../../data_annotations/time_series_modules/time_series_anomaly_detection_en/" class="dropdown-item">Time series anomaly detection en</a>
+</li>
+            
+<li>
+    <a href="../../data_annotations/time_series_modules/time_series_classification/" class="dropdown-item">Time series classification</a>
+</li>
+            
+<li>
+    <a href="../../data_annotations/time_series_modules/time_series_classification_en/" class="dropdown-item">Time series classification en</a>
+</li>
+            
+<li>
+    <a href="../../data_annotations/time_series_modules/time_series_forecasting/" class="dropdown-item">Time series forecasting</a>
+</li>
+            
+<li>
+    <a href="../../data_annotations/time_series_modules/time_series_forecasting_en/" class="dropdown-item">Time series forecasting en</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Installation</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../installation/installation/" class="dropdown-item">Installation</a>
+</li>
+                                    
+<li>
+    <a href="../../installation/installation_en/" class="dropdown-item">Installation en</a>
+</li>
+                                    
+<li>
+    <a href="../../installation/paddlepaddle_install/" class="dropdown-item">Paddlepaddle install</a>
+</li>
+                                    
+<li>
+    <a href="../../installation/paddlepaddle_install_en/" class="dropdown-item">Paddlepaddle install en</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Module usage</a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Instructions</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../module_usage/instructions/config_parameters_common/" class="dropdown-item">Config parameters common</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/instructions/config_parameters_common_en/" class="dropdown-item">Config parameters common en</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/instructions/config_parameters_time_series/" class="dropdown-item">Config parameters time series</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/instructions/config_parameters_time_series_en/" class="dropdown-item">Config parameters time series en</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/instructions/model_python_API/" class="dropdown-item">model python API</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/instructions/model_python_API_en/" class="dropdown-item">model python API en</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Tutorials</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Cv modules</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../module_usage/tutorials/cv_modules/anomaly_detection/" class="dropdown-item">Anomaly detection</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/cv_modules/anomaly_detection_en/" class="dropdown-item">Anomaly detection en</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/cv_modules/face_detection/" class="dropdown-item">Face detection</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/cv_modules/face_detection_en/" class="dropdown-item">Face detection en</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/cv_modules/human_detection/" class="dropdown-item">Human detection</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/cv_modules/human_detection_en/" class="dropdown-item">Human detection en</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/cv_modules/image_classification/" class="dropdown-item">Image classification</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/cv_modules/image_classification_en/" class="dropdown-item">Image classification en</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/cv_modules/image_feature/" class="dropdown-item">Image feature</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/cv_modules/image_feature_en/" class="dropdown-item">Image feature en</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/cv_modules/instance_segmentation/" class="dropdown-item">Instance segmentation</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/cv_modules/instance_segmentation_en/" class="dropdown-item">Instance segmentation en</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/cv_modules/mainbody_detection/" class="dropdown-item">Mainbody detection</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/cv_modules/mainbody_detection_en/" class="dropdown-item">Mainbody detection en</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/cv_modules/ml_classification/" class="dropdown-item">Ml classification</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/cv_modules/ml_classification_en/" class="dropdown-item">Ml classification en</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/cv_modules/object_detection/" class="dropdown-item">Object detection</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/cv_modules/object_detection_en/" class="dropdown-item">Object detection en</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/cv_modules/pedestrian_attribute_recognition/" class="dropdown-item">Pedestrian attribute recognition</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/cv_modules/pedestrian_attribute_recognition_en/" class="dropdown-item">Pedestrian attribute recognition en</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/cv_modules/semantic_segmentation/" class="dropdown-item">Semantic segmentation</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/cv_modules/semantic_segmentation_en/" class="dropdown-item">Semantic segmentation en</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/cv_modules/small_object_detection/" class="dropdown-item">Small object detection</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/cv_modules/small_object_detection_en/" class="dropdown-item">Small object detection en</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/cv_modules/vehicle_attribute_recognition/" class="dropdown-item">Vehicle attribute recognition</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/cv_modules/vehicle_attribute_recognition_en/" class="dropdown-item">Vehicle attribute recognition en</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/cv_modules/vehicle_detection/" class="dropdown-item">Vehicle detection</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/cv_modules/vehicle_detection_en/" class="dropdown-item">Vehicle detection en</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Ocr modules</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../module_usage/tutorials/ocr_modules/doc_img_orientation_classification/" class="dropdown-item">Doc img orientation classification</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/ocr_modules/doc_img_orientation_classification_en/" class="dropdown-item">Doc img orientation classification en</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/ocr_modules/formula_recognition/" class="dropdown-item">Formula recognition</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/ocr_modules/formula_recognition_en/" class="dropdown-item">Formula recognition en</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/ocr_modules/layout_detection/" class="dropdown-item">Layout detection</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/ocr_modules/layout_detection_en/" class="dropdown-item">Layout detection en</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/ocr_modules/seal_text_detection/" class="dropdown-item">Seal text detection</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/ocr_modules/seal_text_detection_en/" class="dropdown-item">Seal text detection en</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/ocr_modules/table_structure_recognition/" class="dropdown-item">Table structure recognition</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/ocr_modules/table_structure_recognition_en/" class="dropdown-item">Table structure recognition en</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/ocr_modules/text_detection/" class="dropdown-item">Text detection</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/ocr_modules/text_detection_en/" class="dropdown-item">Text detection en</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/ocr_modules/text_image_unwarping/" class="dropdown-item">Text image unwarping</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/ocr_modules/text_image_unwarping_en/" class="dropdown-item">Text image unwarping en</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/ocr_modules/text_recognition/" class="dropdown-item">Text recognition</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/ocr_modules/text_recognition_en/" class="dropdown-item">Text recognition en</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Time series modules</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../module_usage/tutorials/time_series_modules/time_series_anomaly_detection/" class="dropdown-item">Time series anomaly detection</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/time_series_modules/time_series_anomaly_detection_en/" class="dropdown-item">Time series anomaly detection en</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/time_series_modules/time_series_classification/" class="dropdown-item">Time series classification</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/time_series_modules/time_series_classification_en/" class="dropdown-item">Time series classification en</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/time_series_modules/time_series_forecasting/" class="dropdown-item">Time series forecasting</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/time_series_modules/time_series_forecasting_en/" class="dropdown-item">Time series forecasting en</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Other devices support</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../other_devices_support/multi_devices_use_guide/" class="dropdown-item">Multi devices use guide</a>
+</li>
+                                    
+<li>
+    <a href="../../other_devices_support/multi_devices_use_guide_en/" class="dropdown-item">Multi devices use guide en</a>
+</li>
+                                    
+<li>
+    <a href="../../other_devices_support/paddlepaddle_install_DCU/" class="dropdown-item">paddlepaddle install DCU</a>
+</li>
+                                    
+<li>
+    <a href="../../other_devices_support/paddlepaddle_install_DCU_en/" class="dropdown-item">paddlepaddle install DCU en</a>
+</li>
+                                    
+<li>
+    <a href="../../other_devices_support/paddlepaddle_install_MLU/" class="dropdown-item">paddlepaddle install MLU</a>
+</li>
+                                    
+<li>
+    <a href="../../other_devices_support/paddlepaddle_install_MLU_en/" class="dropdown-item">paddlepaddle install MLU en</a>
+</li>
+                                    
+<li>
+    <a href="../../other_devices_support/paddlepaddle_install_NPU/" class="dropdown-item">paddlepaddle install NPU</a>
+</li>
+                                    
+<li>
+    <a href="../../other_devices_support/paddlepaddle_install_NPU_en/" class="dropdown-item">paddlepaddle install NPU en</a>
+</li>
+                                    
+<li>
+    <a href="../../other_devices_support/paddlepaddle_install_XPU/" class="dropdown-item">paddlepaddle install XPU</a>
+</li>
+                                    
+<li>
+    <a href="../../other_devices_support/paddlepaddle_install_XPU_en/" class="dropdown-item">paddlepaddle install XPU en</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Pipeline deploy</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../edge_deploy/" class="dropdown-item">Edge deploy</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Edge deploy en</a>
+</li>
+                                    
+<li>
+    <a href="../high_performance_inference/" class="dropdown-item">High performance inference</a>
+</li>
+                                    
+<li>
+    <a href="../high_performance_inference_en/" class="dropdown-item">High performance inference en</a>
+</li>
+                                    
+<li>
+    <a href="../service_deploy/" class="dropdown-item">Service deploy</a>
+</li>
+                                    
+<li>
+    <a href="../service_deploy_en/" class="dropdown-item">Service deploy en</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Pipeline usage</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../pipeline_usage/pipeline_develop_guide/" class="dropdown-item">Pipeline develop guide</a>
+</li>
+                                    
+<li>
+    <a href="../../pipeline_usage/pipeline_develop_guide_en/" class="dropdown-item">Pipeline develop guide en</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Instructions</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../pipeline_usage/instructions/pipeline_CLI_usage/" class="dropdown-item">pipeline CLI usage</a>
+</li>
+            
+<li>
+    <a href="../../pipeline_usage/instructions/pipeline_CLI_usage_en/" class="dropdown-item">pipeline CLI usage en</a>
+</li>
+            
+<li>
+    <a href="../../pipeline_usage/instructions/pipeline_python_API/" class="dropdown-item">pipeline python API</a>
+</li>
+            
+<li>
+    <a href="../../pipeline_usage/instructions/pipeline_python_API_en/" class="dropdown-item">pipeline python API en</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Tutorials</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Cv pipelines</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../pipeline_usage/tutorials/cv_pipelines/image_anomaly_detection/" class="dropdown-item">Image anomaly detection</a>
+</li>
+            
+<li>
+    <a href="../../pipeline_usage/tutorials/cv_pipelines/image_anomaly_detection_en/" class="dropdown-item">Image anomaly detection en</a>
+</li>
+            
+<li>
+    <a href="../../pipeline_usage/tutorials/cv_pipelines/image_classification/" class="dropdown-item">Image classification</a>
+</li>
+            
+<li>
+    <a href="../../pipeline_usage/tutorials/cv_pipelines/image_classification_en/" class="dropdown-item">Image classification en</a>
+</li>
+            
+<li>
+    <a href="../../pipeline_usage/tutorials/cv_pipelines/image_multi_label_classification/" class="dropdown-item">Image multi label classification</a>
+</li>
+            
+<li>
+    <a href="../../pipeline_usage/tutorials/cv_pipelines/image_multi_label_classification_en/" class="dropdown-item">Image multi label classification en</a>
+</li>
+            
+<li>
+    <a href="../../pipeline_usage/tutorials/cv_pipelines/instance_segmentation/" class="dropdown-item">Instance segmentation</a>
+</li>
+            
+<li>
+    <a href="../../pipeline_usage/tutorials/cv_pipelines/instance_segmentation_en/" class="dropdown-item">Instance segmentation en</a>
+</li>
+            
+<li>
+    <a href="../../pipeline_usage/tutorials/cv_pipelines/object_detection/" class="dropdown-item">Object detection</a>
+</li>
+            
+<li>
+    <a href="../../pipeline_usage/tutorials/cv_pipelines/object_detection_en/" class="dropdown-item">Object detection en</a>
+</li>
+            
+<li>
+    <a href="../../pipeline_usage/tutorials/cv_pipelines/semantic_segmentation/" class="dropdown-item">Semantic segmentation</a>
+</li>
+            
+<li>
+    <a href="../../pipeline_usage/tutorials/cv_pipelines/semantic_segmentation_en/" class="dropdown-item">Semantic segmentation en</a>
+</li>
+            
+<li>
+    <a href="../../pipeline_usage/tutorials/cv_pipelines/small_object_detection/" class="dropdown-item">Small object detection</a>
+</li>
+            
+<li>
+    <a href="../../pipeline_usage/tutorials/cv_pipelines/small_object_detection_en/" class="dropdown-item">Small object detection en</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Information extraction pipelines</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../pipeline_usage/tutorials/information_extraction_pipelines/document_scene_information_extraction/" class="dropdown-item">Document scene information extraction</a>
+</li>
+            
+<li>
+    <a href="../../pipeline_usage/tutorials/information_extraction_pipelines/document_scene_information_extraction_en/" class="dropdown-item">Document scene information extraction en</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Ocr pipelines</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../pipeline_usage/tutorials/ocr_pipelines/OCR/" class="dropdown-item">OCR</a>
+</li>
+            
+<li>
+    <a href="../../pipeline_usage/tutorials/ocr_pipelines/OCR_en/" class="dropdown-item">OCR en</a>
+</li>
+            
+<li>
+    <a href="../../pipeline_usage/tutorials/ocr_pipelines/formula_recognition/" class="dropdown-item">Formula recognition</a>
+</li>
+            
+<li>
+    <a href="../../pipeline_usage/tutorials/ocr_pipelines/formula_recognition_en/" class="dropdown-item">Formula recognition en</a>
+</li>
+            
+<li>
+    <a href="../../pipeline_usage/tutorials/ocr_pipelines/layout_parsing/" class="dropdown-item">Layout parsing</a>
+</li>
+            
+<li>
+    <a href="../../pipeline_usage/tutorials/ocr_pipelines/layout_parsing_en/" class="dropdown-item">Layout parsing en</a>
+</li>
+            
+<li>
+    <a href="../../pipeline_usage/tutorials/ocr_pipelines/seal_recognition/" class="dropdown-item">Seal recognition</a>
+</li>
+            
+<li>
+    <a href="../../pipeline_usage/tutorials/ocr_pipelines/seal_recognition_en/" class="dropdown-item">Seal recognition en</a>
+</li>
+            
+<li>
+    <a href="../../pipeline_usage/tutorials/ocr_pipelines/table_recognition/" class="dropdown-item">Table recognition</a>
+</li>
+            
+<li>
+    <a href="../../pipeline_usage/tutorials/ocr_pipelines/table_recognition_en/" class="dropdown-item">Table recognition en</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Time series pipelines</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../pipeline_usage/tutorials/time_series_pipelines/time_series_anomaly_detection/" class="dropdown-item">Time series anomaly detection</a>
+</li>
+            
+<li>
+    <a href="../../pipeline_usage/tutorials/time_series_pipelines/time_series_anomaly_detection_en/" class="dropdown-item">Time series anomaly detection en</a>
+</li>
+            
+<li>
+    <a href="../../pipeline_usage/tutorials/time_series_pipelines/time_series_classification/" class="dropdown-item">Time series classification</a>
+</li>
+            
+<li>
+    <a href="../../pipeline_usage/tutorials/time_series_pipelines/time_series_classification_en/" class="dropdown-item">Time series classification en</a>
+</li>
+            
+<li>
+    <a href="../../pipeline_usage/tutorials/time_series_pipelines/time_series_forecasting/" class="dropdown-item">Time series forecasting</a>
+</li>
+            
+<li>
+    <a href="../../pipeline_usage/tutorials/time_series_pipelines/time_series_forecasting_en/" class="dropdown-item">Time series forecasting en</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Practical tutorials</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../practical_tutorials/document_scene_information_extraction%28layout_detection%29_tutorial/" class="dropdown-item">Document scene information extraction(layout detection) tutorial</a>
+</li>
+                                    
+<li>
+    <a href="../../practical_tutorials/document_scene_information_extraction%28layout_detection%29_tutorial_en/" class="dropdown-item">Document scene information extraction(layout detection) tutorial en</a>
+</li>
+                                    
+<li>
+    <a href="../../practical_tutorials/image_classification_garbage_tutorial/" class="dropdown-item">Image classification garbage tutorial</a>
+</li>
+                                    
+<li>
+    <a href="../../practical_tutorials/image_classification_garbage_tutorial_en/" class="dropdown-item">Image classification garbage tutorial en</a>
+</li>
+                                    
+<li>
+    <a href="../../practical_tutorials/instance_segmentation_remote_sensing_tutorial/" class="dropdown-item">Instance segmentation remote sensing tutorial</a>
+</li>
+                                    
+<li>
+    <a href="../../practical_tutorials/instance_segmentation_remote_sensing_tutorial_en/" class="dropdown-item">Instance segmentation remote sensing tutorial en</a>
+</li>
+                                    
+<li>
+    <a href="../../practical_tutorials/object_detection_fall_tutorial/" class="dropdown-item">Object detection fall tutorial</a>
+</li>
+                                    
+<li>
+    <a href="../../practical_tutorials/object_detection_fall_tutorial_en/" class="dropdown-item">Object detection fall tutorial en</a>
+</li>
+                                    
+<li>
+    <a href="../../practical_tutorials/object_detection_fashion_pedia_tutorial/" class="dropdown-item">Object detection fashion pedia tutorial</a>
+</li>
+                                    
+<li>
+    <a href="../../practical_tutorials/object_detection_fashion_pedia_tutorial_en/" class="dropdown-item">Object detection fashion pedia tutorial en</a>
+</li>
+                                    
+<li>
+    <a href="../../practical_tutorials/ocr_det_license_tutorial/" class="dropdown-item">Ocr det license tutorial</a>
+</li>
+                                    
+<li>
+    <a href="../../practical_tutorials/ocr_det_license_tutorial_en/" class="dropdown-item">Ocr det license tutorial en</a>
+</li>
+                                    
+<li>
+    <a href="../../practical_tutorials/ocr_rec_chinese_tutorial/" class="dropdown-item">Ocr rec chinese tutorial</a>
+</li>
+                                    
+<li>
+    <a href="../../practical_tutorials/ocr_rec_chinese_tutorial_en/" class="dropdown-item">Ocr rec chinese tutorial en</a>
+</li>
+                                    
+<li>
+    <a href="../../practical_tutorials/semantic_segmentation_road_tutorial/" class="dropdown-item">Semantic segmentation road tutorial</a>
+</li>
+                                    
+<li>
+    <a href="../../practical_tutorials/semantic_segmentation_road_tutorial_en/" class="dropdown-item">Semantic segmentation road tutorial en</a>
+</li>
+                                    
+<li>
+    <a href="../../practical_tutorials/ts_anomaly_detection/" class="dropdown-item">Ts anomaly detection</a>
+</li>
+                                    
+<li>
+    <a href="../../practical_tutorials/ts_anomaly_detection_en/" class="dropdown-item">Ts anomaly detection en</a>
+</li>
+                                    
+<li>
+    <a href="../../practical_tutorials/ts_classification/" class="dropdown-item">Ts classification</a>
+</li>
+                                    
+<li>
+    <a href="../../practical_tutorials/ts_classification_en/" class="dropdown-item">Ts classification en</a>
+</li>
+                                    
+<li>
+    <a href="../../practical_tutorials/ts_forecast/" class="dropdown-item">Ts forecast</a>
+</li>
+                                    
+<li>
+    <a href="../../practical_tutorials/ts_forecast_en/" class="dropdown-item">Ts forecast en</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Support list</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../support_list/model_list_dcu/" class="dropdown-item">Model list dcu</a>
+</li>
+                                    
+<li>
+    <a href="../../support_list/model_list_dcu_en/" class="dropdown-item">Model list dcu en</a>
+</li>
+                                    
+<li>
+    <a href="../../support_list/model_list_mlu/" class="dropdown-item">Model list mlu</a>
+</li>
+                                    
+<li>
+    <a href="../../support_list/model_list_mlu_en/" class="dropdown-item">Model list mlu en</a>
+</li>
+                                    
+<li>
+    <a href="../../support_list/model_list_npu/" class="dropdown-item">Model list npu</a>
+</li>
+                                    
+<li>
+    <a href="../../support_list/model_list_npu_en/" class="dropdown-item">Model list npu en</a>
+</li>
+                                    
+<li>
+    <a href="../../support_list/model_list_xpu/" class="dropdown-item">Model list xpu</a>
+</li>
+                                    
+<li>
+    <a href="../../support_list/model_list_xpu_en/" class="dropdown-item">Model list xpu en</a>
+</li>
+                                    
+<li>
+    <a href="../../support_list/models_list/" class="dropdown-item">Models list</a>
+</li>
+                                    
+<li>
+    <a href="../../support_list/models_list_en/" class="dropdown-item">Models list en</a>
+</li>
+                                    
+<li>
+    <a href="../../support_list/pipelines_list/" class="dropdown-item">Pipelines list</a>
+</li>
+                                    
+<li>
+    <a href="../../support_list/pipelines_list_dcu/" class="dropdown-item">Pipelines list dcu</a>
+</li>
+                                    
+<li>
+    <a href="../../support_list/pipelines_list_dcu_en/" class="dropdown-item">Pipelines list dcu en</a>
+</li>
+                                    
+<li>
+    <a href="../../support_list/pipelines_list_en/" class="dropdown-item">Pipelines list en</a>
+</li>
+                                    
+<li>
+    <a href="../../support_list/pipelines_list_mlu/" class="dropdown-item">Pipelines list mlu</a>
+</li>
+                                    
+<li>
+    <a href="../../support_list/pipelines_list_mlu_en/" class="dropdown-item">Pipelines list mlu en</a>
+</li>
+                                    
+<li>
+    <a href="../../support_list/pipelines_list_npu/" class="dropdown-item">Pipelines list npu</a>
+</li>
+                                    
+<li>
+    <a href="../../support_list/pipelines_list_npu_en/" class="dropdown-item">Pipelines list npu en</a>
+</li>
+                                    
+<li>
+    <a href="../../support_list/pipelines_list_xpu/" class="dropdown-item">Pipelines list xpu</a>
+</li>
+                                    
+<li>
+    <a href="../../support_list/pipelines_list_xpu_en/" class="dropdown-item">Pipelines list xpu en</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../edge_deploy/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../high_performance_inference/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#paddlex-edge-deployment-demo-usage-guide" class="nav-link">PaddleX Edge Deployment Demo Usage Guide</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#installation-process-and-usage" class="nav-link">Installation Process and Usage</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#debian-based-linux-distributions" class="nav-link">Debian-based Linux distributions</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#red-hat-based-linux-distributions" class="nav-link">Red Hat-based Linux distributions</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#reference-materials" class="nav-link">Reference Materials</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#feedback-section" class="nav-link">Feedback Section</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p><a href="lite_deploy.md">简体中文</a> | English</p>
+<h1 id="paddlex-edge-deployment-demo-usage-guide">PaddleX Edge Deployment Demo Usage Guide</h1>
+<ul>
+<li><a href="#paddlex-edge-deployment-demo-usage-guide">PaddleX Edge Deployment Demo Usage Guide</a></li>
+<li><a href="#installation-process-and-usage">Installation Process and Usage</a><ul>
+<li><a href="#environment-preparation">Environment Preparation</a></li>
+<li><a href="#material-preparation">Material Preparation</a></li>
+<li><a href="#deployment-steps">Deployment Steps</a></li>
+</ul>
+</li>
+<li><a href="#reference-materials">Reference Materials</a></li>
+<li><a href="#feedback-section">Feedback Section</a></li>
+</ul>
+<p>This guide mainly introduces the operation method of the PaddleX edge deployment demo on the Android shell.
+This guide applies to 8 models across 6 modules:</p>
+<table>
+  <tr>
+    <th>Module</th>
+    <th>Specific Model</th>
+    <th>CPU</th>
+    <th>GPU</th>
+  </tr>
+  <tr>
+    <td rowspan="2">Object Detection</td>
+    <td>PicoDet-S</td>
+    <td>✅</td>
+    <td>✅</td>
+  </tr>
+  <tr>
+    <td>PicoDet-L</td>
+    <td>✅</td>
+    <td>✅</td>
+  </tr>
+  <tr>
+    <td>Layout Area Detection</td>
+    <td>PicoDet_layout_1x</td>
+    <td>✅</td>
+    <td>✅</td>
+  </tr>
+  <tr>
+    <td>Semantic Segmentation</td>
+    <td>PP-LiteSeg-T</td>
+    <td>✅</td>
+    <td>✅</td>
+  </tr>
+  <tr>
+    <td rowspan="2">Image Classification</td>
+    <td>PP-LCNet_x1_0</td>
+    <td>✅</td>
+    <td>✅</td>
+  </tr>
+  <tr>
+    <td>MobileNetV3_small_x1_0</td>
+    <td>✅</td>
+    <td>✅</td>
+  </tr>
+  <tr>
+    <td>Text Detection</td>
+    <td>PP-OCRv4_mobile_det</td>
+    <td>✅</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Text Recognition</td>
+    <td>PP-OCRv4_mobile_rec</td>
+    <td>✅</td>
+    <td></td>
+  </tr>
+</table>
+
+<p><strong>Note</strong>
+- <code>GPU</code> refers to <a href="https://www.paddlepaddle.org.cn/lite/develop/demo_guides/opencl.html">mapping computations to GPU execution using OpenCL</a> to fully utilize GPU hardware computing power and improve inference performance.</p>
+<h2 id="installation-process-and-usage">Installation Process and Usage</h2>
+<h3 id="environment-preparation">Environment Preparation</h3>
+<ol>
+<li>
+<p>Install CMake build tool locally and download the required version of NDK software package from the <a href="https://developer.android.google.cn/ndk/downloads?hl=en">Android NDK official website</a>. For example, if developing on a Mac, download the NDK software package for the Mac platform from the Android NDK official website.</p>
+<p><strong>Environment Requirements</strong>
+- <code>CMake &gt;= 3.10</code> (Minimum version not verified, recommend 3.20 and above)
+- <code>Android NDK &gt;= r17c</code> (Minimum version not verified, recommend r20b and above)</p>
+<p><strong>Tested Environment Used in This Guide</strong>:
+- <code>cmake == 3.20.0</code>
+- <code>android-ndk == r20b</code></p>
+</li>
+<li>
+<p>Prepare an Android phone and enable USB debugging mode. Enable method: <code>Phone Settings -&gt; Locate Developer Options -&gt; Turn on Developer Options and USB Debugging Mode</code>.</p>
+</li>
+<li>
+<p>Install ADB tool on your computer for debugging. ADB installation methods:</p>
+<p>3.1. For Mac:</p>
+<p><code>shell
+brew cask install android-platform-tools</code></p>
+<p>3.2. For Linux:</p>
+<p>```shell</p>
+<h1 id="debian-based-linux-distributions">Debian-based Linux distributions</h1>
+<p>sudo apt update
+sudo apt install -y wget adb</p>
+<h1 id="red-hat-based-linux-distributions">Red Hat-based Linux distributions</h1>
+<p>sudo yum install adb
+```</p>
+<p>3.3. For Windows:</p>
+<p>Install ADB by downloading the ADB software package from Google's Android platform: <a href="https://developer.android.com/studio?hl=en">Link</a></p>
+<p>Open a terminal, connect your phone to the computer, and enter in the terminal:</p>
+<p><code>shell
+ adb devices</code></p>
+<p>If there is an output from the device, it indicates that the installation was successful.</p>
+<p><code>shell
+ List of devices attached
+ 744be294    device</code></p>
+</li>
+</ol>
+<h3 id="material-preparation">Material Preparation</h3>
+<ol>
+<li>
+<p>Clone the <code>feature/paddle-x</code> branch of the <code>Paddle-Lite-Demo</code> repository into the <code>PaddleX-Lite-Deploy</code> directory.</p>
+<p><code>shell
+git clone -b feature/paddle-x https://github.com/PaddlePaddle/Paddle-Lite-Demo.git PaddleX-Lite-Deploy</code></p>
+</li>
+<li>
+<p>Fill out the <strong>survey</strong> to download the compressed package, place the compressed package in the specified unzip directory, switch to the specified unzip directory, and execute the unzip command.</p>
+<ul>
+<li><a href="https://paddle.wjx.cn/vm/OjV8gAb.aspx#">Object Detection Survey</a></li>
+<li><a href="https://paddle.wjx.cn/vm/Q2F1L37.aspx#">Semantic Segmentation Survey</a></li>
+<li><a href="https://paddle.wjx.cn/vm/rWPncBm.aspx#">Image Classification Survey</a></li>
+<li><a href="https://paddle.wjx.cn/vm/eaaBo0H.aspx#">OCR Survey</a></li>
+</ul>
+<p>Below is an example of the unzip operation for object_detection. Refer to the table below for other pipelines.</p>
+<p>```shell
+  # 1. Switch to the specified unzip directory
+  cd PaddleX-Lite-Deploy/object_detection/android/shell/cxx/picodet_detection</p>
+<p># 2. Execute the unzip command
+  unzip object_detection.zip
+  ```</p>
+<p><table>
+    <tr>
+      <th>Pipeline Name</th>
+      <th>Unzip Directory</th>
+      <th>Unzip Command</th>
+    </tr>
+    <tr>
+      <td>Object Detection</td>
+      <td>PaddleX-Lite-Deploy/object_detection/android/shell/cxx/picodet_detection</td>
+      <td>unzip object_detection.zip</td>
+    </tr>
+    <tr>
+      <td>Semantic Segmentation</td>
+      <td>PaddleX-Lite-Deploy/semantic_segmentation/android/shell/cxx/semantic_segmentation</td>
+      <td>unzip semantic_segmentation.zip</td>
+    </tr>
+    <tr>
+      <td>Image Classification</td>
+      <td>PaddleX-Lite-Deploy/image_classification/android/shell/cxx/image_classification</td>
+      <td>unzip image_classification.zip</td>
+    </tr>
+    <tr>
+      <td>OCR</td>
+      <td>PaddleX-Lite-Deploy/ocr/android/shell/ppocr_demo</td>
+      <td>unzip ocr.zip</td>
+    </tr>
+  </table></p>
+</li>
+</ol>
+<h3 id="deployment-steps">Deployment Steps</h3>
+<ol>
+<li>
+<p>Switch the working directory to <code>PaddleX_Lite_Deploy/libs</code> and run the <code>download.sh</code> script to download the necessary Paddle Lite prediction library. This step only needs to be executed once to support each demo.</p>
+</li>
+<li>
+<p>Switch the working directory to <code>PaddleX_Lite_Deploy/{Task_Name}/assets</code>, run the <code>download.sh</code> script to download the <a href="https://www.paddlepaddle.org.cn/lite/v2.10/user_guides/model_optimize_tool.html">paddle_lite_opt tool</a> optimized model, test images, label files, etc.</p>
+</li>
+<li>
+<p>Switch the working directory to <code>PaddleX_Lite_Deploy/{Task_Name}/android/shell/cxx/{Demo_Name}</code>, run the <code>build.sh</code> script to complete the compilation and execution of the executable file.</p>
+</li>
+<li>
+<p>Switch the working directory to <code>PaddleX-Lite-Deploy/{Task_Name}/android/shell/cxx/{Demo_Name}</code>, run the <code>run.sh</code> script to complete the prediction on the edge.</p>
+<p><strong>Note</strong>:
+- <code>{Pipeline_Name}</code> and <code>{Demo_Name}</code> are placeholders. Refer to the table at the end of this section for specific values.
+- <code>download.sh</code> and <code>run.sh</code> support passing in model names to specify models. If not specified, the default model will be used. Refer to the <code>Model_Name</code> column in the table at the end of this section for currently supported models.
+- To use your own trained model, refer to the <a href="https://paddlepaddle.github.io/Paddle-Lite/develop/model_optimize_tool/">Model Conversion Method</a> to obtain the <code>.nb</code> model, place it in the <code>PaddleX_Lite_Deploy/{Pipeline_Name}/assets/{Model_Name}</code> directory, where <code>{Model_Name}</code> is the model name, e.g., <code>PaddleX_Lite_Deploy/object_detection/assets/PicoDet-L</code>.
+- Before running the <code>build.sh</code> script, change the path specified by <code>NDK_ROOT</code> to the actual installed NDK path.
+- Keep ADB connected when running the <code>build.sh</code> script.
+- On Windows systems, you can use Git Bash to execute the deployment steps.
+- If compiling on a Windows system, set <code>CMAKE_SYSTEM_NAME</code> to <code>windows</code> in <code>CMakeLists.txt</code>.
+- If compiling on a Mac system, set <code>CMAKE_SYSTEM_NAME</code> to <code>darwin</code> in <code>CMakeLists.txt</code>.</p>
+</li>
+</ol>
+<p>Below is an example for object_detection. For other demos, change the directories switched in steps 2 and 3 according to the table at the end of this section.</p>
+<pre><code class="language-shell"># 1. Download the necessary Paddle Lite prediction library
+cd PaddleX_Lite_Deploy/libs
+sh download.sh
+
+# 2. Download the paddle_lite_opt tool optimized model, test images, and label files
+cd ../object_detection/assets
+sh download.sh
+# Supports passing in model names to specify the downloaded model. Refer to the Model_Name column in the table at the end of this section for supported models.
+# sh download.sh PicoDet-L
+
+# 3. Complete the compilation of the executable file
+cd ../android/app/shell/cxx/picodet_detection
+sh build.sh
+
+# 4. Prediction
+sh run.sh
+# Supports passing in model names to specify the prediction model. Refer to the Model_Name column in the table at the end of this section for supported models.
+# sh run.sh PicoDet-L
+</code></pre>
+<p>The run results are shown below, and a result image named <code>dog_picodet_detection_result.jpg</code> is generated:</p>
+<pre><code class="language-text">======= benchmark summary =======
+input_shape(s) (NCHW): {1, 3, 320, 320}
+model_dir:./models/PicoDet-S/model.nb
+warmup:1
+repeats:10
+power_mode:1
+thread_num:0
+*** time info(ms) ***
+1st_duration:320.086
+max_duration:277.331
+min_duration:272.67
+avg_duration:274.91
+
+====== output summary ======
+detection, image size: 768, 576, detect object: bicycle, score: 0.905929, location: x=125, y=1
+</code></pre>
+<p><img alt="result" src="https://github.com/PaddlePaddle/Paddle-Lite-Demo/blob/feature/paddle-x/docs_img/object_detection/PicoDet-S.jpg?raw=true" /></p>
+<p>This section describes the deployment steps applicable to the demos listed in the following table:</p>
+<table>
+  <tr>
+    <th>Pipeline</th>
+    <th>Pipeline_Name</th>
+    <th>Module</th>
+    <th>Demo_Name</th>
+    <th>Specific Model</th>
+    <th>Model_Name</th>
+  </tr>
+  <tr>
+    <td rowspan="3">General Object Detection</td>
+    <td rowspan="3">object_detection</td>
+    <td rowspan="3">Object Detection</td>
+    <td rowspan="3">picodet_detection</td>
+    <td>PicoDet-S</td>
+    <td>PicoDet-S（default）</br>PicoDet-S_gpu</td>
+  </tr>
+  <tr>
+    <td>PicoDet-L</td>
+    <td>PicoDet-L</br>PicoDet-L_gpu</td>
+  </tr>
+  <tr>
+    <td>PicoDet_layout_1x</td>
+    <td>PicoDet_layout_1x</br>PicoDet_layout_1x_gpu</td>
+  </tr>
+  <tr>
+    <td>General Semantic Segmentation</td>
+    <td>semantic_segmentation</td>
+    <td>Semantic Segmentation</td>
+    <td>semantic_segmentation</td>
+    <td>PP-LiteSeg-T</td>
+    <td>PP-LiteSeg-T（default）</br>PP-LiteSeg-T_gpu</td>
+  </tr>
+  <tr>
+    <td rowspan="2">General Image Classification</td>
+    <td rowspan="2">image_classification</td>
+    <td rowspan="2">Image Classification</td>
+    <td rowspan="2">image_classification</td>
+    <td>PP-LCNet_x1_0</td>
+    <td>PP-LCNet_x1_0（default）</br>PP-LCNet_x1_0_gpu</td>
+  </tr>
+  <tr>
+    <td>MobileNetV3_small_x1_0</td>
+    <td>MobileNetV3_small_x1_0</br>MobileNetV3_small_x1_0_gpu</td>
+  </tr>
+  <tr>
+    <td rowspan="2">General OCR</td>
+    <td rowspan="2">ocr</td>
+    <td>Text Detection</td>
+    <td rowspan="2">ppocr_demo</td>
+    <td>PP-OCRv4_mobile_det</td>
+    <td>PP-OCRv4_mobile_det</td>
+  </tr>
+  <tr>
+    <td>Text Recognition</td>
+    <td>PP-OCRv4_mobile_rec</td>
+    <td>PP-OCRv4_mobile_rec</td>
+  </tr>
+</table>
+
+<p><strong>Note</strong>
+- Currently, there is no demo for deploying the Layout Area Detection module on the edge, so the <code>picodet_detection</code> demo is reused to deploy the <code>PicoDet_layout_1x</code> model.</p>
+<h2 id="reference-materials">Reference Materials</h2>
+<p>This guide only introduces the basic installation and usage process of the edge deployment demo. If you want to learn more detailed information, such as code introduction, code explanation, updating models, updating input and output preprocessing, updating prediction libraries, etc., please refer to the following documents:</p>
+<ul>
+<li><a href="https://github.com/PaddlePaddle/Paddle-Lite-Demo/tree/feature/paddle-x/object_detection/android/shell/cxx/picodet_detection">Object Detection</a></li>
+<li><a href="https://github.com/PaddlePaddle/Paddle-Lite-Demo/blob/feature/paddle-x/semantic_segmentation/android/shell/cxx/semantic_segmentation/README.md">Semantic Segmentation</a></li>
+<li><a href="https://github.com/PaddlePaddle/Paddle-Lite-Demo/blob/feature/paddle-x/image_classification/android/shell/cxx/image_classification/README.md">Image Classification</a></li>
+<li><a href="https://github.com/PaddlePaddle/Paddle-Lite-Demo/blob/feature/paddle-x/ocr/android/shell/ppocr_demo/README.md">OCR</a></li>
+</ul>
+<h2 id="feedback-section">Feedback Section</h2>
+<p>The edge deployment capabilities are continuously optimized. Welcome to submit <a href="https://github.com/PaddlePaddle/PaddleX/issues/new/choose">issue</a> to report problems and needs, and we will follow up promptly.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+        <script src="../../js/version-select.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

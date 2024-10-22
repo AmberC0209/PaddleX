@@ -1,0 +1,1451 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Document scene information extraction(layout detection) tutorial - My Docs</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../../css/version-select.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">My Docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Welcome to MkDocs</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../CHANGLOG/" class="nav-link">CHANGLOG</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../CHANGLOG_en/" class="nav-link">CHANGLOG en</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../FAQ/" class="nav-link">FAQ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../FAQ_en/" class="nav-link">FAQ en</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Data annotations</a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Cv modules</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../data_annotations/cv_modules/image_classification/" class="dropdown-item">Image classification</a>
+</li>
+            
+<li>
+    <a href="../../data_annotations/cv_modules/image_classification_en/" class="dropdown-item">Image classification en</a>
+</li>
+            
+<li>
+    <a href="../../data_annotations/cv_modules/image_feature/" class="dropdown-item">Image feature</a>
+</li>
+            
+<li>
+    <a href="../../data_annotations/cv_modules/image_feature_en/" class="dropdown-item">Image feature en</a>
+</li>
+            
+<li>
+    <a href="../../data_annotations/cv_modules/instance_segmentation/" class="dropdown-item">Instance segmentation</a>
+</li>
+            
+<li>
+    <a href="../../data_annotations/cv_modules/instance_segmentation_en/" class="dropdown-item">Instance segmentation en</a>
+</li>
+            
+<li>
+    <a href="../../data_annotations/cv_modules/ml_classification/" class="dropdown-item">Ml classification</a>
+</li>
+            
+<li>
+    <a href="../../data_annotations/cv_modules/ml_classification_en/" class="dropdown-item">Ml classification en</a>
+</li>
+            
+<li>
+    <a href="../../data_annotations/cv_modules/object_detection/" class="dropdown-item">Object detection</a>
+</li>
+            
+<li>
+    <a href="../../data_annotations/cv_modules/object_detection_en/" class="dropdown-item">Object detection en</a>
+</li>
+            
+<li>
+    <a href="../../data_annotations/cv_modules/semantic_segmentation/" class="dropdown-item">Semantic segmentation</a>
+</li>
+            
+<li>
+    <a href="../../data_annotations/cv_modules/semantic_segmentation_en/" class="dropdown-item">Semantic segmentation en</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Ocr modules</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../data_annotations/ocr_modules/table_recognition/" class="dropdown-item">Table recognition</a>
+</li>
+            
+<li>
+    <a href="../../data_annotations/ocr_modules/table_recognition_en/" class="dropdown-item">Table recognition en</a>
+</li>
+            
+<li>
+    <a href="../../data_annotations/ocr_modules/text_detection_recognition/" class="dropdown-item">Text detection recognition</a>
+</li>
+            
+<li>
+    <a href="../../data_annotations/ocr_modules/text_detection_recognition_en/" class="dropdown-item">Text detection recognition en</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Time series modules</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../data_annotations/time_series_modules/time_series_anomaly_detection/" class="dropdown-item">Time series anomaly detection</a>
+</li>
+            
+<li>
+    <a href="../../data_annotations/time_series_modules/time_series_anomaly_detection_en/" class="dropdown-item">Time series anomaly detection en</a>
+</li>
+            
+<li>
+    <a href="../../data_annotations/time_series_modules/time_series_classification/" class="dropdown-item">Time series classification</a>
+</li>
+            
+<li>
+    <a href="../../data_annotations/time_series_modules/time_series_classification_en/" class="dropdown-item">Time series classification en</a>
+</li>
+            
+<li>
+    <a href="../../data_annotations/time_series_modules/time_series_forecasting/" class="dropdown-item">Time series forecasting</a>
+</li>
+            
+<li>
+    <a href="../../data_annotations/time_series_modules/time_series_forecasting_en/" class="dropdown-item">Time series forecasting en</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Installation</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../installation/installation/" class="dropdown-item">Installation</a>
+</li>
+                                    
+<li>
+    <a href="../../installation/installation_en/" class="dropdown-item">Installation en</a>
+</li>
+                                    
+<li>
+    <a href="../../installation/paddlepaddle_install/" class="dropdown-item">Paddlepaddle install</a>
+</li>
+                                    
+<li>
+    <a href="../../installation/paddlepaddle_install_en/" class="dropdown-item">Paddlepaddle install en</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Module usage</a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Instructions</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../module_usage/instructions/config_parameters_common/" class="dropdown-item">Config parameters common</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/instructions/config_parameters_common_en/" class="dropdown-item">Config parameters common en</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/instructions/config_parameters_time_series/" class="dropdown-item">Config parameters time series</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/instructions/config_parameters_time_series_en/" class="dropdown-item">Config parameters time series en</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/instructions/model_python_API/" class="dropdown-item">model python API</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/instructions/model_python_API_en/" class="dropdown-item">model python API en</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Tutorials</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Cv modules</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../module_usage/tutorials/cv_modules/anomaly_detection/" class="dropdown-item">Anomaly detection</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/cv_modules/anomaly_detection_en/" class="dropdown-item">Anomaly detection en</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/cv_modules/face_detection/" class="dropdown-item">Face detection</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/cv_modules/face_detection_en/" class="dropdown-item">Face detection en</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/cv_modules/human_detection/" class="dropdown-item">Human detection</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/cv_modules/human_detection_en/" class="dropdown-item">Human detection en</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/cv_modules/image_classification/" class="dropdown-item">Image classification</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/cv_modules/image_classification_en/" class="dropdown-item">Image classification en</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/cv_modules/image_feature/" class="dropdown-item">Image feature</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/cv_modules/image_feature_en/" class="dropdown-item">Image feature en</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/cv_modules/instance_segmentation/" class="dropdown-item">Instance segmentation</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/cv_modules/instance_segmentation_en/" class="dropdown-item">Instance segmentation en</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/cv_modules/mainbody_detection/" class="dropdown-item">Mainbody detection</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/cv_modules/mainbody_detection_en/" class="dropdown-item">Mainbody detection en</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/cv_modules/ml_classification/" class="dropdown-item">Ml classification</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/cv_modules/ml_classification_en/" class="dropdown-item">Ml classification en</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/cv_modules/object_detection/" class="dropdown-item">Object detection</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/cv_modules/object_detection_en/" class="dropdown-item">Object detection en</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/cv_modules/pedestrian_attribute_recognition/" class="dropdown-item">Pedestrian attribute recognition</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/cv_modules/pedestrian_attribute_recognition_en/" class="dropdown-item">Pedestrian attribute recognition en</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/cv_modules/semantic_segmentation/" class="dropdown-item">Semantic segmentation</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/cv_modules/semantic_segmentation_en/" class="dropdown-item">Semantic segmentation en</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/cv_modules/small_object_detection/" class="dropdown-item">Small object detection</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/cv_modules/small_object_detection_en/" class="dropdown-item">Small object detection en</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/cv_modules/vehicle_attribute_recognition/" class="dropdown-item">Vehicle attribute recognition</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/cv_modules/vehicle_attribute_recognition_en/" class="dropdown-item">Vehicle attribute recognition en</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/cv_modules/vehicle_detection/" class="dropdown-item">Vehicle detection</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/cv_modules/vehicle_detection_en/" class="dropdown-item">Vehicle detection en</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Ocr modules</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../module_usage/tutorials/ocr_modules/doc_img_orientation_classification/" class="dropdown-item">Doc img orientation classification</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/ocr_modules/doc_img_orientation_classification_en/" class="dropdown-item">Doc img orientation classification en</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/ocr_modules/formula_recognition/" class="dropdown-item">Formula recognition</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/ocr_modules/formula_recognition_en/" class="dropdown-item">Formula recognition en</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/ocr_modules/layout_detection/" class="dropdown-item">Layout detection</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/ocr_modules/layout_detection_en/" class="dropdown-item">Layout detection en</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/ocr_modules/seal_text_detection/" class="dropdown-item">Seal text detection</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/ocr_modules/seal_text_detection_en/" class="dropdown-item">Seal text detection en</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/ocr_modules/table_structure_recognition/" class="dropdown-item">Table structure recognition</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/ocr_modules/table_structure_recognition_en/" class="dropdown-item">Table structure recognition en</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/ocr_modules/text_detection/" class="dropdown-item">Text detection</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/ocr_modules/text_detection_en/" class="dropdown-item">Text detection en</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/ocr_modules/text_image_unwarping/" class="dropdown-item">Text image unwarping</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/ocr_modules/text_image_unwarping_en/" class="dropdown-item">Text image unwarping en</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/ocr_modules/text_recognition/" class="dropdown-item">Text recognition</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/ocr_modules/text_recognition_en/" class="dropdown-item">Text recognition en</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Time series modules</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../module_usage/tutorials/time_series_modules/time_series_anomaly_detection/" class="dropdown-item">Time series anomaly detection</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/time_series_modules/time_series_anomaly_detection_en/" class="dropdown-item">Time series anomaly detection en</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/time_series_modules/time_series_classification/" class="dropdown-item">Time series classification</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/time_series_modules/time_series_classification_en/" class="dropdown-item">Time series classification en</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/time_series_modules/time_series_forecasting/" class="dropdown-item">Time series forecasting</a>
+</li>
+            
+<li>
+    <a href="../../module_usage/tutorials/time_series_modules/time_series_forecasting_en/" class="dropdown-item">Time series forecasting en</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Other devices support</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../other_devices_support/multi_devices_use_guide/" class="dropdown-item">Multi devices use guide</a>
+</li>
+                                    
+<li>
+    <a href="../../other_devices_support/multi_devices_use_guide_en/" class="dropdown-item">Multi devices use guide en</a>
+</li>
+                                    
+<li>
+    <a href="../../other_devices_support/paddlepaddle_install_DCU/" class="dropdown-item">paddlepaddle install DCU</a>
+</li>
+                                    
+<li>
+    <a href="../../other_devices_support/paddlepaddle_install_DCU_en/" class="dropdown-item">paddlepaddle install DCU en</a>
+</li>
+                                    
+<li>
+    <a href="../../other_devices_support/paddlepaddle_install_MLU/" class="dropdown-item">paddlepaddle install MLU</a>
+</li>
+                                    
+<li>
+    <a href="../../other_devices_support/paddlepaddle_install_MLU_en/" class="dropdown-item">paddlepaddle install MLU en</a>
+</li>
+                                    
+<li>
+    <a href="../../other_devices_support/paddlepaddle_install_NPU/" class="dropdown-item">paddlepaddle install NPU</a>
+</li>
+                                    
+<li>
+    <a href="../../other_devices_support/paddlepaddle_install_NPU_en/" class="dropdown-item">paddlepaddle install NPU en</a>
+</li>
+                                    
+<li>
+    <a href="../../other_devices_support/paddlepaddle_install_XPU/" class="dropdown-item">paddlepaddle install XPU</a>
+</li>
+                                    
+<li>
+    <a href="../../other_devices_support/paddlepaddle_install_XPU_en/" class="dropdown-item">paddlepaddle install XPU en</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Pipeline deploy</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../pipeline_deploy/edge_deploy/" class="dropdown-item">Edge deploy</a>
+</li>
+                                    
+<li>
+    <a href="../../pipeline_deploy/edge_deploy_en/" class="dropdown-item">Edge deploy en</a>
+</li>
+                                    
+<li>
+    <a href="../../pipeline_deploy/high_performance_inference/" class="dropdown-item">High performance inference</a>
+</li>
+                                    
+<li>
+    <a href="../../pipeline_deploy/high_performance_inference_en/" class="dropdown-item">High performance inference en</a>
+</li>
+                                    
+<li>
+    <a href="../../pipeline_deploy/service_deploy/" class="dropdown-item">Service deploy</a>
+</li>
+                                    
+<li>
+    <a href="../../pipeline_deploy/service_deploy_en/" class="dropdown-item">Service deploy en</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Pipeline usage</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../pipeline_usage/pipeline_develop_guide/" class="dropdown-item">Pipeline develop guide</a>
+</li>
+                                    
+<li>
+    <a href="../../pipeline_usage/pipeline_develop_guide_en/" class="dropdown-item">Pipeline develop guide en</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Instructions</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../pipeline_usage/instructions/pipeline_CLI_usage/" class="dropdown-item">pipeline CLI usage</a>
+</li>
+            
+<li>
+    <a href="../../pipeline_usage/instructions/pipeline_CLI_usage_en/" class="dropdown-item">pipeline CLI usage en</a>
+</li>
+            
+<li>
+    <a href="../../pipeline_usage/instructions/pipeline_python_API/" class="dropdown-item">pipeline python API</a>
+</li>
+            
+<li>
+    <a href="../../pipeline_usage/instructions/pipeline_python_API_en/" class="dropdown-item">pipeline python API en</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Tutorials</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Cv pipelines</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../pipeline_usage/tutorials/cv_pipelines/image_anomaly_detection/" class="dropdown-item">Image anomaly detection</a>
+</li>
+            
+<li>
+    <a href="../../pipeline_usage/tutorials/cv_pipelines/image_anomaly_detection_en/" class="dropdown-item">Image anomaly detection en</a>
+</li>
+            
+<li>
+    <a href="../../pipeline_usage/tutorials/cv_pipelines/image_classification/" class="dropdown-item">Image classification</a>
+</li>
+            
+<li>
+    <a href="../../pipeline_usage/tutorials/cv_pipelines/image_classification_en/" class="dropdown-item">Image classification en</a>
+</li>
+            
+<li>
+    <a href="../../pipeline_usage/tutorials/cv_pipelines/image_multi_label_classification/" class="dropdown-item">Image multi label classification</a>
+</li>
+            
+<li>
+    <a href="../../pipeline_usage/tutorials/cv_pipelines/image_multi_label_classification_en/" class="dropdown-item">Image multi label classification en</a>
+</li>
+            
+<li>
+    <a href="../../pipeline_usage/tutorials/cv_pipelines/instance_segmentation/" class="dropdown-item">Instance segmentation</a>
+</li>
+            
+<li>
+    <a href="../../pipeline_usage/tutorials/cv_pipelines/instance_segmentation_en/" class="dropdown-item">Instance segmentation en</a>
+</li>
+            
+<li>
+    <a href="../../pipeline_usage/tutorials/cv_pipelines/object_detection/" class="dropdown-item">Object detection</a>
+</li>
+            
+<li>
+    <a href="../../pipeline_usage/tutorials/cv_pipelines/object_detection_en/" class="dropdown-item">Object detection en</a>
+</li>
+            
+<li>
+    <a href="../../pipeline_usage/tutorials/cv_pipelines/semantic_segmentation/" class="dropdown-item">Semantic segmentation</a>
+</li>
+            
+<li>
+    <a href="../../pipeline_usage/tutorials/cv_pipelines/semantic_segmentation_en/" class="dropdown-item">Semantic segmentation en</a>
+</li>
+            
+<li>
+    <a href="../../pipeline_usage/tutorials/cv_pipelines/small_object_detection/" class="dropdown-item">Small object detection</a>
+</li>
+            
+<li>
+    <a href="../../pipeline_usage/tutorials/cv_pipelines/small_object_detection_en/" class="dropdown-item">Small object detection en</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Information extraction pipelines</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../pipeline_usage/tutorials/information_extraction_pipelines/document_scene_information_extraction/" class="dropdown-item">Document scene information extraction</a>
+</li>
+            
+<li>
+    <a href="../../pipeline_usage/tutorials/information_extraction_pipelines/document_scene_information_extraction_en/" class="dropdown-item">Document scene information extraction en</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Ocr pipelines</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../pipeline_usage/tutorials/ocr_pipelines/OCR/" class="dropdown-item">OCR</a>
+</li>
+            
+<li>
+    <a href="../../pipeline_usage/tutorials/ocr_pipelines/OCR_en/" class="dropdown-item">OCR en</a>
+</li>
+            
+<li>
+    <a href="../../pipeline_usage/tutorials/ocr_pipelines/formula_recognition/" class="dropdown-item">Formula recognition</a>
+</li>
+            
+<li>
+    <a href="../../pipeline_usage/tutorials/ocr_pipelines/formula_recognition_en/" class="dropdown-item">Formula recognition en</a>
+</li>
+            
+<li>
+    <a href="../../pipeline_usage/tutorials/ocr_pipelines/layout_parsing/" class="dropdown-item">Layout parsing</a>
+</li>
+            
+<li>
+    <a href="../../pipeline_usage/tutorials/ocr_pipelines/layout_parsing_en/" class="dropdown-item">Layout parsing en</a>
+</li>
+            
+<li>
+    <a href="../../pipeline_usage/tutorials/ocr_pipelines/seal_recognition/" class="dropdown-item">Seal recognition</a>
+</li>
+            
+<li>
+    <a href="../../pipeline_usage/tutorials/ocr_pipelines/seal_recognition_en/" class="dropdown-item">Seal recognition en</a>
+</li>
+            
+<li>
+    <a href="../../pipeline_usage/tutorials/ocr_pipelines/table_recognition/" class="dropdown-item">Table recognition</a>
+</li>
+            
+<li>
+    <a href="../../pipeline_usage/tutorials/ocr_pipelines/table_recognition_en/" class="dropdown-item">Table recognition en</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Time series pipelines</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../pipeline_usage/tutorials/time_series_pipelines/time_series_anomaly_detection/" class="dropdown-item">Time series anomaly detection</a>
+</li>
+            
+<li>
+    <a href="../../pipeline_usage/tutorials/time_series_pipelines/time_series_anomaly_detection_en/" class="dropdown-item">Time series anomaly detection en</a>
+</li>
+            
+<li>
+    <a href="../../pipeline_usage/tutorials/time_series_pipelines/time_series_classification/" class="dropdown-item">Time series classification</a>
+</li>
+            
+<li>
+    <a href="../../pipeline_usage/tutorials/time_series_pipelines/time_series_classification_en/" class="dropdown-item">Time series classification en</a>
+</li>
+            
+<li>
+    <a href="../../pipeline_usage/tutorials/time_series_pipelines/time_series_forecasting/" class="dropdown-item">Time series forecasting</a>
+</li>
+            
+<li>
+    <a href="../../pipeline_usage/tutorials/time_series_pipelines/time_series_forecasting_en/" class="dropdown-item">Time series forecasting en</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Practical tutorials</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Document scene information extraction(layout detection) tutorial</a>
+</li>
+                                    
+<li>
+    <a href="../document_scene_information_extraction%28layout_detection%29_tutorial_en/" class="dropdown-item">Document scene information extraction(layout detection) tutorial en</a>
+</li>
+                                    
+<li>
+    <a href="../image_classification_garbage_tutorial/" class="dropdown-item">Image classification garbage tutorial</a>
+</li>
+                                    
+<li>
+    <a href="../image_classification_garbage_tutorial_en/" class="dropdown-item">Image classification garbage tutorial en</a>
+</li>
+                                    
+<li>
+    <a href="../instance_segmentation_remote_sensing_tutorial/" class="dropdown-item">Instance segmentation remote sensing tutorial</a>
+</li>
+                                    
+<li>
+    <a href="../instance_segmentation_remote_sensing_tutorial_en/" class="dropdown-item">Instance segmentation remote sensing tutorial en</a>
+</li>
+                                    
+<li>
+    <a href="../object_detection_fall_tutorial/" class="dropdown-item">Object detection fall tutorial</a>
+</li>
+                                    
+<li>
+    <a href="../object_detection_fall_tutorial_en/" class="dropdown-item">Object detection fall tutorial en</a>
+</li>
+                                    
+<li>
+    <a href="../object_detection_fashion_pedia_tutorial/" class="dropdown-item">Object detection fashion pedia tutorial</a>
+</li>
+                                    
+<li>
+    <a href="../object_detection_fashion_pedia_tutorial_en/" class="dropdown-item">Object detection fashion pedia tutorial en</a>
+</li>
+                                    
+<li>
+    <a href="../ocr_det_license_tutorial/" class="dropdown-item">Ocr det license tutorial</a>
+</li>
+                                    
+<li>
+    <a href="../ocr_det_license_tutorial_en/" class="dropdown-item">Ocr det license tutorial en</a>
+</li>
+                                    
+<li>
+    <a href="../ocr_rec_chinese_tutorial/" class="dropdown-item">Ocr rec chinese tutorial</a>
+</li>
+                                    
+<li>
+    <a href="../ocr_rec_chinese_tutorial_en/" class="dropdown-item">Ocr rec chinese tutorial en</a>
+</li>
+                                    
+<li>
+    <a href="../semantic_segmentation_road_tutorial/" class="dropdown-item">Semantic segmentation road tutorial</a>
+</li>
+                                    
+<li>
+    <a href="../semantic_segmentation_road_tutorial_en/" class="dropdown-item">Semantic segmentation road tutorial en</a>
+</li>
+                                    
+<li>
+    <a href="../ts_anomaly_detection/" class="dropdown-item">Ts anomaly detection</a>
+</li>
+                                    
+<li>
+    <a href="../ts_anomaly_detection_en/" class="dropdown-item">Ts anomaly detection en</a>
+</li>
+                                    
+<li>
+    <a href="../ts_classification/" class="dropdown-item">Ts classification</a>
+</li>
+                                    
+<li>
+    <a href="../ts_classification_en/" class="dropdown-item">Ts classification en</a>
+</li>
+                                    
+<li>
+    <a href="../ts_forecast/" class="dropdown-item">Ts forecast</a>
+</li>
+                                    
+<li>
+    <a href="../ts_forecast_en/" class="dropdown-item">Ts forecast en</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Support list</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../support_list/model_list_dcu/" class="dropdown-item">Model list dcu</a>
+</li>
+                                    
+<li>
+    <a href="../../support_list/model_list_dcu_en/" class="dropdown-item">Model list dcu en</a>
+</li>
+                                    
+<li>
+    <a href="../../support_list/model_list_mlu/" class="dropdown-item">Model list mlu</a>
+</li>
+                                    
+<li>
+    <a href="../../support_list/model_list_mlu_en/" class="dropdown-item">Model list mlu en</a>
+</li>
+                                    
+<li>
+    <a href="../../support_list/model_list_npu/" class="dropdown-item">Model list npu</a>
+</li>
+                                    
+<li>
+    <a href="../../support_list/model_list_npu_en/" class="dropdown-item">Model list npu en</a>
+</li>
+                                    
+<li>
+    <a href="../../support_list/model_list_xpu/" class="dropdown-item">Model list xpu</a>
+</li>
+                                    
+<li>
+    <a href="../../support_list/model_list_xpu_en/" class="dropdown-item">Model list xpu en</a>
+</li>
+                                    
+<li>
+    <a href="../../support_list/models_list/" class="dropdown-item">Models list</a>
+</li>
+                                    
+<li>
+    <a href="../../support_list/models_list_en/" class="dropdown-item">Models list en</a>
+</li>
+                                    
+<li>
+    <a href="../../support_list/pipelines_list/" class="dropdown-item">Pipelines list</a>
+</li>
+                                    
+<li>
+    <a href="../../support_list/pipelines_list_dcu/" class="dropdown-item">Pipelines list dcu</a>
+</li>
+                                    
+<li>
+    <a href="../../support_list/pipelines_list_dcu_en/" class="dropdown-item">Pipelines list dcu en</a>
+</li>
+                                    
+<li>
+    <a href="../../support_list/pipelines_list_en/" class="dropdown-item">Pipelines list en</a>
+</li>
+                                    
+<li>
+    <a href="../../support_list/pipelines_list_mlu/" class="dropdown-item">Pipelines list mlu</a>
+</li>
+                                    
+<li>
+    <a href="../../support_list/pipelines_list_mlu_en/" class="dropdown-item">Pipelines list mlu en</a>
+</li>
+                                    
+<li>
+    <a href="../../support_list/pipelines_list_npu/" class="dropdown-item">Pipelines list npu</a>
+</li>
+                                    
+<li>
+    <a href="../../support_list/pipelines_list_npu_en/" class="dropdown-item">Pipelines list npu en</a>
+</li>
+                                    
+<li>
+    <a href="../../support_list/pipelines_list_xpu/" class="dropdown-item">Pipelines list xpu</a>
+</li>
+                                    
+<li>
+    <a href="../../support_list/pipelines_list_xpu_en/" class="dropdown-item">Pipelines list xpu en</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../../pipeline_usage/tutorials/time_series_pipelines/time_series_forecasting_en/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../document_scene_information_extraction%28layout_detection%29_tutorial_en/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#paddlex-30-v3pp-chatocrv3_doc-" class="nav-link">PaddleX 3.0 文档场景信息抽取v3（PP-ChatOCRv3_doc） -- 论文文献信息抽取教程</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#1" class="nav-link">1. 选择产线</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#2" class="nav-link">2. 快速体验</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#3" class="nav-link">3. 选择模型</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#4" class="nav-link">4. 数据准备和校验</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#5" class="nav-link">5. 模型训练和评估</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#6" class="nav-link">6. 产线测试</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#7" class="nav-link">7. 开发集成/部署</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p>简体中文 | <a href="../document_scene_information_extraction%28layout_detection%29_tutorial_en/">English</a></p>
+<h1 id="paddlex-30-v3pp-chatocrv3_doc-">PaddleX 3.0 文档场景信息抽取v3（PP-ChatOCRv3_doc） -- 论文文献信息抽取教程</h1>
+<p>PaddleX 提供了丰富的模型产线，模型产线由一个或多个模型组合实现，每个模型产线都能够解决特定的场景任务问题。PaddleX 所提供的模型产线均支持快速体验，如果效果不及预期，也同样支持使用私有数据微调模型，并且 PaddleX 提供了 Python API，方便将产线集成到个人项目中。在使用之前，您首先需要安装 PaddleX， 安装方式请参考 <a href="../../installation/installation/">PaddleX本地安装教程</a>。此处以一个论文文献的文档场景信息抽取任务为例子，介绍该产线的在实际场景中的使用流程。</p>
+<h2 id="1">1. 选择产线</h2>
+<p>文档信息抽取是文档处理的一部分，在众多场景中都有着广泛的应用，例如学术研究、图书馆管理、科技情报分析、文献综述撰写等场景。通过文档信息抽取技术，我们可以从论文文献中自动提取出标题、作者、摘要、关键词、发表年份、期刊名称、引用信息等关键信息，并以结构化的形式存储，便于后续的检索、分析与应用。这不仅提升了科研人员的工作效率，也为学术研究的深入发展提供了强有力的支持。</p>
+<p>首先，需要根据任务场景，选择对应的 PaddleX 产线，本节以论文文献的信息抽取为例，希望抽取出论文中的<strong>页眉</strong>和<strong>表格标题</strong>，对应 PaddleX 的文档场景信息抽取v3产线。如果无法确定任务和产线的对应关系，您可以在 PaddleX 支持的<a href="../../support_list/pipelines_list/">模型产线列表</a>中了解相关产线的能力介绍。</p>
+<h2 id="2">2. 快速体验</h2>
+<p>PaddleX 提供了两种体验的方式，你可以在线体验文档场景信息抽取v3产线的效果，也可以在本地使用 Python 体验文档场景信息抽取v3 产线的效果。</p>
+<h3 id="21">2.1 本地体验</h3>
+<p>在本地使用文档场景信息抽取v3产线前，请确保您已经按照<a href="../../installation/installation/">PaddleX本地安装教程</a>完成了PaddleX的wheel包安装。几行代码即可完成产线的快速推理：</p>
+<pre><code class="language-python">from paddlex import create_pipeline
+
+pipeline = create_pipeline(
+    pipeline=&quot;PP-ChatOCRv3-doc&quot;,
+    llm_name=&quot;ernie-3.5&quot;,
+    llm_params={&quot;api_type&quot;: &quot;qianfan&quot;, &quot;ak&quot;: &quot;&quot;, &quot;sk&quot;: &quot;&quot;} # 使用千帆接口，请填入您的ak与sk，否则无法调用大模型
+    # llm_params={&quot;api_type&quot;: &quot;aistudio&quot;, &quot;access_token&quot;: &quot;&quot;} # 或者使用AIStudio接口，请填入您的access_token，否则无法调用大模型
+    )
+
+visual_result, visual_info = pipeline.visual_predict(&quot;https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/doc_images/practical_tutorial/PP-ChatOCRv3_doc_layout/test.jpg&quot;)
+
+for res in visual_result:
+    res.save_to_img(&quot;./output&quot;)
+    res.save_to_html('./output')
+    res.save_to_xlsx('./output')
+
+vector = pipeline.build_vector(visual_info=visual_info)
+chat_result = pipeline.chat(
+    key_list=[&quot;页眉&quot;, &quot;表格标题&quot;],
+    visual_info=visual_info,
+    vector=vector,
+    )
+chat_result.print()
+</code></pre>
+<p><strong>注</strong>：目前仅支持文心大模型，支持在<a href="https://console.bce.baidu.com/qianfan/ais/console/onlineService">百度云千帆平台</a>或者<a href="https://aistudio.baidu.com/">星河社区 AIStudio</a>上获取相关的 ak/sk(access_token)。如果使用百度云千帆平台，可以参考<a href="https://cloud.baidu.com/doc/WENXINWORKSHOP/s/Hlwerugt8">AK和SK鉴权调用API流程</a> 获取ak/sk，如果使用星河社区 AIStudio，可以在<a href="https://aistudio.baidu.com/account/accessToken">星河社区 AIStudio 访问令牌</a>中获取 access_token。</p>
+<p>输出打印的结果如下：</p>
+<pre><code>The result has been saved in output/tmpfnss9sq9_layout.jpg.
+The result has been saved in output/tmpfnss9sq9_ocr.jpg.
+The result has been saved in output/tmpfnss9sq9_table.jpg.
+The result has been saved in output/tmpfnss9sq9_table.jpg.
+The result has been saved in output/tmpfnss9sq9/tmpfnss9sq9.html.
+The result has been saved in output/tmpfnss9sq9/tmpfnss9sq9.html.
+The result has been saved in output/tmpfnss9sq9/tmpfnss9sq9.xlsx.
+The result has been saved in output/tmpfnss9sq9/tmpfnss9sq9.xlsx.
+
+{'chat_res': {'页眉': '未知', '表格标题': '未知'}, 'prompt': ''}
+
+</code></pre>
+<p>在<code>output</code> 目录中，保存了版面区域检测、OCR、表格识别可视化结果以及表格html和xlsx结果。</p>
+<p>其中版面区域定位结果可视化如下：</p>
+<p><img alt="" src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/practical_tutorials/PP-ChatOCRv3_doc/layout_detection_01.png" /></p>
+<p>通过上面的文档场景信息抽取的快速体验可以进行 Badcase 分析，发现文档场景信息抽取产线的官方模型，在当前需求场景中存在下面的问题：由于官方模型目前只区分了图，表格和印章三个类别，因此目前无法准确的定位并抽取出页眉和表格标题等其他信息，在<code>{'chat_res': {'页眉': '未知', '表格标题': '未知'}, 'prompt': ''}</code>中的结果是未知。因此，本节工作聚焦于论文文献的场景，利用论文文档数据集，以页眉和表格标题信息的抽取为例，对文档场景信息抽取产线中的版面分析模型进行微调，从而达到能够精确提取文档中页眉和表格标题信息的能力。</p>
+<h3 id="22">2.2 在线体验</h3>
+<p>您可以在 <strong>AI Studio 星河社区</strong> 体验文档场景信息抽取v3产线的效果，点击链接下载 <a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/doc_images/practical_tutorial/PP-ChatOCRv3_doc_layout/test.jpg">论文文献测试文件</a>，上传至<a href="https://aistudio.baidu.com/community/app/182491/webUI?source=appCenter">官方文档场景信息抽取v3 应用</a> 体验抽取效果。如下：</p>
+<p><img alt="" src="https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/doc_images/practical_tutorial/PP-ChatOCRv3_doc_layout/06.png" /></p>
+<h2 id="3">3. 选择模型</h2>
+<p>PaddleX 提供了 4 个端到端的版面区域定位模型，具体可参考 <a href="../../support_list/models_list/">模型列表</a>，其中版面区域检测模型的 benchmark 如下：</p>
+<table>
+<thead>
+<tr>
+<th>模型</th>
+<th>mAP(0.5)（%）</th>
+<th>GPU推理耗时（ms）</th>
+<th>CPU推理耗时 (ms)</th>
+<th>模型存储大小（M）</th>
+<th>介绍</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PicoDet_layout_1x</td>
+<td>86.8</td>
+<td>13.0</td>
+<td>91.3</td>
+<td>7.4</td>
+<td>基于PicoDet-1x在PubLayNet数据集训练的高效率版面区域定位模型，可定位包含文字、标题、表格、图片以及列表这5类区域</td>
+</tr>
+<tr>
+<td>PicoDet-L_layout_3cls</td>
+<td>89.3</td>
+<td>15.7</td>
+<td>159.8</td>
+<td>22.6</td>
+<td>基于PicoDet-L在中英文论文、杂志和研报等场景上自建数据集训练的高效率版面区域定位模型，包含3个类别：表格，图像和印章</td>
+</tr>
+<tr>
+<td>RT-DETR-H_layout_3cls</td>
+<td>95.9</td>
+<td>114.6</td>
+<td>3832.6</td>
+<td>470.1</td>
+<td>基于RT-DETR-H在中英文论文、杂志和研报等场景上自建数据集训练的高精度版面区域定位模型，包含3个类别：表格，图像和印章</td>
+</tr>
+<tr>
+<td>RT-DETR-H_layout_17cls</td>
+<td>92.6</td>
+<td>115.1</td>
+<td>3827.2</td>
+<td>470.2</td>
+<td>基于RT-DETR-H在中英文论文、杂志和研报等场景上自建数据集训练的高精度版面区域定位模型，包含17个版面常见类别，分别是：段落标题、图片、文本、数字、摘要、内容、表格标题、公式、表格、表格标题、参考文献、文档标题、脚注、页眉、算法、页脚、印章</td>
+</tr>
+</tbody>
+</table>
+<p><strong>注：以上精度指标的评估集是 PaddleOCR 自建的版面区域分析数据集，包含中英文论文、杂志和研报等常见的 1w 张文档类型图片。GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为 8，精度类型为 FP32。</strong></p>
+<h2 id="4">4. 数据准备和校验</h2>
+<h3 id="41">4.1 数据准备</h3>
+<p>本教程采用 <code>论文文献数据集</code> 作为示例数据集，可通过以下命令获取示例数据集。如果您使用自备的已标注数据集，需要按照 PaddleX 的格式要求对自备数据集进行调整，以满足 PaddleX 的数据格式要求。关于数据格式介绍，您可以参考 <a href="../../data_annotations/cv_modules/object_detection/">PaddleX 目标检测模块数据标注教程</a>。</p>
+<p>数据集获取命令：</p>
+<pre><code class="language-bash">cd /path/to/paddlex
+wget https://paddle-model-ecology.bj.bcebos.com/paddlex/data/paperlayout.tar -P ./dataset
+tar -xf ./dataset/paperlayout.tar -C ./dataset/
+</code></pre>
+<h3 id="42">4.2 数据集校验</h3>
+<p>在对数据集校验时，只需一行命令：</p>
+<pre><code class="language-bash">python main.py -c paddlex/configs/structure_analysis/RT-DETR-H_layout_3cls.yaml \
+    -o Global.mode=check_dataset \
+    -o Global.dataset_dir=./dataset/paperlayout/
+</code></pre>
+<p>执行上述命令后，PaddleX 会对数据集进行校验，并统计数据集的基本信息。命令运行成功后会在 log 中打印出 <code>Check dataset passed !</code> 信息，同时相关产出会保存在当前目录的 <code>./output/check_dataset</code> 目录下，产出目录中包括可视化的示例样本图片和样本分布直方图。校验结果文件保存在 <code>./output/check_dataset_result.json</code>，校验结果文件具体内容为</p>
+<pre><code>{
+  &quot;done_flag&quot;: true,
+  &quot;check_pass&quot;: true,
+  &quot;attributes&quot;: {
+    &quot;num_classes&quot;: 4,
+    &quot;train_samples&quot;: 4734,
+    &quot;train_sample_paths&quot;: [
+      &quot;check_dataset\/demo_img\/train_4612.jpg&quot;,
+      &quot;check_dataset\/demo_img\/train_4844.jpg&quot;,
+      &quot;check_dataset\/demo_img\/train_0084.jpg&quot;,
+      &quot;check_dataset\/demo_img\/train_0448.jpg&quot;,
+      &quot;check_dataset\/demo_img\/train_4703.jpg&quot;,
+      &quot;check_dataset\/demo_img\/train_3572.jpg&quot;,
+      &quot;check_dataset\/demo_img\/train_4516.jpg&quot;,
+      &quot;check_dataset\/demo_img\/train_2836.jpg&quot;,
+      &quot;check_dataset\/demo_img\/train_1353.jpg&quot;,
+      &quot;check_dataset\/demo_img\/train_0225.jpg&quot;
+    ],
+    &quot;val_samples&quot;: 928,
+    &quot;val_sample_paths&quot;: [
+      &quot;check_dataset\/demo_img\/val_0982.jpg&quot;,
+      &quot;check_dataset\/demo_img\/val_0607.jpg&quot;,
+      &quot;check_dataset\/demo_img\/val_0623.jpg&quot;,
+      &quot;check_dataset\/demo_img\/val_0890.jpg&quot;,
+      &quot;check_dataset\/demo_img\/val_0036.jpg&quot;,
+      &quot;check_dataset\/demo_img\/val_0654.jpg&quot;,
+      &quot;check_dataset\/demo_img\/val_0895.jpg&quot;,
+      &quot;check_dataset\/demo_img\/val_0059.jpg&quot;,
+      &quot;check_dataset\/demo_img\/val_0142.jpg&quot;,
+      &quot;check_dataset\/demo_img\/val_0088.jpg&quot;
+    ]
+  },
+  &quot;analysis&quot;: {
+    &quot;histogram&quot;: &quot;check_dataset\/histogram.png&quot;
+  },
+  &quot;dataset_path&quot;: &quot;.\/dataset\/paperlayout\/&quot;,
+  &quot;show_type&quot;: &quot;image&quot;,
+  &quot;dataset_type&quot;: &quot;COCODetDataset&quot;
+}
+</code></pre>
+<p>上述校验结果中，check_pass 为 True 表示数据集格式符合要求，其他部分指标的说明如下：</p>
+<ul>
+<li>attributes.num_classes：该数据集类别数为 4，此处类别数量为后续训练需要传入的类别数量；</li>
+<li>attributes.train_samples：该数据集训练集样本数量为 4734；</li>
+<li>attributes.val_samples：该数据集验证集样本数量为 928；</li>
+<li>attributes.train_sample_paths：该数据集训练集样本可视化图片相对路径列表；</li>
+<li>attributes.val_sample_paths：该数据集验证集样本可视化图片相对路径列表；</li>
+</ul>
+<p>另外，数据集校验还对数据集中所有类别的样本数量分布情况进行了分析，并绘制了分布直方图（histogram.png）：</p>
+<p><center></p>
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/practical_tutorials/PP-ChatOCRv3_doc/layout_detection_02.png" width=600></p>
+<p></center></p>
+<p><strong>注</strong>：只有通过数据校验的数据才可以训练和评估。</p>
+<h3 id="43">4.3 数据集划分（非必选）</h3>
+<p>如需对数据集格式进行转换或是重新划分数据集，可通过修改配置文件或是追加超参数的方式进行设置。</p>
+<p>数据集校验相关的参数可以通过修改配置文件中 <code>CheckDataset</code> 下的字段进行设置，配置文件中部分参数的示例说明如下：</p>
+<ul>
+<li><code>CheckDataset</code>:<ul>
+<li><code>split</code>:<ul>
+<li><code>enable</code>: 是否进行重新划分数据集，为 <code>True</code> 时进行数据集格式转换，默认为 <code>False</code>；</li>
+<li><code>train_percent</code>: 如果重新划分数据集，则需要设置训练集的百分比，类型为 0-100 之间的任意整数，需要保证和 <code>val_percent</code> 值加和为 100；</li>
+<li><code>val_percent</code>: 如果重新划分数据集，则需要设置验证集的百分比，类型为 0-100 之间的任意整数，需要保证和 <code>train_percent</code> 值加和为 100；</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>数据划分时，原有标注文件会被在原路径下重命名为 <code>xxx.bak</code>，以上参数同样支持通过追加命令行参数的方式进行设置，例如重新划分数据集并设置训练集与验证集比例：<code>-o CheckDataset.split.enable=True -o CheckDataset.split.train_percent=80 -o CheckDataset.split.val_percent=20</code>。</p>
+<h2 id="5">5. 模型训练和评估</h2>
+<h3 id="51">5.1 模型训练</h3>
+<p>在训练之前，请确保您已经对数据集进行了校验。完成 PaddleX 模型的训练，只需如下一条命令：</p>
+<pre><code class="language-bash">python main.py -c paddlex/configs/structure_analysis/RT-DETR-H_layout_3cls.yaml \
+    -o Global.mode=train \
+    -o Global.dataset_dir=./dataset/paperlayout \
+    -o Train.num_classes=4
+</code></pre>
+<p>在 PaddleX 中模型训练支持：修改训练超参数、单机单卡/多卡训练等功能，只需修改配置文件或追加命令行参数。</p>
+<p>PaddleX 中每个模型都提供了模型开发的配置文件，用于设置相关参数。模型训练相关的参数可以通过修改配置文件中 <code>Train</code> 下的字段进行设置，配置文件中部分参数的示例说明如下：</p>
+<ul>
+<li><code>Global</code>：<ul>
+<li><code>mode</code>：模式，支持数据校验（<code>check_dataset</code>）、模型训练（<code>train</code>）、模型评估（<code>evaluate</code>）；</li>
+<li><code>device</code>：训练设备，可选<code>cpu</code>、<code>gpu</code>、<code>xpu</code>、<code>npu</code>、<code>mlu</code>，除 cpu 外，多卡训练可指定卡号，如：<code>gpu:0,1,2,3</code>；</li>
+</ul>
+</li>
+<li><code>Train</code>：训练超参数设置；<ul>
+<li><code>epochs_iters</code>：训练轮次数设置；</li>
+<li><code>learning_rate</code>：训练学习率设置；</li>
+</ul>
+</li>
+</ul>
+<p>更多超参数介绍，请参考 <a href="../../module_usage/instructions/config_parameters_common/">PaddleX 通用模型配置文件参数说明</a>。</p>
+<p><strong>注：</strong>
+- 以上参数可以通过追加令行参数的形式进行设置，如指定模式为模型训练：<code>-o Global.mode=train</code>；指定前 2 卡 gpu 训练：<code>-o Global.device=gpu:0,1</code>；设置训练轮次数为 10：<code>-o Train.epochs_iters=10</code>。
+- 模型训练过程中，PaddleX 会自动保存模型权重文件，默认为<code>output</code>，如需指定保存路径，可通过配置文件中 <code>-o Global.output</code> 字段
+- PaddleX 对您屏蔽了动态图权重和静态图权重的概念。在模型训练的过程中，会同时产出动态图和静态图的权重，在模型推理时，默认选择静态图权重推理。</p>
+<p><strong>训练产出解释:</strong></p>
+<p>在完成模型训练后，所有产出保存在指定的输出目录（默认为<code>./output/</code>）下，通常有以下产出：</p>
+<ul>
+<li>train_result.json：训练结果记录文件，记录了训练任务是否正常完成，以及产出的权重指标、相关文件路径等；</li>
+<li>train.log：训练日志文件，记录了训练过程中的模型指标变化、loss 变化等；</li>
+<li>config.yaml：训练配置文件，记录了本次训练的超参数的配置；</li>
+<li>.pdparams、.pdopt、.pdstates、.pdiparams、.pdmodel：模型权重相关文件，包括网络参数、优化器、静态图网络参数、静态图网络结构等；</li>
+</ul>
+<h3 id="52">5.2 模型评估</h3>
+<p>在完成模型训练后，可以对指定的模型权重文件在验证集上进行评估，验证模型精度。使用 PaddleX 进行模型评估，只需一行命令：</p>
+<pre><code class="language-bash">python main.py -c paddlex/configs/structure_analysis/RT-DETR-H_layout_3cls.yaml \
+    -o Global.mode=evaluate \
+    -o Global.dataset_dir=./dataset/paperlayout
+</code></pre>
+<p>与模型训练类似，模型评估支持修改配置文件或追加命令行参数的方式设置。</p>
+<p><strong>注：</strong> 在模型评估时，需要指定模型权重文件路径，每个配置文件中都内置了默认的权重保存路径，如需要改变，只需要通过追加命令行参数的形式进行设置即可，如<code>-o Evaluate.weight_path=./output/best_model/best_model.pdparams</code>。</p>
+<h3 id="53">5.3 模型调优</h3>
+<p>在学习了模型训练和评估后，我们可以通过调整超参数来提升模型的精度。通过合理调整训练轮数，您可以控制模型的训练深度，避免过拟合或欠拟合；而学习率的设置则关乎模型收敛的速度和稳定性。因此，在优化模型性能时，务必审慎考虑这两个参数的取值，并根据实际情况进行灵活调整，以获得最佳的训练效果。</p>
+<p>推荐在调试参数时遵循控制变量法：
+1. 首先固定训练轮次为 30，批大小为 4。
+2. 基于 <code>RT-DETR-H_layout_3cls</code> 模型启动四个实验，学习率分别为：0.001，0.0005，0.0001，0.00001。
+3. 可以发现实验二精度最高的配置为学习率为 0.0001，同时观察验证集分数，精度在最后几轮仍在上涨。因此可以提升训练轮次为 50、100，模型精度会有进一步的提升。</p>
+<p>学习率探寻实验结果：</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th>实验ID</th>
+<th>学习率</th>
+<th>mAP@0.50:0.95</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>0.00001</td>
+<td>88.90</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td><strong>0.0001</strong></td>
+<td><strong>92.41</strong></td>
+</tr>
+<tr>
+<td>3</td>
+<td>0.0005</td>
+<td>92.27</td>
+</tr>
+<tr>
+<td>4</td>
+<td>0.001</td>
+<td>90.66</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<p>接下来，我们可以在学习率设置为 0.001 的基础上，增加训练轮次，对比下面实验 [2，4，5] 可知，训练轮次增大，模型精度有了进一步的提升。</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th>实验ID</th>
+<th>训练轮次</th>
+<th>mAP@0.50:0.95</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>30</td>
+<td>92.41</td>
+</tr>
+<tr>
+<td>4</td>
+<td>50</td>
+<td>92.63</td>
+</tr>
+<tr>
+<td><strong>5</strong></td>
+<td><strong>100</strong></td>
+<td><strong>92.88</strong></td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<p>** 注：本教程为 4 卡教程，如果您只有 1 张 GPU，可通过调整训练卡数完成本次实验，但最终指标未必和上述指标完全对齐，属正常情况。**</p>
+<p>在选择训练环境时，要考虑训练卡数和总 batch_size，以及学习率的关系。首先训练卡数乘以单卡 batch_size 等于总 batch_size。其次，总 batch_size 和学习率是相关的，学习率应与总 batch_size 保持同步调整。 目前默认学习率对应基于 4 卡训练的总 batch_size，若您打算在单卡环境下进行训练，则设置学习率时需相应除以 4。若您打算在 8 卡环境下进行训练，则设置学习率时需相应乘以 2。</p>
+<p>调整不同参数执行训练的命令可以参考：</p>
+<pre><code class="language-bash">python main.py -c paddlex/configs/structure_analysis/RT-DETR-H_layout_3cls.yaml \
+    -o Global.mode=train \
+    -o Global.dataset_dir=./dataset/paperlayout \
+    -o Train.num_classes=4 \
+    -o Train.learning_rate=0.0001 \
+    -o Train.epochs_iters=30 \
+    -o Train.batch_size=4
+</code></pre>
+<h3 id="54">5.4 模型测试</h3>
+<p>可以将微调后的单模型进行测试，使用 <a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/doc_images/practical_tutorial/PP-ChatOCRv3_doc_layout/test.jpg">测试文件</a>，进行预测：</p>
+<pre><code class="language-bash">python main.py -c paddlex/configs/structure_analysis/RT-DETR-H_layout_3cls.yaml \
+    -o Global.mode=predict \
+    -o Predict.model_dir=&quot;output/best_model/inference&quot; \
+    -o Predict.input=&quot;https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/doc_images/practical_tutorial/PP-ChatOCRv3_doc_layout/test.jpg&quot;
+</code></pre>
+<p>通过上述可在<code>./output</code>下生成预测结果，其中<code>test.jpg</code>的预测结果如下：</p>
+<p><img alt="" src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/practical_tutorials/PP-ChatOCRv3_doc/layout_detection_03.png" /></p>
+<h2 id="6">6. 产线测试</h2>
+<p>将产线中的模型替换为微调后的模型进行测试，使用 <a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/doc_images/practical_tutorial/PP-ChatOCRv3_doc_layout/test.jpg">论文文献测试文件</a>，进行预测：</p>
+<p>首先获取并更新文档信息抽取v3的配置文件，执行下面的命令获取配置文件，（假设自定义保存位置为 <code>./my_path</code> ）：</p>
+<pre><code class="language-bash">paddlex --get_pipeline_config PP-ChatOCRv3-doc --save_path ./my_path
+</code></pre>
+<p>将<code>PP-ChatOCRv3-doc.yaml</code>中的<code>Pipeline.layout_model</code>字段修改为上面微调后的模型路径，修改后配置如下：</p>
+<pre><code class="language-yaml">Pipeline:
+  layout_model: ./output/best_model/inference
+  table_model: SLANet_plus
+  text_det_model: PP-OCRv4_server_det
+  text_rec_model: PP-OCRv4_server_rec
+  seal_text_det_model: PP-OCRv4_server_seal_det
+  doc_image_ori_cls_model: null
+  doc_image_unwarp_model: null
+  llm_name: &quot;ernie-3.5&quot;
+  llm_params:
+    api_type: qianfan
+    ak: 
+    sk:
+</code></pre>
+<p>修改后，只需要修改 <code>create_pipeline</code> 方法中的 <code>pipeline</code> 参数值为产线配置文件路径即可应用配置。</p>
+<pre><code class="language-python">from paddlex import create_pipeline
+
+pipeline = create_pipeline(
+    pipeline=&quot;./my_path/PP-ChatOCRv3-doc.yaml&quot;,
+    llm_name=&quot;ernie-3.5&quot;,
+    llm_params={&quot;api_type&quot;: &quot;qianfan&quot;, &quot;ak&quot;: &quot;&quot;, &quot;sk&quot;: &quot;&quot;} # 请填入您的ak与sk，否则无法调用大模型
+    # llm_params={&quot;api_type&quot;: &quot;aistudio&quot;, &quot;access_token&quot;: &quot;&quot;} # 或者使用AIStudio接口，请填入您的access_token，否则无法调用大模型
+    )
+
+visual_result, visual_info = pipeline.visual_predict(&quot;https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/doc_images/practical_tutorial/PP-ChatOCRv3_doc_layout/test.jpg&quot;)
+
+for res in visual_result:
+    res.save_to_img(&quot;./output_ft&quot;)
+    res.save_to_html('./output_ft')
+    res.save_to_xlsx('./output_ft')
+
+vector = pipeline.build_vector(visual_info=visual_info)
+chat_result = pipeline.chat(
+    key_list=[&quot;页眉&quot;, &quot;表格标题&quot;],
+    visual_info=visual_info,
+    vector=vector,
+    )
+chat_result.print()
+</code></pre>
+<p>通过上述可在<code>./output_ft</code>下生成预测结果，打印的关键信息抽取结果：</p>
+<pre><code>{'chat_res': {'页眉': '第43卷\n 航空发动机\n 44', '表格标题': '表1模拟来流Ma=5飞行的空气加热器工作参数'}, 'prompt': ''}
+</code></pre>
+<p>可以发现，在模型微调之后，关键信息已经被正确的提取出来。</p>
+<p>版面的可视化结果如下，已经正确增加了页眉和表格标题的区域定位能力：</p>
+<p><img alt="" src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/practical_tutorials/PP-ChatOCRv3_doc/layout_detection_04.png" /></p>
+<h2 id="7">7. 开发集成/部署</h2>
+<p>如果文档场景信息抽取v3产线可以达到您对产线推理速度和精度的要求，您可以直接进行开发集成/部署。</p>
+<ol>
+<li>直接将训练好的模型产线应用在您的 Python 项目中，如下面代码所示：</li>
+</ol>
+<pre><code class="language-python">from paddlex import create_pipeline
+
+pipeline = create_pipeline(
+    pipeline=&quot;./my_path/PP-ChatOCRv3-doc.yaml&quot;,
+    llm_name=&quot;ernie-3.5&quot;,
+    llm_params={&quot;api_type&quot;: &quot;qianfan&quot;, &quot;ak&quot;: &quot;&quot;, &quot;sk&quot;: &quot;&quot;} # 请填入您的ak与sk，否则无法调用大模型
+    # llm_params={&quot;api_type&quot;: &quot;aistudio&quot;, &quot;access_token&quot;: &quot;&quot;} # 或者使用AIStudio接口，请填入您的access_token，否则无法调用大模型
+    )
+
+visual_result, visual_info = pipeline.visual_predict(&quot;https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/doc_images/practical_tutorial/PP-ChatOCRv3_doc_layout/test.jpg&quot;)
+
+for res in visual_result:
+    res.save_to_img(&quot;./output&quot;)
+    res.save_to_html('./output')
+    res.save_to_xlsx('./output')
+
+vector = pipeline.build_vector(visual_info=visual_info)
+chat_result = pipeline.chat(
+    key_list=[&quot;页眉&quot;, &quot;表格标题&quot;],
+    visual_info=visual_info,
+    vector=vector,
+    )
+chat_result.print()
+</code></pre>
+<p>更多参数请参考 <a href="../../pipeline_usage/tutorials/information_extraction_pipelines/document_scene_information_extraction/">文档场景信息抽取v3产线使用教程</a>。</p>
+<ol>
+<li>
+<p>此外，PaddleX 也提供了其他三种部署方式，详细说明如下：</p>
+</li>
+<li>
+<p>高性能部署：在实际生产环境中，许多应用对部署策略的性能指标（尤其是响应速度）有着较严苛的标准，以确保系统的高效运行与用户体验的流畅性。为此，PaddleX 提供高性能推理插件，旨在对模型推理及前后处理进行深度性能优化，实现端到端流程的显著提速，详细的高性能部署流程请参考 <a href="../../pipeline_deploy/high_performance_inference/">PaddleX 高性能部署指南</a>。</p>
+</li>
+<li>服务化部署：服务化部署是实际生产环境中常见的一种部署形式。通过将推理功能封装为服务，客户端可以通过网络请求来访问这些服务，以获取推理结果。PaddleX 支持用户以低成本实现产线的服务化部署，详细的服务化部署流程请参考 <a href="../../pipeline_deploy/service_deploy/">PaddleX 服务化部署指南</a>。</li>
+<li>端侧部署：端侧部署是一种将计算和数据处理功能放在用户设备本身上的方式，设备可以直接处理数据，而不需要依赖远程的服务器。PaddleX 支持将模型部署在 Android 等端侧设备上，详细的端侧部署流程请参考 <a href="../../pipeline_deploy/edge_deploy/">PaddleX端侧部署指南</a>。</li>
+</ol>
+<p>您可以根据需要选择合适的方式部署模型产线，进而进行后续的 AI 应用集成。</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+        <script src="../../js/version-select.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
