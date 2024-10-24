@@ -1,4 +1,4 @@
-site_name: My Docs
+site_name: PaddleX Docs
 theme:
   name: material
   # logo: ./static/images/logo.jpg
@@ -156,5 +156,29 @@ nav:
          - 时序异常检测任务模块: data_annotations/time_series_modules/time_series_anomaly_detection.md
          - 时序分类任务模块: data_annotations/time_series_modules/time_series_classification.md
          - 时序预测任务模块: data_annotations/time_series_modules/time_series_forecasting.md
+  - 产线列表:
+       - PaddleX产线列表(CPU/GPU): support_list/pipelines_list.md
+       - PaddleX产线列表(DCU): support_list/pipelines_list_dcu.md
+       - PaddleX产线列表(MLU): support_list/pipelines_list_mlu.md
+       - PaddleX产线列表(NPU): support_list/pipelines_list_npu.md
+       - PaddleX产线列表(XPU): support_list/pipelines_list_xpu.md
+  - 模型列表:
+       - PaddleX模型列表(CPU/GPU): support_list/model_list.md
+       - PaddleX模型列表(DCU): support_list/model_list_dcu.md
+       - PaddleX模型列表(MLU): support_list/model_list_mlu.md
+       - PaddleX模型列表(NPU): support_list/model_list_npu.md
+       - PaddleX模型列表(XPU): support_list/model_list_xpu.md
+  - 产业实践教程&范例:
+       - 论文文献信息抽取教程: practical_tutorials/document_scene_information_extraction(layout_detection)_tutorial.md
+       - 垃圾分类教程: practical_tutorials/image_classification_garbage_tutorial.md
+       - 遥感图像实例分割教程: practical_tutorials/instance_segmentation_remote_sensing_tutorial.md
+       - 行人跌倒检测教程: practical_tutorials/object_detection_fall_tutorial.md
+       - 服装时尚元素检测教程: practical_tutorials/object_detection_fashion_pedia_tutorial.md
+       - 车牌识别教程: practical_tutorials/ocr_det_license_tutorial.md
+       - 手写中文识别教程: practical_tutorials/ocr_rec_chinese_tutorial.md
+       - 车道线分割教程: practical_tutorials/semantic_segmentation_road_tutorial.md
+       - 设备异常检测应用教程: practical_tutorials/ts_anomaly_detection.md
+       - 心跳监测时序数据分类应用教程: practical_tutorials/ts_classification.md
+       - 用电量长期预测应用教程: practical_tutorials/ts_forecast.md
   - FAQ: FAQ.md
 
