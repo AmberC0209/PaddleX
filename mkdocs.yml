@@ -58,17 +58,94 @@ theme:
   icon:
     logo: logo
 
+
+# Plugins
+plugins:
+  - blog
+  - search:
+      separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+  - minify:
+      minify_html: true
+
+# Hooks
+hooks:
+  - material/overrides/hooks/shortcodes.py
+  - material/overrides/hooks/translations.py
+
+# Additional configuration
+extra:
+  status:
+    new: Recently added
+    deprecated: Deprecated
+  analytics:
+    provider: google
+    property: !ENV GOOGLE_ANALYTICS_KEY
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/squidfunk
+    - icon: fontawesome/brands/docker
+      link: https://hub.docker.com/r/squidfunk/mkdocs-material/
+    - icon: fontawesome/brands/python
+      link: https://pypi.org/project/mkdocs-material/
+    - icon: fontawesome/brands/mastodon
+      link: https://fosstodon.org/@squidfunk
+    - icon: fontawesome/brands/x-twitter
+      link: https://x.com/squidfunk
+
+# Extensions
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      normalize_issue_symbols: true
+      repo_url_shorthand: true
+      user: squidfunk
+      repo: mkdocs-material
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets:
+      auto_append:
+        - includes/mkdocs.md
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+      combine_header_slug: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
 # 页面结构
 nav:
   - Home: index.md
-  - 快速开始: 
-       - 在线体验: getting_start/online.md
-       - 本地使用:
-         - 安装:
-           - 安装PaddlePaddle: installation/paddlepaddle_install.md
-           - 安装PaddleX: installation/installation.md
-         - 一行命令行快速使用: getting_start/CLI.md
-         - Python脚本使用: getting_start/Python.md
+  - 快速开始: quick_start.md
   - 产线使用教程:
        - 概述: pipeline_usage/pipeline_develop_guide.md
        - 文本图像智能分析:
@@ -163,7 +240,7 @@ nav:
        - PaddleX产线列表(NPU): support_list/pipelines_list_npu.md
        - PaddleX产线列表(XPU): support_list/pipelines_list_xpu.md
   - 模型列表:
-       - PaddleX模型列表(CPU/GPU): support_list/model_list.md
+       - PaddleX模型列表(CPU/GPU): support_list/models_list.md
        - PaddleX模型列表(DCU): support_list/model_list_dcu.md
        - PaddleX模型列表(MLU): support_list/model_list_mlu.md
        - PaddleX模型列表(NPU): support_list/model_list_npu.md
