@@ -96,11 +96,6 @@ plugins:
   - git-revision-date-localized:
       enable_creation_date: true
 
-# Hooks
-hooks:
-  - material/overrides/hooks/shortcodes.py
-  - material/overrides/hooks/translations.py
-
 # Additional configuration
 extra:
   version:
