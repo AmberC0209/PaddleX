@@ -1,4 +1,5 @@
 site_name: PaddleX Docs
+docs_dir: docs_site
 
 repo_url: https://github.com/AmberC0209/PaddleX #仓库地址
 
