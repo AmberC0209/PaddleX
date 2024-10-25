@@ -84,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#paddlex" class="md-skip">
+        <a href="#paddlex-time-series-forecasting-task-data-annotation-tutorial" class="md-skip">
           Skip to content
         </a>
       
@@ -3945,7 +3945,7 @@
                   
 
   
-    <a href="https://github.com/AmberC0209/PaddleX/edit/develop/docs/data_annotations/time_series_modules/time_series_forecasting.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/AmberC0209/PaddleX/edit/develop/docs/data_annotations/time_series_modules/time_series_forecasting.en.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
     </a>
@@ -3954,16 +3954,16 @@
     
       
     
-    <a href="https://github.com/AmberC0209/PaddleX/raw/develop/docs/data_annotations/time_series_modules/time_series_forecasting.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/AmberC0209/PaddleX/raw/develop/docs/data_annotations/time_series_modules/time_series_forecasting.en.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5"/></svg>
     </a>
   
 
 
-<p>简体中文 | <a href="time_series_forecasting_en.html">English</a></p>
-<h1 id="paddlex">PaddleX时序预测任务模块数据标注教程<a class="headerlink" href="#paddlex" title="Permanent link">&para;</a></h1>
-<p>时序预测任务的数据是无需标注的，只要收集真实数据，将所有数据按照时间的顺序排列在csv文件中即可。训练时会将数据自动切分为多个时间片段，组合训练样本，如下图所示，历史的时间序列数据和未来的序列分别表示训练模型输入数据和其对应的预测目标。为了保证数据的质量和完整性，可以基于专家经验或统计方法进行缺失值填充。</p>
+<p><a href="time_series_forecasting.html">简体中文</a> | English</p>
+<h1 id="paddlex-time-series-forecasting-task-data-annotation-tutorial">PaddleX Time Series Forecasting Task Data Annotation Tutorial<a class="headerlink" href="#paddlex-time-series-forecasting-task-data-annotation-tutorial" title="Permanent link">&para;</a></h1>
+<p>Data for time series forecasting tasks does not require annotation. Simply collect real-world data and arrange it in a csv file in chronological order. During training, the data will be automatically segmented into multiple time slices to form training samples, as shown in the figure below. The historical time series data and future sequences represent the input data for training the model and its corresponding prediction targets, respectively. To ensure data quality and completeness, missing values can be filled based on expert experience or statistical methods.</p>
 <p><img alt="alt text" src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/time_series/01.png" /></p>
 
 
@@ -3987,7 +3987,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年10月25日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 25, 2024</span>
   </span>
 
     
@@ -3997,7 +3997,7 @@
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年10月25日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 25, 2024</span>
   </span>
 
     
