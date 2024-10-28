@@ -207,6 +207,7 @@ plugins:
       branch: release/3.0-beta1 #仓库分支
   - git-revision-date-localized: #显示更新时间
       enable_creation_date: true
+  - git-branch-display
 
 # Additional configuration
 extra:
@@ -229,7 +230,7 @@ extra_javascript:
 
 extra_css:
   - https://unpkg.com/katex@0/dist/katex.min.css
-  
+
 # Extensions
 markdown_extensions:
   - abbr
