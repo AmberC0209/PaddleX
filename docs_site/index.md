@@ -1,3 +1,11 @@
+---
+comments: true
+typora-copy-images-to: images
+hide:
+  - navigation
+  - toc
+---
+
 <p align="center">
   <img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/logo.png" width="735" height ="200" alt="PaddleX" align="middle" />
 </p>
@@ -9,26 +17,49 @@
     <a href=""><img src="https://img.shields.io/badge/Hardware-CPU%2C%20GPU%2C%20XPU%2C%20NPU%2C%20MLU%2C%20DCU-yellow.svg"></a>
 </p>
 
-<h4 align="center">
-  <a href=#-特性>🌟 特性</a> | <a href=https://aistudio.baidu.com/pipeline/mine>🌐 在线体验</a>｜<a href=#️-快速开始>🚀 快速开始</a> | <a href=#-文档> 📖 文档</a> | <a href=#-能力支持> 🔥能力支持</a> | <a href=./docs/support_list/models_list.md> 📋 模型列表</a>
-
-</h4>
-
-<h5 align="center">
-  <a href="README.md">🇨🇳 简体中文</a> | <a href="README_en.md">🇬🇧 English</a></a>
-</h5>
 
 ## 🔍 简介
 
-PaddleX 3.0 是基于飞桨框架构建的低代码开发工具，它集成了众多**开箱即用的预训练模型**，可以实现模型从训练到推理的**全流程开发**，支持国内外**多款主流硬件**，助力AI 开发者进行产业实践。
+PaddleX 3.0 是基于飞桨框架构建的低代码开发工具，它集成了众多<b>开箱即用的预训练模型</b>，可以实现模型从训练到推理的<b>全流程开发</b>，支持国内外<b>多款主流硬件</b>，助力AI 开发者进行产业实践。
 
-|                                                            [**通用图像分类**](./docs/pipeline_usage/tutorials/cv_pipelines/image_classification.md)                                                            |                                                            [**图像多标签分类**](./docs/pipeline_usage/tutorials/cv_pipelines/image_multi_label_classification.md)                                                            |                                                            [**通用目标检测**](./docs/pipeline_usage/tutorials/cv_pipelines/object_detection.md)                                                            |                                                            [**通用实例分割**](./docs/pipeline_usage/tutorials/cv_pipelines/instance_segmentation.md)                                                            |
-|:--------------------------------------------------------------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------------------------------------------------------:|
-| <img src="https://github.com/PaddlePaddle/PaddleX/assets/142379845/b302cd7e-e027-4ea6-86d0-8a4dd6d61f39" height="126px" width="180px"> | <img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/multilabel_cls.png" height="126px" width="180px"> | <img src="https://github.com/PaddlePaddle/PaddleX/assets/142379845/099e2b00-0bbe-4b20-9c5a-96b69e473bd2" height="126px" width="180px"> | <img src="https://github.com/PaddlePaddle/PaddleX/assets/142379845/09f683b4-27df-4c24-b8a7-84da20fdd182" height="126px" width="180px"> |
-|                                                              [**通用语义分割**](./docs/pipeline_usage/tutorials/cv_pipelines/semantic_segmentation.md)                                                               |                                                            [**图像异常检测**](./docs/pipeline_usage/tutorials/cv_pipelines/image_anomaly_detection.md)                                                            |                                                         [ **通用OCR**](./docs/pipeline_usage/tutorials/ocr_pipelines/OCR.md)                                                          |                                                          [**通用表格识别**](./docs/pipeline_usage/tutorials/ocr_pipelines/table_recognition.md)                                                          |
-| <img src="https://github.com/PaddlePaddle/PaddleX/assets/142379845/02637f8c-f248-415b-89ab-1276505f198c" height="126px" width="180px"> | <img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/image_anomaly_detection.png" height="126px" width="180px"> | <img src="https://github.com/PaddlePaddle/PaddleX/assets/142379845/1ef48536-48d4-484b-a6fb-0d6631ba2386" height="126px" width="180px"> |  <img src="https://github.com/PaddlePaddle/PaddleX/assets/142379845/1e798e05-dee7-4b41-9cc4-6708b6014efa" height="126px" width="180px"> |
-|                                                              [**文本图像智能分析**](./docs/pipeline_usage/tutorials/information_extraction_pipelines/document_scene_information_extraction.md)                                                              |                                                            [**时序预测**](./docs/pipeline_usage/tutorials/time_series_pipelines/time_series_forecasting.md)                                                            |                                                              [**时序异常检测**](./docs/pipeline_usage/tutorials/time_series_pipelines/time_series_anomaly_detection.md)                                                              |                                                         [**时序分类**](./docs/pipeline_usage/tutorials/time_series_pipelines/time_series_classification.md)                                                         |
-| <img src="https://github.com/PaddlePaddle/PaddleX/assets/142379845/e3d97f4e-ab46-411c-8155-494c61492b0a" height="126px" width="180px"> | <img src="https://github.com/PaddlePaddle/PaddleX/assets/142379845/6e897bf6-35fe-45e6-a040-e9a1a20cfdf2" height="126px" width="180px"> | <img src="https://github.com/PaddlePaddle/PaddleX/assets/142379845/c54c66cc-da4f-4631-877b-43b0fbb192a6" height="126px" width="180px"> | <img src="https://github.com/PaddlePaddle/PaddleX/assets/142379845/0ce925b2-3776-4dde-8ce0-5156d5a2476e" height="126px" width="180px"> |
+<table>
+  <tr>
+    <th><a href="./docs/pipeline_usage/tutorials/cv_pipelines/image_classification.md"><strong>通用图像分类</strong></a></th>
+    <th><a href="./docs/pipeline_usage/tutorials/cv_pipelines/image_multi_label_classification.md"><strong>图像多标签分类</strong></a></th>
+    <th><a href="./docs/pipeline_usage/tutorials/cv_pipelines/object_detection.md"><strong>通用目标检测</strong></a></th>
+    <th><a href="./docs/pipeline_usage/tutorials/cv_pipelines/instance_segmentation.md"><strong>通用实例分割</strong></a></th>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/PaddlePaddle/PaddleX/assets/142379845/b302cd7e-e027-4ea6-86d0-8a4dd6d61f39" height="126px" width="180px"></td>
+    <td><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/multilabel_cls.png" height="126px" width="180px"></td>
+    <td><img src="https://github.com/PaddlePaddle/PaddleX/assets/142379845/099e2b00-0bbe-4b20-9c5a-96b69e473bd2" height="126px" width="180px"></td>
+    <td><img src="https://github.com/PaddlePaddle/PaddleX/assets/142379845/09f683b4-27df-4c24-b8a7-84da20fdd182" height="126px" width="180px"></td>
+  </tr>
+  <tr>
+    <th><a href="./docs/pipeline_usage/tutorials/cv_pipelines/semantic_segmentation.md"><strong>通用语义分割</strong></a></th>
+    <th><a href="./docs/pipeline_usage/tutorials/cv_pipelines/image_anomaly_detection.md"><strong>图像异常检测</strong></a></th>
+    <th><a href="./docs/pipeline_usage/tutorials/ocr_pipelines/OCR.md"><strong>通用OCR</strong></a></th>
+    <th><a href="./docs/pipeline_usage/tutorials/ocr_pipelines/table_recognition.md"><strong>通用表格识别</strong></a></th>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/PaddlePaddle/PaddleX/assets/142379845/02637f8c-f248-415b-89ab-1276505f198c" height="126px" width="180px"></td>
+    <td><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/image_anomaly_detection.png" height="126px" width="180px"></td>
+    <td><img src="https://github.com/PaddlePaddle/PaddleX/assets/142379845/1ef48536-48d4-484b-a6fb-0d6631ba2386" height="126px" width="180px"></td>
+    <td><img src="https://github.com/PaddlePaddle/PaddleX/assets/142379845/1e798e05-dee7-4b41-9cc4-6708b6014efa" height="126px" width="180px"></td>
+  </tr>
+  <tr>
+    <th><a href="./docs/pipeline_usage/tutorials/information_extraction_pipelines/document_scene_information_extraction.md"><strong>文本图像智能分析</strong></a></th>
+    <th><a href="./docs/pipeline_usage/tutorials/time_series_pipelines/time_series_forecasting.md"><strong>时序预测</strong></a></th>
+    <th><a href="./docs/pipeline_usage/tutorials/time_series_pipelines/time_series_anomaly_detection.md"><strong>时序异常检测</strong></a></th>
+    <th><a href="./docs/pipeline_usage/tutorials/time_series_pipelines/time_series_classification.md"><strong>时序分类</strong></a></th>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/PaddlePaddle/PaddleX/assets/142379845/e3d97f4e-ab46-411c-8155-494c61492b0a" height="126px" width="180px"></td>
+    <td><img src="https://github.com/PaddlePaddle/PaddleX/assets/142379845/6e897bf6-35fe-45e6-a040-e9a1a20cfdf2" height="126px" width="180px"></td>
+    <td><img src="https://github.com/PaddlePaddle/PaddleX/assets/142379845/c54c66cc-da4f-4631-877b-43b0fbb192a6" height="126px" width="180px"></td>
+    <td><img src="https://github.com/PaddlePaddle/PaddleX/assets/142379845/0ce925b2-3776-4dde-8ce0-5156d5a2476e" height="126px" width="180px"></td>
+  </tr>
+</table>
 
 ## 🌟 特性
   🎨 **模型丰富一键调用**：将覆盖文本图像智能分析、OCR、目标检测、时序预测等多个关键领域的 **200+ 飞桨模型**整合为 **19 条模型产线**，通过极简的 Python API 一键调用，快速体验模型效果。同时支持 **20+ 单功能模块**，方便开发者进行模型组合使用。
@@ -47,12 +78,12 @@ PaddleX 3.0 是基于飞桨框架构建的低代码开发工具，它集成了�
 
 🔥 **2024.3.25**，PaddleX 3.0 云端发布，支持在 AI Studio 星河社区 以零代码的方式【创建产线】使用。
 
- ## 🔠 模型产线说明
+## 🔠 模型产线说明
 
  **PaddleX 致力于实现产线级别的模型训练、推理与部署。模型产线是指一系列预定义好的、针对特定AI任务的开发流程，其中包含能够独立完成某类任务的单模型（单功能模块）组合。**
 
 
- ## 📊 能力支持
+## 📊 能力支持
 
 
 PaddleX的各个产线均支持本地**快速推理**，部分模型支持在[AI Studio星河社区](https://aistudio.baidu.com/overview)上进行**在线体验**，您可以快速体验各个产线的预训练模型效果，如果您对产线的预训练模型效果满意，可以直接对产线进行[高性能推理](./docs/pipeline_deploy/high_performance_inference.md)/[服务化部署](./docs/pipeline_deploy/service_deploy.md)/[端侧部署](./docs/pipeline_deploy/edge_deploy.md)，如果不满意，您也可以使用产线的**二次开发**能力，提升效果。完整的产线开发流程请参考[PaddleX产线使用概览](./docs/pipeline_usage/pipeline_develop_guide.md)或各产线使用[教程](#-文档)。
