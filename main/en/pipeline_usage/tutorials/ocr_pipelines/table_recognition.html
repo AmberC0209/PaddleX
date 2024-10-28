@@ -4225,7 +4225,7 @@
   
 
 
-<p><a href="table_recognition_en.md">简体中文</a> | English</p>
+<p><a href="table_recognition.html">简体中文</a> | English</p>
 <h1 id="general-table-recognition-pipeline-tutorial">General Table Recognition Pipeline Tutorial<a class="headerlink" href="#general-table-recognition-pipeline-tutorial" title="Permanent link">&para;</a></h1>
 <h2 id="1-introduction-to-the-general-table-recognition-pipeline">1. Introduction to the General Table Recognition Pipeline<a class="headerlink" href="#1-introduction-to-the-general-table-recognition-pipeline" title="Permanent link">&para;</a></h2>
 <p>Table recognition is a technology that automatically identifies and extracts table content and its structure from documents or images. It is widely used in data entry, information retrieval, and document analysis. By leveraging computer vision and machine learning algorithms, table recognition can convert complex table information into editable formats, facilitating further data processing and analysis for users.</p>
@@ -4299,7 +4299,7 @@ SLANet_plus is an enhanced version of SLANet, a table structure recognition mode
 <p><img alt="" src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/table_recognition/02.png" /></p>
 <p>If you are satisfied with the pipeline's performance, you can directly integrate and deploy it. If not, you can also use your private data to <strong>fine-tune the models in the pipeline online</strong>.</p>
 <h3 id="22-local-experience">2.2 Local Experience<a class="headerlink" href="#22-local-experience" title="Permanent link">&para;</a></h3>
-<p>Before using the General Table Recognition pipeline locally, ensure you have installed the PaddleX wheel package following the <a href="../../../installation/installation_en.md">PaddleX Local Installation Guide</a>.</p>
+<p>Before using the General Table Recognition pipeline locally, ensure you have installed the PaddleX wheel package following the <a href="../../../installation/installation.html">PaddleX Local Installation Guide</a>.</p>
 <h3 id="21-command-line-experience">2.1 Command Line Experience<a class="headerlink" href="#21-command-line-experience" title="Permanent link">&para;</a></h3>
 <p>Experience the effects of the table recognition pipeline with a single command:</p>
 <p>Experience the image anomaly detection pipeline with a single command，Use the <a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/table_recognition.jpg">test file</a>, and replace <code>--input</code> with the local path to perform prediction.</p>
@@ -4460,7 +4460,7 @@ The results are the same as those obtained through the command line.</p>
 <p>If you need to directly apply the pipeline in your Python project, refer to the example code in <a href="#22-python-script-integration">2.2 Python Script Integration</a>.</p>
 <p>Additionally, PaddleX provides three other deployment methods, detailed as follows:</p>
 <p>🚀 <strong>High-Performance Inference</strong>: In actual production environments, many applications have stringent standards for deployment strategy performance metrics (especially response speed) to ensure efficient system operation and smooth user experience. To this end, PaddleX provides high-performance inference plugins that aim to deeply optimize model inference and pre/post-processing for significant end-to-end process acceleration. For detailed high-performance inference procedures, refer to the <a href="../../../pipeline_deploy/high_performance_inference.html">PaddleX High-Performance Inference Guide</a>.</p>
-<p>☁️ <strong>Service-Oriented Deployment</strong>: Service-oriented deployment is a common deployment form in actual production environments. By encapsulating inference functions as services, clients can access these services through network requests to obtain inference results. PaddleX supports users in achieving low-cost service-oriented deployment of pipelines. For detailed service-oriented deployment procedures, refer to the <a href="../../../pipeline_deploy/service_deploy_en.md">PaddleX Service-Oriented Deployment Guide</a>.</p>
+<p>☁️ <strong>Service-Oriented Deployment</strong>: Service-oriented deployment is a common deployment form in actual production environments. By encapsulating inference functions as services, clients can access these services through network requests to obtain inference results. PaddleX supports users in achieving low-cost service-oriented deployment of pipelines. For detailed service-oriented deployment procedures, refer to the <a href="../../../pipeline_deploy/service_deploy.html">PaddleX Service-Oriented Deployment Guide</a>.</p>
 <p>Below are the API references and multi-language service invocation examples:</p>
 <details>
 <summary>API Reference</summary>
@@ -4945,7 +4945,7 @@ Operations provided by the service:
 </details>
 </details>
 <p><br/></p>
-<p>📱 <strong>Edge Deployment</strong>: Edge deployment is a method that places computing and data processing capabilities directly on user devices, allowing devices to process data without relying on remote servers. PaddleX supports deploying models on edge devices such as Android. For detailed edge deployment procedures, refer to the <a href="../../../pipeline_deploy/edge_deploy_en.md">PaddleX Edge Deployment Guide</a>.
+<p>📱 <strong>Edge Deployment</strong>: Edge deployment is a method that places computing and data processing capabilities directly on user devices, allowing devices to process data without relying on remote servers. PaddleX supports deploying models on edge devices such as Android. For detailed edge deployment procedures, refer to the <a href="../../../pipeline_deploy/edge_deploy.html">PaddleX Edge Deployment Guide</a>.
 Choose the appropriate deployment method for your model pipeline based on your needs, and proceed with subsequent AI application integration.</p>
 <h2 id="4-custom-development">4. Custom Development<a class="headerlink" href="#4-custom-development" title="Permanent link">&para;</a></h2>
 <p>If the default model weights provided by the general table recognition pipeline do not meet your requirements for accuracy or speed in your specific scenario, you can try to further fine-tune the existing model using <strong>your own domain-specific or application-specific data</strong> to improve the recognition performance of the general table recognition pipeline in your scenario.</p>
@@ -4953,10 +4953,10 @@ Choose the appropriate deployment method for your model pipeline based on your n
 <p>Since the general table recognition pipeline consists of four modules, unsatisfactory performance may stem from any of these modules.</p>
 <p>Analyze images with poor recognition results and follow the rules below for analysis and model fine-tuning:</p>
 <ul>
-<li>If the detected table structure is incorrect (e.g., row and column recognition errors, incorrect cell positions), the table structure recognition module may be insufficient. You need to refer to the <a href="../../../module_usage/tutorials/ocr_modules/table_structure_recognition_en.md#customization">Customization</a> section in the <a href="../../../module_usage/tutorials/ocr_modules/table_structure_recognition_en.md">Table Structure Recognition Module Development Tutorial</a> and use your private dataset to fine-tune the table structure recognition model.</li>
-<li>If the table area is incorrectly located within the overall layout, the layout detection module may be insufficient. You need to refer to the <a href="../../../module_usage/tutorials/ocr_modules/layout_detection_en.md#customization">Customization</a> section in the <a href="../../../module_usage/tutorials/ocr_modules/layout_detection_en.md">Layout Detection Module Development Tutorial</a> and use your private dataset to fine-tune the layout detection model.</li>
-<li>If many texts are undetected (i.e., text miss detection), the text detection model may be insufficient. You need to refer to the <a href="../../../module_usage/tutorials/ocr_modules/text_recognition_en.md#customization">Customization</a> section in the <a href="../../../module_usage/tutorials/ocr_modules/text_recognition_en.md">Text Detection Module Development Tutorial</a> and use your private dataset to fine-tune the text detection model.</li>
-<li>If many detected texts contain recognition errors (i.e., the recognized text content does not match the actual text content), the text recognition model requires further improvement. You need to refer to the <a href="../../../module_usage/tutorials/ocr_modules/table_structure_recognition_en.md#customization">Customization</a> section.</li>
+<li>If the detected table structure is incorrect (e.g., row and column recognition errors, incorrect cell positions), the table structure recognition module may be insufficient. You need to refer to the <a href="../../../module_usage/tutorials/ocr_modules/table_structure_recognition.html#customization">Customization</a> section in the <a href="../../../module_usage/tutorials/ocr_modules/table_structure_recognition.html">Table Structure Recognition Module Development Tutorial</a> and use your private dataset to fine-tune the table structure recognition model.</li>
+<li>If the table area is incorrectly located within the overall layout, the layout detection module may be insufficient. You need to refer to the <a href="../../../module_usage/tutorials/ocr_modules/layout_detection.html#customization">Customization</a> section in the <a href="../../../module_usage/tutorials/ocr_modules/layout_detection.html">Layout Detection Module Development Tutorial</a> and use your private dataset to fine-tune the layout detection model.</li>
+<li>If many texts are undetected (i.e., text miss detection), the text detection model may be insufficient. You need to refer to the <a href="../../../module_usage/tutorials/ocr_modules/text_recognition.html#customization">Customization</a> section in the <a href="../../../module_usage/tutorials/ocr_modules/text_recognition.html">Text Detection Module Development Tutorial</a> and use your private dataset to fine-tune the text detection model.</li>
+<li>If many detected texts contain recognition errors (i.e., the recognized text content does not match the actual text content), the text recognition model requires further improvement. You need to refer to the <a href="../../../module_usage/tutorials/ocr_modules/table_structure_recognition.html#customization">Customization</a> section.</li>
 </ul>
 <h3 id="42-model-application">4.2 Model Application<a class="headerlink" href="#42-model-application" title="Permanent link">&para;</a></h3>
 <p>After fine-tuning your model with a private dataset, you will obtain local model weights files.</p>
@@ -4982,7 +4982,7 @@ Then, refer to the command line or Python script method in the local experience 
 At this time, if you want to switch the hardware to Ascend NPU, simply modify <code>--device</code> in the Python command to npu:</p>
 <p><div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>paddlex<span class="w"> </span>--pipeline<span class="w"> </span>table_recognition<span class="w"> </span>--input<span class="w"> </span>table_recognition.jpg<span class="w"> </span>--device<span class="w"> </span>npu:0
 </span></code></pre></div>
-If you want to use the general table recognition pipeline on more types of hardware, please refer to the <a href="../../../other_devices_support/multi_devices_use_guide_en.md">PaddleX Multi-Hardware Usage Guide</a>.</p>
+If you want to use the general table recognition pipeline on more types of hardware, please refer to the <a href="../../../other_devices_support/multi_devices_use_guide.html">PaddleX Multi-Hardware Usage Guide</a>.</p>
 
 
 
@@ -5005,7 +5005,7 @@ If you want to use the general table recognition pipeline on more types of hardw
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 25, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 28, 2024</span>
   </span>
 
     
@@ -5015,7 +5015,7 @@ If you want to use the general table recognition pipeline on more types of hardw
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 25, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 28, 2024</span>
   </span>
 
     

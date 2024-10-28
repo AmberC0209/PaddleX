@@ -4238,7 +4238,7 @@
 
 <h2 id="2-quick-start">2.  Quick Start<a class="headerlink" href="#2-quick-start" title="Permanent link">&para;</a></h2>
 <p>The pre trained model production line provided by PaddleX can quickly experience the effect. You can experience the effect of the seal recognition production line online, or use the command line or Python locally to experience the effect of the seal recognition production line.</p>
-<p>Before using the seal recognition production line locally, please ensure that you have completed the wheel package installation of PaddleX according to the  <a href="../../../installation/installation_en.md">PaddleX Local Installation Guide</a>.</p>
+<p>Before using the seal recognition production line locally, please ensure that you have completed the wheel package installation of PaddleX according to the  <a href="../../../installation/installation.html">PaddleX Local Installation Guide</a>.</p>
 <h3 id="21-command-line-experience">2.1 Command line experience<a class="headerlink" href="#21-command-line-experience" title="Permanent link">&para;</a></h3>
 <p>One command can quickly experience the effect of seal recognition production line, use <a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/seal_text_det.png">test file</a>, and replace <code>--input</code> with the local path for prediction</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>paddlex --pipeline seal_recognition --input seal_text_det.png --device gpu:0 --save_path output
@@ -4931,13 +4931,13 @@ Operations provided by the service:
 <p>Due to the fact that the seal recognition production line consists of three modules, the performance of the model production line may not be as expected due to any of these modules.</p>
 <p>You can analyze images with poor recognition performance and refer to the following rules for analysis and model fine-tuning:</p>
 <ul>
-<li>If the seal area is incorrectly located within the overall layout, the layout detection module may be insufficient. You need to refer to the <a href="../../../module_usage/tutorials/ocr_modules/layout_detection_en.md#customization">Customization</a> section in the <a href="../../../module_usage/tutorials/ocr_modules/layout_detection_en.md">Layout Detection Module Development Tutorial</a> and use your private dataset to fine-tune the layout detection model.</li>
-<li>If there is a significant amount of text that has not been detected (i.e. text miss detection phenomenon), it may be due to the shortcomings of the text detection model. You need to refer to the <a href="../../../module_usage/tutorials/ocr_modules/seal_text_detection_en.md#customization">Secondary Development</a> section in the <a href="../../../module_usage/tutorials/ocr_modules/seal_text_detection_en.md">Seal Text Detection Module Development Tutorial</a> to fine tune the text detection model using your private dataset.</li>
+<li>If the seal area is incorrectly located within the overall layout, the layout detection module may be insufficient. You need to refer to the <a href="../../../module_usage/tutorials/ocr_modules/layout_detection.html#customization">Customization</a> section in the <a href="../../../module_usage/tutorials/ocr_modules/layout_detection.html">Layout Detection Module Development Tutorial</a> and use your private dataset to fine-tune the layout detection model.</li>
+<li>If there is a significant amount of text that has not been detected (i.e. text miss detection phenomenon), it may be due to the shortcomings of the text detection model. You need to refer to the <a href="../../../module_usage/tutorials/ocr_modules/seal_text_detection.html#customization">Secondary Development</a> section in the <a href="../../../module_usage/tutorials/ocr_modules/seal_text_detection.html">Seal Text Detection Module Development Tutorial</a> to fine tune the text detection model using your private dataset.</li>
 <li>
-<p>If seal texts are undetected (i.e., text miss detection), the text detection model may be insufficient. You need to refer to the <a href="../../../module_usage/tutorials/ocr_modules/text_recognition_en.md#customization">Customization</a> section in the <a href="../../../module_usage/tutorials/ocr_modules/text_recognition_en.md">Text Detection Module Development Tutorial</a> and use your private dataset to fine-tune the text detection model.</p>
+<p>If seal texts are undetected (i.e., text miss detection), the text detection model may be insufficient. You need to refer to the <a href="../../../module_usage/tutorials/ocr_modules/text_recognition.html#customization">Customization</a> section in the <a href="../../../module_usage/tutorials/ocr_modules/text_recognition.html">Text Detection Module Development Tutorial</a> and use your private dataset to fine-tune the text detection model.</p>
 </li>
 <li>
-<p>If many detected texts contain recognition errors (i.e., the recognized text content does not match the actual text content), the text recognition model requires further improvement. You need to refer to the <a href="../../../module_usage/tutorials/ocr_modules/text_recognition_en.md#customization">Customization</a> section.</p>
+<p>If many detected texts contain recognition errors (i.e., the recognized text content does not match the actual text content), the text recognition model requires further improvement. You need to refer to the <a href="../../../module_usage/tutorials/ocr_modules/text_recognition.html#customization">Customization</a> section.</p>
 </li>
 </ul>
 <h3 id="42-model-application">4.2 Model Application<a class="headerlink" href="#42-model-application" title="Permanent link">&para;</a></h3>
@@ -4962,7 +4962,7 @@ Subsequently, refer to the command line or Python script in the local experience
 <p>At this point, if you want to switch the hardware to Ascend NPU, simply modify the <code>--device</code> in the Python command to NPU:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>paddlex --pipeline seal_recognition --input seal_text_det.png --device npu:0 --save_path output
 </span></code></pre></div>
-<p>If you want to use the seal recognition production line on a wider range of hardware, please refer to the <a href="../../../other_devices_support/multi_devices_use_guide_en.md">PaddleX Multi Hardware Usage Guide</a>。</p>
+<p>If you want to use the seal recognition production line on a wider range of hardware, please refer to the <a href="../../../other_devices_support/multi_devices_use_guide.html">PaddleX Multi Hardware Usage Guide</a>。</p>
 
 
 
@@ -4985,7 +4985,7 @@ Subsequently, refer to the command line or Python script in the local experience
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 25, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 28, 2024</span>
   </span>
 
     
@@ -4995,7 +4995,7 @@ Subsequently, refer to the command line or Python script in the local experience
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 25, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 28, 2024</span>
   </span>
 
     
