@@ -90,6 +90,8 @@ plugins:
           nav_translations:
             Home: Home
             快速开始: Quick Start
+            在线体验: Online Experience
+            本地快速开始: Local Use
             产线使用教程: Pipeline Tutorials
             概述: Overview
             文本图像智能分析: Informatio Extraction
@@ -283,7 +285,9 @@ markdown_extensions:
 # 页面结构
 nav:
   - Home: index.md
-  - 快速开始: quick_start.md
+  - 快速开始:
+       - 在线体验: online_experience.md
+       - 本地快速使用: quick_start.md
   - 产线使用教程:
        - 概述: pipeline_usage/pipeline_develop_guide.md
        - 文本图像智能分析:

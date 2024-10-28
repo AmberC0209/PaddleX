@@ -30,7 +30,7 @@ python -m pip install paddlepaddle-gpu==3.0.0b1 -i https://www.paddlepaddle.org.
 pip install https://paddle-model-ecology.bj.bcebos.com/paddlex/whl/paddlex-3.0.0b1-py3-none-any.whl
 ```
 
-> ❗ 更多安装方式参考 [PaddleX 安装教程](installation/installation.md)
+> ❗ 更多安装方式参考 [PaddleX 安装教程](installation/installation.html)
 
 ### 💻 命令行使用
 
@@ -193,82 +193,82 @@ for res in output:
         <tr>
             <td>文档场景信息抽取v3</td>
             <td><code>PP-ChatOCRv3-doc</code></td>
-            <td><a href="https://amberc0209.github.io/PaddleX/latest/pipeline_deploy/tutorials/information_extraction_pipelines/document_scene_information_extraction.md#22-本地体验">文档场景信息抽取v3产线Python脚本使用说明</a></td>
+            <td><a href="https://amberc0209.github.io/PaddleX/latest/pipeline_deploy/tutorials/information_extraction_pipelines/document_scene_information_extraction.html#22-本地体验">文档场景信息抽取v3产线Python脚本使用说明</a></td>
         </tr>
         <tr>
             <td>通用图像分类</td>
             <td><code>image_classification</code></td>
-            <td><a href="https://amberc0209.github.io/PaddleX/latest/pipeline_deploy/tutorials/cv_pipelines/image_classification.md#222-python脚本方式集成">通用图像分类产线Python脚本使用说明</a></td>
+            <td><a href="https://amberc0209.github.io/PaddleX/latest/pipeline_deploy/tutorials/cv_pipelines/image_classification.html">通用图像分类产线Python脚本使用说明</a></td>
         </tr>
         <tr>
             <td>通用目标检测</td>
             <td><code>object_detection</code></td>
-            <td><a href="https://amberc0209.github.io/PaddleX/latest/pipeline_deploy/tutorials/cv_pipelines/object_detection.md#222-python脚本方式集成">通用目标检测产线Python脚本使用说明</a></td>
+            <td><a href="https://amberc0209.github.io/PaddleX/latest/pipeline_deploy/tutorials/cv_pipelines/object_detection.html">通用目标检测产线Python脚本使用说明</a></td>
         </tr>
         <tr>
             <td>通用实例分割</td>
             <td><code>instance_segmentation</code></td>
-            <td><a href="https://amberc0209.github.io/PaddleX/latest/pipeline_deploy/tutorials/cv_pipelines/instance_segmentation.md#222-python脚本方式集成">通用实例分割产线Python脚本使用说明</a></td>
+            <td><a href="https://amberc0209.github.io/PaddleX/latest/pipeline_deploy/tutorials/cv_pipelines/instance_segmentation.html">通用实例分割产线Python脚本使用说明</a></td>
         </tr>
         <tr>
             <td>通用语义分割</td>
             <td><code>semantic_segmentation</code></td>
-            <td><a href="https://amberc0209.github.io/PaddleX/latest/pipeline_deploy/tutorials/cv_pipelines/semantic_segmentation.md#222-python脚本方式集成">通用语义分割产线Python脚本使用说明</a></td>
+            <td><a href="https://amberc0209.github.io/PaddleX/latest/pipeline_deploy/tutorials/cv_pipelines/semantic_segmentation.html">通用语义分割产线Python脚本使用说明</a></td>
         </tr>
         <tr>
             <td>图像多标签分类</td>
             <td><code>multi_label_image_classification</code></td>
-            <td><a href="https://amberc0209.github.io/PaddleX/latest/pipeline_deploy/tutorials/cv_pipelines/image_multi_label_classification.md#22-python脚本方式集成">图像多标签分类产线Python脚本使用说明</a></td>
+            <td><a href="https://amberc0209.github.io/PaddleX/latest/pipeline_deploy/tutorials/cv_pipelines/image_multi_label_classification.html#22-python脚本方式集成">图像多标签分类产线Python脚本使用说明</a></td>
         </tr>
         <tr>
             <td>小目标检测</td>
             <td><code>small_object_detection</code></td>
-            <td><a href="https://amberc0209.github.io/PaddleX/latest/pipeline_deploy/tutorials/cv_pipelines/small_object_detection.md#22-python脚本方式集成">小目标检测产线Python脚本使用说明</a></td>
+            <td><a href="https://amberc0209.github.io/PaddleX/latest/pipeline_deploy/tutorials/cv_pipelines/small_object_detection.html#22-python脚本方式集成">小目标检测产线Python脚本使用说明</a></td>
         </tr>
         <tr>
             <td>图像异常检测</td>
             <td><code>anomaly_detection</code></td>
-            <td><a href="https://amberc0209.github.io/PaddleX/latest/pipeline_deploy/tutorials/cv_pipelines/image_anomaly_detection.md#22-python脚本方式集成">图像异常检测产线Python脚本使用说明</a></td>
+            <td><a href="https://amberc0209.github.io/PaddleX/latest/pipeline_deploy/tutorials/cv_pipelines/image_anomaly_detection.html#22-python脚本方式集成">图像异常检测产线Python脚本使用说明</a></td>
         </tr>
         <tr>
             <td>通用OCR</td>
             <td><code>OCR</code></td>
-            <td><a href="https://amberc0209.github.io/PaddleX/latest/pipeline_deploy/tutorials/ocr_pipelines/OCR.md#222-python脚本方式集成">通用OCR产线Python脚本使用说明</a></td>
+            <td><a href="https://amberc0209.github.io/PaddleX/latest/pipeline_deploy/tutorials/ocr_pipelines/OCR.html">通用OCR产线Python脚本使用说明</a></td>
         </tr>
         <tr>
             <td>通用表格识别</td>
             <td><code>table_recognition</code></td>
-            <td><a href="https://amberc0209.github.io/PaddleX/latest/pipeline_deploy/tutorials/ocr_pipelines/table_recognition.md#22-python脚本方式集成">通用表格识别产线Python脚本使用说明</a></td>
+            <td><a href="https://amberc0209.github.io/PaddleX/latest/pipeline_deploy/tutorials/ocr_pipelines/table_recognition.html#22-python脚本方式集成">通用表格识别产线Python脚本使用说明</a></td>
         </tr>
         <tr>
             <td>通用版面解析</td>
             <td><code>layout_parsing</code></td>
-            <td><a href="https://amberc0209.github.io/PaddleX/latest/pipeline_deploy/tutorials/ocr_pipelines/layout_parsing.md#22-python脚本方式集成">通用版面解析产线Python脚本使用说明</a></td>
+            <td><a href="https://amberc0209.github.io/PaddleX/latest/pipeline_deploy/tutorials/ocr_pipelines/layout_parsing.html#22-python脚本方式集成">通用版面解析产线Python脚本使用说明</a></td>
         </tr>
         <tr>
             <td>公式识别</td>
             <td><code>formula_recognition</code></td>
-            <td><a href="https://amberc0209.github.io/PaddleX/latest/pipeline_deploy/tutorials/ocr_pipelines/formula_recognition.md#22-python脚本方式集成">公式识别产线Python脚本使用说明</a></td>
+            <td><a href="https://amberc0209.github.io/PaddleX/latest/pipeline_deploy/tutorials/ocr_pipelines/formula_recognition.html#22-python脚本方式集成">公式识别产线Python脚本使用说明</a></td>
         </tr>
         <tr>
             <td>印章文本识别</td>
             <td><code>seal_recognition</code></td>
-            <td><a href="https://amberc0209.github.io/PaddleX/latest/pipeline_deploy/tutorials/ocr_pipelines/seal_recognition.md#22-python脚本方式集成">印章文本识别产线Python脚本使用说明</a></td>
+            <td><a href="https://amberc0209.github.io/PaddleX/latest/pipeline_deploy/tutorials/ocr_pipelines/seal_recognition.html#22-python脚本方式集成">印章文本识别产线Python脚本使用说明</a></td>
         </tr>
         <tr>
             <td>时序预测</td>
             <td><code>ts_fc</code></td>
-            <td><a href="https://amberc0209.github.io/PaddleX/latest/pipeline_deploy/tutorials/time_series_pipelines/time_series_forecasting.md#222-python脚本方式集成">时序预测产线Python脚本使用说明</a></td>
+            <td><a href="https://amberc0209.github.io/PaddleX/latest/pipeline_deploy/tutorials/time_series_pipelines/time_series_forecasting.html">时序预测产线Python脚本使用说明</a></td>
         </tr>
         <tr>
             <td>时序异常检测</td>
             <td><code>ts_ad</code></td>
-            <td><a href="https://amberc0209.github.io/PaddleX/latest/pipeline_deploy/tutorials/time_series_pipelines/time_series_anomaly_detection.md#222-python脚本方式集成">时序异常检测产线Python脚本使用说明</a></td>
+            <td><a href="https://amberc0209.github.io/PaddleX/latest/pipeline_deploy/tutorials/time_series_pipelines/time_series_anomaly_detection.html">时序异常检测产线Python脚本使用说明</a></td>
         </tr>
         <tr>
             <td>时序分类</td>
             <td><code>ts_cls</code></td>
-            <td><a href="https://amberc0209.github.io/PaddleX/latest/pipeline_deploy/tutorials/time_series_pipelines/time_series_classification.md#222-python脚本方式集成">时序分类产线Python脚本使用说明</a></td>
+            <td><a href="https://amberc0209.github.io/PaddleX/latest/pipeline_deploy/tutorials/time_series_pipelines/time_series_classification.html">时序分类产线Python脚本使用说明</a></td>
         </tr>
     </tbody>
 </table>
