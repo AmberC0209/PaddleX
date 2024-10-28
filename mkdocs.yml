@@ -62,6 +62,7 @@ theme:
     logo: logo
     edit: material/pencil
     view: material/eye
+    repo: fontawesome/brands/github
 
 
 # Plugins
@@ -221,6 +222,14 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/PaddlePaddle/PaddleX
 
+extra_javascript:
+  - javascripts/katex.min.js
+  - https://unpkg.com/katex@0/dist/katex.min.js
+  - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
+
+extra_css:
+  - https://unpkg.com/katex@0/dist/katex.min.css
+  
 # Extensions
 markdown_extensions:
   - abbr

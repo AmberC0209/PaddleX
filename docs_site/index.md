@@ -22,44 +22,61 @@ hide:
 
 PaddleX 3.0 是基于飞桨框架构建的低代码开发工具，它集成了众多<b>开箱即用的预训练模型</b>，可以实现模型从训练到推理的<b>全流程开发</b>，支持国内外<b>多款主流硬件</b>，助力AI 开发者进行产业实践。
 
-<table>
-  <tr>
-    <th><a href="./docs/pipeline_usage/tutorials/cv_pipelines/image_classification.md"><strong>通用图像分类</strong></a></th>
-    <th><a href="./docs/pipeline_usage/tutorials/cv_pipelines/image_multi_label_classification.md"><strong>图像多标签分类</strong></a></th>
-    <th><a href="./docs/pipeline_usage/tutorials/cv_pipelines/object_detection.md"><strong>通用目标检测</strong></a></th>
-    <th><a href="./docs/pipeline_usage/tutorials/cv_pipelines/instance_segmentation.md"><strong>通用实例分割</strong></a></th>
-  </tr>
-  <tr>
-    <td><img src="https://github.com/PaddlePaddle/PaddleX/assets/142379845/b302cd7e-e027-4ea6-86d0-8a4dd6d61f39" height="126px" width="180px"></td>
-    <td><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/multilabel_cls.png" height="126px" width="180px"></td>
-    <td><img src="https://github.com/PaddlePaddle/PaddleX/assets/142379845/099e2b00-0bbe-4b20-9c5a-96b69e473bd2" height="126px" width="180px"></td>
-    <td><img src="https://github.com/PaddlePaddle/PaddleX/assets/142379845/09f683b4-27df-4c24-b8a7-84da20fdd182" height="126px" width="180px"></td>
-  </tr>
-  <tr>
-    <th><a href="./docs/pipeline_usage/tutorials/cv_pipelines/semantic_segmentation.md"><strong>通用语义分割</strong></a></th>
-    <th><a href="./docs/pipeline_usage/tutorials/cv_pipelines/image_anomaly_detection.md"><strong>图像异常检测</strong></a></th>
-    <th><a href="./docs/pipeline_usage/tutorials/ocr_pipelines/OCR.md"><strong>通用OCR</strong></a></th>
-    <th><a href="./docs/pipeline_usage/tutorials/ocr_pipelines/table_recognition.md"><strong>通用表格识别</strong></a></th>
-  </tr>
-  <tr>
-    <td><img src="https://github.com/PaddlePaddle/PaddleX/assets/142379845/02637f8c-f248-415b-89ab-1276505f198c" height="126px" width="180px"></td>
-    <td><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/image_anomaly_detection.png" height="126px" width="180px"></td>
-    <td><img src="https://github.com/PaddlePaddle/PaddleX/assets/142379845/1ef48536-48d4-484b-a6fb-0d6631ba2386" height="126px" width="180px"></td>
-    <td><img src="https://github.com/PaddlePaddle/PaddleX/assets/142379845/1e798e05-dee7-4b41-9cc4-6708b6014efa" height="126px" width="180px"></td>
-  </tr>
-  <tr>
-    <th><a href="./docs/pipeline_usage/tutorials/information_extraction_pipelines/document_scene_information_extraction.md"><strong>文本图像智能分析</strong></a></th>
-    <th><a href="./docs/pipeline_usage/tutorials/time_series_pipelines/time_series_forecasting.md"><strong>时序预测</strong></a></th>
-    <th><a href="./docs/pipeline_usage/tutorials/time_series_pipelines/time_series_anomaly_detection.md"><strong>时序异常检测</strong></a></th>
-    <th><a href="./docs/pipeline_usage/tutorials/time_series_pipelines/time_series_classification.md"><strong>时序分类</strong></a></th>
-  </tr>
-  <tr>
-    <td><img src="https://github.com/PaddlePaddle/PaddleX/assets/142379845/e3d97f4e-ab46-411c-8155-494c61492b0a" height="126px" width="180px"></td>
-    <td><img src="https://github.com/PaddlePaddle/PaddleX/assets/142379845/6e897bf6-35fe-45e6-a040-e9a1a20cfdf2" height="126px" width="180px"></td>
-    <td><img src="https://github.com/PaddlePaddle/PaddleX/assets/142379845/c54c66cc-da4f-4631-877b-43b0fbb192a6" height="126px" width="180px"></td>
-    <td><img src="https://github.com/PaddlePaddle/PaddleX/assets/142379845/0ce925b2-3776-4dde-8ce0-5156d5a2476e" height="126px" width="180px"></td>
-  </tr>
-</table>
+<style>
+        .centered-table {
+            width: 100%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        .centered-table th, .centered-table td {
+            padding: 10px;
+        }
+        .centered-table img {
+            height: 126px;
+            width: 180px;
+            object-fit: cover;
+        }
+</style>
+
+<table class="centered-table">
+        <tr>
+            <th><a href="pipeline_usage/tutorials/cv_pipelines/image_classification.md"><strong>通用图像分类</strong></a></th>
+            <th><a href="pipeline_usage/tutorials/cv_pipelines/image_multi_label_classification.md"><strong>图像多标签分类</strong></a></th>
+            <th><a href="pipeline_usage/tutorials/cv_pipelines/object_detection.md"><strong>通用目标检测</strong></a></th>
+            <th><a href="pipeline_usage/tutorials/cv_pipelines/instance_segmentation.md"><strong>通用实例分割</strong></a></th>
+        </tr>
+        <tr>
+            <td><img src="https://github.com/PaddlePaddle/PaddleX/assets/142379845/b302cd7e-e027-4ea6-86d0-8a4dd6d61f39"></td>
+            <td><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/multilabel_cls.png"></td>
+            <td><img src="https://github.com/PaddlePaddle/PaddleX/assets/142379845/099e2b00-0bbe-4b20-9c5a-96b69e473bd2"></td>
+            <td><img src="https://github.com/PaddlePaddle/PaddleX/assets/142379845/09f683b4-27df-4c24-b8a7-84da20fdd182"></td>
+        </tr>
+        <tr>
+            <th><a href="pipeline_usage/tutorials/cv_pipelines/semantic_segmentation.md"><strong>通用语义分割</strong></a></th>
+            <th><a href="pipeline_usage/tutorials/cv_pipelines/image_anomaly_detection.md"><strong>图像异常检测</strong></a></th>
+            <th><a href="pipeline_usage/tutorials/ocr_pipelines/OCR.md"><strong>通用OCR</strong></a></th>
+            <th><a href="pipeline_usage/tutorials/ocr_pipelines/table_recognition.md"><strong>通用表格识别</strong></a></th>
+        </tr>
+        <tr>
+            <td><img src="https://github.com/PaddlePaddle/PaddleX/assets/142379845/02637f8c-f248-415b-89ab-1276505f198c"></td>
+            <td><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/image_anomaly_detection.png"></td>
+            <td><img src="https://github.com/PaddlePaddle/PaddleX/assets/142379845/1ef48536-48d4-484b-a6fb-0d6631ba2386"></td>
+            <td><img src="https://github.com/PaddlePaddle/PaddleX/assets/142379845/1e798e05-dee7-4b41-9cc4-6708b6014efa"></td>
+        </tr>
+        <tr>
+            <th><a href="pipeline_usage/tutorials/information_extraction_pipelines/document_scene_information_extraction.md"><strong>文本图像智能分析</strong></a></th>
+            <th><a href="pipeline_usage/tutorials/time_series_pipelines/time_series_forecasting.md"><strong>时序预测</strong></a></th>
+            <th><a href="pipeline_usage/tutorials/time_series_pipelines/time_series_anomaly_detection.md"><strong>时序异常检测</strong></a></th>
+            <th><a href="pipeline_usage/tutorials/time_series_pipelines/time_series_classification.md"><strong>时序分类</strong></a></th>
+        </tr>
+        <tr>
+            <td><img src="https://github.com/PaddlePaddle/PaddleX/assets/142379845/e3d97f4e-ab46-411c-8155-494c61492b0a"></td>
+            <td><img src="https://github.com/PaddlePaddle/PaddleX/assets/142379845/6e897bf6-35fe-45e6-a040-e9a1a20cfdf2"></td>
+            <td><img src="https://github.com/PaddlePaddle/PaddleX/assets/142379845/c54c66cc-da4f-4631-877b-43b0fbb192a6"></td>
+            <td><img src="https://github.com/PaddlePaddle/PaddleX/assets/142379845/0ce925b2-3776-4dde-8ce0-5156d5a2476e"></td>
+        </tr>
+    </table>
 
 ## 🌟 特性
   🎨 **模型丰富一键调用**：将覆盖文本图像智能分析、OCR、目标检测、时序预测等多个关键领域的 **200+ 飞桨模型**整合为 **19 条模型产线**，通过极简的 Python API 一键调用，快速体验模型效果。同时支持 **20+ 单功能模块**，方便开发者进行模型组合使用。
@@ -86,12 +103,12 @@ PaddleX 3.0 是基于飞桨框架构建的低代码开发工具，它集成了�
 ## 📊 能力支持
 
 
-PaddleX的各个产线均支持本地**快速推理**，部分模型支持在[AI Studio星河社区](https://aistudio.baidu.com/overview)上进行**在线体验**，您可以快速体验各个产线的预训练模型效果，如果您对产线的预训练模型效果满意，可以直接对产线进行[高性能推理](./docs/pipeline_deploy/high_performance_inference.md)/[服务化部署](./docs/pipeline_deploy/service_deploy.md)/[端侧部署](./docs/pipeline_deploy/edge_deploy.md)，如果不满意，您也可以使用产线的**二次开发**能力，提升效果。完整的产线开发流程请参考[PaddleX产线使用概览](./docs/pipeline_usage/pipeline_develop_guide.md)或各产线使用[教程](#-文档)。
+PaddleX的各个产线均支持本地**快速推理**，部分模型支持在[AI Studio星河社区](https://aistudio.baidu.com/overview)上进行**在线体验**，您可以快速体验各个产线的预训练模型效果，如果您对产线的预训练模型效果满意，可以直接对产线进行[高性能推理](pipeline_deploy/high_performance_inference.md)/[服务化部署](pipeline_deploy/service_deploy.md)/[端侧部署](pipeline_deploy/edge_deploy.md)，如果不满意，您也可以使用产线的**二次开发**能力，提升效果。完整的产线开发流程请参考[PaddleX产线使用概览](pipeline_usage/pipeline_develop_guide.md)或各产线使用[教程](#-文档)。
 
 
 此外，PaddleX在[AI Studio星河社区](https://aistudio.baidu.com/overview)为开发者提供了基于[云端图形化开发界面](https://aistudio.baidu.com/pipeline/mine)的全流程开发工具, 点击【创建产线】，选择对应的任务场景和模型产线，就可以开启全流程开发。详细请参考[教程《零门槛开发产业级AI模型》](https://aistudio.baidu.com/practical/introduce/546656605663301)
 
-<table >
+<table class="centered-table">
     <tr>
         <th>模型产线</th>
         <th>在线体验</th>
@@ -103,7 +120,7 @@ PaddleX的各个产线均支持本地**快速推理**，部分模型支持在[AI
         <th><a href = "https://aistudio.baidu.com/pipeline/mine">星河零代码产线</a></td>
     </tr>
     <tr>
-        <td><a href="./docs/pipeline_usage/tutorials/ocr_pipelines/OCR.md">通用OCR</a></td>
+        <td><a href="pipeline_usage/tutorials/ocr_pipelines/OCR.md">通用OCR</a></td>
         <td><a href = "https://aistudio.baidu.com/community/app/91660/webUI?source=appMineRecent">链接</a></td>
         <td>✅</td>
         <td>✅</td>
@@ -113,7 +130,7 @@ PaddleX的各个产线均支持本地**快速推理**，部分模型支持在[AI
         <td>✅</td>
     </tr>
     <tr>
-        <td><a href="./docs/pipeline_usage/tutorials/information_extraction_pipelines/document_scene_information_extraction.md">文档场景信息抽取v3</a></td>
+        <td><a href="pipeline_usage/tutorials/information_extraction_pipelines/document_scene_information_extraction.md">文档场景信息抽取v3</a></td>
         <td><a href = "https://aistudio.baidu.com/community/app/182491/webUI?source=appCenter">链接</a></td>
         <td>✅</td>
         <td>✅</td>
@@ -123,7 +140,7 @@ PaddleX的各个产线均支持本地**快速推理**，部分模型支持在[AI
         <td>✅</td>
     </tr>
     <tr>
-        <td><a href="./docs/pipeline_usage/tutorials/ocr_pipelines/table_recognition.md">通用表格识别</a></td>
+        <td><a href="pipeline_usage/tutorials/ocr_pipelines/table_recognition.md">通用表格识别</a></td>
         <td><a href = "https://aistudio.baidu.com/community/app/91661?source=appMineRecent">链接</a></td>
         <td>✅</td>
         <td>✅</td>
@@ -133,7 +150,7 @@ PaddleX的各个产线均支持本地**快速推理**，部分模型支持在[AI
         <td>✅</td>
     </tr>
     <tr>
-        <td><a href="./docs/pipeline_usage/tutorials/cv_pipelines/object_detection.md">通用目标检测</a></td>
+        <td><a href="pipeline_usage/tutorials/cv_pipelines/object_detection.md">通用目标检测</a></td>
         <td><a href = "https://aistudio.baidu.com/community/app/70230/webUI?source=appMineRecent">链接</a></td>
         <td>✅</td>
         <td>✅</td>
@@ -143,7 +160,7 @@ PaddleX的各个产线均支持本地**快速推理**，部分模型支持在[AI
         <td>✅</td>
     </tr>
     <tr>
-        <td><a href="./docs/pipeline_usage/tutorials/cv_pipelines/instance_segmentation.md">通用实例分割</a></td>
+        <td><a href="pipeline_usage/tutorials/cv_pipelines/instance_segmentation.md">通用实例分割</a></td>
         <td><a href = "https://aistudio.baidu.com/community/app/100063/webUI?source=appMineRecent">链接</a></td>
         <td>✅</td>
         <td>✅</td>
@@ -153,7 +170,7 @@ PaddleX的各个产线均支持本地**快速推理**，部分模型支持在[AI
         <td>✅</td>
     </tr>
     <tr>
-        <td><a href="./docs/pipeline_usage/tutorials/cv_pipelines/image_classification.md">通用图像分类</a></td>
+        <td><a href="pipeline_usage/tutorials/cv_pipelines/image_classification.md">通用图像分类</a></td>
         <td><a href = "https://aistudio.baidu.com/community/app/100061/webUI?source=appMineRecent">链接</a></td>
         <td>✅</td>
         <td>✅</td>
@@ -163,7 +180,7 @@ PaddleX的各个产线均支持本地**快速推理**，部分模型支持在[AI
         <td>✅</td>
     </tr>
     <tr>
-        <td><a href="./docs/pipeline_usage/tutorials/cv_pipelines/semantic_segmentation.md">通用语义分割</a></td>
+        <td><a href="pipeline_usage/tutorials/cv_pipelines/semantic_segmentation.md">通用语义分割</a></td>
         <td><a href = "https://aistudio.baidu.com/community/app/100062/webUI?source=appMineRecent">链接</a></td>
         <td>✅</td>
         <td>✅</td>
@@ -173,7 +190,7 @@ PaddleX的各个产线均支持本地**快速推理**，部分模型支持在[AI
         <td>✅</td>
     </tr>
     <tr>
-        <td><a href="./docs/pipeline_usage/tutorials/time_series_pipelines/time_series_forecasting.md">时序预测</a></td>
+        <td><a href="pipeline_usage/tutorials/time_series_pipelines/time_series_forecasting.md">时序预测</a></td>
         <td><a href = "https://aistudio.baidu.com/community/app/105706/webUI?source=appMineRecent">链接</a></td>
         <td>✅</td>
         <td>🚧</td>
@@ -183,7 +200,7 @@ PaddleX的各个产线均支持本地**快速推理**，部分模型支持在[AI
         <td>✅</td>
     </tr>
     <tr>
-        <td><a href="./docs/pipeline_usage/tutorials/time_series_pipelines/time_series_anomaly_detection.md">时序异常检测</a></td>
+        <td><a href="pipeline_usage/tutorials/time_series_pipelines/time_series_anomaly_detection.md">时序异常检测</a></td>
         <td><a href = "https://aistudio.baidu.com/community/app/105708/webUI?source=appMineRecent">链接</a></td>
         <td>✅</td>
         <td>🚧</td>
@@ -193,7 +210,7 @@ PaddleX的各个产线均支持本地**快速推理**，部分模型支持在[AI
         <td>✅</td>
     </tr>
     <tr>
-        <td><a href="./docs/pipeline_usage/tutorials/time_series_pipelines/time_series_classification.md">时序分类</a></td>
+        <td><a href="pipeline_usage/tutorials/time_series_pipelines/time_series_classification.md">时序分类</a></td>
         <td><a href = "https://aistudio.baidu.com/community/app/105707/webUI?source=appMineRecent">链接</a></td>
         <td>✅</td>
         <td>🚧</td>
@@ -203,7 +220,7 @@ PaddleX的各个产线均支持本地**快速推理**，部分模型支持在[AI
         <td>✅</td>
     </tr>
         <tr>
-        <td><a href="./docs/pipeline_usage/tutorials/cv_pipelines/small_object_detection.md">小目标检测</a></td>
+        <td><a href="pipeline_usage/tutorials/cv_pipelines/small_object_detection.md">小目标检测</a></td>
         <td>🚧</td>
         <td>✅</td>
         <td>✅</td>
@@ -213,7 +230,7 @@ PaddleX的各个产线均支持本地**快速推理**，部分模型支持在[AI
         <td>🚧</td>
     </tr>
         <tr>
-        <td><a href="./docs/pipeline_usage/tutorials/cv_pipelines/image_multi_label_classification.md">图像多标签分类</a></td>
+        <td><a href="pipeline_usage/tutorials/cv_pipelines/image_multi_label_classification.md">图像多标签分类</a></td>
         <td>🚧</td>
         <td>✅</td>
         <td>✅</td>
@@ -223,7 +240,7 @@ PaddleX的各个产线均支持本地**快速推理**，部分模型支持在[AI
         <td>🚧</td>
     </tr>
     <tr>
-        <td><a href="./docs/pipeline_usage/tutorials/cv_pipelines/image_anomaly_detection.md">图像异常检测</a></td>
+        <td><a href="pipeline_usage/tutorials/cv_pipelines/image_anomaly_detection.md">图像异常检测</a></td>
         <td>🚧</td>
         <td>✅</td>
         <td>✅</td>
@@ -233,7 +250,7 @@ PaddleX的各个产线均支持本地**快速推理**，部分模型支持在[AI
         <td>🚧</td>
     </tr>
     <tr>
-        <td><a href="./docs/pipeline_usage/tutorials/ocr_pipelines/layout_parsing.md">通用版面解析</a></td>
+        <td><a href="pipeline_usage/tutorials/ocr_pipelines/layout_parsing.md">通用版面解析</a></td>
         <td>🚧</td>
         <td>✅</td>
         <td>🚧</td>
@@ -243,7 +260,7 @@ PaddleX的各个产线均支持本地**快速推理**，部分模型支持在[AI
         <td>🚧</td>
     </tr>
     <tr>
-        <td><a href="./docs/pipeline_usage/tutorials/ocr_pipelines/formula_recognition.md">公式识别</a></td>
+        <td><a href="pipeline_usage/tutorials/ocr_pipelines/formula_recognition.md">公式识别</a></td>
         <td>🚧</td>
         <td>✅</td>
         <td>🚧</td>
@@ -253,7 +270,7 @@ PaddleX的各个产线均支持本地**快速推理**，部分模型支持在[AI
         <td>🚧</td>
     </tr>
     <tr>
-        <td><a href="./docs/pipeline_usage/tutorials/ocr_pipelines/seal_recognition.md">印章文本识别</a></td>
+        <td><a href="pipeline_usage/tutorials/ocr_pipelines/seal_recognition.md">印章文本识别</a></td>
         <td>🚧</td>
         <td>✅</td>
         <td>✅</td>
@@ -306,11 +323,11 @@ PaddleX的各个产线均支持本地**快速推理**，部分模型支持在[AI
 
 </table>
 
-> ❗注：以上功能均基于 GPU/CPU 实现。PaddleX 还可在昆仑芯、昇腾、寒武纪和海光等主流硬件上进行快速推理和二次开发。下表详细列出了模型产线的支持情况，具体支持的模型列表请参阅[模型列表(昆仑芯XPU)](./docs/support_list/model_list_xpu.md)/[模型列表(昇腾NPU)](./docs/support_list/model_list_npu.md)/[模型列表(寒武纪MLU)](./docs/support_list/model_list_mlu.md)/[模型列表(海光DCU)](./docs/support_list/model_list_dcu.md)。我们正在适配更多的模型，并在主流硬件上推动高性能和服务化部署的实施。
+> ❗注：以上功能均基于 GPU/CPU 实现。PaddleX 还可在昆仑芯、昇腾、寒武纪和海光等主流硬件上进行快速推理和二次开发。下表详细列出了模型产线的支持情况，具体支持的模型列表请参阅[模型列表(昆仑芯XPU)](support_list/model_list_xpu.md)/[模型列表(昇腾NPU)](support_list/model_list_npu.md)/[模型列表(寒武纪MLU)](support_list/model_list_mlu.md)/[模型列表(海光DCU)](support_list/model_list_dcu.md)。我们正在适配更多的模型，并在主流硬件上推动高性能和服务化部署的实施。
 
 🔥🔥 **国产化硬件能力支持**
 
-<table>
+<table class="centered-table">
   <tr>
     <th>模型产线</th>
     <th>昇腾 910B</th>

@@ -1,5 +1,3 @@
-## ⏭️ 快速开始
-
 ### 🛠️ 安装
 
 > ❗安装 PaddleX 前请先确保您有基础的 **Python 运行环境**（注：当前支持Python 3.8 ～ Python 3.10下运行，更多Python版本适配中）。
@@ -24,7 +22,7 @@ python -m pip install paddlepaddle-gpu==3.0.0b1 -i https://www.paddlepaddle.org.
 pip install https://paddle-model-ecology.bj.bcebos.com/paddlex/whl/paddlex-3.0.0b1-py3-none-any.whl
 ```
 
-> ❗ 更多安装方式参考 [PaddleX 安装教程](./docs/installation/installation.md)
+> ❗ 更多安装方式参考 [PaddleX 安装教程](installation/installation.md)
 
 ### 💻 命令行使用
 
@@ -71,7 +69,7 @@ paddlex --pipeline OCR --input https://paddle-model-ecology.bj.bcebos.com/paddle
 
 可视化结果如下：
 
-![alt text](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/boardingpass.png)
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/boardingpass.png">
 
 </details>
 
@@ -80,24 +78,76 @@ paddlex --pipeline OCR --input https://paddle-model-ecology.bj.bcebos.com/paddle
 <details>
   <summary><b>👉 更多产线的命令行使用</b></summary>
 
-| 产线名称           | 使用命令                                                                                                                                                                                    |
-|--------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 通用图像分类       | `paddlex --pipeline image_classification --input https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/general_image_classification_001.jpg --device gpu:0`                    |
-| 通用目标检测       | `paddlex --pipeline object_detection --input https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/general_object_detection_002.png --device gpu:0`                            |
-| 通用实例分割       | `paddlex --pipeline instance_segmentation --input https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/general_instance_segmentation_004.png --device gpu:0`                  |
-| 通用语义分割       | `paddlex --pipeline semantic_segmentation --input https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/application/semantic_segmentation/makassaridn-road_demo.png --device gpu:0` |
-| 图像多标签分类 | `paddlex --pipeline multi_label_image_classification --input https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/general_image_classification_001.jpg --device gpu:0`        |
-| 小目标检测         | `paddlex --pipeline small_object_detection --input https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/small_object_detection.jpg --device gpu:0`                            |
-| 图像异常检测       | `paddlex --pipeline anomaly_detection --input https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/uad_grid.png --device gpu:0 `                                              |
-| 通用OCR            | `paddlex --pipeline OCR --input https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/general_ocr_002.png --device gpu:0`                                                      |
-| 通用表格识别       | `paddlex --pipeline table_recognition --input https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/table_recognition.jpg --device gpu:0`                                      |
-| 通用版面解析       | `paddlex --pipeline layout_parsing --input https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/demo_paper.png --device gpu:0`                                      |
-| 公式识别       | `paddlex --pipeline formula_recognition --input https://paddle-model-ecology.bj.bcebos.com/paddlex/demo_image/general_formula_recognition.png --device gpu:0`                                      |
-| 印章文本识别       | `paddlex --pipeline seal_recognition --input https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/seal_text_det.png --device gpu:0`                                      |
-| 时序预测       | `paddlex --pipeline ts_fc --input https://paddle-model-ecology.bj.bcebos.com/paddlex/ts/demo_ts/ts_fc.csv --device gpu:0`                                                                   |
-| 时序异常检测   | `paddlex --pipeline ts_ad --input https://paddle-model-ecology.bj.bcebos.com/paddlex/ts/demo_ts/ts_ad.csv --device gpu:0`                                                                    |
-| 时序分类       | `paddlex --pipeline ts_cls --input https://paddle-model-ecology.bj.bcebos.com/paddlex/ts/demo_ts/ts_cls.csv --device gpu:0`                                                                 |
-
+<table>
+    <thead>
+        <tr>
+            <th>产线名称</th>
+            <th>使用命令</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>通用图像分类</td>
+            <td><code>paddlex --pipeline image_classification --input https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/general_image_classification_001.jpg --device gpu:0</code></td>
+        </tr>
+        <tr>
+            <td>通用目标检测</td>
+            <td><code>paddlex --pipeline object_detection --input https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/general_object_detection_002.png --device gpu:0</code></td>
+        </tr>
+        <tr>
+            <td>通用实例分割</td>
+            <td><code>paddlex --pipeline instance_segmentation --input https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/general_instance_segmentation_004.png --device gpu:0</code></td>
+        </tr>
+        <tr>
+            <td>通用语义分割</td>
+            <td><code>paddlex --pipeline semantic_segmentation --input https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/application/semantic_segmentation/makassaridn-road_demo.png --device gpu:0</code></td>
+        </tr>
+        <tr>
+            <td>图像多标签分类</td>
+            <td><code>paddlex --pipeline multi_label_image_classification --input https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/general_image_classification_001.jpg --device gpu:0</code></td>
+        </tr>
+        <tr>
+            <td>小目标检测</td>
+            <td><code>paddlex --pipeline small_object_detection --input https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/small_object_detection.jpg --device gpu:0</code></td>
+        </tr>
+        <tr>
+            <td>图像异常检测</td>
+            <td><code>paddlex --pipeline anomaly_detection --input https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/uad_grid.png --device gpu:0 </code></td>
+        </tr>
+        <tr>
+            <td>通用OCR</td>
+            <td><code>paddlex --pipeline OCR --input https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/general_ocr_002.png --device gpu:0</code></td>
+        </tr>
+        <tr>
+            <td>通用表格识别</td>
+            <td><code>paddlex --pipeline table_recognition --input https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/table_recognition.jpg --device gpu:0</code></td>
+        </tr>
+        <tr>
+            <td>通用版面解析</td>
+            <td><code>paddlex --pipeline layout_parsing --input https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/demo_paper.png --device gpu:0</code></td>
+        </tr>
+        <tr>
+            <td>公式识别</td>
+            <td><code>paddlex --pipeline formula_recognition --input https://paddle-model-ecology.bj.bcebos.com/paddlex/demo_image/general_formula_recognition.png --device gpu:0</code></td>
+        </tr>
+        <tr>
+            <td>印章文本识别</td>
+            <td><code>paddlex --pipeline seal_recognition --input https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/seal_text_det.png --device gpu:0</code></td>
+        </tr>
+        <tr>
+            <td>时序预测</td>
+            <td><code>paddlex --pipeline ts_fc --input https://paddle-model-ecology.bj.bcebos.com/paddlex/ts/demo_ts/ts_fc.csv --device gpu:0</code></td>
+        </tr>
+        <tr>
+            <td>时序异常检测</td>
+            <td><code>paddlex --pipeline ts_ad --input https://paddle-model-ecology.bj.bcebos.com/paddlex/ts/demo_ts/ts_ad.csv --device gpu:0</code></td>
+        </tr>
+        <tr>
+            <td>时序分类</td>
+            <td><code>paddlex --pipeline ts_cls --input https://paddle-model-ecology.bj.bcebos.com/paddlex/ts/demo_ts/ts_cls.csv --device gpu:0</code></td>
+        </tr>
+    </tbody>
+</table>
 </details>
 
 ### 📝 Python 脚本使用
@@ -123,23 +173,96 @@ for res in output:
 <details>
   <summary><b>👉 更多产线的Python脚本使用</b></summary>
 
-| 产线名称           | 对应参数                           | 详细说明                                                                                                                                                         |
-|--------------------|------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 文档场景信息抽取v3   | `PP-ChatOCRv3-doc`                 | [文档场景信息抽取v3产线Python脚本使用说明](./docs/pipeline_usage/tutorials/information_extraction_pipelines/document_scene_information_extraction.md#22-本地体验) |
-| 通用图像分类       | `image_classification`             | [通用图像分类产线Python脚本使用说明](./docs/pipeline_usage/tutorials/cv_pipelines/image_classification.md#222-python脚本方式集成)                                |
-| 通用目标检测       | `object_detection`                 | [通用目标检测产线Python脚本使用说明](./docs/pipeline_usage/tutorials/cv_pipelines/object_detection.md#222-python脚本方式集成)                                    |
-| 通用实例分割       | `instance_segmentation`            | [通用实例分割产线Python脚本使用说明](./docs/pipeline_usage/tutorials/cv_pipelines/instance_segmentation.md#222-python脚本方式集成)                               |
-| 通用语义分割       | `semantic_segmentation`            | [通用语义分割产线Python脚本使用说明](./docs/pipeline_usage/tutorials/cv_pipelines/semantic_segmentation.md#222-python脚本方式集成)                               |
-| 图像多标签分类 | `multi_label_image_classification` | [图像多标签分类产线Python脚本使用说明](./docs/pipeline_usage/tutorials/cv_pipelines/image_multi_label_classification.md#22-python脚本方式集成)               |
-| 小目标检测         | `small_object_detection`           | [小目标检测产线Python脚本使用说明](./docs/pipeline_usage/tutorials/cv_pipelines/small_object_detection.md#22-python脚本方式集成)                                 |
-| 图像异常检测       | `anomaly_detection`                | [图像异常检测产线Python脚本使用说明](./docs/pipeline_usage/tutorials/cv_pipelines/image_anomaly_detection.md#22-python脚本方式集成)                              |
-| 通用OCR            | `OCR`                              | [通用OCR产线Python脚本使用说明](./docs/pipeline_usage/tutorials/ocr_pipelines/OCR.md#222-python脚本方式集成)                                                     |
-| 通用表格识别       | `table_recognition`                | [通用表格识别产线Python脚本使用说明](./docs/pipeline_usage/tutorials/ocr_pipelines/table_recognition.md#22-python脚本方式集成)                                   |
-| 通用版面解析       | `layout_parsing`                | [通用版面解析产线Python脚本使用说明](./docs/pipeline_usage/tutorials/ocr_pipelines/layout_parsing.md#22-python脚本方式集成)                                   |
-| 公式识别       | `formula_recognition`                | [公式识别产线Python脚本使用说明](./docs/pipeline_usage/tutorials/ocr_pipelines/formula_recognition.md#22-python脚本方式集成)                                   |
-| 印章文本识别       | `seal_recognition`                | [印章文本识别产线Python脚本使用说明](./docs/pipeline_usage/tutorials/ocr_pipelines/seal_recognition.md#22-python脚本方式集成)                                   |
-| 时序预测       | `ts_fc`                            | [时序预测产线Python脚本使用说明](./docs/pipeline_usage/tutorials/time_series_pipelines/time_series_forecasting.md#222-python脚本方式集成)                    |
-| 时序异常检测   | `ts_ad`                            | [时序异常检测产线Python脚本使用说明](./docs/pipeline_usage/tutorials/time_series_pipelines/time_series_anomaly_detection.md#222-python脚本方式集成)          |
-| 时序分类       | `ts_cls`                           | [时序分类产线Python脚本使用说明](./docs/pipeline_usage/tutorials/time_series_pipelines/time_series_classification.md#222-python脚本方式集成)                 |
+<table>
+    <thead>
+        <tr>
+            <th>产线名称</th>
+            <th>对应参数</th>
+            <th>详细说明</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>文档场景信息抽取v3</td>
+            <td><code>PP-ChatOCRv3-doc</code></td>
+            <td><a href="pipeline_usage/tutorials/information_extraction_pipelines/document_scene_information_extraction.md#22-本地体验">文档场景信息抽取v3产线Python脚本使用说明</a></td>
+        </tr>
+        <tr>
+            <td>通用图像分类</td>
+            <td><code>image_classification</code></td>
+            <td><a href="pipeline_usage/tutorials/cv_pipelines/image_classification.md#222-python脚本方式集成">通用图像分类产线Python脚本使用说明</a></td>
+        </tr>
+        <tr>
+            <td>通用目标检测</td>
+            <td><code>object_detection</code></td>
+            <td><a href="pipeline_usage/tutorials/cv_pipelines/object_detection.md#222-python脚本方式集成">通用目标检测产线Python脚本使用说明</a></td>
+        </tr>
+        <tr>
+            <td>通用实例分割</td>
+            <td><code>instance_segmentation</code></td>
+            <td><a href="pipeline_usage/tutorials/cv_pipelines/instance_segmentation.md#222-python脚本方式集成">通用实例分割产线Python脚本使用说明</a></td>
+        </tr>
+        <tr>
+            <td>通用语义分割</td>
+            <td><code>semantic_segmentation</code></td>
+            <td><a href="pipeline_usage/tutorials/cv_pipelines/semantic_segmentation.md#222-python脚本方式集成">通用语义分割产线Python脚本使用说明</a></td>
+        </tr>
+        <tr>
+            <td>图像多标签分类</td>
+            <td><code>multi_label_image_classification</code></td>
+            <td><a href="pipeline_usage/tutorials/cv_pipelines/image_multi_label_classification.md#22-python脚本方式集成">图像多标签分类产线Python脚本使用说明</a></td>
+        </tr>
+        <tr>
+            <td>小目标检测</td>
+            <td><code>small_object_detection</code></td>
+            <td><a href="pipeline_usage/tutorials/cv_pipelines/small_object_detection.md#22-python脚本方式集成">小目标检测产线Python脚本使用说明</a></td>
+        </tr>
+        <tr>
+            <td>图像异常检测</td>
+            <td><code>anomaly_detection</code></td>
+            <td><a href="pipeline_usage/tutorials/cv_pipelines/image_anomaly_detection.md#22-python脚本方式集成">图像异常检测产线Python脚本使用说明</a></td>
+        </tr>
+        <tr>
+            <td>通用OCR</td>
+            <td><code>OCR</code></td>
+            <td><a href="pipeline_usage/tutorials/ocr_pipelines/OCR.md#222-python脚本方式集成">通用OCR产线Python脚本使用说明</a></td>
+        </tr>
+        <tr>
+            <td>通用表格识别</td>
+            <td><code>table_recognition</code></td>
+            <td><a href="pipeline_usage/tutorials/ocr_pipelines/table_recognition.md#22-python脚本方式集成">通用表格识别产线Python脚本使用说明</a></td>
+        </tr>
+        <tr>
+            <td>通用版面解析</td>
+            <td><code>layout_parsing</code></td>
+            <td><a href="pipeline_usage/tutorials/ocr_pipelines/layout_parsing.md#22-python脚本方式集成">通用版面解析产线Python脚本使用说明</a></td>
+        </tr>
+        <tr>
+            <td>公式识别</td>
+            <td><code>formula_recognition</code></td>
+            <td><a href="pipeline_usage/tutorials/ocr_pipelines/formula_recognition.md#22-python脚本方式集成">公式识别产线Python脚本使用说明</a></td>
+        </tr>
+        <tr>
+            <td>印章文本识别</td>
+            <td><code>seal_recognition</code></td>
+            <td><a href="pipeline_usage/tutorials/ocr_pipelines/seal_recognition.md#22-python脚本方式集成">印章文本识别产线Python脚本使用说明</a></td>
+        </tr>
+        <tr>
+            <td>时序预测</td>
+            <td><code>ts_fc</code></td>
+            <td><a href="pipeline_usage/tutorials/time_series_pipelines/time_series_forecasting.md#222-python脚本方式集成">时序预测产线Python脚本使用说明</a></td>
+        </tr>
+        <tr>
+            <td>时序异常检测</td>
+            <td><code>ts_ad</code></td>
+            <td><a href="pipeline_usage/tutorials/time_series_pipelines/time_series_anomaly_detection.md#222-python脚本方式集成">时序异常检测产线Python脚本使用说明</a></td>
+        </tr>
+        <tr>
+            <td>时序分类</td>
+            <td><code>ts_cls</code></td>
+            <td><a href="pipeline_usage/tutorials/time_series_pipelines/time_series_classification.md#222-python脚本方式集成">时序分类产线Python脚本使用说明</a></td>
+        </tr>
+    </tbody>
+</table>
 
 </details>
