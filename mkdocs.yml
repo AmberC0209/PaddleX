@@ -86,7 +86,7 @@ plugins:
           name: English
           site_name: PaddleX Documentation
           link: /en/
-          nav_translation:
+          nav_translations:
             Home: Home
             快速开始: Quick Start
             产线使用教程: Pipeline Tutorials
