@@ -2,11 +2,11 @@
 
 # PaddleX 3.0 General Object Detection Pipeline — Tutorial on Pedestrian Fall Detection
 
-PaddleX offers a rich set of pipelines, each consisting of one or more models tailored to solve specific scenario tasks. All PaddleX pipelines support quick trials, and if the results are not satisfactory, you can fine-tune the models with your private data. PaddleX also provides Python APIs for easy integration into personal projects. Before proceeding, ensure you have installed PaddleX. For installation instructions, refer to [PaddleX Installation](../installation/installation_en.md). This tutorial introduces the usage of the pipeline tool with an example of pedestrian fall detection.
+PaddleX offers a rich set of pipelines, each consisting of one or more models tailored to solve specific scenario tasks. All PaddleX pipelines support quick trials, and if the results are not satisfactory, you can fine-tune the models with your private data. PaddleX also provides Python APIs for easy integration into personal projects. Before proceeding, ensure you have installed PaddleX. For installation instructions, refer to [PaddleX Installation](../installation/installation.en.md). This tutorial introduces the usage of the pipeline tool with an example of pedestrian fall detection.
 
 ## 1. Select a Pipeline
 
-First, choose the appropriate PaddleX pipeline based on your task scenario. For pedestrian fall detection, this falls under the General Object Detection pipeline in PaddleX. If unsure about the task-pipeline correspondence, consult the [Pipeline List](../support_list/pipelines_list_en.md) for capabilities of each pipeline.
+First, choose the appropriate PaddleX pipeline based on your task scenario. For pedestrian fall detection, this falls under the General Object Detection pipeline in PaddleX. If unsure about the task-pipeline correspondence, consult the [Pipeline List](../support_list/pipelines_list.en.md) for capabilities of each pipeline.
 
 ## 2. Quick Start
 
@@ -31,7 +31,7 @@ After the trial, determine if the pipeline meets your expectations (including ac
 
 ## 3. Choose a Model
 
-PaddleX provides 37 end-to-end object detection models. Refer to the [Model List](../support_list/models_list_en.md) for details. Here's a benchmark of some models:
+PaddleX provides 37 end-to-end object detection models. Refer to the [Model List](../support_list/models_list.en.md) for details. Here's a benchmark of some models:
 
 | Model List         | mAP(%) | GPU Inference Time(ms) | CPU Inference Time(ms) | Model Size(M) |
 | --------------- | ------ | ---------------- | ---------------- | --------------- |
@@ -49,7 +49,7 @@ In summary, models listed from top to bottom offer faster inference speeds, whil
 ## 4. Data Preparation and Verification
 ### 4.1 Data Preparation
 
-This tutorial uses the "Pedestrian Fall Detection Dataset" as an example dataset. You can obtain the example dataset using the following commands. If you use your own annotated dataset, you need to adjust it according to the PaddleX format requirements to meet PaddleX's data format specifications. For data format introductions, you can refer to the [PaddleX Object Detection Task Module Data Preparation Tutorial](../data_annotations/cv_modules/object_detection_en.md).
+This tutorial uses the "Pedestrian Fall Detection Dataset" as an example dataset. You can obtain the example dataset using the following commands. If you use your own annotated dataset, you need to adjust it according to the PaddleX format requirements to meet PaddleX's data format specifications. For data format introductions, you can refer to the [PaddleX Object Detection Task Module Data Preparation Tutorial](../data_annotations/cv_modules/object_detection.en.md).
 
 Dataset acquisition commands:
 ```bash
@@ -154,7 +154,7 @@ Each model in PaddleX provides a configuration file for model development, which
     * `epochs_iters`: Number of training epochs;
     * `learning_rate`: Training learning rate;
 
-For more hyperparameter introductions, refer to [PaddleX General Model Configuration File Parameter Explanation](../module_usage/instructions/config_parameters_common_en.md).
+For more hyperparameter introductions, refer to [PaddleX General Model Configuration File Parameter Explanation](../module_usage/instructions/config_parameters_common.en.md).
 
 **Note**:
 - The above parameters can be set by appending command-line parameters, e.g., specifying the mode as model training: `-o Global.mode=train`; specifying the first two GPUs for training: `-o Global.device=gpu:0,1`; setting the number of training epochs to 10: `-o Train.epochs_iters=10`.
@@ -248,12 +248,12 @@ for res in output:
     res.save_to_img("./output/") # Save the visualized image of the result
     res.save_to_json("./output/") # Save the structured output of the prediction
 ```
-For more parameters, please refer to [General Object Detection Pipeline Usage Tutorial](../pipeline_usage/tutorials/cv_pipelines/object_detection_en.md).
+For more parameters, please refer to [General Object Detection Pipeline Usage Tutorial](../pipeline_usage/tutorials/cv_pipelines/object_detection.en.md).
 
 2. Additionally, PaddleX offers three other deployment methods, detailed as follows:
 
-* high-performance inference: In actual production environments, many applications have stringent standards for deployment strategy performance metrics (especially response speed) to ensure efficient system operation and smooth user experience. To this end, PaddleX provides high-performance inference plugins aimed at deeply optimizing model inference and pre/post-processing for significant end-to-end process acceleration. For detailed high-performance inference procedures, please refer to the [PaddleX High-Performance Inference Guide](../pipeline_deploy/high_performance_inference_en.md).
-* Service-Oriented Deployment: Service-oriented deployment is a common deployment form in actual production environments. By encapsulating inference functions as services, clients can access these services through network requests to obtain inference results. PaddleX supports users in achieving cost-effective service-oriented deployment of production lines. For detailed service-oriented deployment procedures, please refer to the [PaddleX Service-Oriented Deployment Guide](../pipeline_deploy/service_deploy_en.md).
-* Edge Deployment: Edge deployment is a method that places computing and data processing capabilities directly on user devices, allowing devices to process data without relying on remote servers. PaddleX supports deploying models on edge devices such as Android. For detailed edge deployment procedures, please refer to the [PaddleX Edge Deployment Guide](../pipeline_deploy/edge_deploy_en.md).
+* high-performance inference: In actual production environments, many applications have stringent standards for deployment strategy performance metrics (especially response speed) to ensure efficient system operation and smooth user experience. To this end, PaddleX provides high-performance inference plugins aimed at deeply optimizing model inference and pre/post-processing for significant end-to-end process acceleration. For detailed high-performance inference procedures, please refer to the [PaddleX High-Performance Inference Guide](../pipeline_deploy/high_performance_inference.en.md).
+* Service-Oriented Deployment: Service-oriented deployment is a common deployment form in actual production environments. By encapsulating inference functions as services, clients can access these services through network requests to obtain inference results. PaddleX supports users in achieving cost-effective service-oriented deployment of production lines. For detailed service-oriented deployment procedures, please refer to the [PaddleX Service-Oriented Deployment Guide](../pipeline_deploy/service_deploy.en.md).
+* Edge Deployment: Edge deployment is a method that places computing and data processing capabilities directly on user devices, allowing devices to process data without relying on remote servers. PaddleX supports deploying models on edge devices such as Android. For detailed edge deployment procedures, please refer to the [PaddleX Edge Deployment Guide](../pipeline_deploy/edge_deploy.en.md).
 
 You can select the appropriate deployment method for your model pipeline according to your needs, and proceed with subsequent AI application integration.

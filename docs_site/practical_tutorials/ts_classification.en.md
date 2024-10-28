@@ -2,10 +2,10 @@
 
 # PaddleX 3.0 Time Series Classification Pipeline — Heartbeat Monitoring Time Series Classification Tutorial
 
-PaddleX offers a rich set of pipelines, each consisting of one or more models tailored to solve specific scenario-based tasks. All PaddleX pipelines support quick trials, and if the results do not meet expectations, they also allow fine-tuning with private data. PaddleX provides Python APIs for easy integration into personal projects. Before use, you need to install PaddleX. For installation instructions, refer to [PaddleX Local Installation Guide](../installation/installation_en.md). This tutorial introduces the usage of the pipeline tool with an example of heartbeat time series data classification.
+PaddleX offers a rich set of pipelines, each consisting of one or more models tailored to solve specific scenario-based tasks. All PaddleX pipelines support quick trials, and if the results do not meet expectations, they also allow fine-tuning with private data. PaddleX provides Python APIs for easy integration into personal projects. Before use, you need to install PaddleX. For installation instructions, refer to [PaddleX Local Installation Guide](../installation/installation.en.md). This tutorial introduces the usage of the pipeline tool with an example of heartbeat time series data classification.
 
 ## 1. Select a Pipeline
-First, choose the corresponding PaddleX pipeline based on your task scenario. For this task, the goal is to train a time series classification model based on heartbeat monitoring data to classify heartbeat time series conditions. Recognizing this as a time series classification task, we select PaddleX's Time Series Classification Pipeline. If unsure about the task-pipeline correspondence, consult the [PaddleX Pipeline List (CPU/GPU)](../support_list/models_list_en.md) for pipeline capabilities.
+First, choose the corresponding PaddleX pipeline based on your task scenario. For this task, the goal is to train a time series classification model based on heartbeat monitoring data to classify heartbeat time series conditions. Recognizing this as a time series classification task, we select PaddleX's Time Series Classification Pipeline. If unsure about the task-pipeline correspondence, consult the [PaddleX Pipeline List (CPU/GPU)](../support_list/models_list.en.md) for pipeline capabilities.
 
 ## 2. Quick Experience
 PaddleX offers two ways to experience its capabilities: locally or on the **Baidu AIStudio Community**.
@@ -24,7 +24,7 @@ for res in output:
 Note: Due to the tight coupling between time series data and scenarios, the online experience of official models is tailored to a specific scenario and not a universal solution. It does not support arbitrary files for model effect evaluation. However, after training a model with your scenario data, you can select your trained model and use corresponding scenario data for online experience.
 
 ## 3. Choose a Model
-PaddleX provides a time series classification model. Refer to the [Model List](../support_list/models_list_en.md) for details. The model benchmark is as follows:
+PaddleX provides a time series classification model. Refer to the [Model List](../support_list/models_list.en.md) for details. The model benchmark is as follows:
 
 | Model Name | Acc (%) | Model Size (M) | Description |
 |-|-|-|-|
@@ -36,7 +36,7 @@ PaddleX provides a time series classification model. Refer to the [Model List](.
 ### 4.1 Data Preparation
 To demonstrate the entire time series classification process, we will use the public [Heartbeat Dataset](https://paddle-model-ecology.bj.bcebos.com/paddlex/data/ts_classify_examples.tar) for model training and validation. The Heartbeat Dataset is part of the UEA Time Series Classification Archive, addressing the practical task of heartbeat monitoring for medical diagnosis. The dataset comprises multiple time series groups, with each data point consisting of a label variable, group ID, and 61 feature variables. This dataset is commonly used to test and validate the performance of time series classification prediction models.
 
-We have converted the dataset into a standard format, which can be obtained using the following commands. For data format details, refer to the [Time Series Classification Module Development Tutorial](../module_usage/tutorials/time_series_modules/time_series_classification_en.md).
+We have converted the dataset into a standard format, which can be obtained using the following commands. For data format details, refer to the [Time Series Classification Module Development Tutorial](../module_usage/tutorials/time_series_modules/time_series_classification.en.md).
 
 Dataset Acquisition Command:
 
@@ -97,7 +97,7 @@ The above verification results have omitted some data parts. `check_pass` being 
 **Note**: Only data that passes the verification can be used for training and evaluation.
 
 ### 4.3 Dataset Format Conversion / Dataset Splitting (Optional)
-If you need to convert the dataset format or re-split the dataset, please refer to Section 4.1.3 in the [Time Series Classification Module Development Tutorial](../module_usage/tutorials/time_series_modules/time_series_classification_en.md).
+If you need to convert the dataset format or re-split the dataset, please refer to Section 4.1.3 in the [Time Series Classification Module Development Tutorial](../module_usage/tutorials/time_series_modules/time_series_classification.en.md).
 
 ## 5. Model Training and Evaluation
 
@@ -123,7 +123,7 @@ Each model in PaddleX provides a configuration file for model development to set
 
 * `Global`:
   * `mode`: Mode, supports dataset validation (`check_dataset`), model training (`train`), model evaluation (`evaluate`), and single-case testing (`predict`);
-  * `device`: Training device, options include `cpu`, `gpu`. Check the [Model Support List](../support_list/models_list_en.md) for models supported on different devices.
+  * `device`: Training device, options include `cpu`, `gpu`. Check the [Model Support List](../support_list/models_list.en.md) for models supported on different devices.
 * `Train`: Training hyperparameter settings;
   * `epochs_iters`: Number of training epochs;
   * `learning_rate`: Training learning rate;
@@ -133,7 +133,7 @@ Each model in PaddleX provides a configuration file for model development to set
   * `freq`: Frequency, set the time frequency based on your data, e.g., 1min, 5min, 1h;
   * `group_id`: A group ID represents a time series sample, and time series sequences with the same ID form a sample. Set the column name of the specified group ID based on your data, e.g., `group_id`.
   * `static_cov_cols`: Represents the category ID column of the time series. The same sample has the same label. Set the column name of the category based on your data, e.g., `label`.
-For more hyperparameter introductions, please refer to [PaddleX Time Series Task Model Configuration File Parameter Description](../module_usage/instructions/config_parameters_time_series_en.md).
+For more hyperparameter introductions, please refer to [PaddleX Time Series Task Model Configuration File Parameter Description](../module_usage/instructions/config_parameters_time_series.en.md).
 
 **Note**:
 
@@ -145,7 +145,7 @@ For more hyperparameter introductions, please refer to [PaddleX Time Series Task
 
 * During the model training process, PaddleX automatically saves the model weight files, with the default directory being output. If you need to specify a different save path, you can configure it through the `-o Global.output` field in the configuration file.
 * PaddleX abstracts away the concepts of dynamic graph weights and static graph weights from you. During model training, both dynamic and static graph weights are produced simultaneously. By default, static graph weights are selected for inference.
-* When training other models, you need to specify the corresponding configuration file. The correspondence between models and configuration files can be found in the [PaddleX Model List (CPU/GPU)](../support_list/models_list_en.md)
+* When training other models, you need to specify the corresponding configuration file. The correspondence between models and configuration files can be found in the [PaddleX Model List (CPU/GPU)](../support_list/models_list.en.md)
 
 After completing the model training, all outputs are saved in the specified output directory (default is `./output/`), typically including the following:
 
@@ -221,7 +221,7 @@ Similar to model training and evaluation, the following steps are required:
 * Specify the path to the model weights: `-o Predict.model_dir="./output/inference"`
 * Specify the path to the input data: `-o Predict.input="..."`
 
-Other related parameters can be set by modifying the fields under `Global` and `Predict` in the `.yaml` configuration file. For details, refer to [PaddleX Time Series Task Model Configuration File Parameter Description](../module_usage/instructions/config_parameters_time_series_en.md).
+Other related parameters can be set by modifying the fields under `Global` and `Predict` in the `.yaml` configuration file. For details, refer to [PaddleX Time Series Task Model Configuration File Parameter Description](../module_usage/instructions/config_parameters_time_series.en.md).
 
 ## 7. Development Integration/Deployment
 If the general time series classification pipeline meets your requirements for inference speed and accuracy, you can directly proceed with development integration/deployment.
@@ -237,9 +237,9 @@ for res in output:
     res.save_to_csv("./output/") # 保存csv格式结果
 ```
 
-For more parameters, please refer to the [Time Series Classification Pipeline Usage Tutorial](../pipeline_usage/tutorials/time_series_pipelines/time_series_classification_en.md)
+For more parameters, please refer to the [Time Series Classification Pipeline Usage Tutorial](../pipeline_usage/tutorials/time_series_pipelines/time_series_classification.en.md)
 
 2. Additionally, PaddleX's time series classification pipeline also offers a service-oriented deployment method, detailed as follows:
 
-Service-Oriented Deployment: This is a common deployment form in actual production environments. By encapsulating the inference functionality as services, clients can access these services through network requests to obtain inference results. PaddleX supports users in achieving service-oriented deployment of pipelines at low cost. For detailed instructions on service-oriented deployment, please refer to the [PaddleX Service-Oriented Deployment Guide](../pipeline_deploy/service_deploy_en.md).
+Service-Oriented Deployment: This is a common deployment form in actual production environments. By encapsulating the inference functionality as services, clients can access these services through network requests to obtain inference results. PaddleX supports users in achieving service-oriented deployment of pipelines at low cost. For detailed instructions on service-oriented deployment, please refer to the [PaddleX Service-Oriented Deployment Guide](../pipeline_deploy/service_deploy.en.md).
 You can choose the appropriate method to deploy your model pipeline based on your needs, and proceed with subsequent AI application integration.

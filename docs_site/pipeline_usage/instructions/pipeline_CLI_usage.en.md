@@ -2,7 +2,7 @@
 
 # PaddleX Pipeline CLI Usage Instructions
 
-Before using the CLI command line for rapid inference of the pipeline, please ensure that you have completed the installation of PaddleX according to the [PaddleX Local Installation Tutorial](../../installation/installation_en.md).
+Before using the CLI command line for rapid inference of the pipeline, please ensure that you have completed the installation of PaddleX according to the [PaddleX Local Installation Tutorial](../../installation/installation.en.md).
 
 ## I. Usage Example
 

@@ -381,7 +381,7 @@ The object detection module is a crucial component in computer vision systems, r
 
 ## III. Quick Integration
 
-> ❗ Before proceeding with quick integration, please install the PaddleX wheel package. For detailed instructions, refer to the [PaddleX Local Installation Guide](../../../installation/installation_en.md).
+> ❗ Before proceeding with quick integration, please install the PaddleX wheel package. For detailed instructions, refer to the [PaddleX Local Installation Guide](../../../installation/installation.en.md).
 
 After installing the wheel package, you can perform object detection inference with just a few lines of code. You can easily switch between models within the module and integrate the object detection inference into your projects. Before running the following code, please download the [demo image](https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/general_object_detection_002.png) to your local machine.
 
@@ -395,15 +395,15 @@ for res in output:
     res.save_to_json("./output/res.json")
 ```
 
-For more information on using PaddleX's single-model inference APIs, refer to the [PaddleX Single Model Python Script Usage Instructions](../../instructions/model_python_API_en.md).
+For more information on using PaddleX's single-model inference APIs, refer to the [PaddleX Single Model Python Script Usage Instructions](../../instructions/model_python_API.en.md).
 
 ## IV. Custom Development
 
-If you seek higher precision from existing models, you can leverage PaddleX's custom development capabilities to develop better object detection models. Before developing object detection models with PaddleX, ensure you have installed the object detection related training plugins. For installation instructions, refer to the [PaddleX Local Installation Guide](../../../installation/installation_en.md).
+If you seek higher precision from existing models, you can leverage PaddleX's custom development capabilities to develop better object detection models. Before developing object detection models with PaddleX, ensure you have installed the object detection related training plugins. For installation instructions, refer to the [PaddleX Local Installation Guide](../../../installation/installation.en.md).
 
 ### 4.1 Data Preparation
 
-Before model training, prepare the corresponding dataset for the task module. PaddleX provides a data validation feature for each module, and **only datasets that pass validation can be used for model training**. Additionally, PaddleX provides demo datasets for each module, which you can use to complete subsequent development. If you wish to use a private dataset for model training, refer to the [PaddleX Object Detection Task Module Data Annotation Guide](../../../data_annotations/cv_modules/object_detection_en.md).
+Before model training, prepare the corresponding dataset for the task module. PaddleX provides a data validation feature for each module, and **only datasets that pass validation can be used for model training**. Additionally, PaddleX provides demo datasets for each module, which you can use to complete subsequent development. If you wish to use a private dataset for model training, refer to the [PaddleX Object Detection Task Module Data Annotation Guide](../../../data_annotations/cv_modules/object_detection.en.md).
 
 #### 4.1.1 Download Demo Data
 
@@ -586,10 +586,10 @@ python main.py -c paddlex/configs/object_detection/PicoDet-S.yaml \
 ```
 The following steps are required:
 
-* Specify the `.yaml` configuration file path for the model (here it is `PicoDet-S.yaml`,When training other models, you need to specify the corresponding configuration files. The relationship between the model and configuration files can be found in the [PaddleX Model List (CPU/GPU)](../../../support_list/models_list_en.md))
+* Specify the `.yaml` configuration file path for the model (here it is `PicoDet-S.yaml`,When training other models, you need to specify the corresponding configuration files. The relationship between the model and configuration files can be found in the [PaddleX Model List (CPU/GPU)](../../../support_list/models_list.en.md))
 * Set the mode to model training: `-o Global.mode=train`
 * Specify the path to the training dataset: `-o Global.dataset_dir`.
-Other related parameters can be set by modifying the `Global` and `Train` fields in the `.yaml` configuration file, or adjusted by appending parameters in the command line. For example, to specify training on the first two GPUs: `-o Global.device=gpu:0,1`; to set the number of training epochs to 10: `-o Train.epochs_iters=10`. For more modifiable parameters and their detailed explanations, refer to the configuration file instructions for the corresponding task module of the model [PaddleX Common Configuration File Parameters](../../instructions/config_parameters_common_en.md).
+Other related parameters can be set by modifying the `Global` and `Train` fields in the `.yaml` configuration file, or adjusted by appending parameters in the command line. For example, to specify training on the first two GPUs: `-o Global.device=gpu:0,1`; to set the number of training epochs to 10: `-o Train.epochs_iters=10`. For more modifiable parameters and their detailed explanations, refer to the configuration file instructions for the corresponding task module of the model [PaddleX Common Configuration File Parameters](../../instructions/config_parameters_common.en.md).
 
 <details>
   <summary>👉 <b>More Details (Click to Expand)</b></summary>
@@ -616,7 +616,7 @@ Similar to model training, the following steps are required:
 
 * Specify the `.yaml` configuration file path for the model (here it is `PicoDet-S.yaml`)
 * Specify the mode as model evaluation: `-o Global.mode=evaluate`
-* Specify the path to the validation dataset: `-o Global.dataset_dir`. Other related parameters can be set by modifying the `Global` and `Evaluate` fields in the `.yaml` configuration file. For details, refer to [PaddleX Common Model Configuration File Parameter Description](../../instructions/config_parameters_common_en.md).
+* Specify the path to the validation dataset: `-o Global.dataset_dir`. Other related parameters can be set by modifying the `Global` and `Evaluate` fields in the `.yaml` configuration file. For details, refer to [PaddleX Common Model Configuration File Parameter Description](../../instructions/config_parameters_common.en.md).
 
 <details>
   <summary>👉 <b>More Details (Click to Expand)</b></summary>
@@ -645,14 +645,14 @@ Similar to model training and evaluation, the following steps are required:
 * Specify the mode as model inference prediction: `-o Global.mode=predict`
 * Specify the model weights path: `-o Predict.model_dir="./output/best_model/inference"`
 * Specify the input data path: `-o Predict.input="..."`
-Other related parameters can be set by modifying the `Global` and `Predict` fields in the `.yaml` configuration file. For details, refer to [PaddleX Common Model Configuration File Parameter Description](../../instructions/config_parameters_common_en.md).
+Other related parameters can be set by modifying the `Global` and `Predict` fields in the `.yaml` configuration file. For details, refer to [PaddleX Common Model Configuration File Parameter Description](../../instructions/config_parameters_common.en.md).
 
 #### 4.4.2 Model Integration
 The model can be directly integrated into the PaddleX pipelines or directly into your own project.
 
 1.**Pipeline Integration**
 
-The object detection module can be integrated into the [General Object Detection Pipeline](../../../pipeline_usage/tutorials/cv_pipelines/object_detection_en.md) of PaddleX. Simply replace the model path to update the object detection module of the relevant pipeline. In pipeline integration, you can use high-performance inference and service-oriented deployment to deploy your model.
+The object detection module can be integrated into the [General Object Detection Pipeline](../../../pipeline_usage/tutorials/cv_pipelines/object_detection.en.md) of PaddleX. Simply replace the model path to update the object detection module of the relevant pipeline. In pipeline integration, you can use high-performance inference and service-oriented deployment to deploy your model.
 
 2.**Module Integration**
 

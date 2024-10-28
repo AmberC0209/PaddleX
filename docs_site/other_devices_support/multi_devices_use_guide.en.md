@@ -8,13 +8,13 @@ This document focuses on the usage guide of PaddleX for Huawei Ascend NPU, Cambr
 ### 1.1 PaddlePaddle Installation
 First, please complete the installation of PaddlePaddle according to your hardware platform. The installation tutorials for each hardware are as follows:
 
-Ascend NPU: [Ascend NPU PaddlePaddle Installation Guide](./paddlepaddle_install_NPU_en.md)
+Ascend NPU: [Ascend NPU PaddlePaddle Installation Guide](./paddlepaddle_install_NPU.en.md)
 
-Cambricon MLU: [Cambricon MLU PaddlePaddle Installation Guide](./paddlepaddle_install_MLU_en.md)
+Cambricon MLU: [Cambricon MLU PaddlePaddle Installation Guide](./paddlepaddle_install_MLU.en.md)
 
-Kunlun XPU: [Kunlun XPU PaddlePaddle Installation Guide](./paddlepaddle_install_XPU_en.md)
+Kunlun XPU: [Kunlun XPU PaddlePaddle Installation Guide](./paddlepaddle_install_XPU.en.md)
 
-Hygon DCU: [Hygon DCU PaddlePaddle Installation Guide](./paddlepaddle_install_DCU_en.md)
+Hygon DCU: [Hygon DCU PaddlePaddle Installation Guide](./paddlepaddle_install_DCU.en.md)
 
 ### 1.2 PaddleX Installation
 Welcome to use PaddlePaddle's low-code development tool, PaddleX. Before we officially start the local installation, please clarify your development needs and choose the appropriate installation mode based on your requirements.
@@ -104,4 +104,4 @@ All packages are installed.
 
 ## 2. Usage
 
-The usage of PaddleX model pipeline development tool on hardware platforms such as Ascend NPU, Cambricon MLU, Kunlun XPU, and Hygon DCU is identical to that on GPU. You only need to modify the device configuration parameters according to your hardware platform. For detailed usage tutorials, please refer to [PaddleX Pipeline Development Tool Local Usage Guide](../pipeline_usage/pipeline_develop_guide_en.md).
+The usage of PaddleX model pipeline development tool on hardware platforms such as Ascend NPU, Cambricon MLU, Kunlun XPU, and Hygon DCU is identical to that on GPU. You only need to modify the device configuration parameters according to your hardware platform. For detailed usage tutorials, please refer to [PaddleX Pipeline Development Tool Local Usage Guide](../pipeline_usage/pipeline_develop_guide.en.md).

@@ -2,7 +2,7 @@
 
 # PaddleX Model Pipeline Python Usage Instructions
 
-Before using Python scripts for rapid inference on model pipelines, please ensure you have installed PaddleX following the [PaddleX Local Installation Guide](../../installation/installation_en.md).
+Before using Python scripts for rapid inference on model pipelines, please ensure you have installed PaddleX following the [PaddleX Local Installation Guide](../../installation/installation.en.md).
 
 ## I. Usage Example
 Taking the image classification pipeline as an example, the usage is as follows:

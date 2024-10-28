@@ -23,11 +23,11 @@ graph LR
 
 The pre-trained model pipelines provided by PaddleX allow for **quick experience of effects**. If the pipeline effects meet your requirements, you can directly proceed with **development integration/deployment** of the pre-trained model pipeline. If the effects are not as expected, you can use your private data to **fine-tune** the models within the pipeline until satisfactory results are achieved.
 
-Below, let's take the task of boarding pass recognition as an example to introduce the local usage process of the PaddleX model pipeline tool. Before use, please ensure you have completed the installation of PaddleX according to the [PaddleX Local Installation Tutorial](../installation/installation_en.md).
+Below, let's take the task of boarding pass recognition as an example to introduce the local usage process of the PaddleX model pipeline tool. Before use, please ensure you have completed the installation of PaddleX according to the [PaddleX Local Installation Tutorial](../installation/installation.en.md).
 
 ## 1. Select Pipeline
 
-Each pipeline in PaddleX can solve specific task scenarios such as object detection, time series prediction, semantic segmentation, etc. You need to select the pipeline for subsequent development based on the specific task. For example, for the boarding pass recognition task, the corresponding PaddleX pipeline is the **General OCR Pipeline**. More task-pipeline correspondences can be found in the [PaddleX Models List (CPU/GPU)](../support_list/models_list_en.md).
+Each pipeline in PaddleX can solve specific task scenarios such as object detection, time series prediction, semantic segmentation, etc. You need to select the pipeline for subsequent development based on the specific task. For example, for the boarding pass recognition task, the corresponding PaddleX pipeline is the **General OCR Pipeline**. More task-pipeline correspondences can be found in the [PaddleX Models List (CPU/GPU)](../support_list/models_list.en.md).
 
 ## 2. Quick Start
 
@@ -35,9 +35,9 @@ Each pipeline in PaddleX integrates numerous pre-trained models. You can first e
 
 PaddleX provides three ways to quickly experience pipeline effects. You can choose the appropriate method based on your needs:
 
-* Online Quick Experience URL: [PaddleX Pipeline List (CPU/GPU)](../support_list/pipelines_list_en.md)
-* Command Line Quick Experience: [PaddleX Pipeline Command Line Usage Instructions](../pipeline_usage/instructions/pipeline_CLI_usage_en.md)
-* Python Script Quick Experience: [PaddleX Pipeline Python API Usage Instructions](../pipeline_usage/instructions/pipeline_python_API_en.md)
+* Online Quick Experience URL: [PaddleX Pipeline List (CPU/GPU)](../support_list/pipelines_list.en.md)
+* Command Line Quick Experience: [PaddleX Pipeline Command Line Usage Instructions](../pipeline_usage/instructions/pipeline_CLI_usage.en.md)
+* Python Script Quick Experience: [PaddleX Pipeline Python API Usage Instructions](../pipeline_usage/instructions/pipeline_python_API.en.md)
 
 To demonstrate the OCR pipeline for the boarding pass recognition task, you can quickly experience the pipeline's effect in three ways:
 
@@ -133,7 +133,7 @@ If the pre-trained model pipeline meets your expectations, you can proceed direc
 
 ## 3. Model Selection (Optional)
 
-Since a pipeline may contain one or more models, when fine-tuning models, you need to determine which model to fine-tune based on testing results. Taking the OCR pipeline for boarding pass recognition as an example, this pipeline includes a text detection model (e.g., `PP-OCRv4_mobile_det`) and a text recognition model (e.g., `PP-OCRv4_mobile_rec`). If the text positioning is inaccurate, you need to fine-tune the text detection model. If the text recognition is inaccurate, you need to fine-tune the text recognition model. If you are unsure which models are included in the pipeline, you can refer to the [PaddleX Models List (CPU/GPU)](../support_list/models_list_en.md)
+Since a pipeline may contain one or more models, when fine-tuning models, you need to determine which model to fine-tune based on testing results. Taking the OCR pipeline for boarding pass recognition as an example, this pipeline includes a text detection model (e.g., `PP-OCRv4_mobile_det`) and a text recognition model (e.g., `PP-OCRv4_mobile_rec`). If the text positioning is inaccurate, you need to fine-tune the text detection model. If the text recognition is inaccurate, you need to fine-tune the text recognition model. If you are unsure which models are included in the pipeline, you can refer to the [PaddleX Models List (CPU/GPU)](../support_list/models_list.en.md)
 
 ## 4. Model Fine-tuning (Optional)
 
@@ -144,7 +144,7 @@ python main.py -c paddlex/configs/text_recognition/PP-OCRv4_mobile_rec.yaml \
     -o Global.mode=train \
     -o Global.dataset_dir=your/dataset_dir
 ```
-In addition, PaddleX provides detailed tutorials for preparing private datasets for model fine-tuning, single-model inference, and more. For details, please refer to the [PaddleX Modules Tutorials](../../README_en.md#-documentation)
+In addition, PaddleX provides detailed tutorials for preparing private datasets for model fine-tuning, single-model inference, and more. For details, please refer to the [PaddleX Modules Tutorials](../../README.en.md#-documentation)
 
 ## 5. Pipeline Testing (Optional)
 
@@ -170,17 +170,17 @@ If the results are satisfactory, proceed with [Development Integration/Deploymen
 
 If the pre-trained pipeline meets your requirements for inference speed and accuracy, you can proceed directly to development integration/deployment.
 
-If you need to apply the pipeline directly in your Python project, you can refer to the [PaddleX Pipeline Python Script Usage Guide](./instructions/pipeline_python_API_en.md) and the Python example code in the [Quick Start](#2-quick-start) section.
+If you need to apply the pipeline directly in your Python project, you can refer to the [PaddleX Pipeline Python Script Usage Guide](./instructions/pipeline_python_API.en.md) and the Python example code in the [Quick Start](#2-quick-start) section.
 
 In addition, PaddleX also provides three other deployment methods, with detailed instructions as follows:
 
 
 
-🚀 **high-performance inference**: In actual production environments, many applications have stringent standards for the performance metrics (especially response speed) of deployment strategies to ensure efficient system operation and smooth user experience. To this end, PaddleX provides high-performance inference plugins that aim to deeply optimize model inference and pre/post-processing for significant speedups in the end-to-end process. Refer to the [PaddleX High-Performance Inference Guide](../pipeline_deploy/high_performance_inference_en.md) for detailed high-performance inference procedures.
+🚀 **high-performance inference**: In actual production environments, many applications have stringent standards for the performance metrics (especially response speed) of deployment strategies to ensure efficient system operation and smooth user experience. To this end, PaddleX provides high-performance inference plugins that aim to deeply optimize model inference and pre/post-processing for significant speedups in the end-to-end process. Refer to the [PaddleX High-Performance Inference Guide](../pipeline_deploy/high_performance_inference.en.md) for detailed high-performance inference procedures.
 
-☁️ **Service-Oriented Deployment**: Service-oriented deployment is a common deployment form in actual production environments. By encapsulating inference functions as services, clients can access these services through network requests to obtain inference results. PaddleX supports users in achieving low-cost service-oriented deployment of pipelines. Refer to the [PaddleX Service-Oriented Deployment Guide](../pipeline_deploy/service_deploy_en.md) for detailed service-oriented deployment procedures.
+☁️ **Service-Oriented Deployment**: Service-oriented deployment is a common deployment form in actual production environments. By encapsulating inference functions as services, clients can access these services through network requests to obtain inference results. PaddleX supports users in achieving low-cost service-oriented deployment of pipelines. Refer to the [PaddleX Service-Oriented Deployment Guide](../pipeline_deploy/service_deploy.en.md) for detailed service-oriented deployment procedures.
 
-📱 **Edge Deployment**: Edge deployment is a method that places computing and data processing capabilities on user devices themselves, allowing devices to process data directly without relying on remote servers. PaddleX supports deploying models on edge devices such as Android. Refer to the [PaddleX Edge Deployment Guide](../pipeline_deploy/edge_deploy_en.md) for detailed edge deployment procedures.
+📱 **Edge Deployment**: Edge deployment is a method that places computing and data processing capabilities on user devices themselves, allowing devices to process data directly without relying on remote servers. PaddleX supports deploying models on edge devices such as Android. Refer to the [PaddleX Edge Deployment Guide](../pipeline_deploy/edge_deploy.en.md) for detailed edge deployment procedures.
 
 Choose the appropriate deployment method for your model pipeline based on your needs, and proceed with subsequent AI application integration.
 
@@ -189,21 +189,21 @@ Choose the appropriate deployment method for your model pipeline based on your n
 
 | Pipeline Name          | Detailed Description                                                                                                      |
 |------------------------|---------------------------------------------------------------------------------------------------------------------------|
-| PP-ChatOCR-doc v3   | [PP-ChatOCR-doc v3 Pipeline Usage Tutorial](./tutorials/information_extraction_pipelines/document_scene_information_extraction_en.md) |
-| Image Classification       | [Image Classification Pipeline Usage Tutorial](./tutorials/cv_pipelines/image_classification_en.md) |
-| Object Detection       | [Object Detection Pipeline Usage Tutorial](./tutorials/cv_pipelines/object_detection_en.md) |
-| Instance Segmentation       | [Instance Segmentation Pipeline Usage Tutorial](./tutorials/cv_pipelines/instance_segmentation_en.md) |
-| Semantic Segmentation       | [Semantic Segmentation Pipeline Usage Tutorial](./tutorials/cv_pipelines/semantic_segmentation_en.md) |
-| Image Multi-label Classification | [Image Multi-label Classification Pipeline Usage Tutorial](./tutorials/cv_pipelines/image_multi_label_classification_en.md) |
-| Small Object Detection         |  [Small Object Detection Pipeline Usage Tutorial](./tutorials/cv_pipelines/small_object_detection_en.md) |
-| Image Anomaly Detection       | [Image Anomaly Detection Pipeline Usage Tutorial](./tutorials/cv_pipelines/image_anomaly_detection_en.md) |
-| OCR            | [OCR Pipeline Usage Tutorial](./tutorials/ocr_pipelines/OCR_en.md) |
-| Table Recognition       | [Table Recognition Pipeline Usage Tutorial](./tutorials/ocr_pipelines/table_recognition_en.md) |
-| Layout Parsing       | [Layout Parsing Pipeline Usage Tutorial](./tutorials/ocr_pipelines/layout_parsing_en.md) |
-| Formula Recognition       | [Formula Recognition Pipeline Usage Tutorial](./tutorials/ocr_pipelines/formula_recognition_en.md) |
-| Seal Recognition       | [Seal Recognition Pipeline Usage Tutorial](./tutorials/ocr_pipelines/seal_recognition_en.md) |
-| Time Series Forecasting       | [Time Series Forecasting Pipeline Usage Tutorial](./tutorials/time_series_pipelines/time_series_forecasting_en.md) |
-| Time Series Anomaly Detection   | [Time Series Anomaly Detection Pipeline Usage Tutorial](./tutorials/time_series_pipelines/time_series_anomaly_detection_en.md) |
-| Time Series Classification       | [Time Series Classification Pipeline Usage Tutorial](./tutorials/time_series_pipelines/time_series_classification_en.md) |
+| PP-ChatOCR-doc v3   | [PP-ChatOCR-doc v3 Pipeline Usage Tutorial](./tutorials/information_extraction_pipelines/document_scene_information_extraction.en.md) |
+| Image Classification       | [Image Classification Pipeline Usage Tutorial](./tutorials/cv_pipelines/image_classification.en.md) |
+| Object Detection       | [Object Detection Pipeline Usage Tutorial](./tutorials/cv_pipelines/object_detection.en.md) |
+| Instance Segmentation       | [Instance Segmentation Pipeline Usage Tutorial](./tutorials/cv_pipelines/instance_segmentation.en.md) |
+| Semantic Segmentation       | [Semantic Segmentation Pipeline Usage Tutorial](./tutorials/cv_pipelines/semantic_segmentation.en.md) |
+| Image Multi-label Classification | [Image Multi-label Classification Pipeline Usage Tutorial](./tutorials/cv_pipelines/image_multi_label_classification.en.md) |
+| Small Object Detection         |  [Small Object Detection Pipeline Usage Tutorial](./tutorials/cv_pipelines/small_object_detection.en.md) |
+| Image Anomaly Detection       | [Image Anomaly Detection Pipeline Usage Tutorial](./tutorials/cv_pipelines/image_anomaly_detection.en.md) |
+| OCR            | [OCR Pipeline Usage Tutorial](./tutorials/ocr_pipelines/OCR.en.md) |
+| Table Recognition       | [Table Recognition Pipeline Usage Tutorial](./tutorials/ocr_pipelines/table_recognition.en.md) |
+| Layout Parsing       | [Layout Parsing Pipeline Usage Tutorial](./tutorials/ocr_pipelines/layout_parsing.en.md) |
+| Formula Recognition       | [Formula Recognition Pipeline Usage Tutorial](./tutorials/ocr_pipelines/formula_recognition.en.md) |
+| Seal Recognition       | [Seal Recognition Pipeline Usage Tutorial](./tutorials/ocr_pipelines/seal_recognition.en.md) |
+| Time Series Forecasting       | [Time Series Forecasting Pipeline Usage Tutorial](./tutorials/time_series_pipelines/time_series_forecasting.en.md) |
+| Time Series Anomaly Detection   | [Time Series Anomaly Detection Pipeline Usage Tutorial](./tutorials/time_series_pipelines/time_series_anomaly_detection.en.md) |
+| Time Series Classification       | [Time Series Classification Pipeline Usage Tutorial](./tutorials/time_series_pipelines/time_series_classification.en.md) |
 
 

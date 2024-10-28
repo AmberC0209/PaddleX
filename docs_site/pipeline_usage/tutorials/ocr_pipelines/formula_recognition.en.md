@@ -36,7 +36,7 @@ Formula recognition is a technology that automatically identifies and extracts L
 ## 2. Quick Start
 PaddleX supports experiencing the effects of the formula recognition pipeline through command line or Python locally.
 
-Before using the formula recognition pipeline locally, ensure you have installed the PaddleX wheel package following the [PaddleX Local Installation Guide](../../../installation/installation_en.md).
+Before using the formula recognition pipeline locally, ensure you have installed the PaddleX wheel package following the [PaddleX Local Installation Guide](../../../installation/installation.en.md).
 
 ### 2.1 Experience via Command Line
 Experience the formula recognition pipeline with a single command, using the [test file](https://paddle-model-ecology.bj.bcebos.com/paddlex/demo_image/general_formula_recognition.png), and replace `--input` with your local path for prediction:
@@ -174,9 +174,9 @@ If you need to apply the formula recognition pipeline directly in your Python pr
 
 Additionally, PaddleX provides three other deployment methods, detailed as follows:
 
-🚀 **High-Performance Inference**: In actual production environments, many applications have stringent standards for the performance metrics of deployment strategies (especially response speed) to ensure efficient system operation and smooth user experience. To this end, PaddleX provides high-performance inference plugins aimed at deeply optimizing model inference and pre/post-processing for significant end-to-end speedups. For detailed high-performance inference procedures, refer to the [PaddleX High-Performance Inference Guide](../../../pipeline_deploy/high_performance_inference_en.md).
+🚀 **High-Performance Inference**: In actual production environments, many applications have stringent standards for the performance metrics of deployment strategies (especially response speed) to ensure efficient system operation and smooth user experience. To this end, PaddleX provides high-performance inference plugins aimed at deeply optimizing model inference and pre/post-processing for significant end-to-end speedups. For detailed high-performance inference procedures, refer to the [PaddleX High-Performance Inference Guide](../../../pipeline_deploy/high_performance_inference.en.md).
 
-☁️ **Service-Oriented Deployment**: Service-oriented deployment is a common deployment form in actual production environments. By encapsulating inference functions as services, clients can access these services through network requests to obtain inference results. PaddleX supports users in achieving low-cost service-oriented deployment of pipelines. For detailed service-oriented deployment procedures, refer to the [PaddleX Service-Oriented Deployment Guide](../../../pipeline_deploy/service_deploy_en.md).
+☁️ **Service-Oriented Deployment**: Service-oriented deployment is a common deployment form in actual production environments. By encapsulating inference functions as services, clients can access these services through network requests to obtain inference results. PaddleX supports users in achieving low-cost service-oriented deployment of pipelines. For detailed service-oriented deployment procedures, refer to the [PaddleX Service-Oriented Deployment Guide](../../../pipeline_deploy/service_deploy.en.md).
 
 Below are the API references and multi-language service invocation examples:
 
@@ -639,7 +639,7 @@ print_r($result["formulas"]);
 </details>
 <br/>
 
-📱 **Edge Deployment**: Edge deployment is a method that places computing and data processing capabilities on user devices themselves, allowing devices to process data directly without relying on remote servers. PaddleX supports deploying models on edge devices such as Android. For detailed edge deployment procedures, refer to the [PaddleX Edge Deployment Guide](../../../pipeline_deploy/edge_deploy_en.md).
+📱 **Edge Deployment**: Edge deployment is a method that places computing and data processing capabilities on user devices themselves, allowing devices to process data directly without relying on remote servers. PaddleX supports deploying models on edge devices such as Android. For detailed edge deployment procedures, refer to the [PaddleX Edge Deployment Guide](../../../pipeline_deploy/edge_deploy.en.md).
 You can choose the appropriate deployment method based on your needs to proceed with subsequent AI application integration.
 
 
@@ -649,7 +649,7 @@ If the default model weights provided by the formula recognition pipeline do not
 ### 4.1 Model Fine-tuning
 Since the formula recognition pipeline consists of two modules (layout detection and formula recognition), unsatisfactory performance may stem from either module.
 
-You can analyze images with poor recognition results. If you find that many formula are undetected (i.e., formula miss detection), it may indicate that the layout detection model needs improvement. You should refer to the [Customization](../../../module_usage/tutorials/ocr_modules/layout_detection_en.md#iv-custom-development) section in the [Layout Detection Module Development Tutorial](../../../module_usage/tutorials/ocr_modules/layout_detection_en.md) and use your private dataset to fine-tune the layout detection model. If many recognition errors occur in detected formula (i.e., the recognized formula content does not match the actual formula content), it suggests that the formula recognition model requires further refinement. You should refer to the [Customization](../../../module_usage/tutorials/ocr_modules/formula_recognition_en.md#iv-custom-development) section in the [Formula Recognition Module Development Tutorial](../../../module_usage/tutorials/ocr_modules/formula_recognition_en.md) and fine-tune the formula recognition model.
+You can analyze images with poor recognition results. If you find that many formula are undetected (i.e., formula miss detection), it may indicate that the layout detection model needs improvement. You should refer to the [Customization](../../../module_usage/tutorials/ocr_modules/layout_detection.en.md#iv-custom-development) section in the [Layout Detection Module Development Tutorial](../../../module_usage/tutorials/ocr_modules/layout_detection.en.md) and use your private dataset to fine-tune the layout detection model. If many recognition errors occur in detected formula (i.e., the recognized formula content does not match the actual formula content), it suggests that the formula recognition model requires further refinement. You should refer to the [Customization](../../../module_usage/tutorials/ocr_modules/formula_recognition.en.md#iv-custom-development) section in the [Formula Recognition Module Development Tutorial](../../../module_usage/tutorials/ocr_modules/formula_recognition.en.md) and fine-tune the formula recognition model.
 
 ### 4.2 Model Application
 After fine-tuning with your private dataset, you will obtain local model weights files.
@@ -683,4 +683,4 @@ Now, if you want to switch the hardware to Ascend NPU, you only need to modify t
 paddlex --pipeline formula_recognition --input general_formula_recognition.png --device npu:0
 ```
 
-If you want to use the formula recognition pipeline on more types of hardware, please refer to the [PaddleX Multi-Hardware Usage Guide](../../../other_devices_support/multi_devices_use_guide_en.md).
+If you want to use the formula recognition pipeline on more types of hardware, please refer to the [PaddleX Multi-Hardware Usage Guide](../../../other_devices_support/multi_devices_use_guide.en.md).

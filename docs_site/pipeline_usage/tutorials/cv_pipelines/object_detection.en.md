@@ -951,4 +951,4 @@ At this point, if you wish to switch the hardware to Ascend NPU, simply modify t
 ```bash
 paddlex --pipeline object_detection --input general_object_detection_002.png --device npu:0
 ```
-If you want to use the General Object Detection Pipeline on more types of hardware, please refer to the [PaddleX Multi-Device Usage Guide](../../../other_devices_support/multi_devices_use_guide_en.md).
+If you want to use the General Object Detection Pipeline on more types of hardware, please refer to the [PaddleX Multi-Device Usage Guide](../../../other_devices_support/multi_devices_use_guide.en.md).

@@ -2,7 +2,7 @@
 
 # PaddleX Single Model Python Usage Instructions
 
-Before using Python scripts for single model quick inference, please ensure you have completed the installation of PaddleX following the [PaddleX Local Installation Tutorial](../../installation/installation_en.md).
+Before using Python scripts for single model quick inference, please ensure you have completed the installation of PaddleX following the [PaddleX Local Installation Tutorial](../../installation/installation.en.md).
 
 ## I. Usage Example
 Taking the image classification model as an example, the usage is as follows:

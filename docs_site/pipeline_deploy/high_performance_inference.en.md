@@ -6,7 +6,7 @@ In real-world production environments, many applications have stringent standard
 
 ## 1. Installation and Usage of High-Performance Inference Plugins
 
-Before using the high-performance inference plugins, ensure you have completed the installation of PaddleX according to the [PaddleX Local Installation Tutorial](../installation/installation_en.md), and have successfully run the basic inference of the pipeline using either the PaddleX pipeline command line instructions or the Python script instructions.
+Before using the high-performance inference plugins, ensure you have completed the installation of PaddleX according to the [PaddleX Local Installation Tutorial](../installation/installation.en.md), and have successfully run the basic inference of the pipeline using either the PaddleX pipeline command line instructions or the Python script instructions.
 
 ### 1.1 Installing High-Performance Inference Plugins
 

@@ -10,7 +10,7 @@ PaddleX offers two installation modes: **Wheel Package Installation** and **Plug
 ### 1.1 Wheel Package Installation Mode
 If your use case for PaddleX involves **model inference and integration**, we recommend the more **convenient** and **lightweight** Wheel package installation mode.
 
-After installing PaddlePaddle (refer to the [PaddlePaddle Local Installation Tutorial](paddlepaddle_install_en.md)), you can quickly install the PaddleX Wheel package by executing the following commands:
+After installing PaddlePaddle (refer to the [PaddlePaddle Local Installation Tutorial](paddlepaddle_install.en.md)), you can quickly install the PaddleX Wheel package by executing the following commands:
 
 > ❗ **Note**: Please ensure that PaddlePaddle is successfully installed before proceeding to the next step.
 
@@ -46,7 +46,7 @@ The plugins supported by PaddleX are listed below. Please determine the name(s) 
 
 </details>
 
-If the plugin you need to install is `PaddleXXX`, after installing PaddlePaddle (refer to the [PaddlePaddle Local Installation Tutorial](paddlepaddle_install_en.md)), you can quickly install the corresponding PaddleX plugin by executing the following commands:
+If the plugin you need to install is `PaddleXXX`, after installing PaddlePaddle (refer to the [PaddlePaddle Local Installation Tutorial](paddlepaddle_install.en.md)), you can quickly install the corresponding PaddleX plugin by executing the following commands:
 
 ```bash
 git clone https://github.com/PaddlePaddle/PaddleX.git
@@ -106,7 +106,7 @@ nvidia-docker run --name paddlex -v $PWD:/paddle --shm-size=8g --network=host -i
 * If you want to delve deeper into the principles or usage of Docker, please refer to the [Docker Official Website](https://www.docker.com/) or the [Docker Official Tutorial](https://docs.docker.com/get-started/).
 
 ### 2.2 Custom Installation of PaddleX
-Before installation, please ensure you have completed the local installation of PaddlePaddle by referring to the [PaddlePaddle Local Installation Tutorial](paddlepaddle_install_en.md).
+Before installation, please ensure you have completed the local installation of PaddlePaddle by referring to the [PaddlePaddle Local Installation Tutorial](paddlepaddle_install.en.md).
 
 #### 2.2.1 Obtain PaddleX Source Code
 Next, use the following command to obtain the latest PaddleX source code from GitHub:
@@ -175,4 +175,4 @@ After installation, you will see the following prompt:
 All packages are installed.
 ```
 
-For PaddleX installation on more hardware environments, please refer to the [PaddleX Multi-hardware Usage Guide](../other_devices_support/multi_devices_use_guide_en.md)
+For PaddleX installation on more hardware environments, please refer to the [PaddleX Multi-hardware Usage Guide](../other_devices_support/multi_devices_use_guide.en.md)

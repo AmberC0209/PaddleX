@@ -14,7 +14,7 @@ Time series classification involves identifying and categorizing different patte
 **Note: The evaluation set for the above accuracy metrics is UWaveGestureLibrary.**
 
 ## III. Quick Integration
-> ❗ Before quick integration, please install the PaddleX wheel package. For detailed instructions, refer to [PaddleX Local Installation Guide](../../../installation/installation_en.md)
+> ❗ Before quick integration, please install the PaddleX wheel package. For detailed instructions, refer to [PaddleX Local Installation Guide](../../../installation/installation.en.md)
 
 After installing the wheel package, you can perform inference for the time series classification module with just a few lines of code. You can switch models under this module freely, and you can also integrate the model inference of the time series classification module into your project. Before running the following code, please download the [demo csv](https://paddle-model-ecology.bj.bcebos.com/paddlex/ts/demo_ts/ts_cls.csv) to your local machine.
 
@@ -26,13 +26,13 @@ for res in output:
     res.print(json_format=False)
     res.save_to_csv("./output/")
 ```
-For more information on using PaddleX's single-model inference APIs, refer to [PaddleX Single Model Python Script Usage Instructions](../../instructions/model_python_API_en.md).
+For more information on using PaddleX's single-model inference APIs, refer to [PaddleX Single Model Python Script Usage Instructions](../../instructions/model_python_API.en.md).
 
 ## IV. Custom Development
-If you aim for higher accuracy with existing models, you can leverage PaddleX's custom development capabilities to develop better time series classification models. Before using PaddleX to develop time series classification models, ensure you have installed the PaddleTS plugin. Refer to the [PaddleX Local Installation Guide](../../../installation/installation_en.md) for the installation process.
+If you aim for higher accuracy with existing models, you can leverage PaddleX's custom development capabilities to develop better time series classification models. Before using PaddleX to develop time series classification models, ensure you have installed the PaddleTS plugin. Refer to the [PaddleX Local Installation Guide](../../../installation/installation.en.md) for the installation process.
 
 ### 4.1 Data Preparation
-Before model training, you need to prepare the dataset for the corresponding task module. PaddleX provides data validation functionality for each module, and **only data that passes validation can be used for model training**. Additionally, PaddleX provides demo datasets for each module, which you can use to complete subsequent development. If you wish to use private datasets for subsequent model training, refer to [PaddleX Time Series Classification Task Module Data Annotation Tutorial](../../../data_annotations/time_series_modules/time_series_classification_en.md).
+Before model training, you need to prepare the dataset for the corresponding task module. PaddleX provides data validation functionality for each module, and **only data that passes validation can be used for model training**. Additionally, PaddleX provides demo datasets for each module, which you can use to complete subsequent development. If you wish to use private datasets for subsequent model training, refer to [PaddleX Time Series Classification Task Module Data Annotation Tutorial](../../../data_annotations/time_series_modules/time_series_classification.en.md).
 
 #### 4.1.1 Demo Data Download
 You can use the following commands to download the demo dataset to a specified folder:
@@ -235,11 +235,11 @@ python main.py -c paddlex/configs/ts_classification/TimesNet_cls.yaml \
 
 You need to follow these steps:
 
-* Specify the `.yaml` configuration file path for the model (here it's `TimesNet_cls.yaml`,When training other models, you need to specify the corresponding configuration files. The relationship between the model and configuration files can be found in the [PaddleX Model List (CPU/GPU)](../../../support_list/models_list_en.md)).
+* Specify the `.yaml` configuration file path for the model (here it's `TimesNet_cls.yaml`,When training other models, you need to specify the corresponding configuration files. The relationship between the model and configuration files can be found in the [PaddleX Model List (CPU/GPU)](../../../support_list/models_list.en.md)).
 * Set the mode to model training: `-o Global.mode=train`
 * Specify the training dataset path: `-o Global.dataset_dir`
 
-Other related parameters can be set by modifying the `Global` and `Train` fields in the `.yaml` configuration file, or adjusted by appending parameters in the command line. For example, to train using the first two GPUs: `-o Global.device=gpu:0,1`; to set the number of training epochs to 10: `-o Train.epochs_iters=10`. For more modifiable parameters and their detailed explanations, refer to the [PaddleX TS Configuration Parameters Documentation](../../instructions/config_parameters_time_series_en.md).
+Other related parameters can be set by modifying the `Global` and `Train` fields in the `.yaml` configuration file, or adjusted by appending parameters in the command line. For example, to train using the first two GPUs: `-o Global.device=gpu:0,1`; to set the number of training epochs to 10: `-o Train.epochs_iters=10`. For more modifiable parameters and their detailed explanations, refer to the [PaddleX TS Configuration Parameters Documentation](../../instructions/config_parameters_time_series.en.md).
 
 <details>
   <summary>👉 <b>More Details (Click to Expand)</b></summary>
@@ -268,7 +268,7 @@ Similar to model training, the following steps are required:
 * Specify the path to the model's `.yaml` configuration file (here it's `TimesNet_cls.yaml`)
 * Specify the mode as model evaluation: `-o Global.mode=evaluate`
 * Specify the path to the validation dataset: `-o Global.dataset_dir`
-Other relevant parameters can be set by modifying the `Global` and `Evaluate` fields in the `.yaml` configuration file. For details, refer to [PaddleX Time Series Task Model Configuration File Parameter Description](../../instructions/config_parameters_time_series_en.md).
+Other relevant parameters can be set by modifying the `Global` and `Evaluate` fields in the `.yaml` configuration file. For details, refer to [PaddleX Time Series Task Model Configuration File Parameter Description](../../instructions/config_parameters_time_series.en.md).
 
 <details>
   <summary>👉 <b>More Details (Click to Expand)</b></summary>
@@ -301,14 +301,14 @@ Similar to model training and evaluation, the following steps are required:
 * Specify the mode as model inference prediction: `-o Global.mode=predict`
 * Specify the model weights path: `-o Predict.model_dir="./output/inference"`
 * Specify the input data path: `-o Predict.input="..."`
-Other relevant parameters can be set by modifying the `Global` and `Predict` fields in the `.yaml` configuration file. For details, refer to [PaddleX Time Series Task Model Configuration File Parameter Description](../../../module_usage/instructions/config_parameters_time_series_en.md).
+Other relevant parameters can be set by modifying the `Global` and `Predict` fields in the `.yaml` configuration file. For details, refer to [PaddleX Time Series Task Model Configuration File Parameter Description](../../../module_usage/instructions/config_parameters_time_series.en.md).
 
 #### 4.4.2 Model Integration
 Models can be directly integrated into the PaddleX pipeline or directly into your own projects.
 
 1. **Pipeline Integration**
 
-The time series prediction module can be integrated into PaddleX pipelines such as [Time Series Classification](../../../pipeline_usage/tutorials/time_series_pipelines/time_series_classification_en.md). Simply replace the model path to update the time series prediction model. In pipeline integration, you can use service deployment to deploy your trained model.
+The time series prediction module can be integrated into PaddleX pipelines such as [Time Series Classification](../../../pipeline_usage/tutorials/time_series_pipelines/time_series_classification.en.md). Simply replace the model path to update the time series prediction model. In pipeline integration, you can use service deployment to deploy your trained model.
 
 2. **Module Integration**
 

@@ -166,7 +166,7 @@ The instance segmentation module is a crucial component in computer vision syste
 </details>
 
 ## <span id="lable">III. Quick Integration</span>
-> ❗ Before quick integration, please install the PaddleX wheel package. For detailed instructions, refer to the [PaddleX Local Installation Tutorial](../../../installation/installation_en.md)
+> ❗ Before quick integration, please install the PaddleX wheel package. For detailed instructions, refer to the [PaddleX Local Installation Tutorial](../../../installation/installation.en.md)
 
 After installing the wheel package, a few lines of code can complete the inference of the instance segmentation module. You can switch models under this module freely, and you can also integrate the model inference of the instance segmentation module into your project. Before running the following code, please download the [demo image](https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/general_instance_segmentation_004.png) to your local machine.
 
@@ -179,13 +179,13 @@ for res in output:
     res.save_to_img("./output/")
     res.save_to_json("./output/res.json")
 ```
-For more information on using PaddleX's single-model inference APIs, please refer to the [PaddleX Single-Model Python Script Usage Instructions](../../instructions/model_python_API_en.md).
+For more information on using PaddleX's single-model inference APIs, please refer to the [PaddleX Single-Model Python Script Usage Instructions](../../instructions/model_python_API.en.md).
 
 ## IV. Custom Development
-If you are seeking higher accuracy from existing models, you can use PaddleX's custom development capabilities to develop better instance segmentation models. Before using PaddleX to develop instance segmentation models, please ensure that you have installed the relevant model training plugins for segmentation in PaddleX. The installation process can be found in the custom development section of the [PaddleX Local Installation Guide](../../../installation/installation_en.md).
+If you are seeking higher accuracy from existing models, you can use PaddleX's custom development capabilities to develop better instance segmentation models. Before using PaddleX to develop instance segmentation models, please ensure that you have installed the relevant model training plugins for segmentation in PaddleX. The installation process can be found in the custom development section of the [PaddleX Local Installation Guide](../../../installation/installation.en.md).
 
 ### 4.1 Data Preparation
-Before model training, it is necessary to prepare the corresponding dataset for each task module. PaddleX provides data verification functionality for each module, and **only data that passes the verification can be used for model training**. Additionally, PaddleX provides demo datasets for each module, allowing you to complete subsequent development based on the officially provided demo data. If you wish to use a private dataset for subsequent model training, you can refer to the [PaddleX Instance Segmentation Task Module Data Annotation Tutorial](../../../data_annotations/cv_modules/instance_segmentation_en.md).
+Before model training, it is necessary to prepare the corresponding dataset for each task module. PaddleX provides data verification functionality for each module, and **only data that passes the verification can be used for model training**. Additionally, PaddleX provides demo datasets for each module, allowing you to complete subsequent development based on the officially provided demo data. If you wish to use a private dataset for subsequent model training, you can refer to the [PaddleX Instance Segmentation Task Module Data Annotation Tutorial](../../../data_annotations/cv_modules/instance_segmentation.en.md).
 
 #### 4.1.1 Download Demo Data
 
@@ -350,10 +350,10 @@ python main.py -c paddlex/configs/instance_segmentation/Mask-RT-DETR-L.yaml \
 ```
 The following steps are required:
 
-* Specify the path to the `.yaml` configuration file of the model (here it is `Mask-RT-DETR-L.yaml`,When training other models, you need to specify the corresponding configuration files. The relationship between the model and configuration files can be found in the [PaddleX Model List (CPU/GPU)](../../../support_list/models_list_en.md))
+* Specify the path to the `.yaml` configuration file of the model (here it is `Mask-RT-DETR-L.yaml`,When training other models, you need to specify the corresponding configuration files. The relationship between the model and configuration files can be found in the [PaddleX Model List (CPU/GPU)](../../../support_list/models_list.en.md))
 * Specify the mode as model training: `-o Global.mode=train`
 * Specify the path to the training dataset: `-o Global.dataset_dir`.
-Other related parameters can be set by modifying the fields under `Global` and `Train` in the `.yaml` configuration file, or adjusted by appending parameters in the command line. For example, to specify the first 2 GPUs for training: `-o Global.device=gpu:0,1`; to set the number of training epochs to 10: `-o Train.epochs_iters=10`. For more modifiable parameters and their detailed explanations, refer to the [PaddleX Common Configuration File Parameters Instructions](../../instructions/config_parameters_common_en.md).
+Other related parameters can be set by modifying the fields under `Global` and `Train` in the `.yaml` configuration file, or adjusted by appending parameters in the command line. For example, to specify the first 2 GPUs for training: `-o Global.device=gpu:0,1`; to set the number of training epochs to 10: `-o Train.epochs_iters=10`. For more modifiable parameters and their detailed explanations, refer to the [PaddleX Common Configuration File Parameters Instructions](../../instructions/config_parameters_common.en.md).
 
 <details>
   <summary>👉 <b>More Details (Click to Expand)</b></summary>
@@ -381,7 +381,7 @@ Similar to model training, the following steps are required:
 
 * Specify the `.yaml` configuration file path for the model (here it is `Mask-RT-DETR-L.yaml`)
 * Specify the mode as model evaluation: `-o Global.mode=evaluate`
-* Specify the path to the validation dataset: `-o Global.dataset_dir`. Other related parameters can be set by modifying the `Global` and `Evaluate` fields in the `.yaml` configuration file. For details, refer to [PaddleX Common Model Configuration File Parameter Description](../../instructions/config_parameters_common_en.md).
+* Specify the path to the validation dataset: `-o Global.dataset_dir`. Other related parameters can be set by modifying the `Global` and `Evaluate` fields in the `.yaml` configuration file. For details, refer to [PaddleX Common Model Configuration File Parameter Description](../../instructions/config_parameters_common.en.md).
 
 <details>
   <summary>👉 <b>More Details (Click to Expand)</b></summary>
@@ -410,14 +410,14 @@ Similar to model training and evaluation, the following steps are required:
 * Specify the `.yaml` configuration file path of the model (here it's `Mask-RT-DETR-L.yaml`)
 * Specify the mode as model inference prediction: `-o Global.mode=predict`
 * Specify the model weights path: `-o Predict.model_dir="./output/best_model/inference"`
-* Specify the input data path: `-o Predict.input="..."`. Other related parameters can be set by modifying the `Global` and `Predict` fields in the `.yaml` configuration file. For details, refer to [PaddleX Common Model Configuration File Parameter Description](../../instructions/config_parameters_common_en.md).
+* Specify the input data path: `-o Predict.input="..."`. Other related parameters can be set by modifying the `Global` and `Predict` fields in the `.yaml` configuration file. For details, refer to [PaddleX Common Model Configuration File Parameter Description](../../instructions/config_parameters_common.en.md).
 
 #### 4.4.2 Model Integration
 The model can be directly integrated into the PaddleX Pipeline or into your own project.
 
 1.**Pipeline Integration**
 
-The instance segmentation module can be integrated into the [General Instance Segmentation Pipeline](../../../pipeline_usage/tutorials/cv_pipelines/instance_segmentation_en.md) of PaddleX. Simply replace the model path to update the instance segmentation module of the relevant pipeline.
+The instance segmentation module can be integrated into the [General Instance Segmentation Pipeline](../../../pipeline_usage/tutorials/cv_pipelines/instance_segmentation.en.md) of PaddleX. Simply replace the model path to update the instance segmentation module of the relevant pipeline.
 
 2.**Module Integration**
 The weights you produce can be directly integrated into the instance segmentation module. Refer to the Python example code in <a href="#lable">Quick Integration</a> , and simply replace the model with the path to your trained model.
