@@ -1,11 +1,3 @@
----
-comments: true
-typora-copy-images-to: images
-hide:
-  - navigation
-  - toc
----
-
 ### 🛠️ Installation
 
 > ❗Before installing PaddleX, please ensure you have a basic **Python environment** (Note: Currently supports Python 3.8 to Python 3.10, with more Python versions being adapted).
