@@ -1,3 +1,11 @@
+---
+comments: true
+typora-copy-images-to: images
+hide:
+  - navigation
+  - toc
+---
+
 ### 🛠️ 安装
 
 > ❗安装 PaddleX 前请先确保您有基础的 **Python 运行环境**（注：当前支持Python 3.8 ～ Python 3.10下运行，更多Python版本适配中）。
