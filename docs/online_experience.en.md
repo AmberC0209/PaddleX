@@ -1,0 +1,10 @@
+* PP-ChatOCRv3-doc: [link](https://aistudio.baidu.com/community/app/182491/webUI?source=appCenter)
+* OCR: [link](https://aistudio.baidu.com/community/app/91660/webUI?source=appMineRecent
+* Table Recognition: https://aistudio.baidu.com/community/app/91661?source=appMineRecent)
+* Object Detection: [link](https://aistudio.baidu.com/community/app/70230/webUI?source=appMineRecent)
+* Instance Segmentation: [link](https://aistudio.baidu.com/community/app/100063/webUI?source=appMineRecent)
+* Image Classification: [link](https://aistudio.baidu.com/community/app/100061/webUI?source=appMineRecent)
+* Semantic Segmentation: [link](https://aistudio.baidu.com/community/app/100062/webUI?source=appMineRecent)
+* Time Series Forecasting: [link](https://aistudio.baidu.com/community/app/105706/webUI?source=appMineRecent)
+* Time Series Anomaly Detection: [link](https://aistudio.baidu.com/community/app/105708/webUI?source=appMineRecent)
+* Time Series Classification: [link](https://aistudio.baidu.com/community/app/105707/webUI?source=appMineRecent)
