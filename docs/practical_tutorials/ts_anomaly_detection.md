@@ -1,4 +1,4 @@
-简体中文 | [English](ts_anomaly_detection_en.md)
+简体中文 | [English](ts_anomaly_detection.en.md)
 
 # PaddleX 3.0 时序异常检测模型产线———设备异常检测应用教程
 

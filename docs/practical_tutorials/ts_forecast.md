@@ -1,4 +1,4 @@
-简体中文 | [English](ts_forecast_en.md)
+简体中文 | [English](ts_forecast.en.md)
 
 # PaddleX 3.0 时序预测模型产线———用电量长期预测应用教程
 

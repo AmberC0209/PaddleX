@@ -1,4 +1,4 @@
-简体中文 | [English](semantic_segmentation_en.md)
+简体中文 | [English](semantic_segmentation.en.md)
 
 # 通用语义分割产线使用教程
 

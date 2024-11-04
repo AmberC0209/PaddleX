@@ -1,4 +1,4 @@
-简体中文 | [English](text_detection_en.md)
+简体中文 | [English](text_detection.en.md)
 
 # 文本检测模块使用教程
 

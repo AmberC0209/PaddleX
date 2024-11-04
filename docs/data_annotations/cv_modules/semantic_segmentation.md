@@ -1,4 +1,4 @@
-简体中文 | [English](semantic_segmentation_en.md)
+简体中文 | [English](semantic_segmentation.en.md)
 
 # PaddleX语义分割任务模块数据标注教程
 

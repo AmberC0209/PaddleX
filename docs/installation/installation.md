@@ -1,4 +1,4 @@
-简体中文 | [English](installation_en.md)
+简体中文 | [English](installation.en.md)
 
 # PaddleX本地安装教程
 > ❗安装 PaddleX 前请先确保您有基础的 **Python 运行环境**（注：当前支持Python 3.8 ～ Python 3.10下运行，更多Python版本适配中）。

@@ -1,4 +1,4 @@
-简体中文 | [English](model_list_xpu_en.md)
+简体中文 | [English](model_list_xpu.en.md)
 
 # PaddleX模型列表（昆仑 XPU）
 

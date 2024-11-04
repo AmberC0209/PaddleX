@@ -1,4 +1,4 @@
-简体中文 | [English](vehicle_detection_en.md)
+简体中文 | [English](vehicle_detection.en.md)
 
 # 车辆检测模块使用教程
 

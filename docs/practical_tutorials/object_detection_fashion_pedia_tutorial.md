@@ -1,4 +1,4 @@
-简体中文 | [English](object_detection_fashion_pedia_tutorial_en.md)
+简体中文 | [English](object_detection_fashion_pedia_tutorial.en.md)
 
 # PaddleX 3.0 通用目标检测模型产线———服装时尚元素检测教程
 

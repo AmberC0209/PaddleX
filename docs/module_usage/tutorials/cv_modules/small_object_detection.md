@@ -1,4 +1,4 @@
-简体中文 | [English](small_object_detection_en.md)
+简体中文 | [English](small_object_detection.en.md)
 
 # 小目标检测模块使用教程
 

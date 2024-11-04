@@ -1,4 +1,4 @@
-简体中文 | [English](image_classification_en.md)
+简体中文 | [English](image_classification.en.md)
 
 # 通用图像分类产线使用教程
 

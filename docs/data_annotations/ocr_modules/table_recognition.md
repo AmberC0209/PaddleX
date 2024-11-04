@@ -1,4 +1,4 @@
-简体中文 | [English](table_recognition_en.md)
+简体中文 | [English](table_recognition.en.md)
 
 # PaddleX表格结构识别任务模块数据标注教程
 

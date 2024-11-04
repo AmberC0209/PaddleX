@@ -1,4 +1,4 @@
-简体中文 | [English](face_detection_en.md)
+简体中文 | [English](face_detection.en.md)
 
 # 人脸检测模块使用教程
 

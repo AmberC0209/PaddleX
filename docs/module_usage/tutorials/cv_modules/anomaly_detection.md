@@ -1,4 +1,4 @@
-简体中文 | [English](anomaly_detection_en.md)
+简体中文 | [English](anomaly_detection.en.md)
 
 # 图像异常检测模块使用教程
 

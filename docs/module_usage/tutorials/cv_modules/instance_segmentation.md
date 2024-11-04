@@ -1,4 +1,4 @@
-简体中文 | [English](instance_segmentation_en.md)
+简体中文 | [English](instance_segmentation.en.md)
 
 # 实例分割模块使用教程
 

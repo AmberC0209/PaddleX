@@ -1,4 +1,4 @@
-简体中文 | [English](service_deploy_en.md)
+简体中文 | [English](service_deploy.en.md)
 
 # PaddleX 服务化部署指南
 

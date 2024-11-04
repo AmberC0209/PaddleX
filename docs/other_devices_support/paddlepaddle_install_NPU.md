@@ -1,4 +1,4 @@
-简体中文 | [English](paddlepaddle_install_NPU_en.md)
+简体中文 | [English](paddlepaddle_install_NPU.en.md)
 
 # 昇腾 NPU 飞桨安装教程
 

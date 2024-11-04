@@ -1,4 +1,4 @@
-简体中文 | [English](vehicle_attribute_recognition_en.md)
+简体中文 | [English](vehicle_attribute_recognition.en.md)
 
 # 车辆属性识别模块使用教程
 

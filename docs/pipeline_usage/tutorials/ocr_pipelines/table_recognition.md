@@ -1,4 +1,4 @@
-简体中文 | [English](table_recognition_en.md)
+简体中文 | [English](table_recognition.en.md)
 
 # 通用表格识别产线使用教程
 

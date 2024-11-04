@@ -1,4 +1,4 @@
-简体中文 | [English](paddlepaddle_install_XPU_en.md)
+简体中文 | [English](paddlepaddle_install_XPU.en.md)
 
 # 昆仑 XPU 飞桨安装教程
 

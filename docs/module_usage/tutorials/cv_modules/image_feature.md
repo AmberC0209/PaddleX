@@ -1,4 +1,4 @@
-简体中文 | [English](image_feature_en.md)
+简体中文 | [English](image_feature.en.md)
 
 # 图像特征模块使用教程
 

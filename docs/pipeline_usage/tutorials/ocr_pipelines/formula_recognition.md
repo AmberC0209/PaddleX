@@ -1,4 +1,4 @@
-简体中文 | [English](formula_recognition_en.md)
+简体中文 | [English](formula_recognition.en.md)
 
 # 公式识别产线使用教程
 

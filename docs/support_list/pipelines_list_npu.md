@@ -1,4 +1,4 @@
-简体中文 | [English](pipelines_list_npu_en.md)
+简体中文 | [English](pipelines_list_npu.en.md)
 
 # PaddleX产线列表(NPU)
 

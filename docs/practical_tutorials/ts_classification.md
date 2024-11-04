@@ -1,4 +1,4 @@
-简体中文 | [English](ts_classification_en.md)
+简体中文 | [English](ts_classification.en.md)
 
 # PaddleX 3.0 时序分类模型产线———心跳监测时序数据分类应用教程
 

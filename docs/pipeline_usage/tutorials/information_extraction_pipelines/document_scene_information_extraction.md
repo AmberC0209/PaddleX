@@ -1,4 +1,4 @@
-简体中文 | [English](document_scene_information_extraction_en.md)
+简体中文 | [English](document_scene_information_extraction.en.md)
 
 # 文档场景信息抽取v3产线使用教程
 

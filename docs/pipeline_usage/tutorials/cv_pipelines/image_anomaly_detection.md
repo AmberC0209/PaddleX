@@ -1,4 +1,4 @@
-简体中文 | [English](image_anomaly_detection_en.md)
+简体中文 | [English](image_anomaly_detection.en.md)
 
 # 图像异常检测产线使用教程
 

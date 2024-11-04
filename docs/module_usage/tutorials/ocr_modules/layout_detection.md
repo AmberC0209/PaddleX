@@ -1,4 +1,4 @@
-简体中文 | [English](layout_detection_en.md)
+简体中文 | [English](layout_detection.en.md)
 
 # 版面区域检测模块使用教程
 

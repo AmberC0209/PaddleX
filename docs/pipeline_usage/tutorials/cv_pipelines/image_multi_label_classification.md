@@ -1,4 +1,4 @@
-简体中文 | [English](image_multi_label_classification_en.md)
+简体中文 | [English](image_multi_label_classification.en.md)
 
 # 通用图像多标签分类产线使用教程
 

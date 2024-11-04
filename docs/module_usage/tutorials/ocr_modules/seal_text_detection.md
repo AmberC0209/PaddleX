@@ -1,4 +1,4 @@
-简体中文 | [English](seal_text_detection_en.md)
+简体中文 | [English](seal_text_detection.en.md)
 
 # 印章文本检测模块使用教程
 

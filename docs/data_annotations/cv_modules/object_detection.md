@@ -1,4 +1,4 @@
-简体中文 | [English](object_detection_en.md)
+简体中文 | [English](object_detection.en.md)
 
 # PaddleX目标检测任务模块数据准备教程
 

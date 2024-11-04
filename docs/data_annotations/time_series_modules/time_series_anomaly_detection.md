@@ -1,4 +1,4 @@
-简体中文 | [English](time_series_anomaly_detection_en.md)
+简体中文 | [English](time_series_anomaly_detection.en.md)
 
 # PaddleX时序异常检测任务模块数据标注教程
 

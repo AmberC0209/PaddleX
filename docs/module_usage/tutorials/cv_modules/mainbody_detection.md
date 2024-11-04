@@ -1,4 +1,4 @@
-简体中文 | [English](mainbody_detection_en.md)
+简体中文 | [English](mainbody_detection.en.md)
 
 # 主体检测模块使用教程
 

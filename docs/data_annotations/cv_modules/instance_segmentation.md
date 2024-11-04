@@ -1,4 +1,4 @@
-简体中文 | [English](instance_segmentation_en.md)
+简体中文 | [English](instance_segmentation.en.md)
 
 # PaddleX实例分割任务模块数据标注教程
 

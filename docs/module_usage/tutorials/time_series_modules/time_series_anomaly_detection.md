@@ -1,4 +1,4 @@
-简体中文 | [English](time_series_anomaly_detection_en.md)
+简体中文 | [English](time_series_anomaly_detection.en.md)
 
 # 时序异常检测模块使用教程
 

@@ -1,4 +1,4 @@
-简体中文 | [English](semantic_segmentation_road_tutorial_en.md)
+简体中文 | [English](semantic_segmentation_road_tutorial.en.md)
 
 # PaddleX 3.0 通用语义分割模型产线———车道线分割教程
 

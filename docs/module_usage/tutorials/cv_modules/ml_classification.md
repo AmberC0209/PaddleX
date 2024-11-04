@@ -1,4 +1,4 @@
-简体中文 | [English](ml_classification_en.md)
+简体中文 | [English](ml_classification.en.md)
 
 # 图像多标签分类模块使用教程
 

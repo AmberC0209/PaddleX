@@ -1,4 +1,4 @@
-简体中文 | [English](doc_img_orientation_classification_en.md)
+简体中文 | [English](doc_img_orientation_classification.en.md)
 
 # 文档图像方向分类模块使用教程
 

@@ -1,4 +1,4 @@
-简体中文 | [English](time_series_classification_en.md)
+简体中文 | [English](time_series_classification.en.md)
 
 # 时序分类模块使用教程
 

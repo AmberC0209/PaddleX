@@ -1,4 +1,4 @@
-简体中文 | [English](pipeline_develop_guide_en.md)
+简体中文 | [English](pipeline_develop_guide.en.md)
 
 # PaddleX模型产线使用概览
 

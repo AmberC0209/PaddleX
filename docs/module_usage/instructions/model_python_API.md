@@ -1,4 +1,4 @@
-简体中文 | [English](model_python_API_en.md)
+简体中文 | [English](model_python_API.en.md)
 
 # PaddleX单模型Python脚本使用说明
 

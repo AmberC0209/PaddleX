@@ -1,4 +1,4 @@
-简体中文 | [English](pipeline_CLI_usage_en.md)
+简体中文 | [English](pipeline_CLI_usage.en.md)
 
 # PaddleX模型产线CLI命令行使用说明
 

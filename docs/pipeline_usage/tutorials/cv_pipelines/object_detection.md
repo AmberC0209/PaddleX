@@ -1,4 +1,4 @@
-简体中文 | [English](object_detection_en.md)
+简体中文 | [English](object_detection.en.md)
 
 # 通用目标检测产线使用教程
 

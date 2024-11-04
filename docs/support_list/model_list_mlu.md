@@ -1,4 +1,4 @@
-简体中文 | [English](model_list_mlu_en.md)
+简体中文 | [English](model_list_mlu.en.md)
 
 # PaddleX模型列表（寒武纪 MLU）
 

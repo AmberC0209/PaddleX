@@ -1,4 +1,4 @@
-简体中文 | [English](OCR_en.md)
+简体中文 | [English](OCR.en.md)
 
 # 通用OCR产线使用教程
 

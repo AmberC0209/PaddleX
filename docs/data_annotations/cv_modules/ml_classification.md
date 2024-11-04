@@ -1,4 +1,4 @@
-简体中文 | [English](ml_classification_en.md)
+简体中文 | [English](ml_classification.en.md)
 
 # PaddleX多标签分类任务模块数据标注教程
 

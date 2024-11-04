@@ -1,4 +1,4 @@
-简体中文 | [English](FAQ_en.md)
+简体中文 | [English](FAQ.en.md)
 
 # FAQ
 

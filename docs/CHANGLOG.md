@@ -1,4 +1,4 @@
-简体中文 | [English](CHANGLOG_en.md)
+简体中文 | [English](CHANGLOG.en.md)
 
 # 版本更新信息
 

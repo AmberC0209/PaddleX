@@ -1,4 +1,4 @@
-简体中文 | [English](image_classification_garbage_tutorial_en.md)
+简体中文 | [English](image_classification_garbage_tutorial.en.md)
 
 # PaddleX 3.0 通用图像分类模型产线———垃圾分类教程
 

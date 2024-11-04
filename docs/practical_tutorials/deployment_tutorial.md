@@ -1,4 +1,4 @@
-简体中文 | [English](deployment_tutorial_en.md)
+简体中文 | [English](deployment_tutorial.en.md)
 
 # PaddleX 3.0 产线部署教程
 

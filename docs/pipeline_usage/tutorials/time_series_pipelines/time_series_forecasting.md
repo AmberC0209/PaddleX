@@ -1,4 +1,4 @@
-简体中文 | [English](time_series_forecasting_en.md)
+简体中文 | [English](time_series_forecasting.en.md)
 
 # 时序预测产线使用教程
 

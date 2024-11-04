@@ -1,4 +1,4 @@
-简体中文 | [English](paddlepaddle_install_MLU_en.md)
+简体中文 | [English](paddlepaddle_install_MLU.en.md)
 
 # 寒武纪 MLU 飞桨安装教程
 

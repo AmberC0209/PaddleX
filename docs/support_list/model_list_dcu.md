@@ -1,4 +1,4 @@
-简体中文 | [English](model_list_dcu_en.md)
+简体中文 | [English](model_list_dcu.en.md)
 
 # PaddleX模型列表（海光 DCU）
 

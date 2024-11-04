@@ -1,4 +1,4 @@
-简体中文 | [English](ocr_det_license_tutorial_en.md)
+简体中文 | [English](ocr_det_license_tutorial.en.md)
 
 # PaddleX 3.0 通用OCR模型产线———车牌识别教程
 

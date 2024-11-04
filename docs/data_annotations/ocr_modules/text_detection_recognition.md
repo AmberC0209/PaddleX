@@ -1,4 +1,4 @@
-简体中文 | [English](text_detection_recognition_en.md)
+简体中文 | [English](text_detection_recognition.en.md)
 
 # PaddleX文本检测/文本识别任务模块数据标注教程
 
