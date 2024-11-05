@@ -41,6 +41,7 @@ paddlex --pipeline [产线名称] --input [输入图片] --device [运行设备]
 ```
 
 只需指定三个参数：
+
 * `pipeline`：产线名称
 * `input`：待处理的输入文件（如图片）的本地路径或 URL
 * `device`: 使用的 GPU 序号（例如`gpu:0`表示使用第 0 块 GPU），也可选择使用 CPU（`cpu`）
@@ -193,7 +194,7 @@ for res in output:
         <tr>
             <td>文档场景信息抽取v3</td>
             <td><code>PP-ChatOCRv3-doc</code></td>
-            <td><a href="https://amberc0209.github.io/PaddleX/latest/pipeline_deploy/tutorials/information_extraction_pipelines/document_scene_information_extraction.html#22-本地体验">文档场景信息抽取v3产线Python脚本使用说明</a></td>
+            <td><a href="pipeline_deploy/tutorials/information_extraction_pipelines/document_scene_information_extraction.md">文档场景信息抽取v3产线Python脚本使用说明</a></td>
         </tr>
         <tr>
             <td>通用图像分类</td>

@@ -42,9 +42,23 @@ PaddleX 3.0 is a low-code development tool for AI models built on the PaddlePadd
             max-width: 100px;
             height: auto;
         }
+        .img-table {
+            width: 100%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        .img-table th, .centered-table td {
+            padding: 10px;
+        }
+        .img-table img {
+            height: 126px;
+            width: 180px;
+            object-fit: cover;
+        }
 </style>
 
-<table class="centered-table">
+<table class="img-table">
         <tr>
             <th><a href="https://amberc0209.github.io/PaddleX/latest/en/pipeline_usage/tutorials/cv_pipelines/image_classification.html"><strong>Image Classification</strong></a></th>
             <th><a href="https://amberc0209.github.io/PaddleX/latest/en/pipeline_usage/tutorials/cv_pipelines/image_multi_label_classification.html"><strong>Multi-label Image Classification</strong></a></th>
