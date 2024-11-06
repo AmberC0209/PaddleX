@@ -4309,8 +4309,7 @@ You're not viewing the latest version.
 <p>If your use case for PaddleX involves <b>custom development</b> (e.g. retraining models, fine-tuning models, customizing model structures, customizing inference codes, etc.), we recommend the more <b>powerful</b> plugin installation mode.</p>
 <p>After installing the PaddleX plugins you need, you can not only perform inference and integration with the supported models but also conduct advanced operations such as model training for custom development.</p>
 <p>The plugins supported by PaddleX are listed below. Please determine the name(s) of the plugin(s) you need based on your development requirements:</p>
-<details>
-  <summary>👉 <b>Plugin and Pipeline Correspondence (Click to Expand)</b></summary>
+<details><summary>👉 <b>Plugin and Pipeline Correspondence (Click to Expand)</b></summary>
 
 <table>
 <thead>
@@ -4387,8 +4386,7 @@ You're not viewing the latest version.
 <td><code>PaddleSeg</code></td>
 </tr>
 </tbody>
-</table>
-</details>
+</table></details>
 
 <p>If the plugin you need to install is <code>PaddleXXX</code>, after installing PaddlePaddle (refer to the <a href="paddlepaddle_install.html">PaddlePaddle Local Installation Tutorial</a>), you can quickly install the corresponding PaddleX plugin by executing the following commands:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/PaddlePaddle/PaddleX.git
@@ -4420,21 +4418,18 @@ You're not viewing the latest version.
 <ul>
 <li>If your Docker version &lt;= 19.03 and &gt;= 17.06, please use:</li>
 </ul>
-<details>
-   <summary> Click Here</summary>
+<details><summary> Click Here</summary>
 
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># For CPU</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>paddlex<span class="w"> </span>-v<span class="w"> </span><span class="nv">$PWD</span>:/paddle<span class="w"> </span>--shm-size<span class="o">=</span>8g<span class="w"> </span>--network<span class="o">=</span>host<span class="w"> </span>-it<span class="w"> </span>registry.baidubce.com/paddlex/paddlex:paddlex3.0.0b1-paddlepaddle3.0.0b1-cpu<span class="w"> </span>/bin/bash
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1"># For GPU</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="c1"># For CUDA11.8</span>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>nvidia-docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>paddlex<span class="w"> </span>-v<span class="w"> </span><span class="nv">$PWD</span>:/paddle<span class="w"> </span>--shm-size<span class="o">=</span>8g<span class="w"> </span>--network<span class="o">=</span>host<span class="w"> </span>-it<span class="w"> </span>registry.baidubce.com/paddlex/paddlex:paddlex3.0.0b1-paddlepaddle3.0.0b1-gpu-cuda11.8-cudnn8.6-trt8.5<span class="w"> </span>/bin/bash
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="c1"># For CUDA12.3</span>
-</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>nvidia-docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>paddlex<span class="w"> </span>-v<span class="w"> </span><span class="nv">$PWD</span>:/paddle<span class="w"> </span>--shm-size<span class="o">=</span>8g<span class="w"> </span>--network<span class="o">=</span>host<span class="w"> </span>-it<span class="w"> </span>registry.baidubce.com/paddlex/paddlex:paddlex3.0.0b1-paddlepaddle3.0.0b1-gpu-cuda12.3-cudnn9.0-trt8.6<span class="w"> </span>/bin/bash
-</span></code></pre></div>
+<pre><code class="language-bash"># For CPU
+docker run --name paddlex -v $PWD:/paddle --shm-size=8g --network=host -it registry.baidubce.com/paddlex/paddlex:paddlex3.0.0b1-paddlepaddle3.0.0b1-cpu /bin/bash
 
-</details>
+# For GPU
+# For CUDA11.8
+nvidia-docker run --name paddlex -v $PWD:/paddle --shm-size=8g --network=host -it registry.baidubce.com/paddlex/paddlex:paddlex3.0.0b1-paddlepaddle3.0.0b1-gpu-cuda11.8-cudnn8.6-trt8.5 /bin/bash
+
+# For CUDA12.3
+nvidia-docker run --name paddlex -v $PWD:/paddle --shm-size=8g --network=host -it registry.baidubce.com/paddlex/paddlex:paddlex3.0.0b1-paddlepaddle3.0.0b1-gpu-cuda12.3-cudnn9.0-trt8.6 /bin/bash
+</code></pre></details>
 
 <ul>
 <li>
@@ -4448,49 +4443,49 @@ You're not viewing the latest version.
 <p>Before installation, please ensure you have completed the local installation of PaddlePaddle by referring to the <a href="paddlepaddle_install.html">PaddlePaddle Local Installation Tutorial</a>.</p>
 <h4 id="221-obtain-paddlex-source-code">2.2.1 Obtain PaddleX Source Code<a class="headerlink" href="#221-obtain-paddlex-source-code" title="Permanent link">&para;</a></h4>
 <p>Next, use the following command to obtain the latest PaddleX source code from GitHub:</p>
-<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/PaddlePaddle/PaddleX.git
+<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/PaddlePaddle/PaddleX.git
 </span></code></pre></div>
 If accessing GitHub is slow, you can download from Gitee instead, using the following command:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://gitee.com/paddlepaddle/PaddleX.git
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://gitee.com/paddlepaddle/PaddleX.git
 </span></code></pre></div>
 <h4 id="222-install-paddlex">2.2.2 Install PaddleX<a class="headerlink" href="#222-install-paddlex" title="Permanent link">&para;</a></h4>
 <p>After obtaining the latest PaddleX source code, you can choose between Wheel package installation mode or plugin installation mode.</p>
 <ul>
 <li><b>If you choose Wheel package installation mode</b>, execute the following commands:</li>
 </ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">cd</span><span class="w"> </span>PaddleX
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1"># Install PaddleX whl</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1"># -e: Install in editable mode, so changes to the current project&#39;s code will directly affect the installed PaddleX Wheel</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
+</span></code></pre></div>
+<ul>
+<li><b>If you choose plugin installation mode</b> and the plugin you need is named PaddleXXX (there can be multiple), execute the following commands:</li>
+</ul>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">cd</span><span class="w"> </span>PaddleX
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="c1"># Install PaddleX whl</span>
 </span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="c1"># -e: Install in editable mode, so changes to the current project&#39;s code will directly affect the installed PaddleX Wheel</span>
 </span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
-</span></code></pre></div>
-<ul>
-<li><b>If you choose plugin installation mode</b> and the plugin you need is named PaddleXXX (there can be multiple), execute the following commands:</li>
-</ul>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nb">cd</span><span class="w"> </span>PaddleX
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="c1"># Install PaddleX whl</span>
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="c1"># -e: Install in editable mode, so changes to the current project&#39;s code will directly affect the installed PaddleX Wheel</span>
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
-</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
-</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="c1"># Install PaddleX plugins</span>
-</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>paddlex<span class="w"> </span>--install<span class="w"> </span>PaddleXXX
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="c1"># Install PaddleX plugins</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>paddlex<span class="w"> </span>--install<span class="w"> </span>PaddleXXX
 </span></code></pre></div>
 <p>For example, if you need to install the PaddleOCR and PaddleClas plugins, execute the following commands to install the plugins:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># Install PaddleOCR and PaddleClas plugins</span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>paddlex<span class="w"> </span>--install<span class="w"> </span>PaddleOCR<span class="w"> </span>PaddleClas
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># Install PaddleOCR and PaddleClas plugins</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>paddlex<span class="w"> </span>--install<span class="w"> </span>PaddleOCR<span class="w"> </span>PaddleClas
 </span></code></pre></div>
 <p>If you need to install all plugins, you do not need to specify the plugin names, just execute the following command:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># Install all PaddleX plugins</span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>paddlex<span class="w"> </span>--install
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># Install all PaddleX plugins</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>paddlex<span class="w"> </span>--install
 </span></code></pre></div>
 <p>The default clone source for plugins is github.com, but it also supports gitee.com as a clone source. You can specify the clone source using <code>--platform</code>.</p>
 <p>For example, if you need to use gitee.com as the clone source to install all PaddleX plugins, just execute the following command:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># Install PaddleX plugins</span>
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>paddlex<span class="w"> </span>--install<span class="w"> </span>--platform<span class="w"> </span>gitee.com
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># Install PaddleX plugins</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>paddlex<span class="w"> </span>--install<span class="w"> </span>--platform<span class="w"> </span>gitee.com
 </span></code></pre></div>
 <p>After installation, you will see the following prompt:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>All packages are installed.
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>All packages are installed.
 </span></code></pre></div>
 <p>For PaddleX installation on more hardware environments, please refer to the <a href="../other_devices_support/multi_devices_use_guide.html">PaddleX Multi-hardware Usage Guide</a></p>
 

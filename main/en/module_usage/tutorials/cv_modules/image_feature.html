@@ -4482,173 +4482,156 @@ For more information on using PaddleX's single-model inference APIs, refer to th
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span>-o<span class="w"> </span>Global.dataset_dir<span class="o">=</span>./dataset/Inshop_examples
 </span></code></pre></div>
 After executing the above command, PaddleX will validate the dataset and summarize its basic information. If the command runs successfully, it will print <code>Check dataset passed !</code> in the log. The validation results file is saved in <code>./output/check_dataset_result.json</code>, and related outputs are saved in the <code>./output/check_dataset</code> directory in the current directory, including visual examples of sample images and sample distribution histograms.</p>
-<details>
-  <summary>👉 <b>Details of Validation Results (Click to Expand)</b></summary>
+<details><summary>👉 <b>Details of Validation Results (Click to Expand)</b></summary>
 
-The specific content of the validation result file is:
-
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="w">  </span><span class="s2">&quot;done_flag&quot;</span>:<span class="w"> </span>true,
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="s2">&quot;check_pass&quot;</span>:<span class="w"> </span>true,
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="s2">&quot;attributes&quot;</span>:<span class="w"> </span><span class="o">{</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="s2">&quot;train_samples&quot;</span>:<span class="w"> </span><span class="m">1000</span>,
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="s2">&quot;train_sample_paths&quot;</span>:<span class="w"> </span><span class="o">[</span>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">      </span><span class="s2">&quot;check_dataset/demo_img/05_1_front.jpg&quot;</span>,
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">      </span><span class="s2">&quot;check_dataset/demo_img/02_1_front.jpg&quot;</span>,
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">      </span><span class="s2">&quot;check_dataset/demo_img/02_3_back.jpg&quot;</span>,
-</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">      </span><span class="s2">&quot;check_dataset/demo_img/04_3_back.jpg&quot;</span>,
-</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">      </span><span class="s2">&quot;check_dataset/demo_img/04_2_side.jpg&quot;</span>,
-</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">      </span><span class="s2">&quot;check_dataset/demo_img/12_1_front.jpg&quot;</span>,
-</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">      </span><span class="s2">&quot;check_dataset/demo_img/07_2_side.jpg&quot;</span>,
-</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">      </span><span class="s2">&quot;check_dataset/demo_img/04_7_additional.jpg&quot;</span>,
-</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">      </span><span class="s2">&quot;check_dataset/demo_img/04_4_full.jpg&quot;</span>,
-</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">      </span><span class="s2">&quot;check_dataset/demo_img/01_1_front.jpg&quot;</span>
-</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">    </span><span class="o">]</span>,
-</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">    </span><span class="s2">&quot;gallery_samples&quot;</span>:<span class="w"> </span><span class="m">110</span>,
-</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">    </span><span class="s2">&quot;gallery_sample_paths&quot;</span>:<span class="w"> </span><span class="o">[</span>
-</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">      </span><span class="s2">&quot;check_dataset/demo_img/06_2_side.jpg&quot;</span>,
-</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">      </span><span class="s2">&quot;check_dataset/demo_img/01_4_full.jpg&quot;</span>,
-</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="w">      </span><span class="s2">&quot;check_dataset/demo_img/04_7_additional.jpg&quot;</span>,
-</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="w">      </span><span class="s2">&quot;check_dataset/demo_img/02_1_front.jpg&quot;</span>,
-</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="w">      </span><span class="s2">&quot;check_dataset/demo_img/02_3_back.jpg&quot;</span>,
-</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="w">      </span><span class="s2">&quot;check_dataset/demo_img/02_3_back.jpg&quot;</span>,
-</span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="w">      </span><span class="s2">&quot;check_dataset/demo_img/02_4_full.jpg&quot;</span>,
-</span><span id="__span-3-26"><a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="w">      </span><span class="s2">&quot;check_dataset/demo_img/03_4_full.jpg&quot;</span>,
-</span><span id="__span-3-27"><a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="w">      </span><span class="s2">&quot;check_dataset/demo_img/02_2_side.jpg&quot;</span>,
-</span><span id="__span-3-28"><a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a><span class="w">      </span><span class="s2">&quot;check_dataset/demo_img/03_2_side.jpg&quot;</span>
-</span><span id="__span-3-29"><a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a><span class="w">    </span><span class="o">]</span>,
-</span><span id="__span-3-30"><a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a><span class="w">    </span><span class="s2">&quot;query_samples&quot;</span>:<span class="w"> </span><span class="m">125</span>,
-</span><span id="__span-3-31"><a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a><span class="w">    </span><span class="s2">&quot;query_sample_paths&quot;</span>:<span class="w"> </span><span class="o">[</span>
-</span><span id="__span-3-32"><a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a><span class="w">      </span><span class="s2">&quot;check_dataset/demo_img/08_7_additional.jpg&quot;</span>,
-</span><span id="__span-3-33"><a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a><span class="w">      </span><span class="s2">&quot;check_dataset/demo_img/01_7_additional.jpg&quot;</span>,
-</span><span id="__span-3-34"><a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a><span class="w">      </span><span class="s2">&quot;check_dataset/demo_img/02_4_full.jpg&quot;</span>,
-</span><span id="__span-3-35"><a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a><span class="w">      </span><span class="s2">&quot;check_dataset/demo_img/04_4_full.jpg&quot;</span>,
-</span><span id="__span-3-36"><a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a><span class="w">      </span><span class="s2">&quot;check_dataset/demo_img/09_7_additional.jpg&quot;</span>,
-</span><span id="__span-3-37"><a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a><span class="w">      </span><span class="s2">&quot;check_dataset/demo_img/04_3_back.jpg&quot;</span>,
-</span><span id="__span-3-38"><a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a><span class="w">      </span><span class="s2">&quot;check_dataset/demo_img/02_1_front.jpg&quot;</span>,
-</span><span id="__span-3-39"><a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a><span class="w">      </span><span class="s2">&quot;check_dataset/demo_img/06_2_side.jpg&quot;</span>,
-</span><span id="__span-3-40"><a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a><span class="w">      </span><span class="s2">&quot;check_dataset/demo_img/02_7_additional.jpg&quot;</span>,
-</span><span id="__span-3-41"><a id="__codelineno-3-41" name="__codelineno-3-41" href="#__codelineno-3-41"></a><span class="w">      </span><span class="s2">&quot;check_dataset/demo_img/02_2_side.jpg&quot;</span>
-</span><span id="__span-3-42"><a id="__codelineno-3-42" name="__codelineno-3-42" href="#__codelineno-3-42"></a><span class="w">    </span><span class="o">]</span>
-</span><span id="__span-3-43"><a id="__codelineno-3-43" name="__codelineno-3-43" href="#__codelineno-3-43"></a><span class="w">  </span><span class="o">}</span>,
-</span><span id="__span-3-44"><a id="__codelineno-3-44" name="__codelineno-3-44" href="#__codelineno-3-44"></a><span class="w">  </span><span class="s2">&quot;analysis&quot;</span>:<span class="w"> </span><span class="o">{</span>
-</span><span id="__span-3-45"><a id="__codelineno-3-45" name="__codelineno-3-45" href="#__codelineno-3-45"></a><span class="w">    </span><span class="s2">&quot;histogram&quot;</span>:<span class="w"> </span><span class="s2">&quot;check_dataset/histogram.png&quot;</span>
-</span><span id="__span-3-46"><a id="__codelineno-3-46" name="__codelineno-3-46" href="#__codelineno-3-46"></a><span class="w">  </span><span class="o">}</span>,
-</span><span id="__span-3-47"><a id="__codelineno-3-47" name="__codelineno-3-47" href="#__codelineno-3-47"></a><span class="w">  </span><span class="s2">&quot;dataset_path&quot;</span>:<span class="w"> </span><span class="s2">&quot;./dataset/Inshop_examples&quot;</span>,
-</span><span id="__span-3-48"><a id="__codelineno-3-48" name="__codelineno-3-48" href="#__codelineno-3-48"></a><span class="w">  </span><span class="s2">&quot;show_type&quot;</span>:<span class="w"> </span><span class="s2">&quot;image&quot;</span>,
-</span><span id="__span-3-49"><a id="__codelineno-3-49" name="__codelineno-3-49" href="#__codelineno-3-49"></a><span class="w">  </span><span class="s2">&quot;dataset_type&quot;</span>:<span class="w"> </span><span class="s2">&quot;ShiTuRecDataset&quot;</span>
-</span><span id="__span-3-50"><a id="__codelineno-3-50" name="__codelineno-3-50" href="#__codelineno-3-50"></a><span class="o">}</span>
-</span></code></pre></div>
-In the above validation results, `check_pass` being True indicates that the dataset format meets the requirements. Explanations for other indicators are as follows:
-* `attributes.train_samples`: The number of training samples in this dataset is 1000;
-* `attributes.gallery_samples`: The number of gallery (or reference) samples in this dataset is 110;
-* `attributes.query_samples`: The number of query samples in this dataset is 125;
-* `attributes.train_sample_paths`: A list of relative paths to the visual images of training samples in this dataset;
-* `attributes.gallery_sample_paths`: A list of relative paths to the visual images of gallery (or reference) samples in this dataset;
-* `attributes.query_sample_paths`: A list of relative paths to the visual images of query samples in this dataset;
-
-Additionally, the dataset verification also analyzes the number of images and image categories within the dataset, and generates a distribution histogram (histogram.png):
-
-<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/modules/img_recognition/01.png">
-</details>
+<p>The specific content of the validation result file is:</p>
+<pre><code class="language-bash">
+  &quot;done_flag&quot;: true,
+  &quot;check_pass&quot;: true,
+  &quot;attributes&quot;: {
+    &quot;train_samples&quot;: 1000,
+    &quot;train_sample_paths&quot;: [
+      &quot;check_dataset/demo_img/05_1_front.jpg&quot;,
+      &quot;check_dataset/demo_img/02_1_front.jpg&quot;,
+      &quot;check_dataset/demo_img/02_3_back.jpg&quot;,
+      &quot;check_dataset/demo_img/04_3_back.jpg&quot;,
+      &quot;check_dataset/demo_img/04_2_side.jpg&quot;,
+      &quot;check_dataset/demo_img/12_1_front.jpg&quot;,
+      &quot;check_dataset/demo_img/07_2_side.jpg&quot;,
+      &quot;check_dataset/demo_img/04_7_additional.jpg&quot;,
+      &quot;check_dataset/demo_img/04_4_full.jpg&quot;,
+      &quot;check_dataset/demo_img/01_1_front.jpg&quot;
+    ],
+    &quot;gallery_samples&quot;: 110,
+    &quot;gallery_sample_paths&quot;: [
+      &quot;check_dataset/demo_img/06_2_side.jpg&quot;,
+      &quot;check_dataset/demo_img/01_4_full.jpg&quot;,
+      &quot;check_dataset/demo_img/04_7_additional.jpg&quot;,
+      &quot;check_dataset/demo_img/02_1_front.jpg&quot;,
+      &quot;check_dataset/demo_img/02_3_back.jpg&quot;,
+      &quot;check_dataset/demo_img/02_3_back.jpg&quot;,
+      &quot;check_dataset/demo_img/02_4_full.jpg&quot;,
+      &quot;check_dataset/demo_img/03_4_full.jpg&quot;,
+      &quot;check_dataset/demo_img/02_2_side.jpg&quot;,
+      &quot;check_dataset/demo_img/03_2_side.jpg&quot;
+    ],
+    &quot;query_samples&quot;: 125,
+    &quot;query_sample_paths&quot;: [
+      &quot;check_dataset/demo_img/08_7_additional.jpg&quot;,
+      &quot;check_dataset/demo_img/01_7_additional.jpg&quot;,
+      &quot;check_dataset/demo_img/02_4_full.jpg&quot;,
+      &quot;check_dataset/demo_img/04_4_full.jpg&quot;,
+      &quot;check_dataset/demo_img/09_7_additional.jpg&quot;,
+      &quot;check_dataset/demo_img/04_3_back.jpg&quot;,
+      &quot;check_dataset/demo_img/02_1_front.jpg&quot;,
+      &quot;check_dataset/demo_img/06_2_side.jpg&quot;,
+      &quot;check_dataset/demo_img/02_7_additional.jpg&quot;,
+      &quot;check_dataset/demo_img/02_2_side.jpg&quot;
+    ]
+  },
+  &quot;analysis&quot;: {
+    &quot;histogram&quot;: &quot;check_dataset/histogram.png&quot;
+  },
+  &quot;dataset_path&quot;: &quot;./dataset/Inshop_examples&quot;,
+  &quot;show_type&quot;: &quot;image&quot;,
+  &quot;dataset_type&quot;: &quot;ShiTuRecDataset&quot;
+}
+</code></pre>
+<p>In the above validation results, <code>check_pass</code> being True indicates that the dataset format meets the requirements. Explanations for other indicators are as follows:
+* <code>attributes.train_samples</code>: The number of training samples in this dataset is 1000;
+* <code>attributes.gallery_samples</code>: The number of gallery (or reference) samples in this dataset is 110;
+* <code>attributes.query_samples</code>: The number of query samples in this dataset is 125;
+* <code>attributes.train_sample_paths</code>: A list of relative paths to the visual images of training samples in this dataset;
+* <code>attributes.gallery_sample_paths</code>: A list of relative paths to the visual images of gallery (or reference) samples in this dataset;
+* <code>attributes.query_sample_paths</code>: A list of relative paths to the visual images of query samples in this dataset;</p>
+<p>Additionally, the dataset verification also analyzes the number of images and image categories within the dataset, and generates a distribution histogram (histogram.png):</p>
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/modules/img_recognition/01.png"></p></details>
 
 <h3 id="413-dataset-format-conversion-dataset-splitting-optional">4.1.3 Dataset Format Conversion / Dataset Splitting (Optional)<a class="headerlink" href="#413-dataset-format-conversion-dataset-splitting-optional" title="Permanent link">&para;</a></h3>
 <p>After completing the data verification, you can convert the dataset format and re-split the training/validation ratio by <b>modifying the configuration file</b> or <b>appending hyperparameters</b>.</p>
-<details>
-  <summary>👉 <b>Details of Format Conversion / Dataset Splitting (Click to Expand)</b></summary>
+<details><summary>👉 <b>Details of Format Conversion / Dataset Splitting (Click to Expand)</b></summary>
 
-<b>(1) Dataset Format Conversion</b>
-
-The image feature task supports converting `LabelMe` format datasets to `ShiTuRecDataset` format. The parameters for dataset format conversion can be set by modifying the fields under `CheckDataset` in the configuration file. Some example parameter descriptions in the configuration file are as follows:
-
-* `CheckDataset`:
-  * `convert`:
-    * `enable`: Whether to perform dataset format conversion. The image feature task supports converting `LabelMe` format datasets to `ShiTuRecDataset` format, default is `False`;
-    * `src_dataset_type`: If dataset format conversion is performed, the source dataset format needs to be set, default is `null`, optional value is `LabelMe`;
-
-For example, if you want to convert a `LabelMe` format dataset to `ShiTuRecDataset` format, you need to modify the configuration file as follows:
-
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">cd</span><span class="w"> </span>/path/to/paddlex
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>wget<span class="w"> </span>https://paddle-model-ecology.bj.bcebos.com/paddlex/data/image_classification_labelme_examples.tar<span class="w"> </span>-P<span class="w"> </span>./dataset
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>tar<span class="w"> </span>-xf<span class="w"> </span>./dataset/image_classification_labelme_examples.tar<span class="w"> </span>-C<span class="w"> </span>./dataset/
-</span></code></pre></div>
-
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>......
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>CheckDataset:
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span>......
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span>convert:<span class="w"> </span>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span>enable:<span class="w"> </span>True
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span>src_dataset_type:<span class="w"> </span>LabelMe
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">  </span>......
-</span></code></pre></div>
-
-Then execute the command:
-
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>python<span class="w"> </span>main.py<span class="w"> </span>-c<span class="w"> </span>paddlex/configs/general_recognition/PP-ShiTuV2_rec.yaml<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span>-o<span class="w"> </span>Global.mode<span class="o">=</span>check_dataset<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span>-o<span class="w"> </span>Global.dataset_dir<span class="o">=</span>./dataset/image_classification_labelme_examples
-</span></code></pre></div>
-
-After the data conversion is executed, the original annotation files will be renamed to `xxx.bak` in the original path.
-
-The above parameters also support being set by appending command line arguments:
-
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>python<span class="w"> </span>main.py<span class="w"> </span>-c<span class="w"> </span>paddlex/configs/general_recognition/PP-ShiTuV2_rec.yaml<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span>-o<span class="w"> </span>Global.mode<span class="o">=</span>check_dataset<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span>-o<span class="w"> </span>Global.dataset_dir<span class="o">=</span>./dataset/image_classification_labelme_examples<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span>-o<span class="w"> </span>CheckDataset.convert.enable<span class="o">=</span>True<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">    </span>-o<span class="w"> </span>CheckDataset.convert.src_dataset_type<span class="o">=</span>LabelMe<span class="w"> </span>
-</span></code></pre></div>
-
-<b>(2) Dataset Splitting</b>
-
-The parameters for dataset splitting can be set by modifying the fields under `CheckDataset` in the configuration file. Some example parameter descriptions in the configuration file are as follows:
-
-* `CheckDataset`:
-  * `split`:
-    * `enable`: Whether to re-split the dataset. When `True`, the dataset will be re-split, default is `False`;
-    * `train_percent`: If the dataset is re-split, the percentage of the training set needs to be set, the type is any integer between 0-100, and it needs to ensure that the sum of `gallery_percent` and `query_percent` values is 100;
-
-For example, if you want to re-split the dataset with 70% training set, 20% gallery set, and 10% query set, you need to modify the configuration file as follows:
-
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>......
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>CheckDataset:
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">  </span>......
-</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">  </span>split:
-</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">    </span>enable:<span class="w"> </span>True
-</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">    </span>train_percent:<span class="w"> </span><span class="m">70</span>
-</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">    </span>gallery_percent:<span class="w"> </span><span class="m">20</span>
-</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">    </span>query_percent:<span class="w"> </span><span class="m">10</span>
-</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">  </span>......
-</span></code></pre></div>
-
-Then execute the command:
-
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>python<span class="w"> </span>main.py<span class="w"> </span>-c<span class="w"> </span>paddlex/configs/general_recognition/PP-ShiTuV2_rec.yaml<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span>-o<span class="w"> </span>Global.mode<span class="o">=</span>check_dataset<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span>-o<span class="w"> </span>Global.dataset_dir<span class="o">=</span>./dataset/Inshop_examples
-</span></code></pre></div>
-
-After the data splitting is executed, the original annotation files will be renamed to `xxx.bak` in the original path.
-
-The above parameters also support being set by appending command line arguments:
-
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>python<span class="w"> </span>main.py<span class="w"> </span>-c<span class="w"> </span>paddlex/configs/general_recognition/PP-ShiTuV2_rec.yaml<span class="w">  </span><span class="se">\</span>
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">    </span>-o<span class="w"> </span>Global.mode<span class="o">=</span>check_dataset<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">    </span>-o<span class="w"> </span>Global.dataset_dir<span class="o">=</span>./dataset/Inshop_examples<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">    </span>-o<span class="w"> </span>CheckDataset.split.enable<span class="o">=</span>True<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">    </span>-o<span class="w"> </span>CheckDataset.split.train_percent<span class="o">=</span><span class="m">70</span><span class="w"> </span><span class="se">\</span>
-</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">    </span>-o<span class="w"> </span>CheckDataset.split.gallery_percent<span class="o">=</span><span class="m">20</span><span class="w"> </span><span class="se">\</span>
-</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">    </span>-o<span class="w"> </span>CheckDataset.split.query_percent<span class="o">=</span><span class="m">10</span><span class="w"> </span>
-</span></code></pre></div>
-> ❗Note: Due to the specificity of image feature model evaluation, data partitioning is meaningful only when the train, query, and gallery sets belong to the same category system. During the evaluation of recognition models, it is imperative that the gallery and query sets belong to the same category system, which may or may not be the same as the train set. If the gallery and query sets do not belong to the same category system as the train set, the evaluation after data partitioning becomes meaningless. It is recommended to proceed with caution.
-
-</details>
+<p><b>(1) Dataset Format Conversion</b></p>
+<p>The image feature task supports converting <code>LabelMe</code> format datasets to <code>ShiTuRecDataset</code> format. The parameters for dataset format conversion can be set by modifying the fields under <code>CheckDataset</code> in the configuration file. Some example parameter descriptions in the configuration file are as follows:</p>
+<ul>
+<li><code>CheckDataset</code>:</li>
+<li><code>convert</code>:<ul>
+<li><code>enable</code>: Whether to perform dataset format conversion. The image feature task supports converting <code>LabelMe</code> format datasets to <code>ShiTuRecDataset</code> format, default is <code>False</code>;</li>
+<li><code>src_dataset_type</code>: If dataset format conversion is performed, the source dataset format needs to be set, default is <code>null</code>, optional value is <code>LabelMe</code>;</li>
+</ul>
+</li>
+</ul>
+<p>For example, if you want to convert a <code>LabelMe</code> format dataset to <code>ShiTuRecDataset</code> format, you need to modify the configuration file as follows:</p>
+<pre><code class="language-bash">cd /path/to/paddlex
+wget https://paddle-model-ecology.bj.bcebos.com/paddlex/data/image_classification_labelme_examples.tar -P ./dataset
+tar -xf ./dataset/image_classification_labelme_examples.tar -C ./dataset/
+</code></pre>
+<pre><code class="language-bash">......
+CheckDataset:
+  ......
+  convert: 
+    enable: True
+    src_dataset_type: LabelMe
+  ......
+</code></pre>
+<p>Then execute the command:</p>
+<pre><code class="language-bash">python main.py -c paddlex/configs/general_recognition/PP-ShiTuV2_rec.yaml \
+    -o Global.mode=check_dataset \
+    -o Global.dataset_dir=./dataset/image_classification_labelme_examples
+</code></pre>
+<p>After the data conversion is executed, the original annotation files will be renamed to <code>xxx.bak</code> in the original path.</p>
+<p>The above parameters also support being set by appending command line arguments:</p>
+<pre><code class="language-bash">python main.py -c paddlex/configs/general_recognition/PP-ShiTuV2_rec.yaml \
+    -o Global.mode=check_dataset \
+    -o Global.dataset_dir=./dataset/image_classification_labelme_examples \
+    -o CheckDataset.convert.enable=True \
+    -o CheckDataset.convert.src_dataset_type=LabelMe 
+</code></pre>
+<p><b>(2) Dataset Splitting</b></p>
+<p>The parameters for dataset splitting can be set by modifying the fields under <code>CheckDataset</code> in the configuration file. Some example parameter descriptions in the configuration file are as follows:</p>
+<ul>
+<li><code>CheckDataset</code>:</li>
+<li><code>split</code>:<ul>
+<li><code>enable</code>: Whether to re-split the dataset. When <code>True</code>, the dataset will be re-split, default is <code>False</code>;</li>
+<li><code>train_percent</code>: If the dataset is re-split, the percentage of the training set needs to be set, the type is any integer between 0-100, and it needs to ensure that the sum of <code>gallery_percent</code> and <code>query_percent</code> values is 100;</li>
+</ul>
+</li>
+</ul>
+<p>For example, if you want to re-split the dataset with 70% training set, 20% gallery set, and 10% query set, you need to modify the configuration file as follows:</p>
+<pre><code class="language-bash">......
+CheckDataset:
+  ......
+  split:
+    enable: True
+    train_percent: 70
+    gallery_percent: 20
+    query_percent: 10
+  ......
+</code></pre>
+<p>Then execute the command:</p>
+<pre><code class="language-bash">python main.py -c paddlex/configs/general_recognition/PP-ShiTuV2_rec.yaml \
+    -o Global.mode=check_dataset \
+    -o Global.dataset_dir=./dataset/Inshop_examples
+</code></pre>
+<p>After the data splitting is executed, the original annotation files will be renamed to <code>xxx.bak</code> in the original path.</p>
+<p>The above parameters also support being set by appending command line arguments:</p>
+<pre><code class="language-bash">python main.py -c paddlex/configs/general_recognition/PP-ShiTuV2_rec.yaml  \
+    -o Global.mode=check_dataset \
+    -o Global.dataset_dir=./dataset/Inshop_examples \
+    -o CheckDataset.split.enable=True \
+    -o CheckDataset.split.train_percent=70 \
+    -o CheckDataset.split.gallery_percent=20 \
+    -o CheckDataset.split.query_percent=10 
+</code></pre>
+<blockquote>
+<p>❗Note: Due to the specificity of image feature model evaluation, data partitioning is meaningful only when the train, query, and gallery sets belong to the same category system. During the evaluation of recognition models, it is imperative that the gallery and query sets belong to the same category system, which may or may not be the same as the train set. If the gallery and query sets do not belong to the same category system as the train set, the evaluation after data partitioning becomes meaningless. It is recommended to proceed with caution.</p>
+</blockquote></details>
 
 <h3 id="42-model-training">4.2 Model Training<a class="headerlink" href="#42-model-training" title="Permanent link">&para;</a></h3>
 <p>Model training can be completed with a single command, taking the training of the image feature model PP-ShiTuV2_rec as an example:</p>
-<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>python<span class="w"> </span>main.py<span class="w"> </span>-c<span class="w"> </span>paddlex/configs/general_recognition/PP-ShiTuV2_rec.yaml<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">    </span>-o<span class="w"> </span>Global.mode<span class="o">=</span>train<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">    </span>-o<span class="w"> </span>Global.dataset_dir<span class="o">=</span>./dataset/Inshop_examples
+<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>python<span class="w"> </span>main.py<span class="w"> </span>-c<span class="w"> </span>paddlex/configs/general_recognition/PP-ShiTuV2_rec.yaml<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span>-o<span class="w"> </span>Global.mode<span class="o">=</span>train<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span>-o<span class="w"> </span>Global.dataset_dir<span class="o">=</span>./dataset/Inshop_examples
 </span></code></pre></div>
 The following steps are required:</p>
 <ul>
@@ -4657,24 +4640,27 @@ The following steps are required:</p>
 <li>Specify the path to the training dataset: <code>-o Global.dataset_dir</code>. 
 Other related parameters can be set by modifying the <code>Global</code> and <code>Train</code> fields in the <code>.yaml</code> configuration file, or adjusted by appending parameters in the command line. For example, to specify training on the first two GPUs: <code>-o Global.device=gpu:0,1</code>; to set the number of training epochs to 10: <code>-o Train.epochs_iters=10</code>. For more modifiable parameters and their detailed explanations, refer to the configuration file instructions for the corresponding task module of the model <a href="../../instructions/config_parameters_common.html">PaddleX Common Configuration File Parameters</a>.</li>
 </ul>
-<details>
-  <summary>👉 <b>More Details (Click to Expand)</b></summary>
+<details><summary>👉 <b>More Details (Click to Expand)</b></summary>
 
-* During model training, PaddleX automatically saves the model weight files, with the default being `output`. If you need to specify a save path, you can set it through the `-o Global.output` field in the configuration file.
-* PaddleX shields you from the concepts of dynamic graph weights and static graph weights. During model training, both dynamic and static graph weights are produced, and static graph weights are selected by default for model inference.
-* After completing the model training, all outputs are saved in the specified output directory (default is `./output/`), typically including:
-
-* `train_result.json`: Training result record file, recording whether the training task was completed normally, as well as the output weight metrics, related file paths, etc.;
-* `train.log`: Training log file, recording changes in model metrics and loss during training;
-* `config.yaml`: Training configuration file, recording the hyperparameter configuration for this training session;
-* `.pdparams`, `.pdema`, `.pdopt.pdstate`, `.pdiparams`, `.pdmodel`: Model weight-related files, including network parameters, optimizer, EMA, static graph network parameters, static graph network structure, etc.;
-</details>
+<ul>
+<li>During model training, PaddleX automatically saves the model weight files, with the default being <code>output</code>. If you need to specify a save path, you can set it through the <code>-o Global.output</code> field in the configuration file.</li>
+<li>PaddleX shields you from the concepts of dynamic graph weights and static graph weights. During model training, both dynamic and static graph weights are produced, and static graph weights are selected by default for model inference.</li>
+<li>
+<p>After completing the model training, all outputs are saved in the specified output directory (default is <code>./output/</code>), typically including:</p>
+</li>
+<li>
+<p><code>train_result.json</code>: Training result record file, recording whether the training task was completed normally, as well as the output weight metrics, related file paths, etc.;</p>
+</li>
+<li><code>train.log</code>: Training log file, recording changes in model metrics and loss during training;</li>
+<li><code>config.yaml</code>: Training configuration file, recording the hyperparameter configuration for this training session;</li>
+<li><code>.pdparams</code>, <code>.pdema</code>, <code>.pdopt.pdstate</code>, <code>.pdiparams</code>, <code>.pdmodel</code>: Model weight-related files, including network parameters, optimizer, EMA, static graph network parameters, static graph network structure, etc.;</li>
+</ul></details>
 
 <h2 id="43-model-evaluation"><b>4.3 Model Evaluation</b><a class="headerlink" href="#43-model-evaluation" title="Permanent link">&para;</a></h2>
 <p>After completing model training, you can evaluate the specified model weight file on the validation set to verify the model's accuracy. Using PaddleX for model evaluation can be done with a single command:</p>
-<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>python<span class="w"> </span>main.py<span class="w"> </span>-c<span class="w"> </span>paddlex/configs/general_recognition/PP-ShiTuV2_rec.yaml<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">    </span>-o<span class="w"> </span>Global.mode<span class="o">=</span>evaluate<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span>-o<span class="w"> </span>Global.dataset_dir<span class="o">=</span>./dataset/Inshop_examples
+<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>python<span class="w"> </span>main.py<span class="w"> </span>-c<span class="w"> </span>paddlex/configs/general_recognition/PP-ShiTuV2_rec.yaml<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span>-o<span class="w"> </span>Global.mode<span class="o">=</span>evaluate<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span>-o<span class="w"> </span>Global.dataset_dir<span class="o">=</span>./dataset/Inshop_examples
 </span></code></pre></div>
 Similar to model training, the following steps are required:</p>
 <ul>
@@ -4683,24 +4669,19 @@ Similar to model training, the following steps are required:</p>
 <li>Specify the path to the validation dataset: <code>-o Global.dataset_dir</code>. 
 Other related parameters can be set by modifying the <code>Global</code> and <code>Evaluate</code> fields in the <code>.yaml</code> configuration file, detailed instructions can be found in <a href="../../instructions/config_parameters_common.html">PaddleX Common Configuration File Parameters</a>.</li>
 </ul>
-<details>
-  <summary>👉 <b>More Details (Click to Expand)</b></summary>
+<details><summary>👉 <b>More Details (Click to Expand)</b></summary>
 
-
-When evaluating the model, you need to specify the model weights file path. Each configuration file has a default weight save path built-in. If you need to change it, simply set it by appending a command line parameter, such as `-o Evaluate.weight_path=./output/best_model/best_model.pdparams`.
-
-After completing the model evaluation, an `evaluate_result.json` file will be produced, which records the evaluation results, specifically, whether the evaluation task was completed successfully and the model's evaluation metrics, including recall1、recall5、mAP；
-
-</details>
+<p>When evaluating the model, you need to specify the model weights file path. Each configuration file has a default weight save path built-in. If you need to change it, simply set it by appending a command line parameter, such as <code>-o Evaluate.weight_path=./output/best_model/best_model.pdparams</code>.</p>
+<p>After completing the model evaluation, an <code>evaluate_result.json</code> file will be produced, which records the evaluation results, specifically, whether the evaluation task was completed successfully and the model's evaluation metrics, including recall1、recall5、mAP；</p></details>
 
 <h3 id="44-model-inference-and-integration"><b>4.4 Model Inference and Integration</b><a class="headerlink" href="#44-model-inference-and-integration" title="Permanent link">&para;</a></h3>
 <p>After completing model training and evaluation, you can use the trained model weights for inference prediction or Python integration.</p>
 <h4 id="441-model-inference">4.4.1 Model Inference<a class="headerlink" href="#441-model-inference" title="Permanent link">&para;</a></h4>
 <p>To perform inference prediction through the command line, simply use the following command. Before running the following code, please download the <a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/general_image_recognition_001.jpg">demo image</a> to your local machine. </p>
-<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>python<span class="w"> </span>main.py<span class="w"> </span>-c<span class="w"> </span>paddlex/configs/general_recognition/PP-ShiTuV2_rec.yaml<span class="w">  </span><span class="se">\</span>
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">    </span>-o<span class="w"> </span>Global.mode<span class="o">=</span>predict<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">    </span>-o<span class="w"> </span>Predict.model_dir<span class="o">=</span><span class="s2">&quot;./output/best_model/inference&quot;</span><span class="w"> </span><span class="se">\</span>
-</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">    </span>-o<span class="w"> </span>Predict.input<span class="o">=</span><span class="s2">&quot;general_image_recognition_001.jpg&quot;</span>
+<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>python<span class="w"> </span>main.py<span class="w"> </span>-c<span class="w"> </span>paddlex/configs/general_recognition/PP-ShiTuV2_rec.yaml<span class="w">  </span><span class="se">\</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span>-o<span class="w"> </span>Global.mode<span class="o">=</span>predict<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span>-o<span class="w"> </span>Predict.model_dir<span class="o">=</span><span class="s2">&quot;./output/best_model/inference&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span>-o<span class="w"> </span>Predict.input<span class="o">=</span><span class="s2">&quot;general_image_recognition_001.jpg&quot;</span>
 </span></code></pre></div>
 Similar to model training and evaluation, the following steps are required:</p>
 <ul>
