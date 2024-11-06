@@ -4608,20 +4608,52 @@ For all operations provided by the service:
 - Both the response body and the request body for POST requests are JSON data (JSON objects).
 - When the request is processed successfully, the response status code is `200`, and the response body properties are as follows:
 
-    | Name | Type | Description |
-    |------|------|-------------|
-    |`errorCode`|`integer`|Error code. Fixed as `0`.|
-    |`errorMsg`|`string`|Error message. Fixed as `"Success"`.|
-
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errorCode</code></td>
+<td><code>integer</code></td>
+<td>Error code. Fixed as <code>0</code>.</td>
+</tr>
+<tr>
+<td><code>errorMsg</code></td>
+<td><code>string</code></td>
+<td>Error message. Fixed as <code>"Success"</code>.</td>
+</tr>
+</tbody>
+</table>
     The response body may also have a `result` property of type `object`, which stores the operation result information.
 
 - When the request is not processed successfully, the response body properties are as follows:
 
-    | Name | Type | Description |
-    |------|------|-------------|
-    |`errorCode`|`integer`|Error code. Same as the response status code.|
-    |`errorMsg`|`string`|Error message.|
-
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errorCode</code></td>
+<td><code>integer</code></td>
+<td>Error code. Same as the response status code.</td>
+</tr>
+<tr>
+<td><code>errorMsg</code></td>
+<td><code>string</code></td>
+<td>Error message.</td>
+</tr>
+</tbody>
+</table>
 Operations provided by the service are as follows:
 
 - <b>`infer`</b>
@@ -4632,16 +4664,42 @@ Operations provided by the service are as follows:
 
     - The request body properties are as follows:
 
-        | Name | Type | Description | Required |
-        |------|------|-------------|----------|
-        |`csv`|`string`|The URL of a CSV file accessible by the service or the Base64 encoded result of the CSV file content. The CSV file must be encoded in UTF-8.|Yes|
-
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>csv</code></td>
+<td><code>string</code></td>
+<td>The URL of a CSV file accessible by the service or the Base64 encoded result of the CSV file content. The CSV file must be encoded in UTF-8.</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
     - When the request is processed successfully, the `result` of the response body has the following properties:
 
-        | Name | Type | Description |
-        |------|------|-------------|
-        |`csv`|`string`|The time-series forecasting result in CSV format. Encoded in UTF-8+Base64.|
-
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>csv</code></td>
+<td><code>string</code></td>
+<td>The time-series forecasting result in CSV format. Encoded in UTF-8+Base64.</td>
+</tr>
+</tbody>
+</table>
         An example of `result` is as follows:
 
         <div class="language-json highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">{</span>
