@@ -70,6 +70,7 @@ PaddleX 提供了 15 个端到端的实例分割模型，具体可参考 [模型
 </tr>
 </tbody>
 </table>
+
 > <b>注：以上精度指标为 [COCO2017](https://cocodataset.org/#home) 验证集 mAP(0.5:0.95)，GPU 推理耗时基于 NVIDIA  V100 机器，精度类型为 FP32。</b>
 
 简单来说，表格从上到下，模型推理速度更快，从下到上，模型精度更高。本教程以 `Mask-RT-DETR-H` 模型为例，完成一次模型全流程开发。你可以依据自己的实际使用场景，判断并选择一个合适的模型做训练，训练完成后可在产线内评估合适的模型权重，并最终用于实际使用场景中。
@@ -261,6 +262,7 @@ python main.py -c paddlex/configs/instance_segmentation/Mask-RT-DETR-H.yaml \
 </tr>
 </tbody>
 </table>
+
 </center>
 
 改变 epoch 实验结果：
@@ -312,6 +314,7 @@ python main.py -c paddlex/configs/instance_segmentation/Mask-RT-DETR-H.yaml \
 </tr>
 </tbody>
 </table>
+
 </center>
 
 <b> 注：本教程为 4 卡教程，如果您只有 1 张GPU，可通过调整训练卡数完成本次实验，但最终指标未必和上述指标对齐，属正常情况。</b>

@@ -34,6 +34,7 @@ Semantic segmentation is a technique in computer vision that classifies each pix
 </tr>
 </tbody>
 </table>
+
 > ❗ The above list features the <b>2 core models</b> that the image classification module primarily supports. In total, this module supports <b>18 models</b>. The complete list of models is as follows:
 
 <details>
@@ -149,6 +150,7 @@ Semantic segmentation is a technique in computer vision that classifies each pix
 </tr>
 </tbody>
 </table>
+
 <b>The accuracy metrics of the above models are measured on the [Cityscapes](https://www.cityscapes-dataset.com/) dataset. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
 
 
@@ -193,6 +195,7 @@ Semantic segmentation is a technique in computer vision that classifies each pix
 </tr>
 </tbody>
 </table>
+
 <b>The accuracy metrics of the SeaFormer series models are measured on the [ADE20k](https://groups.csail.mit.edu/vision/datasets/ADE20K/) dataset. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
 
 </details>

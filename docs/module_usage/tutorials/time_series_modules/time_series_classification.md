@@ -26,6 +26,7 @@
 </tr>
 </tbody>
 </table>
+
 <b>注：以上精度指标的评估集是 UWaveGestureLibrary。</b>
 
 

@@ -25,6 +25,7 @@ Time series classification involves identifying and categorizing different patte
 </tr>
 </tbody>
 </table>
+
 <b>Note: The evaluation set for the above accuracy metrics is UWaveGestureLibrary.</b>
 
 ## III. Quick Integration

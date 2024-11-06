@@ -38,6 +38,7 @@
 </tr>
 </tbody>
 </table>
+
 ## 三、快速集成
 > ❗ 在快速集成前，请先安装 PaddleX 的 wheel 包，详细请参考 [PaddleX本地安装教程](../../../installation/installation.md)。
 >

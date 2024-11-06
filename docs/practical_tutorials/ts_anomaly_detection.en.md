@@ -79,6 +79,7 @@ PaddleX provides five end-to-end time series anomaly detection models. For detai
 </tr>
 </tbody>
 </table>
+
 > <b>Note: The above accuracy metrics are measured on the [PSM](https://paddle-model-ecology.bj.bcebos.com/paddlex/data/ts_anomaly_examples.tar) dataset with a time series length of 100.</b>
 
 ## 4. Data Preparation and Validation
@@ -279,6 +280,7 @@ Learning Rate Exploration Results:
 </tr>
 </tbody>
 </table>
+
 Increasing Training Epochs Results:
 
 <table>
@@ -314,6 +316,7 @@ Increasing Training Epochs Results:
 </tr>
 </tbody>
 </table>
+
 ## 6. Production Line Testing
 Replace the model in the production line with the fine-tuned model for testing, using the [test file](https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/doc_images/practical_tutorial/timeseries_anomaly_detection/test.csv) for prediction:
 

@@ -41,6 +41,7 @@ The <b>General Layout Parsing Pipeline</b> includes modules for table structure 
   </tr>
 </table>
 
+
 <b>Note: The above accuracy metrics are measured on PaddleX's internally built English table recognition dataset. All GPU inference times are based on NVIDIA Tesla T4 machines with FP32 precision. CPU inference speeds are based on Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
 
 <b>Layout Detection Module Models</b>:
@@ -115,6 +116,7 @@ The <b>General Layout Parsing Pipeline</b> includes modules for table structure 
 </tr>
 </tbody>
 </table>
+
 <b>Note: The evaluation set for the above accuracy metrics is PaddleOCR's self-built layout region analysis dataset, containing 10,000 images of common document types, including English and Chinese papers, magazines, research reports, etc. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
 
 <b>Text Detection Module Models</b>:
@@ -149,6 +151,7 @@ The <b>General Layout Parsing Pipeline</b> includes modules for table structure 
 </tr>
 </tbody>
 </table>
+
 <b>Note: The evaluation set for the above accuracy metrics is PaddleOCR's self-built Chinese dataset, covering street scenes, web images, documents, and handwritten texts, with 500 images for detection. All GPU inference times are based on NVIDIA Tesla T4 machines with FP32 precision. CPU inference speeds are based on Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
 
 <b>Text Recognition Module Models</b>:
@@ -179,6 +182,7 @@ The <b>General Layout Parsing Pipeline</b> includes modules for table structure 
     </tr>
 </table>
 
+
 <b>Note: The evaluation set for the above accuracy metrics is PaddleOCR's self-built Chinese dataset, covering street scenes, web images, documents, and handwritten texts, with 11,000 images for text recognition. All GPU inference times are based on NVIDIA Tesla T4 machines with FP32 precision. CPU inference speeds are based on Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
 
 <table >
@@ -202,6 +206,7 @@ The <b>General Layout Parsing Pipeline</b> includes modules for table structure 
     </tr>
 </table>
 
+
 <b>Note: The evaluation set for the above accuracy metrics is the [PaddleOCR Algorithm Model Challenge - Task 1: OCR End-to-End Recognition Task](https://aistudio.baidu.com/competition/detail/1131/0/introduction) A-list. GPU inference time is based on NVIDIA Tesla T4 with FP32 precision. CPU inference speed is based on Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
 
 <table >
@@ -224,6 +229,7 @@ The <b>General Layout Parsing Pipeline</b> includes modules for table structure 
     </td>
     </tr>
 </table>
+
 
 <b>Note: The evaluation set for the above accuracy metrics is the [PaddleOCR Algorithm Model Challenge - Task 1: OCR End-to-End Recognition Task](https://aistudio.baidu.com/competition/detail/1131/0/introduction) B-list. GPU inference time is based on NVIDIA Tesla T4 with FP32 precision. CPU inference speed is based on Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
 
@@ -253,6 +259,7 @@ The <b>General Layout Parsing Pipeline</b> includes modules for table structure 
 </tr>
 </tbody>
 </table>
+
 <b>Note: The above accuracy metrics are measured on the [LaTeX-OCR Formula Recognition Test Set](https://drive.google.com/drive/folders/13CA4vAmOmD_I_dSbvLp-Lf0s6KiaNfuO). All GPU inference times are based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speeds are based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
 
 <b>Seal Text Detection Module Models</b>:
@@ -287,6 +294,7 @@ The <b>General Layout Parsing Pipeline</b> includes modules for table structure 
 </tr>
 </tbody>
 </table>
+
 <b>Note: The above accuracy metrics are evaluated on a self-built dataset containing 500 circular seal images. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
 
 <b>Text Image Rectification Module Models</b>:
@@ -309,6 +317,7 @@ The <b>General Layout Parsing Pipeline</b> includes modules for table structure 
 </tr>
 </tbody>
 </table>
+
 <b>The accuracy metrics of the models are measured from the [DocUNet benchmark](https://www3.cs.stonybrook.edu/~cvl/docunet.html).</b>
 
 <b>Document Image Orientation Classification Module Models</b>:
@@ -335,6 +344,7 @@ The <b>General Layout Parsing Pipeline</b> includes modules for table structure 
 </tr>
 </tbody>
 </table>
+
 <b>Note: The above accuracy metrics are evaluated on a self-built dataset covering various scenarios such as certificates and documents, containing 1000 images. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
 
 </details>
@@ -463,6 +473,7 @@ In the above Python script, the following steps are executed:
 </tr>
 </tbody>
 </table>
+
 (2) Call the `predict` method of the pipeline object to perform inference: The `predict` method takes `x` as a parameter, which is used to input data to be predicted, supporting multiple input methods, as shown in the following examples:
 
 <table>
@@ -499,6 +510,7 @@ In the above Python script, the following steps are executed:
 </tr>
 </tbody>
 </table>
+
 (3) Obtain the prediction results by calling the `predict` method: The `predict` method is a `generator`, so prediction results need to be obtained through iteration. The `predict` method predicts data in batches, so the prediction results are in the form of a list.
 
 (4) Process the prediction results: The prediction result for each sample is of `dict` type and supports printing or saving as files, with the supported file types depending on the specific pipeline, such as:
@@ -524,6 +536,7 @@ In the above Python script, the following steps are executed:
 </tr>
 </tbody>
 </table>
+
 | `save_to_xlsx` | Saves the result as an Excel file. | `- save_path`: `str` type, the path to save the file. When it's a directory, the saved file name is consistent with the input file name.
 
 Within this tutorial on Artificial Intelligence and Computer Vision, we will explore the capabilities of saving and exporting results from various processes, including OCR (Optical Character Recognition), layout analysis, and table structure recognition. Specifically, the `save_to_img` function enables saving visualization results, `save_to_html` converts tables directly into HTML files, and `save_to_xlsx` exports tables as Excel files.
@@ -586,6 +599,7 @@ For all operations provided by the service:
 </tr>
 </tbody>
 </table>
+
     The response body may also have a `result` attribute, of type `object`, which stores the operation result information.
 
 - When the request is not processed successfully, the response body attributes are as follows:
@@ -611,6 +625,7 @@ For all operations provided by the service:
 </tr>
 </tbody>
 </table>
+
 Operations provided by the service:
 
 - <b>`infer`</b>
@@ -669,6 +684,7 @@ Operations provided by the service:
 </tr>
 </tbody>
 </table>
+
         Attributes of `inferenceParams`:
 
 <table>
@@ -689,6 +705,7 @@ Operations provided by the service:
 </tr>
 </tbody>
 </table>
+
     - When the request is processed successfully, the `result` of the response body has the following attributes:
 
 <table>
@@ -707,6 +724,7 @@ Operations provided by the service:
 </tr>
 </tbody>
 </table>
+
         Each element in `layoutParsingResults` is an `object` with the following attributes:
 
 <table>
@@ -725,6 +743,7 @@ Operations provided by the service:
 </tr>
 </tbody>
 </table>
+
         Each element in `layoutElements` is an `object` with the following attributes:
 
 <table>
@@ -763,6 +782,7 @@ Operations provided by the service:
 </tr>
 </tbody>
 </table>
+
 </details>
 </details>
 

@@ -97,6 +97,7 @@ PaddleX 3.0 is a low-code development tool for AI models built on the PaddlePadd
         </tr>
     </table>
 
+
 ## 🌟 Why PaddleX ?
 
   🎨 <b>Rich Models One-click Call</b>: Integrate over <b>200 PaddlePaddle models</b> covering multiple key areas such as OCR, object detection, and time series forecasting into <b>19 pipelines</b>. Experience the model effects quickly through easy Python API calls. Also supports <b>more than 20 modules</b> for easy model combination use by developers.
@@ -340,6 +341,7 @@ In addition, PaddleX provides developers with a full-process efficient model tra
     </tr>
 </table>
 
+
 > ❗Note: The above capabilities are implemented based on GPU/CPU. PaddleX can also perform local inference and custom development on mainstream hardware such as Kunlunxin, Ascend, Cambricon, and Haiguang. The table below details the support status of the pipelines. For specific supported model lists, please refer to the [Model List (Kunlunxin XPU)](./docs/support_list/model_list_xpu_en.html)/[Model List (Ascend NPU)](./docs/support_list/model_list_npu_en.html)/[Model List (Cambricon MLU)](./docs/support_list/model_list_mlu_en.html)/[Model List (Haiguang DCU)](./docs/support_list/model_list_dcu_en.html). We are continuously adapting more models and promoting the implementation of high-performance and service-oriented deployment on mainstream hardware.
 
 🔥🔥 <b>Support for Domestic Hardware Capabilities</b>
@@ -416,6 +418,7 @@ In addition, PaddleX provides developers with a full-process efficient model tra
     <td>🚧</td>
   </tr>
 </table>
+
 
 ## 💬 Discussion
 

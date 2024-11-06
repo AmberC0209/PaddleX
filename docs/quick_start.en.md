@@ -156,6 +156,7 @@ To use the command line for other pipelines, simply adjust the `pipeline` parame
         </tr>
     </tbody>
 </table>
+
 </details>
 
 ### 📝 Python Script Usage
@@ -272,5 +273,6 @@ For other production lines using the Python script, you only need to adjust the 
         </tr>
     </tbody>
 </table>
+
 
 </details>

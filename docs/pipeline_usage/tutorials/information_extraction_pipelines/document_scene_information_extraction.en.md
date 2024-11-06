@@ -43,6 +43,7 @@ The <b>PP-ChatOCRv3-doc</b> pipeline includes modules for <b>Table Structure Rec
   </tr>
 </table>
 
+
 <b>Note: The above accuracy metrics are measured on PaddleX's internally built English table recognition dataset. All GPU inference times are based on NVIDIA Tesla T4 machines with FP32 precision. CPU inference speeds are based on Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
 
 <b>Layout Detection Module Models</b>:
@@ -117,6 +118,7 @@ The <b>PP-ChatOCRv3-doc</b> pipeline includes modules for <b>Table Structure Rec
 </tr>
 </tbody>
 </table>
+
 <b>Note: The evaluation set for the above accuracy metrics is PaddleOCR's self-built layout region analysis dataset, containing 10,000 images of common document types, including English and Chinese papers, magazines, research reports, etc. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
 
 <b>Text Detection Module Models</b>:
@@ -151,6 +153,7 @@ The <b>PP-ChatOCRv3-doc</b> pipeline includes modules for <b>Table Structure Rec
 </tr>
 </tbody>
 </table>
+
 <b>Note: The evaluation set for the above accuracy metrics is PaddleOCR's self-built Chinese dataset, covering street scenes, web images, documents, and handwritten texts, with 500 images for detection. All GPU inference times are based on NVIDIA Tesla T4 machines with FP32 precision. CPU inference speeds are based on Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
 
 <b>Text Recognition Module Models</b>:
@@ -181,6 +184,7 @@ The <b>PP-ChatOCRv3-doc</b> pipeline includes modules for <b>Table Structure Rec
     </tr>
 </table>
 
+
 <b>Note: The evaluation set for the above accuracy metrics is PaddleOCR's self-built Chinese dataset, covering street scenes, web images, documents, and handwritten texts, with 11,000 images for text recognition. All GPU inference times are based on NVIDIA Tesla T4 machines with FP32 precision. CPU inference speeds are based on Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
 
 <table >
@@ -204,6 +208,7 @@ The <b>PP-ChatOCRv3-doc</b> pipeline includes modules for <b>Table Structure Rec
     </tr>
 </table>
 
+
 <b>Note: The evaluation set for the above accuracy metrics is the [PaddleOCR Algorithm Model Challenge - Task 1: OCR End-to-End Recognition Task](https://aistudio.baidu.com/competition/detail/1131/0/introduction) A-list. GPU inference time is based on NVIDIA Tesla T4 with FP32 precision. CPU inference speed is based on Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
 
 <table >
@@ -226,6 +231,7 @@ The <b>PP-ChatOCRv3-doc</b> pipeline includes modules for <b>Table Structure Rec
     </td>
     </tr>
 </table>
+
 
 <b>Note: The evaluation set for the above accuracy metrics is the [PaddleOCR Algorithm Model Challenge - Task 1: OCR End-to-End Recognition Task](https://aistudio.baidu.com/competition/detail/1131/0/introduction) B-list. GPU inference time is based on NVIDIA Tesla T4 with FP32 precision. CPU inference speed is based on Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
 
@@ -261,6 +267,7 @@ The <b>PP-ChatOCRv3-doc</b> pipeline includes modules for <b>Table Structure Rec
 </tr>
 </tbody>
 </table>
+
 <b>Note: The above accuracy metrics are evaluated on a self-built dataset containing 500 circular seal images. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
 
 <b>Text Image Rectification Module Models</b>:
@@ -283,6 +290,7 @@ The <b>PP-ChatOCRv3-doc</b> pipeline includes modules for <b>Table Structure Rec
 </tr>
 </tbody>
 </table>
+
 <b>The accuracy metrics of the models are measured from the [DocUNet benchmark](https://www3.cs.stonybrook.edu/~cvl/docunet.html).</b>
 
 <b>Document Image Orientation Classification Module Models</b>:
@@ -309,6 +317,7 @@ The <b>PP-ChatOCRv3-doc</b> pipeline includes modules for <b>Table Structure Rec
 </tr>
 </tbody>
 </table>
+
 <b>Note: The above accuracy metrics are evaluated on a self-built dataset covering various scenarios such as certificates and documents, containing 1000 images. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
 
 </details>
@@ -402,6 +411,7 @@ In the above Python script, the following steps are executed:
 </tr>
 </tbody>
 </table>
+
 (2) Call the `visual_predict` of the PP-ChatOCRv3-doc pipeline object to visual predict, related parameters descriptions are as follows:
 
 <table>
@@ -470,6 +480,7 @@ In the above Python script, the following steps are executed:
 </tr>
 </tbody>
 </table>
+
 (3) Call the relevant functions of prediction object to save the prediction results. The related functions are as follows:
 
 <table>
@@ -498,6 +509,7 @@ In the above Python script, the following steps are executed:
 </tr>
 </tbody>
 </table>
+
 (4) Call the `chat` of PP-ChatOCRv3-doc pipeline object to query information with LLM, related parameters are described as follows:
 
 <table>
@@ -524,6 +536,7 @@ In the above Python script, the following steps are executed:
 </tr>
 </tbody>
 </table>
+
 (3) Obtain prediction results by calling the `predict` method: The `predict` method is a `generator`, so prediction results need to be obtained through calls. The `predict` method predicts data in batches, so the prediction results are represented as a list of prediction results.
 
 (4) Interact with the large model by calling the `predict.chat` method, which takes as input keywords (multiple keywords are supported) for information extraction. The prediction results are represented as a list of information extraction results.
@@ -556,6 +569,7 @@ In the above Python script, the following steps are executed:
 </tr>
 </tbody>
 </table>
+
 When executing the above command, the default Pipeline configuration file is loaded. If you need to customize the configuration file, you can use the following command to obtain it:
 
 ```bash
@@ -660,6 +674,7 @@ For all operations provided by the service:
 </tr>
 </tbody>
 </table>
+
     The response body may also have a `result` property of type `object`, which stores the operation result information.
 
 - When the request is not processed successfully, the response body properties are as follows:
@@ -685,6 +700,7 @@ For all operations provided by the service:
 </tr>
 </tbody>
 </table>
+
 Operations provided by the service are as follows:
 
 - <b>`analyzeImage`</b>
@@ -743,6 +759,7 @@ Operations provided by the service are as follows:
 </tr>
 </tbody>
 </table>
+
         Properties of `inferenceParams`:
 
 <table>
@@ -763,6 +780,7 @@ Operations provided by the service are as follows:
 </tr>
 </tbody>
 </table>
+
     - When the request is processed successfully, the `result` in the response body has the following properties:
 
 <table>
@@ -786,6 +804,7 @@ Operations provided by the service are as follows:
 </tr>
 </tbody>
 </table>
+
         Each element in `visionResults` is an `object` with the following properties:
 
 <table>
@@ -824,6 +843,7 @@ Operations provided by the service are as follows:
 </tr>
 </tbody>
 </table>
+
         Each element in `texts` is an `object` with the following properties:
 
 <table>
@@ -852,6 +872,7 @@ Operations provided by the service are as follows:
 </tr>
 </tbody>
 </table>
+
         Each element in `tables` is an `object` with the following properties:
 
 <table>
@@ -875,6 +896,7 @@ Operations provided by the service are as follows:
 </tr>
 </tbody>
 </table>
+
 - <b>`buildVectorStore`</b>
 
     Builds a vector database.
@@ -925,6 +947,7 @@ Operations provided by the service are as follows:
 </tr>
 </tbody>
 </table>
+
         Currently, `llmParams` can take the following form:
 
         ```json
@@ -953,6 +976,7 @@ Operations provided by the service are as follows:
 </tr>
 </tbody>
 </table>
+
 - <b>`retrieveKnowledge`</b>
 
     Perform knowledge retrieval.
@@ -997,6 +1021,7 @@ Operations provided by the service are as follows:
 </tr>
 </tbody>
 </table>
+
         Currently, `llmParams` can take the following form:
 
         ```json
@@ -1025,6 +1050,7 @@ Operations provided by the service are as follows:
 </tr>
 </tbody>
 </table>
+
 - <b>`chat`</b>
 
     Interact with large language models to extract key information.
@@ -1105,6 +1131,7 @@ Operations provided by the service are as follows:
 </tr>
 </tbody>
 </table>
+
         Currently, `llmParams` can take the following form:
 
         ```json
@@ -1138,6 +1165,7 @@ Operations provided by the service are as follows:
 </tr>
 </tbody>
 </table>
+
         Properties of `prompts`:
 
 <table>
@@ -1166,6 +1194,7 @@ Operations provided by the service are as follows:
 </tr>
 </tbody>
 </table>
+
 </details>
 
 <details>

@@ -52,6 +52,7 @@
 </table>
 
 
+
 <b>注：以上精度指标为[COCO2017](https://cocodataset.org/#home)的多标签分类任务mAP。</b>
 
 ## 三、快速集成

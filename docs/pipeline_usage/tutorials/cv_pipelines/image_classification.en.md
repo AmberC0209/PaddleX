@@ -607,6 +607,7 @@ Image classification is a technique that assigns images to predefined categories
 
 </table>
 
+
 <b>Note: The above accuracy metrics refer to Top-1 Accuracy on the [ImageNet-1k](https://www.image-net.org/index.php) validation set. </b><b>All model GPU inference times are based on NVIDIA Tesla T4 machines, with precision type FP32. CPU inference speeds are based on Intel® Xeon® Gold 5117 CPU @ 2.00GHz, with 8 threads and precision type FP32.</b>
 </details>
 
@@ -720,6 +721,7 @@ In the above Python script, the following steps are executed:
 </tr>
 </tbody>
 </table>
+
 (2) Call the `predict` method of the image classification pipeline object for inference prediction: The `predict` method parameter is `x`, which is used to input data to be predicted, supporting multiple input methods, as shown in the following examples:
 
 <table>
@@ -756,6 +758,7 @@ In the above Python script, the following steps are executed:
 </tr>
 </tbody>
 </table>
+
 3）Obtain prediction results by calling the `predict` method: The `predict` method is a `generator`, so prediction results need to be obtained through iteration. The `predict` method predicts data in batches, so the prediction results are in the form of a list.
 
 （4）Process the prediction results: The prediction result for each sample is of `dict` type and supports printing or saving to files, with the supported file types depending on the specific pipeline. For example:
@@ -786,6 +789,7 @@ In the above Python script, the following steps are executed:
 </tr>
 </tbody>
 </table>
+
 If you have a configuration file, you can customize the configurations of the image anomaly detection pipeline by simply modifying the `pipeline` parameter in the `create_pipeline` method to the path of the pipeline configuration file.
 
 For example, if your configuration file is saved at `./my_path/image_classification.yaml`, you only need to execute:
@@ -842,6 +846,7 @@ For all operations provided by the service:
 </tr>
 </tbody>
 </table>
+
     The response body may also have a `result` property of type `object`, which stores the operation result information.
 
 - When the request is not processed successfully, the response body properties are as follows:
@@ -867,6 +872,7 @@ For all operations provided by the service:
 </tr>
 </tbody>
 </table>
+
 Operations provided by the service are as follows:
 
 - <b>`infer`</b>
@@ -901,6 +907,7 @@ Operations provided by the service are as follows:
 </tr>
 </tbody>
 </table>
+
         The properties of `inferenceParams` are as follows:
 
 <table>
@@ -921,6 +928,7 @@ Operations provided by the service are as follows:
 </tr>
 </tbody>
 </table>
+
     - When the request is processed successfully, the `result` of the response body has the following properties:
 
 <table>
@@ -944,6 +952,7 @@ Operations provided by the service are as follows:
 </tr>
 </tbody>
 </table>
+
         Each element in `categories` is an `object` with the following properties:
 
 <table>
@@ -972,6 +981,7 @@ Operations provided by the service are as follows:
 </tr>
 </tbody>
 </table>
+
         An example of `result` is as follows:
 
         ```json

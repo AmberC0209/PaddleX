@@ -109,6 +109,7 @@ PaddleX provides 80 end-to-end image classification models, which can be referen
 </tr>
 </tbody>
 </table>
+
 > <b>Note: The above accuracy metrics are Top-1 Accuracy on the ImageNet-1k validation set. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
 
 In short, the models listed from top to bottom have faster inference speeds, while those from bottom to top have higher accuracy. This tutorial will use the `PP-LCNet_x1_0` model as an example to complete the full model development process. You can select an appropriate model for training based on your actual usage scenarios. After training, you can evaluate the suitable model weights within your pipeline and ultimately use them in real-world scenarios.
@@ -302,6 +303,7 @@ Learning Rate Exploration Results:
 </tr>
 </tbody>
 </table>
+
 </center>
 
 Changing Epochs Experiment Results:
@@ -353,6 +355,7 @@ Changing Epochs Experiment Results:
 </tr>
 </tbody>
 </table>
+
 </center>
 
 > <b>Note: The above accuracy metrics are Top-1 Accuracy on the [ImageNet-1k](https://www.image-net.org/index.php) validation set. GPU inference time is based on an NVIDIA Tesla T4 machine, with FP32 precision. CPU inference speed is based on an Intel® Xeon® Gold 5117 CPU @ 2.00GHz, with 8 threads and FP32 precision.</b>

@@ -45,6 +45,7 @@
 </tr>
 </tbody>
 </table>
+
 # CheckDataset
 <table>
 <thead>
@@ -88,6 +89,7 @@
 </tr>
 </tbody>
 </table>
+
 # Train
 ### 时序任务公共参数
 <table>
@@ -132,6 +134,7 @@
 </tr>
 </tbody>
 </table>
+
 ### 时序预测参数
 <table>
 <thead>
@@ -169,6 +172,7 @@
 </tr>
 </tbody>
 </table>
+
 ### 时序异常检测
 <table>
 <thead>
@@ -200,6 +204,7 @@
 </tr>
 </tbody>
 </table>
+
 ### 时序分类
 <table>
 <thead>
@@ -237,6 +242,7 @@
 </tr>
 </tbody>
 </table>
+
 # Evaluate
 <table>
 <thead>
@@ -256,6 +262,7 @@
 </tr>
 </tbody>
 </table>
+
 # Export
 <table>
 <thead>
@@ -275,6 +282,7 @@
 </tr>
 </tbody>
 </table>
+
 # Predict
 <table>
 <thead>
@@ -306,3 +314,4 @@
 </tr>
 </tbody>
 </table>
+

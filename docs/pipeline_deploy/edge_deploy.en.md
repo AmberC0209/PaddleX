@@ -68,6 +68,7 @@ This guide applies to 8 models across 6 modules:
   </tr>
 </table>
 
+
 <b>Note</b>
 - `GPU` refers to [mapping computations to GPU execution using OpenCL](https://www.paddlepaddle.org.cn/lite/develop/demo_guides/opencl.html) to fully utilize GPU hardware computing power and improve inference performance.
 
@@ -174,6 +175,7 @@ This guide applies to 8 models across 6 modules:
           <td>unzip ocr.zip</td>
         </tr>
       </table>
+
 
 ### Deployment Steps
 
@@ -301,6 +303,7 @@ This section describes the deployment steps applicable to the demos listed in th
     <td>PP-OCRv4_mobile_rec</td>
   </tr>
 </table>
+
 
 <b>Note</b>
 - Currently, there is no demo for deploying the Layout Area Detection module on the edge, so the `picodet_detection` demo is reused to deploy the `PicoDet_layout_1x` model.

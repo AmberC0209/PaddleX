@@ -28,6 +28,7 @@ The formula recognition module is a crucial component of OCR (Optical Character 
 
 </table>
 
+
 <b>Note: The above accuracy metrics are measured on the LaTeX-OCR formula recognition test set.</b>
 
 ## III. Quick Integration

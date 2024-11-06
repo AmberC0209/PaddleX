@@ -118,6 +118,7 @@ PaddleX支持的插件如下，请您根据开发需求，确定所需的一个�
 </tr>
 </tbody>
 </table>
+
 </details>
 
 

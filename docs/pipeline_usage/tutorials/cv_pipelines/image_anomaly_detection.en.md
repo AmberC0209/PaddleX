@@ -25,6 +25,7 @@ Image anomaly detection is an image processing technique that identifies unusual
 </tr>
 </tbody>
 </table>
+
 <b>Note: The above accuracy metrics are the average anomaly scores on the </b>[MVTec AD](https://www.mvtec.com/company/research/datasets/mvtec-ad)<b> validation set. All model GPU inference times are based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speeds are based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
 
 ## 2. Quick Start
@@ -131,6 +132,7 @@ In the above Python script, the following steps are executed:
 </tr>
 </tbody>
 </table>
+
 （2）Invoke the `predict` method of the pipeline object for inference prediction: The `predict` method takes `x` as its parameter, which is used to input data to be predicted, supporting multiple input methods, as shown in the following examples:
 
 <table>
@@ -167,6 +169,7 @@ In the above Python script, the following steps are executed:
 </tr>
 </tbody>
 </table>
+
 （3）Obtain prediction results by calling the `predict` method: The `predict` method is a `generator`, so prediction results need to be obtained through iteration. The `predict` method predicts data in batches, so the prediction results are in the form of a list.
 
 （4）Process the prediction results: The prediction result for each sample is of `dict` type and supports printing or saving to files, with the supported file types depending on the specific pipeline. For example:
@@ -197,6 +200,7 @@ In the above Python script, the following steps are executed:
 </tr>
 </tbody>
 </table>
+
 If you have a configuration file, you can customize the configurations of the image anomaly detection pipeline by simply modifying the `pipeline` parameter in the `create_pipeline` method to the path of the pipeline configuration file.
 
 For example, if your configuration file is saved at `./my_path/anomaly_detection.yaml`, you only need to execute:
@@ -253,6 +257,7 @@ For all operations provided by the service:
 </tr>
 </tbody>
 </table>
+
     The response body may also have a `result` property of type `object`, which stores the operation result information.
 
 - When the request is not processed successfully, the response body properties are as follows:
@@ -278,6 +283,7 @@ For all operations provided by the service:
 </tr>
 </tbody>
 </table>
+
 Operations provided by the service:
 
 - <b>`infer`</b>
@@ -306,6 +312,7 @@ Operations provided by the service:
 </tr>
 </tbody>
 </table>
+
     - When the request is processed successfully, the `result` of the response body has the following properties:
 
 <table>
@@ -334,6 +341,7 @@ Operations provided by the service:
 </tr>
 </tbody>
 </table>
+
         Example of `result`:
 
         ```json

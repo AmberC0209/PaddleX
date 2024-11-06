@@ -88,6 +88,7 @@ PPOCRLabel --lang ch  # 启动【普通模式】，用于打【检测+识别】�
 </tr>
 </tbody>
 </table>
+
 如果需要数据划分，可以按照如下步骤操作：
 
 ```bash

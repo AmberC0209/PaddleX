@@ -104,6 +104,7 @@ The plugins supported by PaddleX are listed below. Please determine the name(s) 
 </tr>
 </tbody>
 </table>
+
 </details>
 
 If the plugin you need to install is `PaddleXXX`, after installing PaddlePaddle (refer to the [PaddlePaddle Local Installation Tutorial](paddlepaddle_install.en.md)), you can quickly install the corresponding PaddleX plugin by executing the following commands:

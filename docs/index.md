@@ -96,6 +96,7 @@ PaddleX 3.0 是基于飞桨框架构建的低代码开发工具，它集成了�
         </tr>
     </table>
 
+
 ## 🌟 特性
   🎨 <b>模型丰富一键调用</b>：将覆盖文本图像智能分析、OCR、目标检测、时序预测等多个关键领域的<b>200+ 飞桨模型</b>整合为<b>19 条模型产线</b>，通过极简的 Python API 一键调用，快速体验模型效果。同时支持<b>20+ 单功能模块</b>，方便开发者进行模型组合使用。
 
@@ -341,6 +342,7 @@ PaddleX的各个产线均支持本地<b>快速推理</b>，部分模型支持在
 
 </table>
 
+
 > ❗注：以上功能均基于 GPU/CPU 实现。PaddleX 还可在昆仑芯、昇腾、寒武纪和海光等主流硬件上进行快速推理和二次开发。下表详细列出了模型产线的支持情况，具体支持的模型列表请参阅[模型列表(昆仑芯XPU)](support_list/model_list_xpu.html)/[模型列表(昇腾NPU)](support_list/model_list_npu.html)/[模型列表(寒武纪MLU)](support_list/model_list_mlu.html)/[模型列表(海光DCU)](support_list/model_list_dcu.html)。我们正在适配更多的模型，并在主流硬件上推动高性能和服务化部署的实施。
 
 🔥🔥 <b>国产化硬件能力支持</b>
@@ -417,6 +419,7 @@ PaddleX的各个产线均支持本地<b>快速推理</b>，部分模型支持在
     <td>🚧</td>
   </tr>
 </table>
+
 
 ## 💬 Discussion
 

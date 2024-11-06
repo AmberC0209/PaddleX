@@ -51,6 +51,7 @@ The image multi-label classification module is a crucial component in computer v
   </tr>
 </table>
 
+
 <b>Note: The above accuracy metrics are mAP for the multi-label classification task on [COCO2017](https://cocodataset.org/#home).</b>
 
 ## III. Quick Integration

@@ -63,6 +63,7 @@ PaddleX provides two end-to-end text detection models. For details, refer to the
 </tr>
 </tbody>
 </table>
+
 <b>Note: The above accuracy metrics are for the Detection Hmean and Recognition Avg Accuracy on PaddleOCR's self-built Chinese dataset validation set. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
 
 In short, the models listed from top to bottom have faster inference speeds, while from bottom to top, they have higher accuracy. This tutorial uses the `PP-OCRv4_server` model as an example to complete a full model development process. Depending on your actual usage scenario, choose a suitable model for training. After training, evaluate the appropriate model weights within the pipeline and use them in practical scenarios.
@@ -259,6 +260,7 @@ Learning Rate Exploration Results:
 </tr>
 </tbody>
 </table>
+
 </center>
 
 Next, based on a learning rate of 0.001, we can increase the number of training epochs. Comparing Experiments [4, 5] below, it can be seen that increasing the number of training epochs further improves the model accuracy.
@@ -285,6 +287,7 @@ Next, based on a learning rate of 0.001, we can increase the number of training 
 </tr>
 </tbody>
 </table>
+
 </center>
 
 <b>Note: This tutorial is designed for 4 GPUs. If you only have 1 GPU, you can complete the experiment by adjusting the number of training GPUs, but the final metrics may not align with the above indicators, which is normal.</b>

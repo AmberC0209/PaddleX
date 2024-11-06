@@ -63,6 +63,7 @@ The object detection module is a crucial component in computer vision systems, r
   </tr>
 </table>
 
+
 > ❗ The above list features the <b>6 core models</b> that the image classification module primarily supports. In total, this module supports <b>37 models</b>. The complete list of models is as follows:
 
 <details>
@@ -374,6 +375,7 @@ The object detection module is a crucial component in computer vision systems, r
 
   </tr>
 </table>
+
 
 <b>Note: The precision metrics mentioned are based on the [COCO2017](https://cocodataset.org/#home) validation set mAP(0.5:0.95). All model GPU inference times are measured on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speeds are based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
 

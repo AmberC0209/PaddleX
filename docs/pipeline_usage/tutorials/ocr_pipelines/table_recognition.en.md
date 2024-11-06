@@ -47,6 +47,7 @@ SLANet_plus is an enhanced version of SLANet, a table structure recognition mode
   </tr>
 </table>
 
+
 <b>Note: The above accuracy metrics are measured on PaddleX's internal self-built English table recognition dataset. All GPU inference times are based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speeds are based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
 
 <b>Layout Analysis Module Models</b>:
@@ -121,6 +122,7 @@ SLANet_plus is an enhanced version of SLANet, a table structure recognition mode
 </tr>
 </tbody>
 </table>
+
 <b>Note: The above accuracy metrics are evaluated on PaddleX's self-built layout analysis dataset containing 10,000 images. All GPU inference times are based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speeds are based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
 
 <b>Text Detection Module Models</b>:
@@ -152,6 +154,7 @@ SLANet_plus is an enhanced version of SLANet, a table structure recognition mode
 </tr>
 </tbody>
 </table>
+
 </details>
 
 ## 2. Quick Start
@@ -265,6 +268,7 @@ In the above Python script, the following steps are executed:
 </tr>
 </tbody>
 </table>
+
 （2）Invoke the `predict` method of the  production line object for inference prediction: The `predict` method parameter is `x`, which is used to input data to be predicted, supporting multiple input methods, as shown in the following examples:
 
 <table>
@@ -301,6 +305,7 @@ In the above Python script, the following steps are executed:
 </tr>
 </tbody>
 </table>
+
 （3）Obtain the prediction results by calling the `predict` method: The `predict` method is a `generator`, so prediction results need to be obtained through iteration. The `predict` method predicts data in batches, so the prediction results are in the form of a list.
 
 （4）Process the prediction results: The prediction result for each sample is of `dict` type and supports printing or saving to files, with the supported file types depending on the specific pipeline. For example:
@@ -331,6 +336,7 @@ In the above Python script, the following steps are executed:
 </tr>
 </tbody>
 </table>
+
 Where `save_to_img` can save visualization results (including OCR result images, layout analysis result images, table structure recognition result images), `save_to_html` can directly save the table as an html file (including text and table formatting), and `save_to_xlsx` can save the table as an Excel format file (including text and formatting).
 
 If you have a configuration file, you can customize the configurations of the image anomaly detection pipeline by simply modifying the `pipeline` parameter in the `create_pipeline` method to the path of the pipeline configuration file.
@@ -390,6 +396,7 @@ For all operations provided by the service:
 </tr>
 </tbody>
 </table>
+
     The response body may also have a `result` property of type `object`, which stores the operation result information.
 
 - When the request is not processed successfully, the response body properties are as follows:
@@ -415,6 +422,7 @@ For all operations provided by the service:
 </tr>
 </tbody>
 </table>
+
 Operations provided by the service:
 
 - <b>`infer`</b>
@@ -449,6 +457,7 @@ Operations provided by the service:
 </tr>
 </tbody>
 </table>
+
         Properties of `inferenceParams`:
 
 <table>
@@ -469,6 +478,7 @@ Operations provided by the service:
 </tr>
 </tbody>
 </table>
+
     - When the request is processed successfully, the `result` of the response body has the following properties:
 
 <table>
@@ -497,6 +507,7 @@ Operations provided by the service:
 </tr>
 </tbody>
 </table>
+
         Each element in `tables` is an `object` with the following properties:
 
 <table>
@@ -520,6 +531,7 @@ Operations provided by the service:
 </tr>
 </tbody>
 </table>
+
 </details>
 
 <details>

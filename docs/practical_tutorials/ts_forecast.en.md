@@ -74,6 +74,7 @@ PaddleX provides five end-to-end time series forecasting models. For details, re
 </tr>
 </tbody>
 </table>
+
 <b>Note: The above accuracy metrics are measured on the ETTH1 test dataset with an input sequence length of 96 and a prediction sequence length of 96 for all models except TiDE, which is 720.</b>
 
 Based on your actual usage scenario, select an appropriate model for training. After training, evaluate the model weights within the pipeline and use them in practical scenarios.
@@ -382,6 +383,7 @@ After increasing the training epochs, Experiment 4 achieves the highest accuracy
 </tr>
 </tbody>
 </table>
+
 <b>Increasing Training Epochs Results</b>:
 
 <table>
@@ -420,6 +422,7 @@ After increasing the training epochs, Experiment 4 achieves the highest accuracy
 </tr>
 </tbody>
 </table>
+
 <b>Increasing Input Length Results</b>:
 
 <table>
@@ -458,6 +461,7 @@ After increasing the training epochs, Experiment 4 achieves the highest accuracy
 </tr>
 </tbody>
 </table>
+
 ## 6. Production Line Testing
 Replace the model in the production line with the fine-tuned model and test using [this power test data](https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/doc_images/practical_tutorial/timeseries_forecast/test.csv) for prediction:
 

@@ -68,6 +68,7 @@
   </tr>
 </table>
 
+
 <b>备注</b>
 - `GPU` 指的是 [使用 OpenCL 将计算映射到 GPU 上执行](https://www.paddlepaddle.org.cn/lite/develop/demo_guides/opencl.html) ，以充分利用 GPU 硬件算力，提高推理性能。
 
@@ -174,6 +175,7 @@
           <td>unzip ocr.zip</td>
         </tr>
       </table>
+
 
 ### 部署步骤
 
@@ -303,6 +305,7 @@ detection, image size: 768, 576, detect object: dog, score: 0.731584, location: 
     <td>PP-OCRv4_mobile_rec</td>
   </tr>
 </table>
+
 
 <b>备注</b>
 - 目前没有版面区域检测模块的端侧部署 demo，因此复用 `picodet_detection`demo 来部署`PicoDet_layout_1x`模型。

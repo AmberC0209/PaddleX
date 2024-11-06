@@ -26,6 +26,7 @@ Unsupervised anomaly detection is a technology that automatically identifies and
 </tr>
 </tbody>
 </table>
+
 <b>The above model accuracy indicators are measured from the MVTec_AD dataset.</b>
 
 ## III. Quick Integration  <a id="quick"> </a> 

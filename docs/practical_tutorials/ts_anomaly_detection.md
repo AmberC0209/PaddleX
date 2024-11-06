@@ -79,6 +79,7 @@ PaddleX 提供了5个端到端的时序异常检测模型，具体可参考 [模
 </tr>
 </tbody>
 </table>
+
 > <b>注：以上精度指标测量自</b>[PSM](https://paddle-model-ecology.bj.bcebos.com/paddlex/data/ts_anomaly_examples.tar)<b>数据集，时序长度为100。</b>
 ## 4. 数据准备和校验
 ### 4.1 数据准备
@@ -274,6 +275,7 @@ PaddleX 中每个模型都提供了模型开发的配置文件，用于设置相
 </tr>
 </tbody>
 </table>
+
 增大训练轮次实验结果：
 
 <table>
@@ -309,6 +311,7 @@ PaddleX 中每个模型都提供了模型开发的配置文件，用于设置相
 </tr>
 </tbody>
 </table>
+
 ## 6. 产线测试
 将产线中的模型替换为微调后的模型进行测试，使用[测试文件](https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/doc_images/practical_tutorial/timeseries_anomaly_detection/test.csv)进行预测：
 

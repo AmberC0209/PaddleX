@@ -57,6 +57,7 @@
 </tbody>
 </table>
 
+
 <b>注：以上精度指标测量自[ETTH1](https://paddle-model-ecology.bj.bcebos.com/paddlex/data/Etth1.tar)测试数据集，输入序列长度为96，预测序列长度除 TiDE 外为96，TiDE为720 。</b>
 
 

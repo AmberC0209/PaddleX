@@ -74,6 +74,7 @@ PaddleX 的三种部署方式详细说明如下：
   </tr>
 </table>
 
+
 * 当设备类型为 GPU 时，请使用与环境匹配的 CUDA 和 cuDNN 版本对应的安装指令，否则，将无法正常使用高性能推理插件。
 * 对于 Linux 系统，使用 Bash 执行安装指令。
 * 当设备类型为 CPU 时，安装的高性能推理插件仅支持使用 CPU 进行推理；对于其他设备类型，安装的高性能推理插件则支持使用 CPU 或其他设备进行推理。
@@ -210,6 +211,7 @@ INFO:     Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)
 </tr>
 </tbody>
 </table>
+
 ### 2.3 调用服务
 
 此处只展示 Python 调用示例，API参考和其他语言服务调用示例可参考 [PaddleX服务化部署指南](../pipeline_deploy/service_deploy.md) 的 <b>1.3 调用服务</b> 中各产线使用教程的 <b>“开发集成/部署”</b> 部分。

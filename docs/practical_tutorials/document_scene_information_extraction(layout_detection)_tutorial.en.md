@@ -156,6 +156,7 @@ PaddleX provides 4 end-to-end layout detection models, which can be referenced i
 </tr>
 </tbody>
 </table>
+
 <b>Note: The evaluation set for the above accuracy metrics is PaddleOCR's self-built layout region analysis dataset, containing 10,000 images of common document types, including English and Chinese papers, magazines, research reports, etc. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
 
 
@@ -357,6 +358,7 @@ Learning Rate Exploration Results:
 </tr>
 </tbody>
 </table>
+
 </center>
 
 Next, we can increase the number of training epochs based on a learning rate set to 0.001. Comparing experiments [2, 4, 5] below, it can be seen that as the number of training epochs increases, the model's accuracy further improves.
@@ -389,6 +391,7 @@ Next, we can increase the number of training epochs based on a learning rate set
 </tr>
 </tbody>
 </table>
+
 </center>
 
 <b>Note:</b> This tutorial is designed for a 4-GPU setup. If you only have 1 GPU, you can complete the experiment by adjusting the number of training GPUs, but the final metrics may not align perfectly with the above indicators, which is normal.

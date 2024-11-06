@@ -115,6 +115,7 @@ PaddleX 提供了 2 个端到端的印章文本检测模型，具体可参考 [�
 </tr>
 </tbody>
 </table>
+
 <b>注：以上精度指标的评估集是 PaddleX 自建的印章数据集，包含500印章图像。</b>
 
 
@@ -309,6 +310,7 @@ python main.py -c paddlex/configs/text_detection_seal/PP-OCRv4_server_seal_det.y
 </tr>
 </tbody>
 </table>
+
 </center>
 
 接下来，我们可以在学习率设置为 0.001 的基础上，增加训练轮次，对比下面实验 [1，4] 可知，训练轮次增大，模型精度有了进一步的提升。
@@ -337,6 +339,7 @@ python main.py -c paddlex/configs/text_detection_seal/PP-OCRv4_server_seal_det.y
 </tr>
 </tbody>
 </table>
+
 </center>
 
 <b> 注：本教程为 4 卡教程，如果您只有 1 张 GPU，可通过调整训练卡数完成本次实验，但最终指标未必和上述指标完全对齐，属正常情况。</b>

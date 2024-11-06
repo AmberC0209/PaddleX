@@ -64,6 +64,7 @@ PaddleX 提供了 2 个端到端的文本检测模型，具体可参考 [模型�
 </tr>
 </tbody>
 </table>
+
 <b>注：以上精度指标为 PaddleOCR 自建中文数据集验证集 检测Hmean 和 识别 Avg Accuracy，GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为 8，精度类型为 FP32。</b>
 简单来说，表格从上到下，模型推理速度更快，从下到上，模型精度更高。本教程以 `PP-OCRv4_server` 模型为例，完成一次模型全流程开发。你可以依据自己的实际使用场景，判断并选择一个合适的模型做训练，训练完成后可在产线内评估合适的模型权重，并最终用于实际使用场景中。
 
@@ -257,6 +258,7 @@ python main.py -c paddlex/configs/text_detection/PP-OCRv4_server_det.yaml \
 </tr>
 </tbody>
 </table>
+
 </center>
 
 接下来，我们可以在学习率设置为 0.001 的基础上，增加训练轮次，对比下面实验 [4，5] 可知，训练轮次增大，模型精度有了进一步的提升。
@@ -283,6 +285,7 @@ python main.py -c paddlex/configs/text_detection/PP-OCRv4_server_det.yaml \
 </tr>
 </tbody>
 </table>
+
 </center>
 
 <b>注：本教程为 4 卡教程，如果您只有 1 张 GPU，可通过调整训练卡数完成本次实验，但最终指标未必和上述指标对齐，属正常情况。</b>

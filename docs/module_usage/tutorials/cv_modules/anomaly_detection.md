@@ -26,6 +26,7 @@
 </tr>
 </tbody>
 </table>
+
 <b>以上模型精度指标测量自 MVTec_AD 数据集。</b>
 
 

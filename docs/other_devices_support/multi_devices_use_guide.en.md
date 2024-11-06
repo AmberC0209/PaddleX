@@ -116,6 +116,7 @@ The plugins supported by PaddleX are as follows. Please determine the name(s) of
 </tr>
 </tbody>
 </table>
+
 </details>
 
 

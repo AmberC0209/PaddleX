@@ -43,6 +43,7 @@
   </tr>
 </table>
 
+
 <b>注：以上精度指标测量PaddleX 内部自建英文表格识别数据集。所有模型 GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为8，精度类型为 FP32。</b>
 
 
@@ -118,6 +119,7 @@
 </tr>
 </tbody>
 </table>
+
 <b>注：以上精度指标的评估集是 PaddleOCR 自建的版面区域分析数据集，包含中英文论文、杂志和研报等常见的 1w 张文档类型图片。GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为 8，精度类型为 FP32。</b>
 
 <b>文本检测模块模型：</b>
@@ -152,6 +154,7 @@
 </tr>
 </tbody>
 </table>
+
 <b>注：以上精度指标的评估集是 PaddleOCR 自建的中文数据集，覆盖街景、网图、文档、手写多个场景，其中检测包含 500 张图片。以上所有模型 GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为8，精度类型为 FP32。</b>
 
 <b>文本识别模块模型：</b>
@@ -182,6 +185,7 @@
     </tr>
 </table>
 
+
 <b>注：以上精度指标的评估集是 PaddleOCR 自建的中文数据集，覆盖街景、网图、文档、手写多个场景，其中文本识别包含 1.1w 张图片。所有模型 GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为8，精度类型为 FP32。</b>
 
 
@@ -207,6 +211,7 @@
 </table>
 
 
+
 <b>注：以上精度指标的评估集是 [PaddleOCR算法模型挑战赛 - 赛题一：OCR端到端识别任务](https://aistudio.baidu.com/competition/detail/1131/0/introduction)A榜。 所有模型 GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为8，精度类型为 FP32。</b>
 
 <table >
@@ -227,6 +232,7 @@
         <td rowspan="1">    RepSVTR 文本识别模型是一种基于SVTRv2 的移动端文本识别模型，其在PaddleOCR算法模型挑战赛 - 赛题一：OCR端到端识别任务中荣获一等奖，B榜端到端识别精度相比PP-OCRv4提升2.5%，推理速度持平。</td>
     </tr>
 </table>
+
 
 <b>注：以上精度指标的评估集是 [PaddleOCR算法模型挑战赛 - 赛题一：OCR端到端识别任务](https://aistudio.baidu.com/competition/detail/1131/0/introduction)B榜。 所有模型 GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为8，精度类型为 FP32。</b>
 
@@ -262,6 +268,7 @@
 </tr>
 </tbody>
 </table>
+
 <b>注：以上精度指标的评估集是自建的数据集，包含500张圆形印章图像。GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为 8，精度类型为 FP32。</b>
 
 <b>文本图像矫正模块模型：</b>
@@ -284,6 +291,7 @@
 </tr>
 </tbody>
 </table>
+
 <b>模型的精度指标测量自 [DocUNet benchmark](https://www3.cs.stonybrook.edu/~cvl/docunet.html)。</b>
 
 <b>文档图像方向分类模块模型：</b>
@@ -310,6 +318,7 @@
 </tr>
 </tbody>
 </table>
+
 <b>注：以上精度指标的评估集是自建的数据集，覆盖证件和文档等多个场景，包含 1000 张图片。GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为 8，精度类型为 FP32。</b>
 
 </details>
@@ -404,6 +413,7 @@ chat_result.print()
 </tr>
 </tbody>
 </table>
+
 （2）调用文档场景信息抽取v3产线对象的 `visual_predict` 方法进行视觉推理预测，相关参数说明如下：
 
 <table>
@@ -472,6 +482,7 @@ chat_result.print()
 </tr>
 </tbody>
 </table>
+
 （3）调用视觉推理预测结果对象的相关方法对视觉推理预测结果进行保存，具体方法如下：
 
 <table>
@@ -500,6 +511,7 @@ chat_result.print()
 </tr>
 </tbody>
 </table>
+
 （4）调用文档场景信息抽取v3产线对象的 `chat` 方法与大模型进行交互，相关参数说明如下：
 
 <table>
@@ -526,6 +538,7 @@ chat_result.print()
 </tr>
 </tbody>
 </table>
+
 在执行上述 Python 脚本时，加载的是默认的文档场景信息抽取v3产线配置文件，若您需要自定义配置文件，可执行如下命令获取：
 
 ```
@@ -631,6 +644,7 @@ chat_result.print()
 </tr>
 </tbody>
 </table>
+
     响应体还可能有`result`属性，类型为`object`，其中存储操作结果信息。
 
 - 当请求处理未成功时，响应体的属性如下：
@@ -656,6 +670,7 @@ chat_result.print()
 </tr>
 </tbody>
 </table>
+
 服务提供的操作如下：
 
 - <b>`analyzeImage`</b>
@@ -714,6 +729,7 @@ chat_result.print()
 </tr>
 </tbody>
 </table>
+
         `inferenceParams`的属性如下：
 
 <table>
@@ -734,6 +750,7 @@ chat_result.print()
 </tr>
 </tbody>
 </table>
+
     - 请求处理成功时，响应体的`result`具有如下属性：
 
 <table>
@@ -757,6 +774,7 @@ chat_result.print()
 </tr>
 </tbody>
 </table>
+
         `visionResults`中的每个元素为一个`object`，具有如下属性：
 
 <table>
@@ -795,6 +813,7 @@ chat_result.print()
 </tr>
 </tbody>
 </table>
+
         `texts`中的每个元素为一个`object`，具有如下属性：
 
 <table>
@@ -823,6 +842,7 @@ chat_result.print()
 </tr>
 </tbody>
 </table>
+
         `tables`中的每个元素为一个`object`，具有如下属性：
 
 <table>
@@ -846,6 +866,7 @@ chat_result.print()
 </tr>
 </tbody>
 </table>
+
 - <b>`buildVectorStore`</b>
 
     构建向量数据库。
@@ -896,6 +917,7 @@ chat_result.print()
 </tr>
 </tbody>
 </table>
+
         当前，`llmParams` 可以采用如下形式：
 
         ```json
@@ -924,6 +946,7 @@ chat_result.print()
 </tr>
 </tbody>
 </table>
+
 - <b>`retrieveKnowledge`</b>
 
     进行知识检索。
@@ -968,6 +991,7 @@ chat_result.print()
 </tr>
 </tbody>
 </table>
+
         当前，`llmParams` 可以采用如下形式：
 
         ```json
@@ -996,6 +1020,7 @@ chat_result.print()
 </tr>
 </tbody>
 </table>
+
 - <b>`chat`</b>
 
     与大语言模型交互，利用大语言模型提炼关键信息。
@@ -1076,6 +1101,7 @@ chat_result.print()
 </tr>
 </tbody>
 </table>
+
         当前，`llmParams` 可以采用如下形式：
 
         ```json
@@ -1109,6 +1135,7 @@ chat_result.print()
 </tr>
 </tbody>
 </table>
+
         `prompts`的属性如下：
 
 <table>
@@ -1137,6 +1164,7 @@ chat_result.print()
 </tr>
 </tbody>
 </table>
+
 </details>
 
 <details>

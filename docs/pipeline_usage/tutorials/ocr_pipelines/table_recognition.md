@@ -42,6 +42,7 @@
   </tr>
 </table>
 
+
 <b>注：以上精度指标测量PaddleX 内部自建英文表格识别数据集。所有模型 GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为8，精度类型为 FP32。</b>
 
 
@@ -117,6 +118,7 @@
 </tr>
 </tbody>
 </table>
+
 <b>注：以上精度指标的评估集是 PaddleX 自建的版面区域分析数据集，包含 1w 张图片。以上所有模型 GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为8，精度类型为 FP32。</b>
 
 <b>文本检测模块模型：</b>
@@ -148,6 +150,7 @@
 </tr>
 </tbody>
 </table>
+
 <b>注：以上精度指标的评估集是 PaddleOCR 自建的中文数据集，覆盖街景、网图、文档、手写多个场景，其中检测包含 500 张图片。以上所有模型 GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为8，精度类型为 FP32。</b>
 
 <b>文本识别模块模型：</b>
@@ -179,6 +182,7 @@
 </tr>
 </tbody>
 </table>
+
 <b>注：以上精度指标的评估集是 PaddleOCR 自建的中文数据集 ，覆盖街景、网图、文档、手写多个场景，其中文本识别包含 1.1w 张图片。以上所有模型 GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为8，精度类型为 FP32。</b>
 
 </details>
@@ -295,7 +299,8 @@ paddlex --pipeline ./table_recognition.yaml --input table_recognition.jpg --devi
        [216.08781  ,  94.19984  , 405.843    ,  94.28341  , 405.9974   ,
         121.33152  , 215.10301  , 121.299034 ],
        [403.92212  ,  94.44883  , 548.30963  ,  94.54982  , 548.4949   ,
-        122.610176 , 404.53433  , 122.49881  ]], dtype=float32), 'img_idx': 0, 'html': '<html><body><table><tr><td>Dres</td><td>连续工作3</td><td>取出来放在网上，没想</td><td>江、整江等八大</td></tr><tr><td>Abstr</td><td></td><td>rSrivi</td><td>$709.</td></tr><tr><td>cludingGiv</td><td>2.72</td><td>Ingcubic</td><td>$744.78</td></tr></table></body></html>'}]}
+        122.610176 , 404.53433  , 122.49881  ]], dtype=float32), 'img_idx': 0, 'html': '<html><body><table><tr><td>Dres</td><td>连续工作3</td><td>取出来放在网上，没想</td><td>江、整江等八大</td></tr><tr><td>Abstr</td><td></td><td>rSrivi</td><td>$709.</td></tr><tr><td>cludingGiv</td><td>2.72</td><td>Ingcubic</td><td>$744.78</td></tr></table>
+</body></html>'}]}
 ```
 </details>
 
@@ -354,6 +359,7 @@ for res in output:
 </tr>
 </tbody>
 </table>
+
 （2）调用产线对象的 `predict` 方法进行推理预测：`predict` 方法参数为`x`，用于输入待预测数据，支持多种输入方式，具体示例如下：
 
 <table>
@@ -390,6 +396,7 @@ for res in output:
 </tr>
 </tbody>
 </table>
+
 （3）调用`predict`方法获取预测结果：`predict` 方法为`generator`，因此需要通过调用获得预测结果，`predict`方法以batch为单位对数据进行预测，因此预测结果为list形式表示的一组预测结果。
 
 （4）对预测结果进行处理：每个样本的预测结果均为`dict`类型，且支持打印，或保存为文件，支持保存的类型与具体产线相关，如：
@@ -421,6 +428,7 @@ for res in output:
 </tr>
 </tbody>
 </table>
+
 其中，`save_to_img` 能够保存可视化结果（包括OCR结果图片、版面分析结果图片、表格结构识别结果图片）， `save_to_html` 能够将表格直接保存为html文件（包括文本和表格格式），`save_to_xlsx` 能够将表格保存为Excel格式文件（包括文本和格式）。
 
 若您获取了配置文件，即可对表格识别产线各项配置进行自定义，只需要修改 `create_pipeline` 方法中的 `pipeline` 参数值为产线配置文件路径即可。
@@ -479,6 +487,7 @@ for res in output:
 </tr>
 </tbody>
 </table>
+
     响应体还可能有`result`属性，类型为`object`，其中存储操作结果信息。
 
 - 当请求处理未成功时，响应体的属性如下：
@@ -504,6 +513,7 @@ for res in output:
 </tr>
 </tbody>
 </table>
+
 服务提供的操作如下：
 
 - <b>`infer`</b>
@@ -538,6 +548,7 @@ for res in output:
 </tr>
 </tbody>
 </table>
+
         `inferenceParams`的属性如下：
 
 <table>
@@ -558,6 +569,7 @@ for res in output:
 </tr>
 </tbody>
 </table>
+
     - 请求处理成功时，响应体的`result`具有如下属性：
 
 <table>
@@ -586,6 +598,7 @@ for res in output:
 </tr>
 </tbody>
 </table>
+
         `tables`中的每个元素为一个`object`，具有如下属性：
 
 <table>
@@ -609,6 +622,7 @@ for res in output:
 </tr>
 </tbody>
 </table>
+
 </details>
 
 <details>

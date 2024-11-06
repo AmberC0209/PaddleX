@@ -306,6 +306,7 @@
   </tr>
 </table>
 
+
 ## 2. Featured Pipelines
 
 <table>
@@ -375,3 +376,4 @@
       <td>Text Recognition</td>
     </tr>
 </table>
+

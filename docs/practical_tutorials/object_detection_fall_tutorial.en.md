@@ -88,6 +88,7 @@ PaddleX provides 37 end-to-end object detection models. Refer to the [Model List
 </tr>
 </tbody>
 </table>
+
 > <b>Note: The above accuracy metrics are based on the mAP(0.5:0.95) of the [COCO2017](https://cocodataset.org/#home) validation set. GPU inference time is measured on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
 
 In summary, models listed from top to bottom offer faster inference speeds, while those from bottom to top offer higher accuracy. This tutorial uses the PP-YOLOE_plus-S model as an example to complete the full model development process. Choose a suitable model based on your actual usage scenario, train it, evaluate the model weights within the pipeline, and finally deploy
@@ -281,6 +282,7 @@ Learning Rate Exploration Results:
 </tr>
 </tbody>
 </table>
+
 </center>
 
 Changing Epochs Results:
@@ -324,6 +326,7 @@ Changing Epochs Results:
 </tr>
 </tbody>
 </table>
+
 </center>
 
 > <b>Note: The above accuracy metrics are based on the mAP(0.5:0.95) of the [COCO2017](https://cocodataset.org/#home) validation set. GPU inference time is measured on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>

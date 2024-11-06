@@ -52,6 +52,7 @@ Find the corresponding installation command based on your processor architecture
   </tr>
 </table>
 
+
 * When the device type is GPU, please use the installation instructions corresponding to the CUDA and cuDNN versions that match your environment. Otherwise, you will not be able to use the high-performance inference plugin properly.
 * For Linux systems, execute the installation instructions using Bash.
 * When the device type is CPU, the installed high-performance inference plugin only supports inference using the CPU; for other device types, the installed high-performance inference plugin supports inference using the CPU or other devices.
@@ -294,3 +295,4 @@ PaddleX provides default high-performance inference configurations for each mode
   </tr>
 
 </table>
+

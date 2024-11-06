@@ -81,6 +81,7 @@
   </tr>
 </table>
 
+
 > ❗ 以上列出的是图像分类模块重点支持的<b>9个核心模型</b>，该模块总共支持<b>80个模型</b>，完整的模型列表如下：
 <details>
    <summary> 👉模型列表详情</summary>
@@ -671,6 +672,7 @@
     <td>100.1 M</td>
   </tr>
 </table>
+
 
 <b>注：以上精度指标为 [ImageNet-1k](https://www.image-net.org/index.php) 验证集 Top1 Acc。所有模型 GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为8，精度类型为 FP32。</b>
 </details>

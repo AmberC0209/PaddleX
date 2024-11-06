@@ -173,6 +173,7 @@ pdlabel # 缩写，和paddlelabel完全相同
 </tr>
 </tbody>
 </table>
+
   * 在数据集根目录创建`annotations`目录，并将`json`文件全部移动到`annotations`目录下，得到最后的数据集目录如下：
   
   <img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/17.png">

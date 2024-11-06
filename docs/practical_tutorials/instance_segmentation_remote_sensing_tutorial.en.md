@@ -69,6 +69,7 @@ PaddleX provides 15 end-to-end instance segmentation models. Refer to the [Model
 </tr>
 </tbody>
 </table>
+
 > <b>Note: The above accuracy metrics are mAP(0.5:0.95) on the [COCO2017](https://cocodataset.org/#home) validation set. GPU inference time is based on an NVIDIA V100 machine with FP32 precision.</b>
 
 In summary, models listed from top to bottom offer faster inference speeds, while those from bottom to top offer higher accuracy. This tutorial uses the `Mask-RT-DETR-H` model as an example to complete the full model development process. Choose a suitable model based on your actual usage scenario, train it, evaluate the model weights within the pipeline, and finally apply them in real-world scenarios.
@@ -262,6 +263,7 @@ Learning Rate Exploration Results:
 </tr>
 </tbody>
 </table>
+
 </center>
 
 Epoch Variation Results:
@@ -313,6 +315,7 @@ Epoch Variation Results:
 </tr>
 </tbody>
 </table>
+
 </center>
 
 <b>Note: This tutorial is designed for 4 GPUs. If you only have 1 GPU, you can adjust the number of training GPUs to complete the experiments, but the final metrics may not align with the above, which is normal.</b>

@@ -659,6 +659,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 </tr>
 </tbody>
 </table>
+
 <b>Note: The above accuracy metrics are Top-1 Acc on the [ImageNet-1k](https://www.image-net.org/index.php) validation set.</b>
 
 ## [Image Multi-Label Classification Module](../module_usage/tutorials/cv_modules/ml_classification.en.md)
@@ -724,6 +725,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 </tr>
 </tbody>
 </table>
+
 <b>Note: The above accuracy metrics are mAP for the multi-label classification task on [COCO2017](https://cocodataset.org/#home).</b>
 
 ## [Pedestrian Attribute Module](../module_usage/tutorials/cv_modules/pedestrian_attribute_recognition.en.md)
@@ -749,6 +751,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 </tr>
 </tbody>
 </table>
+
 <b>Note: The above accuracy metrics are mA on PaddleX's internal self-built dataset.</b>
 
 ## [Vehicle Attribute Module](../module_usage/tutorials/cv_modules/vehicle_attribute_recognition.en.md)
@@ -774,6 +777,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 </tr>
 </tbody>
 </table>
+
 <b>Note: The above accuracy metrics are mA on the VeRi dataset.</b>
 
 ## [Image Feature Module](../module_usage/tutorials/cv_modules/image_feature.en.md)
@@ -815,6 +819,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 </tr>
 </tbody>
 </table>
+
 <b>Note: The above accuracy metrics are recall@1 on AliProducts.</b>
 
 
@@ -841,6 +846,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 </tr>
 </tbody>
 </table>
+
 <b>Note: The above accuracy metrics are Top-1 Acc on PaddleX's internal self-built dataset.</b>
 
 ## [Main Body Detection Module](../module_usage/tutorials/cv_modules/mainbody_detection.en.md)
@@ -866,6 +872,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 </tr>
 </tbody>
 </table>
+
 <b>Note: The above accuracy metrics are mAP(0.5:0.95) on the [PaddleClas main body detection dataset](https://github.com/PaddlePaddle/PaddleClas/blob/release/2.5/docs/en/training/PP-ShiTu/mainbody_detection.md).</b>
 
 ## [Object Detection Module](../module_usage/tutorials/cv_modules/object_detection.en.md)
@@ -1179,6 +1186,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 </tr>
 </tbody>
 </table>
+
 <b>Note: The above accuracy metrics are mAP(0.5:0.95) on the [COCO2017](https://cocodataset.org/#home) validation set.</b>
 
 ## [Small Object Detection Module](../module_usage/tutorials/cv_modules/small_object_detection.en.md)
@@ -1220,6 +1228,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 </tr>
 </tbody>
 </table>
+
 <b>Note: The above accuracy metrics are mAP(0.5:0.95) on the [VisDrone-DET](https://github.com/VisDrone/VisDrone-Dataset) validation set.</b>
 
 ## [Pedestrian Detection Module](../module_usage/tutorials/cv_modules/human_detection.en.md)
@@ -1253,6 +1262,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 </tr>
 </tbody>
 </table>
+
 <b>Note: The above accuracy metrics are mAP(0.5:0.95) on the [CrowdHuman](https://bj.bcebos.com/v1/paddledet/data/crowdhuman.zip) validation set.</b>
 
 
@@ -1287,6 +1297,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 </tr>
 </tbody>
 </table>
+
 <b>Note: The above accuracy metrics are mAP(0.5:0.95) on the [PPVehicle](https://github.com/PaddlePaddle/PaddleDetection/tree/develop/configs/ppvehicle) validation set.</b>
 
 ## [Face Detection Module](../module_usage/tutorials/cv_modules/face_detection.en.md)
@@ -1312,6 +1323,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 </tr>
 </tbody>
 </table>
+
 <b>Note: The above accuracy metrics are evaluated on the </b>[wider_face](https://github.com/PaddlePaddle/PaddleDetection/tree/develop/configs/ppvehicle)<b> dataset using mAP(0.5:0.95).</b>
 
 
@@ -1338,6 +1350,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 </tr>
 </tbody>
 </table>
+
 <b>Note: The above accuracy metrics are evaluated on the </b>[MVTec AD](https://www.mvtec.com/company/research/datasets/mvtec-ad)<b> dataset using the average anomaly score.</b>
 
 ## [Semantic Segmentation Module](../module_usage/tutorials/cv_modules/semantic_segmentation.en.md)
@@ -1467,6 +1480,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 </tr>
 </tbody>
 </table>
+
 <b>Note: The above accuracy metrics are evaluated on the </b>[Cityscapes](https://www.cityscapes-dataset.com/)<b> dataset using mIoU.</b>
 
 <table>
@@ -1515,6 +1529,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 </tr>
 </tbody>
 </table>
+
 <b>Note: The above accuracy metrics are evaluated on the </b>[ADE20k](https://groups.csail.mit.edu/vision/datasets/ADE20K/)<b> dataset. "slice" indicates that the input image has been cropped.</b>
 
 ## [Instance Segmentation Module](../module_usage/tutorials/cv_modules/instance_segmentation.en.md)
@@ -1644,6 +1659,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 </tr>
 </tbody>
 </table>
+
 |SOLOv2| 35.5|-|-|179.1 M|[SOLOv2.yaml](../../paddlex/configs/instance_segmentation/SOLOv2.yaml)
 
 <b>Note: The above accuracy metrics are evaluated on the </b>[COCO2017](https://cocodataset.org/#home)<b> validation set using Mask AP(0.5:0.95).</b>
@@ -1679,6 +1695,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 </tr>
 </tbody>
 </table>
+
 <b>Note: The above accuracy metrics are evaluated on a self-built Chinese dataset by PaddleOCR, covering street scenes, web images, documents, and handwritten texts, with 500 images for detection.</b>
 
 ## [Seal Text Detection Module](../module_usage/tutorials/ocr_modules/seal_text_detection.en.md)
@@ -1712,6 +1729,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 </tr>
 </tbody>
 </table>
+
 <b>Note: The above accuracy metrics are evaluated on a self-built seal dataset by PaddleX, containing 500 seal images.</b>
 
 ## [Text Recognition Module](../module_usage/tutorials/ocr_modules/text_recognition.en.md)
@@ -1745,6 +1763,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 </tr>
 </tbody>
 </table>
+
 <b>Note: The above accuracy metrics are evaluated on a self-built Chinese dataset by PaddleOCR, covering street scenes, web images, documents, and handwritten texts, with 11,000 images for text recognition.</b>
 
 <table>
@@ -1769,6 +1788,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 </tr>
 </tbody>
 </table>
+
 <b>Note: The above accuracy metrics are evaluated on [PaddleOCR Algorithm Model Challenge - Task 1: OCR End-to-End Recognition](https://aistudio.baidu.com/competition/detail/1131/0/introduction) A-Rank.</b>
 
 <table>
@@ -1793,6 +1813,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 </tr>
 </tbody>
 </table>
+
 <b>Note: The above accuracy metrics are evaluated on [PaddleOCR Algorithm Model Challenge - Task 1: OCR End-to-End Recognition](https://aistudio.baidu.com/competition/detail/1131/0/introduction) B-Rank.</b>
 
 ## [Formula Recognition Module](../module_usage/tutorials/ocr_modules/formula_recognition.en.md)
@@ -1822,6 +1843,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 </tr>
 </tbody>
 </table>
+
 <b>Note: The above accuracy metrics are measured on the [LaTeX-OCR formula recognition test set](https://drive.google.com/drive/folders/13CA4vAmOmD_I_dSbvLp-Lf0s6KiaNfuO).</b>
 
 ## [Table Structure Recognition Module](../module_usage/tutorials/ocr_modules/table_structure_recognition.en.md)
@@ -1855,6 +1877,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 </tr>
 </tbody>
 </table>
+
 <b>Note: The above accuracy metrics are evaluated on a self-built English table recognition dataset by PaddleX.</b>
 
 ## [Image Rectification Module](../module_usage/tutorials/ocr_modules/text_image_unwarping.en.md)
@@ -1880,6 +1903,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 </tr>
 </tbody>
 </table>
+
 <b>Note: The above accuracy metrics are measured on a self-built image rectification dataset by PaddleX.</b>
 
 ## [Layout Detection Module](../module_usage/tutorials/ocr_modules/layout_detection.en.md)
@@ -1953,6 +1977,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 </tr>
 </tbody>
 </table>
+
 <b>Note: The evaluation set for the above accuracy metrics is the </b><b>PaddleX self-built Layout Detection Dataset</b><b>, containing 10,000 images.</b>
 
 
@@ -2019,6 +2044,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 </tr>
 </tbody>
 </table>
+
 <b>Note: The above accuracy metrics are measured on the </b>[ETTH1](https://paddle-model-ecology.bj.bcebos.com/paddlex/data/Etth1.tar)<b> dataset </b><b>(evaluation results on the test set test.csv)</b><b>.</b>
 
 ## [Time Series Anomaly Detection Module](../module_usage/tutorials/time_series_modules/time_series_anomaly_detection.en.md)
@@ -2076,6 +2102,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 </tr>
 </tbody>
 </table>
+
 <b>Note: The above accuracy metrics are measured on the </b>[PSM](https://paddle-model-ecology.bj.bcebos.com/paddlex/data/ts_anomaly_examples.tar)<b> dataset.</b>
 
 ## [Time Series Classification Module](../module_usage/tutorials/time_series_modules/time_series_classification.en.md)
@@ -2097,6 +2124,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 </tr>
 </tbody>
 </table>
+
 <b>Note: The above accuracy metrics are measured on the [UWaveGestureLibrary](https://paddlets.bj.bcebos.com/classification/UWaveGestureLibrary_TEST.csv) dataset.</b>
 
 ><b>Note: All GPU inference times for the above models are based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speeds are based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>

@@ -33,6 +33,7 @@ The instance segmentation module is a crucial component in computer vision syste
     </tr>
     </table>
 
+
 > ❗ The above list features the <b>2 core models</b> that the image classification module primarily supports. In total, this module supports <b>15 models</b>. The complete list of models is as follows:
 
 <details>
@@ -159,6 +160,7 @@ The instance segmentation module is a crucial component in computer vision syste
         <td> SOLOv2 is a real-time instance segmentation algorithm that segments objects by location. This model is an improved version of SOLO, achieving a good balance between accuracy and speed through the introduction of mask learning and mask NMS.</td>
     </tr>
 </table>
+
 
 
 <b>Note: The above accuracy metrics are based on the Mask AP of the [COCO2017](https://cocodataset.org/#home) validation set. All GPU inference times are based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speeds are based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>

@@ -157,6 +157,7 @@ paddlex --pipeline OCR --input https://paddle-model-ecology.bj.bcebos.com/paddle
         </tr>
     </tbody>
 </table>
+
 </details>
 
 ### 📝 Python 脚本使用
@@ -273,5 +274,6 @@ for res in output:
         </tr>
     </tbody>
 </table>
+
 
 </details>

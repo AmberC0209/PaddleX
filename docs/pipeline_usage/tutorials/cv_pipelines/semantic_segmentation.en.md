@@ -121,6 +121,7 @@ Semantic segmentation is a computer vision technique that aims to assign each pi
 </tr>
 </tbody>
 </table>
+
 <b>The accuracy metrics of the above models are measured on the [Cityscapes](https://www.cityscapes-dataset.com/) dataset. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
 
 
@@ -165,6 +166,7 @@ Semantic segmentation is a computer vision technique that aims to assign each pi
 </tr>
 </tbody>
 </table>
+
 <b>The accuracy metrics of the SeaFormer series models are measured on the [ADE20k](https://groups.csail.mit.edu/vision/datasets/ADE20K/) dataset. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
 
 </details>
@@ -282,6 +284,7 @@ In the above Python script, the following steps are executed:
 </tr>
 </tbody>
 </table>
+
 (2) Call the `predict` method of the pipeline object for inference prediction: The `predict` method parameter is `x`, which is used to input data to be predicted, supporting multiple input methods, as shown in the following examples:
 
 <table>
@@ -318,6 +321,7 @@ In the above Python script, the following steps are executed:
 </tr>
 </tbody>
 </table>
+
 (3) Obtain the prediction results by calling the `predict` method: The `predict` method is a `generator`, so prediction results need to be obtained by calling it. The `predict` method predicts data in batches, so the prediction results are in the form of a list representing a set of prediction results.
 
 （4）Process the prediction results: The prediction result for each sample is of `dict` type and supports printing or saving to files, with the supported file types depending on the specific pipeline. For example:
@@ -348,6 +352,7 @@ In the above Python script, the following steps are executed:
 </tr>
 </tbody>
 </table>
+
 If you have a configuration file, you can customize the configurations of the image anomaly detection pipeline by simply modifying the `pipeline` parameter in the `create_pipeline` method to the path of the pipeline configuration file.
 
 For example, if your configuration file is saved at `./my_path/semantic_segmentation.yaml`, you only need to execute:
@@ -404,6 +409,7 @@ For all operations provided by the service:
 </tr>
 </tbody>
 </table>
+
     The response body may also have a `result` property of type `object`, which stores the operation result information.
 
 - When the request is not processed successfully, the response body properties are as follows:
@@ -429,6 +435,7 @@ For all operations provided by the service:
 </tr>
 </tbody>
 </table>
+
 Operations provided by the service are as follows:
 
 - <b>`infer`</b>
@@ -457,6 +464,7 @@ Operations provided by the service are as follows:
 </tr>
 </tbody>
 </table>
+
     - When the request is processed successfully, the `result` of the response body has the following properties:
 
 <table>
@@ -485,6 +493,7 @@ Operations provided by the service are as follows:
 </tr>
 </tbody>
 </table>
+
         An example of `result` is as follows:
 
         ```json

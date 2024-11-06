@@ -61,6 +61,7 @@ Time series anomaly detection focuses on identifying abnormal points or periods 
 </tr>
 </tbody>
 </table>
+
 <b>Note: The above accuracy metrics are measured on the PSM dataset with a time series length of 100.</b>
 
 ## III. Quick Integration

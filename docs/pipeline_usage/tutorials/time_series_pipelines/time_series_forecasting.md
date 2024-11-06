@@ -66,6 +66,7 @@
 </tr>
 </tbody>
 </table>
+
 <b>注：以上精度指标测量自 [ETTH1](https://paddle-model-ecology.bj.bcebos.com/paddlex/data/Etth1.tar)。以上所有模型 GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为8，精度类型为 FP32。</b>
 
 </details>
@@ -191,6 +192,7 @@ for res in output:
 </tr>
 </tbody>
 </table>
+
 （2）调用产线对象的 `predict` 方法进行推理预测：`predict` 方法参数为`x`，用于输入待预测数据，支持多种输入方式，具体示例如下：
 
 <table>
@@ -227,6 +229,7 @@ for res in output:
 </tr>
 </tbody>
 </table>
+
 （3）调用`predict`方法获取预测结果：`predict` 方法为`generator`，因此需要通过调用获得预测结果，`predict`方法以batch为单位对数据进行预测，因此预测结果为list形式表示的一组预测结果。
 
 （4）对预测结果进行处理：每个样本的预测结果均为`dict`类型，且支持打印，或保存为文件，支持保存的类型与具体产线相关，如：
@@ -257,6 +260,7 @@ for res in output:
 </tr>
 </tbody>
 </table>
+
 若您获取了配置文件，即可对时序预测产线各项配置进行自定义，只需要修改 `create_pipeline` 方法中的 `pipeline` 参数值为产线配置文件路径即可。
 
 例如，若您的配置文件保存在 `./my_path/ts_fc.yaml` ，则只需执行：
@@ -311,6 +315,7 @@ for res in output:
 </tr>
 </tbody>
 </table>
+
     响应体还可能有`result`属性，类型为`object`，其中存储操作结果信息。
 
 - 当请求处理未成功时，响应体的属性如下：
@@ -336,6 +341,7 @@ for res in output:
 </tr>
 </tbody>
 </table>
+
 服务提供的操作如下：
 
 - <b>`infer`</b>
@@ -364,6 +370,7 @@ for res in output:
 </tr>
 </tbody>
 </table>
+
     - 请求处理成功时，响应体的`result`具有如下属性：
 
 <table>
@@ -382,6 +389,7 @@ for res in output:
 </tr>
 </tbody>
 </table>
+
         `result`示例如下：
 
         ```json

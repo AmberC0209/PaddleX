@@ -56,6 +56,7 @@ Time series forecasting aims to predict the possible values or states at a futur
 </tbody>
 </table>
 
+
 <b>Note: The above accuracy metrics are measured on the [ETTH1](https://paddle-model-ecology.bj.bcebos.com/paddlex/data/Etth1.tar) test dataset, with an input sequence length of 96, and a prediction sequence length of 96 for all models except TiDE, which has a prediction sequence length of 720.</b>
 
 

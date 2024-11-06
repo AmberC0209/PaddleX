@@ -60,6 +60,7 @@ PaddleX provides 18 end-to-end semantic segmentation models. For details, refer 
 </tr>
 </tbody>
 </table>
+
 > <b>Note: The above accuracy metrics are measured on the [Cityscapes](https://www.cityscapes-dataset.com/) dataset. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
 
 In short, models listed from top to bottom have faster inference speeds, while those from bottom to top have higher accuracy. This tutorial uses the PP-LiteSeg-T model as an example to complete the full model development process. You can choose a suitable model for training based on your actual usage scenario, evaluate the appropriate model weights within the pipeline, and finally use them in practical scenarios.
@@ -254,6 +255,7 @@ Learning Rate Exploration Results:
 </tr>
 </tbody>
 </table>
+
 </center>
 
 Changing Epoch Results:
@@ -305,6 +307,7 @@ Changing Epoch Results:
 </tr>
 </tbody>
 </table>
+
 </center>
 
 <b>Note: This tutorial is designed for 4 GPUs. If you have only 1 GPU, you can adjust the number of training GPUs to complete the experiment, but the final metrics may not align with the above indicators, which is normal.</b>

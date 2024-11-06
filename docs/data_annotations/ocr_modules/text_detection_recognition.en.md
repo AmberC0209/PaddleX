@@ -92,6 +92,7 @@ PPOCRLabel --lang ch  # Start in [Normal Mode] for [Detection + Recognition] sce
 </tr>
 </tbody>
 </table>
+
 If data partitioning is required, follow these steps:
 
 ```bash

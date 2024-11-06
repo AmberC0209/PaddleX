@@ -86,7 +86,9 @@ Command-line options related to serving deployment are as follows:
 </tr>
 </tbody>
 </table>
+
 </table>
+
 
 ### 1.3 Call the Service
 
@@ -166,6 +168,7 @@ Please refer to the <b>"Development Integration/Deployment"</b> section in the u
 </tr>
 </tbody>
 </table>
+
 ## 2. Deploy Services for Production
 
 When deploying services into production environments, the stability, efficiency, and security of the services are of paramount importance. Below are some recommendations for deploying services into production.

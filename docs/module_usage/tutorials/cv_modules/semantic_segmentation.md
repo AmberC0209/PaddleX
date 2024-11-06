@@ -34,6 +34,7 @@
 </tr>
 </tbody>
 </table>
+
 > ❗ 以上列出的是语义分割模块重点支持的<b>2个核心模型</b>，该模块总共支持<b>18个模型</b>，完整的模型列表如下：
 
 <details>
@@ -150,6 +151,7 @@
 </tr>
 </tbody>
 </table>
+
 <b>以上模型精度指标测量自[Cityscapes](https://www.cityscapes-dataset.com/)数据集。GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为 8，精度类型为 FP32。</b>
 
 
@@ -194,6 +196,7 @@
 </tr>
 </tbody>
 </table>
+
 <b>SeaFormer系列模型的精度指标测量自[ADE20k](https://groups.csail.mit.edu/vision/datasets/ADE20K/)数据集。GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为 8，精度类型为 FP32。</b>
 
 </details>

@@ -25,6 +25,7 @@ The primary purpose of Text Image Unwarping is to perform geometric transformati
 </tr>
 </tbody>
 </table>
+
 <b>The accuracy metrics of the above models are measured on the [DocUNet benchmark](https://www3.cs.stonybrook.edu/~cvl/docunet.html) dataset.</b>
 
 ## III. Quick Integration

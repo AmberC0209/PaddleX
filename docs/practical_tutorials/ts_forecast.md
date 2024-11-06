@@ -73,6 +73,7 @@ PaddleX 提供了5个端到端的时序预测模型，具体可参考 [模型列
 </tr>
 </tbody>
 </table>
+
 <b>注：以上精度指标测量自</b>ETTH1<b>测试数据集，输入序列长度为96，预测序列长度除 TiDE 外为96，TiDE为720 。</b>
 
 你可以依据自己的实际使用场景，判断并选择一个合适的模型做训练，训练完成后可在产线内评估合适的模型权重，并最终用于实际使用场景中。
@@ -354,6 +355,7 @@ PaddleX 中每个模型都提供了模型开发的配置文件，用于设置相
 </tr>
 </tbody>
 </table>
+
 增大训练轮次实验结果：
 
 <table>
@@ -392,6 +394,7 @@ PaddleX 中每个模型都提供了模型开发的配置文件，用于设置相
 </tr>
 </tbody>
 </table>
+
 增大输入长度实验结果：
 
 <table>
@@ -430,6 +433,7 @@ PaddleX 中每个模型都提供了模型开发的配置文件，用于设置相
 </tr>
 </tbody>
 </table>
+
 ## 6. 产线测试
 将产线中的模型替换为微调后的模型进行测试，使用[本案例中的电力测试数据](https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/doc_images/practical_tutorial/timeseries_forecast/test.csv)，进行预测：
 

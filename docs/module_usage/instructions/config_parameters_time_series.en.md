@@ -46,6 +46,7 @@
 </tr>
 </tbody>
 </table>
+
 # CheckDataset
 
 <table>
@@ -90,6 +91,7 @@
 </tr>
 </tbody>
 </table>
+
 # Train
 ### Common Parameters for Time Series Tasks
 <table>
@@ -134,6 +136,7 @@
 </tr>
 </tbody>
 </table>
+
 ### Time Series Forecasting Parameters
 <table>
 <thead>
@@ -171,6 +174,7 @@
 </tr>
 </tbody>
 </table>
+
 ### Time Series Anomaly Detection
 <table>
 <thead>
@@ -202,6 +206,7 @@
 </tr>
 </tbody>
 </table>
+
 ### Time Series Classification
 <table>
 <thead>
@@ -239,6 +244,7 @@
 </tr>
 </tbody>
 </table>
+
 # Evaluate
 <table>
 <thead>
@@ -258,6 +264,7 @@
 </tr>
 </tbody>
 </table>
+
 # Export
 <table>
 <thead>
@@ -277,6 +284,7 @@
 </tr>
 </tbody>
 </table>
+
 # Predict
 <table>
 <thead>
@@ -308,3 +316,4 @@
 </tr>
 </tbody>
 </table>
+

@@ -33,6 +33,7 @@ The text recognition module is the core component of an OCR (Optical Character R
     </tr>
 </table>
 
+
 <b>Note: The evaluation set for the above accuracy metrics is PaddleOCR's self-built Chinese dataset, covering street scenes, web images, documents, handwriting, and more, with 1.1w images for text recognition. GPU inference time for all models is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
 
 > ❗ The above list features the <b>2 core models</b> that the image classification module primarily supports. In total, this module supports <b>4 models</b>. The complete list of models is as follows:
@@ -66,6 +67,7 @@ The text recognition module is the core component of an OCR (Optical Character R
     </tr>
 </table>
 
+
 <b>Note: The evaluation set for the above accuracy metrics is PaddleOCR's self-built Chinese dataset, covering street scenes, web images, documents, handwriting, and more, with 1.1w images for text recognition. GPU inference time for all models is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
 
 
@@ -89,6 +91,7 @@ The text recognition module is the core component of an OCR (Optical Character R
     </tr>
 </table>
 
+
 <b>Note: The evaluation set for the above accuracy metrics is the [OCR End-to-End Recognition Task of the PaddleOCR Algorithm Model Challenge - Track 1](https://aistudio.baidu.com/competition/detail/1131/0/introduction) A-rank. GPU inference time for all models is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
 
 <table>
@@ -109,6 +112,7 @@ The text recognition module is the core component of an OCR (Optical Character R
         <td rowspan="1">  RepSVTR, a mobile text recognition model based on SVTRv2, won first place in the OCR End-to-End Recognition Task of the PaddleOCR Algorithm Model Challenge. Its B-rank end-to-end recognition accuracy is 2.5% higher than PP-OCRv4, with comparable inference speed.</td>
     </tr>
 </table>
+
 
 
 <b>Note: The evaluation set for the above accuracy metrics is the [OCR End-to-End Recognition Task of the PaddleOCR Algorithm Model Challenge - Track 1](https://aistudio.baidu.com/competition/detail/1131/0/introduction) B-rank. GPU inference time for all models is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>

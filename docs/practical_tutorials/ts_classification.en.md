@@ -44,6 +44,7 @@ PaddleX provides a time series classification model. Refer to the [Model List](.
 </tr>
 </tbody>
 </table>
+
 <b>Note: The evaluation set for the above accuracy metrics is UWaveGestureLibrary.</b>
 
 ## 4. Data Preparation and Verification
@@ -244,6 +245,7 @@ Learning Rate Exploration Results:
 </tr>
 </tbody>
 </table>
+
 Results of Increasing Training Epochs:
 
 <table>
@@ -276,6 +278,7 @@ Results of Increasing Training Epochs:
 </tr>
 </tbody>
 </table>
+
 ## 6. Production Line Testing
 Set the model directory to the trained model for testing, using the [test file](https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/doc_images/practical_tutorial/timeseries_classification/test.csv) to perform predictions:
 

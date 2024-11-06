@@ -81,6 +81,7 @@ The image classification module is a crucial component in computer vision system
     </tr>
 </table>
 
+
 > ❗ The above list features the <b>9 core models</b> that the image classification module primarily supports. In total, this module supports <b>80 models</b>. The complete list of models is as follows:
 
 <details>
@@ -680,6 +681,7 @@ The image classification module is a crucial component in computer vision system
 
   
 </table>
+
 
 <b>Note: The above accuracy metrics refer to Top-1 Accuracy on the [ImageNet-1k](https://www.image-net.org/index.php) validation set. </b><b>All model GPU inference times are based on NVIDIA Tesla T4 machines, with precision type FP32. CPU inference speeds are based on Intel® Xeon® Gold 5117 CPU @ 2.00GHz, with 8 threads and precision type FP32.</b>
 </details>

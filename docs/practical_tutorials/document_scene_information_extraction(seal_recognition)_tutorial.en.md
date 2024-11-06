@@ -119,6 +119,7 @@ PaddleX provides 2 end-to-end seal text detection models, which can be reference
 </tr>
 </tbody>
 </table>
+
 <b>Note: The evaluation set for the above accuracy metrics is our self-built seal text detection dataset, containing 500 images of circle seal types. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
 
 
@@ -316,6 +317,7 @@ Learning Rate Exploration Results:
 </tr>
 </tbody>
 </table>
+
 </center>
 
 Next, we can increase the number of training epochs based on a learning rate set to 0.001. Comparing experiments [1, 4] below, it can be seen that as the number of training epochs increases, the model's accuracy further improves.
@@ -343,6 +345,7 @@ Next, we can increase the number of training epochs based on a learning rate set
 </tr>
 </tbody>
 </table>
+
 </center>
 
 <b>Note:</b> This tutorial is designed for a 4-GPU setup. If you only have 1 GPU, you can complete the experiment by adjusting the number of training GPUs, but the final metrics may not align perfectly with the above indicators, which is normal.

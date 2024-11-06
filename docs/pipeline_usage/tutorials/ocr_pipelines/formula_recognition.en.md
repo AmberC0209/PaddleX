@@ -37,6 +37,7 @@ Formula recognition is a technology that automatically identifies and extracts L
 </tr>
 </tbody>
 </table>
+
 <b>Note: The above accuracy metrics are evaluated on PaddleX's self-built layout detection dataset, containing 10,000 images. All GPU inference times are based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speeds are based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
 
 <b>Formula Recognition Module Models</b>:
@@ -65,6 +66,7 @@ Formula recognition is a technology that automatically identifies and extracts L
 </tr>
 </tbody>
 </table>
+
 <b>Note: The above accuracy metrics are measured on the [LaTeX-OCR Formula Recognition Test Set](https://drive.google.com/drive/folders/13CA4vAmOmD_I_dSbvLp-Lf0s6KiaNfuO). All GPU inference times are based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speeds are based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
 
 </details>
@@ -192,6 +194,7 @@ The Python script above executes the following steps:
 </tr>
 </tbody>
 </table>
+
 （2）Invoke the `predict` method of the formula recognition pipeline object for inference prediction: The `predict` method parameter is `x`, which is used to input data to be predicted, supporting multiple input methods, as shown in the following examples:
 
 <table>
@@ -228,6 +231,7 @@ The Python script above executes the following steps:
 </tr>
 </tbody>
 </table>
+
 （3）Obtain the prediction results by calling the `predict` method: The `predict` method is a `generator`, so prediction results need to be obtained through iteration. The `predict` method predicts data in batches, so the prediction results are in the form of a list.
 
 （4）Process the prediction results: The prediction result for each sample is of `dict` type and supports printing or saving to files, with the supported file types depending on the specific pipeline. For example:
@@ -258,6 +262,7 @@ The Python script above executes the following steps:
 </tr>
 </tbody>
 </table>
+
 If you have a configuration file, you can customize the configurations of the formula recognition pipeline by simply modifying the `pipeline` parameter in the `create_pipeline` method to the path of the pipeline configuration file.
 
 For example, if your configuration file is saved at `./my_path/formula_recognition.yaml`, you only need to execute:
@@ -334,6 +339,7 @@ For all operations provided by the service:
 </tr>
 </tbody>
 </table>
+
     The response body may also have a `result` property of type `object`, which stores the operation result information.
 
 - When the request is not processed successfully, the response body properties are as follows:
@@ -359,6 +365,7 @@ For all operations provided by the service:
 </tr>
 </tbody>
 </table>
+
 Operations provided by the service:
 
 - <b>`infer`</b>
@@ -393,6 +400,7 @@ Operations provided by the service:
 </tr>
 </tbody>
 </table>
+
         Properties of `inferenceParams`:
 
 <table>
@@ -413,6 +421,7 @@ Operations provided by the service:
 </tr>
 </tbody>
 </table>
+
     - When the request is processed successfully, the `result` in the response body has the following properties:
 
 <table>
@@ -436,6 +445,7 @@ Operations provided by the service:
 </tr>
 </tbody>
 </table>
+
         Each element in `formulas` is an `object` with the following properties:
 
 <table>
@@ -459,6 +469,7 @@ Operations provided by the service:
 </tr>
 </tbody>
 </table>
+
         Example of `result`:
 
         ```json

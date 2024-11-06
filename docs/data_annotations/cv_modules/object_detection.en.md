@@ -173,6 +173,7 @@ PaddleLabel will automatically open a webpage in your browser after startup. You
 </tr>
 </tbody>
 </table>
+
   * Create an `annotations` directory in the root directory of the dataset and move all `json` files to the `annotations` directory. The final dataset directory structure will look like this:
   
   <img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/17.png">

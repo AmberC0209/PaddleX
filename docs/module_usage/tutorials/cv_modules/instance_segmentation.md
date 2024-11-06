@@ -33,6 +33,7 @@
     </tr>
     </table>
 
+
 > ❗ 以上列出的是实例分割模块重点支持的<b>2个核心模型</b>，该模块总共支持<b>15个模型</b>，完整的模型列表如下：
 
 <details>
@@ -160,6 +161,7 @@
         <td> SOLOv2 是一种按位置分割物体的实时实例分割算法。该模型是SOLO的改进版本，通过引入掩码学习和掩码NMS，实现了精度和速度上取得良好平衡。</td>
     </tr>
 </table>
+
 
 
 <b>注：以上精度指标为[COCO2017](https://cocodataset.org/#home)验证集 Mask AP。所有模型 GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为8，精度类型为 FP32。</b>
