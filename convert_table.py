@@ -4,11 +4,25 @@ from markdown import markdown
 
 def convert_markdown_table_to_html(markdown_content):
     """Convert markdown tables to HTML tables."""
-    # Use markdown with tables extension to convert markdown table to HTML
     return markdown(markdown_content, extensions=['tables'])
+
+def remove_leading_whitespace_from_tables(content):
+    """Remove leading whitespace from markdown tables."""
+    # Regular expression to match lines of a markdown table, allowing for leading whitespace
+    table_line_regex = re.compile(r'^[ \t]*\|.*?\|\s*$', re.MULTILINE)
+
+    def strip_leading_whitespace(match):
+        line = match.group(0)
+        return line.lstrip()  # Remove leading whitespace from each line
+
+    # Process each line that looks like part of a markdown table
+    return table_line_regex.sub(strip_leading_whitespace, content)
 
 def find_and_convert_tables(content):
     """Find markdown tables in the content and convert them to HTML."""
+    # First remove leading whitespace from tables
+    content = remove_leading_whitespace_from_tables(content)
+
     # Regular expression to match Markdown tables
     table_regex = re.compile(r'(^\|.*?\|\s*$\n?)+', re.MULTILINE)
 

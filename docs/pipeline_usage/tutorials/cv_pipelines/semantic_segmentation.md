@@ -378,20 +378,52 @@ for res in output:
 - 响应体以及POST请求的请求体均为JSON数据（JSON对象）。
 - 当请求处理成功时，响应状态码为`200`，响应体的属性如下：
 
-    |名称|类型|含义|
-    |-|-|-|
-    |`errorCode`|`integer`|错误码。固定为`0`。|
-    |`errorMsg`|`string`|错误说明。固定为`"Success"`。|
-
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errorCode</code></td>
+<td><code>integer</code></td>
+<td>错误码。固定为<code>0</code>。</td>
+</tr>
+<tr>
+<td><code>errorMsg</code></td>
+<td><code>string</code></td>
+<td>错误说明。固定为<code>"Success"</code>。</td>
+</tr>
+</tbody>
+</table>
     响应体还可能有`result`属性，类型为`object`，其中存储操作结果信息。
 
 - 当请求处理未成功时，响应体的属性如下：
 
-    |名称|类型|含义|
-    |-|-|-|
-    |`errorCode`|`integer`|错误码。与响应状态码相同。|
-    |`errorMsg`|`string`|错误说明。|
-
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errorCode</code></td>
+<td><code>integer</code></td>
+<td>错误码。与响应状态码相同。</td>
+</tr>
+<tr>
+<td><code>errorMsg</code></td>
+<td><code>string</code></td>
+<td>错误说明。</td>
+</tr>
+</tbody>
+</table>
 服务提供的操作如下：
 
 - <b>`infer`</b>
@@ -402,18 +434,52 @@ for res in output:
 
     - 请求体的属性如下：
 
-        |名称|类型|含义|是否必填|
-        |-|-|-|-|
-        |`image`|`string`|服务可访问的图像文件的URL或图像文件内容的Base64编码结果。|是|
-
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>含义</th>
+<th>是否必填</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>image</code></td>
+<td><code>string</code></td>
+<td>服务可访问的图像文件的URL或图像文件内容的Base64编码结果。</td>
+<td>是</td>
+</tr>
+</tbody>
+</table>
     - 请求处理成功时，响应体的`result`具有如下属性：
 
-        |名称|类型|含义|
-        |-|-|-|
-        |`labelMap`|`array`|记录图像中每个像素的类别标签（按照行优先顺序排列）。|
-        |`size`|`array`|图像形状。数组中元素依次为图像的高度和宽度。|
-        |`image`|`string`|语义分割结果图。图像为JPEG格式，使用Base64编码。|
-
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>labelMap</code></td>
+<td><code>array</code></td>
+<td>记录图像中每个像素的类别标签（按照行优先顺序排列）。</td>
+</tr>
+<tr>
+<td><code>size</code></td>
+<td><code>array</code></td>
+<td>图像形状。数组中元素依次为图像的高度和宽度。</td>
+</tr>
+<tr>
+<td><code>image</code></td>
+<td><code>string</code></td>
+<td>语义分割结果图。图像为JPEG格式，使用Base64编码。</td>
+</tr>
+</tbody>
+</table>
         `result`示例如下：
 
         ```json

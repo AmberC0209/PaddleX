@@ -639,20 +639,52 @@ For all operations provided by the service:
 - Both the response body and the request body for POST requests are JSON data (JSON objects).
 - When the request is processed successfully, the response status code is `200`, and the response body properties are as follows:
 
-    | Name | Type | Description |
-    |------|------|-------------|
-    | `errorCode` | `integer` | Error code. Fixed as `0`. |
-    | `errorMsg` | `string` | Error description. Fixed as `"Success"`. |
-
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errorCode</code></td>
+<td><code>integer</code></td>
+<td>Error code. Fixed as <code>0</code>.</td>
+</tr>
+<tr>
+<td><code>errorMsg</code></td>
+<td><code>string</code></td>
+<td>Error description. Fixed as <code>"Success"</code>.</td>
+</tr>
+</tbody>
+</table>
     The response body may also have a `result` property of type `object`, which stores the operation result information.
 
 - When the request is not processed successfully, the response body properties are as follows:
 
-    | Name | Type | Description |
-    |------|------|-------------|
-    | `errorCode` | `integer` | Error code. Same as the response status code. |
-    | `errorMsg` | `string` | Error description. |
-
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errorCode</code></td>
+<td><code>integer</code></td>
+<td>Error code. Same as the response status code.</td>
+</tr>
+<tr>
+<td><code>errorMsg</code></td>
+<td><code>string</code></td>
+<td>Error description.</td>
+</tr>
+</tbody>
+</table>
 Operations provided by the service are as follows:
 
 - <b>`analyzeImage`</b>
@@ -663,53 +695,186 @@ Operations provided by the service are as follows:
 
     - Request body properties:
 
-        | Name | Type | Description | Required |
-        |-|-|-|-|
-        |`file`|`string`|The URL of an accessible image file or PDF file, or the Base64 encoded content of the above file types. For PDF files with more than 10 pages, only the first 10 pages will be used. | Yes |
-        |`fileType`|`integer`|File type. `0` represents PDF files, `1` represents image files. If this property is not present in the request body, the service will attempt to infer the file type automatically based on the URL. | No |
-        |`useImgOrientationCls`|`boolean`|Whether to enable document image orientation classification. This feature is enabled by default. | No |
-        |`useImgUnwrapping`|`boolean`|Whether to enable text image correction. This feature is enabled by default. | No |
-        |`useSealTextDet`|`boolean`|Whether to enable seal text detection. This feature is enabled by default. | No |
-        |`inferenceParams`|`object`|Inference parameters. | No |
-
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>file</code></td>
+<td><code>string</code></td>
+<td>The URL of an accessible image file or PDF file, or the Base64 encoded content of the above file types. For PDF files with more than 10 pages, only the first 10 pages will be used.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>fileType</code></td>
+<td><code>integer</code></td>
+<td>File type. <code>0</code> represents PDF files, <code>1</code> represents image files. If this property is not present in the request body, the service will attempt to infer the file type automatically based on the URL.</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>useImgOrientationCls</code></td>
+<td><code>boolean</code></td>
+<td>Whether to enable document image orientation classification. This feature is enabled by default.</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>useImgUnwrapping</code></td>
+<td><code>boolean</code></td>
+<td>Whether to enable text image correction. This feature is enabled by default.</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>useSealTextDet</code></td>
+<td><code>boolean</code></td>
+<td>Whether to enable seal text detection. This feature is enabled by default.</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>inferenceParams</code></td>
+<td><code>object</code></td>
+<td>Inference parameters.</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
         Properties of `inferenceParams`:
 
-        | Name | Type | Description | Required |
-        |-|-|-|-|
-        |`maxLongSide`|`integer`|During inference, if the length of the longer side of the input image for the text detection model is greater than `maxLongSide`, the image will be scaled so that the length of the longer side equals `maxLongSide`. | No |
-
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>maxLongSide</code></td>
+<td><code>integer</code></td>
+<td>During inference, if the length of the longer side of the input image for the text detection model is greater than <code>maxLongSide</code>, the image will be scaled so that the length of the longer side equals <code>maxLongSide</code>.</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
     - When the request is processed successfully, the `result` in the response body has the following properties:
 
-        | Name | Type | Description |
-        |-|-|-|
-        |`visionResults`|`array`|Analysis results obtained using the computer vision model. The array length is 1 (for image input) or the smaller of the number of document pages and 10 (for PDF input). For PDF input, each element in the array represents the processing result of each page in the PDF file in sequence. |
-        |`visionInfo`|`object`|Key information in the image, which can be used as input for other operations. |
-
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>visionResults</code></td>
+<td><code>array</code></td>
+<td>Analysis results obtained using the computer vision model. The array length is 1 (for image input) or the smaller of the number of document pages and 10 (for PDF input). For PDF input, each element in the array represents the processing result of each page in the PDF file in sequence.</td>
+</tr>
+<tr>
+<td><code>visionInfo</code></td>
+<td><code>object</code></td>
+<td>Key information in the image, which can be used as input for other operations.</td>
+</tr>
+</tbody>
+</table>
         Each element in `visionResults` is an `object` with the following properties:
 
-        | Name | Type | Description |
-        |-|-|-|
-        |`texts`|`array`|Text locations, contents, and scores. |
-        |`tables`|`array`|Table locations and contents. |
-        |`inputImage`|`string`|Input image. The image is in JPEG format and encoded in Base64. |
-        |`ocrImage`|`string`|OCR result image. The image is in JPEG format and encoded in Base64. |
-        |`layoutImage`|`string`|Layout area detection result image. The image is in JPEG format and encoded in Base64. |
-
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>texts</code></td>
+<td><code>array</code></td>
+<td>Text locations, contents, and scores.</td>
+</tr>
+<tr>
+<td><code>tables</code></td>
+<td><code>array</code></td>
+<td>Table locations and contents.</td>
+</tr>
+<tr>
+<td><code>inputImage</code></td>
+<td><code>string</code></td>
+<td>Input image. The image is in JPEG format and encoded in Base64.</td>
+</tr>
+<tr>
+<td><code>ocrImage</code></td>
+<td><code>string</code></td>
+<td>OCR result image. The image is in JPEG format and encoded in Base64.</td>
+</tr>
+<tr>
+<td><code>layoutImage</code></td>
+<td><code>string</code></td>
+<td>Layout area detection result image. The image is in JPEG format and encoded in Base64.</td>
+</tr>
+</tbody>
+</table>
         Each element in `texts` is an `object` with the following properties:
 
-        | Name | Type | Description |
-        |-|-|-|
-        |`poly`|`array`|Text location. The elements in the array are the vertex coordinates of the polygon enclosing the text in sequence. |
-        |`text`|`string`|Text content. |
-        |`score`|`number`|Text recognition score. |
-
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>poly</code></td>
+<td><code>array</code></td>
+<td>Text location. The elements in the array are the vertex coordinates of the polygon enclosing the text in sequence.</td>
+</tr>
+<tr>
+<td><code>text</code></td>
+<td><code>string</code></td>
+<td>Text content.</td>
+</tr>
+<tr>
+<td><code>score</code></td>
+<td><code>number</code></td>
+<td>Text recognition score.</td>
+</tr>
+</tbody>
+</table>
         Each element in `tables` is an `object` with the following properties:
 
-        | Name | Type | Description |
-        |-|-|-|
-        |`bbox`|`array`|Table location. The elements in the array are the x-coordinate of the top-left corner, the y-coordinate of the top-left corner, the x-coordinate of the bottom-right corner, and the y-coordinate of the bottom-right corner of the bounding box in sequence. |
-        |`html`|`string`|Table recognition result in HTML format. |
-
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bbox</code></td>
+<td><code>array</code></td>
+<td>Table location. The elements in the array are the x-coordinate of the top-left corner, the y-coordinate of the top-left corner, the x-coordinate of the bottom-right corner, and the y-coordinate of the bottom-right corner of the bounding box in sequence.</td>
+</tr>
+<tr>
+<td><code>html</code></td>
+<td><code>string</code></td>
+<td>Table recognition result in HTML format.</td>
+</tr>
+</tbody>
+</table>
 - <b>`buildVectorStore`</b>
 
     Builds a vector database.
@@ -718,14 +883,48 @@ Operations provided by the service are as follows:
 
     - The request body properties are as follows:
 
-        | Name | Type | Description | Required |
-        |-|-|-|-|
-        |`visionInfo`|`object`|Key information from the image. Provided by the `analyzeImage` operation.|Yes|
-        |`minChars`|`integer`|Minimum data length to enable the vector database.|No|
-        |`llmRequestInterval`|`number`|Interval time for calling the large language model API.|No|
-        |`llmName`|`string`|Name of the large language model.|No|
-        |`llmParams`|`object`|Parameters for the large language model API.|No|
-
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>visionInfo</code></td>
+<td><code>object</code></td>
+<td>Key information from the image. Provided by the <code>analyzeImage</code> operation.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>minChars</code></td>
+<td><code>integer</code></td>
+<td>Minimum data length to enable the vector database.</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>llmRequestInterval</code></td>
+<td><code>number</code></td>
+<td>Interval time for calling the large language model API.</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>llmName</code></td>
+<td><code>string</code></td>
+<td>Name of the large language model.</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>llmParams</code></td>
+<td><code>object</code></td>
+<td>Parameters for the large language model API.</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
         Currently, `llmParams` can take the following form:
 
         ```json
@@ -738,10 +937,22 @@ Operations provided by the service are as follows:
 
     - When the request is processed successfully, the `result` in the response body has the following properties:
 
-        | Name | Type | Description |
-        |-|-|-|
-        |`vectorStore`|`string`|Serialized result of the vector database, which can be used as input for other operations.|
-
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>vectorStore</code></td>
+<td><code>string</code></td>
+<td>Serialized result of the vector database, which can be used as input for other operations.</td>
+</tr>
+</tbody>
+</table>
 - <b>`retrieveKnowledge`</b>
 
     Perform knowledge retrieval.
@@ -750,13 +961,42 @@ Operations provided by the service are as follows:
 
     - The request body properties are as follows:
 
-        | Name | Type | Description | Required |
-        |-|-|-|-|
-        |`keys`|`array`|List of keywords.|Yes|
-        |`vectorStore`|`string`|Serialized result of the vector database. Provided by the `buildVectorStore` operation.|Yes|
-        |`llmName`|`string`|Name of the large language model.|No|
-        |`llmParams`|`object`|API parameters for the large language model.|No|
-
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>keys</code></td>
+<td><code>array</code></td>
+<td>List of keywords.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>vectorStore</code></td>
+<td><code>string</code></td>
+<td>Serialized result of the vector database. Provided by the <code>buildVectorStore</code> operation.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>llmName</code></td>
+<td><code>string</code></td>
+<td>Name of the large language model.</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>llmParams</code></td>
+<td><code>object</code></td>
+<td>API parameters for the large language model.</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
         Currently, `llmParams` can take the following form:
 
         ```json
@@ -769,10 +1009,22 @@ Operations provided by the service are as follows:
 
     - When the request is processed successfully, the `result` in the response body has the following properties:
 
-        | Name | Type | Description |
-        |-|-|-|
-        |`retrievalResult`|`string`|The result of knowledge retrieval, which can be used as input for other operations.|
-
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>retrievalResult</code></td>
+<td><code>string</code></td>
+<td>The result of knowledge retrieval, which can be used as input for other operations.</td>
+</tr>
+</tbody>
+</table>
 - <b>`chat`</b>
 
     Interact with large language models to extract key information.
@@ -781,19 +1033,78 @@ Operations provided by the service are as follows:
 
     - Request body properties:
 
-        | Name | Type | Description | Required |
-        |-|-|-|-|
-        |`keys` | `array` | List of keywords. | Yes |
-        |`visionInfo` | `object` | Key information from images. Provided by the `analyzeImage` operation. | Yes |
-        |`taskDescription` | `string` | Task prompt. | No |
-        |`rules` | `string` | Custom extraction rules, e.g., for output formatting. | No |
-        |`fewShot` | `string` | Example prompts. | No |
-        |`vectorStore` | `string` | Serialized result of the vector database. Provided by the `buildVectorStore` operation. | No |
-        |`retrievalResult` | `string` | Results of knowledge retrieval. Provided by the `retrieveKnowledge` operation. | No |
-        |`returnPrompts` | `boolean` | Whether to return the prompts used. Enabled by default. | No |
-        |`llmName` | `string` | Name of the large language model. | No |
-        |`llmParams` | `object` | API parameters for the large language model. | No |
-
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>keys</code></td>
+<td><code>array</code></td>
+<td>List of keywords.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>visionInfo</code></td>
+<td><code>object</code></td>
+<td>Key information from images. Provided by the <code>analyzeImage</code> operation.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>taskDescription</code></td>
+<td><code>string</code></td>
+<td>Task prompt.</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>rules</code></td>
+<td><code>string</code></td>
+<td>Custom extraction rules, e.g., for output formatting.</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>fewShot</code></td>
+<td><code>string</code></td>
+<td>Example prompts.</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>vectorStore</code></td>
+<td><code>string</code></td>
+<td>Serialized result of the vector database. Provided by the <code>buildVectorStore</code> operation.</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>retrievalResult</code></td>
+<td><code>string</code></td>
+<td>Results of knowledge retrieval. Provided by the <code>retrieveKnowledge</code> operation.</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>returnPrompts</code></td>
+<td><code>boolean</code></td>
+<td>Whether to return the prompts used. Enabled by default.</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>llmName</code></td>
+<td><code>string</code></td>
+<td>Name of the large language model.</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>llmParams</code></td>
+<td><code>object</code></td>
+<td>API parameters for the large language model.</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
         Currently, `llmParams` can take the following form:
 
         ```json
@@ -806,19 +1117,55 @@ Operations provided by the service are as follows:
 
     - On successful request processing, the `result` in the response body has the following properties:
 
-        | Name | Type | Description |
-        |-|-|-|
-        |`chatResult` | `object` | Extracted key information. |
-        |`prompts` | `object` | Prompts used. |
-
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>chatResult</code></td>
+<td><code>object</code></td>
+<td>Extracted key information.</td>
+</tr>
+<tr>
+<td><code>prompts</code></td>
+<td><code>object</code></td>
+<td>Prompts used.</td>
+</tr>
+</tbody>
+</table>
         Properties of `prompts`:
 
-        | Name | Type | Description |
-        |-|-|-|
-        |`ocr` | `string` | OCR prompt. |
-        |`table` | `string` | Table prompt. |
-        |`html` | `string` | HTML prompt. |
-
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ocr</code></td>
+<td><code>string</code></td>
+<td>OCR prompt.</td>
+</tr>
+<tr>
+<td><code>table</code></td>
+<td><code>string</code></td>
+<td>Table prompt.</td>
+</tr>
+<tr>
+<td><code>html</code></td>
+<td><code>string</code></td>
+<td>HTML prompt.</td>
+</tr>
+</tbody>
+</table>
 </details>
 
 <details>

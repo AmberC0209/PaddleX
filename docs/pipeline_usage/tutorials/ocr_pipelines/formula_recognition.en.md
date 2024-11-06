@@ -313,20 +313,52 @@ For all operations provided by the service:
 - Both the response body and the request body for POST requests are JSON data (JSON objects).
 - When the request is processed successfully, the response status code is `200`, and the response body properties are as follows:
 
-    | Name | Type | Description |
-    |------|------|-------------|
-    |`errorCode`|`integer`|Error code. Fixed as `0`.|
-    |`errorMsg`|`string`|Error description. Fixed as `"Success"`.|
-
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errorCode</code></td>
+<td><code>integer</code></td>
+<td>Error code. Fixed as <code>0</code>.</td>
+</tr>
+<tr>
+<td><code>errorMsg</code></td>
+<td><code>string</code></td>
+<td>Error description. Fixed as <code>"Success"</code>.</td>
+</tr>
+</tbody>
+</table>
     The response body may also have a `result` property of type `object`, which stores the operation result information.
 
 - When the request is not processed successfully, the response body properties are as follows:
 
-    | Name | Type | Description |
-    |------|------|-------------|
-    |`errorCode`|`integer`|Error code. Same as the response status code.|
-    |`errorMsg`|`string`|Error description.|
-
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errorCode</code></td>
+<td><code>integer</code></td>
+<td>Error code. Same as the response status code.</td>
+</tr>
+<tr>
+<td><code>errorMsg</code></td>
+<td><code>string</code></td>
+<td>Error description.</td>
+</tr>
+</tbody>
+</table>
 Operations provided by the service:
 
 - <b>`infer`</b>
@@ -337,31 +369,96 @@ Operations provided by the service:
 
     - Request body properties:
 
-        | Name | Type | Description | Required |
-        |------|------|-------------|----------|
-        |`image`|`string`|The URL of an image file accessible by the service or the Base64 encoded result of the image file content.|Yes|
-        |`inferenceParams`|`object`|Inference parameters.|No|
-
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>image</code></td>
+<td><code>string</code></td>
+<td>The URL of an image file accessible by the service or the Base64 encoded result of the image file content.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>inferenceParams</code></td>
+<td><code>object</code></td>
+<td>Inference parameters.</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
         Properties of `inferenceParams`:
 
-        | Name | Type | Description | Required |
-        |------|------|-------------|----------|
-        |`maxLongSide`|`integer`|During inference, if the length of the longer side of the input image for the layout detection model is greater than `maxLongSide`, the image will be scaled so that the length of the longer side equals `maxLongSide`.|No|
-
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>maxLongSide</code></td>
+<td><code>integer</code></td>
+<td>During inference, if the length of the longer side of the input image for the layout detection model is greater than <code>maxLongSide</code>, the image will be scaled so that the length of the longer side equals <code>maxLongSide</code>.</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
     - When the request is processed successfully, the `result` in the response body has the following properties:
 
-        | Name | Type | Description |
-        |------|------|-------------|
-        |`formulas`|`array`|Positions and contents of formulas.|
-        |`image`|`string`|Formula recognition result image with detected formula positions annotated. The image is in JPEG format and encoded in Base64.|
-
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>formulas</code></td>
+<td><code>array</code></td>
+<td>Positions and contents of formulas.</td>
+</tr>
+<tr>
+<td><code>image</code></td>
+<td><code>string</code></td>
+<td>Formula recognition result image with detected formula positions annotated. The image is in JPEG format and encoded in Base64.</td>
+</tr>
+</tbody>
+</table>
         Each element in `formulas` is an `object` with the following properties:
 
-        | Name | Type | Description |
-        |------|------|-------------|
-        |`poly`|`array`|Formula position. Elements in the array are the vertex coordinates of the polygon enclosing the formula.|
-        |`latex`|`string`|Formula content.|
-
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>poly</code></td>
+<td><code>array</code></td>
+<td>Formula position. Elements in the array are the vertex coordinates of the polygon enclosing the formula.</td>
+</tr>
+<tr>
+<td><code>latex</code></td>
+<td><code>string</code></td>
+<td>Formula content.</td>
+</tr>
+</tbody>
+</table>
         Example of `result`:
 
         ```json

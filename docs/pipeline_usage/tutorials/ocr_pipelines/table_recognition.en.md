@@ -369,20 +369,52 @@ For all operations provided by the service:
 - Both the response body and the request body for POST requests are JSON data (JSON objects).
 - When the request is processed successfully, the response status code is `200`, and the response body properties are as follows:
 
-    | Name | Type | Description |
-    |------|------|-------------|
-    |`errorCode`|`integer`|Error code. Fixed as `0`.|
-    |`errorMsg`|`string`|Error message. Fixed as `"Success"`.|
-
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errorCode</code></td>
+<td><code>integer</code></td>
+<td>Error code. Fixed as <code>0</code>.</td>
+</tr>
+<tr>
+<td><code>errorMsg</code></td>
+<td><code>string</code></td>
+<td>Error message. Fixed as <code>"Success"</code>.</td>
+</tr>
+</tbody>
+</table>
     The response body may also have a `result` property of type `object`, which stores the operation result information.
 
 - When the request is not processed successfully, the response body properties are as follows:
 
-    | Name | Type | Description |
-    |------|------|-------------|
-    |`errorCode`|`integer`|Error code. Same as the response status code.|
-    |`errorMsg`|`string`|Error message.|
-
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errorCode</code></td>
+<td><code>integer</code></td>
+<td>Error code. Same as the response status code.</td>
+</tr>
+<tr>
+<td><code>errorMsg</code></td>
+<td><code>string</code></td>
+<td>Error message.</td>
+</tr>
+</tbody>
+</table>
 Operations provided by the service:
 
 - <b>`infer`</b>
@@ -393,32 +425,101 @@ Operations provided by the service:
 
     - Request body properties:
 
-        | Name | Type | Description | Required |
-        |------|------|-------------|----------|
-        |`image`|`string`|The URL of an image file accessible by the service or the Base64 encoded result of the image file content.|Yes|
-        |`inferenceParams`|`object`|Inference parameters.|No|
-
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>image</code></td>
+<td><code>string</code></td>
+<td>The URL of an image file accessible by the service or the Base64 encoded result of the image file content.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>inferenceParams</code></td>
+<td><code>object</code></td>
+<td>Inference parameters.</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
         Properties of `inferenceParams`:
 
-        | Name | Type | Description | Required |
-        |------|------|-------------|----------|
-        |`maxLongSide`|`integer`|During inference, if the length of the longer side of the input image for the text detection model is greater than `maxLongSide`, the image will be scaled so that the length of the longer side equals `maxLongSide`.|No|
-
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>maxLongSide</code></td>
+<td><code>integer</code></td>
+<td>During inference, if the length of the longer side of the input image for the text detection model is greater than <code>maxLongSide</code>, the image will be scaled so that the length of the longer side equals <code>maxLongSide</code>.</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
     - When the request is processed successfully, the `result` of the response body has the following properties:
 
-        | Name | Type | Description |
-        |------|------|-------------|
-        |`tables`|`array`|Positions and contents of tables.|
-        |`layoutImage`|`string`|Layout area detection result image. The image is in JPEG format and encoded using Base64.|
-        |`ocrImage`|`string`|OCR result image. The image is in JPEG format and encoded using Base64.|
-
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tables</code></td>
+<td><code>array</code></td>
+<td>Positions and contents of tables.</td>
+</tr>
+<tr>
+<td><code>layoutImage</code></td>
+<td><code>string</code></td>
+<td>Layout area detection result image. The image is in JPEG format and encoded using Base64.</td>
+</tr>
+<tr>
+<td><code>ocrImage</code></td>
+<td><code>string</code></td>
+<td>OCR result image. The image is in JPEG format and encoded using Base64.</td>
+</tr>
+</tbody>
+</table>
         Each element in `tables` is an `object` with the following properties:
 
-        | Name | Type | Description |
-        |------|------|-------------|
-        |`bbox`|`array`|Table position. The elements in the array are the x-coordinate of the top-left corner, the y-coordinate of the top-left corner, the x-coordinate of the bottom-right corner, and the y-coordinate of the bottom-right corner of the bounding box, respectively.|
-        |`html`|`string`|Table recognition result in HTML format.|
-
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bbox</code></td>
+<td><code>array</code></td>
+<td>Table position. The elements in the array are the x-coordinate of the top-left corner, the y-coordinate of the top-left corner, the x-coordinate of the bottom-right corner, and the y-coordinate of the bottom-right corner of the bounding box, respectively.</td>
+</tr>
+<tr>
+<td><code>html</code></td>
+<td><code>string</code></td>
+<td>Table recognition result in HTML format.</td>
+</tr>
+</tbody>
+</table>
 </details>
 
 <details>

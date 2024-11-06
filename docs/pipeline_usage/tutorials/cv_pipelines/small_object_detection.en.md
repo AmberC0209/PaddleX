@@ -256,20 +256,52 @@ For all operations provided by the service:
 - Both the response body and the request body for POST requests are JSON data (JSON objects).
 - When the request is processed successfully, the response status code is `200`, and the response body properties are as follows:
 
-    | Name | Type | Description |
-    |------|------|-------------|
-    | `errorCode` | `integer` | Error code. Fixed as `0`. |
-    | `errorMsg` | `string` | Error description. Fixed as `"Success"`. |
-
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errorCode</code></td>
+<td><code>integer</code></td>
+<td>Error code. Fixed as <code>0</code>.</td>
+</tr>
+<tr>
+<td><code>errorMsg</code></td>
+<td><code>string</code></td>
+<td>Error description. Fixed as <code>"Success"</code>.</td>
+</tr>
+</tbody>
+</table>
     The response body may also have a `result` property of type `object`, which stores the operation result information.
 
 - When the request is not processed successfully, the response body properties are as follows:
 
-    | Name | Type | Description |
-    |------|------|-------------|
-    | `errorCode` | `integer` | Error code. Same as the response status code. |
-    | `errorMsg` | `string` | Error description. |
-
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errorCode</code></td>
+<td><code>integer</code></td>
+<td>Error code. Same as the response status code.</td>
+</tr>
+<tr>
+<td><code>errorMsg</code></td>
+<td><code>string</code></td>
+<td>Error description.</td>
+</tr>
+</tbody>
+</table>
 Operations provided by the service are as follows:
 
 - <b>`infer`</b>
@@ -280,25 +312,75 @@ Operations provided by the service are as follows:
 
     - The request body properties are as follows:
 
-        | Name | Type | Description | Required |
-        |------|------|-------------|----------|
-        | `image` | `string` | The URL of an image file accessible by the service or the Base64 encoded result of the image file content. | Yes |
-
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>image</code></td>
+<td><code>string</code></td>
+<td>The URL of an image file accessible by the service or the Base64 encoded result of the image file content.</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
     - When the request is processed successfully, the `result` of the response body has the following properties:
 
-        | Name | Type | Description |
-        |------|------|-------------|
-        | `detectedObjects` | `array` | Information about the location and category of the detected objects. |
-        | `image` | `string` | The image of the object detection result. The image is in JPEG format and encoded in Base64. |
-
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>detectedObjects</code></td>
+<td><code>array</code></td>
+<td>Information about the location and category of the detected objects.</td>
+</tr>
+<tr>
+<td><code>image</code></td>
+<td><code>string</code></td>
+<td>The image of the object detection result. The image is in JPEG format and encoded in Base64.</td>
+</tr>
+</tbody>
+</table>
         Each element in `detectedObjects` is an `object` with the following properties:
 
-        | Name | Type | Description |
-        |------|------|-------------|
-        | `bbox` | `array` | The location of the object. The elements in the array are the x-coordinate of the top-left corner, the y-coordinate of the top-left corner, the x-coordinate of the bottom-right corner, and the y-coordinate of the bottom-right corner of the bounding box, respectively. |
-        | `categoryId` | `integer` | The ID of the object category. |
-        | `score` | `number` | The score of the object. |
-
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bbox</code></td>
+<td><code>array</code></td>
+<td>The location of the object. The elements in the array are the x-coordinate of the top-left corner, the y-coordinate of the top-left corner, the x-coordinate of the bottom-right corner, and the y-coordinate of the bottom-right corner of the bounding box, respectively.</td>
+</tr>
+<tr>
+<td><code>categoryId</code></td>
+<td><code>integer</code></td>
+<td>The ID of the object category.</td>
+</tr>
+<tr>
+<td><code>score</code></td>
+<td><code>number</code></td>
+<td>The score of the object.</td>
+</tr>
+</tbody>
+</table>
         An example of `result` is as follows:
 
         ```json

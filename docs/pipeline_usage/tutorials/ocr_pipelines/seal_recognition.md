@@ -475,20 +475,52 @@ for res in output:
 - 响应体以及POST请求的请求体均为JSON数据（JSON对象）。
 - 当请求处理成功时，响应状态码为`200`，响应体的属性如下：
 
-    |名称|类型|含义|
-    |-|-|-|
-    |`errorCode`|`integer`|错误码。固定为`0`。|
-    |`errorMsg`|`string`|错误说明。固定为`"Success"`。|
-
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errorCode</code></td>
+<td><code>integer</code></td>
+<td>错误码。固定为<code>0</code>。</td>
+</tr>
+<tr>
+<td><code>errorMsg</code></td>
+<td><code>string</code></td>
+<td>错误说明。固定为<code>"Success"</code>。</td>
+</tr>
+</tbody>
+</table>
     响应体还可能有`result`属性，类型为`object`，其中存储操作结果信息。
 
 - 当请求处理未成功时，响应体的属性如下：
 
-    |名称|类型|含义|
-    |-|-|-|
-    |`errorCode`|`integer`|错误码。与响应状态码相同。|
-    |`errorMsg`|`string`|错误说明。|
-
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errorCode</code></td>
+<td><code>integer</code></td>
+<td>错误码。与响应状态码相同。</td>
+</tr>
+<tr>
+<td><code>errorMsg</code></td>
+<td><code>string</code></td>
+<td>错误说明。</td>
+</tr>
+</tbody>
+</table>
 服务提供的操作如下：
 
 - <b>`infer`</b>
@@ -499,38 +531,119 @@ for res in output:
 
     - 请求体的属性如下：
 
-        |名称|类型|含义|是否必填|
-        |-|-|-|-|
-        |`image`|`string`|服务可访问的图像文件的URL或图像文件内容的Base64编码结果。|是|
-        |`inferenceParams`|`object`|推理参数。|否|
-
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>含义</th>
+<th>是否必填</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>image</code></td>
+<td><code>string</code></td>
+<td>服务可访问的图像文件的URL或图像文件内容的Base64编码结果。</td>
+<td>是</td>
+</tr>
+<tr>
+<td><code>inferenceParams</code></td>
+<td><code>object</code></td>
+<td>推理参数。</td>
+<td>否</td>
+</tr>
+</tbody>
+</table>
         `inferenceParams`的属性如下：
 
-        |名称|类型|含义|是否必填|
-        |-|-|-|-|
-        |`maxLongSide`|`integer`|推理时，若文本检测模型的输入图像较长边的长度大于`maxLongSide`，则将对图像进行缩放，使其较长边的长度等于`maxLongSide`。|否|
-
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>含义</th>
+<th>是否必填</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>maxLongSide</code></td>
+<td><code>integer</code></td>
+<td>推理时，若文本检测模型的输入图像较长边的长度大于<code>maxLongSide</code>，则将对图像进行缩放，使其较长边的长度等于<code>maxLongSide</code>。</td>
+<td>否</td>
+</tr>
+</tbody>
+</table>
     - 请求处理成功时，响应体的`result`具有如下属性：
 
-        |名称|类型|含义|
-        |-|-|-|
-        |`sealImpressions`|`array`|印章文本识别结果。|
-        |`layoutImage`|`string`|版面区域检测结果图。图像为JPEG格式，使用Base64编码。|
-
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sealImpressions</code></td>
+<td><code>array</code></td>
+<td>印章文本识别结果。</td>
+</tr>
+<tr>
+<td><code>layoutImage</code></td>
+<td><code>string</code></td>
+<td>版面区域检测结果图。图像为JPEG格式，使用Base64编码。</td>
+</tr>
+</tbody>
+</table>
         `sealImpressions`中的每个元素为一个`object`，具有如下属性：
 
-        |名称|类型|含义|
-        |-|-|-|
-        |`texts`|`array`|文本位置、内容和得分。|
-
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>texts</code></td>
+<td><code>array</code></td>
+<td>文本位置、内容和得分。</td>
+</tr>
+</tbody>
+</table>
         `texts`中的每个元素为一个`object`，具有如下属性：
 
-        |名称|类型|含义|
-        |-|-|-|
-        |`poly`|`array`|文本位置。数组中元素依次为包围文本的多边形的顶点坐标。|
-        |`text`|`string`|文本内容。|
-        |`score`|`number`|文本识别得分。|
-
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>poly</code></td>
+<td><code>array</code></td>
+<td>文本位置。数组中元素依次为包围文本的多边形的顶点坐标。</td>
+</tr>
+<tr>
+<td><code>text</code></td>
+<td><code>string</code></td>
+<td>文本内容。</td>
+</tr>
+<tr>
+<td><code>score</code></td>
+<td><code>number</code></td>
+<td>文本识别得分。</td>
+</tr>
+</tbody>
+</table>
 </details>
 
 <details>

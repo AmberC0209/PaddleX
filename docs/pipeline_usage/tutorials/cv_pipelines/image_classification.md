@@ -820,20 +820,52 @@ for res in output:
 - 响应体以及POST请求的请求体均为JSON数据（JSON对象）。
 - 当请求处理成功时，响应状态码为`200`，响应体的属性如下：
 
-    |名称|类型|含义|
-    |-|-|-|
-    |`errorCode`|`integer`|错误码。固定为`0`。|
-    |`errorMsg`|`string`|错误说明。固定为`"Success"`。|
-
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errorCode</code></td>
+<td><code>integer</code></td>
+<td>错误码。固定为<code>0</code>。</td>
+</tr>
+<tr>
+<td><code>errorMsg</code></td>
+<td><code>string</code></td>
+<td>错误说明。固定为<code>"Success"</code>。</td>
+</tr>
+</tbody>
+</table>
     响应体还可能有`result`属性，类型为`object`，其中存储操作结果信息。
 
 - 当请求处理未成功时，响应体的属性如下：
 
-    |名称|类型|含义|
-    |-|-|-|
-    |`errorCode`|`integer`|错误码。与响应状态码相同。|
-    |`errorMsg`|`string`|错误说明。|
-
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errorCode</code></td>
+<td><code>integer</code></td>
+<td>错误码。与响应状态码相同。</td>
+</tr>
+<tr>
+<td><code>errorMsg</code></td>
+<td><code>string</code></td>
+<td>错误说明。</td>
+</tr>
+</tbody>
+</table>
 服务提供的操作如下：
 
 - <b>`infer`</b>
@@ -844,32 +876,101 @@ for res in output:
 
     - 请求体的属性如下：
 
-        |名称|类型|含义|是否必填|
-        |-|-|-|-|
-        |`image`|`string`|服务可访问的图像文件的URL或图像文件内容的Base64编码结果。|是|
-        |`inferenceParams`|`object`|推理参数。|否|
-
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>含义</th>
+<th>是否必填</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>image</code></td>
+<td><code>string</code></td>
+<td>服务可访问的图像文件的URL或图像文件内容的Base64编码结果。</td>
+<td>是</td>
+</tr>
+<tr>
+<td><code>inferenceParams</code></td>
+<td><code>object</code></td>
+<td>推理参数。</td>
+<td>否</td>
+</tr>
+</tbody>
+</table>
         `inferenceParams`的属性如下：
 
-        |名称|类型|含义|是否必填|
-        |-|-|-|-|
-        |`topK`|`integer`|结果中将只保留得分最高的`topK`个类别。|否|
-
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>含义</th>
+<th>是否必填</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>topK</code></td>
+<td><code>integer</code></td>
+<td>结果中将只保留得分最高的<code>topK</code>个类别。</td>
+<td>否</td>
+</tr>
+</tbody>
+</table>
     - 请求处理成功时，响应体的`result`具有如下属性：
 
-        |名称|类型|含义|
-        |-|-|-|
-        |`categories`|`array`|图像类别信息。|
-        |`image`|`string`|图像分类结果图。图像为JPEG格式，使用Base64编码。|
-
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>categories</code></td>
+<td><code>array</code></td>
+<td>图像类别信息。</td>
+</tr>
+<tr>
+<td><code>image</code></td>
+<td><code>string</code></td>
+<td>图像分类结果图。图像为JPEG格式，使用Base64编码。</td>
+</tr>
+</tbody>
+</table>
         `categories`中的每个元素为一个`object`，具有如下属性：
 
-        |名称|类型|含义|
-        |-|-|-|
-        |`id`|`integer`|类别ID。|
-        |`name`|`string`|类别名称。|
-        |`score`|`number`|类别得分。|
-
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>integer</code></td>
+<td>类别ID。</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>类别名称。</td>
+</tr>
+<tr>
+<td><code>score</code></td>
+<td><code>number</code></td>
+<td>类别得分。</td>
+</tr>
+</tbody>
+</table>
         `result`示例如下：
 
         ```json

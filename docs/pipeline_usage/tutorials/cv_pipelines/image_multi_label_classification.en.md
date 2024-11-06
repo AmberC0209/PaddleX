@@ -259,20 +259,52 @@ For all operations provided by the service:
 - Both the response body and the request body for POST requests are JSON data (JSON objects).
 - When the request is processed successfully, the response status code is `200`, and the response body properties are as follows:
 
-    | Name | Type | Description |
-    |------|------|-------------|
-    |`errorCode`|`integer`|Error code. Fixed to `0`.|
-    |`errorMsg`|`string`|Error message. Fixed to `"Success"`.|
-
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errorCode</code></td>
+<td><code>integer</code></td>
+<td>Error code. Fixed to <code>0</code>.</td>
+</tr>
+<tr>
+<td><code>errorMsg</code></td>
+<td><code>string</code></td>
+<td>Error message. Fixed to <code>"Success"</code>.</td>
+</tr>
+</tbody>
+</table>
     The response body may also have a `result` property of type `object`, which stores the operation result information.
 
 - When the request is not processed successfully, the response body properties are as follows:
 
-    | Name | Type | Description |
-    |------|------|-------------|
-    |`errorCode`|`integer`|Error code. Same as the response status code.|
-    |`errorMsg`|`string`|Error message.|
-
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errorCode</code></td>
+<td><code>integer</code></td>
+<td>Error code. Same as the response status code.</td>
+</tr>
+<tr>
+<td><code>errorMsg</code></td>
+<td><code>string</code></td>
+<td>Error message.</td>
+</tr>
+</tbody>
+</table>
 Operations provided by the service are as follows:
 
 - <b>`infer`</b>
@@ -283,32 +315,101 @@ Operations provided by the service are as follows:
 
     - The request body properties are as follows:
 
-        | Name | Type | Description | Required |
-        |------|------|-------------|----------|
-        |`image`|`string`|The URL of the image file accessible by the service or the Base64 encoded result of the image file content.|Yes|
-        |`inferenceParams`|`object`|Inference parameters.|No|
-
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>image</code></td>
+<td><code>string</code></td>
+<td>The URL of the image file accessible by the service or the Base64 encoded result of the image file content.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>inferenceParams</code></td>
+<td><code>object</code></td>
+<td>Inference parameters.</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
         The properties of `inferenceParams` are as follows:
 
-        | Name | Type | Description | Required |
-        |------|------|-------------|----------|
-        |`topK`|`integer`|Only the top `topK` categories with the highest scores will be retained in the result.|No|
-
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>topK</code></td>
+<td><code>integer</code></td>
+<td>Only the top <code>topK</code> categories with the highest scores will be retained in the result.</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
     - When the request is processed successfully, the `result` of the response body has the following properties:
 
-        | Name | Type | Description |
-        |------|------|-------------|
-        |`categories`|`array`|Image category information.|
-        |`image`|`string`|Image classification result image. The image is in JPEG format and encoded in Base64.|
-
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>categories</code></td>
+<td><code>array</code></td>
+<td>Image category information.</td>
+</tr>
+<tr>
+<td><code>image</code></td>
+<td><code>string</code></td>
+<td>Image classification result image. The image is in JPEG format and encoded in Base64.</td>
+</tr>
+</tbody>
+</table>
         Each element in `categories` is an `object` with the following properties:
 
-        | Name | Type | Description |
-        |------|------|-------------|
-        |`id`|`integer`|Category ID.|
-        |`name`|`string`|Category name.|
-        |`score`|`number`|Category score.|
-
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>integer</code></td>
+<td>Category ID.</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Category name.</td>
+</tr>
+<tr>
+<td><code>score</code></td>
+<td><code>number</code></td>
+<td>Category score.</td>
+</tr>
+</tbody>
+</table>
         An example of `result` is as follows:
 
         ```json
