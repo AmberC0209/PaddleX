@@ -4362,7 +4362,7 @@ You're not viewing the latest version.
 <h1 id="_1">通用目标检测产线使用教程<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <h2 id="1">1. 通用目标检测产线介绍<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
 <p>目标检测旨在识别图像或视频中多个对象的类别及其位置，通过生成边界框来标记这些对象。与简单的图像分类不同，目标检测不仅需要识别出图像中有哪些物体，例如人、车和动物等，还需要准确地确定每个物体在图像中的具体位置，通常以矩形框的形式表示。该技术广泛应用于自动驾驶、监控系统和智能相册等领域，依赖于深度学习模型（如YOLO、Faster R-CNN等），这些模型能够高效地提取特征并进行实时检测，显著提升了计算机对图像内容理解的能力。</p>
-<p><img alt="" src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/object_detection/01.png" /></p>
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/object_detection/01.png"></p>
 <p><strong>通用****目标检测****产线中包含了****目标检测****模块，如您更考虑模型精度，请选择精度较高的模型，如您更考虑模型推理速度，请选择推理速度较快的模型，如您更考虑模型存储大小，请选择存储大小较小的模型</strong>。</p>
 <details>
    <summary> 👉模型列表详情</summary>
@@ -4682,7 +4682,7 @@ You're not viewing the latest version.
 <p>PaddleX 所提供的预训练的模型产线均可以快速体验效果，你可以在线体验通用目标检测产线的效果，也可以在本地使用命令行或 Python 体验通用目标检测产线的效果。</p>
 <h3 id="21">2.1 在线体验<a class="headerlink" href="#21" title="Permanent link">&para;</a></h3>
 <p>您可以<a href="https://aistudio.baidu.com/community/app/70230/webUI">在线体验</a>通用目标检测产线的效果，用官方提供的 demo 图片进行识别，例如：</p>
-<p><img alt="" src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/object_detection/02.png" /></p>
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/object_detection/02.png"></p>
 <p>如果您对产线运行的效果满意，可以直接对产线进行集成部署，如果不满意，您也可以利用私有数据**对产线中的模型进行在线微调**。</p>
 <h3 id="22">2.2 本地体验<a class="headerlink" href="#22" title="Permanent link">&para;</a></h3>
 <p>在本地使用通用目标检测产线前，请确保您已经按照<a href="../../../installation/installation.html">PaddleX本地安装教程</a>完成了PaddleX的wheel包安装。</p>
@@ -4719,7 +4719,7 @@ You're not viewing the latest version.
 <p>运行后，得到的结果为：</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>{&#39;input_path&#39;: &#39;general_object_detection_002.png&#39;, &#39;boxes&#39;: [{&#39;cls_id&#39;: 49, &#39;label&#39;: &#39;orange&#39;, &#39;score&#39;: 0.8188097476959229, &#39;coordinate&#39;: [661, 93, 870, 305]}, {&#39;cls_id&#39;: 47, &#39;label&#39;: &#39;apple&#39;, &#39;score&#39;: 0.7743489146232605, &#39;coordinate&#39;: [76, 274, 330, 520]}, {&#39;cls_id&#39;: 47, &#39;label&#39;: &#39;apple&#39;, &#39;score&#39;: 0.7270504236221313, &#39;coordinate&#39;: [285, 94, 469, 297]}, {&#39;cls_id&#39;: 46, &#39;label&#39;: &#39;banana&#39;, &#39;score&#39;: 0.5570532083511353, &#39;coordinate&#39;: [310, 361, 685, 712]}, {&#39;cls_id&#39;: 47, &#39;label&#39;: &#39;apple&#39;, &#39;score&#39;: 0.5484835505485535, &#39;coordinate&#39;: [764, 285, 924, 440]}, {&#39;cls_id&#39;: 47, &#39;label&#39;: &#39;apple&#39;, &#39;score&#39;: 0.5160726308822632, &#39;coordinate&#39;: [853, 169, 987, 303]}, {&#39;cls_id&#39;: 60, &#39;label&#39;: &#39;dining table&#39;, &#39;score&#39;: 0.5142655968666077, &#39;coordinate&#39;: [0, 0, 1072, 720]}, {&#39;cls_id&#39;: 47, &#39;label&#39;: &#39;apple&#39;, &#39;score&#39;: 0.5101479291915894, &#39;coordinate&#39;: [57, 23, 213, 176]}]}
 </span></code></pre></div>
-<p><img alt="" src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/object_detection/03.png" /></p>
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/object_detection/03.png"></p>
 <p>可视化图片默认不进行保存，您可以通过 <code>--save_path</code> 自定义保存路径，随后所有结果将被保存在指定路径下。</p>
 <h4 id="222-python">2.2.2 Python脚本方式集成<a class="headerlink" href="#222-python" title="Permanent link">&para;</a></h4>
 <p>几行代码即可完成产线的快速推理，以通用目标检测产线为例：</p>

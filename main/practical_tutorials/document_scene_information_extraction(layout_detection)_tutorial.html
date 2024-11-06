@@ -4482,11 +4482,11 @@ You're not viewing the latest version.
 </span></code></pre></div>
 <p>在<code>output</code> 目录中，保存了版面区域检测、OCR、表格识别可视化结果以及表格html和xlsx结果。</p>
 <p>其中版面区域定位结果可视化如下：</p>
-<p><img alt="" src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/practical_tutorials/PP-ChatOCRv3_doc/layout_detection_01.png" /></p>
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/practical_tutorials/PP-ChatOCRv3_doc/layout_detection_01.png"></p>
 <p>通过上面的文档场景信息抽取的快速体验可以进行 Badcase 分析，发现文档场景信息抽取产线的官方模型，在当前需求场景中存在下面的问题：由于官方模型目前只区分了图，表格和印章三个类别，因此目前无法准确的定位并抽取出页眉和表格标题等其他信息，在<code>{'chat_res': {'页眉': '未知', '表格标题': '未知'}, 'prompt': ''}</code>中的结果是未知。因此，本节工作聚焦于论文文献的场景，利用论文文档数据集，以页眉和表格标题信息的抽取为例，对文档场景信息抽取产线中的版面分析模型进行微调，从而达到能够精确提取文档中页眉和表格标题信息的能力。</p>
 <h3 id="22">2.2 在线体验<a class="headerlink" href="#22" title="Permanent link">&para;</a></h3>
 <p>您可以在 <strong>AI Studio 星河社区</strong> 体验文档场景信息抽取v3产线的效果，点击链接下载 <a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/doc_images/practical_tutorial/PP-ChatOCRv3_doc_layout/test.jpg">论文文献测试文件</a>，上传至<a href="https://aistudio.baidu.com/community/app/182491/webUI?source=appCenter">官方文档场景信息抽取v3 应用</a> 体验抽取效果。如下：</p>
-<p><img alt="" src="https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/doc_images/practical_tutorial/PP-ChatOCRv3_doc_layout/06.png" /></p>
+<p><img src="https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/doc_images/practical_tutorial/PP-ChatOCRv3_doc_layout/06.png"></p>
 <h2 id="3">3. 选择模型<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
 <p>PaddleX 提供了 4 个端到端的版面区域定位模型，具体可参考 <a href="../support_list/models_list.html">模型列表</a>，其中版面区域检测模型的 benchmark 如下：</p>
 <table>
@@ -4774,7 +4774,7 @@ You're not viewing the latest version.
 </span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">    </span>-o<span class="w"> </span>Predict.input<span class="o">=</span><span class="s2">&quot;https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/doc_images/practical_tutorial/PP-ChatOCRv3_doc_layout/test.jpg&quot;</span>
 </span></code></pre></div>
 <p>通过上述可在<code>./output</code>下生成预测结果，其中<code>test.jpg</code>的预测结果如下：</p>
-<p><img alt="" src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/practical_tutorials/PP-ChatOCRv3_doc/layout_detection_03.png" /></p>
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/practical_tutorials/PP-ChatOCRv3_doc/layout_detection_03.png"></p>
 <h2 id="6">6. 产线测试<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
 <p>将产线中的模型替换为微调后的模型进行测试，使用 <a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/doc_images/practical_tutorial/PP-ChatOCRv3_doc_layout/test.jpg">论文文献测试文件</a>，进行预测：</p>
 <p>首先获取并更新文档信息抽取v3的配置文件，执行下面的命令获取配置文件，（假设自定义保存位置为 <code>./my_path</code> ）：</p>
@@ -4825,7 +4825,7 @@ You're not viewing the latest version.
 </span></code></pre></div>
 <p>可以发现，在模型微调之后，关键信息已经被正确的提取出来。</p>
 <p>版面的可视化结果如下，已经正确增加了页眉和表格标题的区域定位能力：</p>
-<p><img alt="" src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/practical_tutorials/PP-ChatOCRv3_doc/layout_detection_04.png" /></p>
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/practical_tutorials/PP-ChatOCRv3_doc/layout_detection_04.png"></p>
 <h2 id="7">7. 开发集成/部署<a class="headerlink" href="#7" title="Permanent link">&para;</a></h2>
 <p>如果文档场景信息抽取v3产线可以达到您对产线推理速度和精度的要求，您可以直接进行开发集成/部署。</p>
 <ol>

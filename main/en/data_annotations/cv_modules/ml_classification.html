@@ -4442,9 +4442,9 @@ Click on the above links to install the annotation tools and view detailed usage
 <li>Create a root directory for the dataset, e.g., <code>helmet</code>.</li>
 <li>Create an <code>images</code> directory (must be named <code>images</code>) within <code>helmet</code> and store the images to be annotated in the <code>images</code> directory, as shown below:</li>
 </ul>
-<p><img alt="alt text" src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/01.png" />
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/01.png">
 * Create a category label file <code>label.txt</code> in the <code>helmet</code> folder and write the categories of the dataset to be annotated into <code>label.txt</code> by line. For example, for a helmet detection dataset, <code>label.txt</code> would look like this:</p>
-<p><img alt="alt text" src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/02.png" /></p>
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/02.png"></p>
 <h4 id="232-start-labelme">2.3.2 Start Labelme<a class="headerlink" href="#232-start-labelme" title="Permanent link">&para;</a></h4>
 <p>Navigate to the root directory of the dataset to be annotated in the terminal and start the <code>Labelme</code> annotation tool:
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">cd</span><span class="w"> </span>path/to/helmet
@@ -4458,26 +4458,26 @@ Click on the above links to install the annotation tools and view detailed usage
 <ul>
 <li>After starting <code>Labelme</code>, it will look like this:</li>
 </ul>
-<p><img alt="alt text" src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/03.png" />
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/03.png">
 * Click "Edit" to select the annotation type.</p>
-<p><img alt="alt text" src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/04.png" />
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/04.png">
 * Choose to create a rectangular box.</p>
-<p><img alt="alt text" src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/05.png" />
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/05.png">
 * Drag the crosshair to select the target area on the image.</p>
-<p><img alt="alt text" src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/06.png" />
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/06.png">
 * Click again to select the category of the target box.</p>
-<p><img alt="alt text" src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/07.png" />
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/07.png">
 * After labeling, click Save. (If the <code>output</code> field is not specified when starting <code>Labelme</code>, it will prompt you to select a save path the first time you save. If the <code>autosave</code> field is used for automatic saving, there is no need to click the Save button).</p>
-<p><img alt="alt text" src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/image_classification/05.png" />
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/image_classification/05.png">
 * Then click <code>Next Image</code> to label the next image.</p>
-<p><img alt="alt text" src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/image_classification/06.png" />
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/image_classification/06.png">
 * The final labeled tag file looks like this:</p>
-<p><img alt="alt text" src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/08.png" />
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/08.png">
 * Adjust the directory to obtain the safety helmet detection dataset in the standard <code>Labelme</code> format
   * Create two text files, <code>train_anno_list.txt</code> and <code>val_anno_list.txt</code>, in the root directory of the dataset. Write the paths of all <code>json</code> files in the <code>annotations</code> directory into <code>train_anno_list.txt</code> and <code>val_anno_list.txt</code> at a certain ratio, or write all of them into <code>train_anno_list.txt</code> and create an empty <code>val_anno_list.txt</code> file. Use the data splitting function to re-split. The specific filling format of <code>train_anno_list.txt</code> and <code>val_anno_list.txt</code> is shown below:</p>
-<p><img alt="alt text" src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/09.png" />
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/09.png">
   * The final directory structure after organization is as follows:</p>
-<p><img alt="alt text" src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/10.png" /></p>
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/10.png"></p>
 <h4 id="234-format-conversion">2.3.4 Format Conversion<a class="headerlink" href="#234-format-conversion" title="Permanent link">&para;</a></h4>
 <p>After labeling with <code>Labelme</code>, the data format needs to be converted to <code>coco</code> format. Below is a code example for converting the data labeled using <code>Labelme</code> according to the above tutorial:
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">cd</span><span class="w"> </span>/path/to/paddlex
@@ -4514,9 +4514,9 @@ Click on the above links to install the annotation tools and view detailed usage
 <ul>
 <li>Open the automatically popped-up webpage, click on the sample project, and click on Object Detection.</li>
 </ul>
-<p><img alt="alt text" src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/11.png" />
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/11.png">
 * Fill in the project name and dataset path. Note that the path is the absolute path on the local machine. Click Create after completion.</p>
-<p><img alt="alt text" src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/12.png" />
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/12.png">
 * First, define the categories that need to be annotated. Taking layout analysis as an example, provide 10 categories, each with a unique corresponding id. Click Add Category to create the required category names.
 * Start annotating
   * Select the label you want to annotate with.
@@ -4524,7 +4524,7 @@ Click on the above links to install the annotation tools and view detailed usage
   * Draw a bounding box around the desired region in the image, ensuring semantic partitioning. If there are multiple columns, annotate each separately.
   * After completing the annotation, the result will appear in the lower-right corner. Check if the annotation is correct.
   * Once done, click <strong>Project Overview</strong>.</p>
-<p><img alt="alt text" src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/13.png" /></p>
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/13.png"></p>
 <ul>
 <li>
 <p>Export Annotated Files</p>
@@ -4533,15 +4533,15 @@ Click on the above links to install the annotation tools and view detailed usage
 <p>In the Project Overview, segment the dataset as needed and click "Export Dataset".</p>
 </li>
 </ul>
-<p><img alt="alt text" src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/14.png" /></p>
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/14.png"></p>
 <ul>
 <li>Fill in the export path and format. The export path should be an absolute path, and the format should be <code>coco</code>.</li>
 </ul>
-<p><img alt="alt text" src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/15.png" /></p>
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/15.png"></p>
 <ul>
 <li>After successful export, the annotated files will be available in the specified path.</li>
 </ul>
-<p><img alt="alt text" src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/16.png" /></p>
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/16.png"></p>
 <ul>
 <li>
 <p>Adjust directories to obtain COCO-formatted dataset for helmet detection</p>
@@ -4570,7 +4570,7 @@ Click on the above links to install the annotation tools and view detailed usage
 <ul>
 <li>Create an <code>annotations</code> directory in the root of the dataset and move all <code>json</code> files into it. The final dataset structure should look like this:</li>
 </ul>
-<p><img alt="alt text" src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/17.png" /></p>
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/17.png"></p>
 <ul>
 <li>Compress the <code>helmet</code> directory into a <code>.tar</code> or <code>.zip</code> file to obtain the COCO-formatted dataset for helmet detection.</li>
 </ul>

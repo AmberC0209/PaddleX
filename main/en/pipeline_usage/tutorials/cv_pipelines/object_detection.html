@@ -4362,7 +4362,7 @@ You're not viewing the latest version.
 <h1 id="general-object-detection-pipeline-tutorial">General Object Detection Pipeline Tutorial<a class="headerlink" href="#general-object-detection-pipeline-tutorial" title="Permanent link">&para;</a></h1>
 <h2 id="1-introduction-to-general-object-detection-pipeline">1. Introduction to General Object Detection Pipeline<a class="headerlink" href="#1-introduction-to-general-object-detection-pipeline" title="Permanent link">&para;</a></h2>
 <p>Object detection aims to identify the categories and locations of multiple objects in images or videos by generating bounding boxes to mark these objects. Unlike simple image classification, object detection not only requires recognizing what objects are present in an image, such as people, cars, and animals, but also accurately determining the specific position of each object within the image, typically represented by rectangular boxes. This technology is widely used in autonomous driving, surveillance systems, smart photo albums, and other fields, relying on deep learning models (e.g., YOLO, Faster R-CNN) that can efficiently extract features and perform real-time detection, significantly enhancing the computer's ability to understand image content.</p>
-<p><img alt="" src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/object_detection/01.png" /></p>
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/object_detection/01.png"></p>
 <details>
    <summary> 👉Details of Model List</summary>
 
@@ -4682,7 +4682,7 @@ You're not viewing the latest version.
 <p>PaddleX's pre-trained model pipelines allow for quick experience of their effects. You can experience the effects of the General Object Detection Pipeline online or locally using command line or Python.</p>
 <h3 id="21-online-experience">2.1 Online Experience<a class="headerlink" href="#21-online-experience" title="Permanent link">&para;</a></h3>
 <p>You can <a href="https://aistudio.baidu.com/community/app/70230/webUI">experience the General Object Detection Pipeline online</a> using the demo images provided by the official source, for example:</p>
-<p><img alt="" src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/object_detection/02.png" /></p>
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/object_detection/02.png"></p>
 <p>If you are satisfied with the pipeline's performance, you can directly integrate and deploy it. If not, you can also use your private data to <strong>fine-tune the model within the pipeline</strong>.</p>
 <h3 id="22-local-experience">2.2 Local Experience<a class="headerlink" href="#22-local-experience" title="Permanent link">&para;</a></h3>
 <p>Before using the General Object Detection Pipeline locally, ensure you have installed the PaddleX wheel package following the <a href="../../../installation/installation.html">PaddleX Local Installation Tutorial</a>.</p>
@@ -4719,7 +4719,7 @@ Here, parameters such as `--model` and `--device` do not need to be specified, a
 <p>After running, the result will be:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>{&#39;input_path&#39;: &#39;general_object_detection_002.png&#39;, &#39;boxes&#39;: [{&#39;cls_id&#39;: 49, &#39;label&#39;: &#39;orange&#39;, &#39;score&#39;: 0.8188097476959229, &#39;coordinate&#39;: [661, 93, 870, 305]}, {&#39;cls_id&#39;: 47, &#39;label&#39;: &#39;apple&#39;, &#39;score&#39;: 0.7743489146232605, &#39;coordinate&#39;: [76, 274, 330, 520]}, {&#39;cls_id&#39;: 47, &#39;label&#39;: &#39;apple&#39;, &#39;score&#39;: 0.7270504236221313, &#39;coordinate&#39;: [285, 94, 469, 297]}, {&#39;cls_id&#39;: 46, &#39;label&#39;: &#39;banana&#39;, &#39;score&#39;: 0.5570532083511353, &#39;coordinate&#39;: [310, 361, 685, 712]}, {&#39;cls_id&#39;: 47, &#39;label&#39;: &#39;apple&#39;, &#39;score&#39;: 0.5484835505485535, &#39;coordinate&#39;: [764, 285, 924, 440]}, {&#39;cls_id&#39;: 47, &#39;label&#39;: &#39;apple&#39;, &#39;score&#39;: 0.5160726308822632, &#39;coordinate&#39;: [853, 169, 987, 303]}, {&#39;cls_id&#39;: 60, &#39;label&#39;: &#39;dining table&#39;, &#39;score&#39;: 0.5142655968666077, &#39;coordinate&#39;: [0, 0, 1072, 720]}, {&#39;cls_id&#39;: 47, &#39;label&#39;: &#39;apple&#39;, &#39;score&#39;: 0.5101479291915894, &#39;coordinate&#39;: [57, 23, 213, 176]}]}
 </span></code></pre></div>
-<p><img alt="" src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/object_detection/03.png" /></p>
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/object_detection/03.png"></p>
 <p>The visualized image not saved by default. You can customize the save path through <code>--save_path</code>, and then all results will be saved in the specified path.</p>
 <h4 id="222-integration-via-python-scripts">2.2.2 Integration via Python Scripts<a class="headerlink" href="#222-integration-via-python-scripts" title="Permanent link">&para;</a></h4>
 <p>A few lines of code are all you need to quickly perform inference on your production line. Taking General Object Detection as an example:</p>

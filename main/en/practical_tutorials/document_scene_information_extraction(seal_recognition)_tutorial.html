@@ -4267,11 +4267,11 @@ You're not viewing the latest version.
 </span></code></pre></div>
 <p>In the <code>output</code> directory, the visualization results of seal_recognition and OCR (if table exits, table recognition, as well as the table results in HTML and XLSX formats), are saved.</p>
 <p>Among them, the visualization of the seal_recognition results is as follows:</p>
-<p><img alt="" src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/practical_tutorials/PP-ChatOCRv3_doc/seal_01.png" /></p>
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/practical_tutorials/PP-ChatOCRv3_doc/seal_01.png"></p>
 <p>Through the online experience of the document scene information extraction, a Badcase analysis can be conducted to identify issues with the official model of the document scene information extraction pipeline. The official model of the document scene information extraction production line has been found to have the following issues in the current demand scenario: in the visualization of OCR recognition, there is a deviation in the text bending detection box of the seal, resulting in incorrect seal text recognition; The information on the seal was not correctly extracted. The results for these in <code>{'chat_res': {'seal': 'unknown'}, 'prompt': ''}</code> are unknown. Therefore, this section focuses on the scenario of Seal Text Recognitions. Utilizing a dataset of Seal Text Recognition, with the extraction of seal information as examples, the seal text detection model within the document scene information extraction pipeline is fine-tuned to achieve the ability to accurately extract seal information from the document.</p>
 <h3 id="22-online-experience">2.2 Online Experience<a class="headerlink" href="#22-online-experience" title="Permanent link">&para;</a></h3>
 <p>You can experience the effectiveness of the Document Scene Information Extraction v3 pipeline on the <strong>AIStudio Community</strong>. Click the link to download the <a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/doc_images/practical_tutorial/PP-ChatOCRv3_doc_seal/test.png">Test Seal File</a>, and then upload it to the <a href="https://aistudio.baidu.com/community/app/182491/webUI?source=appCenter">official Document Scene Information Extraction v3 application</a> to experience the extraction results. The process is as follows:</p>
-<p><img alt="" src="https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/doc_images/practical_tutorial/PP-ChatOCRv3_doc_seal/06.png" /></p>
+<p><img src="https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/doc_images/practical_tutorial/PP-ChatOCRv3_doc_seal/06.png"></p>
 <h2 id="3-choosing-a-model">3. Choosing a Model<a class="headerlink" href="#3-choosing-a-model" title="Permanent link">&para;</a></h2>
 <p>PaddleX provides 2 end-to-end seal text detection models, which can be referenced in the <a href="../support_list/models_list.html">Model List</a>. Some of the benchmarks for these models are as follows:</p>
 <table>
@@ -4561,7 +4561,7 @@ You're not viewing the latest version.
 </span></code></pre></div>
 <p>It can be observed that after fine-tuning the model, the key information has been correctly extracted.</p>
 <p>The visualization result of the seal is as follows, with the correctly added ability to extract the seal text information:</p>
-<p><img alt="" src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/practical_tutorials/PP-ChatOCRv3_doc/seal_04.png" /></p>
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/practical_tutorials/PP-ChatOCRv3_doc/seal_04.png"></p>
 <h2 id="7-development-integrationdeployment">7. Development Integration/Deployment<a class="headerlink" href="#7-development-integrationdeployment" title="Permanent link">&para;</a></h2>
 <p>If the Document Scene Information Extraction v3 production line meets your requirements for inference speed and accuracy, you can proceed directly with development integration/deployment.</p>
 <ol>

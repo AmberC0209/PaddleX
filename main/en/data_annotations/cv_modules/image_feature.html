@@ -4326,11 +4326,11 @@ Click the link above to install the data annotation tool and view detailed usage
 <li>Create a root directory for the dataset, e.g., <code>pets</code>.</li>
 <li>Create an <code>images</code> directory (must be named <code>images</code>) within <code>pets</code> and store the images to be annotated in the <code>images</code> directory, as shown below:</li>
 </ul>
-<p><img alt="alt text" src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/image_classification/01.png" /></p>
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/image_classification/01.png"></p>
 <ul>
 <li>Create a category label file <code>flags.txt</code> in the <code>pets</code> folder for the dataset to be annotated, and write the categories of the dataset to be annotated into <code>flags.txt</code> line by line. Taking the <code>flags.txt</code> for a cat-dog classification dataset as an example, as shown below:</li>
 </ul>
-<p><img alt="alt text" src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/image_classification/02.png" /></p>
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/image_classification/02.png"></p>
 <h4 id="132-start-labelme">1.3.2 Start Labelme<a class="headerlink" href="#132-start-labelme" title="Permanent link">&para;</a></h4>
 <p>Navigate to the root directory of the dataset to be annotated in the terminal and start the <code>labelme</code> annotation tool.</p>
 <p><div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">cd</span><span class="w"> </span>path/to/pets
@@ -4344,15 +4344,15 @@ Click the link above to install the data annotation tool and view detailed usage
 <ul>
 <li>After starting <code>labelme</code>, it will look like this:</li>
 </ul>
-<p><img alt="alt text" src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/image_classification/03.png" />
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/image_classification/03.png">
 * Select the category in the <code>Flags</code> interface.</p>
-<p><img alt="alt text" src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/image_classification/04.png" /></p>
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/image_classification/04.png"></p>
 <ul>
 <li>After annotation, click Save. (If <code>output</code> is not specified when starting <code>labelme</code>, it will prompt to select the save path upon the first save. If <code>autosave</code> is enabled, there is no need to click the Save button).</li>
 </ul>
-<p><img alt="alt text" src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/image_classification/05.png" />
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/image_classification/05.png">
 * Then click <code>Next Image</code> to annotate the next image.</p>
-<p><img alt="alt text" src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/image_classification/06.png" /></p>
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/image_classification/06.png"></p>
 <ul>
 <li>After annotating all images, use the <a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/doc_images/applications/image_classification_dataset_prepare/convert_to_imagenet.py">convert_to_imagenet.py</a> to convert the annotated dataset to <code>ImageNet-1k</code> dataset format, generating <code>train.txt</code>, <code>val.txt</code>, and <code>label.txt</code>.</li>
 </ul>
@@ -4362,7 +4362,7 @@ Click the link above to install the data annotation tool and view detailed usage
 <ul>
 <li>The final directory structure after organization is as follows:</li>
 </ul>
-<p><img alt="alt text" src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/image_classification/07.png" /></p>
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/image_classification/07.png"></p>
 <h4 id="134-data-format-conversion">1.3.4 Data Format Conversion<a class="headerlink" href="#134-data-format-conversion" title="Permanent link">&para;</a></h4>
 <p>After obtaining data in <code>LabelMe</code> format, the data format needs to be converted to <code>ShiTuRecDataset</code> format. Below is a code example that demonstrates how to convert the data labeled using <code>LabelMe</code> according to the previous tutorial.</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Download and unzip the LabelMe format example dataset</span>

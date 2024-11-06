@@ -4363,7 +4363,7 @@ You're not viewing the latest version.
 <h2 id="1-introduction-to-ocr-pipeline">1. Introduction to OCR Pipeline<a class="headerlink" href="#1-introduction-to-ocr-pipeline" title="Permanent link">&para;</a></h2>
 <p>OCR (Optical Character Recognition) is a technology that converts text in images into editable text. It is widely used in document digitization, information extraction, and data processing. OCR can recognize printed text, handwritten text, and even certain types of fonts and symbols.</p>
 <p>The General OCR Pipeline is designed to solve text recognition tasks, extracting text information from images and outputting it in text form. PP-OCRv4 is an end-to-end OCR system that achieves millisecond-level text content prediction on CPUs, reaching state-of-the-art (SOTA) performance in open-source projects for general scenarios. Based on this project, developers from academia, industry, and research have rapidly deployed various OCR applications across fields such as general use, manufacturing, finance, transportation, and more.</p>
-<p><img alt="" src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/ocr/01.png" /></p>
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/ocr/01.png"></p>
 <p><strong>The General OCR Pipeline comprises a text detection module and a text recognition module</strong>, each containing several models. The specific models to use can be selected based on the benchmark data provided below. <strong>If you prioritize model accuracy, choose models with higher accuracy. If you prioritize inference speed, choose models with faster inference. If you prioritize model size, choose models with smaller storage requirements.</strong></p>
 <details>
    <summary> 👉Model List Details</summary>
@@ -4479,7 +4479,7 @@ You're not viewing the latest version.
 <p>PaddleX provides pre-trained models for the OCR Pipeline, allowing you to quickly experience its effects. You can try the General OCR Pipeline online or locally using command line or Python.</p>
 <h3 id="21-online-experience">2.1 Online Experience<a class="headerlink" href="#21-online-experience" title="Permanent link">&para;</a></h3>
 <p>You can <a href="https://aistudio.baidu.com/community/app/91660/webUI?source=appMineRecent">experience the General OCR Pipeline online</a> using the official demo images for recognition, for example:</p>
-<p><img alt="" src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/ocr/02.png" /></p>
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/ocr/02.png"></p>
 <p>If you are satisfied with the pipeline's performance, you can directly integrate and deploy it. You can download the deployment package from the cloud or use the <a href="#22-Local Experience">local experience method in Section 2.2</a>. If not satisfied, you can also use your private data to <strong>fine-tune the models in the pipeline online</strong>.</p>
 <h3 id="22-local-experience">2.2 Local Experience<a class="headerlink" href="#22-local-experience" title="Permanent link">&para;</a></h3>
 <blockquote>
@@ -4524,7 +4524,7 @@ After running, the result is:
 
 Among them, `dt_polys` is the detected text box coordinates, `dt_polys` is the detected text box coordinates, `dt_scores` is the confidence of the detected text box, `rec_text` is the detected text, `rec_score` is the detection Confidence in the text.
 
-![](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/ocr/03.png)
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/ocr/03.png">
 
 The visualized image not saved by default. You can customize the save path through `--save_path`, and then all results will be saved in the specified path.
 

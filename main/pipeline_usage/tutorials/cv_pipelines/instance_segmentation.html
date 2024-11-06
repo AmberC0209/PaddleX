@@ -4362,7 +4362,7 @@ You're not viewing the latest version.
 <h1 id="_1">通用实例分割产线使用教程<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <h2 id="1">1. 通用实例分割产线介绍<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
 <p>实例分割是一种计算机视觉任务，它不仅要识别图像中的物体类别，还要区分同一类别中不同实例的像素，从而实现对每个物体的精确分割。实例分割可以在同一图像中分别标记出每一辆车、每一个人或每一只动物，确保它们在像素级别上被独立处理。例如，在一幅包含多辆车和行人的街景图像中，实例分割能够将每辆车和每个人的轮廓清晰地分开，形成多个独立的区域标签。这项技术广泛应用于自动驾驶、视频监控和机器人视觉等领域，通常依赖于深度学习模型（如Mask R-CNN等），通过卷积神经网络来实现高效的像素分类和实例区分，为复杂场景的理解提供了强大的支持。</p>
-<p><img alt="" src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/instance_segmentation/01.png" /></p>
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/instance_segmentation/01.png"></p>
 <p><strong>通用实例分割产线中包含了****目标检测****模块，如您更考虑模型精度，请选择精度较高的模型，如您更考虑模型推理速度，请选择推理速度较快的模型，如您更考虑模型存储大小，请选择存储大小较小的模型</strong>。</p>
 <details>
    <summary> 👉模型列表详情</summary>
@@ -4493,7 +4493,7 @@ You're not viewing the latest version.
 <p>PaddleX 所提供的预训练的模型产线均可以快速体验效果，你可以在线体验通用实例分割产线的效果，也可以在本地使用命令行或 Python 体验通用实例分割产线的效果。</p>
 <h3 id="21">2.1 在线体验<a class="headerlink" href="#21" title="Permanent link">&para;</a></h3>
 <p>您可以<a href="https://aistudio.baidu.com/community/app/100063/webUI">在线体验</a>通用实例分割产线的效果，用官方提供的 demo 图片进行识别，例如：</p>
-<p><img alt="" src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/instance_segmentation/02.png" /></p>
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/instance_segmentation/02.png"></p>
 <p>如果您对产线运行的效果满意，可以直接对产线进行集成部署，如果不满意，您也可以利用私有数据**对产线中的模型进行在线微调**。</p>
 <h3 id="22">2.2 本地体验<a class="headerlink" href="#22" title="Permanent link">&para;</a></h3>
 <p>在本地使用通用实例分割产线前，请确保您已经按照<a href="../../../installation/installation.html">PaddleX本地安装教程</a>完成了 PaddleX 的 wheel 包安装。</p>
@@ -4528,7 +4528,7 @@ You're not viewing the latest version.
 <p>运行后，得到的结果为：</p>
 <p><div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>{&#39;input_path&#39;: &#39;general_instance_segmentation_004.png&#39;, &#39;boxes&#39;: [{&#39;cls_id&#39;: 0, &#39;label&#39;: &#39;person&#39;, &#39;score&#39;: 0.8698326945304871, &#39;coordinate&#39;: [339, 0, 639, 575]}, {&#39;cls_id&#39;: 0, &#39;label&#39;: &#39;person&#39;, &#39;score&#39;: 0.8571141362190247, &#39;coordinate&#39;: [0, 0, 195, 575]}, {&#39;cls_id&#39;: 0, &#39;label&#39;: &#39;person&#39;, &#39;score&#39;: 0.8202633857727051, &#39;coordinate&#39;: [88, 113, 401, 574]}, {&#39;cls_id&#39;: 0, &#39;label&#39;: &#39;person&#39;, &#39;score&#39;: 0.7108577489852905, &#39;coordinate&#39;: [522, 21, 767, 574]}, {&#39;cls_id&#39;: 27, &#39;label&#39;: &#39;tie&#39;, &#39;score&#39;: 0.554280698299408, &#39;coordinate&#39;: [247, 311, 355, 574]}]}
 </span></code></pre></div>
-<img alt="" src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/instance_segmentation/03.png" /></p>
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/instance_segmentation/03.png"></p>
 <p>可视化图片默认不进行保存，您可以通过 <code>--save_path</code> 自定义保存路径，随后所有结果将被保存在指定路径下。</p>
 <h4 id="222-python">2.2.2 Python脚本方式集成<a class="headerlink" href="#222-python" title="Permanent link">&para;</a></h4>
 <p>几行代码即可完成产线的快速推理，以通用实例分割产线为例：</p>

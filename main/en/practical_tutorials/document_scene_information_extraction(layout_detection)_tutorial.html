@@ -4500,11 +4500,11 @@ You're not viewing the latest version.
 </span></code></pre></div>
 <p>In the <code>output</code> directory, the visualization results of layout area detection, OCR, table recognition, as well as the table results in HTML and XLSX formats, are saved.</p>
 <p>Among them, the visualization of the layout area detection results is as follows:</p>
-<p><img alt="" src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/practical_tutorials/PP-ChatOCRv3_doc/layout_detection_01.png" /></p>
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/practical_tutorials/PP-ChatOCRv3_doc/layout_detection_01.png"></p>
 <p>Through the online experience of the document scene information extraction, a Badcase analysis can be conducted to identify issues with the official model of the document scene information extraction pipeline. Due to the current limitation of the official model, which only distinguishes among figures, tables, and seals, it is currently unable to accurately locate and extract other information such as headers and table titles. The results for these in <code>{'chat_res': {'header': 'unknown', 'table caption': 'unknown'}, 'prompt': ''}</code> are unknown. Therefore, this section focuses on the scenario of academic papers. Utilizing a dataset of academic paper documents, with the extraction of header and chart title information as examples, the layout analysis model within the document scene information extraction pipeline is fine-tuned to achieve the ability to accurately extract header and table title information from the document.</p>
 <h3 id="22-online-experience">2.2 Online Experience<a class="headerlink" href="#22-online-experience" title="Permanent link">&para;</a></h3>
 <p>You can experience the effectiveness of the Document Scene Information Extraction v3 pipeline on the <strong>AIStudio Community</strong>. Click the link to download the <a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/doc_images/practical_tutorial/PP-ChatOCRv3_doc_layout/test.jpg">Test Paper Document File</a>, and then upload it to the <a href="https://aistudio.baidu.com/community/app/182491/webUI?source=appCenter">official Document Scene Information Extraction v3 application</a> to experience the extraction results. The process is as follows:</p>
-<p><img alt="" src="https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/doc_images/practical_tutorial/PP-ChatOCRv3_doc_layout/06.png" /></p>
+<p><img src="https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/doc_images/practical_tutorial/PP-ChatOCRv3_doc_layout/06.png"></p>
 <h2 id="3-choosing-a-model">3. Choosing a Model<a class="headerlink" href="#3-choosing-a-model" title="Permanent link">&para;</a></h2>
 <p>PaddleX provides 4 end-to-end layout detection models, which can be referenced in the <a href="../support_list/models_list.html">Model List</a>. Some of the benchmarks for these models are as follows:</p>
 <table>
@@ -4795,7 +4795,7 @@ You're not viewing the latest version.
 </span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">    </span>-o<span class="w"> </span>Predict.input<span class="o">=</span><span class="s2">&quot;https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/doc_images/practical_tutorial/PP-ChatOCRv3_doc_layout/test.jpg&quot;</span>
 </span></code></pre></div>
 <p>By following the above steps, prediction results can be generated under the ./output directory. The layout prediction result for test.jpg is as follows:</p>
-<p><img alt="" src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/practical_tutorials/PP-ChatOCRv3_doc/layout_detection_03.png" /></p>
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/practical_tutorials/PP-ChatOCRv3_doc/layout_detection_03.png"></p>
 <h2 id="6-pipeline-inference">6. Pipeline Inference<a class="headerlink" href="#6-pipeline-inference" title="Permanent link">&para;</a></h2>
 <p>Replace the model in the production line with the fine-tuned model for testing, and use the academic paper literature <a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/doc_images/practical_tutorial/PP-ChatOCRv3_doc_layout/test.jpg">test file</a> to perform predictions.</p>
 <p>First, obtain and update the configuration file for the Document Information Extraction v3. Execute the following command to retrieve the configuration file (assuming a custom save location of <code>./my_path</code>):</p>
@@ -4846,7 +4846,7 @@ You're not viewing the latest version.
 </span></code></pre></div>
 <p>It can be observed that after fine-tuning the model, the key information has been correctly extracted.</p>
 <p>The visualization result of the layout is as follows, with the correctly added ability to locate the areas of headers and table titles:</p>
-<p><img alt="" src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/practical_tutorials/PP-ChatOCRv3_doc/layout_detection_04.png" /></p>
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/practical_tutorials/PP-ChatOCRv3_doc/layout_detection_04.png"></p>
 <h2 id="7-development-integrationdeployment">7. Development Integration/Deployment<a class="headerlink" href="#7-development-integrationdeployment" title="Permanent link">&para;</a></h2>
 <p>If the Document Scene Information Extraction v3 production line meets your requirements for inference speed and accuracy, you can proceed directly with development integration/deployment.</p>
 <ol>

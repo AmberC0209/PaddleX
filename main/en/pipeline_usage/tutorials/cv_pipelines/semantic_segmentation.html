@@ -4362,7 +4362,7 @@ You're not viewing the latest version.
 <h1 id="general-semantic-segmentation-pipeline-tutorial">General Semantic Segmentation Pipeline Tutorial<a class="headerlink" href="#general-semantic-segmentation-pipeline-tutorial" title="Permanent link">&para;</a></h1>
 <h2 id="1-introduction-to-the-general-semantic-segmentation-pipeline">1. Introduction to the General Semantic Segmentation Pipeline<a class="headerlink" href="#1-introduction-to-the-general-semantic-segmentation-pipeline" title="Permanent link">&para;</a></h2>
 <p>Semantic segmentation is a computer vision technique that aims to assign each pixel in an image to a specific category, enabling a detailed understanding of the image content. Semantic segmentation not only identifies the types of objects in an image but also classifies each pixel, allowing regions of the same category to be fully labeled. For example, in a street scene image, semantic segmentation can distinguish pedestrians, cars, the sky, and roads pixel by pixel, forming a detailed label map. This technology is widely used in autonomous driving, medical image analysis, and human-computer interaction, often relying on deep learning models (such as SegFormer, etc.) to extract features by CNN or Transformer, and achieve high-precision pixel-level classification, providing a foundation for further intelligent analysis.</p>
-<p><img alt="" src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/semantic_segmentation/01.png" /></p>
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/semantic_segmentation/01.png"></p>
 <details>
    <summary> 👉 Model List Details</summary>
 
@@ -4529,7 +4529,7 @@ You're not viewing the latest version.
 <p>PaddleX's pre-trained model pipelines can be quickly experienced. You can experience the effects of the General Semantic Segmentation Pipeline online or locally using command line or Python.</p>
 <h3 id="21-online-experience">2.1 Online Experience<a class="headerlink" href="#21-online-experience" title="Permanent link">&para;</a></h3>
 <p>You can <a href="https://aistudio.baidu.com/community/app/100062/webUI?source=appCenter">experience online</a> the effects of the General Semantic Segmentation Pipeline, using the official demo images for recognition, for example:</p>
-<p><img alt="" src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/semantic_segmentation/02.png" /></p>
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/semantic_segmentation/02.png"></p>
 <p>If you are satisfied with the pipeline's performance, you can directly integrate and deploy it. If not, you can also use your private data to <strong>fine-tune the model in the pipeline online</strong>.</p>
 <h3 id="22-local-experience">2.2 Local Experience<a class="headerlink" href="#22-local-experience" title="Permanent link">&para;</a></h3>
 <p>Before using the General Semantic Segmentation Pipeline locally, ensure you have installed the PaddleX wheel package following the <a href="../../../installation/installation.html">PaddleX Local Installation Tutorial</a>.</p>
@@ -4565,7 +4565,7 @@ Here, parameters such as `--model` and `--device` do not need to be specified, a
 <p>After running, the result is:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="o">{</span><span class="s1">&#39;input_path&#39;</span>:<span class="w"> </span><span class="s1">&#39;general_object_detection_002.png&#39;</span><span class="o">}</span>
 </span></code></pre></div>
-<p><img alt="" src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/semantic_segmentation/03.png" /></p>
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/semantic_segmentation/03.png"></p>
 <p>The visualized image not saved by default. You can customize the save path through <code>--save_path</code>, and then all results will be saved in the specified path.</p>
 <h4 id="222-python-script-integration">2.2.2 Python Script Integration<a class="headerlink" href="#222-python-script-integration" title="Permanent link">&para;</a></h4>
 <p>A few lines of code can complete the quick inference of the pipeline. Taking the general semantic segmentation pipeline as an example:</p>

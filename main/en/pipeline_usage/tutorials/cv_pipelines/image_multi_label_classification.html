@@ -4314,7 +4314,7 @@ You're not viewing the latest version.
 <h1 id="general-image-multi-label-classification-pipeline-tutorial">General Image Multi-Label Classification Pipeline Tutorial<a class="headerlink" href="#general-image-multi-label-classification-pipeline-tutorial" title="Permanent link">&para;</a></h1>
 <h2 id="1-introduction-to-the-general-image-multi-label-classification-pipeline">1. Introduction to the General Image Multi-Label Classification Pipeline<a class="headerlink" href="#1-introduction-to-the-general-image-multi-label-classification-pipeline" title="Permanent link">&para;</a></h2>
 <p>Image multi-label classification is a technique that assigns multiple relevant categories to a single image simultaneously, widely used in image annotation, content recommendation, and social media analysis. It can identify multiple objects or features present in an image, for example, an image containing both "dog" and "outdoor" labels. By leveraging deep learning models, image multi-label classification automatically extracts image features and performs accurate classification, providing users with more comprehensive information. This technology is of great significance in applications such as intelligent search engines and automatic content generation.</p>
-<p><img alt="" src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/image_multi_label_classification/01.png" /></p>
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/image_multi_label_classification/01.png"></p>
 <p><strong>The General Image Multi-Label Classification Pipeline includes a module for image multi-label classification. If you prioritize model accuracy, choose a model with higher accuracy. If you prioritize inference speed, choose a model with faster inference. If you prioritize model storage size, choose a model with a smaller storage size.</strong></p>
 <details>
    <summary> 👉Model List Details</summary>
@@ -4398,7 +4398,7 @@ Where `--model`, `--device`, and other parameters are not specified, the paramet
 <p>After running, the result obtained is:</p>
 <p><div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>{&#39;input_path&#39;: &#39;general_image_classification_001.jpg&#39;, &#39;class_ids&#39;: [21, 0, 30, 24], &#39;scores&#39;: [0.99257, 0.70596, 0.63001, 0.57852], &#39;label_names&#39;: [&#39;bear&#39;, &#39;person&#39;, &#39;skis&#39;, &#39;backpack&#39;]}
 </span></code></pre></div>
-<img alt="" src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/image_multi_label_classification/02.png" /></p>
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/image_multi_label_classification/02.png"></p>
 <p>The visualized image not saved by default. You can customize the save path through <code>--save_path</code>, and then all results will be saved in the specified path.</p>
 <h3 id="22-integration-via-python-script">2.2 Integration via Python Script<a class="headerlink" href="#22-integration-via-python-script" title="Permanent link">&para;</a></h3>
 <p>A few lines of code can complete the rapid inference of the pipeline. Taking the general image multi-label classification pipeline as an example:</p>

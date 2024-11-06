@@ -4332,7 +4332,7 @@ You're not viewing the latest version.
 <h1 id="_1">公式识别产线使用教程<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <h2 id="1">1. 公式识别产线介绍<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
 <p>公式识别是一种自动从文档或图像中识别和提取LaTeX公式内容及其结构的技术，广泛应用于数学、物理、计算机科学等领域的文档编辑和数据分析。通过使用计算机视觉和机器学习算法，公式识别能够将复杂的数学公式信息转换为可编辑的LaTeX格式，方便用户进一步处理和分析数据。</p>
-<p><img alt="" src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/formula_recognition/01.jpg" /></p>
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/formula_recognition/01.jpg"></p>
 <p><strong>通用****公式识别****产线中包含版面区域检测模块和公式识别模块</strong>。</p>
 <p><strong>如您更考虑模型精度，请选择精度较高的模型，如您更考虑模型推理速度，请选择推理速度较快的模型，如您更考虑模型存储大小，请选择存储大小较小的模型</strong>。</p>
 <details>
@@ -4448,7 +4448,7 @@ You're not viewing the latest version.
 </details>
 
 <p>可视化结果如下：</p>
-<p><img alt="" src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/formula_recognition/02.jpg" /></p>
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/formula_recognition/02.jpg"></p>
 <p>可视化图片默认不进行保存，您可以通过 <code>--save_path</code> 自定义保存路径，随后所有结果将被保存在指定路径下。公式识别可视化需要单独配置环境，请您参考<a href="#23-公式识别产线可视化">2.3 公式识别产线可视化</a> 对LaTeX渲染引擎进行安装。</p>
 <h3 id="22-python">2.2 Python脚本方式集成<a class="headerlink" href="#22-python" title="Permanent link">&para;</a></h3>
 <p>几行代码即可完成产线的快速推理，以公式识别产线为例：</p>
