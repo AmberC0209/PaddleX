@@ -4442,6 +4442,7 @@ Note: Due to the tight correlation between time series data and scenarios, the o
 </tr>
 </tbody>
 </table>
+
 <blockquote>
 <p><b>Note: The above accuracy metrics are measured on the <a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/data/ts_anomaly_examples.tar">PSM</a> dataset with a time series length of 100.</b></p>
 </blockquote>
@@ -4533,20 +4534,25 @@ PaddleX supports modifying training hyperparameters and single-machine single-GP
 <li><code>label</code>: Represents the number indicating whether a time point in the time series is abnormal. Anomalous points are labeled as 1, and normal points are labeled as 0. In this tutorial, the anomaly monitoring dataset uses label for this purpose.</li>
 </ul>
 <p>For more introductions to hyperparameters, please refer to <a href="../module_usage/instructions/config_parameters_time_series.html">PaddleX Time Series Task Model Configuration File Parameter Instructions</a>. The above parameters can be set by appending command-line arguments. For example, to specify the mode as model training: <code>-o Global.mode=train</code>; to specify the first GPU for training: <code>-o Global.device=gpu:0</code>; to set the number of training epochs to 10: <code>-o Train.epochs_iters=10</code>.</p>
-<details><summary> More Details (Click to Expand)  </summary>
+<details>
+   <summary> More Details (Click to Expand)  </summary>
 
-<ul>
-<li>During the model training process, PaddleX automatically saves the model weight files, with the default directory being output. If you need to specify a different save path, you can configure it through the <code>-o Global.output</code> field in the configuration file.</li>
-<li>PaddleX abstracts away the concepts of dynamic graph weights and static graph weights from you. During model training, both dynamic and static graph weights are produced simultaneously. By default, static graph weights are selected for inference.</li>
-<li>When training other models, you need to specify the corresponding configuration file. The correspondence between models and configuration files can be found in the <a href="../support_list/models_list.en.md">PaddleX Model List (CPU/GPU)</a></li>
-</ul>
-<p>After completing the model training, all outputs are saved in the specified output directory (default is <code>./output/</code>), typically including the following:</p>
-<p><b>Explanation of Training Outputs:</b></p>
-<p>After completing the model training, all outputs are saved in the specified output directory (default is <code>./output/</code>), typically including the following:</p>
-<p><code>train_result.json</code>: A training result record file that logs whether the training task was completed normally, as well as the output weight metrics, relevant file paths, etc.
-<code>train.log</code>: A training log file that records changes in model metrics, loss values, and other information during the training process.
-<code>config.yaml</code>: The training configuration file that records the hyperparameter configurations for this training session.
-<code>best_accuracy.pdparams.tar</code>, <code>scaler.pkl</code>, <code>.checkpoints</code>, <code>.inference*</code>: Files related to model weights, including network parameters, optimizers, static graph network parameters, etc.</p></details>
+* During the model training process, PaddleX automatically saves the model weight files, with the default directory being output. If you need to specify a different save path, you can configure it through the `-o Global.output` field in the configuration file.
+* PaddleX abstracts away the concepts of dynamic graph weights and static graph weights from you. During model training, both dynamic and static graph weights are produced simultaneously. By default, static graph weights are selected for inference.
+* When training other models, you need to specify the corresponding configuration file. The correspondence between models and configuration files can be found in the [PaddleX Model List (CPU/GPU)](../support_list/models_list.en.md)
+
+After completing the model training, all outputs are saved in the specified output directory (default is `./output/`), typically including the following:
+
+<b>Explanation of Training Outputs:</b>
+
+After completing the model training, all outputs are saved in the specified output directory (default is `./output/`), typically including the following:
+
+`train_result.json`: A training result record file that logs whether the training task was completed normally, as well as the output weight metrics, relevant file paths, etc.
+`train.log`: A training log file that records changes in model metrics, loss values, and other information during the training process.
+`config.yaml`: The training configuration file that records the hyperparameter configurations for this training session.
+`best_accuracy.pdparams.tar`, `scaler.pkl`, `.checkpoints`, `.inference*`: Files related to model weights, including network parameters, optimizers, static graph network parameters, etc.
+
+</details>
 
 <h3 id="52-model-evaluation">5.2 Model Evaluation<a class="headerlink" href="#52-model-evaluation" title="Permanent link">&para;</a></h3>
 <p>After completing model training, you can evaluate the specified model weights file on the validation set to verify the model's accuracy. Using PaddleX for model evaluation requires just one command:</p>
@@ -4611,6 +4617,7 @@ Similar to model training, model evaluation supports setting through modifying t
 </tr>
 </tbody>
 </table>
+
 <p>Increasing Training Epochs Results:</p>
 <table>
 <thead>
@@ -4645,6 +4652,7 @@ Similar to model training, model evaluation supports setting through modifying t
 </tr>
 </tbody>
 </table>
+
 <h2 id="6-production-line-testing">6. Production Line Testing<a class="headerlink" href="#6-production-line-testing" title="Permanent link">&para;</a></h2>
 <p>Replace the model in the production line with the fine-tuned model for testing, using the <a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/doc_images/practical_tutorial/timeseries_anomaly_detection/test.csv">test file</a> for prediction:</p>
 <p><div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>python main.py -c paddlex/configs/ts_anomaly_detection/PatchTST_ad.yaml \

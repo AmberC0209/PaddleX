@@ -4441,6 +4441,7 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
+
 <p><b>注：以上精度指标为wider_face数据集 mAP(0.5:0.95)。所有模型 GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为8，精度类型为 FP32。</b></p>
 <h2 id="_4">三、快速集成<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <blockquote>
@@ -4477,92 +4478,111 @@ You're not viewing the latest version.
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span>-o<span class="w"> </span>Global.dataset_dir<span class="o">=</span>./dataset/widerface_coco_examples
 </span></code></pre></div>
 执行上述命令后，PaddleX 会对数据集进行校验，并统计数据集的基本信息，命令运行成功后会在log中打印出<code>Check dataset passed !</code>信息。校验结果文件保存在<code>./output/check_dataset_result.json</code>，同时相关产出会保存在当前目录的<code>./output/check_dataset</code>目录下，产出目录中包括可视化的示例样本图片和样本分布直方图。</p>
-<details><summary>👉 <b>校验结果详情（点击展开）</b></summary>
+<details>
+  <summary>👉 <b>校验结果详情（点击展开）</b></summary>
 
-<p>校验结果文件具体内容为：</p>
-<pre><code class="language-bash">{
-  &quot;done_flag&quot;: true,
-  &quot;check_pass&quot;: true,
-  &quot;attributes&quot;: {
-    &quot;num_classes&quot;: 1,
-    &quot;train_samples&quot;: 500,
-    &quot;train_sample_paths&quot;: [
-      &quot;check_dataset/demo_img/0--Parade/0_Parade_marchingband_1_849.jpg&quot;,
-      &quot;check_dataset/demo_img/0--Parade/0_Parade_Parade_0_904.jpg&quot;,
-      &quot;check_dataset/demo_img/0--Parade/0_Parade_marchingband_1_799.jpg&quot;
-    ],
-    &quot;val_samples&quot;: 100,
-    &quot;val_sample_paths&quot;: [
-      &quot;check_dataset/demo_img/1--Handshaking/1_Handshaking_Handshaking_1_384.jpg&quot;,
-      &quot;check_dataset/demo_img/1--Handshaking/1_Handshaking_Handshaking_1_538.jpg&quot;,
-      &quot;check_dataset/demo_img/1--Handshaking/1_Handshaking_Handshaking_1_429.jpg&quot;
-    ]
-  },
-  &quot;analysis&quot;: {
-    &quot;histogram&quot;: &quot;check_dataset/histogram.png&quot;
-  },
-  &quot;dataset_path&quot;: &quot;./dataset/example_data/widerface_coco_examples&quot;,
-  &quot;show_type&quot;: &quot;image&quot;,
-  &quot;dataset_type&quot;: &quot;COCODetDataset&quot;
-}
-</code></pre>
-<p>上述校验结果中，<code>check_pass</code> 为 <code>True</code> 表示数据集格式符合要求，其他部分指标的说明如下：</p>
-<ul>
-<li><code>attributes.num_classes</code>：该数据集类别数为 1；</li>
-<li><code>attributes.train_samples</code>：该数据集训练集样本数量为 500；</li>
-<li><code>attributes.val_samples</code>：该数据集验证集样本数量为 100；</li>
-<li><code>attributes.train_sample_paths</code>：该数据集训练集样本可视化图片相对路径列表；</li>
-<li><code>attributes.val_sample_paths</code>：该数据集验证集样本可视化图片相对路径列表；</li>
-</ul>
-<p>数据集校验还对数据集中所有类别的样本数量分布情况进行了分析，并绘制了分布直方图（histogram.png）：</p>
-<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/modules/face_det/01.png"></p></details>
+
+校验结果文件具体内容为：
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="o">{</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="s2">&quot;done_flag&quot;</span>:<span class="w"> </span>true,
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="s2">&quot;check_pass&quot;</span>:<span class="w"> </span>true,
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="s2">&quot;attributes&quot;</span>:<span class="w"> </span><span class="o">{</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="s2">&quot;num_classes&quot;</span>:<span class="w"> </span><span class="m">1</span>,
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="s2">&quot;train_samples&quot;</span>:<span class="w"> </span><span class="m">500</span>,
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="s2">&quot;train_sample_paths&quot;</span>:<span class="w"> </span><span class="o">[</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">      </span><span class="s2">&quot;check_dataset/demo_img/0--Parade/0_Parade_marchingband_1_849.jpg&quot;</span>,
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">      </span><span class="s2">&quot;check_dataset/demo_img/0--Parade/0_Parade_Parade_0_904.jpg&quot;</span>,
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">      </span><span class="s2">&quot;check_dataset/demo_img/0--Parade/0_Parade_marchingband_1_799.jpg&quot;</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">    </span><span class="o">]</span>,
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">    </span><span class="s2">&quot;val_samples&quot;</span>:<span class="w"> </span><span class="m">100</span>,
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">    </span><span class="s2">&quot;val_sample_paths&quot;</span>:<span class="w"> </span><span class="o">[</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">      </span><span class="s2">&quot;check_dataset/demo_img/1--Handshaking/1_Handshaking_Handshaking_1_384.jpg&quot;</span>,
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">      </span><span class="s2">&quot;check_dataset/demo_img/1--Handshaking/1_Handshaking_Handshaking_1_538.jpg&quot;</span>,
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">      </span><span class="s2">&quot;check_dataset/demo_img/1--Handshaking/1_Handshaking_Handshaking_1_429.jpg&quot;</span>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">    </span><span class="o">]</span>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">  </span><span class="o">}</span>,
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">  </span><span class="s2">&quot;analysis&quot;</span>:<span class="w"> </span><span class="o">{</span>
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">    </span><span class="s2">&quot;histogram&quot;</span>:<span class="w"> </span><span class="s2">&quot;check_dataset/histogram.png&quot;</span>
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="w">  </span><span class="o">}</span>,
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="w">  </span><span class="s2">&quot;dataset_path&quot;</span>:<span class="w"> </span><span class="s2">&quot;./dataset/example_data/widerface_coco_examples&quot;</span>,
+</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="w">  </span><span class="s2">&quot;show_type&quot;</span>:<span class="w"> </span><span class="s2">&quot;image&quot;</span>,
+</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="w">  </span><span class="s2">&quot;dataset_type&quot;</span>:<span class="w"> </span><span class="s2">&quot;COCODetDataset&quot;</span>
+</span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="o">}</span>
+</span></code></pre></div>
+上述校验结果中，`check_pass` 为 `True` 表示数据集格式符合要求，其他部分指标的说明如下：
+
+* `attributes.num_classes`：该数据集类别数为 1；
+* `attributes.train_samples`：该数据集训练集样本数量为 500；
+* `attributes.val_samples`：该数据集验证集样本数量为 100；
+* `attributes.train_sample_paths`：该数据集训练集样本可视化图片相对路径列表；
+* `attributes.val_sample_paths`：该数据集验证集样本可视化图片相对路径列表；
+
+
+数据集校验还对数据集中所有类别的样本数量分布情况进行了分析，并绘制了分布直方图（histogram.png）：
+
+
+
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/modules/face_det/01.png">
+
+
+</details>
 
 <h4 id="413">4.1.3 数据集格式转换/数据集划分（可选）<a class="headerlink" href="#413" title="Permanent link">&para;</a></h4>
 <p>在您完成数据校验之后，可以通过<b>修改配置文件</b>或是<b>追加超参数</b>的方式对数据集的格式进行转换，也可以对数据集的训练/验证比例进行重新划分。</p>
-<details><summary>👉 <b>格式转换/数据集划分详情（点击展开）</b></summary>
+<details>
+  <summary>👉 <b>格式转换/数据集划分详情（点击展开）</b></summary>
 
-<p><b>（1）数据集格式转换</b></p>
-<p>人脸检测不支持数据格式转换。</p>
-<p><b>（2）数据集划分</b></p>
-<p>数据集划分的参数可以通过修改配置文件中 <code>CheckDataset</code> 下的字段进行设置，配置文件中部分参数的示例说明如下：</p>
-<ul>
-<li><code>CheckDataset</code>:</li>
-<li><code>split</code>:<ul>
-<li><code>enable</code>: 是否进行重新划分数据集，为 <code>True</code> 时进行数据集格式转换，默认为 <code>False</code>；</li>
-<li><code>train_percent</code>: 如果重新划分数据集，则需要设置训练集的百分比，类型为0-100之间的任意整数，需要保证与 <code>val_percent</code> 的值之和为100；</li>
-</ul>
-</li>
-</ul>
-<p>例如，您想重新划分数据集为 训练集占比90%、验证集占比10%，则需将配置文件修改为：</p>
-<pre><code class="language-bash">......
-CheckDataset:
-  ......
-  split:
-    enable: True
-    train_percent: 90
-    val_percent: 10
-  ......
-</code></pre>
-<p>随后执行命令：</p>
-<pre><code class="language-bash">python main.py -c paddlex/configs/face_detection/PicoDet_LCNet_x2_5_face.yaml \
-    -o Global.mode=check_dataset \
-    -o Global.dataset_dir=./dataset/widerface_coco_examples
-</code></pre>
-<p>数据划分执行之后，原有标注文件会被在原路径下重命名为 <code>xxx.bak</code>。</p>
-<p>以上参数同样支持通过追加命令行参数的方式进行设置：</p>
-<pre><code class="language-bash">python main.py -c paddlex/configs/face_detection/PicoDet_LCNet_x2_5_face.yaml  \
-    -o Global.mode=check_dataset \
-    -o Global.dataset_dir=./dataset/widerface_coco_examples \
-    -o CheckDataset.split.enable=True \
-    -o CheckDataset.split.train_percent=90 \
-    -o CheckDataset.split.val_percent=10
-</code></pre></details>
+
+<b>（1）数据集格式转换</b>
+
+人脸检测不支持数据格式转换。
+
+<b>（2）数据集划分</b>
+
+数据集划分的参数可以通过修改配置文件中 `CheckDataset` 下的字段进行设置，配置文件中部分参数的示例说明如下：
+
+* `CheckDataset`:
+  * `split`:
+    * `enable`: 是否进行重新划分数据集，为 `True` 时进行数据集格式转换，默认为 `False`；
+    * `train_percent`: 如果重新划分数据集，则需要设置训练集的百分比，类型为0-100之间的任意整数，需要保证与 `val_percent` 的值之和为100；
+
+
+例如，您想重新划分数据集为 训练集占比90%、验证集占比10%，则需将配置文件修改为：
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>......
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>CheckDataset:
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span>......
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span>split:
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span>enable:<span class="w"> </span>True
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span>train_percent:<span class="w"> </span><span class="m">90</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span>val_percent:<span class="w"> </span><span class="m">10</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">  </span>......
+</span></code></pre></div>
+随后执行命令：
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>python<span class="w"> </span>main.py<span class="w"> </span>-c<span class="w"> </span>paddlex/configs/face_detection/PicoDet_LCNet_x2_5_face.yaml<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span>-o<span class="w"> </span>Global.mode<span class="o">=</span>check_dataset<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span>-o<span class="w"> </span>Global.dataset_dir<span class="o">=</span>./dataset/widerface_coco_examples
+</span></code></pre></div>
+数据划分执行之后，原有标注文件会被在原路径下重命名为 `xxx.bak`。
+
+以上参数同样支持通过追加命令行参数的方式进行设置：
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>python<span class="w"> </span>main.py<span class="w"> </span>-c<span class="w"> </span>paddlex/configs/face_detection/PicoDet_LCNet_x2_5_face.yaml<span class="w">  </span><span class="se">\</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span>-o<span class="w"> </span>Global.mode<span class="o">=</span>check_dataset<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span>-o<span class="w"> </span>Global.dataset_dir<span class="o">=</span>./dataset/widerface_coco_examples<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span>-o<span class="w"> </span>CheckDataset.split.enable<span class="o">=</span>True<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span>-o<span class="w"> </span>CheckDataset.split.train_percent<span class="o">=</span><span class="m">90</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">    </span>-o<span class="w"> </span>CheckDataset.split.val_percent<span class="o">=</span><span class="m">10</span>
+</span></code></pre></div>
+</details>
 
 <h3 id="42">4.2 模型训练<a class="headerlink" href="#42" title="Permanent link">&para;</a></h3>
 <p>一条命令即可完成模型的训练，以此处PicoDet_LCNet_x2_5_face的训练为例：</p>
-<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>python<span class="w"> </span>main.py<span class="w"> </span>-c<span class="w"> </span>paddlex/configs/face_detection/PicoDet_LCNet_x2_5_face.yaml<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span>-o<span class="w"> </span>Global.mode<span class="o">=</span>train<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span>-o<span class="w"> </span>Global.dataset_dir<span class="o">=</span>./dataset/widerface_coco_examples
+<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>python<span class="w"> </span>main.py<span class="w"> </span>-c<span class="w"> </span>paddlex/configs/face_detection/PicoDet_LCNet_x2_5_face.yaml<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span>-o<span class="w"> </span>Global.mode<span class="o">=</span>train<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span>-o<span class="w"> </span>Global.dataset_dir<span class="o">=</span>./dataset/widerface_coco_examples
 </span></code></pre></div>
 需要如下几步：</p>
 <ul>
@@ -4571,27 +4591,25 @@ CheckDataset:
 <li>指定训练数据集路径：<code>-o Global.dataset_dir</code>
 其他相关参数均可通过修改<code>.yaml</code>配置文件中的<code>Global</code>和<code>Train</code>下的字段来进行设置，也可以通过在命令行中追加参数来进行调整。如指定前 2 卡 gpu 训练：<code>-o Global.device=gpu:0,1</code>；设置训练轮次数为 10：<code>-o Train.epochs_iters=10</code>。更多可修改的参数及其详细解释，可以查阅模型对应任务模块的配置文件说明<a href="../../instructions/config_parameters_common.html">PaddleX通用模型配置文件参数说明</a>。</li>
 </ul>
-<details><summary>👉 <b>更多说明（点击展开）</b></summary>
+<details>
+  <summary>👉 <b>更多说明（点击展开）</b></summary>
 
-<ul>
-<li>模型训练过程中，PaddleX 会自动保存模型权重文件，默认为<code>output</code>，如需指定保存路径，可通过配置文件中 <code>-o Global.output</code> 字段进行设置。</li>
-<li>PaddleX 对您屏蔽了动态图权重和静态图权重的概念。在模型训练的过程中，会同时产出动态图和静态图的权重，在模型推理时，默认选择静态图权重推理。</li>
-<li>
-<p>在完成模型训练后，所有产出保存在指定的输出目录（默认为<code>./output/</code>）下，通常有以下产出：</p>
-</li>
-<li>
-<p><code>train_result.json</code>：训练结果记录文件，记录了训练任务是否正常完成，以及产出的权重指标、相关文件路径等；</p>
-</li>
-<li><code>train.log</code>：训练日志文件，记录了训练过程中的模型指标变化、loss 变化等；</li>
-<li><code>config.yaml</code>：训练配置文件，记录了本次训练的超参数的配置；</li>
-<li><code>.pdparams</code>、<code>.pdema</code>、<code>.pdopt.pdstate</code>、<code>.pdiparams</code>、<code>.pdmodel</code>：模型权重相关文件，包括网络参数、优化器、EMA、静态图网络参数、静态图网络结构等；</li>
-</ul></details>
+
+* 模型训练过程中，PaddleX 会自动保存模型权重文件，默认为`output`，如需指定保存路径，可通过配置文件中 `-o Global.output` 字段进行设置。
+* PaddleX 对您屏蔽了动态图权重和静态图权重的概念。在模型训练的过程中，会同时产出动态图和静态图的权重，在模型推理时，默认选择静态图权重推理。
+* 在完成模型训练后，所有产出保存在指定的输出目录（默认为`./output/`）下，通常有以下产出：
+
+* `train_result.json`：训练结果记录文件，记录了训练任务是否正常完成，以及产出的权重指标、相关文件路径等；
+* `train.log`：训练日志文件，记录了训练过程中的模型指标变化、loss 变化等；
+* `config.yaml`：训练配置文件，记录了本次训练的超参数的配置；
+* `.pdparams`、`.pdema`、`.pdopt.pdstate`、`.pdiparams`、`.pdmodel`：模型权重相关文件，包括网络参数、优化器、EMA、静态图网络参数、静态图网络结构等；
+</details>
 
 <h2 id="43"><b>4.3 模型评估</b><a class="headerlink" href="#43" title="Permanent link">&para;</a></h2>
 <p>在完成模型训练后，可以对指定的模型权重文件在验证集上进行评估，验证模型精度。使用 PaddleX 进行模型评估，一条命令即可完成模型的评估：</p>
-<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>python<span class="w"> </span>main.py<span class="w"> </span>-c<span class="w"> </span>paddlex/configs/face_detection/PicoDet_LCNet_x2_5_face.yaml<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span>-o<span class="w"> </span>Global.mode<span class="o">=</span>evaluate<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span>-o<span class="w"> </span>Global.dataset_dir<span class="o">=</span>./dataset/widerface_coco_examples
+<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>python<span class="w"> </span>main.py<span class="w"> </span>-c<span class="w"> </span>paddlex/configs/face_detection/PicoDet_LCNet_x2_5_face.yaml<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span>-o<span class="w"> </span>Global.mode<span class="o">=</span>evaluate<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span>-o<span class="w"> </span>Global.dataset_dir<span class="o">=</span>./dataset/widerface_coco_examples
 </span></code></pre></div>
 与模型训练类似，需要如下几步：</p>
 <ul>
@@ -4600,10 +4618,15 @@ CheckDataset:
 <li>指定验证数据集路径：<code>-o Global.dataset_dir</code>
 其他相关参数均可通过修改<code>.yaml</code>配置文件中的<code>Global</code>和<code>Evaluate</code>下的字段来进行设置，详细请参考<a href="../../instructions/config_parameters_common.html">PaddleX通用模型配置文件参数说明</a>。</li>
 </ul>
-<details><summary>👉 <b>更多说明（点击展开）</b></summary>
+<details>
+  <summary>👉 <b>更多说明（点击展开）</b></summary>
 
-<p>在模型评估时，需要指定模型权重文件路径，每个配置文件中都内置了默认的权重保存路径，如需要改变，只需要通过追加命令行参数的形式进行设置即可，如<code>-o Evaluate.weight_path=``./output/best_model/best_model/model.pdparams</code>。</p>
-<p>在完成模型评估后，会产出<code>evaluate_result.json，其记录了</code>评估的结果，具体来说，记录了评估任务是否正常完成，以及模型的评估指标，包含 AP；</p></details>
+
+在模型评估时，需要指定模型权重文件路径，每个配置文件中都内置了默认的权重保存路径，如需要改变，只需要通过追加命令行参数的形式进行设置即可，如`-o Evaluate.weight_path=``./output/best_model/best_model/model.pdparams`。
+
+在完成模型评估后，会产出`evaluate_result.json，其记录了`评估的结果，具体来说，记录了评估任务是否正常完成，以及模型的评估指标，包含 AP；
+
+</details>
 
 <h3 id="44"><b>4.4 模型推理</b><a class="headerlink" href="#44" title="Permanent link">&para;</a></h3>
 <p>在完成模型的训练和评估后，即可使用训练好的模型权重进行推理预测。在PaddleX中实现模型推理预测可以通过两种方式：命令行和wheel 包。</p>
@@ -4611,10 +4634,10 @@ CheckDataset:
 <ul>
 <li>
 <p>通过命令行的方式进行推理预测，只需如下一条命令，运行以下代码前，请您下载<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/face_detection.png">示例图片</a>到本地。
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>python<span class="w"> </span>main.py<span class="w"> </span>-c<span class="w"> </span>paddlex/configs/face_detection/PicoDet_LCNet_x2_5_face.yaml<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span>-o<span class="w"> </span>Global.mode<span class="o">=</span>predict<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span>-o<span class="w"> </span>Predict.model_dir<span class="o">=</span><span class="s2">&quot;./output/best_model/inference&quot;</span><span class="w"> </span><span class="se">\</span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span>-o<span class="w"> </span>Predict.input<span class="o">=</span><span class="s2">&quot;face_detection.png&quot;</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>python<span class="w"> </span>main.py<span class="w"> </span>-c<span class="w"> </span>paddlex/configs/face_detection/PicoDet_LCNet_x2_5_face.yaml<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span>-o<span class="w"> </span>Global.mode<span class="o">=</span>predict<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span>-o<span class="w"> </span>Predict.model_dir<span class="o">=</span><span class="s2">&quot;./output/best_model/inference&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">    </span>-o<span class="w"> </span>Predict.input<span class="o">=</span><span class="s2">&quot;face_detection.png&quot;</span>
 </span></code></pre></div>
 与模型训练和评估类似，需要如下几步：</p>
 </li>

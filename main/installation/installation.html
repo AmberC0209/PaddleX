@@ -4310,7 +4310,8 @@ PaddleX为您提供了两种安装模式：<b>Wheel包安装</b>和<b>插件安�
 <p>若您使用PaddleX的应用场景为<b>二次开发</b> （例如重新训练模型、微调模型、自定义模型结构、自定义推理代码等），那么推荐您使用<b>功能更加强大</b>的插件安装模式。</p>
 <p>安装您需要的PaddleX插件之后，您不仅同样能够对插件支持的模型进行推理与集成，还可以对其进行模型训练等二次开发更高级的操作。</p>
 <p>PaddleX支持的插件如下，请您根据开发需求，确定所需的一个或多个插件名称：</p>
-<details><summary>👉 <b>插件和产线对应关系（点击展开）</b></summary>
+<details>
+  <summary>👉 <b>插件和产线对应关系（点击展开）</b></summary>
 
 <table>
 <thead>
@@ -4387,7 +4388,9 @@ PaddleX为您提供了两种安装模式：<b>Wheel包安装</b>和<b>插件安�
 <td><code>PaddleSeg</code></td>
 </tr>
 </tbody>
-</table></details>
+</table>
+
+</details>
 
 <p>若您需要安装的插件为<code>PaddleXXX</code>，在参考<a href="paddlepaddle_install.html">飞桨PaddlePaddle本地安装教程</a>安装飞桨后，您可以直接执行如下指令快速安装PaddleX的对应插件：</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/PaddlePaddle/PaddleX.git
@@ -4423,18 +4426,21 @@ PaddleX为您提供了两种安装模式：<b>Wheel包安装</b>和<b>插件安�
 <ul>
 <li>若您使用的 Docker 版本 &lt;= 19.03 但 &gt;= 17.06，请执行：</li>
 </ul>
-<details><summary> 点击展开</summary>
+<details>
+   <summary> 点击展开</summary>
 
-<pre><code class="language-bash"># 对于 CPU 用户
-docker run --name paddlex -v $PWD:/paddle --shm-size=8g --network=host -it registry.baidubce.com/paddlex/paddlex:paddlex3.0.0b1-paddlepaddle3.0.0b1-cpu /bin/bash
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># 对于 CPU 用户</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>paddlex<span class="w"> </span>-v<span class="w"> </span><span class="nv">$PWD</span>:/paddle<span class="w"> </span>--shm-size<span class="o">=</span>8g<span class="w"> </span>--network<span class="o">=</span>host<span class="w"> </span>-it<span class="w"> </span>registry.baidubce.com/paddlex/paddlex:paddlex3.0.0b1-paddlepaddle3.0.0b1-cpu<span class="w"> </span>/bin/bash
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1"># 对于 GPU 用户</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="c1"># 对于 CUDA11.8 用户</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>nvidia-docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>paddlex<span class="w"> </span>-v<span class="w"> </span><span class="nv">$PWD</span>:/paddle<span class="w"> </span>--shm-size<span class="o">=</span>8g<span class="w"> </span>--network<span class="o">=</span>host<span class="w"> </span>-it<span class="w"> </span>registry.baidubce.com/paddlex/paddlex:paddlex3.0.0b1-paddlepaddle3.0.0b1-gpu-cuda11.8-cudnn8.6-trt8.5<span class="w"> </span>/bin/bash
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="c1"># 对于 CUDA12.3 用户</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>nvidia-docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>paddlex<span class="w"> </span>-v<span class="w"> </span><span class="nv">$PWD</span>:/paddle<span class="w"> </span>--shm-size<span class="o">=</span>8g<span class="w"> </span>--network<span class="o">=</span>host<span class="w"> </span>-it<span class="w"> </span>registry.baidubce.com/paddlex/paddlex:paddlex3.0.0b1-paddlepaddle3.0.0b1-gpu-cuda12.3-cudnn9.0-trt8.6<span class="w"> </span>/bin/bash
+</span></code></pre></div>
 
-# 对于 GPU 用户
-# 对于 CUDA11.8 用户
-nvidia-docker run --name paddlex -v $PWD:/paddle --shm-size=8g --network=host -it registry.baidubce.com/paddlex/paddlex:paddlex3.0.0b1-paddlepaddle3.0.0b1-gpu-cuda11.8-cudnn8.6-trt8.5 /bin/bash
-
-# 对于 CUDA12.3 用户
-nvidia-docker run --name paddlex -v $PWD:/paddle --shm-size=8g --network=host -it registry.baidubce.com/paddlex/paddlex:paddlex3.0.0b1-paddlepaddle3.0.0b1-gpu-cuda12.3-cudnn9.0-trt8.6 /bin/bash
-</code></pre></details>
+</details>
 
 <ul>
 <li>
@@ -4448,47 +4454,47 @@ nvidia-docker run --name paddlex -v $PWD:/paddle --shm-size=8g --network=host -i
 <p>在安装之前，请确保您已经参考<a href="paddlepaddle_install.html">飞桨PaddlePaddle本地安装教程</a>完成飞桨的本地安装。</p>
 <h4 id="221-paddlex">2.2.1 获取 PaddleX 源码<a class="headerlink" href="#221-paddlex" title="Permanent link">&para;</a></h4>
 <p>接下来，请使用以下命令从 GitHub 获取 PaddleX 最新源码：</p>
-<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/PaddlePaddle/PaddleX.git
+<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/PaddlePaddle/PaddleX.git
 </span></code></pre></div>
 如果访问 GitHub 网速较慢，可以从 Gitee 下载，命令如下：</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://gitee.com/paddlepaddle/PaddleX.git
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://gitee.com/paddlepaddle/PaddleX.git
 </span></code></pre></div>
 <h4 id="222-paddlex">2.2.2 安装PaddleX<a class="headerlink" href="#222-paddlex" title="Permanent link">&para;</a></h4>
 <p>获取 PaddleX 最新源码之后，您可以选择Wheel包安装模式或插件安装模式。</p>
 <ul>
 <li><b>若您选择Wheel包安装模式</b>，请执行以下命令：</li>
 </ul>
-<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">cd</span><span class="w"> </span>PaddleX
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1"># 安装 PaddleX whl</span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1"># -e：以可编辑模式安装，当前项目的代码更改，都会直接作用到已经安装的 PaddleX Wheel</span>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
-</span></code></pre></div>
-* <b>若您选择插件安装模式</b>，并且您需要的插件名称为 PaddleXXX（可以有多个），请执行以下命令：</p>
 <p><div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">cd</span><span class="w"> </span>PaddleX
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="c1"># 安装 PaddleX whl</span>
 </span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="c1"># -e：以可编辑模式安装，当前项目的代码更改，都会直接作用到已经安装的 PaddleX Wheel</span>
 </span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
-</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="c1"># 安装 PaddleX 插件</span>
-</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>paddlex<span class="w"> </span>--install<span class="w"> </span>PaddleXXX
+</span></code></pre></div>
+* <b>若您选择插件安装模式</b>，并且您需要的插件名称为 PaddleXXX（可以有多个），请执行以下命令：</p>
+<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nb">cd</span><span class="w"> </span>PaddleX
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="c1"># 安装 PaddleX whl</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="c1"># -e：以可编辑模式安装，当前项目的代码更改，都会直接作用到已经安装的 PaddleX Wheel</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="c1"># 安装 PaddleX 插件</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>paddlex<span class="w"> </span>--install<span class="w"> </span>PaddleXXX
 </span></code></pre></div>
 例如，您需要安装PaddleOCR、PaddleClas插件，则需要执行如下命令安装插件：</p>
-<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># 安装 PaddleOCR、PaddleClas 插件</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>paddlex<span class="w"> </span>--install<span class="w"> </span>PaddleOCR<span class="w"> </span>PaddleClas
+<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># 安装 PaddleOCR、PaddleClas 插件</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>paddlex<span class="w"> </span>--install<span class="w"> </span>PaddleOCR<span class="w"> </span>PaddleClas
 </span></code></pre></div>
 若您需要安装全部插件，则无需填写具体插件名称，只需执行如下命令：</p>
-<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># 安装 PaddleX 全部插件</span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>paddlex<span class="w"> </span>--install
+<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># 安装 PaddleX 全部插件</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>paddlex<span class="w"> </span>--install
 </span></code></pre></div>
 插件的默认克隆源为  github.com，同时也支持 gitee.com 克隆源，您可以通过<code>--platform</code> 指定克隆源。</p>
 <p>例如，您需要使用 gitee.com 克隆源安装全部PaddleX插件，只需执行如下命令：</p>
-<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># 安装 PaddleX 插件</span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>paddlex<span class="w"> </span>--install<span class="w"> </span>--platform<span class="w"> </span>gitee.com
+<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># 安装 PaddleX 插件</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>paddlex<span class="w"> </span>--install<span class="w"> </span>--platform<span class="w"> </span>gitee.com
 </span></code></pre></div>
 安装完成后，将会有如下提示：</p>
-<p><div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>All packages are installed.
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>All packages are installed.
 </span></code></pre></div>
 更多硬件环境的PaddleX安装请参考<a href="../other_devices_support/multi_devices_use_guide.html">PaddleX多硬件使用指南</a></p>
 

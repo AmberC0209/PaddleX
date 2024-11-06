@@ -4577,6 +4577,7 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
+
 <p><b>Note: The evaluation set for the above accuracy metrics is PaddleOCR's self-built layout region analysis dataset, containing 10,000 images of common document types, including English and Chinese papers, magazines, research reports, etc. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b></p>
 <h2 id="4-data-preparation-and-verification">4. Data Preparation and Verification<a class="headerlink" href="#4-data-preparation-and-verification" title="Permanent link">&para;</a></h2>
 <h3 id="41-data-preparation">4.1 Data Preparation<a class="headerlink" href="#41-data-preparation" title="Permanent link">&para;</a></h3>
@@ -4746,6 +4747,7 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
+
 <p></center></p>
 <p>Next, we can increase the number of training epochs based on a learning rate set to 0.001. Comparing experiments [2, 4, 5] below, it can be seen that as the number of training epochs increases, the model's accuracy further improves.</p>
 <p><center></p>
@@ -4775,6 +4777,7 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
+
 <p></center></p>
 <p><b>Note:</b> This tutorial is designed for a 4-GPU setup. If you only have 1 GPU, you can complete the experiment by adjusting the number of training GPUs, but the final metrics may not align perfectly with the above indicators, which is normal.</p>
 <p>When selecting a training environment, it is important to consider the relationship between the number of training GPUs, the total batch_size, and the learning rate. Firstly, the total batch_size is equal to the number of training GPUs multiplied by the batch_size per GPU. Secondly, the total batch_size and the learning rate are related, and the learning rate should be adjusted in synchronization with the total batch_size. The default learning rate corresponds to a total batch_size based on 4 GPUs. If you plan to train in a single-GPU environment, you need to divide the learning rate by 4 accordingly. If you plan to train in an 8-GPU environment, you need to multiply the learning rate by 2 accordingly.</p>

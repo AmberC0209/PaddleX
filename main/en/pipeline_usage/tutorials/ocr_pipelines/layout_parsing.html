@@ -4316,9 +4316,11 @@ You're not viewing the latest version.
 <p>Layout parsing is a technology that extracts structured information from document images, primarily used to convert complex document layouts into machine-readable data formats. This technology has extensive applications in document management, information extraction, and data digitization. By combining Optical Character Recognition (OCR), image processing, and machine learning algorithms, layout parsing can identify and extract text blocks, titles, paragraphs, images, tables, and other layout elements from documents. The process typically involves three main steps: layout analysis, element analysis, and data formatting, ultimately generating structured document data to improve data processing efficiency and accuracy.</p>
 <p>The <b>General Layout Parsing Pipeline</b> includes modules for table structure recognition, layout region analysis, text detection, text recognition, formula recognition, seal text detection, text image rectification, and document image orientation classification.</p>
 <p><b>If you prioritize model accuracy, choose a model with higher accuracy. If you prioritize inference speed, choose a model with faster inference. If you prioritize model storage size, choose a model with a smaller storage size.</b></p>
-<details><summary> 👉Model List Details</summary>
+<details>
+   <summary> 👉Model List Details</summary>
 
-<p><b>Table Structure Recognition Module Models</b>:</p>
+<b>Table Structure Recognition Module Models</b>:
+
 <table>
   <tr>
     <th>Model</th>
@@ -4346,8 +4348,11 @@ You're not viewing the latest version.
   </tr>
 </table>
 
-<p><b>Note: The above accuracy metrics are measured on PaddleX's internally built English table recognition dataset. All GPU inference times are based on NVIDIA Tesla T4 machines with FP32 precision. CPU inference speeds are based on Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b></p>
-<p><b>Layout Detection Module Models</b>:</p>
+
+<b>Note: The above accuracy metrics are measured on PaddleX's internally built English table recognition dataset. All GPU inference times are based on NVIDIA Tesla T4 machines with FP32 precision. CPU inference speeds are based on Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
+
+<b>Layout Detection Module Models</b>:
+
 <table>
 <thead>
 <tr>
@@ -4418,8 +4423,11 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-<p><b>Note: The evaluation set for the above accuracy metrics is PaddleOCR's self-built layout region analysis dataset, containing 10,000 images of common document types, including English and Chinese papers, magazines, research reports, etc. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b></p>
-<p><b>Text Detection Module Models</b>:</p>
+
+<b>Note: The evaluation set for the above accuracy metrics is PaddleOCR's self-built layout region analysis dataset, containing 10,000 images of common document types, including English and Chinese papers, magazines, research reports, etc. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
+
+<b>Text Detection Module Models</b>:
+
 <table>
 <thead>
 <tr>
@@ -4450,8 +4458,11 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-<p><b>Note: The evaluation set for the above accuracy metrics is PaddleOCR's self-built Chinese dataset, covering street scenes, web images, documents, and handwritten texts, with 500 images for detection. All GPU inference times are based on NVIDIA Tesla T4 machines with FP32 precision. CPU inference speeds are based on Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b></p>
-<p><b>Text Recognition Module Models</b>:</p>
+
+<b>Note: The evaluation set for the above accuracy metrics is PaddleOCR's self-built Chinese dataset, covering street scenes, web images, documents, and handwritten texts, with 500 images for detection. All GPU inference times are based on NVIDIA Tesla T4 machines with FP32 precision. CPU inference speeds are based on Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
+
+<b>Text Recognition Module Models</b>:
+
 <table>
     <tr>
         <th>Model</th>
@@ -4478,7 +4489,9 @@ You're not viewing the latest version.
     </tr>
 </table>
 
-<p><b>Note: The evaluation set for the above accuracy metrics is PaddleOCR's self-built Chinese dataset, covering street scenes, web images, documents, and handwritten texts, with 11,000 images for text recognition. All GPU inference times are based on NVIDIA Tesla T4 machines with FP32 precision. CPU inference speeds are based on Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b></p>
+
+<b>Note: The evaluation set for the above accuracy metrics is PaddleOCR's self-built Chinese dataset, covering street scenes, web images, documents, and handwritten texts, with 11,000 images for text recognition. All GPU inference times are based on NVIDIA Tesla T4 machines with FP32 precision. CPU inference speeds are based on Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
+
 <table >
     <tr>
         <th>Model</th>
@@ -4500,7 +4513,9 @@ You're not viewing the latest version.
     </tr>
 </table>
 
-<p><b>Note: The evaluation set for the above accuracy metrics is the <a href="https://aistudio.baidu.com/competition/detail/1131/0/introduction">PaddleOCR Algorithm Model Challenge - Task 1: OCR End-to-End Recognition Task</a> A-list. GPU inference time is based on NVIDIA Tesla T4 with FP32 precision. CPU inference speed is based on Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b></p>
+
+<b>Note: The evaluation set for the above accuracy metrics is the [PaddleOCR Algorithm Model Challenge - Task 1: OCR End-to-End Recognition Task](https://aistudio.baidu.com/competition/detail/1131/0/introduction) A-list. GPU inference time is based on NVIDIA Tesla T4 with FP32 precision. CPU inference speed is based on Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
+
 <table >
     <tr>
         <th>Model</th>
@@ -4522,8 +4537,11 @@ You're not viewing the latest version.
     </tr>
 </table>
 
-<p><b>Note: The evaluation set for the above accuracy metrics is the <a href="https://aistudio.baidu.com/competition/detail/1131/0/introduction">PaddleOCR Algorithm Model Challenge - Task 1: OCR End-to-End Recognition Task</a> B-list. GPU inference time is based on NVIDIA Tesla T4 with FP32 precision. CPU inference speed is based on Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b></p>
-<p><b>Formula Recognition Module Models</b>:</p>
+
+<b>Note: The evaluation set for the above accuracy metrics is the [PaddleOCR Algorithm Model Challenge - Task 1: OCR End-to-End Recognition Task](https://aistudio.baidu.com/competition/detail/1131/0/introduction) B-list. GPU inference time is based on NVIDIA Tesla T4 with FP32 precision. CPU inference speed is based on Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
+
+<b>Formula Recognition Module Models</b>:
+
 <table>
 <thead>
 <tr>
@@ -4548,8 +4566,11 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-<p><b>Note: The above accuracy metrics are measured on the <a href="https://drive.google.com/drive/folders/13CA4vAmOmD_I_dSbvLp-Lf0s6KiaNfuO">LaTeX-OCR Formula Recognition Test Set</a>. All GPU inference times are based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speeds are based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b></p>
-<p><b>Seal Text Detection Module Models</b>:</p>
+
+<b>Note: The above accuracy metrics are measured on the [LaTeX-OCR Formula Recognition Test Set](https://drive.google.com/drive/folders/13CA4vAmOmD_I_dSbvLp-Lf0s6KiaNfuO). All GPU inference times are based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speeds are based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
+
+<b>Seal Text Detection Module Models</b>:
+
 <table>
 <thead>
 <tr>
@@ -4580,8 +4601,11 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-<p><b>Note: The above accuracy metrics are evaluated on a self-built dataset containing 500 circular seal images. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b></p>
-<p><b>Text Image Rectification Module Models</b>:</p>
+
+<b>Note: The above accuracy metrics are evaluated on a self-built dataset containing 500 circular seal images. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
+
+<b>Text Image Rectification Module Models</b>:
+
 <table>
 <thead>
 <tr>
@@ -4600,8 +4624,11 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-<p><b>The accuracy metrics of the models are measured from the <a href="https://www3.cs.stonybrook.edu/~cvl/docunet.html">DocUNet benchmark</a>.</b></p>
-<p><b>Document Image Orientation Classification Module Models</b>:</p>
+
+<b>The accuracy metrics of the models are measured from the [DocUNet benchmark](https://www3.cs.stonybrook.edu/~cvl/docunet.html).</b>
+
+<b>Document Image Orientation Classification Module Models</b>:
+
 <table>
 <thead>
 <tr>
@@ -4624,7 +4651,10 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-<p><b>Note: The above accuracy metrics are evaluated on a self-built dataset covering various scenarios such as certificates and documents, containing 1000 images. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b></p></details>
+
+<b>Note: The above accuracy metrics are evaluated on a self-built dataset covering various scenarios such as certificates and documents, containing 1000 images. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
+
+</details>
 
 <h2 id="2-quick-start">2. Quick Start<a class="headerlink" href="#2-quick-start" title="Permanent link">&para;</a></h2>
 <p>PaddleX provides pre-trained model pipelines that can be quickly experienced. You can experience the effect of the General Image Classification pipeline online, or locally using command line or Python.</p>
@@ -4639,56 +4669,64 @@ Parameter Explanation:</p>
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>--device: The GPU index to use (e.g., gpu:0 indicates using the first GPU, gpu:1,2 indicates using the second and third GPUs). You can also choose to use CPU (--device cpu).
 </span></code></pre></div>
 <p>When executing the above command, the default Layout Parsing pipeline configuration file is loaded. If you need to customize the configuration file, you can execute the following command to obtain it:</p>
-<details><summary> 👉Click to expand</summary>
+<details>
+   <summary> 👉Click to expand</summary>
 
-<pre><code class="language-bash">paddlex --get_pipeline_config layout_parsing
-</code></pre>
-<p>After execution, the layout parsing pipeline configuration file will be saved in the current directory. If you wish to customize the save location, you can execute the following command (assuming the custom save location is <code>./my_path</code>):</p>
-<pre><code class="language-bash">paddlex --get_pipeline_config layout_parsing --save_path ./my_path
-</code></pre>
-<p>After obtaining the pipeline configuration file, you can replace <code>--pipeline</code> with the saved path of the configuration file to make it take effect. For example, if the configuration file is saved as <code>./layout_parsing.yaml</code>, simply execute:</p>
-<pre><code class="language-bash">paddlex --pipeline ./layout_parsing.yaml --input layout_parsing.jpg
-</code></pre>
-<p>Here, parameters such as <code>--model</code> and <code>--device</code> do not need to be specified, as they will use the parameters in the configuration file. If these parameters are still specified, the specified parameters will take precedence.</p></details>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>paddlex<span class="w"> </span>--get_pipeline_config<span class="w"> </span>layout_parsing
+</span></code></pre></div>
+After execution, the layout parsing pipeline configuration file will be saved in the current directory. If you wish to customize the save location, you can execute the following command (assuming the custom save location is `./my_path`):
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>paddlex<span class="w"> </span>--get_pipeline_config<span class="w"> </span>layout_parsing<span class="w"> </span>--save_path<span class="w"> </span>./my_path
+</span></code></pre></div>
+
+After obtaining the pipeline configuration file, you can replace `--pipeline` with the saved path of the configuration file to make it take effect. For example, if the configuration file is saved as `./layout_parsing.yaml`, simply execute:
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>paddlex<span class="w"> </span>--pipeline<span class="w"> </span>./layout_parsing.yaml<span class="w"> </span>--input<span class="w"> </span>layout_parsing.jpg
+</span></code></pre></div>
+Here, parameters such as `--model` and `--device` do not need to be specified, as they will use the parameters in the configuration file. If these parameters are still specified, the specified parameters will take precedence.
+
+</details>
 
 <p>After running, the result will be:</p>
-<details><summary> 👉Click to expand</summary>
+<details>
+   <summary> 👉Click to expand</summary>
 
-<pre><code>{'input_path': PosixPath('/root/.paddlex/temp/tmp5jmloefs.png'), 'parsing_result': [{'input_path': PosixPath('/root/.paddlex/temp/tmpshsq8_w0.png'), 'layout_bbox': [51.46833, 74.22329, 542.4082, 232.77504], 'image': {'img': array([[[255, 255, 255],
-        [255, 255, 255],
-        [255, 255, 255],
-        ...,
-        [213, 221, 238],
-        [217, 223, 240],
-        [233, 234, 241]],
-
-       [[255, 255, 255],
-        [255, 255, 255],
-        [255, 255, 255],
-        ...,
-        [255, 255, 255],
-        [255, 255, 255],
-        [255, 255, 255]]], dtype=uint8), 'image_text': ''}, 'layout': 'single'}, {'input_path': PosixPath('/root/.paddlex/temp/tmpcd2q9uyu.png'), 'layout_bbox': [47.68295, 243.08054, 546.28253, 295.71045], 'figure_title': 'Overview of RT-DETR, We feed th', 'layout': 'single'}, {'input_path': PosixPath('/root/.paddlex/temp/tmpr_iqa8b3.png'), 'layout_bbox': [58.416977, 304.1531, 275.9134, 400.07513], 'image': {'img': array([[[255, 255, 255],
-        [255, 255, 255],
-        [255, 255, 255],
-        ...,
-        [255, 255, 255],
-        [255, 255, 255],
-        [255, 255, 255]]], dtype=uint8), 'image_text': ''}, 'layout': 'left'}, {'input_path': PosixPath('/root/.paddlex/temp/tmphpblxl3p.png'), 'layout_bbox': [100.62961, 405.97458, 234.79774, 414.77414], 'figure_title': 'Figure 5. The fusion block in CCFF.', 'layout': 'left'}, {'input_path': PosixPath('/root/.paddlex/temp/tmplgnczrsf.png'), 'layout_bbox': [47.81724, 421.9041, 288.01566, 550.538], 'text': 'D, Ds, not only significantly reduces latency (35% faster),\nRut\nnproves accuracy (0.4% AP higher), CCFF is opti\nased on the cross-scale fusion module, which\nnsisting of convolutional lavers intc\npath.\nThe role of the fusion block is t\n into a new feature, and its\nFigure 5. The f\nblock contains tw\n1 x1\nchannels, /V RepBlock\n. anc\n: two-path outputs are fused by element-wise add. We\ntormulate the calculation ot the hvbrid encoder as:', 'layout': 'left'}, {'input_path': PosixPath('/root/.paddlex/temp/tmpsq0ey9md.png'), 'layout_bbox': [94.60716, 558.703, 288.04193, 600.19434], 'formula': '\\begin{array}{l}{{\\Theta=K=\\mathrm{p.s.sp{\\pm}}\\mathrm{i.s.s.}(\\mathrm{l.s.}(\\mathrm{l.s.}(\\mathrm{l.s.}}),{\\qquad\\mathrm{{a.s.}}\\mathrm{s.}}}\\\\ {{\\tau_{\\mathrm{{s.s.s.s.s.}}(\\mathrm{l.s.},\\mathrm{l.s.},\\mathrm{s.s.}}\\mathrm{s.}\\mathrm{s.}}\\end{array}),}}\\\\ {{\\bar{\\mathrm{e-c.c.s.s.}(\\mathrm{s.},\\mathrm{s.s.},\\ s_{s}}\\mathrm{s.s.},\\tau),}}\\end{array}', 'layout': 'left'}, {'input_path': PosixPath('/root/.paddlex/temp/tmpv30qy0v4.png'), 'layout_bbox': [47.975555, 607.12024, 288.5776, 629.1252], 'text': 'tened feature to the same shape as Ss.\nwhere Re shape represents restoring the shape of the flat-', 'layout': 'left'}, {'input_path': PosixPath('/root/.paddlex/temp/tmp0jejzwwv.png'), 'layout_bbox': [48.383354, 637.581, 245.96404, 648.20496], 'paragraph_title': '4.3. Uncertainty-minimal Query Selection', 'layout': 'left'}, {'input_path': PosixPath('/root/.paddlex/temp/tmpushex416.png'), 'layout_bbox': [47.80134, 656.002, 288.50192, 713.24994], 'text': 'To reduce the difficulty of optimizing object queries in\nDETR, several subsequent works [42, 44, 45] propose query\nselection schemes, which have in common that they use the\nconfidence score to select the top K’ features from the en-\ncoder to initialize object queries (or just position queries).', 'layout': 'left'}, {'input_path': PosixPath('/root/.paddlex/temp/tmpki7e_6wc.png'), 'layout_bbox': [306.6371, 302.1026, 546.3772, 419.76724], 'text': 'The confidence score represents the likelihood that the fea\nture includes foreground objects. Nevertheless, the \nare required to simultaneously model the category\nojects, both of which determine the quality of the\npertor\ncore of the fes\nBased on the analysis, the current query\n considerable level of uncertainty in the\nresulting in sub-optimal initialization for\nand hindering the performance of the detector.', 'layout': 'right'}, {'input_path': PosixPath('/root/.paddlex/temp/tmppbxrfehp.png'), 'layout_bbox': [306.0642, 422.7347, 546.9216, 539.45734], 'text': 'To address this problem, we propose the uncertainty mini\nmal query selection scheme, which explicitly const\noptim\n the epistemic uncertainty to model the\nfeatures, thereby providing \nhigh-quality\nr the decoder. Specifically,\n the discrepancy between i\nalization P\nand classificat\n.(2\ntunction for the gradie', 'layout': 'right'}, {'input_path': PosixPath('/root/.paddlex/temp/tmp1mgiyd21.png'), 'layout_bbox': [331.52808, 549.32635, 546.5229, 586.15546], 'formula': '\\begin{array}{c c c}{{}}&amp;{{}}&amp;{{\\begin{array}{c}{{i\\langle X\\rangle=({\\bar{Y}}({\\bar{X}})+{\\bar{Z}}({\\bar{X}})\\mid X\\in{\\bar{\\pi}}^{\\prime}}}&amp;{{}}\\\\ {{}}&amp;{{}}&amp;{{}}\\end{array}}}&amp;{{\\emptyset}}\\\\ {{}}&amp;{{}}&amp;{{C(\\bar{X},{\\bar{X}})=C..\\scriptstyle(\\bar{0},{\\bar{Y}})+{\\mathcal{L}}_{{\\mathrm{s}}}({\\bar{X}}),\\ 6)}}&amp;{{}}\\end{array}', 'layout': 'right'}, {'input_path': PosixPath('/root/.paddlex/temp/tmp8t73dpym.png'), 'layout_bbox': [306.44016, 592.8762, 546.84314, 630.60126], 'text': 'where  and y denote the prediction and ground truth,\n= (c, b), c and b represent the category and bounding\nbox respectively, X represent the encoder feature.', 'layout': 'right'}, {'input_path': PosixPath('/root/.paddlex/temp/tmpftnxeyjm.png'), 'layout_bbox': [306.15652, 632.3142, 546.2463, 713.19073], 'text': 'Effectiveness analysis. To analyze the effectiveness of the\nuncertainty-minimal query selection, we visualize the clas-\nsificatior\nscores and IoU scores of the selected fe\nCOCO\na 12017, Figure 6. We draw the scatterplo\nt with\ndots\nrepresent the selected features from the model trained\nwith uncertainty-minimal query selection and vanilla query', 'layout': 'right'}]}
-</code></pre></details>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>{&#39;input_path&#39;: PosixPath(&#39;/root/.paddlex/temp/tmp5jmloefs.png&#39;), &#39;parsing_result&#39;: [{&#39;input_path&#39;: PosixPath(&#39;/root/.paddlex/temp/tmpshsq8_w0.png&#39;), &#39;layout_bbox&#39;: [51.46833, 74.22329, 542.4082, 232.77504], &#39;image&#39;: {&#39;img&#39;: array([[[255, 255, 255],
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>        [255, 255, 255],
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>        [255, 255, 255],
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>        ...,
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>        [213, 221, 238],
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>        [217, 223, 240],
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>        [233, 234, 241]],
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>       [[255, 255, 255],
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>        [255, 255, 255],
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>        [255, 255, 255],
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>        ...,
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>        [255, 255, 255],
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>        [255, 255, 255],
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>        [255, 255, 255]]], dtype=uint8), &#39;image_text&#39;: &#39;&#39;}, &#39;layout&#39;: &#39;single&#39;}, {&#39;input_path&#39;: PosixPath(&#39;/root/.paddlex/temp/tmpcd2q9uyu.png&#39;), &#39;layout_bbox&#39;: [47.68295, 243.08054, 546.28253, 295.71045], &#39;figure_title&#39;: &#39;Overview of RT-DETR, We feed th&#39;, &#39;layout&#39;: &#39;single&#39;}, {&#39;input_path&#39;: PosixPath(&#39;/root/.paddlex/temp/tmpr_iqa8b3.png&#39;), &#39;layout_bbox&#39;: [58.416977, 304.1531, 275.9134, 400.07513], &#39;image&#39;: {&#39;img&#39;: array([[[255, 255, 255],
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>        [255, 255, 255],
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>        [255, 255, 255],
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>        ...,
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>        [255, 255, 255],
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>        [255, 255, 255],
+</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>        [255, 255, 255]]], dtype=uint8), &#39;image_text&#39;: &#39;&#39;}, &#39;layout&#39;: &#39;left&#39;}, {&#39;input_path&#39;: PosixPath(&#39;/root/.paddlex/temp/tmphpblxl3p.png&#39;), &#39;layout_bbox&#39;: [100.62961, 405.97458, 234.79774, 414.77414], &#39;figure_title&#39;: &#39;Figure 5. The fusion block in CCFF.&#39;, &#39;layout&#39;: &#39;left&#39;}, {&#39;input_path&#39;: PosixPath(&#39;/root/.paddlex/temp/tmplgnczrsf.png&#39;), &#39;layout_bbox&#39;: [47.81724, 421.9041, 288.01566, 550.538], &#39;text&#39;: &#39;D, Ds, not only significantly reduces latency (35% faster),\nRut\nnproves accuracy (0.4% AP higher), CCFF is opti\nased on the cross-scale fusion module, which\nnsisting of convolutional lavers intc\npath.\nThe role of the fusion block is t\n into a new feature, and its\nFigure 5. The f\nblock contains tw\n1 x1\nchannels, /V RepBlock\n. anc\n: two-path outputs are fused by element-wise add. We\ntormulate the calculation ot the hvbrid encoder as:&#39;, &#39;layout&#39;: &#39;left&#39;}, {&#39;input_path&#39;: PosixPath(&#39;/root/.paddlex/temp/tmpsq0ey9md.png&#39;), &#39;layout_bbox&#39;: [94.60716, 558.703, 288.04193, 600.19434], &#39;formula&#39;: &#39;\\begin{array}{l}{{\\Theta=K=\\mathrm{p.s.sp{\\pm}}\\mathrm{i.s.s.}(\\mathrm{l.s.}(\\mathrm{l.s.}(\\mathrm{l.s.}}),{\\qquad\\mathrm{{a.s.}}\\mathrm{s.}}}\\\\ {{\\tau_{\\mathrm{{s.s.s.s.s.}}(\\mathrm{l.s.},\\mathrm{l.s.},\\mathrm{s.s.}}\\mathrm{s.}\\mathrm{s.}}\\end{array}),}}\\\\ {{\\bar{\\mathrm{e-c.c.s.s.}(\\mathrm{s.},\\mathrm{s.s.},\\ s_{s}}\\mathrm{s.s.},\\tau),}}\\end{array}&#39;, &#39;layout&#39;: &#39;left&#39;}, {&#39;input_path&#39;: PosixPath(&#39;/root/.paddlex/temp/tmpv30qy0v4.png&#39;), &#39;layout_bbox&#39;: [47.975555, 607.12024, 288.5776, 629.1252], &#39;text&#39;: &#39;tened feature to the same shape as Ss.\nwhere Re shape represents restoring the shape of the flat-&#39;, &#39;layout&#39;: &#39;left&#39;}, {&#39;input_path&#39;: PosixPath(&#39;/root/.paddlex/temp/tmp0jejzwwv.png&#39;), &#39;layout_bbox&#39;: [48.383354, 637.581, 245.96404, 648.20496], &#39;paragraph_title&#39;: &#39;4.3. Uncertainty-minimal Query Selection&#39;, &#39;layout&#39;: &#39;left&#39;}, {&#39;input_path&#39;: PosixPath(&#39;/root/.paddlex/temp/tmpushex416.png&#39;), &#39;layout_bbox&#39;: [47.80134, 656.002, 288.50192, 713.24994], &#39;text&#39;: &#39;To reduce the difficulty of optimizing object queries in\nDETR, several subsequent works [42, 44, 45] propose query\nselection schemes, which have in common that they use the\nconfidence score to select the top K’ features from the en-\ncoder to initialize object queries (or just position queries).&#39;, &#39;layout&#39;: &#39;left&#39;}, {&#39;input_path&#39;: PosixPath(&#39;/root/.paddlex/temp/tmpki7e_6wc.png&#39;), &#39;layout_bbox&#39;: [306.6371, 302.1026, 546.3772, 419.76724], &#39;text&#39;: &#39;The confidence score represents the likelihood that the fea\nture includes foreground objects. Nevertheless, the \nare required to simultaneously model the category\nojects, both of which determine the quality of the\npertor\ncore of the fes\nBased on the analysis, the current query\n considerable level of uncertainty in the\nresulting in sub-optimal initialization for\nand hindering the performance of the detector.&#39;, &#39;layout&#39;: &#39;right&#39;}, {&#39;input_path&#39;: PosixPath(&#39;/root/.paddlex/temp/tmppbxrfehp.png&#39;), &#39;layout_bbox&#39;: [306.0642, 422.7347, 546.9216, 539.45734], &#39;text&#39;: &#39;To address this problem, we propose the uncertainty mini\nmal query selection scheme, which explicitly const\noptim\n the epistemic uncertainty to model the\nfeatures, thereby providing \nhigh-quality\nr the decoder. Specifically,\n the discrepancy between i\nalization P\nand classificat\n.(2\ntunction for the gradie&#39;, &#39;layout&#39;: &#39;right&#39;}, {&#39;input_path&#39;: PosixPath(&#39;/root/.paddlex/temp/tmp1mgiyd21.png&#39;), &#39;layout_bbox&#39;: [331.52808, 549.32635, 546.5229, 586.15546], &#39;formula&#39;: &#39;\\begin{array}{c c c}{{}}&amp;{{}}&amp;{{\\begin{array}{c}{{i\\langle X\\rangle=({\\bar{Y}}({\\bar{X}})+{\\bar{Z}}({\\bar{X}})\\mid X\\in{\\bar{\\pi}}^{\\prime}}}&amp;{{}}\\\\ {{}}&amp;{{}}&amp;{{}}\\end{array}}}&amp;{{\\emptyset}}\\\\ {{}}&amp;{{}}&amp;{{C(\\bar{X},{\\bar{X}})=C..\\scriptstyle(\\bar{0},{\\bar{Y}})+{\\mathcal{L}}_{{\\mathrm{s}}}({\\bar{X}}),\\ 6)}}&amp;{{}}\\end{array}&#39;, &#39;layout&#39;: &#39;right&#39;}, {&#39;input_path&#39;: PosixPath(&#39;/root/.paddlex/temp/tmp8t73dpym.png&#39;), &#39;layout_bbox&#39;: [306.44016, 592.8762, 546.84314, 630.60126], &#39;text&#39;: &#39;where  and y denote the prediction and ground truth,\n= (c, b), c and b represent the category and bounding\nbox respectively, X represent the encoder feature.&#39;, &#39;layout&#39;: &#39;right&#39;}, {&#39;input_path&#39;: PosixPath(&#39;/root/.paddlex/temp/tmpftnxeyjm.png&#39;), &#39;layout_bbox&#39;: [306.15652, 632.3142, 546.2463, 713.19073], &#39;text&#39;: &#39;Effectiveness analysis. To analyze the effectiveness of the\nuncertainty-minimal query selection, we visualize the clas-\nsificatior\nscores and IoU scores of the selected fe\nCOCO\na 12017, Figure 6. We draw the scatterplo\nt with\ndots\nrepresent the selected features from the model trained\nwith uncertainty-minimal query selection and vanilla query&#39;, &#39;layout&#39;: &#39;right&#39;}]}
+</span></code></pre></div>
+</details>
 
 <h3 id="22-python-script-integration">2.2 Python Script Integration<a class="headerlink" href="#22-python-script-integration" title="Permanent link">&para;</a></h3>
 <p>A few lines of code are all you need to quickly perform inference on your production line. Taking the general layout parsing pipeline as an example:</p>
-<p><div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">from</span> <span class="nn">paddlex</span> <span class="kn">import</span> <span class="n">create_pipeline</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">pipeline</span> <span class="o">=</span> <span class="n">create_pipeline</span><span class="p">(</span><span class="n">pipeline</span><span class="o">=</span><span class="s2">&quot;layout_parsing&quot;</span><span class="p">)</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="n">output</span> <span class="o">=</span> <span class="n">pipeline</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="s2">&quot;demo_paper.png&quot;</span><span class="p">)</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">output</span><span class="p">:</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    <span class="n">res</span><span class="o">.</span><span class="n">print</span><span class="p">()</span>  <span class="c1"># Print the structured output of the prediction</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    <span class="n">res</span><span class="o">.</span><span class="n">save_to_img</span><span class="p">(</span><span class="s2">&quot;./output/&quot;</span><span class="p">)</span>  <span class="c1"># Save the result as an image file</span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    <span class="n">res</span><span class="o">.</span><span class="n">save_to_xlsx</span><span class="p">(</span><span class="s2">&quot;./output/&quot;</span><span class="p">)</span>  <span class="c1"># Save the result as an Excel file</span>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>    <span class="n">res</span><span class="o">.</span><span class="n">save_to_html</span><span class="p">(</span><span class="s2">&quot;./output/&quot;</span><span class="p">)</span>  <span class="c1"># Save the result as an HTML file</span>
+<p><div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kn">from</span> <span class="nn">paddlex</span> <span class="kn">import</span> <span class="n">create_pipeline</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">pipeline</span> <span class="o">=</span> <span class="n">create_pipeline</span><span class="p">(</span><span class="n">pipeline</span><span class="o">=</span><span class="s2">&quot;layout_parsing&quot;</span><span class="p">)</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="n">output</span> <span class="o">=</span> <span class="n">pipeline</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="s2">&quot;demo_paper.png&quot;</span><span class="p">)</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">output</span><span class="p">:</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>    <span class="n">res</span><span class="o">.</span><span class="n">print</span><span class="p">()</span>  <span class="c1"># Print the structured output of the prediction</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>    <span class="n">res</span><span class="o">.</span><span class="n">save_to_img</span><span class="p">(</span><span class="s2">&quot;./output/&quot;</span><span class="p">)</span>  <span class="c1"># Save the result as an image file</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>    <span class="n">res</span><span class="o">.</span><span class="n">save_to_xlsx</span><span class="p">(</span><span class="s2">&quot;./output/&quot;</span><span class="p">)</span>  <span class="c1"># Save the result as an Excel file</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>    <span class="n">res</span><span class="o">.</span><span class="n">save_to_html</span><span class="p">(</span><span class="s2">&quot;./output/&quot;</span><span class="p">)</span>  <span class="c1"># Save the result as an HTML file</span>
 </span></code></pre></div>
 The results obtained are the same as those from the command line method.</p>
 <p>In the above Python script, the following steps are executed:</p>
@@ -4723,6 +4761,7 @@ The results obtained are the same as those from the command line method.</p>
 </tr>
 </tbody>
 </table>
+
 <p>(2) Call the <code>predict</code> method of the pipeline object to perform inference: The <code>predict</code> method takes <code>x</code> as a parameter, which is used to input data to be predicted, supporting multiple input methods, as shown in the following examples:</p>
 <table>
 <thead>
@@ -4758,6 +4797,7 @@ The results obtained are the same as those from the command line method.</p>
 </tr>
 </tbody>
 </table>
+
 <p>(3) Obtain the prediction results by calling the <code>predict</code> method: The <code>predict</code> method is a <code>generator</code>, so prediction results need to be obtained through iteration. The <code>predict</code> method predicts data in batches, so the prediction results are in the form of a list.</p>
 <p>(4) Process the prediction results: The prediction result for each sample is of <code>dict</code> type and supports printing or saving as files, with the supported file types depending on the specific pipeline, such as:</p>
 <table>
@@ -4781,18 +4821,19 @@ The results obtained are the same as those from the command line method.</p>
 </tr>
 </tbody>
 </table>
+
 <p>| <code>save_to_xlsx</code> | Saves the result as an Excel file. | <code>- save_path</code>: <code>str</code> type, the path to save the file. When it's a directory, the saved file name is consistent with the input file name.</p>
 <p>Within this tutorial on Artificial Intelligence and Computer Vision, we will explore the capabilities of saving and exporting results from various processes, including OCR (Optical Character Recognition), layout analysis, and table structure recognition. Specifically, the <code>save_to_img</code> function enables saving visualization results, <code>save_to_html</code> converts tables directly into HTML files, and <code>save_to_xlsx</code> exports tables as Excel files.</p>
 <p>Upon obtaining the configuration file, you can customize various settings for the layout parsing pipeline by simply modifying the <code>pipeline</code> parameter within the <code>create_pipeline</code> method to point to your configuration file path.</p>
 <p>For instance, if your configuration file is saved at <code>./my_path/layout_parsing.yaml</code>, you can execute the following code:</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">from</span> <span class="nn">paddlex</span> <span class="kn">import</span> <span class="n">create_pipeline</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">pipeline</span> <span class="o">=</span> <span class="n">create_pipeline</span><span class="p">(</span><span class="n">pipeline</span><span class="o">=</span><span class="s2">&quot;./my_path/layout_parsing.yaml&quot;</span><span class="p">)</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">output</span> <span class="o">=</span> <span class="n">pipeline</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="s2">&quot;layout_parsing.jpg&quot;</span><span class="p">)</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">output</span><span class="p">:</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    <span class="n">res</span><span class="o">.</span><span class="n">print</span><span class="p">()</span>  <span class="c1"># Prints the structured output of the layout parsing prediction</span>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    <span class="n">res</span><span class="o">.</span><span class="n">save_to_img</span><span class="p">(</span><span class="s2">&quot;./output/&quot;</span><span class="p">)</span>  <span class="c1"># Saves the img format results from each submodule of the pipeline</span>
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    <span class="n">res</span><span class="o">.</span><span class="n">save_to_xlsx</span><span class="p">(</span><span class="s2">&quot;./output/&quot;</span><span class="p">)</span>  <span class="c1"># Saves the xlsx format results from the table recognition module</span>
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    <span class="n">res</span><span class="o">.</span><span class="n">save_to_html</span><span class="p">(</span><span class="s2">&quot;./output/&quot;</span><span class="p">)</span>  <span class="c1"># Saves the html results from the table recognition module</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kn">from</span> <span class="nn">paddlex</span> <span class="kn">import</span> <span class="n">create_pipeline</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">pipeline</span> <span class="o">=</span> <span class="n">create_pipeline</span><span class="p">(</span><span class="n">pipeline</span><span class="o">=</span><span class="s2">&quot;./my_path/layout_parsing.yaml&quot;</span><span class="p">)</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">output</span> <span class="o">=</span> <span class="n">pipeline</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="s2">&quot;layout_parsing.jpg&quot;</span><span class="p">)</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">output</span><span class="p">:</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>    <span class="n">res</span><span class="o">.</span><span class="n">print</span><span class="p">()</span>  <span class="c1"># Prints the structured output of the layout parsing prediction</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>    <span class="n">res</span><span class="o">.</span><span class="n">save_to_img</span><span class="p">(</span><span class="s2">&quot;./output/&quot;</span><span class="p">)</span>  <span class="c1"># Saves the img format results from each submodule of the pipeline</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>    <span class="n">res</span><span class="o">.</span><span class="n">save_to_xlsx</span><span class="p">(</span><span class="s2">&quot;./output/&quot;</span><span class="p">)</span>  <span class="c1"># Saves the xlsx format results from the table recognition module</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>    <span class="n">res</span><span class="o">.</span><span class="n">save_to_html</span><span class="p">(</span><span class="s2">&quot;./output/&quot;</span><span class="p">)</span>  <span class="c1"># Saves the html results from the table recognition module</span>
 </span></code></pre></div>
 <h2 id="3-development-integrationdeployment">3. Development Integration/Deployment<a class="headerlink" href="#3-development-integrationdeployment" title="Permanent link">&para;</a></h2>
 <p>If the pipeline meets your requirements in terms of inference speed and accuracy, you can proceed with development integration or deployment.</p>
@@ -4801,13 +4842,14 @@ The results obtained are the same as those from the command line method.</p>
 <p>🚀 <b>High-Performance Inference</b>: In production environments, many applications require stringent performance metrics, especially response speed, to ensure efficient operation and smooth user experience. PaddleX provides a high-performance inference plugin that deeply optimizes model inference and pre/post-processing for significant end-to-end speedups. For detailed instructions on high-performance inference, refer to the <a href="../../../pipeline_deploy/high_performance_inference.html">PaddleX High-Performance Inference Guide</a>.</p>
 <p>☁️ <b>Service Deployment</b>: Service deployment is a common form in production environments, where reasoning functions are encapsulated as services accessible via network requests. PaddleX enables cost-effective service deployment of pipelines. For detailed instructions on service deployment, refer to the <a href="../../../pipeline_deploy/service_deploy.html">PaddleX Service Deployment Guide</a>.</p>
 <p>Below are the API references and multi-language service invocation examples:</p>
-<details><summary>API Reference</summary>
+<details>
+<summary>API Reference</summary>
 
-<p>For all operations provided by the service:</p>
-<ul>
-<li>Both the response body and the request body for POST requests are JSON data (JSON objects).</li>
-<li>When the request is processed successfully, the response status code is <code>200</code>, and the response body attributes are as follows:</li>
-</ul>
+For all operations provided by the service:
+
+- Both the response body and the request body for POST requests are JSON data (JSON objects).
+- When the request is processed successfully, the response status code is `200`, and the response body attributes are as follows:
+
 <table>
 <thead>
 <tr>
@@ -4829,11 +4871,11 @@ The results obtained are the same as those from the command line method.</p>
 </tr>
 </tbody>
 </table>
-<pre><code>The response body may also have a `result` attribute, of type `object`, which stores the operation result information.
-</code></pre>
-<ul>
-<li>When the request is not processed successfully, the response body attributes are as follows:</li>
-</ul>
+
+    The response body may also have a `result` attribute, of type `object`, which stores the operation result information.
+
+- When the request is not processed successfully, the response body attributes are as follows:
+
 <table>
 <thead>
 <tr>
@@ -4855,17 +4897,17 @@ The results obtained are the same as those from the command line method.</p>
 </tr>
 </tbody>
 </table>
-<p>Operations provided by the service:</p>
-<ul>
-<li>
-<p><b><code>infer</code></b></p>
-<p>Performs layout parsing.</p>
-<p><code>POST /layout-parsing</code></p>
-<ul>
-<li>Request body attributes:</li>
-</ul>
-</li>
-</ul>
+
+Operations provided by the service:
+
+- <b>`infer`</b>
+
+    Performs layout parsing.
+
+    `POST /layout-parsing`
+
+    - Request body attributes:
+
 <table>
 <thead>
 <tr>
@@ -4914,8 +4956,9 @@ The results obtained are the same as those from the command line method.</p>
 </tr>
 </tbody>
 </table>
-<pre><code>    Attributes of `inferenceParams`:
-</code></pre>
+
+        Attributes of `inferenceParams`:
+
 <table>
 <thead>
 <tr>
@@ -4934,8 +4977,9 @@ The results obtained are the same as those from the command line method.</p>
 </tr>
 </tbody>
 </table>
-<pre><code>- When the request is processed successfully, the `result` of the response body has the following attributes:
-</code></pre>
+
+    - When the request is processed successfully, the `result` of the response body has the following attributes:
+
 <table>
 <thead>
 <tr>
@@ -4952,8 +4996,9 @@ The results obtained are the same as those from the command line method.</p>
 </tr>
 </tbody>
 </table>
-<pre><code>    Each element in `layoutParsingResults` is an `object` with the following attributes:
-</code></pre>
+
+        Each element in `layoutParsingResults` is an `object` with the following attributes:
+
 <table>
 <thead>
 <tr>
@@ -4970,8 +5015,9 @@ The results obtained are the same as those from the command line method.</p>
 </tr>
 </tbody>
 </table>
-<pre><code>    Each element in `layoutElements` is an `object` with the following attributes:
-</code></pre>
+
+        Each element in `layoutElements` is an `object` with the following attributes:
+
 <table>
 <thead>
 <tr>
@@ -5007,46 +5053,50 @@ The results obtained are the same as those from the command line method.</p>
 <td>Image of the layout element, in JPEG format, encoded using Base64.</td>
 </tr>
 </tbody>
-</table></details>
+</table>
+
 </details>
-<details><summary>Multi-language Service Invocation Examples</summary>
+</details>
+<details>
+<summary>Multi-language Service Invocation Examples</summary>
 
 <details>
 <summary>Python</summary>
 
+<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kn">import</span> <span class="nn">base64</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="kn">import</span> <span class="nn">requests</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="n">API_URL</span> <span class="o">=</span> <span class="s2">&quot;http://localhost:8080/layout-parsing&quot;</span> <span class="c1"># 服务URL</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="c1"># 对本地图像进行Base64编码</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">image_path</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>    <span class="n">image_bytes</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>    <span class="n">image_data</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">image_bytes</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;ascii&quot;</span><span class="p">)</span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>    <span class="s2">&quot;file&quot;</span><span class="p">:</span> <span class="n">image_data</span><span class="p">,</span> <span class="c1"># Base64编码的文件内容或者文件URL</span>
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>    <span class="s2">&quot;fileType&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>    <span class="s2">&quot;useImgOrientationCls&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>    <span class="s2">&quot;useImgUnwrapping&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>    <span class="s2">&quot;useSealTextDet&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="p">}</span>
+</span><span id="__span-8-18"><a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>
+</span><span id="__span-8-19"><a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a><span class="c1"># 调用API</span>
+</span><span id="__span-8-20"><a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">API_URL</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+</span><span id="__span-8-21"><a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a>
+</span><span id="__span-8-22"><a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a><span class="c1"># 处理接口返回数据</span>
+</span><span id="__span-8-23"><a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a><span class="k">assert</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span>
+</span><span id="__span-8-24"><a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a><span class="n">result</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s2">&quot;result&quot;</span><span class="p">]</span>
+</span><span id="__span-8-25"><a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Detected layout elements:&quot;</span><span class="p">)</span>
+</span><span id="__span-8-26"><a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a><span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">result</span><span class="p">[</span><span class="s2">&quot;layoutParsingResults&quot;</span><span class="p">]:</span>
+</span><span id="__span-8-27"><a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a>    <span class="k">for</span> <span class="n">ele</span> <span class="ow">in</span> <span class="n">res</span><span class="p">[</span><span class="s2">&quot;layoutElements&quot;</span><span class="p">]:</span>
+</span><span id="__span-8-28"><a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;===============================&quot;</span><span class="p">)</span>
+</span><span id="__span-8-29"><a id="__codelineno-8-29" name="__codelineno-8-29" href="#__codelineno-8-29"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;bbox:&quot;</span><span class="p">,</span> <span class="n">ele</span><span class="p">[</span><span class="s2">&quot;bbox&quot;</span><span class="p">])</span>
+</span><span id="__span-8-30"><a id="__codelineno-8-30" name="__codelineno-8-30" href="#__codelineno-8-30"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;label:&quot;</span><span class="p">,</span> <span class="n">ele</span><span class="p">[</span><span class="s2">&quot;label&quot;</span><span class="p">])</span>
+</span><span id="__span-8-31"><a id="__codelineno-8-31" name="__codelineno-8-31" href="#__codelineno-8-31"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;text:&quot;</span><span class="p">,</span> <span class="nb">repr</span><span class="p">(</span><span class="n">ele</span><span class="p">[</span><span class="s2">&quot;text&quot;</span><span class="p">]))</span>
+</span></code></pre></div>
 
-<pre><code class="language-python">import base64
-import requests
-
-API_URL = &quot;http://localhost:8080/layout-parsing&quot; # 服务URL
-
-# 对本地图像进行Base64编码
-with open(image_path, &quot;rb&quot;) as file:
-    image_bytes = file.read()
-    image_data = base64.b64encode(image_bytes).decode(&quot;ascii&quot;)
-
-payload = {
-    &quot;file&quot;: image_data, # Base64编码的文件内容或者文件URL
-    &quot;fileType&quot;: 1,
-    &quot;useImgOrientationCls&quot;: True,
-    &quot;useImgUnwrapping&quot;: True,
-    &quot;useSealTextDet&quot;: True,
-}
-
-# 调用API
-response = requests.post(API_URL, json=payload)
-
-# 处理接口返回数据
-assert response.status_code == 200
-result = response.json()[&quot;result&quot;]
-print(&quot;\nDetected layout elements:&quot;)
-for res in result[&quot;layoutParsingResults&quot;]:
-    for ele in res[&quot;layoutElements&quot;]:
-        print(&quot;===============================&quot;)
-        print(&quot;bbox:&quot;, ele[&quot;bbox&quot;])
-        print(&quot;label:&quot;, ele[&quot;label&quot;])
-        print(&quot;text:&quot;, repr(ele[&quot;text&quot;]))
-</code></pre></details>
+</details>
 </details>
 <p><br/></p>
 <p>📱 <b>Edge Deployment</b>: Edge deployment refers to placing computational and data processing capabilities directly on user devices, enabling them to process data without relying on remote servers. PaddleX supports deploying models on edge devices such as Android. For detailed edge deployment procedures, please refer to the <a href="../../../pipeline_deploy/edge_deploy.html">PaddleX Edge Deployment Guide</a>.</p>
@@ -5068,30 +5118,30 @@ for res in result[&quot;layoutParsingResults&quot;]:
 <h3 id="42-model-application">4.2 Model Application<a class="headerlink" href="#42-model-application" title="Permanent link">&para;</a></h3>
 <p>After fine-tuning your model with a private dataset, you will obtain local model weights files.</p>
 <p>To use the fine-tuned model weights, simply modify the production line configuration file by replacing the local paths of the fine-tuned model weights to the corresponding positions in the configuration file:</p>
-<p><div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="o">......</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a> <span class="n">Pipeline</span><span class="p">:</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>  <span class="n">layout_model</span><span class="p">:</span> <span class="n">PicoDet_layout_1x</span>  <span class="c1"># Can be modified to the local path of the fine-tuned model</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>  <span class="n">table_model</span><span class="p">:</span> <span class="n">SLANet_plus</span>  <span class="c1"># Can be modified to the local path of the fine-tuned model</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>  <span class="n">text_det_model</span><span class="p">:</span> <span class="n">PP</span><span class="o">-</span><span class="n">OCRv4_server_det</span>  <span class="c1"># Can be modified to the local path of the fine-tuned model</span>
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>  <span class="n">text_rec_model</span><span class="p">:</span> <span class="n">PP</span><span class="o">-</span><span class="n">OCRv4_server_rec</span>  <span class="c1"># Can be modified to the local path of the fine-tuned model</span>
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>  <span class="n">formula_rec_model</span><span class="p">:</span> <span class="n">LaTeX_OCR_rec</span>  <span class="c1"># Can be modified to the local path of the fine-tuned model</span>
-</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>  <span class="n">seal_text_det_model</span><span class="p">:</span> <span class="n">PP</span><span class="o">-</span><span class="n">OCRv4_server_seal_det</span>   <span class="c1"># Can be modified to the local path of the fine-tuned model</span>
-</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>  <span class="n">doc_image_unwarp_model</span><span class="p">:</span> <span class="n">UVDoc</span>  <span class="c1"># Can be modified to the local path of the fine-tuned model</span>
-</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>  <span class="n">doc_image_ori_cls_model</span><span class="p">:</span> <span class="n">PP</span><span class="o">-</span><span class="n">LCNet_x1_0_doc_ori</span>  <span class="c1"># Can be modified to the local path of the fine-tuned model</span>
-</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>  <span class="n">layout_batch_size</span><span class="p">:</span> <span class="mi">1</span>
-</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>  <span class="n">text_rec_batch_size</span><span class="p">:</span> <span class="mi">1</span>
-</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>  <span class="n">table_batch_size</span><span class="p">:</span> <span class="mi">1</span>
-</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>  <span class="n">device</span><span class="p">:</span> <span class="s2">&quot;gpu:0&quot;</span>
-</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="o">......</span>
+<p><div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="o">......</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a> <span class="n">Pipeline</span><span class="p">:</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>  <span class="n">layout_model</span><span class="p">:</span> <span class="n">PicoDet_layout_1x</span>  <span class="c1"># Can be modified to the local path of the fine-tuned model</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>  <span class="n">table_model</span><span class="p">:</span> <span class="n">SLANet_plus</span>  <span class="c1"># Can be modified to the local path of the fine-tuned model</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>  <span class="n">text_det_model</span><span class="p">:</span> <span class="n">PP</span><span class="o">-</span><span class="n">OCRv4_server_det</span>  <span class="c1"># Can be modified to the local path of the fine-tuned model</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>  <span class="n">text_rec_model</span><span class="p">:</span> <span class="n">PP</span><span class="o">-</span><span class="n">OCRv4_server_rec</span>  <span class="c1"># Can be modified to the local path of the fine-tuned model</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>  <span class="n">formula_rec_model</span><span class="p">:</span> <span class="n">LaTeX_OCR_rec</span>  <span class="c1"># Can be modified to the local path of the fine-tuned model</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>  <span class="n">seal_text_det_model</span><span class="p">:</span> <span class="n">PP</span><span class="o">-</span><span class="n">OCRv4_server_seal_det</span>   <span class="c1"># Can be modified to the local path of the fine-tuned model</span>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>  <span class="n">doc_image_unwarp_model</span><span class="p">:</span> <span class="n">UVDoc</span>  <span class="c1"># Can be modified to the local path of the fine-tuned model</span>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>  <span class="n">doc_image_ori_cls_model</span><span class="p">:</span> <span class="n">PP</span><span class="o">-</span><span class="n">LCNet_x1_0_doc_ori</span>  <span class="c1"># Can be modified to the local path of the fine-tuned model</span>
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>  <span class="n">layout_batch_size</span><span class="p">:</span> <span class="mi">1</span>
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>  <span class="n">text_rec_batch_size</span><span class="p">:</span> <span class="mi">1</span>
+</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>  <span class="n">table_batch_size</span><span class="p">:</span> <span class="mi">1</span>
+</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>  <span class="n">device</span><span class="p">:</span> <span class="s2">&quot;gpu:0&quot;</span>
+</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="o">......</span>
 </span></code></pre></div>
 Subsequently, refer to the command line or Python script methods in the local experience to load the modified production line configuration file.</p>
 <h2 id="5-multi-hardware-support">5. Multi-Hardware Support<a class="headerlink" href="#5-multi-hardware-support" title="Permanent link">&para;</a></h2>
 <p>PaddleX supports various mainstream hardware devices such as NVIDIA GPUs, Kunlun XPU, Ascend NPU, and Cambricon MLU. <b>Simply modify the <code>--device</code> parameter</b> to seamlessly switch between different hardware.</p>
 <p>For example, if you use an NVIDIA GPU for inference in the layout parsing pipeline, the Python command is:</p>
-<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>paddlex<span class="w"> </span>--pipeline<span class="w"> </span>layout_parsing<span class="w"> </span>--input<span class="w"> </span>layout_parsing.jpg<span class="w"> </span>--device<span class="w"> </span>gpu:0
+<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>paddlex<span class="w"> </span>--pipeline<span class="w"> </span>layout_parsing<span class="w"> </span>--input<span class="w"> </span>layout_parsing.jpg<span class="w"> </span>--device<span class="w"> </span>gpu:0
 </span></code></pre></div>
 At this point, if you want to switch the hardware to Ascend NPU, simply modify <code>--device</code> to npu in the Python command:</p>
-<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>paddlex<span class="w"> </span>--pipeline<span class="w"> </span>layout_parsing<span class="w"> </span>--input<span class="w"> </span>layout_parsing.jpg<span class="w"> </span>--device<span class="w"> </span>npu:0
+<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>paddlex<span class="w"> </span>--pipeline<span class="w"> </span>layout_parsing<span class="w"> </span>--input<span class="w"> </span>layout_parsing.jpg<span class="w"> </span>--device<span class="w"> </span>npu:0
 </span></code></pre></div>
 If you want to use the general layout parsing pipeline on more types of hardware, please refer to the <a href="../../../other_devices_support/multi_devices_use_guide.html">PaddleX Multi-Device Usage Guide</a>.</p>
 
