@@ -120,7 +120,7 @@ output = pipeline.predict("https://paddle-model-ecology.bj.bcebos.com/paddlex/im
 
 ### 1.4 推理步骤
 
-本推理步骤基于 **PaddleX CLI、联网激活序列号、Python 3.10.0、设备类型为CPU** 的方式使用高性能推理插件，其他使用方式（如不同 Python 版本、设备类型或 PaddleX Python API）可参考 [PaddleX 高性能推理指南](../pipeline_deploy/high_performance_inference.md) 替换相应的指令。
+本推理步骤基于 <b>PaddleX CLI、联网激活序列号、Python 3.10.0、设备类型为CPU</b> 的方式使用高性能推理插件，其他使用方式（如不同 Python 版本、设备类型或 PaddleX Python API）可参考 [PaddleX 高性能推理指南](../pipeline_deploy/high_performance_inference.md) 替换相应的指令。
 
 ```bash
 # 安装高性能推理插件
@@ -169,7 +169,7 @@ INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)
 ```
 
-`--pipeline` 可指定为官方产线名称或本地产线配置文件路径。PaddleX 以此构建产线并部署为服务。如需调整配置（如模型路径、batch_size、部署设备等），请参考[通用OCR产线使用教程](../pipeline_usage/tutorials/ocr_pipelines/OCR.md)中的 **“模型应用”** 部分。
+`--pipeline` 可指定为官方产线名称或本地产线配置文件路径。PaddleX 以此构建产线并部署为服务。如需调整配置（如模型路径、batch_size、部署设备等），请参考[通用OCR产线使用教程](../pipeline_usage/tutorials/ocr_pipelines/OCR.md)中的 <b>“模型应用”</b> 部分。
 与服务化部署相关的命令行选项如下：
 
 <table>
@@ -212,7 +212,7 @@ INFO:     Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)
 </table>
 ### 2.3 调用服务
 
-此处只展示 Python 调用示例，API参考和其他语言服务调用示例可参考 [PaddleX服务化部署指南](../pipeline_deploy/service_deploy.md) 的 **1.3 调用服务** 中各产线使用教程的 **“开发集成/部署”** 部分。
+此处只展示 Python 调用示例，API参考和其他语言服务调用示例可参考 [PaddleX服务化部署指南](../pipeline_deploy/service_deploy.md) 的 <b>1.3 调用服务</b> 中各产线使用教程的 <b>“开发集成/部署”</b> 部分。
 
 ```python
 import base64
@@ -267,11 +267,11 @@ python fast_test.py
 
 1. 在本地环境安装好 CMake 编译工具，并在 [Android NDK 官网](https://developer.android.google.cn/ndk/downloads)下载当前系统符合要求的版本的 NDK 软件包。例如，在 Mac 上开发，需要在 Android NDK 官网下载 Mac 平台的 NDK 软件包。
 
-    **环境要求**
+    <b>环境要求</b>
     -  `CMake >= 3.10`（最低版本未经验证，推荐 3.20 及以上）
     -  `Android NDK >= r17c`（最低版本未经验证，推荐 r20b 及以上）
 
-    **本指南所使用的测试环境：**
+    <b>本指南所使用的测试环境：</b>
     -  `cmake == 3.20.0`
     -  `android-ndk == r20b`
 
@@ -340,7 +340,7 @@ python fast_test.py
 
 4. 将工作目录切换到 `PaddleX-Lite-Deploy/ocr/android/shell/cxx/ppocr_demo`，运行 `run.sh` 脚本，完成在端侧的预测。
 
-**注意事项：**
+<b>注意事项：</b>
   - 在运行 `build.sh` 脚本前，需要更改 `NDK_ROOT` 指定的路径为实际安装的 NDK 路径。
   - 在 Windows 系统上可以使用 Git Bash 执行部署步骤。
   - 若在 Windows 系统上编译，需要将 `CMakeLists.txt` 中的 `CMAKE_SYSTEM_NAME` 设置为 `windows`。

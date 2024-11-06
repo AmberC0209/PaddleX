@@ -8,9 +8,9 @@ hide:
 
 ### 🛠️ Installation
 
-> ❗Before installing PaddleX, please ensure you have a basic **Python environment** (Note: Currently supports Python 3.8 to Python 3.10, with more Python versions being adapted).
+> ❗Before installing PaddleX, please ensure you have a basic <b>Python environment</b> (Note: Currently supports Python 3.8 to Python 3.10, with more Python versions being adapted).
 
-* **Installing PaddlePaddle**
+* <b>Installing PaddlePaddle</b>
 
 ```bash
 # cpu
@@ -24,7 +24,7 @@ python -m pip install paddlepaddle-gpu==3.0.0b1 -i https://www.paddlepaddle.org.
 ```
 > ❗For more PaddlePaddle versions, please refer to the [PaddlePaddle official website](https://www.paddlepaddle.org.cn/install/quick?docurl=/documentation./docs/zh/install/pip/linux-pip.html). 
 
-* **Installing PaddleX**
+* <b>Installing PaddleX</b>
 
 ```bash
 pip install https://paddle-model-ecology.bj.bcebos.com/paddlex/whl/paddlex-3.0.0b1-py3-none-any.whl

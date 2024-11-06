@@ -69,7 +69,7 @@ python convert_to_imagenet.py --dataset_path /path/to/dataset
 <img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/image_classification/07.png">
 
 ## 2. Data Format
-* The dataset defined by PaddleX for image classification tasks is named **ClsDataset**, with the following organizational structure and annotation format:
+* The dataset defined by PaddleX for image classification tasks is named <b>ClsDataset</b>, with the following organizational structure and annotation format:
 
 ```bash
 dataset_dir    # Root directory of the dataset, the directory name can be changed

@@ -41,7 +41,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 </tr>
 </tbody>
 </table>
-**Note: The above accuracy metrics are Top-1 Accuracy on the [ImageNet-1k](https://www.image-net.org/index.php) validation set.**
+<b>Note: The above accuracy metrics are Top-1 Accuracy on the [ImageNet-1k](https://www.image-net.org/index.php) validation set.</b>
 
 ## Semantic Segmentation Module
 <table>
@@ -65,4 +65,4 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 </tr>
 </tbody>
 </table>
-**Note: The above accuracy metrics are mIoU on the [Cityscapes](https://www.cityscapes-dataset.com/) dataset.**
+<b>Note: The above accuracy metrics are mIoU on the [Cityscapes](https://www.cityscapes-dataset.com/) dataset.</b>

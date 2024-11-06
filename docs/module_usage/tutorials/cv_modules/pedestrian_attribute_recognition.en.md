@@ -30,7 +30,7 @@ Pedestrian attribute recognition is a crucial component in computer vision syste
 </tr>
 </tbody>
 </table>
-**Note: The above accuracy metrics are mA on PaddleX's internal self-built dataset. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.**
+<b>Note: The above accuracy metrics are mA on PaddleX's internal self-built dataset. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
 
 ## <span id="lable">III. Quick Integration</span>
 > ❗ Before quick integration, please install the PaddleX wheel package. For detailed instructions, refer to the [PaddleX Local Installation Guide](../../../installation/installation.en.md)
@@ -48,7 +48,7 @@ for res in output:
 ```
 For more information on using PaddleX's single-model inference API, refer to the [PaddleX Single Model Python Script Usage Instructions](../../instructions/model_python_API.en.md).
 
-**Note**: The index of the `output` value represents the following attributes: index 0 indicates whether a hat is worn, index 1 indicates whether glasses are worn, indexes 2-7 represent the style of the upper garment, indexes 8-13 represent the style of the lower garment, index 14 indicates whether boots are worn, indexes 15-17 represent the type of bag carried, index 18 indicates whether an object is held in front, indexes 19-21 represent age, index 22 represents gender, and indexes 23-25 represent orientation. Specifically, the attributes include the following types:
+<b>Note</b>: The index of the `output` value represents the following attributes: index 0 indicates whether a hat is worn, index 1 indicates whether glasses are worn, indexes 2-7 represent the style of the upper garment, indexes 8-13 represent the style of the lower garment, index 14 indicates whether boots are worn, indexes 15-17 represent the type of bag carried, index 18 indicates whether an object is held in front, indexes 19-21 represent age, index 22 represents gender, and indexes 23-25 represent orientation. Specifically, the attributes include the following types:
 
 ```
 - Gender: Male, Female
@@ -73,7 +73,7 @@ If you seek higher accuracy from existing models, you can leverage PaddleX's cus
 
 
 ### 4.1 Data Preparation
-Before model training, you need to prepare a dataset for the specific task module. PaddleX provides data validation functionality for each module, and **only data that passes validation can be used for model training**. Additionally, PaddleX provides demo datasets for each module, which you can use to complete subsequent development. If you wish to use a private dataset for model training, refer to the [PaddleX Multi-Label Classification Task Module Data Annotation Tutorial](../../../data_annotations/cv_modules/ml_classification.en.md).
+Before model training, you need to prepare a dataset for the specific task module. PaddleX provides data validation functionality for each module, and <b>only data that passes validation can be used for model training</b>. Additionally, PaddleX provides demo datasets for each module, which you can use to complete subsequent development. If you wish to use a private dataset for model training, refer to the [PaddleX Multi-Label Classification Task Module Data Annotation Tutorial](../../../data_annotations/cv_modules/ml_classification.en.md).
 
 #### 4.1.1 Demo Data Download
 You can use the following commands to download the demo dataset to a specified folder:
@@ -156,16 +156,16 @@ Additionally, the dataset verification also analyzes the distribution of the len
 </details>
 
 #### 4.1.3 Dataset Format Conversion/Dataset Splitting (Optional)
-After completing data validation, you can convert the dataset format or re-split the training/validation ratio of the dataset by **modifying the configuration file** or **appending hyperparameters**.
+After completing data validation, you can convert the dataset format or re-split the training/validation ratio of the dataset by <b>modifying the configuration file</b> or <b>appending hyperparameters</b>.
 
 <details>
   <summary>👉 <b>Dataset Format Conversion/Dataset Splitting Details (Click to Expand)</b></summary>
 
-**(1) Dataset Format Conversion**
+<b>(1) Dataset Format Conversion</b>
 
 Pedestrian attribute recognition does not support data format conversion.
 
-**(2) Dataset Splitting**
+<b>(2) Dataset Splitting</b>
 
 The dataset splitting parameters can be set by modifying the fields under `CheckDataset` in the configuration file. An example of part of the configuration file is shown below:
 
@@ -236,7 +236,7 @@ the following steps are required:
 * `.pdparams`, `.pdema`, `.pdopt.pdstate`, `.pdiparams`, `.pdmodel`: Model weight-related files, including network parameters, optimizer, EMA, static graph network parameters, static graph network structure, etc.;
 </details>
 
-### **4.3 Model Evaluation**
+### <b>4.3 Model Evaluation</b>
 After completing model training, you can evaluate the specified model weights file on the validation set to verify the model's accuracy. Using PaddleX for model evaluation can be done with a single command:
 
 ```bash
@@ -260,7 +260,7 @@ After completing the model evaluation, an `evaluate_result.json` file will be pr
 
 </details>
 
-### **4.4 Model Inference and Integration**
+### <b>4.4 Model Inference and Integration</b>
 After completing model training and evaluation, you can use the trained model weights for inference prediction or Python integration.
 
 #### 4.4.1 Model Inference
@@ -283,10 +283,10 @@ Similar to model training and evaluation, the following steps are required:
 #### 4.4.2 Model Integration
 The model can be directly integrated into the PaddleX pipeline or directly into your own project.
 
-1.**Pipeline Integration**
+1.<b>Pipeline Integration</b>
 
 The pedestrian attribute recognition module can be integrated into the [General Image Multi-label Classification Pipeline](../../../pipeline_usage/tutorials/cv_pipelines/image_multi_label_classification.en.md) of PaddleX. Simply replace the model path to update the pedestrian attribute recognition module of the relevant pipeline. In pipeline integration, you can use high-performance inference and service-oriented deployment to deploy your model.
 
-2.**Module Integration**
+2.<b>Module Integration</b>
 
 The weights you produce can be directly integrated into the pedestrian attribute recognition module. Refer to the Python example code in <a href="#lable">Quick Integration</a>  and simply replace the model with the path to your trained model.

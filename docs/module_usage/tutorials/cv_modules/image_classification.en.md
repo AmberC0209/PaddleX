@@ -81,7 +81,7 @@ The image classification module is a crucial component in computer vision system
     </tr>
 </table>
 
-> ❗ The above list features the **9 core models** that the image classification module primarily supports. In total, this module supports **80 models**. The complete list of models is as follows:
+> ❗ The above list features the <b>9 core models</b> that the image classification module primarily supports. In total, this module supports <b>80 models</b>. The complete list of models is as follows:
 
 <details>
    <summary> 👉Details of Model List</summary>
@@ -681,7 +681,7 @@ The image classification module is a crucial component in computer vision system
   
 </table>
 
-**Note: The above accuracy metrics refer to Top-1 Accuracy on the [ImageNet-1k](https://www.image-net.org/index.php) validation set. ****All model GPU inference times are based on NVIDIA Tesla T4 machines, with precision type FP32. CPU inference speeds are based on Intel® Xeon® Gold 5117 CPU @ 2.00GHz, with 8 threads and precision type FP32.**
+<b>Note: The above accuracy metrics refer to Top-1 Accuracy on the [ImageNet-1k](https://www.image-net.org/index.php) validation set. </b><b>All model GPU inference times are based on NVIDIA Tesla T4 machines, with precision type FP32. CPU inference speeds are based on Intel® Xeon® Gold 5117 CPU @ 2.00GHz, with 8 threads and precision type FP32.</b>
 </details>
 
 ## <span id="lable">III. Quick Integration</span>
@@ -704,7 +704,7 @@ For more information on using PaddleX's single-model inference APIs, please refe
 If you are seeking higher accuracy from existing models, you can use PaddleX's custom development capabilities to develop better image classification models. Before using PaddleX to develop image classification models, please ensure that you have installed the relevant model training plugins for image classification in PaddleX. The installation process can be found in the custom development section of the [PaddleX Local Installation Guide](../../../installation/installation.en.md).
 
 ### 4.1 Data Preparation
-Before model training, you need to prepare the dataset for the corresponding task module. PaddleX provides data validation functionality for each module, and **only data that passes data validation can be used for model training**. Additionally, PaddleX provides demo datasets for each module, which you can use to complete subsequent development. If you wish to use your own private dataset for subsequent model training, please refer to the [PaddleX Image Classification Task Module Data Annotation Guide](../../../data_annotations/cv_modules/image_classification.en.md).
+Before model training, you need to prepare the dataset for the corresponding task module. PaddleX provides data validation functionality for each module, and <b>only data that passes data validation can be used for model training</b>. Additionally, PaddleX provides demo datasets for each module, which you can use to complete subsequent development. If you wish to use your own private dataset for subsequent model training, please refer to the [PaddleX Image Classification Task Module Data Annotation Guide](../../../data_annotations/cv_modules/image_classification.en.md).
 
 #### 4.1.1 Demo Data Download
 You can use the following command to download the demo dataset to a specified folder:
@@ -766,16 +766,16 @@ Additionally, the dataset validation analyzes the sample number distribution acr
 </details>
 
 #### 4.1.3 Dataset Format Conversion/Dataset Splitting (Optional)
-After completing data validation, you can convert the dataset format or re-split the training/validation ratio of the dataset by **modifying the configuration file** or **appending hyperparameters**.
+After completing data validation, you can convert the dataset format or re-split the training/validation ratio of the dataset by <b>modifying the configuration file</b> or <b>appending hyperparameters</b>.
 
 <details>
   <summary>👉 <b>Dataset Format Conversion/Dataset Splitting Details (Click to Expand)</b></summary>
 
-**(1) Dataset Format Conversion**
+<b>(1) Dataset Format Conversion</b>
 
 Image classification does not currently support data conversion.
 
-**(2) Dataset Splitting**
+<b>(2) Dataset Splitting</b>
 
 The parameters for dataset splitting can be set by modifying the fields under `CheckDataset` in the configuration file. The following are example explanations for some of the parameters in the configuration file:
 
@@ -844,7 +844,7 @@ the following steps are required:
 * `.pdparams`, `.pdema`, `.pdopt.pdstate`, `.pdiparams`, `.pdmodel`: Model weight-related files, including network parameters, optimizer, EMA, static graph network parameters, static graph network structure, etc.;
 </details>
 
-## **4.3 Model Evaluation**
+## <b>4.3 Model Evaluation</b>
 After completing model training, you can evaluate the specified model weight file on the validation set to verify the model accuracy. Using PaddleX for model evaluation, a single command can complete the model evaluation:
 ```bash
 python main.py -c  paddlex/configs/image_classification/PP-LCNet_x1_0.yaml  \
@@ -866,7 +866,7 @@ After completing the model evaluation, an `evaluate_result.json` file will be ge
 
 </details>
 
-### **4.4 Model Inference and Model Integration**
+### <b>4.4 Model Inference and Model Integration</b>
 After completing model training and evaluation, you can use the trained model weights for inference predictions or Python integration.
 
 #### 4.4.1 Model Inference
@@ -889,11 +889,11 @@ Other related parameters can be set by modifying the fields under `Global` and `
 #### 4.4.2 Model Integration
 The model can be directly integrated into the PaddleX pipelines or directly into your own project.
 
-1.**Pipeline Integration**
+1.<b>Pipeline Integration</b>
 
 The image classification module can be integrated into the [General Image Classification Pipeline](../../../pipeline_usage/tutorials/cv_pipelines/image_classification.en.md) of PaddleX. Simply replace the model path to update the image classification module of the relevant pipeline. In pipeline integration, you can use high-performance inference and service-oriented deployment to deploy your obtained model.
 
-2.**Module Integration**
+2.<b>Module Integration</b>
 
 The weights you produce can be directly integrated into the image classification module. You can refer to the Python example code in <a href="#lable">Quick Integration</a>  and simply replace the model with the path to your trained model.
 

@@ -6,7 +6,7 @@ If you have already experienced the pre-trained model pipeline effects in Paddle
 
 The complete PaddleX model pipeline development process is illustrated in the following diagram:
 
-**<center>PaddleX Model Pipeline Development Flowchart</center>**
+<b><center>PaddleX Model Pipeline Development Flowchart</center></b>
 
 ```mermaid
 graph LR
@@ -21,13 +21,13 @@ graph LR
     test_ok --Yes--> development_integration
 ```
 
-The pre-trained model pipelines provided by PaddleX allow for **quick experience of effects**. If the pipeline effects meet your requirements, you can directly proceed with **development integration/deployment** of the pre-trained model pipeline. If the effects are not as expected, you can use your private data to **fine-tune** the models within the pipeline until satisfactory results are achieved.
+The pre-trained model pipelines provided by PaddleX allow for <b>quick experience of effects</b>. If the pipeline effects meet your requirements, you can directly proceed with <b>development integration/deployment</b> of the pre-trained model pipeline. If the effects are not as expected, you can use your private data to <b>fine-tune</b> the models within the pipeline until satisfactory results are achieved.
 
 Below, let's take the task of boarding pass recognition as an example to introduce the local usage process of the PaddleX model pipeline tool. Before use, please ensure you have completed the installation of PaddleX according to the [PaddleX Local Installation Tutorial](../installation/installation.en.md).
 
 ## 1. Select Pipeline
 
-Each pipeline in PaddleX can solve specific task scenarios such as object detection, time series prediction, semantic segmentation, etc. You need to select the pipeline for subsequent development based on the specific task. For example, for the boarding pass recognition task, the corresponding PaddleX pipeline is the **General OCR Pipeline**. More task-pipeline correspondences can be found in the [PaddleX Models List (CPU/GPU)](../support_list/models_list.en.md).
+Each pipeline in PaddleX can solve specific task scenarios such as object detection, time series prediction, semantic segmentation, etc. You need to select the pipeline for subsequent development based on the specific task. For example, for the boarding pass recognition task, the corresponding PaddleX pipeline is the <b>General OCR Pipeline</b>. More task-pipeline correspondences can be found in the [PaddleX Models List (CPU/GPU)](../support_list/models_list.en.md).
 
 ## 2. Quick Start
 
@@ -41,13 +41,13 @@ PaddleX provides three ways to quickly experience pipeline effects. You can choo
 
 To demonstrate the OCR pipeline for the boarding pass recognition task, you can quickly experience the pipeline's effect in three ways:
 
-**🌐 Online Experience**
+<b>🌐 Online Experience</b>
 
 You can experience the effects of the universal OCR pipeline in AI Studio [online](https://aistudio.baidu.com/community/app/91660/webUI?source=appMineRecent). Use the official demo image provided for recognition, for example:
 
 <img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/ocr/02.png">
 
-**💻 Command Line Experience**
+<b>💻 Command Line Experience</b>
 
 A single command can quickly experience the pipeline effects. Use the [test file](https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/general_ocr_002.png), and replace `--input` with a local path for prediction:
 ```bash
@@ -105,7 +105,7 @@ paddlex --pipeline ./ocr.yaml --input general_ocr_002.png
 Parameters such as `--model`, `--device` do not need to be specified, and the parameters in the configuration file will be used. If parameters are still specified, the specified parameters will prevail.
 </details>
 
-**💻 Python Script Experience**
+<b>💻 Python Script Experience</b>
 
 A few lines of code can quickly experience the pipeline effects:
 
@@ -176,11 +176,11 @@ In addition, PaddleX also provides three other deployment methods, with detailed
 
 
 
-🚀 **high-performance inference**: In actual production environments, many applications have stringent standards for the performance metrics (especially response speed) of deployment strategies to ensure efficient system operation and smooth user experience. To this end, PaddleX provides high-performance inference plugins that aim to deeply optimize model inference and pre/post-processing for significant speedups in the end-to-end process. Refer to the [PaddleX High-Performance Inference Guide](../pipeline_deploy/high_performance_inference.en.md) for detailed high-performance inference procedures.
+🚀 <b>high-performance inference</b>: In actual production environments, many applications have stringent standards for the performance metrics (especially response speed) of deployment strategies to ensure efficient system operation and smooth user experience. To this end, PaddleX provides high-performance inference plugins that aim to deeply optimize model inference and pre/post-processing for significant speedups in the end-to-end process. Refer to the [PaddleX High-Performance Inference Guide](../pipeline_deploy/high_performance_inference.en.md) for detailed high-performance inference procedures.
 
-☁️ **Service-Oriented Deployment**: Service-oriented deployment is a common deployment form in actual production environments. By encapsulating inference functions as services, clients can access these services through network requests to obtain inference results. PaddleX supports users in achieving low-cost service-oriented deployment of pipelines. Refer to the [PaddleX Service-Oriented Deployment Guide](../pipeline_deploy/service_deploy.en.md) for detailed service-oriented deployment procedures.
+☁️ <b>Service-Oriented Deployment</b>: Service-oriented deployment is a common deployment form in actual production environments. By encapsulating inference functions as services, clients can access these services through network requests to obtain inference results. PaddleX supports users in achieving low-cost service-oriented deployment of pipelines. Refer to the [PaddleX Service-Oriented Deployment Guide](../pipeline_deploy/service_deploy.en.md) for detailed service-oriented deployment procedures.
 
-📱 **Edge Deployment**: Edge deployment is a method that places computing and data processing capabilities on user devices themselves, allowing devices to process data directly without relying on remote servers. PaddleX supports deploying models on edge devices such as Android. Refer to the [PaddleX Edge Deployment Guide](../pipeline_deploy/edge_deploy.en.md) for detailed edge deployment procedures.
+📱 <b>Edge Deployment</b>: Edge deployment is a method that places computing and data processing capabilities on user devices themselves, allowing devices to process data directly without relying on remote servers. PaddleX supports deploying models on edge devices such as Android. Refer to the [PaddleX Edge Deployment Guide](../pipeline_deploy/edge_deploy.en.md) for detailed edge deployment procedures.
 
 Choose the appropriate deployment method for your model pipeline based on your needs, and proceed with subsequent AI application integration.
 

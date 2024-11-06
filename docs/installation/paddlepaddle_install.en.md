@@ -5,7 +5,7 @@
 When installing PaddlePaddle, you can choose to install it via Docker or pip.
 
 ## Installing PaddlePaddle via Docker
-**If you choose to install via Docker**, please refer to the following commands to use the official PaddlePaddle Docker image to create a container named `paddlex` and map the current working directory to the `/paddle` directory inside the container:
+<b>If you choose to install via Docker</b>, please refer to the following commands to use the official PaddlePaddle Docker image to create a container named `paddlex` and map the current working directory to the `/paddle` directory inside the container:
 
 If your Docker version >= 19.03, please use:
 
@@ -46,7 +46,7 @@ nvidia-docker run --name paddlex -v $PWD:/paddle  --shm-size=8G --network=host -
 * Note: For more official PaddlePaddle Docker images, please refer to the [PaddlePaddle official website](https://www.paddlepaddle.org.cn/install/quick?docurl=/documentation/docs/en/install/docker/linux-docker.html)
 
 ## Installing PaddlePaddle via pip
-**If you choose to install via pip**, please refer to the following commands to install PaddlePaddle in your current environment using pip:
+<b>If you choose to install via pip</b>, please refer to the following commands to install PaddlePaddle in your current environment using pip:
 
 ```bash
 # CPU
@@ -60,7 +60,7 @@ python -m pip install paddlepaddle-gpu==3.0.0b1 -i https://www.paddlepaddle.org.
 ```
 Note: For more PaddlePaddle Wheel versions, please refer to the [PaddlePaddle official website](https://www.paddlepaddle.org.cn/install/quick?docurl=/documentation/docs/en/install/pip/linux-pip.html).
 
-**For installing PaddlePaddle on other hardware, please refer to** [PaddleX Multi-hardware Usage Guide](../other_devices_support/multi_devices_use_guide.en.md).
+<b>For installing PaddlePaddle on other hardware, please refer to</b> [PaddleX Multi-hardware Usage Guide](../other_devices_support/multi_devices_use_guide.en.md).
 
 After installation, you can verify if PaddlePaddle is successfully installed using the following command:
 
@@ -73,4 +73,4 @@ If the installation is successful, the following content will be output:
 3.0.0-beta1
 ```
 
-> ❗ **Note**: If you encounter any issues during the installation process, feel free to [submit an issue](https://github.com/PaddlePaddle/Paddle/issues) in the Paddle repository.
+> ❗ <b>Note</b>: If you encounter any issues during the installation process, feel free to [submit an issue](https://github.com/PaddlePaddle/Paddle/issues) in the Paddle repository.

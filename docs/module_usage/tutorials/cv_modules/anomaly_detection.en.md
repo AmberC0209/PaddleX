@@ -26,7 +26,7 @@ Unsupervised anomaly detection is a technology that automatically identifies and
 </tr>
 </tbody>
 </table>
-**The above model accuracy indicators are measured from the MVTec_AD dataset.**
+<b>The above model accuracy indicators are measured from the MVTec_AD dataset.</b>
 
 ## III. Quick Integration  <a id="quick"> </a> 
 Before quick integration, you need to install the PaddleX wheel package. For the installation method of the wheel package, please refer to the [PaddleX Local Installation Tutorial](../../../installation/installation.en.md). After installing the wheel package, a few lines of code can complete the inference of the unsupervised anomaly detection module. You can switch models under this module freely, and you can also integrate the model inference of the unsupervised anomaly detection module into your project. Before running the following code, please download the [demo image](https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/uad_grid.png) to your local machine.
@@ -51,7 +51,7 @@ For more information on the usage of PaddleX's single-model inference API, pleas
 If you seek higher accuracy from existing models, you can leverage PaddleX's custom development capabilities to develop better unsupervised anomaly detection models. Before using PaddleX to develop unsupervised anomaly detection models, ensure you have installed the PaddleDetection plugin for PaddleX. The installation process can be found in the [PaddleX Local Installation Tutorial](../../../installation/installation.en.md).
 
 ### 4.1 Data Preparation
-Before model training, you need to prepare the corresponding dataset for the task module. PaddleX provides a data validation function for each module, and **only data that passes the validation can be used for model training**. Additionally, PaddleX provides demo datasets for each module, which you can use to complete subsequent development based on the official demos. If you wish to use private datasets for subsequent model training, refer to the [PaddleX Semantic Segmentation Task Module Data Annotation Tutorial](../../../data_annotations/cv_modules/semantic_segmentation.en.md).
+Before model training, you need to prepare the corresponding dataset for the task module. PaddleX provides a data validation function for each module, and <b>only data that passes the validation can be used for model training</b>. Additionally, PaddleX provides demo datasets for each module, which you can use to complete subsequent development based on the official demos. If you wish to use private datasets for subsequent model training, refer to the [PaddleX Semantic Segmentation Task Module Data Annotation Tutorial](../../../data_annotations/cv_modules/semantic_segmentation.en.md).
 
 #### 4.1.1 Demo Data Download
 You can use the following commands to download the demo dataset to a specified folder:
@@ -146,7 +146,7 @@ Other related parameters can be set by modifying the `Global` and `Train` fields
 * `.pdparams`, `.pdema`, `.pdopt.pdstate`, `.pdiparams`, `.pdmodel`: Model weight-related files, including network parameters, optimizer, EMA, static graph network parameters, static graph network structure, etc.;
 </details>
 
-### **4.3 Model Evaluation**
+### <b>4.3 Model Evaluation</b>
 After completing model training, you can evaluate the specified model weight file on the validation set to verify the model's accuracy. Using PaddleX for model evaluation, you can complete the evaluation with a single command:
 
 ```bash
@@ -171,7 +171,7 @@ After completing the model evaluation, an `evaluate_result.json` file will be ge
 
 </details>
 
-### **4.4 Model Inference**
+### <b>4.4 Model Inference</b>
 After completing model training and evaluation, you can use the trained model weights for inference prediction. In PaddleX, model inference prediction can be achieved through two methods: command line and wheel package.
 
 #### 4.4.1 Model Inference
@@ -193,10 +193,10 @@ Other related parameters can be set by modifying the fields under `Global` and `
 #### 4.4.2 Model Integration
 The model can be directly integrated into the PaddleX pipeline or into your own project.
 
-1. **Pipeline Integration**
+1. <b>Pipeline Integration</b>
 
 The unsupervised anomaly detection module can be integrated into PaddleX pipelines such as [Image_anomaly_detection](../../../pipeline_usage/tutorials/cv_pipelines/image_anomaly_detection.en.md). Simply replace the model path to update the unsupervised anomaly detection module of the relevant pipeline. In pipeline integration, you can use high-performance inference and service-oriented deployment to deploy your model.
 
-2. **Module Integration**
+2. <b>Module Integration</b>
 
 The weights you produce can be directly integrated into the unsupervised anomaly detection module. You can refer to the Python example code in [Quick Integration](#quick), simply replace the model with the path to your trained model.

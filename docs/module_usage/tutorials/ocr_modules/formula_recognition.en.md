@@ -28,7 +28,7 @@ The formula recognition module is a crucial component of OCR (Optical Character 
 
 </table>
 
-**Note: The above accuracy metrics are measured on the LaTeX-OCR formula recognition test set.**
+<b>Note: The above accuracy metrics are measured on the LaTeX-OCR formula recognition test set.</b>
 
 ## III. Quick Integration
 > ❗ Before quick integration, please install the PaddleX wheel package. For detailed instructions, refer to the [PaddleX Local Installation Guide](../../../installation/installation.en.md).
@@ -49,7 +49,7 @@ For more information on using PaddleX's single-model inference API, refer to the
 If you aim for higher accuracy with existing models, you can leverage PaddleX's custom development capabilities to develop better formula recognition models. Before developing formula recognition models with PaddleX, ensure you have installed the PaddleOCR-related model training plugins for PaddleX. The installation process can be found in the [PaddleX Local Installation Guide](../../../installation/installation.en.md).
 
 ### 4.1 Data Preparation
-Before model training, you need to prepare the corresponding dataset for the task module. PaddleX provides a data validation function for each module, and **only data that passes the validation can be used for model training**. Additionally, PaddleX provides demo datasets for each module, which you can use to complete subsequent development. If you wish to use private datasets for model training, refer to the [LaTeX-OCR Formula Recognition Project](https://github.com/lukas-blecher/LaTeX-OCR).
+Before model training, you need to prepare the corresponding dataset for the task module. PaddleX provides a data validation function for each module, and <b>only data that passes the validation can be used for model training</b>. Additionally, PaddleX provides demo datasets for each module, which you can use to complete subsequent development. If you wish to use private datasets for model training, refer to the [LaTeX-OCR Formula Recognition Project](https://github.com/lukas-blecher/LaTeX-OCR).
 
 #### 4.1.1 Demo Data Download
 You can download the demo dataset to a specified folder using the following command:
@@ -125,12 +125,12 @@ Additionally, the dataset verification also analyzes the distribution of sample 
 
 
 ### 4.1.3 Dataset Format Conversion / Dataset Splitting (Optional)
-After completing the data verification, you can convert the dataset format and re-split the training/validation ratio by **modifying the configuration file** or **appending hyperparameters**.
+After completing the data verification, you can convert the dataset format and re-split the training/validation ratio by <b>modifying the configuration file</b> or <b>appending hyperparameters</b>.
 
 <details>
   <summary>👉 <b>Details of Format Conversion / Dataset Splitting (Click to Expand)</b></summary>
 
-**(1) Dataset Format Conversion**
+<b>(1) Dataset Format Conversion</b>
 
 The formula recognition supports converting `MSTextRecDataset` format datasets to `LaTeXOCRDataset` format ( `PKL` format ). The parameters for dataset format conversion can be set by modifying the fields under `CheckDataset` in the configuration file. Examples of some parameters in the configuration file are as follows:
 
@@ -168,7 +168,7 @@ python main.py -c  paddlex/configs/formula_recognition/LaTeX_OCR_rec.yaml \
     -o CheckDataset.convert.enable=True \
     -o CheckDataset.convert.src_dataset_type=MSTextRecDataset
 ```
-**(2) Dataset Splitting**
+<b>(2) Dataset Splitting</b>
 
 The parameters for dataset splitting can be set by modifying the fields under `CheckDataset` in the configuration file. Examples of some parameters in the configuration file are as follows:
 
@@ -239,7 +239,7 @@ Other related parameters can be set by modifying the `Global` and `Train` fields
 </details>
 
 
-## **4.3 Model Evaluation**
+## <b>4.3 Model Evaluation</b>
 After completing model training, you can evaluate the specified model weight file on the validation set to verify the model's accuracy. Using PaddleX for model evaluation can be done with a single command:
 
 ```bash
@@ -265,7 +265,7 @@ After completing the model evaluation, an `evaluate_result.json` file will be pr
 </details>
 
 
-### **4.4 Model Inference and Integration**
+### <b>4.4 Model Inference and Integration</b>
 After completing model training and evaluation, you can use the trained model weights for inference prediction or Python integration.
 
 

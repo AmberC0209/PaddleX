@@ -319,7 +319,7 @@ Object detection aims to identify the categories and locations of multiple objec
   </tr>
 </table>
 
-**Note: The precision metrics mentioned are based on the [COCO2017](https://cocodataset.org/#home) validation set mAP(0.5:0.95). All model GPU inference times are measured on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speeds are based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.**
+<b>Note: The precision metrics mentioned are based on the [COCO2017](https://cocodataset.org/#home) validation set mAP(0.5:0.95). All model GPU inference times are measured on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speeds are based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
 
 
 </details>
@@ -332,7 +332,7 @@ You can [experience the General Object Detection Pipeline online](https://aistud
 
 <img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/object_detection/02.png">
 
-If you are satisfied with the pipeline's performance, you can directly integrate and deploy it. If not, you can also use your private data to **fine-tune the model within the pipeline**.
+If you are satisfied with the pipeline's performance, you can directly integrate and deploy it. If not, you can also use your private data to <b>fine-tune the model within the pipeline</b>.
 
 ### 2.2 Local Experience
 Before using the General Object Detection Pipeline locally, ensure you have installed the PaddleX wheel package following the [PaddleX Local Installation Tutorial](../../../installation/installation.md).
@@ -524,9 +524,9 @@ If you need to directly apply the pipeline in your Python project, refer to the 
 
 Additionally, PaddleX provides three other deployment methods, detailed as follows:
 
-🚀 **High-Performance Inference**: In actual production environments, many applications have stringent standards for the performance metrics of deployment strategies, especially response speed, to ensure efficient system operation and smooth user experience. To this end, PaddleX provides high-performance inference plugins aimed at deeply optimizing model inference and pre/post-processing to significantly speed up the end-to-end process. Refer to the [PaddleX High-Performance Inference Guide](../../../pipeline_deploy/high_performance_inference.md) for detailed high-performance inference procedures.
+🚀 <b>High-Performance Inference</b>: In actual production environments, many applications have stringent standards for the performance metrics of deployment strategies, especially response speed, to ensure efficient system operation and smooth user experience. To this end, PaddleX provides high-performance inference plugins aimed at deeply optimizing model inference and pre/post-processing to significantly speed up the end-to-end process. Refer to the [PaddleX High-Performance Inference Guide](../../../pipeline_deploy/high_performance_inference.md) for detailed high-performance inference procedures.
 
-☁️ **Service-Oriented Deployment**: Service-oriented deployment is a common deployment form in actual production environments. By encapsulating inference functions as services, clients can access these services through network requests to obtain inference results. PaddleX supports users in achieving low-cost service-oriented deployment of pipelines. Refer to the [PaddleX Service-Oriented Deployment Guide](../../../pipeline_deploy/service_deploy.md) for detailed service-oriented deployment procedures.
+☁️ <b>Service-Oriented Deployment</b>: Service-oriented deployment is a common deployment form in actual production environments. By encapsulating inference functions as services, clients can access these services through network requests to obtain inference results. PaddleX supports users in achieving low-cost service-oriented deployment of pipelines. Refer to the [PaddleX Service-Oriented Deployment Guide](../../../pipeline_deploy/service_deploy.md) for detailed service-oriented deployment procedures.
 
 Below are the API references and multi-language service invocation examples:
 
@@ -554,7 +554,7 @@ For all operations provided by the service:
 
 Operations provided by the service are as follows:
 
-- **`infer`**
+- <b>`infer`</b>
 
     Performs object detection on an image.
 
@@ -982,12 +982,12 @@ print_r($result["detectedObjects"]);
 </details>
 <br/>
 
-📱 **Edge Deployment**: Edge deployment is a method that places computing and data processing functions on user devices themselves, allowing devices to process data directly without relying on remote servers. PaddleX supports deploying models on edge devices such as Android. Refer to the [PaddleX Edge Deployment Guide](../../../pipeline_deploy/edge_deploy.md) for detailed edge deployment procedures.
+📱 <b>Edge Deployment</b>: Edge deployment is a method that places computing and data processing functions on user devices themselves, allowing devices to process data directly without relying on remote servers. PaddleX supports deploying models on edge devices such as Android. Refer to the [PaddleX Edge Deployment Guide](../../../pipeline_deploy/edge_deploy.md) for detailed edge deployment procedures.
 
 Choose the appropriate deployment method for your model pipeline based on your needs, and proceed with subsequent AI application integration.
 
 ## 4. Custom Development
-If the default model weights provided by the General Object Detection pipeline do not meet your requirements for precision or speed in your specific scenario, you can try to further **fine-tune** the existing model using **your own domain-specific or application-specific data** to improve the recognition performance of the General Object Detection pipeline in your scenario.
+If the default model weights provided by the General Object Detection pipeline do not meet your requirements for precision or speed in your specific scenario, you can try to further <b>fine-tune</b> the existing model using <b>your own domain-specific or application-specific data</b> to improve the recognition performance of the General Object Detection pipeline in your scenario.
 
 ### 4.1 Model Fine-tuning
 Since the General Object Detection pipeline includes an object detection module, if the performance of the pipeline does not meet expectations, you need to refer to the [Custom Development](../../../module_usage/tutorials/cv_modules/object_detection.md#四二次开发) section in the [Object Detection Module Development Tutorial](../../../module_usage/tutorials/cv_modules/object_detection.md) and use your private dataset to fine-tune the object detection model.
@@ -1008,7 +1008,7 @@ Pipeline:
 Then, refer to the command line method or Python script method in the local experience, and load the modified pipeline configuration file.
 
 ## 5. Multi-Hardware Support
-PaddleX supports various mainstream hardware devices such as NVIDIA GPUs, Kunlun XPU, Ascend NPU, and Cambricon MLU. **Simply modify the `--device` parameter** to seamlessly switch between different hardware.
+PaddleX supports various mainstream hardware devices such as NVIDIA GPUs, Kunlun XPU, Ascend NPU, and Cambricon MLU. <b>Simply modify the `--device` parameter</b> to seamlessly switch between different hardware.
 
 For example, if you use an NVIDIA GPU for inference of the General Object Detection pipeline, the Python command is:
 

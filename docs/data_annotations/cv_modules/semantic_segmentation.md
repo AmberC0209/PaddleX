@@ -72,9 +72,9 @@ labelme images --nodata --autosave --output annotations
 <img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/semantic_seg/12.png">
 <img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/semantic_seg/13.png">
 
-通常情况下，只需要标注前景目标并设置标注类别即可，其他像素默认作为背景。如需要手动标注背景区域，**类别必须设置为 _background_**，否则格式转换数据集会出现错误。
-对于图片中的噪声部分或不参与模型训练的部分，可以使用 **__ignore__** 类，模型训练时会自动跳过对应部分。
-针对带有空洞的目标，在标注完目标外轮廓后，再沿空洞边缘画多边形，并将空洞指定为特定类别，如果空洞是背景则指定为 **_background_**，示例如下：
+通常情况下，只需要标注前景目标并设置标注类别即可，其他像素默认作为背景。如需要手动标注背景区域，<b>类别必须设置为 _background_</b>，否则格式转换数据集会出现错误。
+对于图片中的噪声部分或不参与模型训练的部分，可以使用 <b>__ignore__</b> 类，模型训练时会自动跳过对应部分。
+针对带有空洞的目标，在标注完目标外轮廓后，再沿空洞边缘画多边形，并将空洞指定为特定类别，如果空洞是背景则指定为 <b>_background_</b>，示例如下：
 
 <img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/semantic_seg/14.png">
 
@@ -117,7 +117,7 @@ python main.py -c paddlex/configs/semantic_segmentation/PP-LiteSeg-T.yaml \
     -o CheckDataset.convert.src_dataset_type=LabelMe
 ```
 ## 数据格式
-PaddleX 针对图像分割任务定义的数据集，名称是**SegDataset**，组织结构和标注格式如下：
+PaddleX 针对图像分割任务定义的数据集，名称是<b>SegDataset</b>，组织结构和标注格式如下：
 
 ```bash
 dataset_dir         # 数据集根目录，目录名称可以改变

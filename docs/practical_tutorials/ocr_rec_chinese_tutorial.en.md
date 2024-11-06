@@ -10,7 +10,7 @@ First, choose the corresponding PaddleX pipeline based on your task scenario. Fo
 
 ## 2. Quick Start
 
-PaddleX offers two ways to experience the pipeline: one is through the PaddleX wheel package locally, and the other is on the **Baidu AIStudio Community**.
+PaddleX offers two ways to experience the pipeline: one is through the PaddleX wheel package locally, and the other is on the <b>Baidu AIStudio Community</b>.
 
 - Local Experience:
     ```bash
@@ -18,7 +18,7 @@ PaddleX offers two ways to experience the pipeline: one is through the PaddleX w
         --input https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/doc_images/practical_tutorial/OCR_rec/case.png
     ```
 
-- AIStudio Community Experience: Go to [Baidu AIStudio Community](https://aistudio.baidu.com/pipeline/mine), click "Create Pipeline", and create a **Universal OCR** pipeline for a quick trial.
+- AIStudio Community Experience: Go to [Baidu AIStudio Community](https://aistudio.baidu.com/pipeline/mine), click "Create Pipeline", and create a <b>Universal OCR</b> pipeline for a quick trial.
 
 Quick trial output example:
 <center>
@@ -63,7 +63,7 @@ PaddleX provides four end-to-end OCR models. For details, refer to the [Model Li
 </tr>
 </tbody>
 </table>
-**Note: The evaluation set is a self-built Chinese dataset by PaddleOCR, covering street scenes, web images, documents, and handwritten texts. The text recognition set contains 11,000 images, and the detection set contains 500 images. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.**
+<b>Note: The evaluation set is a self-built Chinese dataset by PaddleOCR, covering street scenes, web images, documents, and handwritten texts. The text recognition set contains 11,000 images, and the detection set contains 500 images. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
 
 In summary, models listed from top to bottom have faster inference speeds, while those from bottom to top have higher accuracy. This tutorial uses the `PP-OCRv4_server` model as an example to complete a full model development process. Based on your actual usage scenario, choose a suitable model for training. After training, evaluate the appropriate model weights within the pipeline and use them in practical scenarios.
 
@@ -146,7 +146,7 @@ Additionally, the dataset verification also analyzes the distribution of sample 
 
 </center>
 
-**Note**: Only data that passes the verification can be used for training and evaluation.
+<b>Note</b>: Only data that passes the verification can be used for training and evaluation.
 
 
 ### 4.3 Dataset Splitting (Optional)
@@ -188,12 +188,12 @@ Each model in PaddleX provides a configuration file for model development to set
 
 For more hyperparameter introductions, refer to [PaddleX General Model Configuration File Parameter Explanation](../module_usage/instructions/config_parameters_common.en.md).
 
-**Note**:
+<b>Note</b>:
 - The above parameters can be set by appending command-line arguments, e.g., specifying the mode as model training: `-o Global.mode=train`; specifying the first two GPUs for training: `-o Global.device=gpu:0,1`; setting the number of training epochs to 10: `-o Train.epochs_iters=10`.
 - During model training, PaddleX automatically saves model weight files, with the default being `output`. To specify a save path, use the `-o Global.output` field in the configuration file.
 - PaddleX shields you from the concepts of dynamic graph weights and static graph weights. During model training, both dynamic and static graph weights are produced, and static graph weights are selected by default for model inference.
 
-**Training Output Explanation**:
+<b>Training Output Explanation</b>:
 
 After completing model training, all outputs are saved in the specified output directory (default is `./output/`), typically including the following:
 
@@ -214,7 +214,7 @@ python main.py -c paddlex/configs/text_recognition/PP-OCRv4_server_rec.yaml \
 
 Similar to model training, model evaluation supports setting parameters by modifying the configuration file or appending command-line arguments.
 
-**Note**: When evaluating a model, you need to specify the model weight file path. Each configuration file has a default weight save path. If you need to change it, simply set it by appending a command-line argument, e.g., `-o Evaluate.weight_path=./output/best_accuracy/best_accuracy.pdparams`.
+<b>Note</b>: When evaluating a model, you need to specify the model weight file path. Each configuration file has a default weight save path. If you need to change it, simply set it by appending a command-line argument, e.g., `-o Evaluate.weight_path=./output/best_accuracy/best_accuracy.pdparams`.
 
 ### 5.3 Model Optimization
 
@@ -298,7 +298,7 @@ Next, based on a learning rate of 0.0002, we can increase the number of training
 </table>
 </center>
 
-**Note: This tutorial is designed for 4 GPUs. If you only have 1 GPU, you can adjust the number of training GPUs to complete the experiments, but the final metrics may not align with the above indicators, which is normal.**
+<b>Note: This tutorial is designed for 4 GPUs. If you only have 1 GPU, you can adjust the number of training GPUs to complete the experiments, but the final metrics may not align with the above indicators, which is normal.</b>
 
 ## 6. Production Line Testing
 

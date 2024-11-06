@@ -10,7 +10,7 @@ First, choose the corresponding PaddleX pipeline based on your task scenario. Fo
 
 ## 2. Quick Start
 
-PaddleX offers two ways to experience the pipeline: locally through the PaddleX wheel package or on the **Baidu AIStudio Community**.
+PaddleX offers two ways to experience the pipeline: locally through the PaddleX wheel package or on the <b>Baidu AIStudio Community</b>.
 
 - Local Experience:
   ```bash
@@ -18,7 +18,7 @@ PaddleX offers two ways to experience the pipeline: locally through the PaddleX 
       --input https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/application/object_detection/FashionPedia_demo.png
   ```
 
-- AIStudio Community Experience: Visit [Baidu AIStudio Community](https://aistudio.baidu.com/pipeline/mine), click "Create Pipeline," and select the **General Object Detection** pipeline for a quick trial.
+- AIStudio Community Experience: Visit [Baidu AIStudio Community](https://aistudio.baidu.com/pipeline/mine), click "Create Pipeline," and select the <b>General Object Detection</b> pipeline for a quick trial.
 
 Quick Trial Output Example:
 <center>
@@ -88,7 +88,7 @@ PaddleX provides 37 end-to-end object detection models. Refer to the [Model List
 </tr>
 </tbody>
 </table>
-> **Note: The above accuracy metrics are mAP(0.5:0.95) on the COCO2017 validation set. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.**
+> <b>Note: The above accuracy metrics are mAP(0.5:0.95) on the COCO2017 validation set. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
 
 In summary, models with faster inference speed are placed higher in the table, while models with higher accuracy are lower. This tutorial takes the PicoDet-L model as an example to complete a full model development process. You can judge and select an appropriate model for training based on your actual usage scenarios. After training, you can evaluate the suitable model weights within the pipeline and ultimately use them in practical scenarios.
 
@@ -156,7 +156,7 @@ Additionally, the dataset verification also analyzes the distribution of sample 
 
 </center>
 
-**Note**: Only datasets that pass the verification can be used for training and evaluation.
+<b>Note</b>: Only datasets that pass the verification can be used for training and evaluation.
 
 ## 4.3 Dataset Format Conversion/Dataset Splitting (Optional)
 
@@ -200,12 +200,12 @@ Each model in PaddleX provides a configuration file for model development to set
 
 For more hyperparameter introductions, please refer to [PaddleX General Model Configuration File Parameter Explanation](../module_usage/instructions/config_parameters_common.en.md).
 
-**Note**:
+<b>Note</b>:
 - The above parameters can be set by appending command line arguments, e.g., specifying the mode as model training: `-o Global.mode=train`; specifying the first two GPUs for training: `-o Global.device=gpu:0,1`; setting the number of training epochs to 50: `-o Train.epochs_iters=50`.
 - During model training, PaddleX automatically saves model weight files, with the default being `output`. To specify a save path, use the `-o Global.output` field in the configuration file.
 - PaddleX shields you from the concepts of dynamic graph weights and static graph weights. During model training, both dynamic and static graph weights are produced, and static graph weights are selected by default for model inference.
 
-**Training Output Explanation**:
+<b>Training Output Explanation</b>:
 
 After completing model training, all outputs are saved in the specified output directory (default is `./output/`), typically including the following:
 
@@ -226,7 +226,7 @@ python main.py -c paddlex/configs/object_detection/PicoDet-L.yaml \
 
 Similar to model training, model evaluation supports modifying the configuration file or appending command line arguments.
 
-**Note**: When evaluating the model, you need to specify the model weight file path. Each configuration file has a built-in default weight save path. If you need to change it, simply set it by appending a command line argument, e.g., `-o Evaluate.weight_path=./output/best_model/best_model.pdparams`.
+<b>Note</b>: When evaluating the model, you need to specify the model weight file path. Each configuration file has a built-in default weight save path. If you need to change it, simply set it by appending a command line argument, e.g., `-o Evaluate.weight_path=./output/best_model/best_model.pdparams`.
 
 ### 5.3 Model Tuning
 
@@ -332,7 +332,7 @@ Epoch Variation Results:
 </table>
 </center>
 
-**Note: This tutorial is designed for a 4-GPU setup. If you have only 1 GPU, you can adjust the number of training GPUs to complete the experiments, but the final metrics may not align with the above figures, which is normal.**
+<b>Note: This tutorial is designed for a 4-GPU setup. If you have only 1 GPU, you can adjust the number of training GPUs to complete the experiments, but the final metrics may not align with the above figures, which is normal.</b>
 
 ## 6. Pipeline Testing
 

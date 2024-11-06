@@ -10,7 +10,7 @@ First, choose the corresponding PaddleX pipeline based on your task scenario. Fo
 
 ## 2. Quick Start
 
-PaddleX offers two ways to experience the pipelines: one is through the PaddleX wheel package locally, and the other is on the **Baidu AIStudio Community**.
+PaddleX offers two ways to experience the pipelines: one is through the PaddleX wheel package locally, and the other is on the <b>Baidu AIStudio Community</b>.
 
 - Local Experience:
     ```bash
@@ -18,7 +18,7 @@ PaddleX offers two ways to experience the pipelines: one is through the PaddleX 
         --input https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/garbage_demo.png
     ```
 
-- AIStudio Community Experience: Go to [Baidu AIStudio Community](https://aistudio.baidu.com/pipeline/mine), click "Create Pipeline", and create a **General Image Classification** pipeline for a quick trial.
+- AIStudio Community Experience: Go to [Baidu AIStudio Community](https://aistudio.baidu.com/pipeline/mine), click "Create Pipeline", and create a <b>General Image Classification</b> pipeline for a quick trial.
 
 Quick Trial Output Example:
 <center>
@@ -109,7 +109,7 @@ PaddleX provides 80 end-to-end image classification models, which can be referen
 </tr>
 </tbody>
 </table>
-> **Note: The above accuracy metrics are Top-1 Accuracy on the ImageNet-1k validation set. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.**
+> <b>Note: The above accuracy metrics are Top-1 Accuracy on the ImageNet-1k validation set. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
 
 In short, the models listed from top to bottom have faster inference speeds, while those from bottom to top have higher accuracy. This tutorial will use the `PP-LCNet_x1_0` model as an example to complete the full model development process. You can select an appropriate model for training based on your actual usage scenarios. After training, you can evaluate the suitable model weights within your pipeline and ultimately use them in real-world scenarios.
 
@@ -180,7 +180,7 @@ In addition, the dataset verification also analyzes the sample number distributi
 
 </center>
 
-**Note**: Only data that passes the verification can be used for training and evaluation.
+<b>Note</b>: Only data that passes the verification can be used for training and evaluation.
 
 
 ### 4.3 Dataset Splitting (Optional)
@@ -223,12 +223,12 @@ Each model in PaddleX provides a configuration file for model development to set
 
 For more hyperparameter introductions, please refer to [PaddleX General Model Configuration File Parameter Explanation](../module_usage/instructions/config_parameters_common.en.md).
 
-**Note**:
+<b>Note</b>:
 - The above parameters can be set by appending command line arguments, e.g., specifying the mode as model training: `-o Global.mode=train`; specifying the first two GPUs for training: `-o Global.device=gpu:0,1`; setting the number of training epochs to 10: `-o Train.epochs_iters=10`.
 - During model training, PaddleX automatically saves model weight files, with the default being `output`. If you need to specify a save path, you can use the `-o Global.output` field in the configuration file.
 - PaddleX shields you from the concepts of dynamic graph weights and static graph weights. During model training, both dynamic and static graph weights are produced, and static graph weights are selected by default for model inference.
 
-**Explanation of Training Outputs**:
+<b>Explanation of Training Outputs</b>:
 
 After completing model training, all outputs are saved in the specified output directory (default is `./output/`), typically including the following:
 
@@ -249,7 +249,7 @@ python main.py -c paddlex/configs/image_classification/PP-LCNet_x1_0.yaml \
 
 Similar to model training, model evaluation supports setting by modifying the configuration file or appending command line arguments.
 
-**Note**: When evaluating the model, you need to specify the model weight file path. Each configuration file has a default weight save path. If you need to change it, simply set it by appending a command line argument, e.g., `-o Evaluate.weight_path=./output/best_model/best_model.pdparams`.
+<b>Note</b>: When evaluating the model, you need to specify the model weight file path. Each configuration file has a default weight save path. If you need to change it, simply set it by appending a command line argument, e.g., `-o Evaluate.weight_path=./output/best_model/best_model.pdparams`.
 
 ### 5.3 Model Optimization
 
@@ -355,7 +355,7 @@ Changing Epochs Experiment Results:
 </table>
 </center>
 
-> **Note: The above accuracy metrics are Top-1 Accuracy on the [ImageNet-1k](https://www.image-net.org/index.php) validation set. GPU inference time is based on an NVIDIA Tesla T4 machine, with FP32 precision. CPU inference speed is based on an Intel® Xeon® Gold 5117 CPU @ 2.00GHz, with 8 threads and FP32 precision.**
+> <b>Note: The above accuracy metrics are Top-1 Accuracy on the [ImageNet-1k](https://www.image-net.org/index.php) validation set. GPU inference time is based on an NVIDIA Tesla T4 machine, with FP32 precision. CPU inference speed is based on an Intel® Xeon® Gold 5117 CPU @ 2.00GHz, with 8 threads and FP32 precision.</b>
 
 ## 6. Production Line Testing
 

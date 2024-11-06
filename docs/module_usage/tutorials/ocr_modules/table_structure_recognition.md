@@ -36,7 +36,7 @@
 </table>
 
 
-**注：以上精度指标测量自PaddleX 内部自建英文表格识别数据集。所有模型 GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为8，精度类型为 FP32。**
+<b>注：以上精度指标测量自PaddleX 内部自建英文表格识别数据集。所有模型 GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为8，精度类型为 FP32。</b>
 
 
 ## 三、快速集成
@@ -59,7 +59,7 @@ for res in output:
 如果你追求更高精度的现有模型，可以使用 PaddleX 的二次开发能力，开发更好的表格结构识别模型。在使用 PaddleX 开发表格结构识别模型之前，请务必安装 PaddleX 的 PaddleOCR插件，安装过程可以参考 [PaddleX本地安装教程](../../../installation/installation.md)
 
 ### 4.1 数据准备
-在进行模型训练前，需要准备相应任务模块的数据集。PaddleX 针对每一个模块提供了数据校验功能，**只有通过数据校验的数据才可以进行模型训练**。此外，PaddleX 为每一个模块都提供了 Demo 数据集，您可以基于官方提供的 Demo 数据完成后续的开发。若您希望用私有数据集进行后续的模型训练，可以参考[PaddleX表格结构识别任务模块数据标注教程](../../../data_annotations/ocr_modules/table_recognition.md)
+在进行模型训练前，需要准备相应任务模块的数据集。PaddleX 针对每一个模块提供了数据校验功能，<b>只有通过数据校验的数据才可以进行模型训练</b>。此外，PaddleX 为每一个模块都提供了 Demo 数据集，您可以基于官方提供的 Demo 数据完成后续的开发。若您希望用私有数据集进行后续的模型训练，可以参考[PaddleX表格结构识别任务模块数据标注教程](../../../data_annotations/ocr_modules/table_recognition.md)
 
 #### 4.1.1 Demo 数据下载
 您可以参考下面的命令将 Demo 数据集下载到指定文件夹：
@@ -133,16 +133,16 @@ python main.py -c paddlex/configs/table_recognition/SLANet.yaml \
 </details>
 
 #### 4.1.3 数据集格式转换/数据集划分（可选）
-在您完成数据校验之后，可以通过**修改配置文件**或是**追加超参数**的方式对数据集的格式进行转换，也可以对数据集的训练/验证比例进行重新划分。
+在您完成数据校验之后，可以通过<b>修改配置文件</b>或是<b>追加超参数</b>的方式对数据集的格式进行转换，也可以对数据集的训练/验证比例进行重新划分。
 
 <details>
   <summary>👉 <b>格式转换/数据集划分详情（点击展开）</b></summary>
 
-**（1）数据集格式转换**
+<b>（1）数据集格式转换</b>
 
 表格结构识别不支持数据格式转换。
 
-**（2）数据集划分**
+<b>（2）数据集划分</b>
 
 数据集划分的参数可以通过修改配置文件中 `CheckDataset` 下的字段进行设置，配置文件中部分参数的示例说明如下：
 
@@ -213,7 +213,7 @@ python main.py -c paddlex/configs/table_recognition/SLANet.yaml \
 * `.pdparams`、`.pdema`、`.pdopt.pdstate`、`.pdiparams`、`.pdmodel`：模型权重相关文件，包括网络参数、优化器、EMA、静态图网络参数、静态图网络结构等；
 </details>
 
-### **4.3 模型评估**
+### <b>4.3 模型评估</b>
 在完成模型训练后，可以对指定的模型权重文件在验证集上进行评估，验证模型精度。使用 PaddleX 进行模型评估，一条命令即可完成模型的评估：
 
 ```bash
@@ -237,7 +237,7 @@ python main.py -c paddlex/configs/table_recognition/SLANet.yaml \
 
 </details>
 
-### **4.4 模型推理和模型集成**
+### <b>4.4 模型推理和模型集成</b>
 在完成模型的训练和评估后，即可使用训练好的模型权重进行推理预测或者进行Python集成。
 
 #### 4.4.1 模型推理
@@ -261,11 +261,11 @@ python main.py -c paddlex/configs/table_recognition/SLANet.yaml  \
 #### 4.4.2 模型集成
 模型可以直接集成到 PaddleX 产线中，也可以直接集成到您自己的项目中。
 
-1.**产线集成**
+1.<b>产线集成</b>
 
 表格结构识别模块可以集成的PaddleX产线有[通用表格识别产线](../../../pipeline_usage/tutorials/ocr_pipelines/table_recognition.md)、[文档场景信息抽取v3产线（PP-ChatOCRv3）](../../../pipeline_usage/tutorials/information_extraction_pipelines/document_scene_information_extraction.md)，只需要替换模型路径即可完成相关产线的表格结构识别模块的模型更新。在产线集成中，你可以使用高性能部署和服务化部署来部署你得到的模型。
 
 
-2.**模块集成**
+2.<b>模块集成</b>
 
 您产出的权重可以直接集成到表格结构识别模块中，可以参考[快速集成](#三快速集成)的 Python 示例代码，只需要将模型替换为你训练的到的模型路径即可。

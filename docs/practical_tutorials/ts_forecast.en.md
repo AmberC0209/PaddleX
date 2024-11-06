@@ -8,7 +8,7 @@ PaddleX offers a rich set of pipelines, each consisting of one or more models ta
 First, choose the corresponding PaddleX pipeline based on your task scenario. The goal of this task is to predict future electricity consumption based on historical data. Recognizing this as a time series forecasting task, we will use PaddleX's time series forecasting pipeline. If you're unsure about the correspondence between tasks and pipelines, you can refer to the [PaddleX Pipeline List (CPU/GPU)](../support_list/pipelines_list.en.md) for an overview of pipeline capabilities.
 
 ## 2. Quick Experience
-PaddleX offers two ways to experience its pipelines: locally on your machine or on the **Baidu AIStudio Community**.
+PaddleX offers two ways to experience its pipelines: locally on your machine or on the <b>Baidu AIStudio Community</b>.
 
 * Local Experience:
 ```python
@@ -74,7 +74,7 @@ PaddleX provides five end-to-end time series forecasting models. For details, re
 </tr>
 </tbody>
 </table>
-**Note: The above accuracy metrics are measured on the ETTH1 test dataset with an input sequence length of 96 and a prediction sequence length of 96 for all models except TiDE, which is 720.**
+<b>Note: The above accuracy metrics are measured on the ETTH1 test dataset with an input sequence length of 96 and a prediction sequence length of 96 for all models except TiDE, which is 720.</b>
 
 Based on your actual usage scenario, select an appropriate model for training. After training, evaluate the model weights within the pipeline and use them in practical scenarios.
 
@@ -93,7 +93,7 @@ wget https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/doc_images/pr
 tar -xf ./dataset/electricity.tar -C ./dataset/
 ```
 
-**Data Considerations**
+<b>Data Considerations</b>
 
  * When annotating data for time series forecasting tasks, based on the collected real data, all data is arranged in chronological order. During training, the data is automatically divided into multiple time segments, where the historical time series data and the future sequences respectively represent the input data for training the model and its corresponding prediction targets, forming a set of training samples.
  * Handling Missing Values: To ensure data quality and integrity, missing values can be imputed based on expert knowledge or statistical methods.
@@ -227,7 +227,7 @@ The above verification results have omitted some data parts. `check_pass` being 
 * `attributes.val_table`: Sample data rows from the validation set of this dataset.
 
 
-**Note**: Only data that passes the verification can be used for training and evaluation.
+<b>Note</b>: Only data that passes the verification can be used for training and evaluation.
 
 ### 4.3 Dataset Format Conversion/Dataset Splitting (Optional)
 If you need to convert the dataset format or re-split the dataset, you can modify the configuration file or append hyperparameters for settings. Refer to Section 4.1.3 in the [Time Series Prediction Module Development Tutorial](../module_usage/tutorials/time_series_modules/time_series_forecasting.en.md).
@@ -270,7 +270,7 @@ Each model in PaddleX provides a configuration file for model development to set
   * `patience`: The parameter for the early stopping mechanism, indicating how many times the model's performance on the validation set can be continuously unimproved before stopping training; the larger the patience value, the longer the training time.
 For more hyperparameter introductions, refer to [PaddleX Time Series Task Model Configuration File Parameter Description](../module_usage/instructions/config_parameters_time_series.en.md).
 
-**Note**:
+<b>Note</b>:
 
 * The above parameters can be set by appending command-line parameters, e.g., specifying the mode as model training: `-o Global.mode=train`; specifying the first GPU for training: `-o Global.device=gpu:0`; setting the number of training epochs to 10: `-o Train.epochs_iters=10`.
 * During model training, PaddleX automatically saves the model weight files, with the default being `output`. If you need to specify a save path, you can use the `-o Global.output` field in the configuration file.
@@ -286,7 +286,7 @@ For more hyperparameter introductions, refer to [PaddleX Time Series Task Model 
 
 After completing the model training, all outputs are saved in the specified output directory (default is `./output/`), typically including the following:
 
-**Explanation of Training Outputs:**
+<b>Explanation of Training Outputs:</b>
 
 After completing the model training, all outputs are saved in the specified output directory (default is `./output/`), typically including the following:
 
@@ -310,7 +310,7 @@ After completing model training, you can evaluate the specified model weights fi
 
 Similar to model training, model evaluation supports setting through modifying the configuration file or appending command-line parameters.
 
-**Note**: When evaluating the model, you need to specify the model weights file path. Each configuration file has a default weight save path built-in. If you need to change it, simply set it by appending a command-line parameter, such as `-o Evaluate.weight_path=./output/best_model/model.pdparams`.
+<b>Note</b>: When evaluating the model, you need to specify the model weights file path. Each configuration file has a default weight save path built-in. If you need to change it, simply set it by appending a command-line parameter, such as `-o Evaluate.weight_path=./output/best_model/model.pdparams`.
 
 After completing the model evaluation, typically, the following outputs are generated:
 
@@ -334,7 +334,7 @@ It is recommended to follow the method of controlled variables when debugging pa
 
 After increasing the training epochs, Experiment 4 achieves the highest accuracy. Next, increase the input length to 144 (using 144 hours of historical data to predict the next 96 hours), resulting in Experiment 5 with an accuracy of 0.188.
 
-**Learning Rate Exploration Results**:
+<b>Learning Rate Exploration Results</b>:
 
 <table>
 <thead>
@@ -382,7 +382,7 @@ After increasing the training epochs, Experiment 4 achieves the highest accuracy
 </tr>
 </tbody>
 </table>
-**Increasing Training Epochs Results**:
+<b>Increasing Training Epochs Results</b>:
 
 <table>
 <thead>
@@ -420,7 +420,7 @@ After increasing the training epochs, Experiment 4 achieves the highest accuracy
 </tr>
 </tbody>
 </table>
-**Increasing Input Length Results**:
+<b>Increasing Input Length Results</b>:
 
 <table>
 <thead>

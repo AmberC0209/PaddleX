@@ -7,15 +7,15 @@ Seal recognition is a technology that automatically extracts and recognizes seal
 
 <img src="https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/doc_images/practical_tutorial/PP-ChatOCRv3_doc_seal/01.png">
 
-The **Seal Recognition** pipeline includes a layout area analysis module, a seal detection module, and a text recognition module.
+The <b>Seal Recognition</b> pipeline includes a layout area analysis module, a seal detection module, and a text recognition module.
 
-**If you prioritize model accuracy, please choose a model with higher accuracy. If you prioritize inference speed, please choose a model with faster inference. If you prioritize model storage size, please choose a model with a smaller storage footprint.**
+<b>If you prioritize model accuracy, please choose a model with higher accuracy. If you prioritize inference speed, please choose a model with faster inference. If you prioritize model storage size, please choose a model with a smaller storage footprint.</b>
 
 <details>
    <summary> 👉 Detailed Model List </summary>
 
 
-**Layout Analysis Module Models:**
+<b>Layout Analysis Module Models:</b>
 
 <table>
 <thead>
@@ -87,10 +87,10 @@ The **Seal Recognition** pipeline includes a layout area analysis module, a seal
 </tr>
 </tbody>
 </table>
-**Note: The evaluation set for the above accuracy metrics is PaddleOCR's self-built layout region analysis dataset, containing 10,000 images of common document types, including English and Chinese papers, magazines, research reports, etc. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.**
+<b>Note: The evaluation set for the above accuracy metrics is PaddleOCR's self-built layout region analysis dataset, containing 10,000 images of common document types, including English and Chinese papers, magazines, research reports, etc. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
 
 
-**Seal Detection Module Models**:
+<b>Seal Detection Module Models</b>:
 
 <table>
 <thead>
@@ -122,9 +122,9 @@ The **Seal Recognition** pipeline includes a layout area analysis module, a seal
 </tr>
 </tbody>
 </table>
-**Note: The above accuracy metrics are evaluated on a self-built dataset containing 500 circular seal images. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.**
+<b>Note: The above accuracy metrics are evaluated on a self-built dataset containing 500 circular seal images. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
 
-**Text Recognition Module Models**:
+<b>Text Recognition Module Models</b>:
 
 
 <table>
@@ -154,7 +154,7 @@ The **Seal Recognition** pipeline includes a layout area analysis module, a seal
 </tr>
 </tbody>
 </table>
-**Note: The evaluation set for the above accuracy indicators is a self-built Chinese dataset from PaddleOCR, covering various scenarios such as street scenes, web images, documents, and handwriting. The text recognition subset includes 11,000 images. The GPU inference time for all models above is based on an NVIDIA Tesla T4 machine with a precision type of FP32. The CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads, and the precision type is also FP32.**
+<b>Note: The evaluation set for the above accuracy indicators is a self-built Chinese dataset from PaddleOCR, covering various scenarios such as street scenes, web images, documents, and handwriting. The text recognition subset includes 11,000 images. The GPU inference time for all models above is based on an NVIDIA Tesla T4 machine with a precision type of FP32. The CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads, and the precision type is also FP32.</b>
 
 </details>
 
@@ -483,7 +483,7 @@ For all operations provided by the service:
 
 Operations provided by the service:
 
-- **`infer`**
+- <b>`infer`</b>
 
     Obtain seal recognition results from an image.
 
@@ -927,7 +927,7 @@ If you need to use the fine tuned model weights, simply modify the production li
 Subsequently, refer to the command line or Python script in the local experience to load the modified production line configuration file.
 
 ##  5.  Multiple hardware support
-PaddleX supports various mainstream hardware devices such as Nvidia GPU, Kunlun Core XPU, Ascend NPU, and Cambrian MLU, and can seamlessly switch between different hardware devices by simply modifying the **`--device`** parameter.
+PaddleX supports various mainstream hardware devices such as Nvidia GPU, Kunlun Core XPU, Ascend NPU, and Cambrian MLU, and can seamlessly switch between different hardware devices by simply modifying the <b>`--device`</b> parameter.
 
 For example, if you use Nvidia GPU for inference on a seal recognition production line, the Python command you use is:
 

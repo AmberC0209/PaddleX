@@ -4,8 +4,8 @@
 
 服务化部署是实际生产环境中常见的一种部署形式。通过将推理功能封装为服务，客户端可以通过网络请求来访问这些服务，以获取推理结果。PaddleX 支持用户以低成本实现产线的服务化部署。本文档将首先介绍使用 PaddleX 进行服务化部署的基本流程，然后介绍将服务用于生产环境时的注意事项以及可能需要执行的操作。
 
-**注意**
-- **服务化部署提供模型产线的服务，而不具体到某个产线模块。**
+<b>注意</b>
+- <b>服务化部署提供模型产线的服务，而不具体到某个产线模块。</b>
 
 服务化部署示例图：
 
@@ -44,7 +44,7 @@ INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)
 ```
 
---pipeline可指定为官方产线名称或本地产线配置文件路径。PaddleX 以此构建产线并部署为服务。如需调整配置（如模型路径、batch_size、部署设备等），请参考[通用图像分类产线使用教程](../pipeline_usage/tutorials/cv_pipelines/image_classification.md)中的 **“模型应用”** 部分（对于其他产线，可参考 **“1.3 调用服务”** 表格中的对应教程）。
+--pipeline可指定为官方产线名称或本地产线配置文件路径。PaddleX 以此构建产线并部署为服务。如需调整配置（如模型路径、batch_size、部署设备等），请参考[通用图像分类产线使用教程](../pipeline_usage/tutorials/cv_pipelines/image_classification.md)中的 <b>“模型应用”</b> 部分（对于其他产线，可参考 <b>“1.3 调用服务”</b> 表格中的对应教程）。
 与服务化部署相关的命令行选项如下：
 
 <table>
@@ -89,7 +89,7 @@ INFO:     Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)
 
 ### 1.3 调用服务
 
-请参考各产线使用教程中的 **“开发集成/部署”** 部分。
+请参考各产线使用教程中的 <b>“开发集成/部署”</b> 部分。
 
 <table>
 <thead>

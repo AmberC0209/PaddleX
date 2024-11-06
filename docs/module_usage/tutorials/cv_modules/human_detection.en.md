@@ -37,7 +37,7 @@ Human detection is a subtask of object detection, which utilizes computer vision
   </tr>
 </table>
 
-**Note: The evaluation set for the above accuracy metrics is CrowdHuman dataset mAP(0.5:0.95). GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.**
+<b>Note: The evaluation set for the above accuracy metrics is CrowdHuman dataset mAP(0.5:0.95). GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
 
 
 ## III. Quick Integration
@@ -68,7 +68,7 @@ For more information on using PaddleX's single-model inference API, refer to [Pa
 If you aim for higher accuracy with existing models, you can leverage PaddleX's custom development capabilities to develop better human detection models. Before using PaddleX to develop human detection models, ensure you have installed the PaddleDetection plugin for PaddleX. The installation process can be found in the [PaddleX Local Installation Guide](../../../installation/installation.en.md).
 
 ### 4.1 Data Preparation
-Before model training, you need to prepare a dataset for the specific task module. PaddleX provides a data validation function for each module, and **only data that passes validation can be used for model training**. Additionally, PaddleX provides demo datasets for each module, which you can use to complete subsequent development. If you wish to use a private dataset for model training, refer to [PaddleX Object Detection Task Module Data Annotation Tutorial](../../../data_annotations/cv_modules/object_detection.en.md).
+Before model training, you need to prepare a dataset for the specific task module. PaddleX provides a data validation function for each module, and <b>only data that passes validation can be used for model training</b>. Additionally, PaddleX provides demo datasets for each module, which you can use to complete subsequent development. If you wish to use a private dataset for model training, refer to [PaddleX Object Detection Task Module Data Annotation Tutorial](../../../data_annotations/cv_modules/object_detection.en.md).
 
 #### 4.1.1 Demo Data Download
 You can download the demo dataset to a specified folder using the following commands:
@@ -137,16 +137,16 @@ The dataset validation also analyzes the distribution of sample counts across al
 </details>
 
 #### 4.1.3 Dataset Format Conversion / Dataset Splitting (Optional)
-After completing the dataset verification, you can convert the dataset format or re-split the training/validation ratio by **modifying the configuration file** or **appending hyperparameters**.
+After completing the dataset verification, you can convert the dataset format or re-split the training/validation ratio by <b>modifying the configuration file</b> or <b>appending hyperparameters</b>.
 
 <details>
   <summary>👉 <b>Details on Format Conversion / Dataset Splitting (Click to Expand)</b></summary>
 
-**(1) Dataset Format Conversion**
+<b>(1) Dataset Format Conversion</b>
 
 Human detection does not support data format conversion.
 
-**(2) Dataset Splitting**
+<b>(2) Dataset Splitting</b>
 
 Dataset splitting parameters can be set by modifying the `CheckDataset` section in the configuration file. Some example parameters in the configuration file are explained below:
 
@@ -216,7 +216,7 @@ Other related parameters can be set by modifying the `Global` and `Train` fields
 * `.pdparams`, `.pdema`, `.pdopt.pdstate`, `.pdiparams`, `.pdmodel`: Model weight-related files, including network parameters, optimizer, EMA, static graph network parameters, static graph network structure, etc.;
 </details>
 
-### **4.3 Model Evaluation**
+### <b>4.3 Model Evaluation</b>
 After completing model training, you can evaluate the specified model weight file on the validation set to verify the model's accuracy. Using PaddleX for model evaluation, you can complete the evaluation with a single command:
 
 ```bash
@@ -241,7 +241,7 @@ After completing the model evaluation, an `evaluate_result.json` file will be ge
 
 </details>
 
-### **4.4 Model Inference**
+### <b>4.4 Model Inference</b>
 After completing model training and evaluation, you can use the trained model weights for inference prediction. In PaddleX, model inference prediction can be achieved through two methods: command line and wheel package.
 
 #### 4.4.1 Model Inference

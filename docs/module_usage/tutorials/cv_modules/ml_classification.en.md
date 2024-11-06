@@ -51,7 +51,7 @@ The image multi-label classification module is a crucial component in computer v
   </tr>
 </table>
 
-**Note: The above accuracy metrics are mAP for the multi-label classification task on [COCO2017](https://cocodataset.org/#home).**
+<b>Note: The above accuracy metrics are mAP for the multi-label classification task on [COCO2017](https://cocodataset.org/#home).</b>
 
 ## III. Quick Integration
 > ❗ Before quick integration, please install the PaddleX wheel package. For detailed instructions, refer to the [PaddleX Local Installation Guide](../../../installation/installation.en.md)
@@ -71,7 +71,7 @@ For more information on using PaddleX's single-model inference APIs, please refe
 If you are seeking higher accuracy from existing models, you can use PaddleX's custom development capabilities to develop better multi-label classification models. Before using PaddleX to develop multi-label classification models, please ensure that you have installed the relevant model training plugins for image classification in PaddleX. The installation process can be found in the custom development section of the [PaddleX Local Installation Guide](../../../installation/installation.en.md).
 
 ### 4.1 Data Preparation
-Before model training, you need to prepare the dataset for the corresponding task module. PaddleX provides data validation functionality for each module, and **only data that passes data validation can be used for model training**. Additionally, PaddleX provides demo datasets for each module, which you can use to complete subsequent development. If you wish to use your own private dataset for subsequent model training, please refer to the [PaddleX Image Multi-Label Classification Task Module Data Annotation Guide](../../../data_annotations/cv_modules/ml_classification.en.md).
+Before model training, you need to prepare the dataset for the corresponding task module. PaddleX provides data validation functionality for each module, and <b>only data that passes data validation can be used for model training</b>. Additionally, PaddleX provides demo datasets for each module, which you can use to complete subsequent development. If you wish to use your own private dataset for subsequent model training, please refer to the [PaddleX Image Multi-Label Classification Task Module Data Annotation Guide](../../../data_annotations/cv_modules/ml_classification.en.md).
 
 #### 4.1.1 Demo Data Download
 You can use the following command to download the demo dataset to a specified folder:
@@ -151,12 +151,12 @@ Additionally, the dataset validation analyzes the sample number distribution acr
 
 #### 4.1.3 Dataset Format Conversion/Dataset Splitting (Optional)
 
-After completing data validation, you can convert the dataset format or re-split the training/validation ratio of the dataset by **modifying the configuration file** or **appending hyperparameters**.
+After completing data validation, you can convert the dataset format or re-split the training/validation ratio of the dataset by <b>modifying the configuration file</b> or <b>appending hyperparameters</b>.
 
 <details>
   <summary>👉 <b>Dataset Format Conversion/Dataset Splitting Details (Click to Expand)</b></summary>
 
-**(1) Dataset Format Conversion**
+<b>(1) Dataset Format Conversion</b>
 
 The multi-label image classification supports the conversion of `COCO` format datasets to `MLClsDataset` format. The parameters for dataset format conversion can be set by modifying the fields under `CheckDataset` in the configuration file. Examples of some parameters in the configuration file are as follows:
 
@@ -274,7 +274,7 @@ the following steps are required:
 
 
 
-## **4.3 Model Evaluation**
+## <b>4.3 Model Evaluation</b>
 After completing model training, you can evaluate the specified model weights file on the validation set to verify the model's accuracy. Using PaddleX for model evaluation can be done with a single command:
 
 ```bash
@@ -299,7 +299,7 @@ After completing the model evaluation, an `evaluate_result.json` file will be pr
 
 </details>
 
-### **4.4 Model Inference and Model Integration**
+### <b>4.4 Model Inference and Model Integration</b>
 After completing model training and evaluation, you can use the trained model weights for inference predictions or Python integration.
 
 #### 4.4.1 Model Inference
@@ -322,10 +322,10 @@ Other related parameters can be set by modifying the `Global` and `Predict` fiel
 #### 4.4.2 Model Integration
 The model can be directly integrated into the PaddleX pipeline or directly into your own project.
 
-1.**Pipeline Integration**
+1.<b>Pipeline Integration</b>
 
 The image multi-label classification module can be integrated into the [General Image Multi-label Classification Pipeline](../../../pipeline_usage/tutorials/cv_pipelines/image_multi_label_classification.en.md) of PaddleX. Simply replace the model path to update the image multi-label classification module of the relevant pipeline. In pipeline integration, you can use high-performance inference and service-oriented deployment to deploy your model.
 
-2.**Module Integration**
+2.<b>Module Integration</b>
 
 The weights you produce can be directly integrated into the image multi-label classification module. Refer to the Python example code in [Quick Integration](#iii-quick-integration) and simply replace the model with the path to your trained model.

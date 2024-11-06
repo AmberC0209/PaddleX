@@ -7,7 +7,7 @@ Image anomaly detection is an image processing technique that identifies unusual
 
 <img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/image_anomaly_detection/01.png">
 
-**The image anomaly detection pipeline includes an unsupervised anomaly detection module, with the following model benchmarks**:
+<b>The image anomaly detection pipeline includes an unsupervised anomaly detection module, with the following model benchmarks</b>:
 
 <table>
 <thead>
@@ -25,7 +25,7 @@ Image anomaly detection is an image processing technique that identifies unusual
 </tr>
 </tbody>
 </table>
-**Note: The above accuracy metrics are the average anomaly scores on the **[MVTec AD](https://www.mvtec.com/company/research/datasets/mvtec-ad)** validation set. All model GPU inference times are based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speeds are based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.**
+<b>Note: The above accuracy metrics are the average anomaly scores on the </b>[MVTec AD](https://www.mvtec.com/company/research/datasets/mvtec-ad)<b> validation set. All model GPU inference times are based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speeds are based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
 
 ## 2. Quick Start
 PaddleX provides pre-trained models for the anomaly detection pipeline, allowing for quick experience of its effects. You can use the command line or Python to experience the image anomaly detection pipeline locally.
@@ -218,9 +218,9 @@ If you need to apply the pipeline directly in your Python project, refer to the 
 
 Additionally, PaddleX provides three other deployment methods, detailed as follows:
 
-🚀 **High-Performance Inference**: In actual production environments, many applications have stringent standards for the performance metrics of deployment strategies (especially response speed) to ensure efficient system operation and smooth user experience. To this end, PaddleX provides high-performance inference plugins aimed at deeply optimizing model inference and pre/post-processing to significantly speed up the end-to-end process. For detailed high-performance inference procedures, refer to the [PaddleX High-Performance Inference Guide](../../../pipeline_deploy/high_performance_inference.en.md).
+🚀 <b>High-Performance Inference</b>: In actual production environments, many applications have stringent standards for the performance metrics of deployment strategies (especially response speed) to ensure efficient system operation and smooth user experience. To this end, PaddleX provides high-performance inference plugins aimed at deeply optimizing model inference and pre/post-processing to significantly speed up the end-to-end process. For detailed high-performance inference procedures, refer to the [PaddleX High-Performance Inference Guide](../../../pipeline_deploy/high_performance_inference.en.md).
 
-☁️ **Service-Oriented Deployment**: Service-oriented deployment is a common deployment form in actual production environments. By encapsulating inference functions as services, clients can access these services through network requests to obtain inference results. PaddleX supports users in achieving low-cost service-oriented deployment of pipelines. For detailed service-oriented deployment procedures, refer to the [PaddleX Service-Oriented Deployment Guide](../../../pipeline_deploy/service_deploy.en.md).
+☁️ <b>Service-Oriented Deployment</b>: Service-oriented deployment is a common deployment form in actual production environments. By encapsulating inference functions as services, clients can access these services through network requests to obtain inference results. PaddleX supports users in achieving low-cost service-oriented deployment of pipelines. For detailed service-oriented deployment procedures, refer to the [PaddleX Service-Oriented Deployment Guide](../../../pipeline_deploy/service_deploy.en.md).
 
 Below are the API references and multi-language service invocation examples:
 
@@ -248,7 +248,7 @@ For all operations provided by the service:
 
 Operations provided by the service:
 
-- **`infer`**
+- <b>`infer`</b>
 
     Performs anomaly detection on images.
 
@@ -637,11 +637,11 @@ echo "Output image saved at " . $output_image_path . "\n";
 </details>
 <br/>
 
-📱 **Edge Deployment**: Edge deployment is a method that places computing and data processing functions on user devices themselves, enabling devices to process data directly without relying on remote servers. PaddleX supports deploying models on edge devices such as Android. For detailed edge deployment procedures, refer to the [PaddleX Edge Deployment Guide](../../../pipeline_deploy/edge_deploy.en.md).
+📱 <b>Edge Deployment</b>: Edge deployment is a method that places computing and data processing functions on user devices themselves, enabling devices to process data directly without relying on remote servers. PaddleX supports deploying models on edge devices such as Android. For detailed edge deployment procedures, refer to the [PaddleX Edge Deployment Guide](../../../pipeline_deploy/edge_deploy.en.md).
 You can choose the appropriate deployment method for your model pipeline based on your needs and proceed with subsequent AI application integration.
 
 ## 4. Custom Development
-If the default model weights provided by the image anomaly detection pipeline do not meet your requirements for accuracy or speed in your specific scenario, you can try to further fine-tune the existing model using **your own domain-specific or application-specific data** to improve the recognition performance of the image anomaly detection pipeline in your scenario.
+If the default model weights provided by the image anomaly detection pipeline do not meet your requirements for accuracy or speed in your specific scenario, you can try to further fine-tune the existing model using <b>your own domain-specific or application-specific data</b> to improve the recognition performance of the image anomaly detection pipeline in your scenario.
 
 ### 4.1 Model Fine-tuning
 Since the image anomaly detection pipeline includes an unsupervised image anomaly detection module, if the performance of the pipeline does not meet expectations, you need to refer to the [Customization](../../../module_usage/tutorials/cv_modules/anomaly_detection.en.md#iv-custom-development) section in the [Unsupervised Anomaly Detection Module Tutorial](../../../module_usage/tutorials/cv_modules/anomaly_detection.en.md) and use your private dataset to fine-tune the image anomaly detection model.
@@ -662,7 +662,7 @@ Pipeline:
 Then, refer to the command line or Python script methods in the local experience section to load the modified pipeline configuration file.
 
 ## 5. Multi-hardware Support
-PaddleX supports various mainstream hardware devices such as NVIDIA GPUs, Kunlun XPU, Ascend NPU, and Cambricon MLU. **Simply modify the `--device` parameter** to seamlessly switch between different hardware.
+PaddleX supports various mainstream hardware devices such as NVIDIA GPUs, Kunlun XPU, Ascend NPU, and Cambricon MLU. <b>Simply modify the `--device` parameter</b> to seamlessly switch between different hardware.
 
 For example, if you use an NVIDIA GPU for inference with the image anomaly detection pipeline, the Python command is:
 

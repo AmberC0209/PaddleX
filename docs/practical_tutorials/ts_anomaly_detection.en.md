@@ -8,7 +8,7 @@ PaddleX offers a rich set of pipelines, each consisting of one or more models th
 First, choose the corresponding PaddleX pipeline based on your task scenario. This task aims to identify and mark abnormal behaviors or states in equipment nodes, helping enterprises and organizations promptly detect and resolve issues in application server nodes, thereby improving system reliability and availability. Recognizing this as a time series anomaly detection task, we will use PaddleX's Time Series Anomaly Detection Pipeline. If you are unsure about the correspondence between tasks and pipelines, you can refer to the [PaddleX Pipeline List (CPU/GPU)](../support_list/models_list.en.md) for an overview of pipeline capabilities.
 
 ## 2. Quick Experience
-PaddleX offers two ways to experience its capabilities: locally on your machine or on the **Baidu AIStudio Community**.
+PaddleX offers two ways to experience its capabilities: locally on your machine or on the <b>Baidu AIStudio Community</b>.
 
 * Local Experience:
 ```python
@@ -79,7 +79,7 @@ PaddleX provides five end-to-end time series anomaly detection models. For detai
 </tr>
 </tbody>
 </table>
-> **Note: The above accuracy metrics are measured on the [PSM](https://paddle-model-ecology.bj.bcebos.com/paddlex/data/ts_anomaly_examples.tar) dataset with a time series length of 100.**
+> <b>Note: The above accuracy metrics are measured on the [PSM](https://paddle-model-ecology.bj.bcebos.com/paddlex/data/ts_anomaly_examples.tar) dataset with a time series length of 100.</b>
 
 ## 4. Data Preparation and Validation
 ### 4.1 Data Preparation
@@ -97,7 +97,7 @@ wget https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/doc_images/pr
 tar -xf ./dataset/msl.tar -C ./dataset/
 ```
 
-**Data Considerations**
+<b>Data Considerations</b>
  * Time series anomaly detection is an unsupervised learning task, thus labeled training data is not required. The collected training samples should ideally consist solely of normal data, i.e., devoid of anomalies, with the label column in the training set set to 0 or, alternatively, the label column can be omitted entirely. For the validation set, to assess accuracy, labeling is necessary. Points that are anomalous at a particular timestamp should have their labels set to 1, while normal points should have labels of 0.
  * Handling Missing Values: To ensure data quality and integrity, missing values can be imputed based on expert knowledge or statistical methods.
  * Non-Repetitiveness: Ensure that data is collected in chronological order by row, with no duplication of timestamps.
@@ -146,7 +146,7 @@ The above verification results have omitted some data parts. `check_pass` being 
 * `attributes.train_table`: Sample data rows from the training set of this dataset.
 * `attributes.val_table`: Sample data rows from the validation set of this dataset.
 
-**Note**: Only data that passes the verification can be used for training and evaluation.
+<b>Note</b>: Only data that passes the verification can be used for training and evaluation.
 
 ### 4.3 Dataset Format Conversion/Dataset Splitting (Optional)
 If you need to convert the dataset format or re-split the dataset, refer to Section 4.1.3 in the [Time Series Anomaly Detection Module Development Tutorial](../module_usage/tutorials/time_series_modules/time_series_anomaly_detection.en.md).
@@ -196,7 +196,7 @@ For more introductions to hyperparameters, please refer to [PaddleX Time Series 
 
 After completing the model training, all outputs are saved in the specified output directory (default is `./output/`), typically including the following:
 
-**Explanation of Training Outputs:**
+<b>Explanation of Training Outputs:</b>
 
 After completing the model training, all outputs are saved in the specified output directory (default is `./output/`), typically including the following:
 
@@ -217,7 +217,7 @@ python main.py -c paddlex/configs/ts_anomaly_detection/PatchTST_ad.yaml \
 ```
 Similar to model training, model evaluation supports setting through modifying the configuration file or appending command-line parameters.
 
-**Note**: When evaluating the model, you need to specify the model weights file path. Each configuration file has a default weight save path built-in. If you need to change it, simply set it by appending a command-line parameter, such as `-o Evaluate.weight_path=./output/best_model/model.pdparams`.
+<b>Note</b>: When evaluating the model, you need to specify the model weights file path. Each configuration file has a default weight save path built-in. If you need to change it, simply set it by appending a command-line parameter, such as `-o Evaluate.weight_path=./output/best_model/model.pdparams`.
 
 After completing the model evaluation, typically, the following outputs are generated:
 

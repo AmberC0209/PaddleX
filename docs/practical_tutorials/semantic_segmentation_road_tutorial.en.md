@@ -10,7 +10,7 @@ First, choose the corresponding PaddleX pipeline based on your task scenario. Fo
 
 ## 2. Quick Start
 
-PaddleX offers two ways to experience the pipeline: one is through the PaddleX wheel package locally, and the other is on the **Baidu AIStudio Community**.
+PaddleX offers two ways to experience the pipeline: one is through the PaddleX wheel package locally, and the other is on the <b>Baidu AIStudio Community</b>.
 
 - Local Experience:
   ```bash
@@ -18,7 +18,7 @@ PaddleX offers two ways to experience the pipeline: one is through the PaddleX w
       --input https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/application/semantic_segmentation/makassaridn-road_demo.png
   ```
 
-- AIStudio Community Experience: Go to [Baidu AIStudio Community](https://aistudio.baidu.com/pipeline/mine), click "Create Pipeline", and create a **Universal Semantic Segmentation** pipeline for a quick trial.
+- AIStudio Community Experience: Go to [Baidu AIStudio Community](https://aistudio.baidu.com/pipeline/mine), click "Create Pipeline", and create a <b>Universal Semantic Segmentation</b> pipeline for a quick trial.
 
 Quick trial output example:
 <center>
@@ -60,7 +60,7 @@ PaddleX provides 18 end-to-end semantic segmentation models. For details, refer 
 </tr>
 </tbody>
 </table>
-> **Note: The above accuracy metrics are measured on the [Cityscapes](https://www.cityscapes-dataset.com/) dataset. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.**
+> <b>Note: The above accuracy metrics are measured on the [Cityscapes](https://www.cityscapes-dataset.com/) dataset. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
 
 In short, models listed from top to bottom have faster inference speeds, while those from bottom to top have higher accuracy. This tutorial uses the PP-LiteSeg-T model as an example to complete the full model development process. You can choose a suitable model for training based on your actual usage scenario, evaluate the appropriate model weights within the pipeline, and finally use them in practical scenarios.
 
@@ -129,7 +129,7 @@ Additionally, the dataset verification also analyzes the sample distribution acr
 
 </center>
 
-**Note**: Only data that passes verification can be used for training and evaluation.
+<b>Note</b>: Only data that passes verification can be used for training and evaluation.
 
 
 ### 4.3 Dataset Format Conversion / Dataset Splitting (Optional)
@@ -175,12 +175,12 @@ Each model in PaddleX provides a configuration file for model development, which
 
 For more hyperparameter introductions, refer to [PaddleX General Model Configuration File Parameter Explanation](../module_usage/instructions/config_parameters_common.en.md).
 
-**Note**:
+<b>Note</b>:
 - The above parameters can be set by appending command line arguments, e.g., specifying the mode as model training: `-o Global.mode=train`; specifying the first two GPUs for training: `-o Global.device=gpu:0,1`; setting the number of training iterations to 5000: `-o Train.epochs_iters=5000`.
 - During model training, PaddleX automatically saves model weight files, with the default being `output`. To specify a save path, use the `-o Global.output` field in the configuration file.
 - PaddleX shields you from the concepts of dynamic graph weights and static graph weights. During model training, both dynamic and static graph weights are produced, and static graph weights are selected by default for model inference.
 
-**Training Outputs Explanation**:
+<b>Training Outputs Explanation</b>:
 
 After completing model training, all outputs are saved in the specified output directory (default is `./output/`), typically including the following:
 
@@ -201,7 +201,7 @@ python main.py -c paddlex/configs/semantic_segmentation/PP-LiteSeg-T.yaml \
 
 Similar to model training, model evaluation supports setting parameters by modifying the configuration file or appending command line arguments.
 
-**Note**: When evaluating a model, you need to specify the model weight file path. Each configuration file has a default weight save path. If you need to change it, simply set it by appending a command line argument, e.g., `-o Evaluate.weight_path=./output/best_model/model.pdparams`.
+<b>Note</b>: When evaluating a model, you need to specify the model weight file path. Each configuration file has a default weight save path. If you need to change it, simply set it by appending a command line argument, e.g., `-o Evaluate.weight_path=./output/best_model/model.pdparams`.
 
 ### 5.3 Model Optimization
 
@@ -307,7 +307,7 @@ Changing Epoch Results:
 </table>
 </center>
 
-**Note: This tutorial is designed for 4 GPUs. If you have only 1 GPU, you can adjust the number of training GPUs to complete the experiment, but the final metrics may not align with the above indicators, which is normal.**
+<b>Note: This tutorial is designed for 4 GPUs. If you have only 1 GPU, you can adjust the number of training GPUs to complete the experiment, but the final metrics may not align with the above indicators, which is normal.</b>
 
 ## 6. Production Line Testing
 

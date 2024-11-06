@@ -1,14 +1,14 @@
 简体中文 | [English](installation.en.md)
 
 # PaddleX本地安装教程
-> ❗安装 PaddleX 前请先确保您有基础的 **Python 运行环境**（注：当前支持Python 3.8 ～ Python 3.10下运行，更多Python版本适配中）。
+> ❗安装 PaddleX 前请先确保您有基础的 <b>Python 运行环境</b>（注：当前支持Python 3.8 ～ Python 3.10下运行，更多Python版本适配中）。
 
 ## 1. 快速安装
 欢迎您使用飞桨低代码开发工具PaddleX，在我们正式开始本地安装之前，请首先明确您的开发需求，并根据您的需求选择合适的安装模式。
-PaddleX为您提供了两种安装模式：**Wheel包安装**和**插件安装**，下面分别对其应用场景进行介绍：
+PaddleX为您提供了两种安装模式：<b>Wheel包安装</b>和<b>插件安装</b>，下面分别对其应用场景进行介绍：
 
 ### 1.1 Wheel包安装模式
-若您使用PaddleX的应用场景为**模型推理与集成** ，那么推荐您使用**更便捷**、**更轻量**的Wheel包安装模式。
+若您使用PaddleX的应用场景为<b>模型推理与集成</b> ，那么推荐您使用<b>更便捷</b>、<b>更轻量</b>的Wheel包安装模式。
 
 快速安装轻量级的Wheel包之后，您即可基于PaddleX支持的所有模型进行推理，并能直接集成进您的项目中。
 
@@ -20,7 +20,7 @@ PaddleX为您提供了两种安装模式：**Wheel包安装**和**插件安装**
 pip install https://paddle-model-ecology.bj.bcebos.com/paddlex/whl/paddlex-3.0.0b1-py3-none-any.whl
 ```
 ### 1.2 插件安装模式
-若您使用PaddleX的应用场景为**二次开发** （例如重新训练模型、微调模型、自定义模型结构、自定义推理代码等），那么推荐您使用**功能更加强大**的插件安装模式。
+若您使用PaddleX的应用场景为<b>二次开发</b> （例如重新训练模型、微调模型、自定义模型结构、自定义推理代码等），那么推荐您使用<b>功能更加强大</b>的插件安装模式。
 
 安装您需要的PaddleX插件之后，您不仅同样能够对插件支持的模型进行推理与集成，还可以对其进行模型训练等二次开发更高级的操作。
 
@@ -125,9 +125,9 @@ paddlex --install PaddleXXX  # 例如PaddleOCR
 若您使用Linux操作系统，请参考[2. Linux安装PaddleX详细教程](#2-linux安装paddex详细教程)。其他操作系统的安装方式，敬请期待。
 
 ## 2. Linux安装PaddeX详细教程
-使用Linux安装PaddleX时，我们**强烈推荐使用PaddleX官方Docker镜像安装**，当然也可使用其他自定义方式安装。
+使用Linux安装PaddleX时，我们<b>强烈推荐使用PaddleX官方Docker镜像安装</b>，当然也可使用其他自定义方式安装。
 
-当您使用官方 Docker 镜像安装时，其中**已经内置了 PaddlePaddle、PaddleX（包括wheel包和所有插件）**，并配置好了相应的CUDA环境，**您获取 Docker 镜像并启动容器即可开始使用**。
+当您使用官方 Docker 镜像安装时，其中<b>已经内置了 PaddlePaddle、PaddleX（包括wheel包和所有插件）</b>，并配置好了相应的CUDA环境，<b>您获取 Docker 镜像并启动容器即可开始使用</b>。
 
 当您使用自定义方式安装时，需要先安装飞桨 PaddlePaddle 框架，随后获取 PaddleX 源码，最后选择PaddleX的安装模式。
 
@@ -190,7 +190,7 @@ git clone https://gitee.com/paddlepaddle/PaddleX.git
 #### 2.2.2 安装PaddleX
 获取 PaddleX 最新源码之后，您可以选择Wheel包安装模式或插件安装模式。
 
-* **若您选择Wheel包安装模式**，请执行以下命令：
+* <b>若您选择Wheel包安装模式</b>，请执行以下命令：
 
 ```bash
 cd PaddleX
@@ -199,7 +199,7 @@ cd PaddleX
 # -e：以可编辑模式安装，当前项目的代码更改，都会直接作用到已经安装的 PaddleX Wheel
 pip install -e .
 ```
-* **若您选择插件安装模式**，并且您需要的插件名称为 PaddleXXX（可以有多个），请执行以下命令：
+* <b>若您选择插件安装模式</b>，并且您需要的插件名称为 PaddleXXX（可以有多个），请执行以下命令：
 
 ```bash
 cd PaddleX

@@ -2,7 +2,7 @@
 
 # Ascend NPU PaddlePaddle Installation Tutorial
 
-Currently, PaddleX supports the Ascend 910B chip (more models are under support. If you have a related need for other models, please submit an issue to inform us). The Ascend driver version is 23.0.3. Considering the differences in environments, we recommend using the **Ascend development image provided by PaddlePaddle** to complete the environment preparation.
+Currently, PaddleX supports the Ascend 910B chip (more models are under support. If you have a related need for other models, please submit an issue to inform us). The Ascend driver version is 23.0.3. Considering the differences in environments, we recommend using the <b>Ascend development image provided by PaddlePaddle</b> to complete the environment preparation.
 
 ## 1. Docker Environment Preparation
 * Pull the image. This image is only for the development environment and does not contain a pre-compiled PaddlePaddle installation package. The image has CANN-8.0.T13, the Ascend operator library, installed by default.

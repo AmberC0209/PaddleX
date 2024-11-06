@@ -56,7 +56,7 @@ For more information on using PaddleX's single-model inference APIs, refer to th
 If you seek even higher accuracy from existing models, you can leverage PaddleX's custom development capabilities to develop better text detection models. Before developing text detection models with PaddleX, ensure you have installed the PaddleOCR plugin for PaddleX. The installation process can be found in the [PaddleX Local Installation Guide](../../../installation/installation.en.md).
 
 ### 4.1 Data Preparation
-Before model training, you need to prepare a dataset for the specific task module. PaddleX provides data validation functionality for each module, and **only data that passes validation can be used for model training**.
+Before model training, you need to prepare a dataset for the specific task module. PaddleX provides data validation functionality for each module, and <b>only data that passes validation can be used for model training</b>.
 Additionally, PaddleX provides demo datasets for each module, which you can use to complete subsequent development. If you wish to use private datasets for model training, refer to the [PaddleX Text Detection/Text Recognition Task Module Data Annotation Tutorial](../../../data_annotations/ocr_modules/text_detection_recognition.en.md).
 
 #### 4.1.1 Demo Data Download
@@ -123,16 +123,16 @@ Additionally, the dataset validation also analyzed the distribution of the lengt
 
 ### 4.1.3 Dataset Format Conversion/Dataset Splitting (Optional)
 
-After completing data validation, you can convert the dataset format and re-split the training/validation ratio by **modifying the configuration file** or **appending hyperparameters**.
+After completing data validation, you can convert the dataset format and re-split the training/validation ratio by <b>modifying the configuration file</b> or <b>appending hyperparameters</b>.
 
 <details>
   <summary>👉 <b>Details on Format Conversion/Dataset Splitting (Click to Expand)</b></summary>
 
-**(1) Dataset Format Conversion**
+<b>(1) Dataset Format Conversion</b>
 
 Text detection does not support data format conversion.
 
-**(2) Dataset Splitting**
+<b>(2) Dataset Splitting</b>
 
 The parameters for dataset splitting can be set by modifying the `CheckDataset` section in the configuration file. Below are some example explanations for the parameters in the configuration file:
 
@@ -202,7 +202,7 @@ Other related parameters can be set by modifying the `Global` and `Train` fields
 * `.pdparams`, `.pdema`, `.pdopt.pdstate`, `.pdiparams`, `.pdmodel`: Model weight-related files, including network parameters, optimizer, EMA, static graph network parameters, static graph network structure, etc.;
 </details>
 
-### **4.3 Model Evaluation**
+### <b>4.3 Model Evaluation</b>
 
 After completing model training, you can evaluate the specified model weight file on the validation set to verify the model's accuracy. Using PaddleX for model evaluation can be done with a single command:
 
@@ -229,7 +229,7 @@ After completing the model evaluation, an `evaluate_result.json` will be generat
 
 </details>
 
-### **4.4 Model Inference and Model Integration**
+### <b>4.4 Model Inference and Model Integration</b>
 After completing model training and evaluation, you can use the trained model weights for inference predictions or Python integration.
 
 #### 4.4.1 Model Inference
@@ -254,10 +254,10 @@ Other related parameters can be set by modifying the fields under `Global` and `
 #### 4.4.2 Model Integration
 Models can be directly integrated into PaddleX pipelines or into your own projects.
 
-1.**Pipeline Integration**
+1.<b>Pipeline Integration</b>
 
 The text detection module can be integrated into PaddleX pipelines such as the [General OCR Pipeline](../../../pipeline_usage/tutorials/ocr_pipelines/OCR.en.md), [Table Recognition Pipeline](../../../pipeline_usage/tutorials/ocr_pipelines/table_recognition.en.md), and [PP-ChatOCRv3-doc](../../../pipeline_usage/tutorials/information_extraction_pipelines/document_scene_information_extraction.en.md). Simply replace the model path to update the text detection module of the relevant pipeline.
 
-2.**Module Integration**
+2.<b>Module Integration</b>
 
 The model weights you produce can be directly integrated into the text detection module. Refer to the Python example code in [Quick Integration](#iii-quick-integration), and simply replace the model with the path to your trained model.

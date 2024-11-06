@@ -136,7 +136,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 </tr>
 </tbody>
 </table>
-**Note: The above accuracy metrics are Top-1 Accuracy on the [ImageNet-1k](https://www.image-net.org/index.php) validation set.**
+<b>Note: The above accuracy metrics are Top-1 Accuracy on the [ImageNet-1k](https://www.image-net.org/index.php) validation set.</b>
 
 ## Object Detection Module
 <table>
@@ -180,7 +180,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 </tr>
 </tbody>
 </table>
-**Note: The above accuracy metrics are mAP(0.5:0.95) on the [COCO2017](https://cocodataset.org/#home) validation set.**
+<b>Note: The above accuracy metrics are mAP(0.5:0.95) on the [COCO2017](https://cocodataset.org/#home) validation set.</b>
 
 ## Semantic Segmentation Module
 <table>
@@ -199,7 +199,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 </tr>
 </tbody>
 </table>
-**Note: The above accuracy metrics are based on the mIoU of the [Cityscapes](https://www.cityscapes-dataset.com/) dataset.**
+<b>Note: The above accuracy metrics are based on the mIoU of the [Cityscapes](https://www.cityscapes-dataset.com/) dataset.</b>
 
 ## Text Detection Module
 <table>
@@ -223,7 +223,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 </tr>
 </tbody>
 </table>
-**Note: The evaluation set for the above accuracy metrics is PaddleOCR's self-built Chinese dataset, covering street scenes, web images, documents, handwriting, and more scenarios, with 500 images for detection.**
+<b>Note: The evaluation set for the above accuracy metrics is PaddleOCR's self-built Chinese dataset, covering street scenes, web images, documents, handwriting, and more scenarios, with 500 images for detection.</b>
 
 ## Text Recognition Module
 <table>
@@ -247,7 +247,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 </tr>
 </tbody>
 </table>
-**Note: The evaluation set for the above accuracy metrics is PaddleOCR's self-built Chinese dataset, covering street scenes, web images, documents, handwriting, and more scenarios, with 11,000 images for text recognition.**
+<b>Note: The evaluation set for the above accuracy metrics is PaddleOCR's self-built Chinese dataset, covering street scenes, web images, documents, handwriting, and more scenarios, with 11,000 images for text recognition.</b>
 
 ## Layout Analysis Module
 <table>
@@ -266,7 +266,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 </tr>
 </tbody>
 </table>
-**Note: The evaluation set for the above accuracy metrics is PaddleOCR's self-built layout analysis dataset, containing 10,000 images.**
+<b>Note: The evaluation set for the above accuracy metrics is PaddleOCR's self-built layout analysis dataset, containing 10,000 images.</b>
 
 ## Time Series Forecasting Module
 <table>
@@ -299,4 +299,4 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 </tr>
 </tbody>
 </table>
-**Note: The above accuracy metrics are measured on the [ETTH1](https://paddle-model-ecology.bj.bcebos.com/paddlex/data/Etth1.tar) dataset (evaluation results on the test set test.csv).**
+<b>Note: The above accuracy metrics are measured on the [ETTH1](https://paddle-model-ecology.bj.bcebos.com/paddlex/data/Etth1.tar) dataset (evaluation results on the test set test.csv).</b>

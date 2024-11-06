@@ -30,7 +30,7 @@ Vehicle attribute recognition is a crucial component in computer vision systems.
 </tr>
 </tbody>
 </table>
-**Note: The above accuracy metrics are mA on the VeRi dataset. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.**
+<b>Note: The above accuracy metrics are mA on the VeRi dataset. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
 
 
 ## <span id="lable">III. Quick Integration</span>
@@ -50,14 +50,14 @@ for res in output:
 ```
 For more information on using PaddleX's single-model inference API, refer to [PaddleX Single Model Python Script Usage Instructions](../../instructions/model_python_API.en.md).
 
-**Note**: In the `output`, values indexed from 0-9 represent color attributes, corresponding to the following colors respectively: yellow, orange, green, gray, red, blue, white, golden, brown, black. Indices 10-18 represent vehicle type attributes, corresponding to the following vehicle types: sedan, suv, van, hatchback, mpv, pickup, bus, truck, estate.
+<b>Note</b>: In the `output`, values indexed from 0-9 represent color attributes, corresponding to the following colors respectively: yellow, orange, green, gray, red, blue, white, golden, brown, black. Indices 10-18 represent vehicle type attributes, corresponding to the following vehicle types: sedan, suv, van, hatchback, mpv, pickup, bus, truck, estate.
 
 
 ## IV. Custom Development
 If you seek higher accuracy from existing models, you can leverage PaddleX's custom development capabilities to develop better vehicle attribute recognition models. Before using PaddleX to develop vehicle attribute recognition models, ensure you have installed the classification-related model training plugin for PaddleX. The installation process can be found in the [PaddleX Local Installation Guide](../../../installation/installation.en.md).
 
 ### 4.1 Data Preparation
-Before model training, you need to prepare the corresponding dataset for the task module. PaddleX provides a data validation function for each module, and **only data that passes validation can be used for model training**. Additionally, PaddleX provides demo datasets for each module, which you can use to complete subsequent development. If you wish to use private datasets for model training, refer to [PaddleX Multi-Label Classification Task Module Data Annotation Tutorial](../../../data_annotations/cv_modules/ml_classification.en.md).
+Before model training, you need to prepare the corresponding dataset for the task module. PaddleX provides a data validation function for each module, and <b>only data that passes validation can be used for model training</b>. Additionally, PaddleX provides demo datasets for each module, which you can use to complete subsequent development. If you wish to use private datasets for model training, refer to [PaddleX Multi-Label Classification Task Module Data Annotation Tutorial](../../../data_annotations/cv_modules/ml_classification.en.md).
 
 #### 4.1.1 Demo Data Download
 You can use the following commands to download the demo dataset to a specified folder:
@@ -139,16 +139,16 @@ Additionally, the dataset verification also analyzes the distribution of the len
 
 
 #### 4.1.3 Dataset Format Conversion / Dataset Splitting (Optional)
-After completing dataset verification, you can convert the dataset format or re-split the training/validation ratio by **modifying the configuration file** or **appending hyperparameters**.
+After completing dataset verification, you can convert the dataset format or re-split the training/validation ratio by <b>modifying the configuration file</b> or <b>appending hyperparameters</b>.
 
 <details>
   <summary>👉 <b>Details on Format Conversion / Dataset Splitting (Click to Expand)</b></summary>
 
-**(1) Dataset Format Conversion**
+<b>(1) Dataset Format Conversion</b>
 
 Vehicle attribute recognition does not support dataset format conversion.
 
-**(2) Dataset Splitting**
+<b>(2) Dataset Splitting</b>
 
 The dataset splitting parameters can be set by modifying the fields under `CheckDataset` in the configuration file. An example of part of the configuration file is shown below:
 
@@ -219,7 +219,7 @@ Other related parameters can be set by modifying the `Global` and `Train` fields
 * `.pdparams`, `.pdema`, `.pdopt.pdstate`, `.pdiparams`, `.pdmodel`: Model weight-related files, including network parameters, optimizer, EMA, static graph network parameters, static graph network structure, etc.;
 </details>
 
-### **4.3 Model Evaluation**
+### <b>4.3 Model Evaluation</b>
 After completing model training, you can evaluate the specified model weights file on the validation set to verify the model's accuracy. Using PaddleX for model evaluation can be done with a single command:
 
 ```bash
@@ -244,7 +244,7 @@ After completing the model evaluation, an `evaluate_result.json` file will be pr
 
 </details>
 
-### **4.4 Model Inference and Integration**
+### <b>4.4 Model Inference and Integration</b>
 After completing model training and evaluation, you can use the trained model weights for inference prediction or Python integration.
 
 
@@ -268,10 +268,10 @@ Other related parameters can be set by modifying the `Global` and `Predict` fiel
 #### 4.4.2 Model Integration
 The model can be directly integrated into the PaddleX pipeline or directly into your own project.
 
-1.**Pipeline Integration**
+1.<b>Pipeline Integration</b>
 
 The vehicle attribute recognition module can be integrated into the [General Image Multi-label Classification Pipeline](../../../pipeline_usage/tutorials/cv_pipelines/image_multi_label_classification.en.md) of PaddleX. Simply replace the model path to update the vehicle attribute recognition module of the relevant pipeline. In pipeline integration, you can use high-performance inference and service-oriented deployment to deploy your model.
 
-2.**Module Integration**
+2.<b>Module Integration</b>
 
 The weights you produce can be directly integrated into the vehicle attribute recognition module. Refer to the Python example code in  <a href="#lable">Quick Integration</a>  and simply replace the model with the path to your trained model.

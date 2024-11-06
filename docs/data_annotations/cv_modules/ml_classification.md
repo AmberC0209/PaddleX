@@ -131,7 +131,7 @@ pdlabel # 缩写，和paddlelabel完全相同
   * 点击左侧的矩形选择按钮 
   * 在图片中框选需要区域，注意按语义进行分区，如出现多栏情况请分别标注多个框
   * 完成标注后，右下角会出现标注结果，可以检查标注是否正确 
-  * 全部完成之后点击**项目总览**
+  * 全部完成之后点击<b>项目总览</b>
 
 <img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/13.png">
 * 导出标注文件 
@@ -195,7 +195,7 @@ python main.py -c paddlex/configs/multilabel_classification/PP-LCNet_x1_0_ML.yam
     -o CheckDataset.convert.src_dataset_type=COCO
 ```
 ## 5. 数据格式
-PaddleX 针对图像多标签分类任务定义的数据集，名称是 **MLClsDataset**，组织结构和标注格式如下：
+PaddleX 针对图像多标签分类任务定义的数据集，名称是 <b>MLClsDataset</b>，组织结构和标注格式如下：
 
 ```bash
 dataset_dir    # 数据集根目录，目录名称可以改变

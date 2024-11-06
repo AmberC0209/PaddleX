@@ -30,7 +30,7 @@ The document image orientation classification module is aim to distinguish the o
 </tr>
 </tbody>
 </table>
-**Note: The above accuracy metrics are evaluated on a self-built dataset covering various scenarios such as IDs and documents, containing 1000 images. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.**
+<b>Note: The above accuracy metrics are evaluated on a self-built dataset covering various scenarios such as IDs and documents, containing 1000 images. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
 
 ## III. Quick Integration
 
@@ -53,7 +53,7 @@ For more information on using PaddleX's single model inference API, refer to [Pa
 If you seek higher accuracy, you can leverage PaddleX's custom development capabilities to develop better document image orientation classification models. Before developing a document image orientation classification model with PaddleX, ensure you have installed PaddleClas plugin for PaddleX. The installation process can be found in the custom development section of the [PaddleX Local Installation Tutorial](../../../installation/installation.en.md).
 
 ### 4.1 Data Preparation
-Before model training, you need to prepare a dataset for the task. PaddleX provides data validation functionality for each module. **Only data that passes validation can be used for model training.** Additionally, PaddleX provides demo datasets for each module, which you can use to complete subsequent development. If you wish to use private datasets for model training, refer to [PaddleX Image Classification Task Module Data Preparation Tutorial](../../../data_annotations/cv_modules/image_classification.en.md).
+Before model training, you need to prepare a dataset for the task. PaddleX provides data validation functionality for each module. <b>Only data that passes validation can be used for model training.</b> Additionally, PaddleX provides demo datasets for each module, which you can use to complete subsequent development. If you wish to use private datasets for model training, refer to [PaddleX Image Classification Task Module Data Preparation Tutorial](../../../data_annotations/cv_modules/image_classification.en.md).
 
 #### 4.1.1 Demo Data Download
 You can download the demo dataset to a specified folder using the following commands:
@@ -138,16 +138,16 @@ Additionally, the dataset validation analyzes the sample number distribution acr
 
 
 #### 4.1.3 Dataset Format Conversion / Dataset Splitting (Optional)
-After completing data validation, you can convert the dataset format and re-split the training/validation ratio by **modifying the configuration file** or **appending hyperparameters**.
+After completing data validation, you can convert the dataset format and re-split the training/validation ratio by <b>modifying the configuration file</b> or <b>appending hyperparameters</b>.
 
 <details>
   <summary>👉 <b>Details of Format Conversion / Dataset Splitting (Click to Expand)</b></summary>
 
-**(1) Dataset Format Conversion**
+<b>(1) Dataset Format Conversion</b>
 
 Document image orientation classification does not currently support dataset format conversion.
 
-**(2) Dataset Splitting**
+<b>(2) Dataset Splitting</b>
 
 Parameters for dataset splitting can be set by modifying the fields under `CheckDataset` in the configuration file. Examples of some parameters in the configuration file are as follows:
 
@@ -222,7 +222,7 @@ Other relevant parameters can be set by modifying fields under `Global` and `Tra
 
 </details>
 
-### **4.3 Model Evaluation**
+### <b>4.3 Model Evaluation</b>
 
 After completing model training, you can evaluate the specified model weight file on the validation set to verify the model's accuracy. With PaddleX, model evaluation can be done with just one command:
 
@@ -250,7 +250,7 @@ Other relevant parameters can be set by modifying the fields under `Global` and 
 
 </details>
 
-### **4.4 Model Inference and Model Integration**
+### <b>4.4 Model Inference and Model Integration</b>
 
 After completing model training and evaluation, you can use the trained model weights for inference predictions or Python integration.
 
@@ -281,10 +281,10 @@ Alternatively, you can use the PaddleX wheel package for inference, easily integ
 
 The model can be directly integrated into the PaddleX pipeline or into your own projects.
 
-1.**Pipeline Integration**
+1.<b>Pipeline Integration</b>
 
 The document image classification module can be integrated into PaddleX pipelines such as the [Document Scene Information Extraction Pipeline (PP-ChatOCRv3)](../../..//pipeline_usage/tutorials/information_extraction_pipelines/document_scene_information_extraction.en.md). Simply replace the model path to update the The document image classification module's model.
 
-2.**Module Integration**
+2.<b>Module Integration</b>
 
 The weights you produce can be directly integrated into the document image orientation classification module. You can refer to the Python sample code in [Quick Integration](#iii-quick-integration) and just replace the model with the path to the model you trained.

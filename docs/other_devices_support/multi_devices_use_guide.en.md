@@ -22,7 +22,7 @@ Welcome to use PaddlePaddle's low-code development tool, PaddleX. Before we offi
 PaddleX offers two installation modes: Wheel Package Installation and Plugin Installation. The following details the application scenarios and installation methods for these two modes.
 
 #### 1.2.1 Wheel Package Installation Mode
-If your application scenario for PaddleX is **model inference and integration**, we recommend using the more **convenient** and **lightweight** Wheel Package Installation Mode.
+If your application scenario for PaddleX is <b>model inference and integration</b>, we recommend using the more <b>convenient</b> and <b>lightweight</b> Wheel Package Installation Mode.
 
 After installing PaddlePaddle, you can directly execute the following commands to quickly install the PaddleX Wheel package:
 
@@ -31,7 +31,7 @@ pip install https://paddle-model-ecology.bj.bcebos.com/paddlex/whl/paddlex-3.0.0
 ```
 
 #### 1.2.2 Plugin Installation Mode
-If your application scenario for PaddleX is **secondary development**, we recommend using the more **powerful** Plugin Installation Mode.
+If your application scenario for PaddleX is <b>secondary development</b>, we recommend using the more <b>powerful</b> Plugin Installation Mode.
 
 After installing the PaddleX plugins you need, you can not only perform inference and integration on the models supported by the plugins but also conduct more advanced operations such as model training for secondary development.
 

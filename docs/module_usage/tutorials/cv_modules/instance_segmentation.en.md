@@ -33,7 +33,7 @@ The instance segmentation module is a crucial component in computer vision syste
     </tr>
     </table>
 
-> ❗ The above list features the **2 core models** that the image classification module primarily supports. In total, this module supports **15 models**. The complete list of models is as follows:
+> ❗ The above list features the <b>2 core models</b> that the image classification module primarily supports. In total, this module supports <b>15 models</b>. The complete list of models is as follows:
 
 <details>
    <summary> 👉Model List Details</summary>
@@ -161,7 +161,7 @@ The instance segmentation module is a crucial component in computer vision syste
 </table>
 
 
-**Note: The above accuracy metrics are based on the Mask AP of the [COCO2017](https://cocodataset.org/#home) validation set. All GPU inference times are based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speeds are based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.**
+<b>Note: The above accuracy metrics are based on the Mask AP of the [COCO2017](https://cocodataset.org/#home) validation set. All GPU inference times are based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speeds are based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
 
 </details>
 
@@ -185,7 +185,7 @@ For more information on using PaddleX's single-model inference APIs, please refe
 If you are seeking higher accuracy from existing models, you can use PaddleX's custom development capabilities to develop better instance segmentation models. Before using PaddleX to develop instance segmentation models, please ensure that you have installed the relevant model training plugins for segmentation in PaddleX. The installation process can be found in the custom development section of the [PaddleX Local Installation Guide](../../../installation/installation.en.md).
 
 ### 4.1 Data Preparation
-Before model training, it is necessary to prepare the corresponding dataset for each task module. PaddleX provides data verification functionality for each module, and **only data that passes the verification can be used for model training**. Additionally, PaddleX provides demo datasets for each module, allowing you to complete subsequent development based on the officially provided demo data. If you wish to use a private dataset for subsequent model training, you can refer to the [PaddleX Instance Segmentation Task Module Data Annotation Tutorial](../../../data_annotations/cv_modules/instance_segmentation.en.md).
+Before model training, it is necessary to prepare the corresponding dataset for each task module. PaddleX provides data verification functionality for each module, and <b>only data that passes the verification can be used for model training</b>. Additionally, PaddleX provides demo datasets for each module, allowing you to complete subsequent development based on the officially provided demo data. If you wish to use a private dataset for subsequent model training, you can refer to the [PaddleX Instance Segmentation Task Module Data Annotation Tutorial](../../../data_annotations/cv_modules/instance_segmentation.en.md).
 
 #### 4.1.1 Download Demo Data
 
@@ -249,12 +249,12 @@ Additionally, the dataset verification also analyzes the distribution of sample 
 </details>
 
 #### 4.1.3 Dataset Format Conversion/Dataset Splitting (Optional)
-After completing data verification, you can convert the dataset format or re-split the training/validation ratio by **modifying the configuration file** or **appending hyperparameters**.
+After completing data verification, you can convert the dataset format or re-split the training/validation ratio by <b>modifying the configuration file</b> or <b>appending hyperparameters</b>.
 
 <details>
   <summary>👉 <b>Details of Format Conversion/Dataset Splitting (Click to Expand)</b></summary>
 
-**(1) Dataset Format Conversion**
+<b>(1) Dataset Format Conversion</b>
 
 The instance segmentation task supports converting `LabelMe` format to `COCO` format. The parameters for dataset format conversion can be set by modifying the fields under `CheckDataset` in the configuration file. Below are some example explanations for some of the parameters in the configuration file:
 
@@ -298,7 +298,7 @@ python main.py -c paddlex/configs/instance_segmentation/Mask-RT-DETR-L.yaml\
 ```
 
 
-**(2) Dataset Splitting**
+<b>(2) Dataset Splitting</b>
 
 The parameters for dataset splitting can be set by modifying the fields under `CheckDataset` in the configuration file. Some example explanations for the parameters in the configuration file are as follows:
 
@@ -368,7 +368,7 @@ Other related parameters can be set by modifying the fields under `Global` and `
 * `.pdparams`, `.pdema`, `.pdopt.pdstate`, `.pdiparams`, `.pdmodel`: Model weight-related files, including network parameters, optimizer, EMA, static graph network parameters, static graph network structure, etc.;
 </details>
 
-## **4.3 Model Evaluation**
+## <b>4.3 Model Evaluation</b>
 After completing model training, you can evaluate the specified model weights file on the validation set to verify the model's accuracy. Using PaddleX for model evaluation can be done with a single command:
 
 
@@ -393,7 +393,7 @@ After completing the model evaluation, an `evaluate_result.json` file will be ge
 </details>
 
 
-### **4.4 Model Inference and Model Integration**
+### <b>4.4 Model Inference and Model Integration</b>
 After completing model training and evaluation, you can use the trained model weights for inference prediction or Python integration.
 
 #### 4.4.1 Model Inference
@@ -415,9 +415,9 @@ Similar to model training and evaluation, the following steps are required:
 #### 4.4.2 Model Integration
 The model can be directly integrated into the PaddleX Pipeline or into your own project.
 
-1.**Pipeline Integration**
+1.<b>Pipeline Integration</b>
 
 The instance segmentation module can be integrated into the [General Instance Segmentation Pipeline](../../../pipeline_usage/tutorials/cv_pipelines/instance_segmentation.en.md) of PaddleX. Simply replace the model path to update the instance segmentation module of the relevant pipeline.
 
-2.**Module Integration**
+2.<b>Module Integration</b>
 The weights you produce can be directly integrated into the instance segmentation module. Refer to the Python example code in <a href="#lable">Quick Integration</a> , and simply replace the model with the path to your trained model.

@@ -75,7 +75,7 @@ labelme images --nodata --autosave --output annotations
 <img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/semantic_seg/12.png">
 <img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/semantic_seg/13.png">
 
-Typically, only the foreground objects need to be labeled with their respective categories, while other pixels are automatically considered as background. If manual background labeling is required, the **category must be set to _background_**, otherwise errors may occur during dataset format conversion. For noisy parts or irrelevant sections in the image that should not participate in model training, the **__ignore__** class can be used, and the model will automatically skip those parts during training. For objects with holes, after outlining the main object, draw polygons along the edges of the holes and assign a specific category to the holes. If the hole represents background, assign it as **_background_**. An example is shown below:
+Typically, only the foreground objects need to be labeled with their respective categories, while other pixels are automatically considered as background. If manual background labeling is required, the <b>category must be set to _background_</b>, otherwise errors may occur during dataset format conversion. For noisy parts or irrelevant sections in the image that should not participate in model training, the <b>__ignore__</b> class can be used, and the model will automatically skip those parts during training. For objects with holes, after outlining the main object, draw polygons along the edges of the holes and assign a specific category to the holes. If the hole represents background, assign it as <b>_background_</b>. An example is shown below:
 
 <img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/semantic_seg/14.png">
 
@@ -117,7 +117,7 @@ python main.py -c paddlex/configs/semantic_segmentation/PP-LiteSeg-T.yaml \
 ```
 
 ## Data Format
-The dataset defined by PaddleX for image segmentation tasks is named **SegDataset**, with the following organizational structure and annotation format:
+The dataset defined by PaddleX for image segmentation tasks is named <b>SegDataset</b>, with the following organizational structure and annotation format:
 
 ```ruby
 dataset_dir         # Root directory of the dataset, the directory name can be changed

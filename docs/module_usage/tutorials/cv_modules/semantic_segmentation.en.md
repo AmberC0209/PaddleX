@@ -34,7 +34,7 @@ Semantic segmentation is a technique in computer vision that classifies each pix
 </tr>
 </tbody>
 </table>
-> ❗ The above list features the **2 core models** that the image classification module primarily supports. In total, this module supports **18 models**. The complete list of models is as follows:
+> ❗ The above list features the <b>2 core models</b> that the image classification module primarily supports. In total, this module supports <b>18 models</b>. The complete list of models is as follows:
 
 <details>
    <summary> 👉Model List Details</summary>
@@ -149,7 +149,7 @@ Semantic segmentation is a technique in computer vision that classifies each pix
 </tr>
 </tbody>
 </table>
-**The accuracy metrics of the above models are measured on the [Cityscapes](https://www.cityscapes-dataset.com/) dataset. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.**
+<b>The accuracy metrics of the above models are measured on the [Cityscapes](https://www.cityscapes-dataset.com/) dataset. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
 
 
 <table>
@@ -193,7 +193,7 @@ Semantic segmentation is a technique in computer vision that classifies each pix
 </tr>
 </tbody>
 </table>
-**The accuracy metrics of the SeaFormer series models are measured on the [ADE20k](https://groups.csail.mit.edu/vision/datasets/ADE20K/) dataset. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.**
+<b>The accuracy metrics of the SeaFormer series models are measured on the [ADE20k](https://groups.csail.mit.edu/vision/datasets/ADE20K/) dataset. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
 
 </details>
 
@@ -220,7 +220,7 @@ If you seek higher accuracy, you can leverage PaddleX's custom development capab
 
 ### 4.1 Dataset Preparation
 
-Before model training, you need to prepare a dataset for the task. PaddleX provides data validation functionality for each module. **Only data that passes validation can be used for model training.** Additionally, PaddleX provides demo datasets for each module, which you can use to complete subsequent development. If you wish to use private datasets for model training, refer to [PaddleX Semantic Segmentation Task Module Data Preparation Tutorial](../../../data_annotations/cv_modules/semantic_segmentation.en.md).
+Before model training, you need to prepare a dataset for the task. PaddleX provides data validation functionality for each module. <b>Only data that passes validation can be used for model training.</b> Additionally, PaddleX provides demo datasets for each module, which you can use to complete subsequent development. If you wish to use private datasets for model training, refer to [PaddleX Semantic Segmentation Task Module Data Preparation Tutorial](../../../data_annotations/cv_modules/semantic_segmentation.en.md).
 
 #### 4.1.1 Demo Data Download
 
@@ -294,7 +294,7 @@ The dataset verification also analyzes the distribution of sample numbers across
 
 After completing dataset verification, you can convert the dataset format or re-split the training/validation ratio by modifying the configuration file or appending hyperparameters.
 
-**(1) Dataset Format Conversion**
+<b>(1) Dataset Format Conversion</b>
 
 Semantic segmentation supports converting `LabelMe` format datasets to the required format.
 
@@ -342,7 +342,7 @@ python main.py -c paddlex/configs/semantic_segmentation/PP-LiteSeg-T.yaml \
     -o CheckDataset.convert.src_dataset_type=LabelMe
 ```
 
-**(2) Dataset Splitting**
+<b>(2) Dataset Splitting</b>
 
 Parameters for dataset splitting can be set by modifying the `CheckDataset` fields in the configuration file. Example explanations for some parameters in the configuration file are as follows:
 
@@ -474,11 +474,11 @@ Alternatively, you can use the PaddleX wheel package for inference, easily integ
 
 The model can be directly integrated into the PaddleX pipeline or into your own projects.
 
-1. **Pipeline Integration**
+1. <b>Pipeline Integration</b>
 
 The document semantic segmentation module can be integrated into PaddleX pipelines such as the [Semantic Segmentation Pipeline (Seg)](../../../pipeline_usage/tutorials/cv_pipelines/semantic_segmentation.en.md). Simply replace the model path to update the The document semantic segmentation module's model.
 
-2. **Module Integration**
+2. <b>Module Integration</b>
 
 The weights you produce can be directly integrated into the semantic segmentation module. You can refer to the Python sample code in [Quick Integration](#iii-quick-integration) and just replace the model with the path to the model you trained.
     

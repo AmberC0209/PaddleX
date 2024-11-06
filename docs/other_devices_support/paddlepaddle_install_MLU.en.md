@@ -2,7 +2,7 @@
 
 # Cambricon MLU Installation Tutorial for PaddlePaddle
 
-Currently, PaddleX supports the Cambricon MLU370X8 chip. Considering environmental differences, we recommend using the **Cambricon MLU development image provided by PaddlePaddle** to prepare your environment.
+Currently, PaddleX supports the Cambricon MLU370X8 chip. Considering environmental differences, we recommend using the <b>Cambricon MLU development image provided by PaddlePaddle</b> to prepare your environment.
 
 ## 1. Docker Environment Preparation
 Pull the image. This image is for development only and does not include a pre-compiled PaddlePaddle installation package.

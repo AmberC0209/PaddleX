@@ -27,7 +27,7 @@
 </tr>
 </tbody>
 </table>
-**模型的精度指标测量自 [DocUNet benchmark](https://www3.cs.stonybrook.edu/~cvl/docunet.html)。**
+<b>模型的精度指标测量自 [DocUNet benchmark](https://www3.cs.stonybrook.edu/~cvl/docunet.html)。</b>
 
 
 ## 三、快速集成

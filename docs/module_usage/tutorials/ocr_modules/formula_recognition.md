@@ -28,7 +28,7 @@
 
 </table>
 
-**注：以上精度指标测量自 LaTeX-OCR公式识别测试集。**
+<b>注：以上精度指标测量自 LaTeX-OCR公式识别测试集。</b>
 
 ## 三、快速集成
 > ❗ 在快速集成前，请先安装 PaddleX 的 wheel 包，详细请参考 [PaddleX本地安装教程](../../../installation/installation.md)
@@ -49,7 +49,7 @@ for res in output:
 如果你追求更高精度的现有模型，可以使用 PaddleX 的二次开发能力，开发更好的公式识别模型。在使用 PaddleX 开发公式识别模型之前，请务必安装 PaddleX 的 PaddleOCR 相关模型训练插件，安装过程可以参考 [PaddleX本地安装教程](../../../installation/installation.md)
 
 ### 4.1 数据准备
-在进行模型训练前，需要准备相应任务模块的数据集。PaddleX 针对每一个模块提供了数据校验功能，**只有通过数据校验的数据才可以进行模型训练**。此外，PaddleX 为每一个模块都提供了 Demo 数据集，您可以基于官方提供的 Demo 数据完成后续的开发。若您希望用私有数据集进行后续的模型训练，可以参考[LaTeX-OCR 公式识别项目](https://github.com/lukas-blecher/LaTeX-OCR)
+在进行模型训练前，需要准备相应任务模块的数据集。PaddleX 针对每一个模块提供了数据校验功能，<b>只有通过数据校验的数据才可以进行模型训练</b>。此外，PaddleX 为每一个模块都提供了 Demo 数据集，您可以基于官方提供的 Demo 数据完成后续的开发。若您希望用私有数据集进行后续的模型训练，可以参考[LaTeX-OCR 公式识别项目](https://github.com/lukas-blecher/LaTeX-OCR)
 
 #### 4.1.1 Demo 数据下载
 您可以参考下面的命令将 Demo 数据集下载到指定文件夹：
@@ -125,12 +125,12 @@ python main.py -c paddlex/configs/formula_recognition/LaTeX_OCR_rec.yaml \
 </details>
 
 #### 4.1.3 数据集格式转换/数据集划分（可选）
-在您完成数据校验之后，可以通过**修改配置文件**或是**追加超参数**的方式对数据集的格式进行转换，也可以对数据集的训练/验证比例进行重新划分。
+在您完成数据校验之后，可以通过<b>修改配置文件</b>或是<b>追加超参数</b>的方式对数据集的格式进行转换，也可以对数据集的训练/验证比例进行重新划分。
 
 <details>
   <summary>👉 <b>格式转换/数据集划分详情（点击展开）</b></summary>
 
-**（1）数据集格式转换**
+<b>（1）数据集格式转换</b>
 
 公式识别支持 `MSTextRecDataset`格式的数据集转换为 `LaTeXOCRDataset`格式(`PKL`格式)，数据集格式转换的参数可以通过修改配置文件中 `CheckDataset` 下的字段进行设置，配置文件中部分参数的示例说明如下：
 
@@ -168,7 +168,7 @@ python main.py -c  paddlex/configs/formula_recognition/LaTeX_OCR_rec.yaml \
     -o CheckDataset.convert.enable=True \
     -o CheckDataset.convert.src_dataset_type=MSTextRecDataset
 ```
-**（2）数据集划分**
+<b>（2）数据集划分</b>
 
 数据集划分的参数可以通过修改配置文件中 `CheckDataset` 下的字段进行设置，配置文件中部分参数的示例说明如下：
 
@@ -240,7 +240,7 @@ python main.py -c paddlex/configs/formula_recognition/LaTeX_OCR_rec.yaml  \
 * `.pdparams`、`.pdema`、`.pdopt.pdstate`、`.pdiparams`、`.pdmodel`：模型权重相关文件，包括网络参数、优化器、EMA、静态图网络参数、静态图网络结构等；
 </details>
 
-## **4.3 模型评估**
+## <b>4.3 模型评估</b>
 在完成模型训练后，可以对指定的模型权重文件在验证集上进行评估，验证模型精度。使用 PaddleX 进行模型评估，一条命令即可完成模型的评估：
 
 ```bash
@@ -264,7 +264,7 @@ python main.py -c paddlex/configs/formula_recognition/LaTeX_OCR_rec.yaml  \
 
 </details>
 
-### **4.4 模型推理和模型集成**
+### <b>4.4 模型推理和模型集成</b>
 在完成模型的训练和评估后，即可使用训练好的模型权重进行推理预测或者进行Python集成。
 
 #### 4.4.1 模型推理

@@ -61,7 +61,7 @@ Time series anomaly detection focuses on identifying abnormal points or periods 
 </tr>
 </tbody>
 </table>
-**Note: The above accuracy metrics are measured on the PSM dataset with a time series length of 100.**
+<b>Note: The above accuracy metrics are measured on the PSM dataset with a time series length of 100.</b>
 
 ## III. Quick Integration
 > ❗ Before quick integration, please install the PaddleX wheel package. For details, refer to the [PaddleX Local Installation Guide](../../../installation/installation.en.md)
@@ -161,18 +161,18 @@ The verification results above indicate that `check_pass` being `True` means the
 * `attributes.val_samples`: The number of validation samples in this dataset is 198290;
 * `attributes.train_sample_paths`: A list of relative paths to the top 10 rows of training samples in this dataset;
 * `attributes.val_sample_paths`: A list of relative paths to the top 10 rows of validation samples in this dataset.
-**Note**: Only data that has passed validation can be used for training and evaluation.
+<b>Note</b>: Only data that has passed validation can be used for training and evaluation.
 </details>
 
 
 ### 4.1.3 Dataset Format Conversion / Dataset Splitting (Optional)
-After completing the data validation, you can convert the dataset format and re-split the training/validation ratio by **modifying the configuration file** or **appending hyperparameters**.
+After completing the data validation, you can convert the dataset format and re-split the training/validation ratio by <b>modifying the configuration file</b> or <b>appending hyperparameters</b>.
 
 
 <details>
   <summary>👉 <b>Details of Format Conversion / Dataset Splitting (Click to Expand)</b></summary>
 
-**(1) Dataset Format Conversion**
+<b>(1) Dataset Format Conversion</b>
 
 Time series anomaly detection supports converting `xlsx` and `xls` format datasets to `csv` format.
 
@@ -210,7 +210,7 @@ python main.py -c paddlex/configs/ts_anomaly_detection/AutoEncoder_ad.yaml \
     -o CheckDataset.convert.enable=True
 ```
 
-**(2) Dataset Splitting**
+<b>(2) Dataset Splitting</b>
 
 Parameters related to dataset validation can be set by modifying the fields under `CheckDataset` in the configuration file. Some example parameter descriptions in the configuration file are as follows:
 
@@ -339,10 +339,10 @@ Other related parameters can be set by modifying the `Global` and `Predict` fiel
 #### 4.4.2 Model Integration
 The model can be directly integrated into the PaddleX pipeline or directly into your own project.
 
-1. **Pipeline Integration**
+1. <b>Pipeline Integration</b>
 
 The time series prediction module can be integrated into PaddleX pipelines such as [Time Series Anomaly Detection](../../../pipeline_usage/tutorials/time_series_pipelines/time_series_anomaly_detection.en.md). Simply replace the model path to update the time series prediction model. In pipeline integration, you can use service deployment to deploy your obtained model.
 
-2. **Module Integration**
+2. <b>Module Integration</b>
 
 The weights you produce can be directly integrated into the time series anomaly detection module. Refer to the Python example code in [Quick Integration](#iii-quick-integration), simply replace the model with the path to your trained model.

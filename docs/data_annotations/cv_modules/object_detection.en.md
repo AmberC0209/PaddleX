@@ -131,7 +131,7 @@ PaddleLabel will automatically open a webpage in your browser after startup. You
   * Click the rectangular selection button on the left.
   * Draw a bounding box around the desired area in the image, paying attention to semantic partitioning. If there are multiple columns, please annotate each separately.
   * After completing the annotation, the annotation result will appear in the lower right corner. You can check if the annotation is correct.
-  * When all annotations are complete, click **Project Overview**.
+  * When all annotations are complete, click <b>Project Overview</b>.
 
 <img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/13.png">
 * Export Annotation Files

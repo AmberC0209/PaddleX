@@ -62,7 +62,7 @@
 </tr>
 </tbody>
 </table>
-**注：以上精度指标测量自**PSM**数据集，时序长度为100。**
+<b>注：以上精度指标测量自</b>PSM<b>数据集，时序长度为100。</b>
 
 
 ## 三、快速集成
@@ -163,18 +163,18 @@ python main.py -c paddlex/configs/ts_anomaly_detection/AutoEncoder_ad.yaml \
 * `attributes.val_samples`：该数据集验证集样本数量为 198290；
 * `attributes.train_table`：该数据集训练集样本示例数据前10行信息；
 * `attributes.val_table`：该数据集训练集样本示例数据前10行信息；
-**注**：只有通过数据校验的数据才可以训练和评估。
+<b>注</b>：只有通过数据校验的数据才可以训练和评估。
 
 </details>
 
 #### 4.1.3 数据集格式转换/数据集划分（可选）
-在您完成数据校验之后，可以通过**修改配置文件**或是**追加超参数**的方式对数据集的格式进行转换，也可以对数据集的训练/验证比例进行重新划分。
+在您完成数据校验之后，可以通过<b>修改配置文件</b>或是<b>追加超参数</b>的方式对数据集的格式进行转换，也可以对数据集的训练/验证比例进行重新划分。
 
 <details>
   <summary>👉 <b>格式转换/数据集划分详情（点击展开）</b></summary>
 
 
-**（1）数据集格式转换**
+<b>（1）数据集格式转换</b>
 
 时序异常检测支持 `xlsx 和 xls` 格式的数据集转换为 `csv` 格式。
 
@@ -212,7 +212,7 @@ python main.py -c paddlex/configs/ts_anomaly_detection/AutoEncoder_ad.yaml \
 ```
 
 
-**（2）数据集划分**
+<b>（2）数据集划分</b>
 
 数据集校验相关的参数可以通过修改配置文件中 `CheckDataset` 下的字段进行设置，配置文件中部分参数的示例说明如下：
 
@@ -336,10 +336,10 @@ python main.py -c paddlex/configs/ts_anomaly_detection/AutoEncoder_ad.yaml \
 #### 4.4.2 模型集成
 模型可以直接集成到PaddleX产线中，也可以直接集成到您自己的项目中。
 
-1.**产线集成**
+1.<b>产线集成</b>
 
 时序预测模块可以集成的PaddleX产线有[时序异常检测](../../../pipeline_usage/tutorials/time_series_pipelines/time_series_anomaly_detection.md)，只需要替换模型路径即可完成时序预测的模型更新。在产线集成中，你可以使用服务化部署来部署你得到的模型。
 
-2.**模块集成**
+2.<b>模块集成</b>
 
 您产出的权重可以直接集成到时序异常检测模块中，可以参考[快速集成](#三快速集成)的 Python 示例代码，只需要将模型替换为你训练的到的模型路径即可。

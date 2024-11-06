@@ -306,7 +306,7 @@ PaddleX 内置了多条产线，每条产线都包含了若干模块，每个模
 </tr>
 </tbody>
 </table>
-**注：以上精度指标为**[ImageNet-1k](https://www.image-net.org/index.php)**验证集 Top1 Acc。**
+<b>注：以上精度指标为</b>[ImageNet-1k](https://www.image-net.org/index.php)<b>验证集 Top1 Acc。</b>
 
 ## 目标检测模块
 <table>
@@ -445,7 +445,7 @@ PaddleX 内置了多条产线，每条产线都包含了若干模块，每个模
 </tr>
 </tbody>
 </table>
-**注：以上精度指标为**[COCO2017](https://cocodataset.org/#home)**验证集 mAP(0.5:0.95)。**
+<b>注：以上精度指标为</b>[COCO2017](https://cocodataset.org/#home)<b>验证集 mAP(0.5:0.95)。</b>
 
 ## 语义分割模块
 <table>
@@ -489,7 +489,7 @@ PaddleX 内置了多条产线，每条产线都包含了若干模块，每个模
 </tr>
 </tbody>
 </table>
-**注：以上精度指标为**[Cityscapes](https://www.cityscapes-dataset.com/)**数据集 mloU。**
+<b>注：以上精度指标为</b>[Cityscapes](https://www.cityscapes-dataset.com/)<b>数据集 mloU。</b>
 
 ## 实例分割模块
 <table>
@@ -533,7 +533,7 @@ PaddleX 内置了多条产线，每条产线都包含了若干模块，每个模
 </tr>
 </tbody>
 </table>
-**注：以上精度指标为**[COCO2017](https://cocodataset.org/#home)**验证集 Mask AP(0.5:0.95)。**
+<b>注：以上精度指标为</b>[COCO2017](https://cocodataset.org/#home)<b>验证集 Mask AP(0.5:0.95)。</b>
 
 ## 文本检测模块
 <table>
@@ -557,7 +557,7 @@ PaddleX 内置了多条产线，每条产线都包含了若干模块，每个模
 </tr>
 </tbody>
 </table>
-**注：以上精度指标的评估集是 PaddleOCR 自建的中文数据集，覆盖街景、网图、文档、手写多个场景，其中检测包含 500 张图片。**
+<b>注：以上精度指标的评估集是 PaddleOCR 自建的中文数据集，覆盖街景、网图、文档、手写多个场景，其中检测包含 500 张图片。</b>
 
 ## 文本识别模块
 <table>
@@ -581,7 +581,7 @@ PaddleX 内置了多条产线，每条产线都包含了若干模块，每个模
 </tr>
 </tbody>
 </table>
-**注：以上精度指标的评估集是 PaddleOCR 自建的中文数据集，覆盖街景、网图、文档、手写多个场景，其中文本识别包含 1.1w 张图片。**
+<b>注：以上精度指标的评估集是 PaddleOCR 自建的中文数据集，覆盖街景、网图、文档、手写多个场景，其中文本识别包含 1.1w 张图片。</b>
 
 <table>
 <thead>
@@ -599,7 +599,7 @@ PaddleX 内置了多条产线，每条产线都包含了若干模块，每个模
 </tr>
 </tbody>
 </table>
-**注：以上精度指标的评估集是 [PaddleOCR算法模型挑战赛 - 赛题一：OCR端到端识别任务](https://aistudio.baidu.com/competition/detail/1131/0/introduction)A榜。**
+<b>注：以上精度指标的评估集是 [PaddleOCR算法模型挑战赛 - 赛题一：OCR端到端识别任务](https://aistudio.baidu.com/competition/detail/1131/0/introduction)A榜。</b>
 
 <table>
 <thead>
@@ -617,7 +617,7 @@ PaddleX 内置了多条产线，每条产线都包含了若干模块，每个模
 </tr>
 </tbody>
 </table>
-**注：以上精度指标的评估集是 [PaddleOCR算法模型挑战赛 - 赛题一：OCR端到端识别任务](https://aistudio.baidu.com/competition/detail/1131/0/introduction)B榜。**
+<b>注：以上精度指标的评估集是 [PaddleOCR算法模型挑战赛 - 赛题一：OCR端到端识别任务](https://aistudio.baidu.com/competition/detail/1131/0/introduction)B榜。</b>
 
 ## 表格结构识别模块
 <table>
@@ -636,7 +636,7 @@ PaddleX 内置了多条产线，每条产线都包含了若干模块，每个模
 </tr>
 </tbody>
 </table>
-**注：以上精度指标测量自PubtabNet英文表格识别数据集。**
+<b>注：以上精度指标测量自PubtabNet英文表格识别数据集。</b>
 
 ## 版面区域分析模块
 <table>
@@ -655,7 +655,7 @@ PaddleX 内置了多条产线，每条产线都包含了若干模块，每个模
 </tr>
 </tbody>
 </table>
-**注：以上精度指标的评估集是 PaddleOCR 自建的版面区域分析数据集，包含 1w 张图片。**
+<b>注：以上精度指标的评估集是 PaddleOCR 自建的版面区域分析数据集，包含 1w 张图片。</b>
 
 ## 时序预测模块
 <table>
@@ -712,7 +712,7 @@ PaddleX 内置了多条产线，每条产线都包含了若干模块，每个模
 </tr>
 </tbody>
 </table>
-**注：以上精度指标测量自**[ETTH1](https://paddle-model-ecology.bj.bcebos.com/paddlex/data/Etth1.tar)**数据集 ****（在测试集test.csv上的评测结果）****。**
+<b>注：以上精度指标测量自</b>[ETTH1](https://paddle-model-ecology.bj.bcebos.com/paddlex/data/Etth1.tar)<b>数据集 </b><b>（在测试集test.csv上的评测结果）</b><b>。</b>
 
 ## 时序异常检测模块
 <table>
@@ -763,7 +763,7 @@ PaddleX 内置了多条产线，每条产线都包含了若干模块，每个模
 </tr>
 </tbody>
 </table>
-**注：以上精度指标测量自**[PSM](https://paddle-model-ecology.bj.bcebos.com/paddlex/data/ts_anomaly_examples.tar)**数据集。**
+<b>注：以上精度指标测量自</b>[PSM](https://paddle-model-ecology.bj.bcebos.com/paddlex/data/ts_anomaly_examples.tar)<b>数据集。</b>
 
 ## 时序分类模块
 <table>
@@ -782,4 +782,4 @@ PaddleX 内置了多条产线，每条产线都包含了若干模块，每个模
 </tr>
 </tbody>
 </table>
-**注：以上精度指标测量自UWaveGestureLibrary：[训练](https://paddlets.bj.bcebos.com/classification/UWaveGestureLibrary_TRAIN.csv)、[评测](https://paddlets.bj.bcebos.com/classification/UWaveGestureLibrary_TEST.csv)数据集。**
+<b>注：以上精度指标测量自UWaveGestureLibrary：[训练](https://paddlets.bj.bcebos.com/classification/UWaveGestureLibrary_TRAIN.csv)、[评测](https://paddlets.bj.bcebos.com/classification/UWaveGestureLibrary_TEST.csv)数据集。</b>

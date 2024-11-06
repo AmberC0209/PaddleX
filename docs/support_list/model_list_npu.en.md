@@ -306,7 +306,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 </tr>
 </tbody>
 </table>
-**Note: The above accuracy metrics refer to Top-1 Accuracy on the [ImageNet-1k](https://www.image-net.org/index.php) validation set.**
+<b>Note: The above accuracy metrics refer to Top-1 Accuracy on the [ImageNet-1k](https://www.image-net.org/index.php) validation set.</b>
 
 ## Object Detection Module
 <table>
@@ -445,7 +445,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 </tr>
 </tbody>
 </table>
-**Note: The above accuracy metrics are for** [COCO2017](https://cocodataset.org/#home) **validation set mAP(0.5:0.95).**
+<b>Note: The above accuracy metrics are for</b> [COCO2017](https://cocodataset.org/#home) <b>validation set mAP(0.5:0.95).</b>
 
 ## Semantic Segmentation Module
 <table>
@@ -489,7 +489,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 </tr>
 </tbody>
 </table>
-**Note: The above accuracy metrics are for** [Cityscapes](https://www.cityscapes-dataset.com/) **dataset mIoU.**
+<b>Note: The above accuracy metrics are for</b> [Cityscapes](https://www.cityscapes-dataset.com/) <b>dataset mIoU.</b>
 
 ## Instance Segmentation Module
 <table>
@@ -533,7 +533,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 </tr>
 </tbody>
 </table>
-**Note: The above accuracy metrics are for** [COCO2017](https://cocodataset.org/#home) **validation set Mask AP(0.5:0.95).**
+<b>Note: The above accuracy metrics are for</b> [COCO2017](https://cocodataset.org/#home) <b>validation set Mask AP(0.5:0.95).</b>
 
 ## Text Detection Module
 <table>
@@ -557,7 +557,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 </tr>
 </tbody>
 </table>
-**Note: The above accuracy metrics are evaluated on PaddleOCR's self-built Chinese dataset, covering street scenes, web images, documents, and handwritten scenarios, with 500 images for detection.**
+<b>Note: The above accuracy metrics are evaluated on PaddleOCR's self-built Chinese dataset, covering street scenes, web images, documents, and handwritten scenarios, with 500 images for detection.</b>
 
 ## Text Recognition Module
 <table>
@@ -581,7 +581,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 </tr>
 </tbody>
 </table>
-**Note: The above accuracy metrics are evaluated on PaddleOCR's self-built Chinese dataset, covering street scenes, web images, documents, and handwritten scenarios, with 11,000 images for text recognition.**
+<b>Note: The above accuracy metrics are evaluated on PaddleOCR's self-built Chinese dataset, covering street scenes, web images, documents, and handwritten scenarios, with 11,000 images for text recognition.</b>
 
 <table>
 <thead>
@@ -599,7 +599,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 </tr>
 </tbody>
 </table>
-**Note: The above accuracy metrics are evaluated on the [PaddleOCR Algorithm Model Challenge - Task 1: OCR End-to-End Recognition](https://aistudio.baidu.com/competition/detail/1131/0/introduction) A-Rank.**
+<b>Note: The above accuracy metrics are evaluated on the [PaddleOCR Algorithm Model Challenge - Task 1: OCR End-to-End Recognition](https://aistudio.baidu.com/competition/detail/1131/0/introduction) A-Rank.</b>
 
 <table>
 <thead>
@@ -617,7 +617,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 </tr>
 </tbody>
 </table>
-**Note: The above accuracy metrics are evaluated on the [PaddleOCR Algorithm Model Challenge - Task 1: OCR End-to-End Recognition](https://aistudio.baidu.com/competition/detail/1131/0/introduction) B-Rank.**
+<b>Note: The above accuracy metrics are evaluated on the [PaddleOCR Algorithm Model Challenge - Task 1: OCR End-to-End Recognition](https://aistudio.baidu.com/competition/detail/1131/0/introduction) B-Rank.</b>
 
 ## Table Structure Recognition Module
 <table>
@@ -636,7 +636,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 </tr>
 </tbody>
 </table>
-**Note: The above accuracy metrics are measured on the PubtabNet English table recognition dataset.**
+<b>Note: The above accuracy metrics are measured on the PubtabNet English table recognition dataset.</b>
 
 ## Layout Analysis Module
 <table>
@@ -655,7 +655,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 </tr>
 </tbody>
 </table>
-**Note: The evaluation set for the above accuracy metrics is PaddleOCR's self-built layout analysis dataset, containing 10,000 images.**
+<b>Note: The evaluation set for the above accuracy metrics is PaddleOCR's self-built layout analysis dataset, containing 10,000 images.</b>
 
 ## Time Series Forecasting Module
 <table>
@@ -712,7 +712,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 </tr>
 </tbody>
 </table>
-**Note: The above accuracy metrics are measured on the [ETTH1](https://paddle-model-ecology.bj.bcebos.com/paddlex/data/Etth1.tar) dataset (evaluation results on the test set test.csv).**
+<b>Note: The above accuracy metrics are measured on the [ETTH1](https://paddle-model-ecology.bj.bcebos.com/paddlex/data/Etth1.tar) dataset (evaluation results on the test set test.csv).</b>
 
 ## Time Series Anomaly Detection Module
 <table>
@@ -763,7 +763,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 </tr>
 </tbody>
 </table>
-**Note: The above accuracy metrics are measured on the [PSM](https://paddle-model-ecology.bj.bcebos.com/paddlex/data/ts_anomaly_examples.tar) dataset.**
+<b>Note: The above accuracy metrics are measured on the [PSM](https://paddle-model-ecology.bj.bcebos.com/paddlex/data/ts_anomaly_examples.tar) dataset.</b>
 
 ## Time Series Classification Module
 <table>
@@ -782,4 +782,4 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 </tr>
 </tbody>
 </table>
-**Note: The above accuracy metrics are measured on the UWaveGestureLibrary: [Training](https://paddlets.bj.bcebos.com/classification/UWaveGestureLibrary_TRAIN.csv), [Evaluation](https://paddlets.bj.bcebos.com/classification/UWaveGestureLibrary_TEST.csv) datasets.**
+<b>Note: The above accuracy metrics are measured on the UWaveGestureLibrary: [Training](https://paddlets.bj.bcebos.com/classification/UWaveGestureLibrary_TRAIN.csv), [Evaluation](https://paddlets.bj.bcebos.com/classification/UWaveGestureLibrary_TEST.csv) datasets.</b>

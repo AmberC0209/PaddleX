@@ -8,9 +8,9 @@ hide:
 
 ### 🛠️ 安装
 
-> ❗安装 PaddleX 前请先确保您有基础的 **Python 运行环境**（注：当前支持Python 3.8 ～ Python 3.10下运行，更多Python版本适配中）。
+> ❗安装 PaddleX 前请先确保您有基础的 <b>Python 运行环境</b>（注：当前支持Python 3.8 ～ Python 3.10下运行，更多Python版本适配中）。
 
-* **安装 PaddlePaddle**
+* <b>安装 PaddlePaddle</b>
 ```bash
 # cpu
 python -m pip install paddlepaddle==3.0.0b1 -i https://www.paddlepaddle.org.cn/packages/stable/cpu/
@@ -24,7 +24,7 @@ python -m pip install paddlepaddle-gpu==3.0.0b1 -i https://www.paddlepaddle.org.
 > ❗ 更多飞桨 Wheel 版本请参考[飞桨官网](https://www.paddlepaddle.org.cn/install/quick?docurl=/documentation./docs/zh/install/pip/linux-pip.html)。
 
 
-* **安装PaddleX**
+* <b>安装PaddleX</b>
 
 ```bash
 pip install https://paddle-model-ecology.bj.bcebos.com/paddlex/whl/paddlex-3.0.0b1-py3-none-any.whl

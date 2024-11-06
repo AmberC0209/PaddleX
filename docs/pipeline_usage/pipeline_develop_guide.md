@@ -6,7 +6,7 @@
 
 完整的PaddleX模型产线开发流程如下图所示：
 
-**<center>PaddleX 模型产线开发流程图</center>**
+<b><center>PaddleX 模型产线开发流程图</center></b>
 
 ```mermaid
 graph LR
@@ -21,7 +21,7 @@ graph LR
     test_ok --满意--> development_integration
 ```
 
-PaddleX 所提供的预训练的模型产线均可以**快速体验效果**，如果产线效果可以达到您的要求，您可以直接将预训练的模型产线进行**开发集成/部署**，如果效果不及预期，可以使用私有数据对产线中的模型进行**微调**，直到达到满意的效果。
+PaddleX 所提供的预训练的模型产线均可以<b>快速体验效果</b>，如果产线效果可以达到您的要求，您可以直接将预训练的模型产线进行<b>开发集成/部署</b>，如果效果不及预期，可以使用私有数据对产线中的模型进行<b>微调</b>，直到达到满意的效果。
 
 下面，让我们以登机牌识别的任务为例，介绍PaddleX模型产线工具的本地使用过程。
 在使用前，请确保您已经按照[PaddleX本地安装教程](../installation/installation.md)完成了PaddleX的安装。
@@ -42,13 +42,13 @@ PaddleX提供了三种可以快速体验产线效果的方式，您可以根据�
 
 以实现登机牌识别任务的通用OCR产线为例，可以用三种方式体验产线效果：
 
-**🌐 在线体验**
+<b>🌐 在线体验</b>
 
 您可以在AI Studio[在线体验](https://aistudio.baidu.com/community/app/91660/webUI?source=appMineRecent)通用 OCR 产线的效果，用官方提供的 Demo 图片进行识别，例如：
 
 <img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/ocr/02.png">
 
-**💻 命令行方式体验**
+<b>💻 命令行方式体验</b>
 
 一行命令即可快速体验产线效果,使用 [测试文件](https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/general_ocr_002.png)，并将 `--input` 替换为本地路径，进行预测：
 ```bash
@@ -107,7 +107,7 @@ paddlex --pipeline ./ocr.yaml --input general_ocr_002.png
 其中，`--model`、`--device` 等参数无需指定，将使用配置文件中的参数。若依然指定了参数，将以指定的参数为准。
 </details>
 
-**💻Python脚本体验**
+<b>💻Python脚本体验</b>
 
 几行代码即可快速体验产线效果：
 
@@ -180,11 +180,11 @@ Pipeline:
 此外，PaddleX 也提供了其他三种部署方式，详细说明如下：
 
 
-🚀 **高性能推理**：在实际生产环境中，许多应用对部署策略的性能指标（尤其是响应速度）有着较严苛的标准，以确保系统的高效运行与用户体验的流畅性。为此，PaddleX 提供高性能推理插件，旨在对模型推理及前后处理进行深度性能优化，实现端到端流程的显著提速，详细的高性能部署流程请参考[PaddleX高性能部署指南](../pipeline_deploy/high_performance_inference.md)。
+🚀 <b>高性能推理</b>：在实际生产环境中，许多应用对部署策略的性能指标（尤其是响应速度）有着较严苛的标准，以确保系统的高效运行与用户体验的流畅性。为此，PaddleX 提供高性能推理插件，旨在对模型推理及前后处理进行深度性能优化，实现端到端流程的显著提速，详细的高性能部署流程请参考[PaddleX高性能部署指南](../pipeline_deploy/high_performance_inference.md)。
 
-☁️ **服务化部署**：服务化部署是实际生产环境中常见的一种部署形式。通过将推理功能封装为服务，客户端可以通过网络请求来访问这些服务，以获取推理结果。PaddleX 支持用户以低成本实现产线的服务化部署，详细的服务化部署流程请参考[PaddleX服务化部署指南](../pipeline_deploy/service_deploy.md)。
+☁️ <b>服务化部署</b>：服务化部署是实际生产环境中常见的一种部署形式。通过将推理功能封装为服务，客户端可以通过网络请求来访问这些服务，以获取推理结果。PaddleX 支持用户以低成本实现产线的服务化部署，详细的服务化部署流程请参考[PaddleX服务化部署指南](../pipeline_deploy/service_deploy.md)。
 
-📱 **端侧部署**：端侧部署是一种将计算和数据处理功能放在用户设备本身上的方式，设备可以直接处理数据，而不需要依赖远程的服务器。PaddleX 支持将模型部署在 Android 等端侧设备上，详细的端侧部署流程请参考[PaddleX端侧部署指南](../pipeline_deploy/edge_deploy.md)。
+📱 <b>端侧部署</b>：端侧部署是一种将计算和数据处理功能放在用户设备本身上的方式，设备可以直接处理数据，而不需要依赖远程的服务器。PaddleX 支持将模型部署在 Android 等端侧设备上，详细的端侧部署流程请参考[PaddleX端侧部署指南](../pipeline_deploy/edge_deploy.md)。
 您可以根据需要选择合适的方式部署模型产线，进而进行后续的 AI 应用集成。
 
 

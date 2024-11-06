@@ -68,7 +68,7 @@ This guide applies to 8 models across 6 modules:
   </tr>
 </table>
 
-**Note**
+<b>Note</b>
 - `GPU` refers to [mapping computations to GPU execution using OpenCL](https://www.paddlepaddle.org.cn/lite/develop/demo_guides/opencl.html) to fully utilize GPU hardware computing power and improve inference performance.
 
 ## Installation Process and Usage
@@ -77,11 +77,11 @@ This guide applies to 8 models across 6 modules:
 
 1. Install CMake build tool locally and download the required version of NDK software package from the [Android NDK official website](https://developer.android.google.cn/ndk/downloads?hl=en). For example, if developing on a Mac, download the NDK software package for the Mac platform from the Android NDK official website.
 
-    **Environment Requirements**
+    <b>Environment Requirements</b>
     - `CMake >= 3.10` (Minimum version not verified, recommend 3.20 and above)
     - `Android NDK >= r17c` (Minimum version not verified, recommend r20b and above)
 
-    **Tested Environment Used in This Guide**:
+    <b>Tested Environment Used in This Guide</b>:
     - `cmake == 3.20.0`
     - `android-ndk == r20b`
 
@@ -131,7 +131,7 @@ This guide applies to 8 models across 6 modules:
     git clone -b feature/paddle-x https://github.com/PaddlePaddle/Paddle-Lite-Demo.git PaddleX-Lite-Deploy
     ```
 
-2. Fill out the **survey** to download the compressed package, place the compressed package in the specified unzip directory, switch to the specified unzip directory, and execute the unzip command.
+2. Fill out the <b>survey</b> to download the compressed package, place the compressed package in the specified unzip directory, switch to the specified unzip directory, and execute the unzip command.
     - [Object Detection Survey](https://paddle.wjx.cn/vm/OjV8gAb.aspx#)
     - [Semantic Segmentation Survey](https://paddle.wjx.cn/vm/Q2F1L37.aspx#)
     - [Image Classification Survey](https://paddle.wjx.cn/vm/rWPncBm.aspx#)
@@ -185,7 +185,7 @@ This guide applies to 8 models across 6 modules:
 
 4. Switch the working directory to `PaddleX-Lite-Deploy/{Task_Name}/android/shell/cxx/{Demo_Name}`, run the `run.sh` script to complete the prediction on the edge.
 
-    **Note**:
+    <b>Note</b>:
     - `{Pipeline_Name}` and `{Demo_Name}` are placeholders. Refer to the table at the end of this section for specific values.
     - `download.sh` and `run.sh` support passing in model names to specify models. If not specified, the default model will be used. Refer to the `Model_Name` column in the table at the end of this section for currently supported models.
     - To use your own trained model, refer to the [Model Conversion Method](https://paddlepaddle.github.io/Paddle-Lite/develop/model_optimize_tool/) to obtain the `.nb` model, place it in the `PaddleX_Lite_Deploy/{Pipeline_Name}/assets/{Model_Name}` directory, where `{Model_Name}` is the model name, e.g., `PaddleX_Lite_Deploy/object_detection/assets/PicoDet-L`.
@@ -302,7 +302,7 @@ This section describes the deployment steps applicable to the demos listed in th
   </tr>
 </table>
 
-**Note**
+<b>Note</b>
 - Currently, there is no demo for deploying the Layout Area Detection module on the edge, so the `picodet_detection` demo is reused to deploy the `PicoDet_layout_1x` model.
 
 ## Reference Materials

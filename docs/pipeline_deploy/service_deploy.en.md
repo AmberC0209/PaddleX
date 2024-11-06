@@ -4,8 +4,8 @@
 
 Serving deployment is a common form of deployment in real-world production environments. By encapsulating inference capabilities as services, clients can access these services through network requests to obtain inference results. PaddleX enables users to achieve low-cost serving deployment for production lines. This document will first introduce the basic process of serving deployment using PaddleX, followed by considerations and potential operations when using the service in a production environment.
 
-**Note**
-- **Serving deployment provides services for model pipelines, not specific to individual pipeline modules.**
+<b>Note</b>
+- <b>Serving deployment provides services for model pipelines, not specific to individual pipeline modules.</b>
 
 Serving Deployment Example Diagram:
 
@@ -44,7 +44,7 @@ INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)
 ```
 
-`--pipeline` can be specified as an official pipeline name or the path to a local pipeline configuration file. PaddleX uses this to build the pipeline and deploy it as a service. To adjust configurations (such as model path, batch_size, deployment device), please refer to the **"Model Application"** section in the [General Image Classification Pipeline Tutorial](../pipeline_usage/tutorials/cv_pipelines/image_classification.en.md) (for other pipelines, refer to the corresponding tutorials in the **"1.3 Calling the Service"** table).
+`--pipeline` can be specified as an official pipeline name or the path to a local pipeline configuration file. PaddleX uses this to build the pipeline and deploy it as a service. To adjust configurations (such as model path, batch_size, deployment device), please refer to the <b>"Model Application"</b> section in the [General Image Classification Pipeline Tutorial](../pipeline_usage/tutorials/cv_pipelines/image_classification.en.md) (for other pipelines, refer to the corresponding tutorials in the <b>"1.3 Calling the Service"</b> table).
 
 Command-line options related to serving deployment are as follows:
 
@@ -90,7 +90,7 @@ Command-line options related to serving deployment are as follows:
 
 ### 1.3 Call the Service
 
-Please refer to the **"Development Integration/Deployment"** section in the usage tutorials for each pipeline.
+Please refer to the <b>"Development Integration/Deployment"</b> section in the usage tutorials for each pipeline.
 
 <table>
 <thead>

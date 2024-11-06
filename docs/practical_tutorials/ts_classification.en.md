@@ -8,7 +8,7 @@ PaddleX offers a rich set of pipelines, each consisting of one or more models ta
 First, choose the corresponding PaddleX pipeline based on your task scenario. For this task, the goal is to train a time series classification model based on heartbeat monitoring data to classify heartbeat time series conditions. Recognizing this as a time series classification task, we select PaddleX's Time Series Classification Pipeline. If unsure about the task-pipeline correspondence, consult the [PaddleX Pipeline List (CPU/GPU)](../support_list/models_list.en.md) for pipeline capabilities.
 
 ## 2. Quick Experience
-PaddleX offers two ways to experience its capabilities: locally or on the **Baidu AIStudio Community**.
+PaddleX offers two ways to experience its capabilities: locally or on the <b>Baidu AIStudio Community</b>.
 
 * Local Experience:
 ```python
@@ -44,7 +44,7 @@ PaddleX provides a time series classification model. Refer to the [Model List](.
 </tr>
 </tbody>
 </table>
-**Note: The evaluation set for the above accuracy metrics is UWaveGestureLibrary.**
+<b>Note: The evaluation set for the above accuracy metrics is UWaveGestureLibrary.</b>
 
 ## 4. Data Preparation and Verification
 ### 4.1 Data Preparation
@@ -60,7 +60,7 @@ wget https://paddle-model-ecology.bj.bcebos.com/paddlex/data/ts_classify_example
 tar -xf ./dataset/ts_classify_examples.tar -C ./dataset/
 ```
 
-**Data Considerations**
+<b>Data Considerations</b>
   * Based on collected real data, clarify the classification objectives of the time series data and define corresponding classification labels. For example, in stock price classification, labels might be "Rise" or "Fall." For a time series that is "Rising" over a period, it can be considered a sample (group), where each time point in this period shares a common group_id.
   * Uniform Time Series Length: Ensure that the length of the time series for each group is consistent.
 Missing Value Handling: To guarantee the quality and integrity of the data, missing values can be imputed based on expert experience or statistical methods.
@@ -108,7 +108,7 @@ The above verification results have omitted some data parts. `check_pass` being 
 * `attributes.train_table`: Sample data rows from the training set of this dataset.
 * `attributes.val_table`: Sample data rows from the validation set of this dataset.
 
-**Note**: Only data that passes the verification can be used for training and evaluation.
+<b>Note</b>: Only data that passes the verification can be used for training and evaluation.
 
 ### 4.3 Dataset Format Conversion / Dataset Splitting (Optional)
 If you need to convert the dataset format or re-split the dataset, please refer to Section 4.1.3 in the [Time Series Classification Module Development Tutorial](../module_usage/tutorials/time_series_modules/time_series_classification.en.md).
@@ -149,7 +149,7 @@ Each model in PaddleX provides a configuration file for model development to set
   * `static_cov_cols`: Represents the category ID column of the time series. The same sample has the same label. Set the column name of the category based on your data, e.g., `label`.
 For more hyperparameter introductions, please refer to [PaddleX Time Series Task Model Configuration File Parameter Description](../module_usage/instructions/config_parameters_time_series.en.md).
 
-**Note**:
+<b>Note</b>:
 
 * The above parameters can be set by appending command-line parameters, e.g., specifying the mode as model training: `-o Global.mode=train`; specifying the first GPU for training: `-o Global.device=gpu:0`; setting the number of training epochs to 10: `-o Train.epochs_iters=10`.
 * During model training, PaddleX automatically saves model weight files, with the default being `output`. To specify a save path, use the `-o Global.output` field in the configuration file.
@@ -163,7 +163,7 @@ For more hyperparameter introductions, please refer to [PaddleX Time Series Task
 
 After completing the model training, all outputs are saved in the specified output directory (default is `./output/`), typically including the following:
 
-**Explanation of Training Outputs:**
+<b>Explanation of Training Outputs:</b>
 
 After completing the model training, all outputs are saved in the specified output directory (default is `./output/`), typically including the following:
 
@@ -186,7 +186,7 @@ After completing model training, you can evaluate the specified model weights fi
 
 Similar to model training, model evaluation supports setting through modifying the configuration file or appending command-line parameters.
 
-**Note**: When evaluating the model, you need to specify the model weights file path. Each configuration file has a default weight save path built-in. If you need to change it, simply set it by appending a command-line parameter, such as `-o Evaluate.weight_path=./output/best_model/model.pdparams`.
+<b>Note</b>: When evaluating the model, you need to specify the model weights file path. Each configuration file has a default weight save path built-in. If you need to change it, simply set it by appending a command-line parameter, such as `-o Evaluate.weight_path=./output/best_model/model.pdparams`.
 
 After completing the model evaluation, typically, the following outputs are generated:
 

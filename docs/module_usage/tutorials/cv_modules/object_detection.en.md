@@ -63,7 +63,7 @@ The object detection module is a crucial component in computer vision systems, r
   </tr>
 </table>
 
-> ❗ The above list features the **6 core models** that the image classification module primarily supports. In total, this module supports **37 models**. The complete list of models is as follows:
+> ❗ The above list features the <b>6 core models</b> that the image classification module primarily supports. In total, this module supports <b>37 models</b>. The complete list of models is as follows:
 
 <details>
    <summary> 👉Details of Model List</summary>
@@ -375,7 +375,7 @@ The object detection module is a crucial component in computer vision systems, r
   </tr>
 </table>
 
-**Note: The precision metrics mentioned are based on the [COCO2017](https://cocodataset.org/#home) validation set mAP(0.5:0.95). All model GPU inference times are measured on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speeds are based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.**
+<b>Note: The precision metrics mentioned are based on the [COCO2017](https://cocodataset.org/#home) validation set mAP(0.5:0.95). All model GPU inference times are measured on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speeds are based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
 
 </details>
 
@@ -403,7 +403,7 @@ If you seek higher precision from existing models, you can leverage PaddleX's cu
 
 ### 4.1 Data Preparation
 
-Before model training, prepare the corresponding dataset for the task module. PaddleX provides a data validation feature for each module, and **only datasets that pass validation can be used for model training**. Additionally, PaddleX provides demo datasets for each module, which you can use to complete subsequent development. If you wish to use a private dataset for model training, refer to the [PaddleX Object Detection Task Module Data Annotation Guide](../../../data_annotations/cv_modules/object_detection.en.md).
+Before model training, prepare the corresponding dataset for the task module. PaddleX provides a data validation feature for each module, and <b>only datasets that pass validation can be used for model training</b>. Additionally, PaddleX provides demo datasets for each module, which you can use to complete subsequent development. If you wish to use a private dataset for model training, refer to the [PaddleX Object Detection Task Module Data Annotation Guide](../../../data_annotations/cv_modules/object_detection.en.md).
 
 #### 4.1.1 Download Demo Data
 
@@ -485,12 +485,12 @@ Additionally, the dataset verification also analyzes the distribution of sample 
 
 
 ### 4.1.3 Dataset Format Conversion / Dataset Splitting (Optional)
-After completing data validation, you can convert the dataset format and re-split the training/validation ratio by **modifying the configuration file** or **appending hyperparameters**.
+After completing data validation, you can convert the dataset format and re-split the training/validation ratio by <b>modifying the configuration file</b> or <b>appending hyperparameters</b>.
 
 <details>
   <summary>👉 <b>Details of Format Conversion / Dataset Splitting (Click to Expand)</b></summary>
 
-**(1) Dataset Format Conversion**
+<b>(1) Dataset Format Conversion</b>
 
 Object detection supports converting datasets in `VOC` and `LabelMe` formats to `COCO` format.
 
@@ -533,7 +533,7 @@ python main.py -c paddlex/configs/object_detection/PicoDet-S.yaml \
     -o CheckDataset.convert.src_dataset_type=LabelMe
 ```
 
-**(2) Dataset Splitting**
+<b>(2) Dataset Splitting</b>
 
 Parameters for dataset splitting can be set by modifying the fields under `CheckDataset` in the configuration file. Examples of some parameters in the configuration file are as follows:
 
@@ -604,7 +604,7 @@ Other related parameters can be set by modifying the `Global` and `Train` fields
 * `.pdparams`, `.pdema`, `.pdopt.pdstate`, `.pdiparams`, `.pdmodel`: Model weight-related files, including network parameters, optimizer, EMA, static graph network parameters, static graph network structure, etc.;
 </details>
 
-## **4.3 Model Evaluation**
+## <b>4.3 Model Evaluation</b>
 After completing model training, you can evaluate the specified model weights file on the validation set to verify the model's accuracy. Using PaddleX for model evaluation can be done with a single command:
 
 ```bash
@@ -627,7 +627,7 @@ After completing the model evaluation, an `evaluate_result.json` file will be ge
 
 </details>
 
-### **4.4 Model Inference and Integration**
+### <b>4.4 Model Inference and Integration</b>
 After completing model training and evaluation, you can use the trained model weights for inference predictions or Python integration.
 
 #### 4.4.1 Model Inference
@@ -650,10 +650,10 @@ Other related parameters can be set by modifying the `Global` and `Predict` fiel
 #### 4.4.2 Model Integration
 The model can be directly integrated into the PaddleX pipelines or directly into your own project.
 
-1.**Pipeline Integration**
+1.<b>Pipeline Integration</b>
 
 The object detection module can be integrated into the [General Object Detection Pipeline](../../../pipeline_usage/tutorials/cv_pipelines/object_detection.en.md) of PaddleX. Simply replace the model path to update the object detection module of the relevant pipeline. In pipeline integration, you can use high-performance inference and service-oriented deployment to deploy your model.
 
-2.**Module Integration**
+2.<b>Module Integration</b>
 
 The weights you produce can be directly integrated into the object detection module. Refer to the Python example code in [Quick Integration](#iii-quick-integration), and simply replace the model with the path to your trained model.

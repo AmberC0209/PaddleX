@@ -139,7 +139,7 @@ pdlabel # Abbreviation, identical to paddlelabel
   * Click the rectangular selection button on the left.
   * Draw a bounding box around the desired region in the image, ensuring semantic partitioning. If there are multiple columns, annotate each separately.
   * After completing the annotation, the result will appear in the lower-right corner. Check if the annotation is correct.
-  * Once done, click **Project Overview**.
+  * Once done, click <b>Project Overview</b>.
 
 <img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/13.png">
 
@@ -201,7 +201,7 @@ python main.py -c paddlex/configs/multilabel_classification/PP-LCNet_x1_0_ML.yam
 ```
 
 ## 5. Data Format
-The dataset defined by PaddleX for image multi-label classification tasks is named **MLClsDataset**, with the following directory structure and annotation format:
+The dataset defined by PaddleX for image multi-label classification tasks is named <b>MLClsDataset</b>, with the following directory structure and annotation format:
 
 ```bash
 dataset_dir    # Root directory of the dataset, the directory name can be changed

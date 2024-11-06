@@ -81,7 +81,7 @@ python main.py -c paddlex/configs/general_recognition/PP-ShiTuV2_rec.yaml \
     -o CheckDataset.convert.src_dataset_type=LabelMe
 ```
 ## 3. 数据格式
-PaddleX 针对图像分类任务定义的数据集，名称是 **ShiTuRecDataset**，组织结构和标注格式如下：
+PaddleX 针对图像分类任务定义的数据集，名称是 <b>ShiTuRecDataset</b>，组织结构和标注格式如下：
 
 ```bash
 dataset_dir    # 数据集根目录，目录名称可以改变

@@ -6,20 +6,20 @@
 ### PaddleX v3.0.0beta1 (9.30/2024)
 PaddleX 3.0 Beta1 offers over 200 models accessible through a streamlined Python API for one-click deployment; realizes full-process model development based on unified commands, and opens source the foundational capabilities of the PP-ChatOCRv3 special model pipeline; supports high-performance inference and service-oriented deployment for over 100 models, as well as edge deployment for 7 key vision models; and fully adapts the development process of over 70 models to Huawei Ascend 910B, and over 15 models to XPU and MLU.
 
-- **Rich Models with One-click Deployment**: Integrates over 200 PaddlePaddle models across key domains such as document image intelligent analysis, OCR, object detection, and time series prediction into 13 model pipelines, enabling rapid model experience through a streamlined Python API. Additionally, supports over 20 individual functional modules for convenient model combination.
-- **Enhanced Efficiency and Lowered Thresholds**: Implements full-process model development based on a graphical interface and unified commands, creating 8 special model pipelines that combine large and small models, leverage large model semi-supervised learning, and multi-model fusion, significantly reducing iteration costs.
-- **Flexible Deployment Across Scenarios**: Supports various deployment methods including high-performance, service-oriented, and edge deployment, ensuring efficient model operation and rapid response across different application scenarios.
-- **Efficient Support for Mainstream Hardware**: Seamlessly switches between NVIDIA GPUs, XPU, Ascend, and MLU, ensuring efficient operation.
+- <b>Rich Models with One-click Deployment</b>: Integrates over 200 PaddlePaddle models across key domains such as document image intelligent analysis, OCR, object detection, and time series prediction into 13 model pipelines, enabling rapid model experience through a streamlined Python API. Additionally, supports over 20 individual functional modules for convenient model combination.
+- <b>Enhanced Efficiency and Lowered Thresholds</b>: Implements full-process model development based on a graphical interface and unified commands, creating 8 special model pipelines that combine large and small models, leverage large model semi-supervised learning, and multi-model fusion, significantly reducing iteration costs.
+- <b>Flexible Deployment Across Scenarios</b>: Supports various deployment methods including high-performance, service-oriented, and edge deployment, ensuring efficient model operation and rapid response across different application scenarios.
+- <b>Efficient Support for Mainstream Hardware</b>: Seamlessly switches between NVIDIA GPUs, XPU, Ascend, and MLU, ensuring efficient operation.
 
 ### PaddleX v3.0.0beta (6.27/2024)
 PaddleX 3.0beta integrates the advantages of the PaddlePaddle ecosystem, covering 7 major scenario tasks, constructs 16 model pipelines, and provides a low-code development mode to assist developers in realizing full-process model development on various mainstream hardware.
 
-- **Basic Model Pipelines (Rich Models, Comprehensive Scenarios)**: Selects 68 high-quality PaddlePaddle models, covering tasks such as image classification, object detection, image segmentation, OCR, text image layout analysis, and time series prediction.
-- **Special Model Pipelines (Significant Efficiency Improvement)**: Provides efficient solutions combining large and small models, large model semi-supervised learning, and multi-model fusion.
-- **Low-code Development Mode (Convenient Development and Deployment)**: Offers both zero-code and low-code development methods.
+- <b>Basic Model Pipelines (Rich Models, Comprehensive Scenarios)</b>: Selects 68 high-quality PaddlePaddle models, covering tasks such as image classification, object detection, image segmentation, OCR, text image layout analysis, and time series prediction.
+- <b>Special Model Pipelines (Significant Efficiency Improvement)</b>: Provides efficient solutions combining large and small models, large model semi-supervised learning, and multi-model fusion.
+- <b>Low-code Development Mode (Convenient Development and Deployment)</b>: Offers both zero-code and low-code development methods.
   - Zero-code Development: Users can interactively submit background training tasks through a graphical user interface (GUI), bridging online and offline deployment, and supporting API-based online service invocation.
   - Low-code Development: Achieves full-process development across 16 model pipelines through unified API interfaces, while supporting user-defined model process serialization.
-- **Multi-hardware Local Support (Strong Compatibility)**: Supports NVIDIA GPUs, XPU, Ascend, and MLU, enabling pure offline usage.
+- <b>Multi-hardware Local Support (Strong Compatibility)</b>: Supports NVIDIA GPUs, XPU, Ascend, and MLU, enabling pure offline usage.
 
 ### PaddleX v2.1.0 (12.10/2021)
 
@@ -78,7 +78,7 @@ Added lightweight Python-based service deployment. Experience it now!
 - Industry Case Updates
  > - Added an industrial quality inspection case, providing GPU and CPU deployment scenarios for industrial quality inspection, along with optimization strategies related to quality inspection.
 
-- **New RESTful API Module**
+- <b>New RESTful API Module</b>
 A new RESTful API module is added, enabling developers to quickly develop training platforms based on PaddleX.
  > - Added an HTML Demo based on RESTful API.
  > - Added a Remote version of the visualization client based on RESTful API.
@@ -123,15 +123,15 @@ Added deployment solutions for models through OpenVINO.
 
 ### PaddleX v1.0.0 (5.21/2020)
 
-- **End-to-End Pipeline**
-  - **Data Preparation**: Supports the [EasyData Intelligent Data Service Platform](https://ai.baidu.com/easydata/) data protocol, facilitating intelligent annotation and low-quality data cleaning through the platform. It is also compatible with mainstream annotation tool protocols, helping developers complete data preparation faster.
-  - **Model Training**: Integrates [PaddleClas](https://github.com/PaddlePaddle/PaddleClas), [PaddleDetection](https://github.com/PaddlePaddle/PaddleDetection), [PaddleSeg](https://github.com/PaddlePaddle/PaddleSeg) vision development kits, providing a rich selection of high-quality pre-trained models for faster achievement of industrial-grade model performance.
-  - **Model Tuning**: Built-in model interpretability modules and [VisualDL](https://github.com/PaddlePaddle/VisualDL) visualization analysis components, providing abundant information for better understanding and optimizing models.
-  - **Secure Multi-platform Deployment**: Integrated with [PaddleSlim](https://github.com/PaddlePaddle/PaddleSlim) model compression tools and **model encryption deployment modules**, facilitating high-performance and secure multi-platform deployment in conjunction with Paddle Inference or [Paddle Lite](https://github.com/PaddlePaddle/Paddle-Lite).
+- <b>End-to-End Pipeline</b>
+  - <b>Data Preparation</b>: Supports the [EasyData Intelligent Data Service Platform](https://ai.baidu.com/easydata/) data protocol, facilitating intelligent annotation and low-quality data cleaning through the platform. It is also compatible with mainstream annotation tool protocols, helping developers complete data preparation faster.
+  - <b>Model Training</b>: Integrates [PaddleClas](https://github.com/PaddlePaddle/PaddleClas), [PaddleDetection](https://github.com/PaddlePaddle/PaddleDetection), [PaddleSeg](https://github.com/PaddlePaddle/PaddleSeg) vision development kits, providing a rich selection of high-quality pre-trained models for faster achievement of industrial-grade model performance.
+  - <b>Model Tuning</b>: Built-in model interpretability modules and [VisualDL](https://github.com/PaddlePaddle/VisualDL) visualization analysis components, providing abundant information for better understanding and optimizing models.
+  - <b>Secure Multi-platform Deployment</b>: Integrated with [PaddleSlim](https://github.com/PaddlePaddle/PaddleSlim) model compression tools and <b>model encryption deployment modules</b>, facilitating high-performance and secure multi-platform deployment in conjunction with Paddle Inference or [Paddle Lite](https://github.com/PaddlePaddle/Paddle-Lite).
 
-- **Integrated Industrial Practices**
+- <b>Integrated Industrial Practices</b>
   - Selects mature model architectures from PaddlePaddle's industrial practices, opening up case study tutorials to accelerate developers' industrial implementation.
 
-- **Easy-to-Use and Easy-to-Integrate**
+- <b>Easy-to-Use and Easy-to-Integrate</b>
   - Unified and user-friendly end-to-end APIs, enabling model training in 5 steps and high-performance Python/C++ deployment with just 10 lines of code.
   - Provides PaddleX-GUI, a cross-platform visualization tool centered on PaddleX, for a quick experience of the full PaddlePaddle deep learning pipeline.

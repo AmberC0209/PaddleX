@@ -5,14 +5,14 @@
 ## 1. Introduction to the General Layout Parsing Pipeline
 Layout parsing is a technology that extracts structured information from document images, primarily used to convert complex document layouts into machine-readable data formats. This technology has extensive applications in document management, information extraction, and data digitization. By combining Optical Character Recognition (OCR), image processing, and machine learning algorithms, layout parsing can identify and extract text blocks, titles, paragraphs, images, tables, and other layout elements from documents. The process typically involves three main steps: layout analysis, element analysis, and data formatting, ultimately generating structured document data to improve data processing efficiency and accuracy.
 
-The **General Layout Parsing Pipeline** includes modules for table structure recognition, layout region analysis, text detection, text recognition, formula recognition, seal text detection, text image rectification, and document image orientation classification.
+The <b>General Layout Parsing Pipeline</b> includes modules for table structure recognition, layout region analysis, text detection, text recognition, formula recognition, seal text detection, text image rectification, and document image orientation classification.
 
-**If you prioritize model accuracy, choose a model with higher accuracy. If you prioritize inference speed, choose a model with faster inference. If you prioritize model storage size, choose a model with a smaller storage size.**
+<b>If you prioritize model accuracy, choose a model with higher accuracy. If you prioritize inference speed, choose a model with faster inference. If you prioritize model storage size, choose a model with a smaller storage size.</b>
 
 <details>
    <summary> 👉Model List Details</summary>
 
-**Table Structure Recognition Module Models**:
+<b>Table Structure Recognition Module Models</b>:
 
 <table>
   <tr>
@@ -41,9 +41,9 @@ The **General Layout Parsing Pipeline** includes modules for table structure rec
   </tr>
 </table>
 
-**Note: The above accuracy metrics are measured on PaddleX's internally built English table recognition dataset. All GPU inference times are based on NVIDIA Tesla T4 machines with FP32 precision. CPU inference speeds are based on Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.**
+<b>Note: The above accuracy metrics are measured on PaddleX's internally built English table recognition dataset. All GPU inference times are based on NVIDIA Tesla T4 machines with FP32 precision. CPU inference speeds are based on Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
 
-**Layout Detection Module Models**:
+<b>Layout Detection Module Models</b>:
 
 <table>
 <thead>
@@ -115,9 +115,9 @@ The **General Layout Parsing Pipeline** includes modules for table structure rec
 </tr>
 </tbody>
 </table>
-**Note: The evaluation set for the above accuracy metrics is PaddleOCR's self-built layout region analysis dataset, containing 10,000 images of common document types, including English and Chinese papers, magazines, research reports, etc. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.**
+<b>Note: The evaluation set for the above accuracy metrics is PaddleOCR's self-built layout region analysis dataset, containing 10,000 images of common document types, including English and Chinese papers, magazines, research reports, etc. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
 
-**Text Detection Module Models**:
+<b>Text Detection Module Models</b>:
 
 <table>
 <thead>
@@ -149,9 +149,9 @@ The **General Layout Parsing Pipeline** includes modules for table structure rec
 </tr>
 </tbody>
 </table>
-**Note: The evaluation set for the above accuracy metrics is PaddleOCR's self-built Chinese dataset, covering street scenes, web images, documents, and handwritten texts, with 500 images for detection. All GPU inference times are based on NVIDIA Tesla T4 machines with FP32 precision. CPU inference speeds are based on Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.**
+<b>Note: The evaluation set for the above accuracy metrics is PaddleOCR's self-built Chinese dataset, covering street scenes, web images, documents, and handwritten texts, with 500 images for detection. All GPU inference times are based on NVIDIA Tesla T4 machines with FP32 precision. CPU inference speeds are based on Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
 
-**Text Recognition Module Models**:
+<b>Text Recognition Module Models</b>:
 
 <table>
     <tr>
@@ -179,7 +179,7 @@ The **General Layout Parsing Pipeline** includes modules for table structure rec
     </tr>
 </table>
 
-**Note: The evaluation set for the above accuracy metrics is PaddleOCR's self-built Chinese dataset, covering street scenes, web images, documents, and handwritten texts, with 11,000 images for text recognition. All GPU inference times are based on NVIDIA Tesla T4 machines with FP32 precision. CPU inference speeds are based on Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.**
+<b>Note: The evaluation set for the above accuracy metrics is PaddleOCR's self-built Chinese dataset, covering street scenes, web images, documents, and handwritten texts, with 11,000 images for text recognition. All GPU inference times are based on NVIDIA Tesla T4 machines with FP32 precision. CPU inference speeds are based on Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
 
 <table >
     <tr>
@@ -202,7 +202,7 @@ The **General Layout Parsing Pipeline** includes modules for table structure rec
     </tr>
 </table>
 
-**Note: The evaluation set for the above accuracy metrics is the [PaddleOCR Algorithm Model Challenge - Task 1: OCR End-to-End Recognition Task](https://aistudio.baidu.com/competition/detail/1131/0/introduction) A-list. GPU inference time is based on NVIDIA Tesla T4 with FP32 precision. CPU inference speed is based on Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.**
+<b>Note: The evaluation set for the above accuracy metrics is the [PaddleOCR Algorithm Model Challenge - Task 1: OCR End-to-End Recognition Task](https://aistudio.baidu.com/competition/detail/1131/0/introduction) A-list. GPU inference time is based on NVIDIA Tesla T4 with FP32 precision. CPU inference speed is based on Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
 
 <table >
     <tr>
@@ -225,9 +225,9 @@ The **General Layout Parsing Pipeline** includes modules for table structure rec
     </tr>
 </table>
 
-**Note: The evaluation set for the above accuracy metrics is the [PaddleOCR Algorithm Model Challenge - Task 1: OCR End-to-End Recognition Task](https://aistudio.baidu.com/competition/detail/1131/0/introduction) B-list. GPU inference time is based on NVIDIA Tesla T4 with FP32 precision. CPU inference speed is based on Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.**
+<b>Note: The evaluation set for the above accuracy metrics is the [PaddleOCR Algorithm Model Challenge - Task 1: OCR End-to-End Recognition Task](https://aistudio.baidu.com/competition/detail/1131/0/introduction) B-list. GPU inference time is based on NVIDIA Tesla T4 with FP32 precision. CPU inference speed is based on Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
 
-**Formula Recognition Module Models**:
+<b>Formula Recognition Module Models</b>:
 
 <table>
 <thead>
@@ -253,9 +253,9 @@ The **General Layout Parsing Pipeline** includes modules for table structure rec
 </tr>
 </tbody>
 </table>
-**Note: The above accuracy metrics are measured on the [LaTeX-OCR Formula Recognition Test Set](https://drive.google.com/drive/folders/13CA4vAmOmD_I_dSbvLp-Lf0s6KiaNfuO). All GPU inference times are based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speeds are based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.**
+<b>Note: The above accuracy metrics are measured on the [LaTeX-OCR Formula Recognition Test Set](https://drive.google.com/drive/folders/13CA4vAmOmD_I_dSbvLp-Lf0s6KiaNfuO). All GPU inference times are based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speeds are based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
 
-**Seal Text Detection Module Models**:
+<b>Seal Text Detection Module Models</b>:
 
 <table>
 <thead>
@@ -287,9 +287,9 @@ The **General Layout Parsing Pipeline** includes modules for table structure rec
 </tr>
 </tbody>
 </table>
-**Note: The above accuracy metrics are evaluated on a self-built dataset containing 500 circular seal images. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.**
+<b>Note: The above accuracy metrics are evaluated on a self-built dataset containing 500 circular seal images. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
 
-**Text Image Rectification Module Models**:
+<b>Text Image Rectification Module Models</b>:
 
 <table>
 <thead>
@@ -309,9 +309,9 @@ The **General Layout Parsing Pipeline** includes modules for table structure rec
 </tr>
 </tbody>
 </table>
-**The accuracy metrics of the models are measured from the [DocUNet benchmark](https://www3.cs.stonybrook.edu/~cvl/docunet.html).**
+<b>The accuracy metrics of the models are measured from the [DocUNet benchmark](https://www3.cs.stonybrook.edu/~cvl/docunet.html).</b>
 
-**Document Image Orientation Classification Module Models**:
+<b>Document Image Orientation Classification Module Models</b>:
 
 <table>
 <thead>
@@ -335,7 +335,7 @@ The **General Layout Parsing Pipeline** includes modules for table structure rec
 </tr>
 </tbody>
 </table>
-**Note: The above accuracy metrics are evaluated on a self-built dataset covering various scenarios such as certificates and documents, containing 1000 images. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.**
+<b>Note: The above accuracy metrics are evaluated on a self-built dataset covering various scenarios such as certificates and documents, containing 1000 images. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
 
 </details>
 
@@ -551,9 +551,9 @@ To directly apply the pipeline in your Python project, refer to the example code
 
 Additionally, PaddleX offers three other deployment methods, detailed as follows:
 
-🚀 **High-Performance Inference**: In production environments, many applications require stringent performance metrics, especially response speed, to ensure efficient operation and smooth user experience. PaddleX provides a high-performance inference plugin that deeply optimizes model inference and pre/post-processing for significant end-to-end speedups. For detailed instructions on high-performance inference, refer to the [PaddleX High-Performance Inference Guide](../../../pipeline_deploy/high_performance_inference.en.md).
+🚀 <b>High-Performance Inference</b>: In production environments, many applications require stringent performance metrics, especially response speed, to ensure efficient operation and smooth user experience. PaddleX provides a high-performance inference plugin that deeply optimizes model inference and pre/post-processing for significant end-to-end speedups. For detailed instructions on high-performance inference, refer to the [PaddleX High-Performance Inference Guide](../../../pipeline_deploy/high_performance_inference.en.md).
 
-☁️ **Service Deployment**: Service deployment is a common form in production environments, where reasoning functions are encapsulated as services accessible via network requests. PaddleX enables cost-effective service deployment of pipelines. For detailed instructions on service deployment, refer to the [PaddleX Service Deployment Guide](../../../pipeline_deploy/service_deploy.md).
+☁️ <b>Service Deployment</b>: Service deployment is a common form in production environments, where reasoning functions are encapsulated as services accessible via network requests. PaddleX enables cost-effective service deployment of pipelines. For detailed instructions on service deployment, refer to the [PaddleX Service Deployment Guide](../../../pipeline_deploy/service_deploy.md).
 
 Below are the API references and multi-language service invocation examples:
 
@@ -581,7 +581,7 @@ For all operations provided by the service:
 
 Operations provided by the service:
 
-- **`infer`**
+- <b>`infer`</b>
 
     Performs layout parsing.
 
@@ -673,25 +673,25 @@ for res in result["layoutParsingResults"]:
 </details>
 <br/>
 
-📱 **Edge Deployment**: Edge deployment refers to placing computational and data processing capabilities directly on user devices, enabling them to process data without relying on remote servers. PaddleX supports deploying models on edge devices such as Android. For detailed edge deployment procedures, please refer to the [PaddleX Edge Deployment Guide](../../../pipeline_deploy/edge_deploy.en.md).
+📱 <b>Edge Deployment</b>: Edge deployment refers to placing computational and data processing capabilities directly on user devices, enabling them to process data without relying on remote servers. PaddleX supports deploying models on edge devices such as Android. For detailed edge deployment procedures, please refer to the [PaddleX Edge Deployment Guide](../../../pipeline_deploy/edge_deploy.en.md).
 
 You can choose an appropriate method to deploy your model pipeline based on your needs, and proceed with subsequent AI application integration.
 
 ## 4. Custom Development
-If the default model weights provided by the general layout parsing pipeline do not meet your requirements in terms of accuracy or speed for your specific scenario, you can try to further fine-tune the existing models using **your own domain-specific or application-specific data** to improve the recognition performance of the general layout parsing pipeline in your scenario.
+If the default model weights provided by the general layout parsing pipeline do not meet your requirements in terms of accuracy or speed for your specific scenario, you can try to further fine-tune the existing models using <b>your own domain-specific or application-specific data</b> to improve the recognition performance of the general layout parsing pipeline in your scenario.
 
 ### 4.1 Model Fine-tuning
 Since the general layout parsing pipeline consists of 7 modules, unsatisfactory performance may stem from any of these modules.
 
 You can analyze images with poor recognition results and follow the guidelines below for analysis and model fine-tuning:
 
-* Incorrect table structure detection (e.g., wrong row/column recognition, incorrect cell positions) may indicate deficiencies in the table structure recognition module. You need to refer to the **Customization** section in the [Table Structure Recognition Module Development Tutorial](../../../module_usage/tutorials/ocr_modules/table_structure_recognition.md) and fine-tune the table structure recognition model using your private dataset.
-* Misplaced layout elements (e.g., incorrect positioning of tables, seals) may suggest issues with the layout detection module. You should consult the **Customization** section in the [Layout Detection Module Development Tutorial](../../../module_usage/tutorials/ocr_modules/layout_detection.md) and fine-tune the layout detection model with your private dataset.
-* Frequent undetected texts (i.e., text missing detection) indicate potential weaknesses in the text detection model. Follow the **Customization** section in the [Text Detection Module Development Tutorial](../../../module_usage/tutorials/ocr_modules/text_detection.md) to fine-tune the text detection model using your private dataset.
-* High text recognition errors (i.e., recognized text content does not match the actual text) suggest further improvements to the text recognition model. Refer to the **Customization** section in the [Text Recognition Module Development Tutorial](../../../module_usage/tutorials/ocr_modules/text_recognition.md) to fine-tune the text recognition model.
-* Frequent recognition errors in detected seal texts indicate the need for improvements to the seal text detection model. Consult the **Customization** section in the [Seal Text Detection Module Development Tutorials](../../../module_usage/tutorials/ocr_modules/) to fine-tune the seal text detection model.
+* Incorrect table structure detection (e.g., wrong row/column recognition, incorrect cell positions) may indicate deficiencies in the table structure recognition module. You need to refer to the <b>Customization</b> section in the [Table Structure Recognition Module Development Tutorial](../../../module_usage/tutorials/ocr_modules/table_structure_recognition.md) and fine-tune the table structure recognition model using your private dataset.
+* Misplaced layout elements (e.g., incorrect positioning of tables, seals) may suggest issues with the layout detection module. You should consult the <b>Customization</b> section in the [Layout Detection Module Development Tutorial](../../../module_usage/tutorials/ocr_modules/layout_detection.md) and fine-tune the layout detection model with your private dataset.
+* Frequent undetected texts (i.e., text missing detection) indicate potential weaknesses in the text detection model. Follow the <b>Customization</b> section in the [Text Detection Module Development Tutorial](../../../module_usage/tutorials/ocr_modules/text_detection.md) to fine-tune the text detection model using your private dataset.
+* High text recognition errors (i.e., recognized text content does not match the actual text) suggest further improvements to the text recognition model. Refer to the <b>Customization</b> section in the [Text Recognition Module Development Tutorial](../../../module_usage/tutorials/ocr_modules/text_recognition.md) to fine-tune the text recognition model.
+* Frequent recognition errors in detected seal texts indicate the need for improvements to the seal text detection model. Consult the <b>Customization</b> section in the [Seal Text Detection Module Development Tutorials](../../../module_usage/tutorials/ocr_modules/) to fine-tune the seal text detection model.
 * High recognition errors in detected formulas (i.e., recognized formula content does not match the actual formula) suggest further enhancements to the formula recognition model. Follow the [Customization](../../../module_usage/tutorials/ocr_modules/formula_recognition.md#Customization) section in the [Formula Recognition Module Development Tutorial](../../../module_usage/tutorials/ocr_modules/formula_recognition.md) to fine-tune the formula recognition model.
-* Frequent misclassifications of document or certificate orientations with text areas indicate the need for improvements to the document image orientation classification model. Refer to the **Customization** section in the [Document Image Orientation Classification Module Development Tutorial](../../../module_usage/tutorials/ocr_modules/doc_img_orientation_classification.md) to fine-tune the model.
+* Frequent misclassifications of document or certificate orientations with text areas indicate the need for improvements to the document image orientation classification model. Refer to the <b>Customization</b> section in the [Document Image Orientation Classification Module Development Tutorial](../../../module_usage/tutorials/ocr_modules/doc_img_orientation_classification.md) to fine-tune the model.
 
 ### 4.2 Model Application
 After fine-tuning your model with a private dataset, you will obtain local model weights files.
@@ -718,7 +718,7 @@ To use the fine-tuned model weights, simply modify the production line configura
 Subsequently, refer to the command line or Python script methods in the local experience to load the modified production line configuration file.
 
 ## 5. Multi-Hardware Support
-PaddleX supports various mainstream hardware devices such as NVIDIA GPUs, Kunlun XPU, Ascend NPU, and Cambricon MLU. **Simply modify the `--device` parameter** to seamlessly switch between different hardware.
+PaddleX supports various mainstream hardware devices such as NVIDIA GPUs, Kunlun XPU, Ascend NPU, and Cambricon MLU. <b>Simply modify the `--device` parameter</b> to seamlessly switch between different hardware.
 
 For example, if you use an NVIDIA GPU for inference in the layout parsing pipeline, the Python command is:
 

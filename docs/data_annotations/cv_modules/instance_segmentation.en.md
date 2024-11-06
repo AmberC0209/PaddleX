@@ -90,7 +90,7 @@ labelme images --labels label.txt --nodata --autosave --output annotations
 
 ## 3. Data Format
 
-PaddleX defines a dataset named **COCOInstSegDataset** for instance segmentation tasks, with the following organizational structure and annotation format:
+PaddleX defines a dataset named <b>COCOInstSegDataset</b> for instance segmentation tasks, with the following organizational structure and annotation format:
 
 ```ruby
 dataset_dir                  # Root directory of the dataset, the directory name can be changed
@@ -104,7 +104,7 @@ Annotation files adopt the `COCO` format. Please refer to the above specificatio
 
 When using PaddleX 2.x version for instance segmentation datasets, please refer to the corresponding format conversion section in [ Instance Segmentation Module Development Tutorial](../../module_usage/tutorials/cv_modules/instance_segmentation.en.md) to convert VOC format datasets to COCO datasets. (Note in module development documentation)
 
-**Note**:
+<b>Note</b>:
 
 * Instance segmentation data requires the use of the `COCO` data format to annotate the pixel boundaries and categories of each target area in each image in the dataset. The polygon boundaries (segmentation) of objects are represented as `[x1,y1,x2,y2,...,xn,yn]`, where `(xn,yn)` denotes the coordinates of each corner point of the polygon. Annotation information is stored in `json` files under the `annotations` directory, with separate files for the training set (`instance_train.json`) and validation set (`instance_val.json`).
 * If you have a batch of unlabeled data, we recommend using `LabelMe` for data annotation. PaddleX Pipelines support data format conversion for datasets annotated with `LabelMe`.

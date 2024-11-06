@@ -26,7 +26,7 @@
 </tr>
 </tbody>
 </table>
-**以上模型精度指标测量自 MVTec_AD 数据集。**
+<b>以上模型精度指标测量自 MVTec_AD 数据集。</b>
 
 
 ## 三、快速集成
@@ -53,7 +53,7 @@ for res in output:
 如果你追求更高精度的现有模型，可以使用PaddleX的二次开发能力，开发更好的图像异常检测模型。在使用PaddleX开发图像异常检测模型之前，请务必安装PaddleSeg插件，安装过程可以参考[PaddleX本地安装教程](../../../installation/installation.md)。
 
 ### 4.1 数据准备
-在进行模型训练前，需要准备相应任务模块的数据集。PaddleX 针对每一个模块提供了数据校验功能，**只有通过数据校验的数据才可以进行模型训练**。此外，PaddleX为每一个模块都提供了Demo数据集，您可以基于官方提供的 Demo 数据完成后续的开发。可以参考[PaddleX语义分割任务模块数据标注教程](../../../data_annotations/cv_modules/semantic_segmentation.md)。
+在进行模型训练前，需要准备相应任务模块的数据集。PaddleX 针对每一个模块提供了数据校验功能，<b>只有通过数据校验的数据才可以进行模型训练</b>。此外，PaddleX为每一个模块都提供了Demo数据集，您可以基于官方提供的 Demo 数据完成后续的开发。可以参考[PaddleX语义分割任务模块数据标注教程](../../../data_annotations/cv_modules/semantic_segmentation.md)。
 
 #### 4.1.1 Demo 数据下载
 您可以参考下面的命令将 Demo 数据集下载到指定文件夹：
@@ -143,7 +143,7 @@ python main.py -c paddlex/configs/anomaly_detection/STFPM.yaml \
 * `.pdparams`、`.pdema`、`.pdopt.pdstate`、`.pdiparams`、`.pdmodel`：模型权重相关文件，包括网络参数、优化器、EMA、静态图网络参数、静态图网络结构等；
 </details>
 
-### **4.3 模型评估**
+### <b>4.3 模型评估</b>
 在完成模型训练后，可以对指定的模型权重文件在验证集上进行评估，验证模型精度。使用 PaddleX 进行模型评估，一条命令即可完成模型的评估：
 
 ```bash
@@ -168,7 +168,7 @@ python main.py -c paddlex/configs/anomaly_detection/STFPM.yaml \
 
 </details>
 
-### **4.4 模型推理**
+### <b>4.4 模型推理</b>
 在完成模型的训练和评估后，即可使用训练好的模型权重进行推理预测或者进行Python集成。
 
 #### 4.4.1 模型推理
@@ -190,10 +190,10 @@ python main.py -c paddlex/configs/anomaly_detection/STFPM.yaml \
 #### 4.4.2 模型集成
 模型可以直接集成到 PaddleX 产线中，也可以直接集成到您自己的项目中。
 
-1.**产线集成**
+1.<b>产线集成</b>
 
 图像异常检测模块可以集成的PaddleX产线有[图像异常检测产线](../../../pipeline_usage/tutorials/cv_pipelines/image_anomaly_detection.md)，只需要替换模型路径即可完成相关产线的图像异常检测模块的模型更新。在产线集成中，你可以使用高性能部署和服务化部署来部署你得到的模型。
 
-2.**模块集成**
+2.<b>模块集成</b>
 
 您产出的权重可以直接集成到图像异常检测模块中，可以参考[快速集成](#三快速集成)的 Python 示例代码，只需要将模型替换为你训练的到的模型路径即可。

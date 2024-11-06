@@ -8,7 +8,7 @@ PaddleX 提供了丰富的模型产线，模型产线由一个或多个模型组
 首先，需要根据您的任务场景，选择对应的 PaddleX 产线，本任务目标就是基于心跳监测数据对时序分类模型进行训练，实现对心跳时间序列状况的分类。了解到这个任务属于时序分类任务，对应 PaddleX 的时序分类产线。如果无法确定任务和产线的对应关系，您可以在 PaddleX 支持的 [PaddleX产线列表(CPU/GPU)](../support_list/pipelines_list.md) 中了解相关产线的能力介绍。
 
 ## 2. 快速体验
-PaddleX 提供了两种体验的方式，一种是可以直接通过 PaddleX 在本地体验，另外一种是可以在 **AI Studio 星河社区**上体验。
+PaddleX 提供了两种体验的方式，一种是可以直接通过 PaddleX 在本地体验，另外一种是可以在 <b>AI Studio 星河社区</b>上体验。
 
 * 本地体验方式：
 ```
@@ -43,7 +43,7 @@ PaddleX 提供了1个端到端的时序分类模型，具体可参考 [模型列
 </tr>
 </tbody>
 </table>
-**注：以上精度指标的评估集是 **UWaveGestureLibrary**。**
+<b>注：以上精度指标的评估集是 </b>UWaveGestureLibrary<b>。</b>
 
 ## 4. 数据准备和校验
 ### 4.1 数据准备
@@ -58,7 +58,7 @@ cd /path/to/paddlex
 wget https://paddle-model-ecology.bj.bcebos.com/paddlex/data/ts_classify_examples.tar -P ./dataset
 tar -xf ./dataset/ts_classify_examples.tar -C ./dataset/
 ```
-* **数据注意事项**
+* <b>数据注意事项</b>
   * 基于收集的真实数据，明确时序数据的分类目标，并定义相应的分类标签。例如，在股票价格分类中，标签可能是“上涨”或“下跌”。对于在一段时间是“上涨”的时间序列，可以作为一个样本（group），即这段时间序列每个时间点都具有共同的 group_id, 标签列我们都定义为“上涨”标签；对于在一段时间是“下跌”的时间序列，可以作为一个样本（group），即这段时间序列每个时间点都具有共同的 group_id, 标签列我们都定义为“下跌”标签。每一个 group，就是一个分类样本。
   * 时间频率一致：确保所有数据序列的时间频率一致，如每小时、每日或每周，对于不一致的时间序列，可以通过重采样方法调整到统一的时间频率。
   * 时间序列长度一致：确保每一个group的时间序列的长度一致。
@@ -104,7 +104,7 @@ python main.py -c paddlex/configs/ts_classification/TimesNet_cls.yaml \
 * attributes.val_samples：该数据集验证集样本数量为 83025
 * attributes.train_table：该数据集训练集样本示例数据行；
 * attributes.val_table：该数据集验证集样本示例数据行；
-**注**：只有通过数据校验的数据才可以训练和评估。
+<b>注</b>：只有通过数据校验的数据才可以训练和评估。
 
 ### 4.3 数据集格式转换/数据集划分（非必选）
 如需对数据集格式进行转换或是重新划分数据集，可参考 [时序分类模块开发教程](../module_usage/tutorials/time_series_modules/time_series_classification.md)中的4.1.3。
@@ -144,7 +144,7 @@ PaddleX 中每个模型都提供了模型开发的配置文件，用于设置相
   * `static_cov_cols`：代表时序的类别编号列，同一个样本的标签相同。结合自己的数据设置类别的列名称，如：label。
 更多超参数介绍，请参考 [PaddleX时序任务模型配置文件参数说明](../module_usage/instructions/config_parameters_time_series.md)。
 
-**注：**
+<b>注：</b>
 
 * 以上参数可以通过追加令行参数的形式进行设置，如指定模式为模型训练：`-o Global.mode=train`；指定前 1 卡 gpu 训练：`-o Global.device=gpu:0`；设置训练轮次数为 10：`-o Train.epochs_iters=10`；
 * 模型训练过程中，PaddleX 会自动保存模型权重文件，默认为`output`，如需指定保存路径，可通过配置文件中 `-o Global.output` 字段。
@@ -158,7 +158,7 @@ PaddleX 中每个模型都提供了模型开发的配置文件，用于设置相
 在完成模型训练后，所有产出保存在指定的输出目录（默认为`./output/`）下，通常有以下产出：
 
 
-**训练产出解释:**
+<b>训练产出解释:</b>
 
 在完成模型训练后，所有产出保存在指定的输出目录（默认为`./output/`）下，通常有以下产出：
 
@@ -185,7 +185,7 @@ PaddleX 中每个模型都提供了模型开发的配置文件，用于设置相
 * 指定验证数据集路径：`-o Global.dataset_dir`
 其他相关参数均可通过修改`.yaml`配置文件中的`Global`和`Evaluate`下的字段来进行设置，详细请参考[PaddleX时序任务模型配置文件参数说明](../module_usage/instructions/config_parameters_time_series.md)。
 
-**注：** 在模型评估时，需要指定模型权重文件路径，每个配置文件中都内置了默认的权重保存路径，如需要改变，只需要通过追加命令行参数的形式进行设置即可，如`-o Evaluate.weight_path=./output/best_model/model.pdparams`。
+<b>注：</b> 在模型评估时，需要指定模型权重文件路径，每个配置文件中都内置了默认的权重保存路径，如需要改变，只需要通过追加命令行参数的形式进行设置即可，如`-o Evaluate.weight_path=./output/best_model/model.pdparams`。
 
 
 

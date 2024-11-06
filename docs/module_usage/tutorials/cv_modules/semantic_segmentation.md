@@ -34,7 +34,7 @@
 </tr>
 </tbody>
 </table>
-> ❗ 以上列出的是语义分割模块重点支持的**2个核心模型**，该模块总共支持**18个模型**，完整的模型列表如下：
+> ❗ 以上列出的是语义分割模块重点支持的<b>2个核心模型</b>，该模块总共支持<b>18个模型</b>，完整的模型列表如下：
 
 <details>
    <summary> 👉模型列表详情</summary>
@@ -150,7 +150,7 @@
 </tr>
 </tbody>
 </table>
-**以上模型精度指标测量自[Cityscapes](https://www.cityscapes-dataset.com/)数据集。GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为 8，精度类型为 FP32。**
+<b>以上模型精度指标测量自[Cityscapes](https://www.cityscapes-dataset.com/)数据集。GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为 8，精度类型为 FP32。</b>
 
 
 <table>
@@ -194,7 +194,7 @@
 </tr>
 </tbody>
 </table>
-**SeaFormer系列模型的精度指标测量自[ADE20k](https://groups.csail.mit.edu/vision/datasets/ADE20K/)数据集。GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为 8，精度类型为 FP32。**
+<b>SeaFormer系列模型的精度指标测量自[ADE20k](https://groups.csail.mit.edu/vision/datasets/ADE20K/)数据集。GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为 8，精度类型为 FP32。</b>
 
 </details>
 
@@ -218,7 +218,7 @@ for res in output:
 如果你追求更高精度的现有模型，可以使用PaddleX的二次开发能力，开发更好的语义分割模型。在使用PaddleX开发语义分割模型之前，请务必安装PaddleX的图像分割相关的模型训练能力，安装过程可以参考 [PaddleX本地安装教程](../../../installation/installation.md)中的二次开发部分。
 
 ### 4.1 数据准备
-在进行模型训练前，需要准备相应任务模块的数据集。PaddleX 针对每一个模块提供了数据校验功能，**只有通过数据校验的数据才可以进行模型训练**。此外，PaddleX为每一个模块都提供了 Demo 数据集，您可以基于官方提供的 Demo 数据完成后续的开发。
+在进行模型训练前，需要准备相应任务模块的数据集。PaddleX 针对每一个模块提供了数据校验功能，<b>只有通过数据校验的数据才可以进行模型训练</b>。此外，PaddleX为每一个模块都提供了 Demo 数据集，您可以基于官方提供的 Demo 数据完成后续的开发。
 
 #### 4.1.1 Demo 数据下载
 您可以参考下面的命令将 Demo 数据集下载到指定文件夹：
@@ -289,7 +289,7 @@ python main.py -c paddlex/configs/semantic_segmentation/PP-LiteSeg-T.yaml \
 
 在您完成数据校验之后，可以通过修改配置文件或是追加超参数的方式对数据集的格式进行转换，也可以对数据集的训练/验证比例进行重新划分。
 
-**（1）数据集格式转换**
+<b>（1）数据集格式转换</b>
 
 语义分割支持 `LabelMe` 格式的数据集转换为要求的格式。
 
@@ -332,7 +332,7 @@ python main.py -c paddlex/configs/semantic_segmentation/PP-LiteSeg-T.yaml \
     -o CheckDataset.convert.enable=True \
     -o CheckDataset.convert.src_dataset_type=LabelMe
 ```
-**（2）数据集划分**
+<b>（2）数据集划分</b>
 
 数据集划分的参数可以通过修改配置文件中 CheckDataset 下的字段进行设置，配置文件中部分参数的示例说明如下：
 
@@ -456,10 +456,10 @@ python main.py -c paddlex/configs/semantic_segmentation/PP-LiteSeg-T.yaml \
 #### 4.4.2 模型集成
 模型可以直接集成到PaddleX产线中，也可以直接集成到您自己的项目中。
 
-1.**产线集成**
+1.<b>产线集成</b>
 
 文档图像分类模块可以集成的PaddleX产线有[通用语义分割](../../../pipeline_usage/tutorials/cv_pipelines/semantic_segmentation.md)，只需要替换模型路径即可完成文本检测模块的模型更新。在产线集成中，你可以使用高性能部署和服务化部署来部署你得到的模型。
 
-2.**模块集成**
+2.<b>模块集成</b>
 
 您产出的权重可以直接集成到语义分割模块中，可以参考[快速集成](#三快速集成)的 Python 示例代码，只需要将模型替换为你训练的到的模型路径即可。

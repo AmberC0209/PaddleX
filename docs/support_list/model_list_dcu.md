@@ -41,7 +41,7 @@ PaddleX 内置了多条产线，每条产线都包含了若干模块，每个模
 </tr>
 </tbody>
 </table>
-**注：以上精度指标为**[ImageNet-1k](https://www.image-net.org/index.php)**验证集 Top1 Acc。**
+<b>注：以上精度指标为</b>[ImageNet-1k](https://www.image-net.org/index.php)<b>验证集 Top1 Acc。</b>
 
 ## 语义分割模块
 <table>
@@ -65,4 +65,4 @@ PaddleX 内置了多条产线，每条产线都包含了若干模块，每个模
 </tr>
 </tbody>
 </table>
-**注：以上精度指标为**[Cityscapes](https://www.cityscapes-dataset.com/)**数据集 mloU。**
+<b>注：以上精度指标为</b>[Cityscapes](https://www.cityscapes-dataset.com/)<b>数据集 mloU。</b>

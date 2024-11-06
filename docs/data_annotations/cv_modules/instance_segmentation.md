@@ -85,7 +85,7 @@ labelme images --labels label.txt --nodata --autosave --output annotations
 
 * 将 `fruit` 目录打包压缩为 `.tar` 或 `.zip` 格式压缩包即可得到水果实例分割标准 `labelme` 格式数据集。
 ##  3. 数据格式
-PaddleX 针对实例分割任务定义的数据集，名称是 **COCOInstSegDataset**，组织结构和标注格式如下：
+PaddleX 针对实例分割任务定义的数据集，名称是 <b>COCOInstSegDataset</b>，组织结构和标注格式如下：
 
 ```bash
 dataset_dir                  # 数据集根目录，目录名称可以改变
@@ -98,7 +98,7 @@ dataset_dir                  # 数据集根目录，目录名称可以改变
 
 当大家使用的是 PaddleX 2.x 版本的实例分割数据集时，请参考[实例分割模块开发教程](../../module_usage/tutorials/cv_modules/instance_segmentation.md)中对应的格式转换部分，将 VOC 格式数据集转换为 COCO 数据集。（模块开发文件中注明）
 
-**注：**
+<b>注：</b>
 
 * 实例分割数据要求采用 `COCO` 数据格式标注出数据集中每张图像各个目标区域的像素边界和类别，采用 `[x1,y1,x2,y2,...,xn,yn]` 表示物体的多边形边界（segmentation）。其中，`(xn,yn)` 表示多边形各个角点坐标。标注信息存放到 `annotations` 目录下的 `json` 文件中，训练集 `instance_train.json` 和验证集 `instance_val.json` 分开存放。
 * 如果你有一批未标注数据，我们推荐使用 `LabelMe` 进行数据标注。对于使用 `LabelMe` 标注的数据集，PaddleX产线支持进行数据格式转换。

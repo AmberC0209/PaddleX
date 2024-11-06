@@ -10,7 +10,7 @@ First, choose the corresponding PaddleX pipeline based on your task scenario. Fo
 
 ## 2. Quick Start
 
-PaddleX offers two ways to experience the pipeline: locally through the PaddleX wheel package or on the **Baidu AIStudio Community**.
+PaddleX offers two ways to experience the pipeline: locally through the PaddleX wheel package or on the <b>Baidu AIStudio Community</b>.
 
 - Local Experience:
     ```bash
@@ -18,7 +18,7 @@ PaddleX offers two ways to experience the pipeline: locally through the PaddleX 
         --input https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/remotesensing_demo.png
     ```
 
-- AIStudio Community Experience: Go to [Baidu AIStudio Community](https://aistudio.baidu.com/pipeline/mine), click "Create Pipeline", and create a **Universal Instance Segmentation** pipeline for a quick trial.
+- AIStudio Community Experience: Go to [Baidu AIStudio Community](https://aistudio.baidu.com/pipeline/mine), click "Create Pipeline", and create a <b>Universal Instance Segmentation</b> pipeline for a quick trial.
 
 Quick trial output example:
 <center>
@@ -69,7 +69,7 @@ PaddleX provides 15 end-to-end instance segmentation models. Refer to the [Model
 </tr>
 </tbody>
 </table>
-> **Note: The above accuracy metrics are mAP(0.5:0.95) on the [COCO2017](https://cocodataset.org/#home) validation set. GPU inference time is based on an NVIDIA V100 machine with FP32 precision.**
+> <b>Note: The above accuracy metrics are mAP(0.5:0.95) on the [COCO2017](https://cocodataset.org/#home) validation set. GPU inference time is based on an NVIDIA V100 machine with FP32 precision.</b>
 
 In summary, models listed from top to bottom offer faster inference speeds, while those from bottom to top offer higher accuracy. This tutorial uses the `Mask-RT-DETR-H` model as an example to complete the full model development process. Choose a suitable model based on your actual usage scenario, train it, evaluate the model weights within the pipeline, and finally apply them in real-world scenarios.
 
@@ -139,7 +139,7 @@ Additionally, the dataset verification also analyzes the sample number distribut
 
 </center>
 
-**Note**: Only data that passes verification can be used for training and evaluation.
+<b>Note</b>: Only data that passes verification can be used for training and evaluation.
 
 ### 4.3 Dataset Format Conversion / Dataset Splitting (Optional)
 
@@ -183,12 +183,12 @@ Each model in PaddleX provides a configuration file for model development to set
 
 For more hyperparameter introductions, please refer to [PaddleX General Model Configuration File Parameter Explanation](../module_usage/instructions/config_parameters_common.en.md).
 
-**Note**:
+<b>Note</b>:
 - The above parameters can be set by appending command line arguments, e.g., specifying the mode as model training: `-o Global.mode=train`; specifying the first 2 GPUs for training: `-o Global.device=gpu:0,1`; setting the number of training epochs to 10: `-o Train.epochs_iters=10`.
 - During model training, PaddleX automatically saves model weight files, with the default being `output`. If you need to specify a save path, you can use the `-o Global.output` field in the configuration file.
 - PaddleX shields you from the concepts of dynamic graph weights and static graph weights. During model training, both dynamic and static graph weights are produced. During model inference, static graph weights are selected by default.
 
-**Explanation of Training Outputs**:
+<b>Explanation of Training Outputs</b>:
 
 After completing the model training, all outputs are saved in the specified output directory (default is `./output/`), typically including the following:
 
@@ -209,7 +209,7 @@ python main.py -c paddlex/configs/instance_segmentation/Mask-RT-DETR-H.yaml \
 
 Similar to model training, model evaluation supports setting configurations by modifying the configuration file or appending command-line parameters.
 
-**Note**: When evaluating the model, you need to specify the model weight file path. Each configuration file has a default weight save path built-in. If you need to change it, simply set it by appending a command-line parameter, such as `-o Evaluate.weight_path=./output/best_model/best_model.pdparams`.
+<b>Note</b>: When evaluating the model, you need to specify the model weight file path. Each configuration file has a default weight save path built-in. If you need to change it, simply set it by appending a command-line parameter, such as `-o Evaluate.weight_path=./output/best_model/best_model.pdparams`.
 
 ### 5.3 Model Tuning
 
@@ -315,7 +315,7 @@ Epoch Variation Results:
 </table>
 </center>
 
-**Note: This tutorial is designed for 4 GPUs. If you only have 1 GPU, you can adjust the number of training GPUs to complete the experiments, but the final metrics may not align with the above, which is normal.**
+<b>Note: This tutorial is designed for 4 GPUs. If you only have 1 GPU, you can adjust the number of training GPUs to complete the experiments, but the final metrics may not align with the above, which is normal.</b>
 
 ## 6. Production Line Testing
 

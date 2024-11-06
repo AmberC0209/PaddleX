@@ -85,7 +85,7 @@ python main.py -c paddlex/configs/general_recognition/PP-ShiTuV2_rec.yaml \
 ```
 
 ## 3. Data Format
-The dataset defined by PaddleX for image classification tasks is named **ShiTuRecDataset**, with the following organizational structure and annotation format:
+The dataset defined by PaddleX for image classification tasks is named <b>ShiTuRecDataset</b>, with the following organizational structure and annotation format:
 
 ```bash
 dataset_dir    # Root directory of the dataset, the directory name can be changed

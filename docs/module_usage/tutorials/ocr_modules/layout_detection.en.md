@@ -78,7 +78,7 @@ The core task of structure analysis is to parse and segment the content of input
 </tr>
 </tbody>
 </table>
-**Note: The evaluation set for the above accuracy metrics is PaddleOCR's self-built layout region analysis dataset, containing 10,000 images of common document types, including English and Chinese papers, magazines, research reports, etc. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.**
+<b>Note: The evaluation set for the above accuracy metrics is PaddleOCR's self-built layout region analysis dataset, containing 10,000 images of common document types, including English and Chinese papers, magazines, research reports, etc. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
 
 ## III. Quick Integration  <a id="quick"> </a>
 > ❗ Before quick integration, please install the PaddleX wheel package. For detailed instructions, refer to [PaddleX Local Installation Tutorial](../../../installation/installation.en.md)
@@ -106,7 +106,7 @@ For more information on using PaddleX's single-model inference API, refer to [Pa
 If you seek higher accuracy from existing models, you can use PaddleX's custom development capabilities to develop better structure analysis models. Before developing a structure analysis model with PaddleX, ensure you have installed PaddleX's Detection-related model training capabilities. The installation process can be found in [PaddleX Local Installation Tutorial](../../../installation/installation.en.md).
 
 ### 4.1 Data Preparation
-Before model training, you need to prepare the corresponding dataset for the task module. PaddleX provides a data validation function for each module, and **only data that passes the validation can be used for model training**. Additionally, PaddleX provides demo datasets for each module, which you can use to complete subsequent development based on the official demos. If you wish to use private datasets for subsequent model training, refer to the [PaddleX Object Detection Task Module Data Annotation Tutorial](../../../data_annotations/cv_modules/object_detection.en.md).
+Before model training, you need to prepare the corresponding dataset for the task module. PaddleX provides a data validation function for each module, and <b>only data that passes the validation can be used for model training</b>. Additionally, PaddleX provides demo datasets for each module, which you can use to complete subsequent development based on the official demos. If you wish to use private datasets for subsequent model training, refer to the [PaddleX Object Detection Task Module Data Annotation Tutorial](../../../data_annotations/cv_modules/object_detection.en.md).
 
 #### 4.1.1 Demo Data Download
 You can use the following commands to download the demo dataset to a specified folder:
@@ -177,16 +177,16 @@ The dataset verification also analyzes the distribution of sample numbers across
 
 #### 4.1.3 Dataset Format Conversion/Dataset Splitting (Optional)
 
-After completing dataset verification, you can convert the dataset format or re-split the training/validation ratio by **modifying the configuration file** or **appending hyperparameters**.
+After completing dataset verification, you can convert the dataset format or re-split the training/validation ratio by <b>modifying the configuration file</b> or <b>appending hyperparameters</b>.
 
 <details>
   <summary>👉 <b>Details on Format Conversion/Dataset Splitting (Click to Expand)</b></summary>
 
-**(1) Dataset Format Conversion**
+<b>(1) Dataset Format Conversion</b>
 
 Layout detection does not support data format conversion.
 
-**(2) Dataset Splitting**
+<b>(2) Dataset Splitting</b>
 
 Parameters for dataset splitting can be set by modifying the `CheckDataset` section in the configuration file. Examples of some parameters in the configuration file are as follows:
 
@@ -258,7 +258,7 @@ Other related parameters can be set by modifying the `Global` and `Train` fields
 * `.pdparams`, `.pdema`, `.pdopt.pdstate`, `.pdiparams`, `.pdmodel`: Model weight-related files, including network parameters, optimizer, EMA, static graph network parameters, static graph network structure, etc.;
 </details>
 
-### **4.3 Model Evaluation**
+### <b>4.3 Model Evaluation</b>
 After completing model training, you can evaluate the specified model weight file on the validation set to verify the model's accuracy. Using PaddleX for model evaluation, you can complete the evaluation with a single command:
 
 ```bash
@@ -283,7 +283,7 @@ After completing the model evaluation, an `evaluate_result.json` file will be ge
 
 </details>
 
-### **4.4 Model Inference**
+### <b>4.4 Model Inference</b>
 After completing model training and evaluation, you can use the trained model weights for inference predictions. In PaddleX, model inference predictions can be achieved through two methods: command line and wheel package.
 
 #### 4.4.1 Model Inference
@@ -307,8 +307,8 @@ Other related parameters can be set by modifying the fields under `Global` and `
 #### 4.4.2 Model Integration
 The model can be directly integrated into PaddleX pipelines or into your own projects.
 
-1. **Pipeline Integration**
+1. <b>Pipeline Integration</b>
 The structure analysis module can be integrated into PaddleX pipelines such as the [General Table Recognition Pipeline](../../../pipeline_usage/tutorials/ocr_pipelines/table_recognition.en.md) and the [Document Scene Information Extraction Pipeline v3 (PP-ChatOCRv3)](../../..//pipeline_usage/tutorials/information_extraction_pipelines/document_scene_information_extraction.en.md). Simply replace the model path to update the layout area localization module. In pipeline integration, you can use high-performance inference and service-oriented deployment to deploy your model.
 
-1. **Module Integration**
+1. <b>Module Integration</b>
 The weights you produce can be directly integrated into the layout area localization module. You can refer to the Python example code in the [Quick Integration](#quick) section, simply replacing the model with the path to your trained model.

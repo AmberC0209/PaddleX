@@ -25,7 +25,7 @@ Time series classification involves identifying and categorizing different patte
 </tr>
 </tbody>
 </table>
-**Note: The evaluation set for the above accuracy metrics is UWaveGestureLibrary.**
+<b>Note: The evaluation set for the above accuracy metrics is UWaveGestureLibrary.</b>
 
 ## III. Quick Integration
 > ❗ Before quick integration, please install the PaddleX wheel package. For detailed instructions, refer to [PaddleX Local Installation Guide](../../../installation/installation.en.md)
@@ -46,7 +46,7 @@ For more information on using PaddleX's single-model inference APIs, refer to [P
 If you aim for higher accuracy with existing models, you can leverage PaddleX's custom development capabilities to develop better time series classification models. Before using PaddleX to develop time series classification models, ensure you have installed the PaddleTS plugin. Refer to the [PaddleX Local Installation Guide](../../../installation/installation.en.md) for the installation process.
 
 ### 4.1 Data Preparation
-Before model training, you need to prepare the dataset for the corresponding task module. PaddleX provides data validation functionality for each module, and **only data that passes validation can be used for model training**. Additionally, PaddleX provides demo datasets for each module, which you can use to complete subsequent development. If you wish to use private datasets for subsequent model training, refer to [PaddleX Time Series Classification Task Module Data Annotation Tutorial](../../../data_annotations/time_series_modules/time_series_classification.en.md).
+Before model training, you need to prepare the dataset for the corresponding task module. PaddleX provides data validation functionality for each module, and <b>only data that passes validation can be used for model training</b>. Additionally, PaddleX provides demo datasets for each module, which you can use to complete subsequent development. If you wish to use private datasets for subsequent model training, refer to [PaddleX Time Series Classification Task Module Data Annotation Tutorial](../../../data_annotations/time_series_modules/time_series_classification.en.md).
 
 #### 4.1.1 Demo Data Download
 You can use the following commands to download the demo dataset to a specified folder:
@@ -143,16 +143,16 @@ Furthermore, the dataset validation also involved an analysis of the distributio
 <img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/modules/time_classification/01.png">
 
 
-**Note**: Only data that has passed validation can be used for training and evaluation.
+<b>Note</b>: Only data that has passed validation can be used for training and evaluation.
 </details>
 
 #### 4.1.3 Dataset Format Conversion/Dataset Splitting (Optional)
-After completing data validation, you can convert the dataset format and re-split the training/validation ratio by **modifying the configuration file** or **appending hyperparameters**.
+After completing data validation, you can convert the dataset format and re-split the training/validation ratio by <b>modifying the configuration file</b> or <b>appending hyperparameters</b>.
 
 <details>
   <summary>👉 <b>Details on Format Conversion/Dataset Splitting (Click to Expand)</b></summary>
 
-**(1) Dataset Format Conversion**
+<b>(1) Dataset Format Conversion</b>
 
 Time-series classification supports converting `xlsx` and `xls` format datasets to `csv` format.
 
@@ -190,7 +190,7 @@ python main.py -c paddlex/configs/ts_classification/TimesNet_cls.yaml \
     -o CheckDataset.convert.enable=True
 ```
 
-**(2) Dataset Splitting**
+<b>(2) Dataset Splitting</b>
 
 Parameters related to dataset validation can be set by modifying the fields under `CheckDataset` in the configuration file. Examples of some parameters in the configuration file are as follows:
 
@@ -311,7 +311,7 @@ python main.py -c paddlex/configs/ts_classification/TimesNet_cls.yaml \
 ```
 Similar to model training and evaluation, the following steps are required:
 
-* Specify the path to the model's `.yaml` configuration file (here it's `TimesNet_cls.yaml` - **Note**: This should likely be `TimesNet_cls.yaml` for consistency)
+* Specify the path to the model's `.yaml` configuration file (here it's `TimesNet_cls.yaml` - <b>Note</b>: This should likely be `TimesNet_cls.yaml` for consistency)
 * Specify the mode as model inference prediction: `-o Global.mode=predict`
 * Specify the model weights path: `-o Predict.model_dir="./output/inference"`
 * Specify the input data path: `-o Predict.input="..."`
@@ -320,10 +320,10 @@ Other relevant parameters can be set by modifying the `Global` and `Predict` fie
 #### 4.4.2 Model Integration
 Models can be directly integrated into the PaddleX pipeline or directly into your own projects.
 
-1. **Pipeline Integration**
+1. <b>Pipeline Integration</b>
 
 The time series prediction module can be integrated into PaddleX pipelines such as [Time Series Classification](../../../pipeline_usage/tutorials/time_series_pipelines/time_series_classification.en.md). Simply replace the model path to update the time series prediction model. In pipeline integration, you can use service deployment to deploy your trained model.
 
-2. **Module Integration**
+2. <b>Module Integration</b>
 
 The weights you produce can be directly integrated into the time series classification module. Refer to the Python example code in [Quick Integration](#iii-quick-integration) (Note: This section header is in Chinese and should be translated or removed for consistency), simply replace the model with the path to your trained model.

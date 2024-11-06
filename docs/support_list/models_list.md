@@ -659,7 +659,8 @@ PaddleX 内置了多条产线，每条产线都包含了若干模块，每个模
 </tr>
 </tbody>
 </table>
-**注：以上精度指标为 **[ImageNet-1k](https://www.image-net.org/index.php)** 验证集 Top1 Acc。**
+
+<b>注：以上精度指标为 </b>[ImageNet-1k](https://www.image-net.org/index.php)<b> 验证集 Top1 Acc。</b>
 
 ## [图像多标签分类模块](../module_usage/tutorials/cv_modules/ml_classification.md)
 <table>
@@ -724,7 +725,7 @@ PaddleX 内置了多条产线，每条产线都包含了若干模块，每个模
 </tr>
 </tbody>
 </table>
-**注：以上精度指标为 [COCO2017](https://cocodataset.org/#home) 的多标签分类任务mAP。**
+<b>注：以上精度指标为 [COCO2017](https://cocodataset.org/#home) 的多标签分类任务mAP。</b>
 
 ## [行人属性模块](../module_usage/tutorials/cv_modules/pedestrian_attribute_recognition.md)
 <table>
@@ -749,7 +750,7 @@ PaddleX 内置了多条产线，每条产线都包含了若干模块，每个模
 </tr>
 </tbody>
 </table>
-**注：以上精度指标为 PaddleX 内部自建数据集mA。**
+<b>注：以上精度指标为 PaddleX 内部自建数据集mA。</b>
 
 ## [车辆属性模块](../module_usage/tutorials/cv_modules/vehicle_attribute_recognition.md)
 <table>
@@ -774,7 +775,7 @@ PaddleX 内置了多条产线，每条产线都包含了若干模块，每个模
 </tr>
 </tbody>
 </table>
-**注：以上精度指标为 VeRi 数据集 mA。**
+<b>注：以上精度指标为 VeRi 数据集 mA。</b>
 
 ## [图像特征模块](../module_usage/tutorials/cv_modules/image_feature.md)
 <table>
@@ -815,7 +816,7 @@ PaddleX 内置了多条产线，每条产线都包含了若干模块，每个模
 </tr>
 </tbody>
 </table>
-**注：以上精度指标为 AliProducts recall@1。**
+<b>注：以上精度指标为 AliProducts recall@1。</b>
 
 ## [文档方向分类模块](../module_usage/tutorials/ocr_modules/doc_img_orientation_classification.md)
 <table>
@@ -840,7 +841,7 @@ PaddleX 内置了多条产线，每条产线都包含了若干模块，每个模
 </tr>
 </tbody>
 </table>
-**注：以上精度指标为 PaddleX 内部自建数据集 Top-1 Acc 。**
+<b>注：以上精度指标为 PaddleX 内部自建数据集 Top-1 Acc 。</b>
 
 ## [主体检测模块](../module_usage/tutorials/cv_modules/mainbody_detection.md)
 <table>
@@ -865,7 +866,7 @@ PaddleX 内置了多条产线，每条产线都包含了若干模块，每个模
 </tr>
 </tbody>
 </table>
-**注：以上精度指标为 [PaddleClas主体检测数据集](https://github.com/PaddlePaddle/PaddleClas/blob/release/2.5/docs/zh_CN/training/PP-ShiTu/mainbody_detection.md) mAP(0.5:0.95)。**
+<b>注：以上精度指标为 [PaddleClas主体检测数据集](https://github.com/PaddlePaddle/PaddleClas/blob/release/2.5/docs/zh_CN/training/PP-ShiTu/mainbody_detection.md) mAP(0.5:0.95)。</b>
 
 ## [目标检测模块](../module_usage/tutorials/cv_modules/object_detection.md)
 <table>
@@ -1178,7 +1179,7 @@ PaddleX 内置了多条产线，每条产线都包含了若干模块，每个模
 </tr>
 </tbody>
 </table>
-**注：以上精度指标为 **[COCO2017](https://cocodataset.org/#home)** 验证集 mAP(0.5:0.95)。**
+<b>注：以上精度指标为 </b>[COCO2017](https://cocodataset.org/#home)<b> 验证集 mAP(0.5:0.95)。</b>
 
 ## [小目标检测模块](../module_usage/tutorials/cv_modules/small_object_detection.md)
 <table>
@@ -1219,7 +1220,7 @@ PaddleX 内置了多条产线，每条产线都包含了若干模块，每个模
 </tr>
 </tbody>
 </table>
-**注：以上精度指标为 **[VisDrone-DET](https://github.com/VisDrone/VisDrone-Dataset)** 验证集 mAP(0.5:0.95)。**
+<b>注：以上精度指标为 </b>[VisDrone-DET](https://github.com/VisDrone/VisDrone-Dataset)<b> 验证集 mAP(0.5:0.95)。</b>
 
 ## [行人检测模块](../module_usage/tutorials/cv_modules/human_detection.md)
 <table>
@@ -1252,7 +1253,7 @@ PaddleX 内置了多条产线，每条产线都包含了若干模块，每个模
 </tr>
 </tbody>
 </table>
-**注：以上精度指标为 **[CrowdHuman](https://bj.bcebos.com/v1/paddledet/data/crowdhuman.zip)** 验证集 mAP(0.5:0.95)。**
+<b>注：以上精度指标为 </b>[CrowdHuman](https://bj.bcebos.com/v1/paddledet/data/crowdhuman.zip)<b> 验证集 mAP(0.5:0.95)。</b>
 
 ## [车辆检测模块](../module_usage/tutorials/cv_modules/vehicle_detection.md)
 <table>
@@ -1285,7 +1286,7 @@ PaddleX 内置了多条产线，每条产线都包含了若干模块，每个模
 </tr>
 </tbody>
 </table>
-**注：以上精度指标为 **[PPVehicle](https://github.com/PaddlePaddle/PaddleDetection/tree/develop/configs/ppvehicle)** 验证集 mAP(0.5:0.95)。**
+<b>注：以上精度指标为 </b>[PPVehicle](https://github.com/PaddlePaddle/PaddleDetection/tree/develop/configs/ppvehicle)<b> 验证集 mAP(0.5:0.95)。</b>
 
 ## [人脸检测模块](../module_usage/tutorials/cv_modules/face_detection.md)
 <table>
@@ -1310,7 +1311,7 @@ PaddleX 内置了多条产线，每条产线都包含了若干模块，每个模
 </tr>
 </tbody>
 </table>
-**注：以上精度指标为 **[wider_face](https://github.com/PaddlePaddle/PaddleDetection/tree/develop/configs/ppvehicle)** 评估集 mAP(0.5:0.95)。**
+<b>注：以上精度指标为 </b>[wider_face](https://github.com/PaddlePaddle/PaddleDetection/tree/develop/configs/ppvehicle)<b> 评估集 mAP(0.5:0.95)。</b>
 
 ## [异常检测模块](../module_usage/tutorials/cv_modules/anomaly_detection.md)
 <table>
@@ -1335,7 +1336,7 @@ PaddleX 内置了多条产线，每条产线都包含了若干模块，每个模
 </tr>
 </tbody>
 </table>
-**注：以上精度指标为 **[MVTec AD](https://www.mvtec.com/company/research/datasets/mvtec-ad)** 验证集 平均异常分数。**
+<b>注：以上精度指标为 </b>[MVTec AD](https://www.mvtec.com/company/research/datasets/mvtec-ad)<b> 验证集 平均异常分数。</b>
 
 ## [语义分割模块](../module_usage/tutorials/cv_modules/semantic_segmentation.md)
 <table>
@@ -1464,7 +1465,7 @@ PaddleX 内置了多条产线，每条产线都包含了若干模块，每个模
 </tr>
 </tbody>
 </table>
-**注：以上精度指标为 **[Cityscapes](https://www.cityscapes-dataset.com/)** 数据集 mloU。**
+<b>注：以上精度指标为 </b>[Cityscapes](https://www.cityscapes-dataset.com/)<b> 数据集 mloU。</b>
 
 <table>
 <thead>
@@ -1512,7 +1513,7 @@ PaddleX 内置了多条产线，每条产线都包含了若干模块，每个模
 </tr>
 </tbody>
 </table>
-**注：以上精度指标为 **[ADE20k](https://groups.csail.mit.edu/vision/datasets/ADE20K/)** 数据集, slice 表示对输入图像进行了切图操作。**
+<b>注：以上精度指标为 </b>[ADE20k](https://groups.csail.mit.edu/vision/datasets/ADE20K/)<b> 数据集, slice 表示对输入图像进行了切图操作。</b>
 
 ## [实例分割模块](../module_usage/tutorials/cv_modules/instance_segmentation.md)
 <table>
@@ -1643,7 +1644,7 @@ PaddleX 内置了多条产线，每条产线都包含了若干模块，每个模
 </table>
 |SOLOv2| 35.5|-|-|179.1 M|[SOLOv2.yaml](../../paddlex/configs/instance_segmentation/SOLOv2.yaml)
 
-**注：以上精度指标为 **[COCO2017](https://cocodataset.org/#home)** 验证集 Mask AP(0.5:0.95)。**
+<b>注：以上精度指标为 </b>[COCO2017](https://cocodataset.org/#home)<b> 验证集 Mask AP(0.5:0.95)。</b>
 
 ## [文本检测模块](../module_usage/tutorials/ocr_modules/text_detection.md)
 <table>
@@ -1676,7 +1677,7 @@ PaddleX 内置了多条产线，每条产线都包含了若干模块，每个模
 </tr>
 </tbody>
 </table>
-**注：以上精度指标的评估集是 PaddleOCR 自建的中文数据集，覆盖街景、网图、文档、手写多个场景，其中检测包含 500 张图片。**
+<b>注：以上精度指标的评估集是 PaddleOCR 自建的中文数据集，覆盖街景、网图、文档、手写多个场景，其中检测包含 500 张图片。</b>
 
 ## [印章文本检测模块](../module_usage/tutorials/ocr_modules/seal_text_detection.md)
 <table>
@@ -1709,7 +1710,7 @@ PaddleX 内置了多条产线，每条产线都包含了若干模块，每个模
 </tr>
 </tbody>
 </table>
-**注：以上精度指标的评估集是 PaddleX 自建的印章数据集，包含500印章图像。**
+<b>注：以上精度指标的评估集是 PaddleX 自建的印章数据集，包含500印章图像。</b>
 
 ## [文本识别模块](../module_usage/tutorials/ocr_modules/text_recognition.md)
 <table>
@@ -1742,7 +1743,7 @@ PaddleX 内置了多条产线，每条产线都包含了若干模块，每个模
 </tr>
 </tbody>
 </table>
-**注：以上精度指标的评估集是 PaddleOCR 自建的中文数据集，覆盖街景、网图、文档、手写多个场景，其中文本识别包含 1.1w 张图片。**
+<b>注：以上精度指标的评估集是 PaddleOCR 自建的中文数据集，覆盖街景、网图、文档、手写多个场景，其中文本识别包含 1.1w 张图片。</b>
 
 <table>
 <thead>
@@ -1766,7 +1767,7 @@ PaddleX 内置了多条产线，每条产线都包含了若干模块，每个模
 </tr>
 </tbody>
 </table>
-**注：以上精度指标的评估集是 [PaddleOCR算法模型挑战赛 - 赛题一：OCR端到端识别任务](https://aistudio.baidu.com/competition/detail/1131/0/introduction)A榜。**
+<b>注：以上精度指标的评估集是 [PaddleOCR算法模型挑战赛 - 赛题一：OCR端到端识别任务](https://aistudio.baidu.com/competition/detail/1131/0/introduction)A榜。</b>
 
 <table>
 <thead>
@@ -1790,7 +1791,7 @@ PaddleX 内置了多条产线，每条产线都包含了若干模块，每个模
 </tr>
 </tbody>
 </table>
-**注：以上精度指标的评估集是 [PaddleOCR算法模型挑战赛 - 赛题一：OCR端到端识别任务](https://aistudio.baidu.com/competition/detail/1131/0/introduction)B榜。**
+<b>注：以上精度指标的评估集是 [PaddleOCR算法模型挑战赛 - 赛题一：OCR端到端识别任务](https://aistudio.baidu.com/competition/detail/1131/0/introduction)B榜。</b>
 
 ## [公式识别模块](../module_usage/tutorials/ocr_modules/formula_recognition.md)
 <table>
@@ -1819,7 +1820,7 @@ PaddleX 内置了多条产线，每条产线都包含了若干模块，每个模
 </tr>
 </tbody>
 </table>
-**注：以上精度指标测量自 [LaTeX-OCR公式识别测试集](https://drive.google.com/drive/folders/13CA4vAmOmD_I_dSbvLp-Lf0s6KiaNfuO)。**
+<b>注：以上精度指标测量自 [LaTeX-OCR公式识别测试集](https://drive.google.com/drive/folders/13CA4vAmOmD_I_dSbvLp-Lf0s6KiaNfuO)。</b>
 
 ## [表格结构识别模块](../module_usage/tutorials/ocr_modules/table_structure_recognition.md)
 <table>
@@ -1852,7 +1853,7 @@ PaddleX 内置了多条产线，每条产线都包含了若干模块，每个模
 </tr>
 </tbody>
 </table>
-**注：以上精度指标测量自 ****PaddleX内部自建英文表格识别数据集****。**
+<b>注：以上精度指标测量自 </b><b>PaddleX内部自建英文表格识别数据集</b><b>。</b>
 
 ## [图像矫正模块](../module_usage/tutorials/ocr_modules/text_image_unwarping.md)
 <table>
@@ -1877,7 +1878,7 @@ PaddleX 内置了多条产线，每条产线都包含了若干模块，每个模
 </tr>
 </tbody>
 </table>
-**注：以上精度指标测量自 ****PaddleX自建的图像矫正数据集****。**
+<b>注：以上精度指标测量自 </b><b>PaddleX自建的图像矫正数据集</b><b>。</b>
 
 ## [版面区域检测模块](../module_usage/tutorials/ocr_modules/layout_detection.md)
 <table>
@@ -1950,7 +1951,7 @@ PaddleX 内置了多条产线，每条产线都包含了若干模块，每个模
 </tr>
 </tbody>
 </table>
-**注：以上精度指标的评估集是 ****PaddleX 自建的版面区域检测数据集****，包含 1w 张图片。**
+<b>注：以上精度指标的评估集是 </b><b>PaddleX 自建的版面区域检测数据集</b><b>，包含 1w 张图片。</b>
 
 ## [时序预测模块](../module_usage/tutorials/time_series_modules/time_series_forecasting.md)
 <table>
@@ -2015,7 +2016,7 @@ PaddleX 内置了多条产线，每条产线都包含了若干模块，每个模
 </tr>
 </tbody>
 </table>
-**注：以上精度指标测量自 **[ETTH1](https://paddle-model-ecology.bj.bcebos.com/paddlex/data/Etth1.tar)** 数据集 ****（在测试集test.csv上的评测结果）****。**
+<b>注：以上精度指标测量自 </b>[ETTH1](https://paddle-model-ecology.bj.bcebos.com/paddlex/data/Etth1.tar)<b> 数据集 </b><b>（在测试集test.csv上的评测结果）</b><b>。</b>
 
 ## [时序异常检测模块](../module_usage/tutorials/time_series_modules/time_series_anomaly_detection.md)
 <table>
@@ -2072,7 +2073,7 @@ PaddleX 内置了多条产线，每条产线都包含了若干模块，每个模
 </tr>
 </tbody>
 </table>
-**注：以上精度指标测量自 **[PSM](https://paddle-model-ecology.bj.bcebos.com/paddlex/data/ts_anomaly_examples.tar)** 数据集。**
+<b>注：以上精度指标测量自 </b>[PSM](https://paddle-model-ecology.bj.bcebos.com/paddlex/data/ts_anomaly_examples.tar)<b> 数据集。</b>
 
 ## [时序分类模块](../module_usage/tutorials/time_series_modules/time_series_classification.md)
 <table>
@@ -2093,6 +2094,6 @@ PaddleX 内置了多条产线，每条产线都包含了若干模块，每个模
 </tr>
 </tbody>
 </table>
-**注：以上精度指标测量自 [UWaveGestureLibrary](https://paddlets.bj.bcebos.com/classification/UWaveGestureLibrary_TEST.csv)数据集。**
+<b>注：以上精度指标测量自 [UWaveGestureLibrary](https://paddlets.bj.bcebos.com/classification/UWaveGestureLibrary_TEST.csv)数据集。</b>
 
->**注：以上所有模型 GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为8，精度类型为 FP32。**
+><b>注：以上所有模型 GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为8，精度类型为 FP32。</b>

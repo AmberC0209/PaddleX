@@ -55,7 +55,8 @@ Time series forecasting aims to predict the possible values or states at a futur
 </tr>
 </tbody>
 </table>
-**Note: The above accuracy metrics are measured on the [ETTH1](https://paddle-model-ecology.bj.bcebos.com/paddlex/data/Etth1.tar) test dataset, with an input sequence length of 96, and a prediction sequence length of 96 for all models except TiDE, which has a prediction sequence length of 720.**
+
+<b>Note: The above accuracy metrics are measured on the [ETTH1](https://paddle-model-ecology.bj.bcebos.com/paddlex/data/Etth1.tar) test dataset, with an input sequence length of 96, and a prediction sequence length of 96 for all models except TiDE, which has a prediction sequence length of 720.</b>
 
 
 ## III. Quick Integration
@@ -80,7 +81,7 @@ If you seek higher accuracy, you can leverage PaddleX's custom development capab
 
 ### 4.1 Dataset Preparation
 
-Before model training, you need to prepare a dataset for the task. PaddleX provides data validation functionality for each module. **Only data that passes validation can be used for model training.** Additionally, PaddleX provides demo datasets for each module, which you can use to complete subsequent development. If you wish to use private datasets for model training, refer to [PaddleX Time Series Forecasting Task Module Data Preparation Tutorial](../../../data_annotations/time_series_modules/time_series_forecasting.en.md).
+Before model training, you need to prepare a dataset for the task. PaddleX provides data validation functionality for each module. <b>Only data that passes validation can be used for model training.</b> Additionally, PaddleX provides demo datasets for each module, which you can use to complete subsequent development. If you wish to use private datasets for model training, refer to [PaddleX Time Series Forecasting Task Module Data Preparation Tutorial](../../../data_annotations/time_series_modules/time_series_forecasting.en.md).
 
 #### 4.1.1 Demo Data Download
 
@@ -207,7 +208,7 @@ The verification results above indicate that `check_pass` being `True` means the
 
 After completing dataset verification, you can convert the dataset format or re-split the training/validation ratio by modifying the configuration file or appending hyperparameters.
 
-**(1) Dataset Format Conversion**
+<b>(1) Dataset Format Conversion</b>
 
 Time Series Forecasting supports converting `xlsx` and `xls` format datasets to the required format.
 
@@ -248,7 +249,7 @@ python main.py -c paddlex/configs/ts_forecast/DLinear.yaml \
     -o CheckDataset.convert.enable=True \
 ```
 
-**(2) Dataset Splitting**
+<b>(2) Dataset Splitting</b>
 
 Parameters for dataset splitting can be set by modifying the `CheckDataset` fields in the configuration file. Example explanations for some parameters in the configuration file are as follows:
 
@@ -382,11 +383,11 @@ Alternatively, you can use the PaddleX wheel package for inference, easily integ
 
 The model can be directly integrated into the PaddleX pipeline or into your own projects.
 
-1. **Pipeline Integration**
+1. <b>Pipeline Integration</b>
 
 The Time Series Forecasting module can be integrated into PaddleX pipelines such as the [Time Series Forecasting Pipeline (ts_fc)](../../../pipeline_usage/tutorials/time_series_pipelines/time_series_forecasting.en.md). Simply replace the model path to update the Time Series Forecasting module's model.
 
-2. **Module Integration**
+2. <b>Module Integration</b>
 
 The weights you produce can be directly integrated into the Time Series Forecasting module. You can refer to the Python sample code in [Quick Integration](#iii-quick-integration) and just replace the model with the path to the model you trained.
     
