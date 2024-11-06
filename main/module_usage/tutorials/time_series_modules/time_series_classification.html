@@ -4402,7 +4402,6 @@ You're not viewing the latest version.
   
 
 
-<p>简体中文 | <a href="time_series_classification.en.md">English</a></p>
 <h1 id="_1">时序分类模块使用教程<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <h2 id="_2">一、概述<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>时序分类是通过分析数据随时间变化的趋势、周期性、季节性等因素，来识别并分类不同的时间序列模式，专门用于处理和分析时间序列数据。这种技术广泛应用于医疗诊断等领域，能够有效分类时间序列中的关键信息，为决策提供有力支持。</p>
@@ -4761,6 +4760,61 @@ CheckDataset:
 
 
 
+
+<h2 id="__comments">评论</h2>
+<!-- Insert generated snippet here -->
+
+<script src="https://giscus.app/client.js"
+        data-repo="AmberC0209/PaddleX"
+        data-repo-id="R_kgDOM5kwKw"
+        data-category="General"
+        data-category-id="DIC_kwDOM5kwK84Cj9nf"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+</script>
+
+<!-- Synchronize Giscus theme with palette -->
+<script>
+    var giscus = document.querySelector("script[src*=giscus]")
+
+    // Set palette on initial load
+    var palette = __md_get("__palette")
+    if (palette && typeof palette.color === "object") {
+        var theme = palette.color.scheme === "slate"
+            ? "transparent_dark"
+            : "light"
+
+        // Instruct Giscus to set theme
+        giscus.setAttribute("data-theme", theme)
+    }
+
+    // Register event handlers after documented loaded
+    document.addEventListener("DOMContentLoaded", function () {
+        var ref = document.querySelector("[data-md-component=palette]")
+        ref.addEventListener("change", function () {
+            var palette = __md_get("__palette")
+            if (palette && typeof palette.color === "object") {
+                var theme = palette.color.scheme === "slate"
+                    ? "transparent_dark"
+                    : "light"
+
+                // Instruct Giscus to change theme
+                var frame = document.querySelector(".giscus-frame")
+                frame.contentWindow.postMessage(
+                    { giscus: { setConfig: { theme } } },
+                    "https://giscus.app"
+                )
+            }
+        })
+    })
+</script>
 
                 
               </article>

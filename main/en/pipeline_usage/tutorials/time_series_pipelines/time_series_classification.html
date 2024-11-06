@@ -4358,7 +4358,6 @@ You're not viewing the latest version.
   
 
 
-<p><a href="time_series_classification.html">简体中文</a> | English</p>
 <h1 id="time-series-classification-pipeline-tutorial">Time Series Classification Pipeline Tutorial<a class="headerlink" href="#time-series-classification-pipeline-tutorial" title="Permanent link">&para;</a></h1>
 <h2 id="1-introduction-to-general-time-series-classification-pipeline">1. Introduction to General Time Series Classification Pipeline<a class="headerlink" href="#1-introduction-to-general-time-series-classification-pipeline" title="Permanent link">&para;</a></h2>
 <p>Time series classification is a technique that categorizes time-series data into predefined classes, widely applied in fields such as behavior recognition and financial trend analysis. By analyzing features that vary over time, it identifies different patterns or events, for example, classifying a speech signal as "greeting" or "request," or categorizing stock price movements as "rising" or "falling." Time series classification typically employs machine learning and deep learning models, effectively capturing temporal dependencies and variation patterns to provide accurate classification labels for data. This technology plays a pivotal role in applications such as intelligent monitoring and market forecasting.</p>
@@ -5030,6 +5029,61 @@ Then, refer to the command line or Python script methods in the local experience
 
 
 
+
+<h2 id="__comments">Comments</h2>
+<!-- Insert generated snippet here -->
+
+<script src="https://giscus.app/client.js"
+        data-repo="AmberC0209/PaddleX"
+        data-repo-id="R_kgDOM5kwKw"
+        data-category="General"
+        data-category-id="DIC_kwDOM5kwK84Cj9nf"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+</script>
+
+<!-- Synchronize Giscus theme with palette -->
+<script>
+    var giscus = document.querySelector("script[src*=giscus]")
+
+    // Set palette on initial load
+    var palette = __md_get("__palette")
+    if (palette && typeof palette.color === "object") {
+        var theme = palette.color.scheme === "slate"
+            ? "transparent_dark"
+            : "light"
+
+        // Instruct Giscus to set theme
+        giscus.setAttribute("data-theme", theme)
+    }
+
+    // Register event handlers after documented loaded
+    document.addEventListener("DOMContentLoaded", function () {
+        var ref = document.querySelector("[data-md-component=palette]")
+        ref.addEventListener("change", function () {
+            var palette = __md_get("__palette")
+            if (palette && typeof palette.color === "object") {
+                var theme = palette.color.scheme === "slate"
+                    ? "transparent_dark"
+                    : "light"
+
+                // Instruct Giscus to change theme
+                var frame = document.querySelector(".giscus-frame")
+                frame.contentWindow.postMessage(
+                    { giscus: { setConfig: { theme } } },
+                    "https://giscus.app"
+                )
+            }
+        })
+    })
+</script>
 
                 
               </article>

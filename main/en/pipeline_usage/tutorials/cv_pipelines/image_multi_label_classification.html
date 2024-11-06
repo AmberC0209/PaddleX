@@ -4310,7 +4310,6 @@ You're not viewing the latest version.
   
 
 
-<p><a href="image_multi_label_classification.html">简体中文</a> | English</p>
 <h1 id="general-image-multi-label-classification-pipeline-tutorial">General Image Multi-Label Classification Pipeline Tutorial<a class="headerlink" href="#general-image-multi-label-classification-pipeline-tutorial" title="Permanent link">&para;</a></h1>
 <h2 id="1-introduction-to-the-general-image-multi-label-classification-pipeline">1. Introduction to the General Image Multi-Label Classification Pipeline<a class="headerlink" href="#1-introduction-to-the-general-image-multi-label-classification-pipeline" title="Permanent link">&para;</a></h2>
 <p>Image multi-label classification is a technique that assigns multiple relevant categories to a single image simultaneously, widely used in image annotation, content recommendation, and social media analysis. It can identify multiple objects or features present in an image, for example, an image containing both "dog" and "outdoor" labels. By leveraging deep learning models, image multi-label classification automatically extracts image features and performs accurate classification, providing users with more comprehensive information. This technology is of great significance in applications such as intelligent search engines and automatic content generation.</p>
@@ -5120,6 +5119,61 @@ If you want to use the General Image Multi-label Classification Pipeline on more
 
 
 
+
+<h2 id="__comments">Comments</h2>
+<!-- Insert generated snippet here -->
+
+<script src="https://giscus.app/client.js"
+        data-repo="AmberC0209/PaddleX"
+        data-repo-id="R_kgDOM5kwKw"
+        data-category="General"
+        data-category-id="DIC_kwDOM5kwK84Cj9nf"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+</script>
+
+<!-- Synchronize Giscus theme with palette -->
+<script>
+    var giscus = document.querySelector("script[src*=giscus]")
+
+    // Set palette on initial load
+    var palette = __md_get("__palette")
+    if (palette && typeof palette.color === "object") {
+        var theme = palette.color.scheme === "slate"
+            ? "transparent_dark"
+            : "light"
+
+        // Instruct Giscus to set theme
+        giscus.setAttribute("data-theme", theme)
+    }
+
+    // Register event handlers after documented loaded
+    document.addEventListener("DOMContentLoaded", function () {
+        var ref = document.querySelector("[data-md-component=palette]")
+        ref.addEventListener("change", function () {
+            var palette = __md_get("__palette")
+            if (palette && typeof palette.color === "object") {
+                var theme = palette.color.scheme === "slate"
+                    ? "transparent_dark"
+                    : "light"
+
+                // Instruct Giscus to change theme
+                var frame = document.querySelector(".giscus-frame")
+                frame.contentWindow.postMessage(
+                    { giscus: { setConfig: { theme } } },
+                    "https://giscus.app"
+                )
+            }
+        })
+    })
+</script>
 
                 
               </article>

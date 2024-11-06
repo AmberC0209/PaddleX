@@ -16,7 +16,7 @@
     
     
       
-        <title>Deployment tutorial - PaddleX 文档</title>
+        <title>PaddleX 3.0 产线部署教程 - PaddleX 文档</title>
       
     
     
@@ -139,7 +139,7 @@ You're not viewing the latest version.
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Deployment tutorial
+              PaddleX 3.0 产线部署教程
             
           </span>
         </div>
@@ -4204,7 +4204,6 @@ You're not viewing the latest version.
   
 
 
-<p>简体中文 | <a href="deployment_tutorial.en.md">English</a></p>
 <h1 id="paddlex-30">PaddleX 3.0 产线部署教程<a class="headerlink" href="#paddlex-30" title="Permanent link">&para;</a></h1>
 <p>在使用本教程之前，您首先需要安装 PaddleX，安装方式请参考<a href="../installation/installation.html"> PaddleX 安装</a>。</p>
 <p>PaddleX 的三种部署方式详细说明如下：</p>
@@ -4594,6 +4593,61 @@ You're not viewing the latest version.
 
 
 
+
+<h2 id="__comments">评论</h2>
+<!-- Insert generated snippet here -->
+
+<script src="https://giscus.app/client.js"
+        data-repo="AmberC0209/PaddleX"
+        data-repo-id="R_kgDOM5kwKw"
+        data-category="General"
+        data-category-id="DIC_kwDOM5kwK84Cj9nf"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+</script>
+
+<!-- Synchronize Giscus theme with palette -->
+<script>
+    var giscus = document.querySelector("script[src*=giscus]")
+
+    // Set palette on initial load
+    var palette = __md_get("__palette")
+    if (palette && typeof palette.color === "object") {
+        var theme = palette.color.scheme === "slate"
+            ? "transparent_dark"
+            : "light"
+
+        // Instruct Giscus to set theme
+        giscus.setAttribute("data-theme", theme)
+    }
+
+    // Register event handlers after documented loaded
+    document.addEventListener("DOMContentLoaded", function () {
+        var ref = document.querySelector("[data-md-component=palette]")
+        ref.addEventListener("change", function () {
+            var palette = __md_get("__palette")
+            if (palette && typeof palette.color === "object") {
+                var theme = palette.color.scheme === "slate"
+                    ? "transparent_dark"
+                    : "light"
+
+                // Instruct Giscus to change theme
+                var frame = document.querySelector(".giscus-frame")
+                frame.contentWindow.postMessage(
+                    { giscus: { setConfig: { theme } } },
+                    "https://giscus.app"
+                )
+            }
+        })
+    })
+</script>
 
                 
               </article>

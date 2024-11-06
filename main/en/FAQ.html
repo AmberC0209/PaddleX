@@ -4194,7 +4194,6 @@ You're not viewing the latest version.
   
 
 
-<p><a href="FAQ.html">简体中文</a> | English</p>
 <h1 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">&para;</a></h1>
 <h2 id="q-what-is-paddlex">Q: What is PaddleX?<a class="headerlink" href="#q-what-is-paddlex" title="Permanent link">&para;</a></h2>
 <p>A: PaddleX is a low-code development tool featuring selected models and pipelines launched by the PaddlePaddle team. It aims to provide developers with a more convenient and efficient development environment. This tool supports model training and inference on multiple mainstream domestic and international hardware, and is compatible with various system configurations, thereby meeting users' needs in different application scenarios. PaddleX has a wide range of applications, covering industries such as industry, energy, finance, transportation, and education, providing professional support and solutions for these industries. By using PaddleX, developers can more easily apply deep learning technology to actual industrial practices, thereby realizing technology implementation and transformation, and promoting digital transformation and intelligent upgrading across industries.</p>
@@ -4266,6 +4265,61 @@ You're not viewing the latest version.
 
 
 
+
+<h2 id="__comments">Comments</h2>
+<!-- Insert generated snippet here -->
+
+<script src="https://giscus.app/client.js"
+        data-repo="AmberC0209/PaddleX"
+        data-repo-id="R_kgDOM5kwKw"
+        data-category="General"
+        data-category-id="DIC_kwDOM5kwK84Cj9nf"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+</script>
+
+<!-- Synchronize Giscus theme with palette -->
+<script>
+    var giscus = document.querySelector("script[src*=giscus]")
+
+    // Set palette on initial load
+    var palette = __md_get("__palette")
+    if (palette && typeof palette.color === "object") {
+        var theme = palette.color.scheme === "slate"
+            ? "transparent_dark"
+            : "light"
+
+        // Instruct Giscus to set theme
+        giscus.setAttribute("data-theme", theme)
+    }
+
+    // Register event handlers after documented loaded
+    document.addEventListener("DOMContentLoaded", function () {
+        var ref = document.querySelector("[data-md-component=palette]")
+        ref.addEventListener("change", function () {
+            var palette = __md_get("__palette")
+            if (palette && typeof palette.color === "object") {
+                var theme = palette.color.scheme === "slate"
+                    ? "transparent_dark"
+                    : "light"
+
+                // Instruct Giscus to change theme
+                var frame = document.querySelector(".giscus-frame")
+                frame.contentWindow.postMessage(
+                    { giscus: { setConfig: { theme } } },
+                    "https://giscus.app"
+                )
+            }
+        })
+    })
+</script>
 
                 
               </article>

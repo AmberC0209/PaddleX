@@ -4402,7 +4402,6 @@ You're not viewing the latest version.
   
 
 
-<p><a href="doc_img_orientation_classification.html">简体中文</a> | English</p>
 <h1 id="document-image-orientation-classification-module-development-tutorial">Document Image Orientation Classification Module Development Tutorial<a class="headerlink" href="#document-image-orientation-classification-module-development-tutorial" title="Permanent link">&para;</a></h1>
 <h2 id="i-overview">I. Overview<a class="headerlink" href="#i-overview" title="Permanent link">&para;</a></h2>
 <p>The document image orientation classification module is aim to distinguish the orientation of document images and correct them through post-processing. In processes such as document scanning and ID card photography, capturing devices are sometimes rotated to obtain clearer images, resulting in images with varying orientations. Standard OCR pipelines cannot effectively handle such data. By utilizing image classification technology, we can pre-judge the orientation of document or ID card images containing text regions and adjust their orientations, thereby enhancing the accuracy of OCR processing.</p>
@@ -4701,6 +4700,61 @@ Other relevant parameters can be set by modifying the fields under <code>Global<
 
 
 
+
+<h2 id="__comments">Comments</h2>
+<!-- Insert generated snippet here -->
+
+<script src="https://giscus.app/client.js"
+        data-repo="AmberC0209/PaddleX"
+        data-repo-id="R_kgDOM5kwKw"
+        data-category="General"
+        data-category-id="DIC_kwDOM5kwK84Cj9nf"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+</script>
+
+<!-- Synchronize Giscus theme with palette -->
+<script>
+    var giscus = document.querySelector("script[src*=giscus]")
+
+    // Set palette on initial load
+    var palette = __md_get("__palette")
+    if (palette && typeof palette.color === "object") {
+        var theme = palette.color.scheme === "slate"
+            ? "transparent_dark"
+            : "light"
+
+        // Instruct Giscus to set theme
+        giscus.setAttribute("data-theme", theme)
+    }
+
+    // Register event handlers after documented loaded
+    document.addEventListener("DOMContentLoaded", function () {
+        var ref = document.querySelector("[data-md-component=palette]")
+        ref.addEventListener("change", function () {
+            var palette = __md_get("__palette")
+            if (palette && typeof palette.color === "object") {
+                var theme = palette.color.scheme === "slate"
+                    ? "transparent_dark"
+                    : "light"
+
+                // Instruct Giscus to change theme
+                var frame = document.querySelector(".giscus-frame")
+                frame.contentWindow.postMessage(
+                    { giscus: { setConfig: { theme } } },
+                    "https://giscus.app"
+                )
+            }
+        })
+    })
+</script>
 
                 
               </article>

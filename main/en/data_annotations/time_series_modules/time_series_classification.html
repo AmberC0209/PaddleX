@@ -4082,7 +4082,6 @@ You're not viewing the latest version.
   
 
 
-<p><a href="time_series_classification.html">简体中文</a> | English</p>
 <h1 id="paddlex-time-series-classification-task-data-annotation-tutorial">PaddleX Time Series Classification Task Data Annotation Tutorial<a class="headerlink" href="#paddlex-time-series-classification-task-data-annotation-tutorial" title="Permanent link">&para;</a></h1>
 <p>When annotating time series classification data, based on the collected real-world data, clearly define the classification objectives of the time series data and establish corresponding classification labels. In the <code>csv</code> file, set a <code>group_id</code> column to represent samples, where the same <code>group_id</code> indicates that the data points belong to the same sample. For example, in stock price prediction, labels might be "Rise" (0), "Flat" (1), or "Fall" (2). For a time series that exhibits an "upward" trend over a period, it can be considered as one sample (group), where each time point in this series shares the same <code>group_id</code>, and the label column is set to 0. Similarly, for a time series that exhibits a "downward" trend, it forms another sample (group), where each time point shares the same <code>group_id</code>, and the label column is set to 2. As shown in the figure below, the green box represents one sample (group_id=0) with a label of 1, while the red box represents another time series classification sample (group_id=1) with a label of 0. If there are n samples, you can set group_id=0,...,n-1; each sample has a length (time=0,...,9) of 10, and the feature dimensions (dim_0, dim_1) are 2.</p>
 <p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/time_series/02.png"></p>
@@ -4146,6 +4145,61 @@ You're not viewing the latest version.
 
 
 
+
+<h2 id="__comments">Comments</h2>
+<!-- Insert generated snippet here -->
+
+<script src="https://giscus.app/client.js"
+        data-repo="AmberC0209/PaddleX"
+        data-repo-id="R_kgDOM5kwKw"
+        data-category="General"
+        data-category-id="DIC_kwDOM5kwK84Cj9nf"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+</script>
+
+<!-- Synchronize Giscus theme with palette -->
+<script>
+    var giscus = document.querySelector("script[src*=giscus]")
+
+    // Set palette on initial load
+    var palette = __md_get("__palette")
+    if (palette && typeof palette.color === "object") {
+        var theme = palette.color.scheme === "slate"
+            ? "transparent_dark"
+            : "light"
+
+        // Instruct Giscus to set theme
+        giscus.setAttribute("data-theme", theme)
+    }
+
+    // Register event handlers after documented loaded
+    document.addEventListener("DOMContentLoaded", function () {
+        var ref = document.querySelector("[data-md-component=palette]")
+        ref.addEventListener("change", function () {
+            var palette = __md_get("__palette")
+            if (palette && typeof palette.color === "object") {
+                var theme = palette.color.scheme === "slate"
+                    ? "transparent_dark"
+                    : "light"
+
+                // Instruct Giscus to change theme
+                var frame = document.querySelector(".giscus-frame")
+                frame.contentWindow.postMessage(
+                    { giscus: { setConfig: { theme } } },
+                    "https://giscus.app"
+                )
+            }
+        })
+    })
+</script>
 
                 
               </article>

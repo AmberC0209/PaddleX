@@ -16,7 +16,7 @@
     
     
       
-        <title>Document scene information extraction(seal recognition) tutorial - PaddleX 文档</title>
+        <title>PaddleX 3.0 文档场景信息抽取v3（PP-ChatOCRv3_doc） —— 印章信息抽取教程 - PaddleX 文档</title>
       
     
     
@@ -139,7 +139,7 @@ You're not viewing the latest version.
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Document scene information extraction(seal recognition) tutorial
+              PaddleX 3.0 文档场景信息抽取v3（PP-ChatOCRv3_doc） —— 印章信息抽取教程
             
           </span>
         </div>
@@ -4213,7 +4213,6 @@ You're not viewing the latest version.
   
 
 
-<p>简体中文 | <a href="document_scene_information_extraction(seal_recognition)_tutorial.en.md">English</a></p>
 <h1 id="paddlex-30-v3pp-chatocrv3_doc">PaddleX 3.0 文档场景信息抽取v3（PP-ChatOCRv3_doc） —— 印章信息抽取教程<a class="headerlink" href="#paddlex-30-v3pp-chatocrv3_doc" title="Permanent link">&para;</a></h1>
 <p>PaddleX 提供了丰富的模型产线，模型产线由一个或多个模型组合实现，每个模型产线都能够解决特定的场景任务问题。PaddleX 所提供的模型产线均支持快速体验，如果效果不及预期，也同样支持使用私有数据微调模型，并且 PaddleX 提供了 Python API，方便将产线集成到个人项目中。在使用之前，您首先需要安装 PaddleX， 安装方式请参考 <a href="../installation/installation.html">PaddleX本地安装教程</a>。此处以一个印章的文档场景信息抽取任务为例子，介绍该产线的在实际场景中的使用流程。</p>
 <h2 id="1">1. 选择产线<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
@@ -4646,6 +4645,61 @@ You're not viewing the latest version.
 
 
 
+
+<h2 id="__comments">评论</h2>
+<!-- Insert generated snippet here -->
+
+<script src="https://giscus.app/client.js"
+        data-repo="AmberC0209/PaddleX"
+        data-repo-id="R_kgDOM5kwKw"
+        data-category="General"
+        data-category-id="DIC_kwDOM5kwK84Cj9nf"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+</script>
+
+<!-- Synchronize Giscus theme with palette -->
+<script>
+    var giscus = document.querySelector("script[src*=giscus]")
+
+    // Set palette on initial load
+    var palette = __md_get("__palette")
+    if (palette && typeof palette.color === "object") {
+        var theme = palette.color.scheme === "slate"
+            ? "transparent_dark"
+            : "light"
+
+        // Instruct Giscus to set theme
+        giscus.setAttribute("data-theme", theme)
+    }
+
+    // Register event handlers after documented loaded
+    document.addEventListener("DOMContentLoaded", function () {
+        var ref = document.querySelector("[data-md-component=palette]")
+        ref.addEventListener("change", function () {
+            var palette = __md_get("__palette")
+            if (palette && typeof palette.color === "object") {
+                var theme = palette.color.scheme === "slate"
+                    ? "transparent_dark"
+                    : "light"
+
+                // Instruct Giscus to change theme
+                var frame = document.querySelector(".giscus-frame")
+                frame.contentWindow.postMessage(
+                    { giscus: { setConfig: { theme } } },
+                    "https://giscus.app"
+                )
+            }
+        })
+    })
+</script>
 
                 
               </article>
