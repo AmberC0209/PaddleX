@@ -4317,43 +4317,38 @@ You're not viewing the latest version.
 <p><img src="https://github.com/user-attachments/assets/90cb740b-7741-4383-bc4c-663f9d042d02"></p>
 <p>The <b>PP-ChatOCRv3-doc</b> pipeline includes modules for <b>Table Structure Recognition</b>, <b>Layout Region Detection</b>, <b>Text Detection</b>, <b>Text Recognition</b>, <b>Seal Text Detection</b>, <b>Text Image Rectification</b>, and <b>Document Image Orientation Classification</b>.</p>
 <p><b>If you prioritize model accuracy, choose a model with higher accuracy. If you prioritize inference speed, choose a model with faster inference speed. If you prioritize model storage size, choose a model with a smaller storage size.</b> Some benchmarks for these models are as follows:</p>
-<details>
-   <summary> 👉Model List Details</summary>
+<details><summary> 👉Model List Details</summary>
 
-<b>Table Structure Recognition Module Models</b>:
-
+<p><b>Table Structure Recognition Module Models</b>:</p>
 <table>
-  <tr>
-    <th>Model</th>
-    <th>Accuracy (%)</th>
-    <th>GPU Inference Time (ms)</th>
-    <th>CPU Inference Time (ms)</th>
-    <th>Model Size (M)</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td>SLANet</td>
-    <td>59.52</td>
-    <td>522.536</td>
-    <td>1845.37</td>
-    <td>6.9 M</td>
-    <td>SLANet is a table structure recognition model developed by Baidu PaddleX Team. The model significantly improves the accuracy and inference speed of table structure recognition by adopting a CPU-friendly lightweight backbone network PP-LCNet, a high-low-level feature fusion module CSP-PAN, and a feature decoding module SLA Head that aligns structural and positional information.</td>
-  </tr>
-  <tr>
-    <td>SLANet_plus</td>
-    <td>63.69</td>
-    <td>522.536</td>
-    <td>1845.37</td>
-    <td>6.9 M</td>
-    <td>SLANet_plus is an enhanced version of SLANet, the table structure recognition model developed by Baidu PaddleX Team. Compared to SLANet, SLANet_plus significantly improves the recognition ability for wireless and complex tables and reduces the model's sensitivity to the accuracy of table positioning, enabling more accurate recognition even with offset table positioning.</td>
-  </tr>
+<tr>
+<th>Model</th>
+<th>Accuracy (%)</th>
+<th>GPU Inference Time (ms)</th>
+<th>CPU Inference Time (ms)</th>
+<th>Model Size (M)</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>SLANet</td>
+<td>59.52</td>
+<td>522.536</td>
+<td>1845.37</td>
+<td>6.9 M</td>
+<td>SLANet is a table structure recognition model developed by Baidu PaddleX Team. The model significantly improves the accuracy and inference speed of table structure recognition by adopting a CPU-friendly lightweight backbone network PP-LCNet, a high-low-level feature fusion module CSP-PAN, and a feature decoding module SLA Head that aligns structural and positional information.</td>
+</tr>
+<tr>
+<td>SLANet_plus</td>
+<td>63.69</td>
+<td>522.536</td>
+<td>1845.37</td>
+<td>6.9 M</td>
+<td>SLANet_plus is an enhanced version of SLANet, the table structure recognition model developed by Baidu PaddleX Team. Compared to SLANet, SLANet_plus significantly improves the recognition ability for wireless and complex tables and reduces the model's sensitivity to the accuracy of table positioning, enabling more accurate recognition even with offset table positioning.</td>
+</tr>
 </table>
 
-
-<b>Note: The above accuracy metrics are measured on PaddleX's internally built English table recognition dataset. All GPU inference times are based on NVIDIA Tesla T4 machines with FP32 precision. CPU inference speeds are based on Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
-
-<b>Layout Detection Module Models</b>:
-
+<p><b>Note: The above accuracy metrics are measured on PaddleX's internally built English table recognition dataset. All GPU inference times are based on NVIDIA Tesla T4 machines with FP32 precision. CPU inference speeds are based on Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b></p>
+<p><b>Layout Detection Module Models</b>:</p>
 <table>
 <thead>
 <tr>
@@ -4425,10 +4420,8 @@ You're not viewing the latest version.
 </tbody>
 </table>
 
-<b>Note: The evaluation set for the above accuracy metrics is PaddleOCR's self-built layout region analysis dataset, containing 10,000 images of common document types, including English and Chinese papers, magazines, research reports, etc. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
-
-<b>Text Detection Module Models</b>:
-
+<p><b>Note: The evaluation set for the above accuracy metrics is PaddleOCR's self-built layout region analysis dataset, containing 10,000 images of common document types, including English and Chinese papers, magazines, research reports, etc. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b></p>
+<p><b>Text Detection Module Models</b>:</p>
 <table>
 <thead>
 <tr>
@@ -4460,89 +4453,80 @@ You're not viewing the latest version.
 </tbody>
 </table>
 
-<b>Note: The evaluation set for the above accuracy metrics is PaddleOCR's self-built Chinese dataset, covering street scenes, web images, documents, and handwritten texts, with 500 images for detection. All GPU inference times are based on NVIDIA Tesla T4 machines with FP32 precision. CPU inference speeds are based on Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
-
-<b>Text Recognition Module Models</b>:
-
+<p><b>Note: The evaluation set for the above accuracy metrics is PaddleOCR's self-built Chinese dataset, covering street scenes, web images, documents, and handwritten texts, with 500 images for detection. All GPU inference times are based on NVIDIA Tesla T4 machines with FP32 precision. CPU inference speeds are based on Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b></p>
+<p><b>Text Recognition Module Models</b>:</p>
 <table>
-    <tr>
-        <th>Model</th>
-        <th>Recognition Avg Accuracy (%)</th>
-        <th>GPU Inference Time (ms)</th>
-        <th>CPU Inference Time (ms)</th>
-        <th>Model Size (M)</th>
-        <th>Description</th>
-    </tr>
-    <tr>
-        <td>PP-OCRv4_mobile_rec</td>
-        <td>78.20</td>
-        <td>7.95018</td>
-        <td>46.7868</td>
-        <td>10.6 M</td>
-        <td rowspan="2">PP-OCRv4 is the next version of Baidu PaddlePaddle's self-developed text recognition model PP-OCRv3. By introducing data augmentation schemes and GTC-NRTR guidance branches, it further improves text recognition accuracy without compromising inference speed. The model offers both server (server) and mobile (mobile) versions to meet industrial needs in different scenarios.</td>
-    </tr>
-    <tr>
-        <td>PP-OCRv4_server_rec</td>
-        <td>79.20</td>
-        <td>7.19439</td>
-        <td>140.179</td>
-        <td>71.2 M</td>
-    </tr>
+<tr>
+<th>Model</th>
+<th>Recognition Avg Accuracy (%)</th>
+<th>GPU Inference Time (ms)</th>
+<th>CPU Inference Time (ms)</th>
+<th>Model Size (M)</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>PP-OCRv4_mobile_rec</td>
+<td>78.20</td>
+<td>7.95018</td>
+<td>46.7868</td>
+<td>10.6 M</td>
+<td rowspan="2">PP-OCRv4 is the next version of Baidu PaddlePaddle's self-developed text recognition model PP-OCRv3. By introducing data augmentation schemes and GTC-NRTR guidance branches, it further improves text recognition accuracy without compromising inference speed. The model offers both server (server) and mobile (mobile) versions to meet industrial needs in different scenarios.</td>
+</tr>
+<tr>
+<td>PP-OCRv4_server_rec</td>
+<td>79.20</td>
+<td>7.19439</td>
+<td>140.179</td>
+<td>71.2 M</td>
+</tr>
 </table>
 
-
-<b>Note: The evaluation set for the above accuracy metrics is PaddleOCR's self-built Chinese dataset, covering street scenes, web images, documents, and handwritten texts, with 11,000 images for text recognition. All GPU inference times are based on NVIDIA Tesla T4 machines with FP32 precision. CPU inference speeds are based on Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
-
+<p><b>Note: The evaluation set for the above accuracy metrics is PaddleOCR's self-built Chinese dataset, covering street scenes, web images, documents, and handwritten texts, with 11,000 images for text recognition. All GPU inference times are based on NVIDIA Tesla T4 machines with FP32 precision. CPU inference speeds are based on Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b></p>
 <table >
-    <tr>
-        <th>Model</th>
-        <th>Recognition Avg Accuracy (%)</th>
-        <th>GPU Inference Time (ms)</th>
-        <th>CPU Inference Time (ms)</th>
-        <th>Model Size (M)</th>
-        <th>Description</th>
-    </tr>
-    <tr>
-        <td>ch_SVTRv2_rec</td>
-        <td>68.81</td>
-        <td>8.36801</td>
-        <td>165.706</td>
-        <td>73.9 M</td>
-        <td rowspan="1">
-        SVTRv2 is a server-side text recognition model developed by the OpenOCR team at the Vision and Learning Lab (FVL) of Fudan University. It won the first prize in the OCR End-to-End Recognition Task of the PaddleOCR Algorithm Model Challenge, with a 6% improvement in end-to-end recognition accuracy compared to PP-OCRv4 on the A-list.
-    </td>
-    </tr>
+<tr>
+<th>Model</th>
+<th>Recognition Avg Accuracy (%)</th>
+<th>GPU Inference Time (ms)</th>
+<th>CPU Inference Time (ms)</th>
+<th>Model Size (M)</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>ch_SVTRv2_rec</td>
+<td>68.81</td>
+<td>8.36801</td>
+<td>165.706</td>
+<td>73.9 M</td>
+<td rowspan="1">
+SVTRv2 is a server-side text recognition model developed by the OpenOCR team at the Vision and Learning Lab (FVL) of Fudan University. It won the first prize in the OCR End-to-End Recognition Task of the PaddleOCR Algorithm Model Challenge, with a 6% improvement in end-to-end recognition accuracy compared to PP-OCRv4 on the A-list.
+</td>
+</tr>
 </table>
 
-
-<b>Note: The evaluation set for the above accuracy metrics is the [PaddleOCR Algorithm Model Challenge - Task 1: OCR End-to-End Recognition Task](https://aistudio.baidu.com/competition/detail/1131/0/introduction) A-list. GPU inference time is based on NVIDIA Tesla T4 with FP32 precision. CPU inference speed is based on Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
-
+<p><b>Note: The evaluation set for the above accuracy metrics is the <a href="https://aistudio.baidu.com/competition/detail/1131/0/introduction">PaddleOCR Algorithm Model Challenge - Task 1: OCR End-to-End Recognition Task</a> A-list. GPU inference time is based on NVIDIA Tesla T4 with FP32 precision. CPU inference speed is based on Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b></p>
 <table >
-    <tr>
-        <th>Model</th>
-        <th>Recognition Avg Accuracy (%)</th>
-        <th>GPU Inference Time (ms)</th>
-        <th>CPU Inference Time (ms)</th>
-        <th>Model Size (M)</th>
-        <th>Description</th>
-    </tr>
-    <tr>
-        <td>ch_RepSVTR_rec</td>
-        <td>65.07</td>
-        <td>10.5047</td>
-        <td>51.5647</td>
-        <td>22.1 M</td>
-        <td rowspan="1">
-        The RepSVTR text recognition model is a mobile-oriented text recognition model based on SVTRv2. It won the first prize in the OCR End-to-End Recognition Task of the PaddleOCR Algorithm Model Challenge, with a 2.5% improvement in end-to-end recognition accuracy compared to PP-OCRv4 on the B-list, while maintaining similar inference speed.
-    </td>
-    </tr>
+<tr>
+<th>Model</th>
+<th>Recognition Avg Accuracy (%)</th>
+<th>GPU Inference Time (ms)</th>
+<th>CPU Inference Time (ms)</th>
+<th>Model Size (M)</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>ch_RepSVTR_rec</td>
+<td>65.07</td>
+<td>10.5047</td>
+<td>51.5647</td>
+<td>22.1 M</td>
+<td rowspan="1">
+The RepSVTR text recognition model is a mobile-oriented text recognition model based on SVTRv2. It won the first prize in the OCR End-to-End Recognition Task of the PaddleOCR Algorithm Model Challenge, with a 2.5% improvement in end-to-end recognition accuracy compared to PP-OCRv4 on the B-list, while maintaining similar inference speed.
+</td>
+</tr>
 </table>
 
-
-<b>Note: The evaluation set for the above accuracy metrics is the [PaddleOCR Algorithm Model Challenge - Task 1: OCR End-to-End Recognition Task](https://aistudio.baidu.com/competition/detail/1131/0/introduction) B-list. GPU inference time is based on NVIDIA Tesla T4 with FP32 precision. CPU inference speed is based on Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
-
-<b>Seal Text Detection Module Models</b>:
-
+<p><b>Note: The evaluation set for the above accuracy metrics is the <a href="https://aistudio.baidu.com/competition/detail/1131/0/introduction">PaddleOCR Algorithm Model Challenge - Task 1: OCR End-to-End Recognition Task</a> B-list. GPU inference time is based on NVIDIA Tesla T4 with FP32 precision. CPU inference speed is based on Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b></p>
+<p><b>Seal Text Detection Module Models</b>:</p>
 <table>
 <thead>
 <tr>
@@ -4574,10 +4558,8 @@ You're not viewing the latest version.
 </tbody>
 </table>
 
-<b>Note: The above accuracy metrics are evaluated on a self-built dataset containing 500 circular seal images. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
-
-<b>Text Image Rectification Module Models</b>:
-
+<p><b>Note: The above accuracy metrics are evaluated on a self-built dataset containing 500 circular seal images. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b></p>
+<p><b>Text Image Rectification Module Models</b>:</p>
 <table>
 <thead>
 <tr>
@@ -4597,10 +4579,8 @@ You're not viewing the latest version.
 </tbody>
 </table>
 
-<b>The accuracy metrics of the models are measured from the [DocUNet benchmark](https://www3.cs.stonybrook.edu/~cvl/docunet.html).</b>
-
-<b>Document Image Orientation Classification Module Models</b>:
-
+<p><b>The accuracy metrics of the models are measured from the <a href="https://www3.cs.stonybrook.edu/~cvl/docunet.html">DocUNet benchmark</a>.</b></p>
+<p><b>Document Image Orientation Classification Module Models</b>:</p>
 <table>
 <thead>
 <tr>
@@ -4624,9 +4604,7 @@ You're not viewing the latest version.
 </tbody>
 </table>
 
-<b>Note: The above accuracy metrics are evaluated on a self-built dataset covering various scenarios such as certificates and documents, containing 1000 images. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
-
-</details>
+<p><b>Note: The above accuracy metrics are evaluated on a self-built dataset covering various scenarios such as certificates and documents, containing 1000 images. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b></p></details>
 
 <h2 id="2-quick-start">2. Quick Start<a class="headerlink" href="#2-quick-start" title="Permanent link">&para;</a></h2>
 <p>PaddleX's pre-trained model pipelines can be quickly experienced. You can experience the effect of the Document Scene Information Extraction v3 pipeline online or locally using Python.</p>
@@ -4913,14 +4891,13 @@ After obtaining the configuration file, you can customize the various configurat
 <p>🚀 <b>High-Performance Inference</b>: In actual production environments, many applications have stringent standards for the performance metrics (especially response speed) of deployment strategies to ensure efficient system operation and smooth user experience. To this end, PaddleX provides high-performance inference plugins aimed at deeply optimizing model inference and pre/post-processing to significantly speed up the end-to-end process. For detailed high-performance inference procedures, please refer to the <a href="../../../pipeline_deploy/high_performance_inference.html">PaddleX High-Performance Inference Guide</a>.</p>
 <p>☁️ <b>Service-Oriented Deployment</b>: Service-oriented deployment is a common deployment form in actual production environments. By encapsulating inference functions as services, clients can access these services through network requests to obtain inference results. PaddleX supports users in achieving low-cost service-oriented deployment of pipelines. For detailed service-oriented deployment procedures, please refer to the <a href="../../../pipeline_deploy/service_deploy.html">PaddleX Service-Oriented Deployment Guide</a>.</p>
 <p>Below are the API references and multi-language service invocation examples:</p>
-<details>
-<summary>API Reference</summary>
+<details><summary>API Reference</summary>
 
-For all operations provided by the service:
-
-- Both the response body and the request body for POST requests are JSON data (JSON objects).
-- When the request is processed successfully, the response status code is `200`, and the response body properties are as follows:
-
+<p>For all operations provided by the service:</p>
+<ul>
+<li>Both the response body and the request body for POST requests are JSON data (JSON objects).</li>
+<li>When the request is processed successfully, the response status code is <code>200</code>, and the response body properties are as follows:</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -4943,10 +4920,10 @@ For all operations provided by the service:
 </tbody>
 </table>
 
-    The response body may also have a `result` property of type `object`, which stores the operation result information.
-
-- When the request is not processed successfully, the response body properties are as follows:
-
+<p>The response body may also have a <code>result</code> property of type <code>object</code>, which stores the operation result information.</p>
+<ul>
+<li>When the request is not processed successfully, the response body properties are as follows:</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -4969,16 +4946,15 @@ For all operations provided by the service:
 </tbody>
 </table>
 
-Operations provided by the service are as follows:
-
-- <b>`analyzeImage`</b>
-
-    Analyze images using computer vision models to obtain OCR, table recognition results, and extract key information from the images.
-
-    `POST /chatocr-vision`
-
-    - Request body properties:
-
+<p>Operations provided by the service are as follows:</p>
+<ul>
+<li><b><code>analyzeImage</code></b></li>
+</ul>
+<p>Analyze images using computer vision models to obtain OCR, table recognition results, and extract key information from the images.</p>
+<p><code>POST /chatocr-vision</code></p>
+<ul>
+<li>Request body properties:</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -5028,8 +5004,7 @@ Operations provided by the service are as follows:
 </tbody>
 </table>
 
-        Properties of `inferenceParams`:
-
+<p>Properties of <code>inferenceParams</code>:</p>
 <table>
 <thead>
 <tr>
@@ -5049,8 +5024,9 @@ Operations provided by the service are as follows:
 </tbody>
 </table>
 
-    - When the request is processed successfully, the `result` in the response body has the following properties:
-
+<ul>
+<li>When the request is processed successfully, the <code>result</code> in the response body has the following properties:</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -5073,8 +5049,7 @@ Operations provided by the service are as follows:
 </tbody>
 </table>
 
-        Each element in `visionResults` is an `object` with the following properties:
-
+<p>Each element in <code>visionResults</code> is an <code>object</code> with the following properties:</p>
 <table>
 <thead>
 <tr>
@@ -5112,8 +5087,7 @@ Operations provided by the service are as follows:
 </tbody>
 </table>
 
-        Each element in `texts` is an `object` with the following properties:
-
+<p>Each element in <code>texts</code> is an <code>object</code> with the following properties:</p>
 <table>
 <thead>
 <tr>
@@ -5141,8 +5115,7 @@ Operations provided by the service are as follows:
 </tbody>
 </table>
 
-        Each element in `tables` is an `object` with the following properties:
-
+<p>Each element in <code>tables</code> is an <code>object</code> with the following properties:</p>
 <table>
 <thead>
 <tr>
@@ -5165,14 +5138,14 @@ Operations provided by the service are as follows:
 </tbody>
 </table>
 
-- <b>`buildVectorStore`</b>
-
-    Builds a vector database.
-
-    `POST /chatocr-vector`
-
-    - The request body properties are as follows:
-
+<ul>
+<li><b><code>buildVectorStore</code></b></li>
+</ul>
+<p>Builds a vector database.</p>
+<p><code>POST /chatocr-vector</code></p>
+<ul>
+<li>The request body properties are as follows:</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -5216,17 +5189,16 @@ Operations provided by the service are as follows:
 </tbody>
 </table>
 
-        Currently, `llmParams` can take the following form:
-
-        <div class="language-json highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">{</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="nt">&quot;apiType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;qianfan&quot;</span><span class="p">,</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="nt">&quot;apiKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{qianfan API key}&quot;</span><span class="p">,</span>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">  </span><span class="nt">&quot;secretKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{qianfan secret key}&quot;</span>
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="p">}</span>
-</span></code></pre></div>
-
-    - When the request is processed successfully, the `result` in the response body has the following properties:
-
+<p>Currently, <code>llmParams</code> can take the following form:</p>
+<pre><code class="language-json">{
+&quot;apiType&quot;: &quot;qianfan&quot;,
+&quot;apiKey&quot;: &quot;{qianfan API key}&quot;,
+&quot;secretKey&quot;: &quot;{qianfan secret key}&quot;
+}
+</code></pre>
+<ul>
+<li>When the request is processed successfully, the <code>result</code> in the response body has the following properties:</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -5244,14 +5216,14 @@ Operations provided by the service are as follows:
 </tbody>
 </table>
 
-- <b>`retrieveKnowledge`</b>
-
-    Perform knowledge retrieval.
-
-    `POST /chatocr-retrieval`
-
-    - The request body properties are as follows:
-
+<ul>
+<li><b><code>retrieveKnowledge</code></b></li>
+</ul>
+<p>Perform knowledge retrieval.</p>
+<p><code>POST /chatocr-retrieval</code></p>
+<ul>
+<li>The request body properties are as follows:</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -5289,17 +5261,16 @@ Operations provided by the service are as follows:
 </tbody>
 </table>
 
-        Currently, `llmParams` can take the following form:
-
-        <div class="language-json highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">{</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="nt">&quot;apiType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;qianfan&quot;</span><span class="p">,</span>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">  </span><span class="nt">&quot;apiKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{Qianfan Platform API key}&quot;</span><span class="p">,</span>
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">  </span><span class="nt">&quot;secretKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{Qianfan Platform secret key}&quot;</span>
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="p">}</span>
-</span></code></pre></div>
-
-    - When the request is processed successfully, the `result` in the response body has the following properties:
-
+<p>Currently, <code>llmParams</code> can take the following form:</p>
+<pre><code class="language-json">{
+&quot;apiType&quot;: &quot;qianfan&quot;,
+&quot;apiKey&quot;: &quot;{Qianfan Platform API key}&quot;,
+&quot;secretKey&quot;: &quot;{Qianfan Platform secret key}&quot;
+}
+</code></pre>
+<ul>
+<li>When the request is processed successfully, the <code>result</code> in the response body has the following properties:</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -5317,14 +5288,14 @@ Operations provided by the service are as follows:
 </tbody>
 </table>
 
-- <b>`chat`</b>
-
-    Interact with large language models to extract key information.
-
-    `POST /chatocr-vision`
-
-    - Request body properties:
-
+<ul>
+<li><b><code>chat</code></b></li>
+</ul>
+<p>Interact with large language models to extract key information.</p>
+<p><code>POST /chatocr-vision</code></p>
+<ul>
+<li>Request body properties:</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -5398,17 +5369,16 @@ Operations provided by the service are as follows:
 </tbody>
 </table>
 
-        Currently, `llmParams` can take the following form:
-
-        <div class="language-json highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">{</span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="nt">&quot;apiType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;qianfan&quot;</span><span class="p">,</span>
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">  </span><span class="nt">&quot;apiKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{Qianfan Platform API key}&quot;</span><span class="p">,</span>
-</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">  </span><span class="nt">&quot;secretKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{Qianfan Platform secret key}&quot;</span>
-</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="p">}</span>
-</span></code></pre></div>
-
-    - On successful request processing, the `result` in the response body has the following properties:
-
+<p>Currently, <code>llmParams</code> can take the following form:</p>
+<pre><code class="language-json">{
+&quot;apiType&quot;: &quot;qianfan&quot;,
+&quot;apiKey&quot;: &quot;{Qianfan Platform API key}&quot;,
+&quot;secretKey&quot;: &quot;{Qianfan Platform secret key}&quot;
+}
+</code></pre>
+<ul>
+<li>On successful request processing, the <code>result</code> in the response body has the following properties:</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -5431,8 +5401,7 @@ Operations provided by the service are as follows:
 </tbody>
 </table>
 
-        Properties of `prompts`:
-
+<p>Properties of <code>prompts</code>:</p>
 <table>
 <thead>
 <tr>
@@ -5458,128 +5427,125 @@ Operations provided by the service are as follows:
 <td>HTML prompt.</td>
 </tr>
 </tbody>
-</table>
+</table></details>
 
-</details>
-
-<details>
-<summary>Multi-Language Service Invocation Examples</summary>
+<details><summary>Multi-Language Service Invocation Examples</summary>
 
 <details>
 <summary>Python</summary>
 
-<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kn">import</span> <span class="nn">base64</span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="kn">import</span> <span class="nn">pprint</span>
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="kn">import</span> <span class="nn">sys</span>
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
-</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="kn">import</span> <span class="nn">requests</span>
-</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
-</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="n">API_BASE_URL</span> <span class="o">=</span> <span class="s2">&quot;http://0.0.0.0:8080&quot;</span>
-</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="n">API_KEY</span> <span class="o">=</span> <span class="s2">&quot;{Qianfan Platform API key}&quot;</span>
-</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="n">SECRET_KEY</span> <span class="o">=</span> <span class="s2">&quot;{Qianfan Platform secret key}&quot;</span>
-</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="n">LLM_NAME</span> <span class="o">=</span> <span class="s2">&quot;ernie-3.5&quot;</span>
-</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="n">LLM_PARAMS</span> <span class="o">=</span> <span class="p">{</span>
-</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>    <span class="s2">&quot;apiType&quot;</span><span class="p">:</span> <span class="s2">&quot;qianfan&quot;</span><span class="p">,</span>
-</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>    <span class="s2">&quot;apiKey&quot;</span><span class="p">:</span> <span class="n">API_KEY</span><span class="p">,</span>
-</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>    <span class="s2">&quot;secretKey&quot;</span><span class="p">:</span> <span class="n">SECRET_KEY</span><span class="p">,</span>
-</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="p">}</span>
-</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>
-</span><span id="__span-9-17"><a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a><span class="n">file_path</span> <span class="o">=</span> <span class="s2">&quot;./demo.jpg&quot;</span>
-</span><span id="__span-9-18"><a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a><span class="n">keys</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;电话&quot;</span><span class="p">]</span>
-</span><span id="__span-9-19"><a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>
-</span><span id="__span-9-20"><a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
-</span><span id="__span-9-21"><a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a>    <span class="n">file_bytes</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-</span><span id="__span-9-22"><a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a>    <span class="n">file_data</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">file_bytes</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;ascii&quot;</span><span class="p">)</span>
-</span><span id="__span-9-23"><a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a>
-</span><span id="__span-9-24"><a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a><span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
-</span><span id="__span-9-25"><a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a>    <span class="s2">&quot;file&quot;</span><span class="p">:</span> <span class="n">file_data</span><span class="p">,</span>
-</span><span id="__span-9-26"><a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a>    <span class="s2">&quot;fileType&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-</span><span id="__span-9-27"><a id="__codelineno-9-27" name="__codelineno-9-27" href="#__codelineno-9-27"></a>    <span class="s2">&quot;useImgOrientationCls&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-</span><span id="__span-9-28"><a id="__codelineno-9-28" name="__codelineno-9-28" href="#__codelineno-9-28"></a>    <span class="s2">&quot;useImgUnwrapping&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-</span><span id="__span-9-29"><a id="__codelineno-9-29" name="__codelineno-9-29" href="#__codelineno-9-29"></a>    <span class="s2">&quot;useSealTextDet&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-</span><span id="__span-9-30"><a id="__codelineno-9-30" name="__codelineno-9-30" href="#__codelineno-9-30"></a><span class="p">}</span>
-</span><span id="__span-9-31"><a id="__codelineno-9-31" name="__codelineno-9-31" href="#__codelineno-9-31"></a><span class="n">resp_vision</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">API_BASE_URL</span><span class="si">}</span><span class="s2">/chatocr-vision&quot;</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
-</span><span id="__span-9-32"><a id="__codelineno-9-32" name="__codelineno-9-32" href="#__codelineno-9-32"></a><span class="k">if</span> <span class="n">resp_vision</span><span class="o">.</span><span class="n">status_code</span> <span class="o">!=</span> <span class="mi">200</span><span class="p">:</span>
-</span><span id="__span-9-33"><a id="__codelineno-9-33" name="__codelineno-9-33" href="#__codelineno-9-33"></a>    <span class="nb">print</span><span class="p">(</span>
-</span><span id="__span-9-34"><a id="__codelineno-9-34" name="__codelineno-9-34" href="#__codelineno-9-34"></a>        <span class="sa">f</span><span class="s2">&quot;Request to chatocr-vision failed with status code </span><span class="si">{</span><span class="n">resp_vision</span><span class="o">.</span><span class="n">status_code</span><span class="si">}</span><span class="s2">.&quot;</span>
-</span><span id="__span-9-35"><a id="__codelineno-9-35" name="__codelineno-9-35" href="#__codelineno-9-35"></a>    <span class="p">)</span>
-</span><span id="__span-9-36"><a id="__codelineno-9-36" name="__codelineno-9-36" href="#__codelineno-9-36"></a>    <span class="n">pprint</span><span class="o">.</span><span class="n">pp</span><span class="p">(</span><span class="n">resp_vision</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
-</span><span id="__span-9-37"><a id="__codelineno-9-37" name="__codelineno-9-37" href="#__codelineno-9-37"></a>    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-</span><span id="__span-9-38"><a id="__codelineno-9-38" name="__codelineno-9-38" href="#__codelineno-9-38"></a><span class="n">result_vision</span> <span class="o">=</span> <span class="n">resp_vision</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s2">&quot;result&quot;</span><span class="p">]</span>
-</span><span id="__span-9-39"><a id="__codelineno-9-39" name="__codelineno-9-39" href="#__codelineno-9-39"></a>
-</span><span id="__span-9-40"><a id="__codelineno-9-40" name="__codelineno-9-40" href="#__codelineno-9-40"></a><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">res</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">result_vision</span><span class="p">[</span><span class="s2">&quot;visionResults&quot;</span><span class="p">]):</span>
-</span><span id="__span-9-41"><a id="__codelineno-9-41" name="__codelineno-9-41" href="#__codelineno-9-41"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Texts:&quot;</span><span class="p">)</span>
-</span><span id="__span-9-42"><a id="__codelineno-9-42" name="__codelineno-9-42" href="#__codelineno-9-42"></a>    <span class="n">pprint</span><span class="o">.</span><span class="n">pp</span><span class="p">(</span><span class="n">res</span><span class="p">[</span><span class="s2">&quot;texts&quot;</span><span class="p">])</span>
-</span><span id="__span-9-43"><a id="__codelineno-9-43" name="__codelineno-9-43" href="#__codelineno-9-43"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tables:&quot;</span><span class="p">)</span>
-</span><span id="__span-9-44"><a id="__codelineno-9-44" name="__codelineno-9-44" href="#__codelineno-9-44"></a>    <span class="n">pprint</span><span class="o">.</span><span class="n">pp</span><span class="p">(</span><span class="n">res</span><span class="p">[</span><span class="s2">&quot;tables&quot;</span><span class="p">])</span>
-</span><span id="__span-9-45"><a id="__codelineno-9-45" name="__codelineno-9-45" href="#__codelineno-9-45"></a>    <span class="n">ocr_img_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;ocr_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">.jpg&quot;</span>
-</span><span id="__span-9-46"><a id="__codelineno-9-46" name="__codelineno-9-46" href="#__codelineno-9-46"></a>    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">ocr_img_path</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-</span><span id="__span-9-47"><a id="__codelineno-9-47" name="__codelineno-9-47" href="#__codelineno-9-47"></a>        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">base64</span><span class="o">.</span><span class="n">b64decode</span><span class="p">(</span><span class="n">res</span><span class="p">[</span><span class="s2">&quot;ocrImage&quot;</span><span class="p">]))</span>
-</span><span id="__span-9-48"><a id="__codelineno-9-48" name="__codelineno-9-48" href="#__codelineno-9-48"></a>    <span class="n">layout_img_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;layout_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">.jpg&quot;</span>
-</span><span id="__span-9-49"><a id="__codelineno-9-49" name="__codelineno-9-49" href="#__codelineno-9-49"></a>    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">layout_img_path</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-</span><span id="__span-9-50"><a id="__codelineno-9-50" name="__codelineno-9-50" href="#__codelineno-9-50"></a>        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">base64</span><span class="o">.</span><span class="n">b64decode</span><span class="p">(</span><span class="n">res</span><span class="p">[</span><span class="s2">&quot;layoutImage&quot;</span><span class="p">]))</span>
-</span><span id="__span-9-51"><a id="__codelineno-9-51" name="__codelineno-9-51" href="#__codelineno-9-51"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output images saved at </span><span class="si">{</span><span class="n">ocr_img_path</span><span class="si">}</span><span class="s2"> and </span><span class="si">{</span><span class="n">layout_img_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</span><span id="__span-9-52"><a id="__codelineno-9-52" name="__codelineno-9-52" href="#__codelineno-9-52"></a>
-</span><span id="__span-9-53"><a id="__codelineno-9-53" name="__codelineno-9-53" href="#__codelineno-9-53"></a><span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
-</span><span id="__span-9-54"><a id="__codelineno-9-54" name="__codelineno-9-54" href="#__codelineno-9-54"></a>    <span class="s2">&quot;visionInfo&quot;</span><span class="p">:</span> <span class="n">result_vision</span><span class="p">[</span><span class="s2">&quot;visionInfo&quot;</span><span class="p">],</span>
-</span><span id="__span-9-55"><a id="__codelineno-9-55" name="__codelineno-9-55" href="#__codelineno-9-55"></a>    <span class="s2">&quot;minChars&quot;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
-</span><span id="__span-9-56"><a id="__codelineno-9-56" name="__codelineno-9-56" href="#__codelineno-9-56"></a>    <span class="s2">&quot;llmRequestInterval&quot;</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
-</span><span id="__span-9-57"><a id="__codelineno-9-57" name="__codelineno-9-57" href="#__codelineno-9-57"></a>    <span class="s2">&quot;llmName&quot;</span><span class="p">:</span> <span class="n">LLM_NAME</span><span class="p">,</span>
-</span><span id="__span-9-58"><a id="__codelineno-9-58" name="__codelineno-9-58" href="#__codelineno-9-58"></a>    <span class="s2">&quot;llmParams&quot;</span><span class="p">:</span> <span class="n">LLM_PARAMS</span><span class="p">,</span>
-</span><span id="__span-9-59"><a id="__codelineno-9-59" name="__codelineno-9-59" href="#__codelineno-9-59"></a><span class="p">}</span>
-</span><span id="__span-9-60"><a id="__codelineno-9-60" name="__codelineno-9-60" href="#__codelineno-9-60"></a><span class="n">resp_vector</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">API_BASE_URL</span><span class="si">}</span><span class="s2">/chatocr-vector&quot;</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
-</span><span id="__span-9-61"><a id="__codelineno-9-61" name="__codelineno-9-61" href="#__codelineno-9-61"></a><span class="k">if</span> <span class="n">resp_vector</span><span class="o">.</span><span class="n">status_code</span> <span class="o">!=</span> <span class="mi">200</span><span class="p">:</span>
-</span><span id="__span-9-62"><a id="__codelineno-9-62" name="__codelineno-9-62" href="#__codelineno-9-62"></a>    <span class="nb">print</span><span class="p">(</span>
-</span><span id="__span-9-63"><a id="__codelineno-9-63" name="__codelineno-9-63" href="#__codelineno-9-63"></a>        <span class="sa">f</span><span class="s2">&quot;Request to chatocr-vector failed with status code </span><span class="si">{</span><span class="n">resp_vector</span><span class="o">.</span><span class="n">status_code</span><span class="si">}</span><span class="s2">.&quot;</span>
-</span><span id="__span-9-64"><a id="__codelineno-9-64" name="__codelineno-9-64" href="#__codelineno-9-64"></a>    <span class="p">)</span>
-</span><span id="__span-9-65"><a id="__codelineno-9-65" name="__codelineno-9-65" href="#__codelineno-9-65"></a>    <span class="n">pprint</span><span class="o">.</span><span class="n">pp</span><span class="p">(</span><span class="n">resp_vector</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
-</span><span id="__span-9-66"><a id="__codelineno-9-66" name="__codelineno-9-66" href="#__codelineno-9-66"></a>    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-</span><span id="__span-9-67"><a id="__codelineno-9-67" name="__codelineno-9-67" href="#__codelineno-9-67"></a><span class="n">result_vector</span> <span class="o">=</span> <span class="n">resp_vector</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s2">&quot;result&quot;</span><span class="p">]</span>
-</span><span id="__span-9-68"><a id="__codelineno-9-68" name="__codelineno-9-68" href="#__codelineno-9-68"></a>
-</span><span id="__span-9-69"><a id="__codelineno-9-69" name="__codelineno-9-69" href="#__codelineno-9-69"></a><span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
-</span><span id="__span-9-70"><a id="__codelineno-9-70" name="__codelineno-9-70" href="#__codelineno-9-70"></a>    <span class="s2">&quot;keys&quot;</span><span class="p">:</span> <span class="n">keys</span><span class="p">,</span>
-</span><span id="__span-9-71"><a id="__codelineno-9-71" name="__codelineno-9-71" href="#__codelineno-9-71"></a>    <span class="s2">&quot;vectorStore&quot;</span><span class="p">:</span> <span class="n">result_vector</span><span class="p">[</span><span class="s2">&quot;vectorStore&quot;</span><span class="p">],</span>
-</span><span id="__span-9-72"><a id="__codelineno-9-72" name="__codelineno-9-72" href="#__codelineno-9-72"></a>    <span class="s2">&quot;llmName&quot;</span><span class="p">:</span> <span class="n">LLM_NAME</span><span class="p">,</span>
-</span><span id="__span-9-73"><a id="__codelineno-9-73" name="__codelineno-9-73" href="#__codelineno-9-73"></a>    <span class="s2">&quot;llmParams&quot;</span><span class="p">:</span> <span class="n">LLM_PARAMS</span><span class="p">,</span>
-</span><span id="__span-9-74"><a id="__codelineno-9-74" name="__codelineno-9-74" href="#__codelineno-9-74"></a><span class="p">}</span>
-</span><span id="__span-9-75"><a id="__codelineno-9-75" name="__codelineno-9-75" href="#__codelineno-9-75"></a><span class="n">resp_retrieval</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">API_BASE_URL</span><span class="si">}</span><span class="s2">/chatocr-retrieval&quot;</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
-</span><span id="__span-9-76"><a id="__codelineno-9-76" name="__codelineno-9-76" href="#__codelineno-9-76"></a><span class="k">if</span> <span class="n">resp_retrieval</span><span class="o">.</span><span class="n">status_code</span> <span class="o">!=</span> <span class="mi">200</span><span class="p">:</span>
-</span><span id="__span-9-77"><a id="__codelineno-9-77" name="__codelineno-9-77" href="#__codelineno-9-77"></a>    <span class="nb">print</span><span class="p">(</span>
-</span><span id="__span-9-78"><a id="__codelineno-9-78" name="__codelineno-9-78" href="#__codelineno-9-78"></a>        <span class="sa">f</span><span class="s2">&quot;Request to chatocr-retrieval failed with status code </span><span class="si">{</span><span class="n">resp_retrieval</span><span class="o">.</span><span class="n">status_code</span><span class="si">}</span><span class="s2">.&quot;</span>
-</span><span id="__span-9-79"><a id="__codelineno-9-79" name="__codelineno-9-79" href="#__codelineno-9-79"></a>    <span class="p">)</span>
-</span><span id="__span-9-80"><a id="__codelineno-9-80" name="__codelineno-9-80" href="#__codelineno-9-80"></a>    <span class="n">pprint</span><span class="o">.</span><span class="n">pp</span><span class="p">(</span><span class="n">resp_retrieval</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
-</span><span id="__span-9-81"><a id="__codelineno-9-81" name="__codelineno-9-81" href="#__codelineno-9-81"></a>    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-</span><span id="__span-9-82"><a id="__codelineno-9-82" name="__codelineno-9-82" href="#__codelineno-9-82"></a><span class="n">result_retrieval</span> <span class="o">=</span> <span class="n">resp_retrieval</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s2">&quot;result&quot;</span><span class="p">]</span>
-</span><span id="__span-9-83"><a id="__codelineno-9-83" name="__codelineno-9-83" href="#__codelineno-9-83"></a>
-</span><span id="__span-9-84"><a id="__codelineno-9-84" name="__codelineno-9-84" href="#__codelineno-9-84"></a><span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
-</span><span id="__span-9-85"><a id="__codelineno-9-85" name="__codelineno-9-85" href="#__codelineno-9-85"></a>    <span class="s2">&quot;keys&quot;</span><span class="p">:</span> <span class="n">keys</span><span class="p">,</span>
-</span><span id="__span-9-86"><a id="__codelineno-9-86" name="__codelineno-9-86" href="#__codelineno-9-86"></a>    <span class="s2">&quot;visionInfo&quot;</span><span class="p">:</span> <span class="n">result_vision</span><span class="p">[</span><span class="s2">&quot;visionInfo&quot;</span><span class="p">],</span>
-</span><span id="__span-9-87"><a id="__codelineno-9-87" name="__codelineno-9-87" href="#__codelineno-9-87"></a>    <span class="s2">&quot;taskDescription&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-</span><span id="__span-9-88"><a id="__codelineno-9-88" name="__codelineno-9-88" href="#__codelineno-9-88"></a>    <span class="s2">&quot;rules&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-</span><span id="__span-9-89"><a id="__codelineno-9-89" name="__codelineno-9-89" href="#__codelineno-9-89"></a>    <span class="s2">&quot;fewShot&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-</span><span id="__span-9-90"><a id="__codelineno-9-90" name="__codelineno-9-90" href="#__codelineno-9-90"></a>    <span class="s2">&quot;vectorStore&quot;</span><span class="p">:</span> <span class="n">result_vector</span><span class="p">[</span><span class="s2">&quot;vectorStore&quot;</span><span class="p">],</span>
-</span><span id="__span-9-91"><a id="__codelineno-9-91" name="__codelineno-9-91" href="#__codelineno-9-91"></a>    <span class="s2">&quot;retrievalResult&quot;</span><span class="p">:</span> <span class="n">result_retrieval</span><span class="p">[</span><span class="s2">&quot;retrievalResult&quot;</span><span class="p">],</span>
-</span><span id="__span-9-92"><a id="__codelineno-9-92" name="__codelineno-9-92" href="#__codelineno-9-92"></a>    <span class="s2">&quot;returnPrompts&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-</span><span id="__span-9-93"><a id="__codelineno-9-93" name="__codelineno-9-93" href="#__codelineno-9-93"></a>    <span class="s2">&quot;llmName&quot;</span><span class="p">:</span> <span class="n">LLM_NAME</span><span class="p">,</span>
-</span><span id="__span-9-94"><a id="__codelineno-9-94" name="__codelineno-9-94" href="#__codelineno-9-94"></a>    <span class="s2">&quot;llmParams&quot;</span><span class="p">:</span> <span class="n">LLM_PARAMS</span><span class="p">,</span>
-</span><span id="__span-9-95"><a id="__codelineno-9-95" name="__codelineno-9-95" href="#__codelineno-9-95"></a><span class="p">}</span>
-</span><span id="__span-9-96"><a id="__codelineno-9-96" name="__codelineno-9-96" href="#__codelineno-9-96"></a><span class="n">resp_chat</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">API_BASE_URL</span><span class="si">}</span><span class="s2">/chatocr-chat&quot;</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
-</span><span id="__span-9-97"><a id="__codelineno-9-97" name="__codelineno-9-97" href="#__codelineno-9-97"></a><span class="k">if</span> <span class="n">resp_chat</span><span class="o">.</span><span class="n">status_code</span> <span class="o">!=</span> <span class="mi">200</span><span class="p">:</span>
-</span><span id="__span-9-98"><a id="__codelineno-9-98" name="__codelineno-9-98" href="#__codelineno-9-98"></a>    <span class="nb">print</span><span class="p">(</span>
-</span><span id="__span-9-99"><a id="__codelineno-9-99" name="__codelineno-9-99" href="#__codelineno-9-99"></a>        <span class="sa">f</span><span class="s2">&quot;Request to chatocr-chat failed with status code </span><span class="si">{</span><span class="n">resp_chat</span><span class="o">.</span><span class="n">status_code</span><span class="si">}</span><span class="s2">.&quot;</span>
-</span><span id="__span-9-100"><a id="__codelineno-9-100" name="__codelineno-9-100" href="#__codelineno-9-100"></a>    <span class="p">)</span>
-</span><span id="__span-9-101"><a id="__codelineno-9-101" name="__codelineno-9-101" href="#__codelineno-9-101"></a>    <span class="n">pprint</span><span class="o">.</span><span class="n">pp</span><span class="p">(</span><span class="n">resp_chat</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
-</span><span id="__span-9-102"><a id="__codelineno-9-102" name="__codelineno-9-102" href="#__codelineno-9-102"></a>    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-</span><span id="__span-9-103"><a id="__codelineno-9-103" name="__codelineno-9-103" href="#__codelineno-9-103"></a><span class="n">result_chat</span> <span class="o">=</span> <span class="n">resp_chat</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s2">&quot;result&quot;</span><span class="p">]</span>
-</span><span id="__span-9-104"><a id="__codelineno-9-104" name="__codelineno-9-104" href="#__codelineno-9-104"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Prompts:&quot;</span><span class="p">)</span>
-</span><span id="__span-9-105"><a id="__codelineno-9-105" name="__codelineno-9-105" href="#__codelineno-9-105"></a><span class="n">pprint</span><span class="o">.</span><span class="n">pp</span><span class="p">(</span><span class="n">result_chat</span><span class="p">[</span><span class="s2">&quot;prompts&quot;</span><span class="p">])</span>
-</span><span id="__span-9-106"><a id="__codelineno-9-106" name="__codelineno-9-106" href="#__codelineno-9-106"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Final result:&quot;</span><span class="p">)</span>
-</span><span id="__span-9-107"><a id="__codelineno-9-107" name="__codelineno-9-107" href="#__codelineno-9-107"></a><span class="nb">print</span><span class="p">(</span><span class="n">result_chat</span><span class="p">[</span><span class="s2">&quot;chatResult&quot;</span><span class="p">])</span>
-</span></code></pre></div>
 
-<b>Note</b>: Please fill in your API key and secret key at `API_KEY` and `SECRET_KEY`.
+<pre><code class="language-python">import base64
+import pprint
+import sys
 
-</details>
+import requests
+
+API_BASE_URL = &quot;http://0.0.0.0:8080&quot;
+API_KEY = &quot;{Qianfan Platform API key}&quot;
+SECRET_KEY = &quot;{Qianfan Platform secret key}&quot;
+LLM_NAME = &quot;ernie-3.5&quot;
+LLM_PARAMS = {
+    &quot;apiType&quot;: &quot;qianfan&quot;,
+    &quot;apiKey&quot;: API_KEY,
+    &quot;secretKey&quot;: SECRET_KEY,
+}
+
+file_path = &quot;./demo.jpg&quot;
+keys = [&quot;电话&quot;]
+
+with open(file_path, &quot;rb&quot;) as file:
+    file_bytes = file.read()
+    file_data = base64.b64encode(file_bytes).decode(&quot;ascii&quot;)
+
+payload = {
+    &quot;file&quot;: file_data,
+    &quot;fileType&quot;: 1,
+    &quot;useImgOrientationCls&quot;: True,
+    &quot;useImgUnwrapping&quot;: True,
+    &quot;useSealTextDet&quot;: True,
+}
+resp_vision = requests.post(url=f&quot;{API_BASE_URL}/chatocr-vision&quot;, json=payload)
+if resp_vision.status_code != 200:
+    print(
+        f&quot;Request to chatocr-vision failed with status code {resp_vision.status_code}.&quot;
+    )
+    pprint.pp(resp_vision.json())
+    sys.exit(1)
+result_vision = resp_vision.json()[&quot;result&quot;]
+
+for i, res in enumerate(result_vision[&quot;visionResults&quot;]):
+    print(&quot;Texts:&quot;)
+    pprint.pp(res[&quot;texts&quot;])
+    print(&quot;Tables:&quot;)
+    pprint.pp(res[&quot;tables&quot;])
+    ocr_img_path = f&quot;ocr_{i}.jpg&quot;
+    with open(ocr_img_path, &quot;wb&quot;) as f:
+        f.write(base64.b64decode(res[&quot;ocrImage&quot;]))
+    layout_img_path = f&quot;layout_{i}.jpg&quot;
+    with open(layout_img_path, &quot;wb&quot;) as f:
+        f.write(base64.b64decode(res[&quot;layoutImage&quot;]))
+    print(f&quot;Output images saved at {ocr_img_path} and {layout_img_path}&quot;)
+
+payload = {
+    &quot;visionInfo&quot;: result_vision[&quot;visionInfo&quot;],
+    &quot;minChars&quot;: 200,
+    &quot;llmRequestInterval&quot;: 1000,
+    &quot;llmName&quot;: LLM_NAME,
+    &quot;llmParams&quot;: LLM_PARAMS,
+}
+resp_vector = requests.post(url=f&quot;{API_BASE_URL}/chatocr-vector&quot;, json=payload)
+if resp_vector.status_code != 200:
+    print(
+        f&quot;Request to chatocr-vector failed with status code {resp_vector.status_code}.&quot;
+    )
+    pprint.pp(resp_vector.json())
+    sys.exit(1)
+result_vector = resp_vector.json()[&quot;result&quot;]
+
+payload = {
+    &quot;keys&quot;: keys,
+    &quot;vectorStore&quot;: result_vector[&quot;vectorStore&quot;],
+    &quot;llmName&quot;: LLM_NAME,
+    &quot;llmParams&quot;: LLM_PARAMS,
+}
+resp_retrieval = requests.post(url=f&quot;{API_BASE_URL}/chatocr-retrieval&quot;, json=payload)
+if resp_retrieval.status_code != 200:
+    print(
+        f&quot;Request to chatocr-retrieval failed with status code {resp_retrieval.status_code}.&quot;
+    )
+    pprint.pp(resp_retrieval.json())
+    sys.exit(1)
+result_retrieval = resp_retrieval.json()[&quot;result&quot;]
+
+payload = {
+    &quot;keys&quot;: keys,
+    &quot;visionInfo&quot;: result_vision[&quot;visionInfo&quot;],
+    &quot;taskDescription&quot;: &quot;&quot;,
+    &quot;rules&quot;: &quot;&quot;,
+    &quot;fewShot&quot;: &quot;&quot;,
+    &quot;vectorStore&quot;: result_vector[&quot;vectorStore&quot;],
+    &quot;retrievalResult&quot;: result_retrieval[&quot;retrievalResult&quot;],
+    &quot;returnPrompts&quot;: True,
+    &quot;llmName&quot;: LLM_NAME,
+    &quot;llmParams&quot;: LLM_PARAMS,
+}
+resp_chat = requests.post(url=f&quot;{API_BASE_URL}/chatocr-chat&quot;, json=payload)
+if resp_chat.status_code != 200:
+    print(
+        f&quot;Request to chatocr-chat failed with status code {resp_chat.status_code}.&quot;
+    )
+    pprint.pp(resp_chat.json())
+    sys.exit(1)
+result_chat = resp_chat.json()[&quot;result&quot;]
+print(&quot;\nPrompts:&quot;)
+pprint.pp(result_chat[&quot;prompts&quot;])
+print(&quot;Final result:&quot;)
+print(result_chat[&quot;chatResult&quot;])
+</code></pre>
+
+
+<b>Note</b>: Please fill in your API key and secret key at `API_KEY` and `SECRET_KEY`.</details>
 </details>
 <p><br/></p>
 <p>📱 <b>Edge Deployment</b>: Edge deployment is a method that places computing and data processing functions on user devices themselves, allowing devices to process data directly without relying on remote servers. PaddleX supports deploying models on edge devices such as Android. For detailed edge deployment procedures, please refer to the <a href="../../../pipeline_deploy/edge_deploy.html">PaddleX Edge Deployment Guide</a>.</p>
@@ -5611,29 +5577,29 @@ Operations provided by the service are as follows:
 <h3 id="42-model-deployment">4.2 Model Deployment<a class="headerlink" href="#42-model-deployment" title="Permanent link">&para;</a></h3>
 <p>After fine-tuning your models using your private dataset, you will obtain local model weights files.</p>
 <p>To use the fine-tuned model weights, simply modify the pipeline configuration file by replacing the local paths of the default model weights with those of your fine-tuned models:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="l l-Scalar l-Scalar-Plain">......</span>
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="l l-Scalar l-Scalar-Plain">Pipeline</span><span class="p p-Indicator">:</span>
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">  </span><span class="nt">layout_model</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RT-DETR-H_layout_3cls</span><span class="w">  </span><span class="c1"># Replace with the local path of your fine-tuned model</span>
-</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">  </span><span class="nt">table_model</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SLANet_plus</span><span class="w">  </span><span class="c1"># Replace with the local path of your fine-tuned model</span>
-</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">  </span><span class="nt">text_det_model</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PP-OCRv4_server_det</span><span class="w">  </span><span class="c1"># Replace with the local path of your fine-tuned model</span>
-</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">  </span><span class="nt">text_rec_model</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PP-OCRv4_server_rec</span><span class="w">  </span><span class="c1"># Replace with the local path of your fine-tuned model</span>
-</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">  </span><span class="nt">seal_text_det_model</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PP-OCRv4_server_seal_det</span><span class="w">  </span><span class="c1"># Replace with the local path of your fine-tuned model</span>
-</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="w">  </span><span class="nt">doc_image_ori_cls_model</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w">   </span><span class="c1"># Replace with the local path of your fine-tuned model if applicable</span>
-</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="w">  </span><span class="nt">doc_image_unwarp_model</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w">   </span><span class="c1"># Replace with the local path of your fine-tuned model if applicable</span>
-</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="l l-Scalar l-Scalar-Plain">......</span>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="l l-Scalar l-Scalar-Plain">......</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="l l-Scalar l-Scalar-Plain">Pipeline</span><span class="p p-Indicator">:</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="nt">layout_model</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RT-DETR-H_layout_3cls</span><span class="w">  </span><span class="c1"># Replace with the local path of your fine-tuned model</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">  </span><span class="nt">table_model</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SLANet_plus</span><span class="w">  </span><span class="c1"># Replace with the local path of your fine-tuned model</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">  </span><span class="nt">text_det_model</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PP-OCRv4_server_det</span><span class="w">  </span><span class="c1"># Replace with the local path of your fine-tuned model</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">  </span><span class="nt">text_rec_model</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PP-OCRv4_server_rec</span><span class="w">  </span><span class="c1"># Replace with the local path of your fine-tuned model</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">  </span><span class="nt">seal_text_det_model</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PP-OCRv4_server_seal_det</span><span class="w">  </span><span class="c1"># Replace with the local path of your fine-tuned model</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">  </span><span class="nt">doc_image_ori_cls_model</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w">   </span><span class="c1"># Replace with the local path of your fine-tuned model if applicable</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">  </span><span class="nt">doc_image_unwarp_model</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w">   </span><span class="c1"># Replace with the local path of your fine-tuned model if applicable</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="l l-Scalar l-Scalar-Plain">......</span>
 </span></code></pre></div>
 <p>Subsequently, load the modified pipeline configuration file using the command-line interface or Python script as described in the local experience section.</p>
 <h2 id="5-multi-hardware-support">5. Multi-hardware Support<a class="headerlink" href="#5-multi-hardware-support" title="Permanent link">&para;</a></h2>
 <p>PaddleX supports various mainstream hardware devices such as NVIDIA GPUs, Kunlun XPU, Ascend NPU, and Cambricon MLU. <b>Seamless switching between different hardware can be achieved by simply setting the <code>--device</code> parameter</b>.</p>
 <p>For example, to perform inference using the PP-ChatOCRv3-doc Pipeline on an NVIDIA GPU.
 At this point, if you wish to switch the hardware to Ascend NPU, simply modify the <code>--device</code> in the script to <code>npu</code>:</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kn">from</span> <span class="nn">paddlex</span> <span class="kn">import</span> <span class="n">create_pipeline</span>
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="n">pipeline</span> <span class="o">=</span> <span class="n">create_pipeline</span><span class="p">(</span>
-</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>    <span class="n">pipeline</span><span class="o">=</span><span class="s2">&quot;PP-ChatOCRv3-doc&quot;</span><span class="p">,</span>
-</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>    <span class="n">llm_name</span><span class="o">=</span><span class="s2">&quot;ernie-3.5&quot;</span><span class="p">,</span>
-</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>    <span class="n">llm_params</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;api_type&quot;</span><span class="p">:</span> <span class="s2">&quot;qianfan&quot;</span><span class="p">,</span> <span class="s2">&quot;ak&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;sk&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">},</span>
-</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>    <span class="n">device</span><span class="o">=</span><span class="s2">&quot;npu:0&quot;</span> <span class="c1"># gpu:0 --&gt; npu:0</span>
-</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>    <span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kn">from</span> <span class="nn">paddlex</span> <span class="kn">import</span> <span class="n">create_pipeline</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">pipeline</span> <span class="o">=</span> <span class="n">create_pipeline</span><span class="p">(</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>    <span class="n">pipeline</span><span class="o">=</span><span class="s2">&quot;PP-ChatOCRv3-doc&quot;</span><span class="p">,</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>    <span class="n">llm_name</span><span class="o">=</span><span class="s2">&quot;ernie-3.5&quot;</span><span class="p">,</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>    <span class="n">llm_params</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;api_type&quot;</span><span class="p">:</span> <span class="s2">&quot;qianfan&quot;</span><span class="p">,</span> <span class="s2">&quot;ak&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;sk&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">},</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>    <span class="n">device</span><span class="o">=</span><span class="s2">&quot;npu:0&quot;</span> <span class="c1"># gpu:0 --&gt; npu:0</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>    <span class="p">)</span>
 </span></code></pre></div>
 <p>If you want to use the PP-ChatOCRv3-doc Pipeline on more types of hardware, please refer to the <a href="../../../other_devices_support/multi_devices_use_guide.html">PaddleX Multi-Device Usage Guide</a>.</p>
 
