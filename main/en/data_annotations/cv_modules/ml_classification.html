@@ -4523,7 +4523,7 @@ Click on the above links to install the annotation tools and view detailed usage
   * Click the rectangular selection button on the left.
   * Draw a bounding box around the desired region in the image, ensuring semantic partitioning. If there are multiple columns, annotate each separately.
   * After completing the annotation, the result will appear in the lower-right corner. Check if the annotation is correct.
-  * Once done, click <strong>Project Overview</strong>.</p>
+  * Once done, click <b>Project Overview</b>.</p>
 <p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/13.png"></p>
 <ul>
 <li>
@@ -4588,7 +4588,7 @@ Click on the above links to install the annotation tools and view detailed usage
 </span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">    </span>-o<span class="w"> </span>CheckDataset.convert.src_dataset_type<span class="o">=</span>COCO
 </span></code></pre></div>
 <h2 id="5-data-format">5. Data Format<a class="headerlink" href="#5-data-format" title="Permanent link">&para;</a></h2>
-<p>The dataset defined by PaddleX for image multi-label classification tasks is named <strong>MLClsDataset</strong>, with the following directory structure and annotation format:</p>
+<p>The dataset defined by PaddleX for image multi-label classification tasks is named <b>MLClsDataset</b>, with the following directory structure and annotation format:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>dataset_dir<span class="w">    </span><span class="c1"># Root directory of the dataset, the directory name can be changed</span>
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>├──<span class="w"> </span>images<span class="w">     </span><span class="c1"># Directory where images are saved, the directory name can be changed, but note the correspondence with the content of train.txt and val.txt</span>
 </span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>├──<span class="w"> </span>label.txt<span class="w">  </span><span class="c1"># Correspondence between annotation IDs and category names, the file name cannot be changed. Each line gives the category ID and category name, for example: 45 wallflower</span>

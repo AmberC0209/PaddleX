@@ -4435,7 +4435,7 @@ You're not viewing the latest version.
 </tbody>
 </table>
 <blockquote>
-<p>❗ The above list features the <strong>2 core models</strong> that the image classification module primarily supports. In total, this module supports <strong>18 models</strong>. The complete list of models is as follows:</p>
+<p>❗ The above list features the <b>2 core models</b> that the image classification module primarily supports. In total, this module supports <b>18 models</b>. The complete list of models is as follows:</p>
 </blockquote>
 <details>
    <summary> 👉Model List Details</summary>
@@ -4550,7 +4550,7 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-**The accuracy metrics of the above models are measured on the [Cityscapes](https://www.cityscapes-dataset.com/) dataset. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.**
+<b>The accuracy metrics of the above models are measured on the [Cityscapes](https://www.cityscapes-dataset.com/) dataset. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
 
 
 <table>
@@ -4594,7 +4594,7 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-**The accuracy metrics of the SeaFormer series models are measured on the [ADE20k](https://groups.csail.mit.edu/vision/datasets/ADE20K/) dataset. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.**
+<b>The accuracy metrics of the SeaFormer series models are measured on the [ADE20k](https://groups.csail.mit.edu/vision/datasets/ADE20K/) dataset. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
 
 </details>
 
@@ -4615,7 +4615,7 @@ For more information on using PaddleX's single-model inference API, refer to the
 <h2 id="iv-custom-development">IV. Custom Development<a class="headerlink" href="#iv-custom-development" title="Permanent link">&para;</a></h2>
 <p>If you seek higher accuracy, you can leverage PaddleX's custom development capabilities to develop better Semantic Segmentation models. Before developing a Semantic Segmentation model with PaddleX, ensure you have installed PaddleClas plugin for PaddleX. The installation process can be found in the custom development section of the <a href="../../../installation/installation.html">PaddleX Local Installation Tutorial</a>.</p>
 <h3 id="41-dataset-preparation">4.1 Dataset Preparation<a class="headerlink" href="#41-dataset-preparation" title="Permanent link">&para;</a></h3>
-<p>Before model training, you need to prepare a dataset for the task. PaddleX provides data validation functionality for each module. <strong>Only data that passes validation can be used for model training.</strong> Additionally, PaddleX provides demo datasets for each module, which you can use to complete subsequent development. If you wish to use private datasets for model training, refer to <a href="../../../data_annotations/cv_modules/semantic_segmentation.html">PaddleX Semantic Segmentation Task Module Data Preparation Tutorial</a>.</p>
+<p>Before model training, you need to prepare a dataset for the task. PaddleX provides data validation functionality for each module. <b>Only data that passes validation can be used for model training.</b> Additionally, PaddleX provides demo datasets for each module, which you can use to complete subsequent development. If you wish to use private datasets for model training, refer to <a href="../../../data_annotations/cv_modules/semantic_segmentation.html">PaddleX Semantic Segmentation Task Module Data Preparation Tutorial</a>.</p>
 <h4 id="411-demo-data-download">4.1.1 Demo Data Download<a class="headerlink" href="#411-demo-data-download" title="Permanent link">&para;</a></h4>
 <p>You can download the demo dataset to a specified folder using the following commands:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>wget<span class="w"> </span>https://paddle-model-ecology.bj.bcebos.com/paddlex/data/seg_optic_examples.tar<span class="w"> </span>-P<span class="w"> </span>./dataset
@@ -4678,7 +4678,7 @@ The dataset verification also analyzes the distribution of sample numbers across
 
 After completing dataset verification, you can convert the dataset format or re-split the training/validation ratio by modifying the configuration file or appending hyperparameters.
 
-**(1) Dataset Format Conversion**
+<b>(1) Dataset Format Conversion</b>
 
 Semantic segmentation supports converting `LabelMe` format datasets to the required format.
 
@@ -4722,7 +4722,7 @@ Of course, the above parameters also support being set by appending command-line
 </span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">    </span>-o<span class="w"> </span>CheckDataset.convert.src_dataset_type<span class="o">=</span>LabelMe
 </span></code></pre></div>
 
-**(2) Dataset Splitting**
+<b>(2) Dataset Splitting</b>
 
 Parameters for dataset splitting can be set by modifying the `CheckDataset` fields in the configuration file. Example explanations for some parameters in the configuration file are as follows:
 
@@ -4838,11 +4838,11 @@ After model evaluation, the following outputs are typically produced:
 <h4 id="442-model-integration">4.4.2 Model Integration<a class="headerlink" href="#442-model-integration" title="Permanent link">&para;</a></h4>
 <p>The model can be directly integrated into the PaddleX pipeline or into your own projects.</p>
 <ol>
-<li><strong>Pipeline Integration</strong></li>
+<li><b>Pipeline Integration</b></li>
 </ol>
 <p>The document semantic segmentation module can be integrated into PaddleX pipelines such as the <a href="../../../pipeline_usage/tutorials/cv_pipelines/semantic_segmentation.html">Semantic Segmentation Pipeline (Seg)</a>. Simply replace the model path to update the The document semantic segmentation module's model.</p>
 <ol>
-<li><strong>Module Integration</strong></li>
+<li><b>Module Integration</b></li>
 </ol>
 <p>The weights you produce can be directly integrated into the semantic segmentation module. You can refer to the Python sample code in <a href="#iii-quick-integration">Quick Integration</a> and just replace the model with the path to the model you trained.</p>
 

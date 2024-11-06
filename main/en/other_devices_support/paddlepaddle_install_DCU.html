@@ -4150,7 +4150,7 @@ You're not viewing the latest version.
 
 <p><a href="paddlepaddle_install_DCU.html">简体中文</a> | English</p>
 <h1 id="hygon-dcu-paddlepaddle-installation-tutorial">Hygon DCU PaddlePaddle Installation Tutorial<a class="headerlink" href="#hygon-dcu-paddlepaddle-installation-tutorial" title="Permanent link">&para;</a></h1>
-<p>Currently, PaddleX supports Haiguang Z100 series chips. Considering environmental differences, we recommend using the <strong>officially released Haiguang DCU development image by PaddlePaddle</strong>, which is pre-installed with the Haiguang DCU basic runtime library (DTK).</p>
+<p>Currently, PaddleX supports Haiguang Z100 series chips. Considering environmental differences, we recommend using the <b>officially released Haiguang DCU development image by PaddlePaddle</b>, which is pre-installed with the Haiguang DCU basic runtime library (DTK).</p>
 <h2 id="1-docker-environment-preparation">1. Docker Environment Preparation<a class="headerlink" href="#1-docker-environment-preparation" title="Permanent link">&para;</a></h2>
 <p>Pull the image. Note that this image is only for development environments and does not include pre-compiled PaddlePaddle installation packages.</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker<span class="w"> </span>pull<span class="w"> </span>registry.baidubce.com/device/paddle-dcu:dtk23.10.1-kylinv10-gcc73-py310
@@ -4162,7 +4162,7 @@ You're not viewing the latest version.
 </span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span>registry.baidubce.com/device/paddle-dcu:dtk23.10.1-kylinv10-gcc73-py310<span class="w"> </span>/bin/bash
 </span></code></pre></div>
 <h2 id="2-install-paddlepaddle-package">2. Install PaddlePaddle Package<a class="headerlink" href="#2-install-paddlepaddle-package" title="Permanent link">&para;</a></h2>
-<p>Within the started docker container, download and install the wheel package released by PaddlePaddle's official website. <strong>Note</strong>: The DCU version of PaddlePaddle framework only supports Hygon C86 architecture.</p>
+<p>Within the started docker container, download and install the wheel package released by PaddlePaddle's official website. <b>Note</b>: The DCU version of PaddlePaddle framework only supports Hygon C86 architecture.</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Download and install the wheel package</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>pip<span class="w"> </span>install<span class="w"> </span>paddlepaddle-rocm<span class="w"> </span>-i<span class="w"> </span>https://www.paddlepaddle.org.cn/packages/nightly/dcu
 </span></code></pre></div>

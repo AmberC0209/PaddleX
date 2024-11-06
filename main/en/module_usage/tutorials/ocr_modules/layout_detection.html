@@ -4477,7 +4477,7 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-<p><strong>Note: The evaluation set for the above accuracy metrics is PaddleOCR's self-built layout region analysis dataset, containing 10,000 images of common document types, including English and Chinese papers, magazines, research reports, etc. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</strong></p>
+<p><b>Note: The evaluation set for the above accuracy metrics is PaddleOCR's self-built layout region analysis dataset, containing 10,000 images of common document types, including English and Chinese papers, magazines, research reports, etc. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b></p>
 <h2 id="iii-quick-integration">III. Quick Integration  <a id="quick"> </a><a class="headerlink" href="#iii-quick-integration" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>❗ Before quick integration, please install the PaddleX wheel package. For detailed instructions, refer to <a href="../../../installation/installation.html">PaddleX Local Installation Tutorial</a></p>
@@ -4499,7 +4499,7 @@ You're not viewing the latest version.
 <h2 id="iv-custom-development">IV. Custom Development<a class="headerlink" href="#iv-custom-development" title="Permanent link">&para;</a></h2>
 <p>If you seek higher accuracy from existing models, you can use PaddleX's custom development capabilities to develop better structure analysis models. Before developing a structure analysis model with PaddleX, ensure you have installed PaddleX's Detection-related model training capabilities. The installation process can be found in <a href="../../../installation/installation.html">PaddleX Local Installation Tutorial</a>.</p>
 <h3 id="41-data-preparation">4.1 Data Preparation<a class="headerlink" href="#41-data-preparation" title="Permanent link">&para;</a></h3>
-<p>Before model training, you need to prepare the corresponding dataset for the task module. PaddleX provides a data validation function for each module, and <strong>only data that passes the validation can be used for model training</strong>. Additionally, PaddleX provides demo datasets for each module, which you can use to complete subsequent development based on the official demos. If you wish to use private datasets for subsequent model training, refer to the <a href="../../../data_annotations/cv_modules/object_detection.html">PaddleX Object Detection Task Module Data Annotation Tutorial</a>.</p>
+<p>Before model training, you need to prepare the corresponding dataset for the task module. PaddleX provides a data validation function for each module, and <b>only data that passes the validation can be used for model training</b>. Additionally, PaddleX provides demo datasets for each module, which you can use to complete subsequent development based on the official demos. If you wish to use private datasets for subsequent model training, refer to the <a href="../../../data_annotations/cv_modules/object_detection.html">PaddleX Object Detection Task Module Data Annotation Tutorial</a>.</p>
 <h4 id="411-demo-data-download">4.1.1 Demo Data Download<a class="headerlink" href="#411-demo-data-download" title="Permanent link">&para;</a></h4>
 <p>You can use the following commands to download the demo dataset to a specified folder:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">cd</span><span class="w"> </span>/path/to/paddlex
@@ -4560,15 +4560,15 @@ The dataset verification also analyzes the distribution of sample numbers across
 </details>
 
 <h4 id="413-dataset-format-conversiondataset-splitting-optional">4.1.3 Dataset Format Conversion/Dataset Splitting (Optional)<a class="headerlink" href="#413-dataset-format-conversiondataset-splitting-optional" title="Permanent link">&para;</a></h4>
-<p>After completing dataset verification, you can convert the dataset format or re-split the training/validation ratio by <strong>modifying the configuration file</strong> or <strong>appending hyperparameters</strong>.</p>
+<p>After completing dataset verification, you can convert the dataset format or re-split the training/validation ratio by <b>modifying the configuration file</b> or <b>appending hyperparameters</b>.</p>
 <details>
   <summary>👉 <b>Details on Format Conversion/Dataset Splitting (Click to Expand)</b></summary>
 
-**(1) Dataset Format Conversion**
+<b>(1) Dataset Format Conversion</b>
 
 Layout detection does not support data format conversion.
 
-**(2) Dataset Splitting**
+<b>(2) Dataset Splitting</b>
 
 Parameters for dataset splitting can be set by modifying the `CheckDataset` section in the configuration file. Examples of some parameters in the configuration file are as follows:
 
@@ -4633,7 +4633,7 @@ The steps required are:</p>
 * `.pdparams`, `.pdema`, `.pdopt.pdstate`, `.pdiparams`, `.pdmodel`: Model weight-related files, including network parameters, optimizer, EMA, static graph network parameters, static graph network structure, etc.;
 </details>
 
-<h3 id="43-model-evaluation"><strong>4.3 Model Evaluation</strong><a class="headerlink" href="#43-model-evaluation" title="Permanent link">&para;</a></h3>
+<h3 id="43-model-evaluation"><b>4.3 Model Evaluation</b><a class="headerlink" href="#43-model-evaluation" title="Permanent link">&para;</a></h3>
 <p>After completing model training, you can evaluate the specified model weight file on the validation set to verify the model's accuracy. Using PaddleX for model evaluation, you can complete the evaluation with a single command:</p>
 <p><div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>python<span class="w"> </span>main.py<span class="w"> </span>-c<span class="w"> </span>paddlex/configs/structure_analysis/PicoDet-L_layout_3cls.yaml<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span>-o<span class="w"> </span>Global.mode<span class="o">=</span>evaluate<span class="w"> </span><span class="se">\</span>
@@ -4656,7 +4656,7 @@ After completing the model evaluation, an `evaluate_result.json` file will be ge
 
 </details>
 
-<h3 id="44-model-inference"><strong>4.4 Model Inference</strong><a class="headerlink" href="#44-model-inference" title="Permanent link">&para;</a></h3>
+<h3 id="44-model-inference"><b>4.4 Model Inference</b><a class="headerlink" href="#44-model-inference" title="Permanent link">&para;</a></h3>
 <p>After completing model training and evaluation, you can use the trained model weights for inference predictions. In PaddleX, model inference predictions can be achieved through two methods: command line and wheel package.</p>
 <h4 id="441-model-inference">4.4.1 Model Inference<a class="headerlink" href="#441-model-inference" title="Permanent link">&para;</a></h4>
 <ul>
@@ -4686,11 +4686,11 @@ Other related parameters can be set by modifying the fields under <code>Global</
 <p>The model can be directly integrated into PaddleX pipelines or into your own projects.</p>
 <ol>
 <li>
-<p><strong>Pipeline Integration</strong>
+<p><b>Pipeline Integration</b>
 The structure analysis module can be integrated into PaddleX pipelines such as the <a href="../../../pipeline_usage/tutorials/ocr_pipelines/table_recognition.html">General Table Recognition Pipeline</a> and the <a href="../../../pipeline_usage/tutorials/information_extraction_pipelines/document_scene_information_extraction.html">Document Scene Information Extraction Pipeline v3 (PP-ChatOCRv3)</a>. Simply replace the model path to update the layout area localization module. In pipeline integration, you can use high-performance inference and service-oriented deployment to deploy your model.</p>
 </li>
 <li>
-<p><strong>Module Integration</strong>
+<p><b>Module Integration</b>
 The weights you produce can be directly integrated into the layout area localization module. You can refer to the Python example code in the <a href="#quick">Quick Integration</a> section, simply replacing the model with the path to your trained model.</p>
 </li>
 </ol>

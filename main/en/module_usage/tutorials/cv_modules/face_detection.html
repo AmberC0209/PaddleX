@@ -4429,7 +4429,7 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-<p><strong>Note: The evaluation set for the above accuracy metrics is wider_face dataset mAP(0.5:0.95). GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</strong></p>
+<p><b>Note: The evaluation set for the above accuracy metrics is wider_face dataset mAP(0.5:0.95). GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b></p>
 <h2 id="iii-quick-integration">III. Quick Integration  <a id="quick"> </a><a class="headerlink" href="#iii-quick-integration" title="Permanent link">&para;</a></h2>
 <p>Before quick integration, you need to install the PaddleX wheel package. For the installation method of the wheel package, please refer to the <a href="../../../installation/installation.html">PaddleX Local Installation Tutorial</a>. After installing the wheel package, a few lines of code can complete the inference of the face detection module. You can switch models under this module freely, and you can also integrate the model inference of the face detection module into your project. Before running the following code, please download the <a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/face_detection.png">demo image</a> to your local machine.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span> <span class="nn">paddlex</span> <span class="kn">import</span> <span class="n">create_model</span> 
@@ -4448,7 +4448,7 @@ You're not viewing the latest version.
 <h2 id="iv-custom-development">IV. Custom Development<a class="headerlink" href="#iv-custom-development" title="Permanent link">&para;</a></h2>
 <p>If you seek higher accuracy from existing models, you can leverage PaddleX's custom development capabilities to develop better face detection models. Before using PaddleX to develop face detection models, ensure you have installed the PaddleDetection plugin for PaddleX. The installation process can be found in the <a href="../../../installation/installation.html">PaddleX Local Installation Tutorial</a>.</p>
 <h3 id="41-data-preparation">4.1 Data Preparation<a class="headerlink" href="#41-data-preparation" title="Permanent link">&para;</a></h3>
-<p>Before model training, you need to prepare the corresponding dataset for the task module. PaddleX provides a data validation function for each module, and <strong>only data that passes the validation can be used for model training</strong>. Additionally, PaddleX provides demo datasets for each module, which you can use to complete subsequent development based on the official demos. If you wish to use private datasets for subsequent model training, refer to the <a href="../../../data_annotations/cv_modules/object_detection.html">PaddleX Object Detection Task Module Data Annotation Tutorial</a>.</p>
+<p>Before model training, you need to prepare the corresponding dataset for the task module. PaddleX provides a data validation function for each module, and <b>only data that passes the validation can be used for model training</b>. Additionally, PaddleX provides demo datasets for each module, which you can use to complete subsequent development based on the official demos. If you wish to use private datasets for subsequent model training, refer to the <a href="../../../data_annotations/cv_modules/object_detection.html">PaddleX Object Detection Task Module Data Annotation Tutorial</a>.</p>
 <h4 id="411-demo-data-download">4.1.1 Demo Data Download<a class="headerlink" href="#411-demo-data-download" title="Permanent link">&para;</a></h4>
 <p>You can use the following commands to download the demo dataset to a specified folder:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">cd</span><span class="w"> </span>/path/to/paddlex
@@ -4509,15 +4509,15 @@ The dataset verification also analyzes the distribution of sample numbers across
 </details>
 
 <h4 id="413-dataset-format-conversiondataset-splitting-optional">4.1.3 Dataset Format Conversion/Dataset Splitting (Optional)<a class="headerlink" href="#413-dataset-format-conversiondataset-splitting-optional" title="Permanent link">&para;</a></h4>
-<p>After completing dataset verification, you can convert the dataset format or re-split the training/validation ratio by <strong>modifying the configuration file</strong> or <strong>appending hyperparameters</strong>.</p>
+<p>After completing dataset verification, you can convert the dataset format or re-split the training/validation ratio by <b>modifying the configuration file</b> or <b>appending hyperparameters</b>.</p>
 <details>
   <summary>👉 <b>Details on Format Conversion/Dataset Splitting (Click to Expand)</b></summary>
 
-**(1) Dataset Format Conversion**
+<b>(1) Dataset Format Conversion</b>
 
 Face detection does not support data format conversion.
 
-**(2) Dataset Splitting**
+<b>(2) Dataset Splitting</b>
 
 Parameters for dataset splitting can be set by modifying the `CheckDataset` section in the configuration file. Examples of some parameters in the configuration file are as follows:
 
@@ -4582,7 +4582,7 @@ The steps required are:</p>
 * `.pdparams`, `.pdema`, `.pdopt.pdstate`, `.pdiparams`, `.pdmodel`: Model weight-related files, including network parameters, optimizer, EMA, static graph network parameters, static graph network structure, etc.;
 </details>
 
-<h3 id="43-model-evaluation"><strong>4.3 Model Evaluation</strong><a class="headerlink" href="#43-model-evaluation" title="Permanent link">&para;</a></h3>
+<h3 id="43-model-evaluation"><b>4.3 Model Evaluation</b><a class="headerlink" href="#43-model-evaluation" title="Permanent link">&para;</a></h3>
 <p>After completing model training, you can evaluate the specified model weight file on the validation set to verify the model's accuracy. Using PaddleX for model evaluation, you can complete the evaluation with a single command:</p>
 <p><div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>python<span class="w"> </span>main.py<span class="w"> </span>-c<span class="w"> </span>paddlex/configs/face_detection/PicoDet_LCNet_x2_5_face.yaml<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span>-o<span class="w"> </span>Global.mode<span class="o">=</span>evaluate<span class="w"> </span><span class="se">\</span>
@@ -4605,7 +4605,7 @@ After completing the model evaluation, an `evaluate_result.json` file will be ge
 
 </details>
 
-<h3 id="44-model-inference"><strong>4.4 Model Inference</strong><a class="headerlink" href="#44-model-inference" title="Permanent link">&para;</a></h3>
+<h3 id="44-model-inference"><b>4.4 Model Inference</b><a class="headerlink" href="#44-model-inference" title="Permanent link">&para;</a></h3>
 <p>After completing model training and evaluation, you can use the trained model weights for inference prediction. In PaddleX, model inference prediction can be achieved through two methods: command line and wheel package.</p>
 <h4 id="441-model-inference">4.4.1 Model Inference<a class="headerlink" href="#441-model-inference" title="Permanent link">&para;</a></h4>
 <ul>
@@ -4629,11 +4629,11 @@ Other related parameters can be set by modifying the fields under <code>Global</
 <h4 id="442-model-integration">4.4.2 Model Integration<a class="headerlink" href="#442-model-integration" title="Permanent link">&para;</a></h4>
 <p>The model can be directly integrated into the PaddleX pipeline or into your own project.</p>
 <ol>
-<li><strong>Pipeline Integration</strong></li>
+<li><b>Pipeline Integration</b></li>
 </ol>
-<p>The face detection module can be integrated into PaddleX pipelines such as <strong>Face Recognition</strong> (coming soon). Simply replace the model path to update the face detection module of the relevant pipeline. In pipeline integration, you can use high-performance inference and service-oriented deployment to deploy your model.</p>
+<p>The face detection module can be integrated into PaddleX pipelines such as <b>Face Recognition</b> (coming soon). Simply replace the model path to update the face detection module of the relevant pipeline. In pipeline integration, you can use high-performance inference and service-oriented deployment to deploy your model.</p>
 <ol>
-<li><strong>Module Integration</strong></li>
+<li><b>Module Integration</b></li>
 </ol>
 <p>The weights you produce can be directly integrated into the face detection module. You can refer to the Python example code in <a href="#quick">Quick Integration</a>, simply replace the model with the path to your trained model.</p>
 

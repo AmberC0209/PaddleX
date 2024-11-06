@@ -4345,12 +4345,12 @@ You're not viewing the latest version.
 <h2 id="1-introduction-to-the-formula-recognition-pipeline">1. Introduction to the Formula Recognition Pipeline<a class="headerlink" href="#1-introduction-to-the-formula-recognition-pipeline" title="Permanent link">&para;</a></h2>
 <p>Formula recognition is a technology that automatically identifies and extracts LaTeX formula content and its structure from documents or images. It is widely used in document editing and data analysis in fields such as mathematics, physics, and computer science. Leveraging computer vision and machine learning algorithms, formula recognition converts complex mathematical formula information into editable LaTeX format, facilitating further data processing and analysis for users.</p>
 <p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/formula_recognition/01.jpg"></p>
-<p><strong>The Formula Recognition Pipeline comprises a layout detection module and a formula recognition module.</strong></p>
-<p><strong>If you prioritize model accuracy, choose a model with higher accuracy. If you prioritize inference speed, select a model with faster inference. If you prioritize model size, choose a model with a smaller storage footprint.</strong></p>
+<p><b>The Formula Recognition Pipeline comprises a layout detection module and a formula recognition module.</b></p>
+<p><b>If you prioritize model accuracy, choose a model with higher accuracy. If you prioritize inference speed, select a model with faster inference. If you prioritize model size, choose a model with a smaller storage footprint.</b></p>
 <details>
    <summary> 👉Model List Details</summary>
 
-**Layout Detection Module Models**:
+<b>Layout Detection Module Models</b>:
 
 <table>
 <thead>
@@ -4372,9 +4372,9 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-**Note: The above accuracy metrics are evaluated on PaddleX's self-built layout detection dataset, containing 10,000 images. All GPU inference times are based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speeds are based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.**
+<b>Note: The above accuracy metrics are evaluated on PaddleX's self-built layout detection dataset, containing 10,000 images. All GPU inference times are based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speeds are based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
 
-**Formula Recognition Module Models**:
+<b>Formula Recognition Module Models</b>:
 
 <table>
 <thead>
@@ -4400,7 +4400,7 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-**Note: The above accuracy metrics are measured on the [LaTeX-OCR Formula Recognition Test Set](https://drive.google.com/drive/folders/13CA4vAmOmD_I_dSbvLp-Lf0s6KiaNfuO). All GPU inference times are based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speeds are based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.**
+<b>Note: The above accuracy metrics are measured on the [LaTeX-OCR Formula Recognition Test Set](https://drive.google.com/drive/folders/13CA4vAmOmD_I_dSbvLp-Lf0s6KiaNfuO). All GPU inference times are based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speeds are based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
 
 </details>
 
@@ -4599,13 +4599,13 @@ After that, use the <code>save_to_img</code> method to save the visualization im
 </span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>    <span class="n">res</span><span class="o">.</span><span class="n">print</span><span class="p">()</span>
 </span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>    <span class="n">res</span><span class="o">.</span><span class="n">save_to_img</span><span class="p">(</span><span class="s2">&quot;./output/&quot;</span><span class="p">)</span>
 </span></code></pre></div>
-<strong>Note</strong>: Since the formula recognition visualization process requires rendering each formula image, it may take a relatively long time. Please be patient.</p>
+<b>Note</b>: Since the formula recognition visualization process requires rendering each formula image, it may take a relatively long time. Please be patient.</p>
 <h2 id="3-development-integrationdeployment">3. Development Integration/Deployment<a class="headerlink" href="#3-development-integrationdeployment" title="Permanent link">&para;</a></h2>
 <p>If the formula recognition pipeline meets your requirements for inference speed and accuracy, you can proceed directly with development integration/deployment.</p>
 <p>If you need to apply the formula recognition pipeline directly in your Python project, refer to the example code in <a href="#22-python-script-integration">2.2 Python Script Integration</a>.</p>
 <p>Additionally, PaddleX provides three other deployment methods, detailed as follows:</p>
-<p>🚀 <strong>High-Performance Inference</strong>: In actual production environments, many applications have stringent standards for the performance metrics of deployment strategies (especially response speed) to ensure efficient system operation and smooth user experience. To this end, PaddleX provides high-performance inference plugins aimed at deeply optimizing model inference and pre/post-processing for significant end-to-end speedups. For detailed high-performance inference procedures, refer to the <a href="../../../pipeline_deploy/high_performance_inference.html">PaddleX High-Performance Inference Guide</a>.</p>
-<p>☁️ <strong>Service-Oriented Deployment</strong>: Service-oriented deployment is a common deployment form in actual production environments. By encapsulating inference functions as services, clients can access these services through network requests to obtain inference results. PaddleX supports users in achieving low-cost service-oriented deployment of pipelines. For detailed service-oriented deployment procedures, refer to the <a href="../../../pipeline_deploy/service_deploy.html">PaddleX Service-Oriented Deployment Guide</a>.</p>
+<p>🚀 <b>High-Performance Inference</b>: In actual production environments, many applications have stringent standards for the performance metrics of deployment strategies (especially response speed) to ensure efficient system operation and smooth user experience. To this end, PaddleX provides high-performance inference plugins aimed at deeply optimizing model inference and pre/post-processing for significant end-to-end speedups. For detailed high-performance inference procedures, refer to the <a href="../../../pipeline_deploy/high_performance_inference.html">PaddleX High-Performance Inference Guide</a>.</p>
+<p>☁️ <b>Service-Oriented Deployment</b>: Service-oriented deployment is a common deployment form in actual production environments. By encapsulating inference functions as services, clients can access these services through network requests to obtain inference results. PaddleX supports users in achieving low-cost service-oriented deployment of pipelines. For detailed service-oriented deployment procedures, refer to the <a href="../../../pipeline_deploy/service_deploy.html">PaddleX Service-Oriented Deployment Guide</a>.</p>
 <p>Below are the API references and multi-language service invocation examples:</p>
 <details>
 <summary>API Reference</summary>
@@ -4631,7 +4631,7 @@ For all operations provided by the service:
 
 Operations provided by the service:
 
-- **`infer`**
+- <b>`infer`</b>
 
     Obtain formula recognition results from an image.
 
@@ -5057,10 +5057,10 @@ Operations provided by the service:
 </details>
 </details>
 <p><br/></p>
-<p>📱 <strong>Edge Deployment</strong>: Edge deployment is a method that places computing and data processing capabilities on user devices themselves, allowing devices to process data directly without relying on remote servers. PaddleX supports deploying models on edge devices such as Android. For detailed edge deployment procedures, refer to the <a href="../../../pipeline_deploy/edge_deploy.html">PaddleX Edge Deployment Guide</a>.
+<p>📱 <b>Edge Deployment</b>: Edge deployment is a method that places computing and data processing capabilities on user devices themselves, allowing devices to process data directly without relying on remote servers. PaddleX supports deploying models on edge devices such as Android. For detailed edge deployment procedures, refer to the <a href="../../../pipeline_deploy/edge_deploy.html">PaddleX Edge Deployment Guide</a>.
 You can choose the appropriate deployment method based on your needs to proceed with subsequent AI application integration.</p>
 <h2 id="4-custom-development">4. Custom Development<a class="headerlink" href="#4-custom-development" title="Permanent link">&para;</a></h2>
-<p>If the default model weights provided by the formula recognition pipeline do not meet your requirements for accuracy or speed in your specific scenario, you can try to further fine-tune the existing models using <strong>your own domain-specific or application-specific data</strong> to improve the recognition performance of the formula recognition pipeline in your scenario.</p>
+<p>If the default model weights provided by the formula recognition pipeline do not meet your requirements for accuracy or speed in your specific scenario, you can try to further fine-tune the existing models using <b>your own domain-specific or application-specific data</b> to improve the recognition performance of the formula recognition pipeline in your scenario.</p>
 <h3 id="41-model-fine-tuning">4.1 Model Fine-tuning<a class="headerlink" href="#41-model-fine-tuning" title="Permanent link">&para;</a></h3>
 <p>Since the formula recognition pipeline consists of two modules (layout detection and formula recognition), unsatisfactory performance may stem from either module.</p>
 <p>You can analyze images with poor recognition results. If you find that many formula are undetected (i.e., formula miss detection), it may indicate that the layout detection model needs improvement. You should refer to the <a href="../../../module_usage/tutorials/ocr_modules/layout_detection.html#iv-custom-development">Customization</a> section in the <a href="../../../module_usage/tutorials/ocr_modules/layout_detection.html">Layout Detection Module Development Tutorial</a> and use your private dataset to fine-tune the layout detection model. If many recognition errors occur in detected formula (i.e., the recognized formula content does not match the actual formula content), it suggests that the formula recognition model requires further refinement. You should refer to the <a href="../../../module_usage/tutorials/ocr_modules/formula_recognition.html#iv-custom-development">Customization</a> section in the <a href="../../../module_usage/tutorials/ocr_modules/formula_recognition.html">Formula Recognition Module Development Tutorial</a> and fine-tune the formula recognition model.</p>
@@ -5077,7 +5077,7 @@ You can choose the appropriate deployment method based on your needs to proceed 
 </span></code></pre></div>
 <p>Then, refer to the command line method or Python script method in <a href="#2-quick-start">2. Quick Start</a> to load the modified pipeline configuration file.</p>
 <h2 id="5-multi-hardware-support">5. Multi-Hardware Support<a class="headerlink" href="#5-multi-hardware-support" title="Permanent link">&para;</a></h2>
-<p>PaddleX supports various mainstream hardware devices such as NVIDIA GPU, Kunlun XPU, Ascend NPU, and Cambricon MLU. <strong>Simply modifying the <code>--device</code> parameter</strong> allows seamless switching between different hardware.</p>
+<p>PaddleX supports various mainstream hardware devices such as NVIDIA GPU, Kunlun XPU, Ascend NPU, and Cambricon MLU. <b>Simply modifying the <code>--device</code> parameter</b> allows seamless switching between different hardware.</p>
 <p>For example, if you are using an NVIDIA GPU for formula pipeline inference, the Python command would be:</p>
 <p><div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>paddlex<span class="w"> </span>--pipeline<span class="w"> </span>formula_recognition<span class="w"> </span>--input<span class="w"> </span>general_formula_recognition.png<span class="w"> </span>--device<span class="w"> </span>gpu:0
 </span></code></pre></div>

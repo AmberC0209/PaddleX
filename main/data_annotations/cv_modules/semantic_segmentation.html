@@ -4386,9 +4386,9 @@ You're not viewing the latest version.
 </ul>
 <p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/semantic_seg/12.png">
 <img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/semantic_seg/13.png"></p>
-<p>通常情况下，只需要标注前景目标并设置标注类别即可，其他像素默认作为背景。如需要手动标注背景区域，<strong>类别必须设置为 <em>background</em></strong>，否则格式转换数据集会出现错误。
-对于图片中的噪声部分或不参与模型训练的部分，可以使用 <strong><strong>ignore</strong></strong> 类，模型训练时会自动跳过对应部分。
-针对带有空洞的目标，在标注完目标外轮廓后，再沿空洞边缘画多边形，并将空洞指定为特定类别，如果空洞是背景则指定为 <strong><em>background</em></strong>，示例如下：</p>
+<p>通常情况下，只需要标注前景目标并设置标注类别即可，其他像素默认作为背景。如需要手动标注背景区域，<b>类别必须设置为 <em>background</em></b>，否则格式转换数据集会出现错误。
+对于图片中的噪声部分或不参与模型训练的部分，可以使用 <b><strong>ignore</strong></b> 类，模型训练时会自动跳过对应部分。
+针对带有空洞的目标，在标注完目标外轮廓后，再沿空洞边缘画多边形，并将空洞指定为特定类别，如果空洞是背景则指定为 <b><em>background</em></b>，示例如下：</p>
 <p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/semantic_seg/14.png"></p>
 <ul>
 <li>标注好后点击存储。（若在启动 <code>labelme</code> 时未指定<code>output</code> 字段，会在第一次存储时提示选择存储路径，若指定<code>autosave</code> 字段使用自动保存，则无需点击存储按钮）</li>
@@ -4422,7 +4422,7 @@ b. 经过整理得到的最终目录结构如下：</p>
 </span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">    </span>-o<span class="w"> </span>CheckDataset.convert.src_dataset_type<span class="o">=</span>LabelMe
 </span></code></pre></div>
 <h2 id="_1">数据格式<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>PaddleX 针对图像分割任务定义的数据集，名称是**SegDataset**，组织结构和标注格式如下：</p>
+<p>PaddleX 针对图像分割任务定义的数据集，名称是<b>SegDataset</b>，组织结构和标注格式如下：</p>
 <p><div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>dataset_dir<span class="w">         </span><span class="c1"># 数据集根目录，目录名称可以改变</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>├──<span class="w"> </span>annotations<span class="w">     </span><span class="c1"># 存放标注图像的目录，目录名称可以改变，注意与标识文件的内容相对应</span>
 </span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>├──<span class="w"> </span>images<span class="w">          </span><span class="c1"># 存放原始图像的目录，目录名称可以改变，注意与标识文件的内容相对应</span>

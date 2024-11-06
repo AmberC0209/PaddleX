@@ -4438,7 +4438,7 @@ You're not viewing the latest version.
 <p>PaddleX 提供了丰富的模型产线，模型产线由一个或多个模型组合实现，每个模型产线都能够解决特定的场景任务问题。PaddleX 所提供的模型产线均支持快速体验，如果效果不及预期，也同样支持使用私有数据微调模型，并且 PaddleX 提供了 Python API，方便将产线集成到个人项目中。在使用之前，您首先需要安装 PaddleX， 安装方式请参考 <a href="../installation/installation.html">PaddleX本地安装教程</a>。此处以一个论文文献的文档场景信息抽取任务为例子，介绍该产线的在实际场景中的使用流程。</p>
 <h2 id="1">1. 选择产线<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
 <p>文档信息抽取是文档处理的一部分，在众多场景中都有着广泛的应用，例如学术研究、图书馆管理、科技情报分析、文献综述撰写等场景。通过文档信息抽取技术，我们可以从论文文献中自动提取出标题、作者、摘要、关键词、发表年份、期刊名称、引用信息等关键信息，并以结构化的形式存储，便于后续的检索、分析与应用。这不仅提升了科研人员的工作效率，也为学术研究的深入发展提供了强有力的支持。</p>
-<p>首先，需要根据任务场景，选择对应的 PaddleX 产线，本节以论文文献的信息抽取为例，希望抽取出论文中的**页眉**和**表格标题**，对应 PaddleX 的文档场景信息抽取v3产线。如果无法确定任务和产线的对应关系，您可以在 PaddleX 支持的<a href="../support_list/pipelines_list.html">模型产线列表</a>中了解相关产线的能力介绍。</p>
+<p>首先，需要根据任务场景，选择对应的 PaddleX 产线，本节以论文文献的信息抽取为例，希望抽取出论文中的<b>页眉</b>和<b>表格标题</b>，对应 PaddleX 的文档场景信息抽取v3产线。如果无法确定任务和产线的对应关系，您可以在 PaddleX 支持的<a href="../support_list/pipelines_list.html">模型产线列表</a>中了解相关产线的能力介绍。</p>
 <h2 id="2">2. 快速体验<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
 <p>PaddleX 提供了两种体验的方式，你可以在线体验文档场景信息抽取v3产线的效果，也可以在本地使用 Python 体验文档场景信息抽取v3 产线的效果。</p>
 <h3 id="21">2.1 本地体验<a class="headerlink" href="#21" title="Permanent link">&para;</a></h3>
@@ -4467,7 +4467,7 @@ You're not viewing the latest version.
 </span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>    <span class="p">)</span>
 </span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="n">chat_result</span><span class="o">.</span><span class="n">print</span><span class="p">()</span>
 </span></code></pre></div>
-<p><strong>注</strong>：目前仅支持文心大模型，支持在<a href="https://console.bce.baidu.com/qianfan/ais/console/onlineService">百度云千帆平台</a>或者<a href="https://aistudio.baidu.com/">星河社区 AIStudio</a>上获取相关的 ak/sk(access_token)。如果使用百度云千帆平台，可以参考<a href="https://cloud.baidu.com/doc/WENXINWORKSHOP/s/Hlwerugt8">AK和SK鉴权调用API流程</a> 获取ak/sk，如果使用星河社区 AIStudio，可以在<a href="https://aistudio.baidu.com/account/accessToken">星河社区 AIStudio 访问令牌</a>中获取 access_token。</p>
+<p><b>注</b>：目前仅支持文心大模型，支持在<a href="https://console.bce.baidu.com/qianfan/ais/console/onlineService">百度云千帆平台</a>或者<a href="https://aistudio.baidu.com/">星河社区 AIStudio</a>上获取相关的 ak/sk(access_token)。如果使用百度云千帆平台，可以参考<a href="https://cloud.baidu.com/doc/WENXINWORKSHOP/s/Hlwerugt8">AK和SK鉴权调用API流程</a> 获取ak/sk，如果使用星河社区 AIStudio，可以在<a href="https://aistudio.baidu.com/account/accessToken">星河社区 AIStudio 访问令牌</a>中获取 access_token。</p>
 <p>输出打印的结果如下：</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>The result has been saved in output/tmpfnss9sq9_layout.jpg.
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>The result has been saved in output/tmpfnss9sq9_ocr.jpg.
@@ -4485,7 +4485,7 @@ You're not viewing the latest version.
 <p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/practical_tutorials/PP-ChatOCRv3_doc/layout_detection_01.png"></p>
 <p>通过上面的文档场景信息抽取的快速体验可以进行 Badcase 分析，发现文档场景信息抽取产线的官方模型，在当前需求场景中存在下面的问题：由于官方模型目前只区分了图，表格和印章三个类别，因此目前无法准确的定位并抽取出页眉和表格标题等其他信息，在<code>{'chat_res': {'页眉': '未知', '表格标题': '未知'}, 'prompt': ''}</code>中的结果是未知。因此，本节工作聚焦于论文文献的场景，利用论文文档数据集，以页眉和表格标题信息的抽取为例，对文档场景信息抽取产线中的版面分析模型进行微调，从而达到能够精确提取文档中页眉和表格标题信息的能力。</p>
 <h3 id="22">2.2 在线体验<a class="headerlink" href="#22" title="Permanent link">&para;</a></h3>
-<p>您可以在 <strong>AI Studio 星河社区</strong> 体验文档场景信息抽取v3产线的效果，点击链接下载 <a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/doc_images/practical_tutorial/PP-ChatOCRv3_doc_layout/test.jpg">论文文献测试文件</a>，上传至<a href="https://aistudio.baidu.com/community/app/182491/webUI?source=appCenter">官方文档场景信息抽取v3 应用</a> 体验抽取效果。如下：</p>
+<p>您可以在 <b>AI Studio 星河社区</b> 体验文档场景信息抽取v3产线的效果，点击链接下载 <a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/doc_images/practical_tutorial/PP-ChatOCRv3_doc_layout/test.jpg">论文文献测试文件</a>，上传至<a href="https://aistudio.baidu.com/community/app/182491/webUI?source=appCenter">官方文档场景信息抽取v3 应用</a> 体验抽取效果。如下：</p>
 <p><img src="https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/doc_images/practical_tutorial/PP-ChatOCRv3_doc_layout/06.png"></p>
 <h2 id="3">3. 选择模型<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
 <p>PaddleX 提供了 4 个端到端的版面区域定位模型，具体可参考 <a href="../support_list/models_list.html">模型列表</a>，其中版面区域检测模型的 benchmark 如下：</p>
@@ -4559,7 +4559,7 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-<p><strong>注：以上精度指标的评估集是 PaddleOCR 自建的版面区域分析数据集，包含中英文论文、杂志和研报等常见的 1w 张文档类型图片。GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为 8，精度类型为 FP32。</strong></p>
+<p><b>注：以上精度指标的评估集是 PaddleOCR 自建的版面区域分析数据集，包含中英文论文、杂志和研报等常见的 1w 张文档类型图片。GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为 8，精度类型为 FP32。</b></p>
 <h2 id="4">4. 数据准备和校验<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
 <h3 id="41">4.1 数据准备<a class="headerlink" href="#41" title="Permanent link">&para;</a></h3>
 <p>本教程采用 <code>论文文献数据集</code> 作为示例数据集，可通过以下命令获取示例数据集。如果您使用自备的已标注数据集，需要按照 PaddleX 的格式要求对自备数据集进行调整，以满足 PaddleX 的数据格式要求。关于数据格式介绍，您可以参考 <a href="../data_annotations/cv_modules/object_detection.html">PaddleX 目标检测模块数据标注教程</a>。</p>
@@ -4627,7 +4627,7 @@ You're not viewing the latest version.
 <p><center></p>
 <p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/practical_tutorials/PP-ChatOCRv3_doc/layout_detection_02.png" width=600></p>
 <p></center></p>
-<p><strong>注</strong>：只有通过数据校验的数据才可以训练和评估。</p>
+<p><b>注</b>：只有通过数据校验的数据才可以训练和评估。</p>
 <h3 id="43">4.3 数据集划分（非必选）<a class="headerlink" href="#43" title="Permanent link">&para;</a></h3>
 <p>如需对数据集格式进行转换或是重新划分数据集，可通过修改配置文件或是追加超参数的方式进行设置。</p>
 <p>数据集校验相关的参数可以通过修改配置文件中 <code>CheckDataset</code> 下的字段进行设置，配置文件中部分参数的示例说明如下：</p>
@@ -4666,11 +4666,11 @@ You're not viewing the latest version.
 </li>
 </ul>
 <p>更多超参数介绍，请参考 <a href="../module_usage/instructions/config_parameters_common.html">PaddleX 通用模型配置文件参数说明</a>。</p>
-<p><strong>注：</strong>
+<p><b>注：</b>
 - 以上参数可以通过追加令行参数的形式进行设置，如指定模式为模型训练：<code>-o Global.mode=train</code>；指定前 2 卡 gpu 训练：<code>-o Global.device=gpu:0,1</code>；设置训练轮次数为 10：<code>-o Train.epochs_iters=10</code>。
 - 模型训练过程中，PaddleX 会自动保存模型权重文件，默认为<code>output</code>，如需指定保存路径，可通过配置文件中 <code>-o Global.output</code> 字段
 - PaddleX 对您屏蔽了动态图权重和静态图权重的概念。在模型训练的过程中，会同时产出动态图和静态图的权重，在模型推理时，默认选择静态图权重推理。</p>
-<p><strong>训练产出解释:</strong></p>
+<p><b>训练产出解释:</b></p>
 <p>在完成模型训练后，所有产出保存在指定的输出目录（默认为<code>./output/</code>）下，通常有以下产出：</p>
 <ul>
 <li>train_result.json：训练结果记录文件，记录了训练任务是否正常完成，以及产出的权重指标、相关文件路径等；</li>
@@ -4685,7 +4685,7 @@ You're not viewing the latest version.
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span>-o<span class="w"> </span>Global.dataset_dir<span class="o">=</span>./dataset/paperlayout
 </span></code></pre></div>
 <p>与模型训练类似，模型评估支持修改配置文件或追加命令行参数的方式设置。</p>
-<p><strong>注：</strong> 在模型评估时，需要指定模型权重文件路径，每个配置文件中都内置了默认的权重保存路径，如需要改变，只需要通过追加命令行参数的形式进行设置即可，如<code>-o Evaluate.weight_path=./output/best_model/best_model.pdparams</code>。</p>
+<p><b>注：</b> 在模型评估时，需要指定模型权重文件路径，每个配置文件中都内置了默认的权重保存路径，如需要改变，只需要通过追加命令行参数的形式进行设置即可，如<code>-o Evaluate.weight_path=./output/best_model/best_model.pdparams</code>。</p>
 <h3 id="53">5.3 模型调优<a class="headerlink" href="#53" title="Permanent link">&para;</a></h3>
 <p>在学习了模型训练和评估后，我们可以通过调整超参数来提升模型的精度。通过合理调整训练轮数，您可以控制模型的训练深度，避免过拟合或欠拟合；而学习率的设置则关乎模型收敛的速度和稳定性。因此，在优化模型性能时，务必审慎考虑这两个参数的取值，并根据实际情况进行灵活调整，以获得最佳的训练效果。</p>
 <p>推荐在调试参数时遵循控制变量法：
@@ -4755,7 +4755,7 @@ You're not viewing the latest version.
 </tbody>
 </table>
 <p></center></p>
-<p>** 注：本教程为 4 卡教程，如果您只有 1 张 GPU，可通过调整训练卡数完成本次实验，但最终指标未必和上述指标完全对齐，属正常情况。**</p>
+<p><b> 注：本教程为 4 卡教程，如果您只有 1 张 GPU，可通过调整训练卡数完成本次实验，但最终指标未必和上述指标完全对齐，属正常情况。</b></p>
 <p>在选择训练环境时，要考虑训练卡数和总 batch_size，以及学习率的关系。首先训练卡数乘以单卡 batch_size 等于总 batch_size。其次，总 batch_size 和学习率是相关的，学习率应与总 batch_size 保持同步调整。 目前默认学习率对应基于 4 卡训练的总 batch_size，若您打算在单卡环境下进行训练，则设置学习率时需相应除以 4。若您打算在 8 卡环境下进行训练，则设置学习率时需相应乘以 2。</p>
 <p>调整不同参数执行训练的命令可以参考：</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>python<span class="w"> </span>main.py<span class="w"> </span>-c<span class="w"> </span>paddlex/configs/structure_analysis/RT-DETR-H_layout_3cls.yaml<span class="w"> </span><span class="se">\</span>

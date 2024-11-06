@@ -4373,7 +4373,7 @@ You're not viewing the latest version.
 <h2 id="1-select-a-pipeline">1. Select a Pipeline<a class="headerlink" href="#1-select-a-pipeline" title="Permanent link">&para;</a></h2>
 <p>First, choose the corresponding PaddleX pipeline based on your task scenario. This task aims to identify and mark abnormal behaviors or states in equipment nodes, helping enterprises and organizations promptly detect and resolve issues in application server nodes, thereby improving system reliability and availability. Recognizing this as a time series anomaly detection task, we will use PaddleX's Time Series Anomaly Detection Pipeline. If you are unsure about the correspondence between tasks and pipelines, you can refer to the <a href="../support_list/models_list.html">PaddleX Pipeline List (CPU/GPU)</a> for an overview of pipeline capabilities.</p>
 <h2 id="2-quick-experience">2. Quick Experience<a class="headerlink" href="#2-quick-experience" title="Permanent link">&para;</a></h2>
-<p>PaddleX offers two ways to experience its capabilities: locally on your machine or on the <strong>Baidu AIStudio Community</strong>.</p>
+<p>PaddleX offers two ways to experience its capabilities: locally on your machine or on the <b>Baidu AIStudio Community</b>.</p>
 <ul>
 <li>Local Experience:
 <div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span> <span class="nn">paddlex</span> <span class="kn">import</span> <span class="n">create_model</span>
@@ -4443,7 +4443,7 @@ Note: Due to the tight correlation between time series data and scenarios, the o
 </tbody>
 </table>
 <blockquote>
-<p><strong>Note: The above accuracy metrics are measured on the <a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/data/ts_anomaly_examples.tar">PSM</a> dataset with a time series length of 100.</strong></p>
+<p><b>Note: The above accuracy metrics are measured on the <a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/data/ts_anomaly_examples.tar">PSM</a> dataset with a time series length of 100.</b></p>
 </blockquote>
 <h2 id="4-data-preparation-and-validation">4. Data Preparation and Validation<a class="headerlink" href="#4-data-preparation-and-validation" title="Permanent link">&para;</a></h2>
 <h3 id="41-data-preparation">4.1 Data Preparation<a class="headerlink" href="#41-data-preparation" title="Permanent link">&para;</a></h3>
@@ -4454,7 +4454,7 @@ Note: Due to the tight correlation between time series data and scenarios, the o
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>wget<span class="w"> </span>https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/doc_images/practical_tutorial/timeseries_anomaly_detection/msl.tar<span class="w"> </span>-P<span class="w"> </span>./dataset
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>tar<span class="w"> </span>-xf<span class="w"> </span>./dataset/msl.tar<span class="w"> </span>-C<span class="w"> </span>./dataset/
 </span></code></pre></div>
-<p><strong>Data Considerations</strong>
+<p><b>Data Considerations</b>
  * Time series anomaly detection is an unsupervised learning task, thus labeled training data is not required. The collected training samples should ideally consist solely of normal data, i.e., devoid of anomalies, with the label column in the training set set to 0 or, alternatively, the label column can be omitted entirely. For the validation set, to assess accuracy, labeling is necessary. Points that are anomalous at a particular timestamp should have their labels set to 1, while normal points should have labels of 0.
  * Handling Missing Values: To ensure data quality and integrity, missing values can be imputed based on expert knowledge or statistical methods.
  * Non-Repetitiveness: Ensure that data is collected in chronological order by row, with no duplication of timestamps.</p>
@@ -4498,7 +4498,7 @@ The above verification results have omitted some data parts. <code>check_pass</c
 <li><code>attributes.train_table</code>: Sample data rows from the training set of this dataset.</li>
 <li><code>attributes.val_table</code>: Sample data rows from the validation set of this dataset.</li>
 </ul>
-<p><strong>Note</strong>: Only data that passes the verification can be used for training and evaluation.</p>
+<p><b>Note</b>: Only data that passes the verification can be used for training and evaluation.</p>
 <h3 id="43-dataset-format-conversiondataset-splitting-optional">4.3 Dataset Format Conversion/Dataset Splitting (Optional)<a class="headerlink" href="#43-dataset-format-conversiondataset-splitting-optional" title="Permanent link">&para;</a></h3>
 <p>If you need to convert the dataset format or re-split the dataset, refer to Section 4.1.3 in the <a href="../module_usage/tutorials/time_series_modules/time_series_anomaly_detection.html">Time Series Anomaly Detection Module Development Tutorial</a>.</p>
 <h2 id="5-model-training-and-evaluation">5. Model Training and Evaluation<a class="headerlink" href="#5-model-training-and-evaluation" title="Permanent link">&para;</a></h2>
@@ -4542,7 +4542,7 @@ PaddleX supports modifying training hyperparameters and single-machine single-GP
 
 After completing the model training, all outputs are saved in the specified output directory (default is `./output/`), typically including the following:
 
-**Explanation of Training Outputs:**
+<b>Explanation of Training Outputs:</b>
 
 After completing the model training, all outputs are saved in the specified output directory (default is `./output/`), typically including the following:
 
@@ -4560,7 +4560,7 @@ After completing the model training, all outputs are saved in the specified outp
 </span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span>-o<span class="w"> </span>Global.dataset_dir<span class="o">=</span>./dataset/msl
 </span></code></pre></div>
 Similar to model training, model evaluation supports setting through modifying the configuration file or appending command-line parameters.</p>
-<p><strong>Note</strong>: When evaluating the model, you need to specify the model weights file path. Each configuration file has a default weight save path built-in. If you need to change it, simply set it by appending a command-line parameter, such as <code>-o Evaluate.weight_path=./output/best_model/model.pdparams</code>.</p>
+<p><b>Note</b>: When evaluating the model, you need to specify the model weights file path. Each configuration file has a default weight save path built-in. If you need to change it, simply set it by appending a command-line parameter, such as <code>-o Evaluate.weight_path=./output/best_model/model.pdparams</code>.</p>
 <p>After completing the model evaluation, typically, the following outputs are generated:</p>
 <p>Upon completion of model evaluation, <code>evaluate_result.json</code> will be produced, which records the evaluation results, specifically, whether the evaluation task was completed successfully, and the model's evaluation metrics, including F1, recall, and precision.</p>
 <h3 id="53-model-tuning">5.3 Model Tuning<a class="headerlink" href="#53-model-tuning" title="Permanent link">&para;</a></h3>

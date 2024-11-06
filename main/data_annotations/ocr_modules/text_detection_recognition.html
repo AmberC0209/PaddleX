@@ -4280,17 +4280,17 @@ You're not viewing the latest version.
 <p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/ocr/03.png">
 4. 手动标注：点击 “矩形标注”（推荐直接在英文模式下点击键盘中的 “W”)，用户可对当前图片中模型未检出的部分进行手动绘制标记框。点击键盘Q，则使用四点标注模式（或点击“编辑” - “四点标注”），用户依次点击4个点后，双击左键表示标注完成。
 5. 标记框绘制完成后，用户点击 “确认”，检测框会先被预分配一个 “待识别” 标签。
-6. 重新识别：将图片中的所有检测画绘制/调整完成后，点击 “重新识别”，PP-OCR模型会对当前图片中的**所有检测框**重新识别[3]。</p>
+6. 重新识别：将图片中的所有检测画绘制/调整完成后，点击 “重新识别”，PP-OCR模型会对当前图片中的<b>所有检测框</b>重新识别[3]。</p>
 <p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/ocr/04.png">
 <img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/ocr/05.png">
 7. 内容更改：单击识别结果，对不准确的识别结果进行手动更改。
-8. <strong>确认标记：点击 “确认”，图片状态切换为 “√”，跳转至下一张。</strong>
+8. <b>确认标记：点击 “确认”，图片状态切换为 “√”，跳转至下一张。</b>
 9. 删除：点击 “删除图像”，图片将会被删除至回收站。
 10.  导出结果：用户可以通过菜单中“文件-导出标记结果”手动导出，同时也可以点击“文件 - 自动导出标记结果”开启自动导出。手动确认过的标记将会被存放在所打开图片文件夹下的<code>Label.txt</code>中。在菜单栏点击 “文件” - "导出识别结果"后，会将此类图片的识别训练数据保存在<code>crop_img</code>文件夹下，识别标签保存在<code>rec_gt.txt</code>中。</p>
 <p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/ocr/06.png">
-<strong>注意事项:</strong></p>
+<b>注意事项:</b></p>
 <ul>
-<li>PPOCRLabel以**文件夹**为基本标记单位，打开待标记的图片文件夹后，不会在窗口栏中显示图片，而是在点击 "选择文件夹" 之后直接将文件夹下的图片导入到程序中。</li>
+<li>PPOCRLabel以<b>文件夹</b>为基本标记单位，打开待标记的图片文件夹后，不会在窗口栏中显示图片，而是在点击 "选择文件夹" 之后直接将文件夹下的图片导入到程序中。</li>
 <li>图片状态表示本张图片用户是否手动保存过，未手动保存过即为 “X”，手动保存过为 “√”。点击 “自动标注”按钮后，PPOCRLabel不会对状态为 “√” 的图片重新标注。</li>
 <li>点击“重新识别”后，模型会对图片中的识别结果进行覆盖。因此如果在此之前手动更改过识别结果，有可能在重新识别后产生变动。</li>
 <li>PPOCRLabel产生的文件放置于标记图片文件夹下，包括以下几种，请勿手动更改其中内容，否则会引起程序出现异常。</li>

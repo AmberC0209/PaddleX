@@ -4425,7 +4425,7 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-<p><strong>Note: The evaluation set for the above accuracy metrics is UWaveGestureLibrary.</strong></p>
+<p><b>Note: The evaluation set for the above accuracy metrics is UWaveGestureLibrary.</b></p>
 <h2 id="iii-quick-integration">III. Quick Integration<a class="headerlink" href="#iii-quick-integration" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>❗ Before quick integration, please install the PaddleX wheel package. For detailed instructions, refer to <a href="../../../installation/installation.html">PaddleX Local Installation Guide</a></p>
@@ -4442,7 +4442,7 @@ For more information on using PaddleX's single-model inference APIs, refer to <a
 <h2 id="iv-custom-development">IV. Custom Development<a class="headerlink" href="#iv-custom-development" title="Permanent link">&para;</a></h2>
 <p>If you aim for higher accuracy with existing models, you can leverage PaddleX's custom development capabilities to develop better time series classification models. Before using PaddleX to develop time series classification models, ensure you have installed the PaddleTS plugin. Refer to the <a href="../../../installation/installation.html">PaddleX Local Installation Guide</a> for the installation process.</p>
 <h3 id="41-data-preparation">4.1 Data Preparation<a class="headerlink" href="#41-data-preparation" title="Permanent link">&para;</a></h3>
-<p>Before model training, you need to prepare the dataset for the corresponding task module. PaddleX provides data validation functionality for each module, and <strong>only data that passes validation can be used for model training</strong>. Additionally, PaddleX provides demo datasets for each module, which you can use to complete subsequent development. If you wish to use private datasets for subsequent model training, refer to <a href="../../../data_annotations/time_series_modules/time_series_classification.html">PaddleX Time Series Classification Task Module Data Annotation Tutorial</a>.</p>
+<p>Before model training, you need to prepare the dataset for the corresponding task module. PaddleX provides data validation functionality for each module, and <b>only data that passes validation can be used for model training</b>. Additionally, PaddleX provides demo datasets for each module, which you can use to complete subsequent development. If you wish to use private datasets for subsequent model training, refer to <a href="../../../data_annotations/time_series_modules/time_series_classification.html">PaddleX Time Series Classification Task Module Data Annotation Tutorial</a>.</p>
 <h4 id="411-demo-data-download">4.1.1 Demo Data Download<a class="headerlink" href="#411-demo-data-download" title="Permanent link">&para;</a></h4>
 <p>You can use the following commands to download the demo dataset to a specified folder:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>wget<span class="w"> </span>https://paddle-model-ecology.bj.bcebos.com/paddlex/data/ts_classify_examples.tar<span class="w"> </span>-P<span class="w"> </span>./dataset
@@ -4529,15 +4529,15 @@ Furthermore, the dataset validation also involved an analysis of the distributio
 <img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/modules/time_classification/01.png">
 
 
-**Note**: Only data that has passed validation can be used for training and evaluation.
+<b>Note</b>: Only data that has passed validation can be used for training and evaluation.
 </details>
 
 <h4 id="413-dataset-format-conversiondataset-splitting-optional">4.1.3 Dataset Format Conversion/Dataset Splitting (Optional)<a class="headerlink" href="#413-dataset-format-conversiondataset-splitting-optional" title="Permanent link">&para;</a></h4>
-<p>After completing data validation, you can convert the dataset format and re-split the training/validation ratio by <strong>modifying the configuration file</strong> or <strong>appending hyperparameters</strong>.</p>
+<p>After completing data validation, you can convert the dataset format and re-split the training/validation ratio by <b>modifying the configuration file</b> or <b>appending hyperparameters</b>.</p>
 <details>
   <summary>👉 <b>Details on Format Conversion/Dataset Splitting (Click to Expand)</b></summary>
 
-**(1) Dataset Format Conversion**
+<b>(1) Dataset Format Conversion</b>
 
 Time-series classification supports converting `xlsx` and `xls` format datasets to `csv` format.
 
@@ -4572,7 +4572,7 @@ The above parameters can also be set by appending command line arguments:
 </span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span>-o<span class="w"> </span>CheckDataset.convert.enable<span class="o">=</span>True
 </span></code></pre></div>
 
-**(2) Dataset Splitting**
+<b>(2) Dataset Splitting</b>
 
 Parameters related to dataset validation can be set by modifying the fields under `CheckDataset` in the configuration file. Examples of some parameters in the configuration file are as follows:
 
@@ -4677,7 +4677,7 @@ Upon completion of model evaluation, an `evaluate_result.json` file is produced,
 </span></code></pre></div>
 Similar to model training and evaluation, the following steps are required:</p>
 <ul>
-<li>Specify the path to the model's <code>.yaml</code> configuration file (here it's <code>TimesNet_cls.yaml</code> - <strong>Note</strong>: This should likely be <code>TimesNet_cls.yaml</code> for consistency)</li>
+<li>Specify the path to the model's <code>.yaml</code> configuration file (here it's <code>TimesNet_cls.yaml</code> - <b>Note</b>: This should likely be <code>TimesNet_cls.yaml</code> for consistency)</li>
 <li>Specify the mode as model inference prediction: <code>-o Global.mode=predict</code></li>
 <li>Specify the model weights path: <code>-o Predict.model_dir="./output/inference"</code></li>
 <li>Specify the input data path: <code>-o Predict.input="..."</code>
@@ -4686,11 +4686,11 @@ Other relevant parameters can be set by modifying the <code>Global</code> and <c
 <h4 id="442-model-integration">4.4.2 Model Integration<a class="headerlink" href="#442-model-integration" title="Permanent link">&para;</a></h4>
 <p>Models can be directly integrated into the PaddleX pipeline or directly into your own projects.</p>
 <ol>
-<li><strong>Pipeline Integration</strong></li>
+<li><b>Pipeline Integration</b></li>
 </ol>
 <p>The time series prediction module can be integrated into PaddleX pipelines such as <a href="../../../pipeline_usage/tutorials/time_series_pipelines/time_series_classification.html">Time Series Classification</a>. Simply replace the model path to update the time series prediction model. In pipeline integration, you can use service deployment to deploy your trained model.</p>
 <ol>
-<li><strong>Module Integration</strong></li>
+<li><b>Module Integration</b></li>
 </ol>
 <p>The weights you produce can be directly integrated into the time series classification module. Refer to the Python example code in <a href="#iii-quick-integration">Quick Integration</a> (Note: This section header is in Chinese and should be translated or removed for consistency), simply replace the model with the path to your trained model.</p>
 

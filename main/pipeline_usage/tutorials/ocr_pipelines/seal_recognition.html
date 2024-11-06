@@ -4315,14 +4315,14 @@ You're not viewing the latest version.
 <h2 id="1">1. 印章文本识别产线介绍<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
 <p>印章文本识别是一种自动从文档或图像中提取和识别印章内容的技术，印章文本的识别是文档处理的一部分，在很多场景都有用途，例如合同比对，出入库审核以及发票报销审核等场景。</p>
 <p><img src="https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/doc_images/practical_tutorial/PP-ChatOCRv3_doc_seal/01.png"></p>
-<p>**印章文本识别**产线中包含版面区域分析模块、印章印章文本检测模块和文本识别模块。</p>
-<p><strong>如您更考虑模型精度，请选择精度较高的模型，如您更考虑模型推理速度，请选择推理速度较快的模型，如您更考虑模型存储大小，请选择存储大小较小的模型</strong>。</p>
+<p><b>印章文本识别</b>产线中包含版面区域分析模块、印章印章文本检测模块和文本识别模块。</p>
+<p><b>如您更考虑模型精度，请选择精度较高的模型，如您更考虑模型推理速度，请选择推理速度较快的模型，如您更考虑模型存储大小，请选择存储大小较小的模型</b>。</p>
 <details>
    <summary> 👉模型列表详情</summary>
 
 
 
-**版面区域分析模块模型：**
+<b>版面区域分析模块模型：</b>
 
 <table>
 <thead>
@@ -4394,9 +4394,9 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-**注：以上精度指标的评估集是 PaddleOCR 自建的版面区域分析数据集，包含中英文论文、杂志和研报等常见的 1w 张文档类型图片。GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为 8，精度类型为 FP32。**
+<b>注：以上精度指标的评估集是 PaddleOCR 自建的版面区域分析数据集，包含中英文论文、杂志和研报等常见的 1w 张文档类型图片。GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为 8，精度类型为 FP32。</b>
 
-**印章文本检测模块模型：**
+<b>印章文本检测模块模型：</b>
 
 <table>
 <thead>
@@ -4428,9 +4428,9 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-**注：以上精度指标的评估集是自建的数据集，包含500张圆形印章图像。GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为 8，精度类型为 FP32。**
+<b>注：以上精度指标的评估集是自建的数据集，包含500张圆形印章图像。GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为 8，精度类型为 FP32。</b>
 
-**文本识别模块模型：**
+<b>文本识别模块模型：</b>
 
 <table>
 <thead>
@@ -4462,7 +4462,7 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-**注：以上精度指标的评估集是 PaddleOCR 自建的中文数据集 ，覆盖街景、网图、文档、手写多个场景，其中文本识别包含 1.1w 张图片。以上所有模型 GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为8，精度类型为 FP32。**
+<b>注：以上精度指标的评估集是 PaddleOCR 自建的中文数据集 ，覆盖街景、网图、文档、手写多个场景，其中文本识别包含 1.1w 张图片。以上所有模型 GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为8，精度类型为 FP32。</b>
 
 </details>
 
@@ -4734,8 +4734,8 @@ You're not viewing the latest version.
 <p>如果产线可以达到您对产线推理速度和精度的要求，您可以直接进行开发集成/部署。</p>
 <p>若您需要将产线直接应用在您的Python项目中，可以参考 <a href="#222-python脚本方式集成">2.2.2 Python脚本方式</a>中的示例代码。</p>
 <p>此外，PaddleX 也提供了其他三种部署方式，详细说明如下：</p>
-<p>🚀 <strong>高性能部署</strong>：在实际生产环境中，许多应用对部署策略的性能指标（尤其是响应速度）有着较严苛的标准，以确保系统的高效运行与用户体验的流畅性。为此，PaddleX 提供高性能推理插件，旨在对模型推理及前后处理进行深度性能优化，实现端到端流程的显著提速，详细的高性能部署流程请参考<a href="../../../pipeline_deploy/high_performance_inference.html">PaddleX高性能部署指南</a>。</p>
-<p>☁️ <strong>服务化部署</strong>：服务化部署是实际生产环境中常见的一种部署形式。通过将推理功能封装为服务，客户端可以通过网络请求来访问这些服务，以获取推理结果。PaddleX 支持用户以低成本实现产线的服务化部署，详细的服务化部署流程请参考<a href="../../../pipeline_deploy/service_deploy.html">PaddleX服务化部署指南</a>。</p>
+<p>🚀 <b>高性能部署</b>：在实际生产环境中，许多应用对部署策略的性能指标（尤其是响应速度）有着较严苛的标准，以确保系统的高效运行与用户体验的流畅性。为此，PaddleX 提供高性能推理插件，旨在对模型推理及前后处理进行深度性能优化，实现端到端流程的显著提速，详细的高性能部署流程请参考<a href="../../../pipeline_deploy/high_performance_inference.html">PaddleX高性能部署指南</a>。</p>
+<p>☁️ <b>服务化部署</b>：服务化部署是实际生产环境中常见的一种部署形式。通过将推理功能封装为服务，客户端可以通过网络请求来访问这些服务，以获取推理结果。PaddleX 支持用户以低成本实现产线的服务化部署，详细的服务化部署流程请参考<a href="../../../pipeline_deploy/service_deploy.html">PaddleX服务化部署指南</a>。</p>
 <p>下面是API参考和多语言服务调用示例：</p>
 <details>
 <summary>API参考</summary>
@@ -4761,7 +4761,7 @@ You're not viewing the latest version.
 
 服务提供的操作如下：
 
-- **`infer`**
+- <b>`infer`</b>
 
     获取印章文本识别结果。
 
@@ -5191,10 +5191,10 @@ You're not viewing the latest version.
 </details>
 </details>
 <p><br/></p>
-<p>📱 <strong>端侧部署</strong>：端侧部署是一种将计算和数据处理功能放在用户设备本身上的方式，设备可以直接处理数据，而不需要依赖远程的服务器。PaddleX 支持将模型部署在 Android 等端侧设备上，详细的端侧部署流程请参考<a href="../../../pipeline_deploy/edge_deploy.html">PaddleX端侧部署指南</a>。
+<p>📱 <b>端侧部署</b>：端侧部署是一种将计算和数据处理功能放在用户设备本身上的方式，设备可以直接处理数据，而不需要依赖远程的服务器。PaddleX 支持将模型部署在 Android 等端侧设备上，详细的端侧部署流程请参考<a href="../../../pipeline_deploy/edge_deploy.html">PaddleX端侧部署指南</a>。
 您可以根据需要选择合适的方式部署模型产线，进而进行后续的 AI 应用集成。</p>
 <h2 id="4">4. 二次开发<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
-<p>如果印章文本识别产线提供的默认模型权重在您的场景中，精度或速度不满意，您可以尝试利用**您自己拥有的特定领域或应用场景的数据**对现有模型进行进一步的**微调**，以提升印章文本识别产线的在您的场景中的识别效果。</p>
+<p>如果印章文本识别产线提供的默认模型权重在您的场景中，精度或速度不满意，您可以尝试利用<b>您自己拥有的特定领域或应用场景的数据</b>对现有模型进行进一步的<b>微调</b>，以提升印章文本识别产线的在您的场景中的识别效果。</p>
 <h3 id="41">4.1 模型微调<a class="headerlink" href="#41" title="Permanent link">&para;</a></h3>
 <p>由于印章文本识别产线包含三个模块，模型产线的效果不及预期可能来自于其中任何一个模块。</p>
 <p>您可以对识别效果差的图片进行分析，参考如下规则进行分析和模型微调：</p>
@@ -5218,7 +5218,7 @@ You're not viewing the latest version.
 </span></code></pre></div>
 随后， 参考本地体验中的命令行方式或 Python 脚本方式，加载修改后的产线配置文件即可。</p>
 <h2 id="5">5. 多硬件支持<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
-<p>PaddleX 支持英伟达 GPU、昆仑芯 XPU、昇腾 NPU和寒武纪 MLU 等多种主流硬件设备，**仅需修改 <code>--device</code> 参数**即可完成不同硬件之间的无缝切换。</p>
+<p>PaddleX 支持英伟达 GPU、昆仑芯 XPU、昇腾 NPU和寒武纪 MLU 等多种主流硬件设备，<b>仅需修改 <code>--device</code> 参数</b>即可完成不同硬件之间的无缝切换。</p>
 <p>例如，您使用英伟达 GPU 进行印章文本识别产线的推理，使用的 Python 命令为：</p>
 <p><div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>paddlex --pipeline seal_recognition --input seal_text_det.png --device gpu:0 --save_path output
 </span></code></pre></div>

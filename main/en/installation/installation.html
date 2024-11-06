@@ -4292,21 +4292,21 @@ You're not viewing the latest version.
 <p><a href="installation.html">简体中文</a> | English</p>
 <h1 id="paddlex-local-installation-tutorial">PaddleX Local Installation Tutorial<a class="headerlink" href="#paddlex-local-installation-tutorial" title="Permanent link">&para;</a></h1>
 <blockquote>
-<p>❗Before installing PaddleX, please ensure you have a basic <strong>Python environment</strong> (Note: Currently supports Python 3.8 to Python 3.10, with more Python versions being adapted).</p>
+<p>❗Before installing PaddleX, please ensure you have a basic <b>Python environment</b> (Note: Currently supports Python 3.8 to Python 3.10, with more Python versions being adapted).</p>
 </blockquote>
 <h2 id="1-quick-installation">1. Quick Installation<a class="headerlink" href="#1-quick-installation" title="Permanent link">&para;</a></h2>
 <p>Welcome to PaddleX, Baidu's low-code development tool for AI. Before we dive into the local installation process, please clarify your development needs and choose the appropriate installation mode.</p>
-<p>PaddleX offers two installation modes: <strong>Wheel Package Installation</strong> and <strong>Plugin Installation</strong>. Below, we introduce their respective application scenarios:</p>
+<p>PaddleX offers two installation modes: <b>Wheel Package Installation</b> and <b>Plugin Installation</b>. Below, we introduce their respective application scenarios:</p>
 <h3 id="11-wheel-package-installation-mode">1.1 Wheel Package Installation Mode<a class="headerlink" href="#11-wheel-package-installation-mode" title="Permanent link">&para;</a></h3>
-<p>If your use case for PaddleX involves <strong>model inference and integration</strong>, we recommend the more <strong>convenient</strong> and <strong>lightweight</strong> Wheel package installation mode.</p>
+<p>If your use case for PaddleX involves <b>model inference and integration</b>, we recommend the more <b>convenient</b> and <b>lightweight</b> Wheel package installation mode.</p>
 <p>After installing PaddlePaddle (refer to the <a href="paddlepaddle_install.html">PaddlePaddle Local Installation Tutorial</a>), you can quickly install the PaddleX Wheel package by executing the following commands:</p>
 <blockquote>
-<p>❗ <strong>Note</strong>: Please ensure that PaddlePaddle is successfully installed before proceeding to the next step.</p>
+<p>❗ <b>Note</b>: Please ensure that PaddlePaddle is successfully installed before proceeding to the next step.</p>
 </blockquote>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>https://paddle-model-ecology.bj.bcebos.com/paddlex/whl/paddlex-3.0.0b1-py3-none-any.whl
 </span></code></pre></div>
 <h3 id="12-plugin-installation-mode">1.2 Plugin Installation Mode<a class="headerlink" href="#12-plugin-installation-mode" title="Permanent link">&para;</a></h3>
-<p>If your use case for PaddleX involves <strong>custom development</strong> (e.g. retraining models, fine-tuning models, customizing model structures, customizing inference codes, etc.), we recommend the more <strong>powerful</strong> plugin installation mode.</p>
+<p>If your use case for PaddleX involves <b>custom development</b> (e.g. retraining models, fine-tuning models, customizing model structures, customizing inference codes, etc.), we recommend the more <b>powerful</b> plugin installation mode.</p>
 <p>After installing the PaddleX plugins you need, you can not only perform inference and integration with the supported models but also conduct advanced operations such as model training for custom development.</p>
 <p>The plugins supported by PaddleX are listed below. Please determine the name(s) of the plugin(s) you need based on your development requirements:</p>
 <details>
@@ -4401,8 +4401,8 @@ You're not viewing the latest version.
 </blockquote>
 <p>Next, we provide detailed installation tutorials for your reference. If you are using a Linux operating system, please refer to <a href="#2-detailed-tutorial-for-installing-paddlex-on-linux">2. Detailed Tutorial for Installing PaddleX on Linux</a>.</p>
 <h2 id="2-detailed-tutorial-for-installing-paddlex-on-linux">2. Detailed Tutorial for Installing PaddleX on Linux<a class="headerlink" href="#2-detailed-tutorial-for-installing-paddlex-on-linux" title="Permanent link">&para;</a></h2>
-<p>When installing PaddleX on Linux, we <strong>strongly recommend using the official PaddleX Docker image</strong>. Alternatively, you can use other custom installation methods.</p>
-<p>When using the official Docker image, <strong>PaddlePaddle, PaddleX (including the wheel package and all plugins), and the corresponding CUDA environment are already pre-installed</strong>. You can simply obtain the Docker image and start the container to begin using it.</p>
+<p>When installing PaddleX on Linux, we <b>strongly recommend using the official PaddleX Docker image</b>. Alternatively, you can use other custom installation methods.</p>
+<p>When using the official Docker image, <b>PaddlePaddle, PaddleX (including the wheel package and all plugins), and the corresponding CUDA environment are already pre-installed</b>. You can simply obtain the Docker image and start the container to begin using it.</p>
 <p>When using custom installation methods, you need to first install the PaddlePaddle framework, then obtain the PaddleX source code, and finally choose the PaddleX installation mode.</p>
 <h3 id="21-get-paddlex-based-on-docker">2.1 Get PaddleX based on Docker<a class="headerlink" href="#21-get-paddlex-based-on-docker" title="Permanent link">&para;</a></h3>
 <p>Using the PaddleX official Docker image, create a container called 'paddlex' and map the current working directory to the '/paddle' directory inside the container by following the command.</p>
@@ -4456,7 +4456,7 @@ If accessing GitHub is slow, you can download from Gitee instead, using the foll
 <h4 id="222-install-paddlex">2.2.2 Install PaddleX<a class="headerlink" href="#222-install-paddlex" title="Permanent link">&para;</a></h4>
 <p>After obtaining the latest PaddleX source code, you can choose between Wheel package installation mode or plugin installation mode.</p>
 <ul>
-<li><strong>If you choose Wheel package installation mode</strong>, execute the following commands:</li>
+<li><b>If you choose Wheel package installation mode</b>, execute the following commands:</li>
 </ul>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">cd</span><span class="w"> </span>PaddleX
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
@@ -4465,7 +4465,7 @@ If accessing GitHub is slow, you can download from Gitee instead, using the foll
 </span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
 </span></code></pre></div>
 <ul>
-<li><strong>If you choose plugin installation mode</strong> and the plugin you need is named PaddleXXX (there can be multiple), execute the following commands:</li>
+<li><b>If you choose plugin installation mode</b> and the plugin you need is named PaddleXXX (there can be multiple), execute the following commands:</li>
 </ul>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nb">cd</span><span class="w"> </span>PaddleX
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>

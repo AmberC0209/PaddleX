@@ -4373,7 +4373,7 @@ You're not viewing the latest version.
 <h2 id="1-select-a-pipeline">1. Select a Pipeline<a class="headerlink" href="#1-select-a-pipeline" title="Permanent link">&para;</a></h2>
 <p>First, choose the appropriate PaddleX pipeline based on your task scenario. For pedestrian fall detection, this falls under the General Object Detection pipeline in PaddleX. If unsure about the task-pipeline correspondence, consult the <a href="../support_list/pipelines_list.html">Pipeline List</a> for capabilities of each pipeline.</p>
 <h2 id="2-quick-start">2. Quick Start<a class="headerlink" href="#2-quick-start" title="Permanent link">&para;</a></h2>
-<p>PaddleX offers two ways to experience the pipelines: locally through the PaddleX wheel package or on the <strong>Baidu AIStudio Community</strong>.</p>
+<p>PaddleX offers two ways to experience the pipelines: locally through the PaddleX wheel package or on the <b>Baidu AIStudio Community</b>.</p>
 <ul>
 <li>
 <p>Local Experience:
@@ -4382,7 +4382,7 @@ You're not viewing the latest version.
 </span></code></pre></div></p>
 </li>
 <li>
-<p>AIStudio Community Experience: Navigate to <a href="https://aistudio.baidu.com/pipeline/mine">Baidu AIStudio Community</a>, click "Create Pipeline," and create a <strong>General Object Detection</strong> pipeline for a quick trial.</p>
+<p>AIStudio Community Experience: Navigate to <a href="https://aistudio.baidu.com/pipeline/mine">Baidu AIStudio Community</a>, click "Create Pipeline," and create a <b>General Object Detection</b> pipeline for a quick trial.</p>
 </li>
 </ul>
 <p>Quick trial output example:
@@ -4448,7 +4448,7 @@ You're not viewing the latest version.
 </tbody>
 </table>
 <blockquote>
-<p><strong>Note: The above accuracy metrics are based on the mAP(0.5:0.95) of the <a href="https://cocodataset.org/#home">COCO2017</a> validation set. GPU inference time is measured on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</strong></p>
+<p><b>Note: The above accuracy metrics are based on the mAP(0.5:0.95) of the <a href="https://cocodataset.org/#home">COCO2017</a> validation set. GPU inference time is measured on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b></p>
 </blockquote>
 <p>In summary, models listed from top to bottom offer faster inference speeds, while those from bottom to top offer higher accuracy. This tutorial uses the PP-YOLOE_plus-S model as an example to complete the full model development process. Choose a suitable model based on your actual usage scenario, train it, evaluate the model weights within the pipeline, and finally deploy</p>
 <h2 id="4-data-preparation-and-verification">4. Data Preparation and Verification<a class="headerlink" href="#4-data-preparation-and-verification" title="Permanent link">&para;</a></h2>
@@ -4502,7 +4502,7 @@ The above verification results indicate that the <code>check_pass</code> being <
 <center></p>
 <p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/practical_tutorials/obeject_detection/02.png" width=600></p>
 <p></center></p>
-<p><strong>Note</strong>: Only data that passes the verification can be used for training and evaluation.</p>
+<p><b>Note</b>: Only data that passes the verification can be used for training and evaluation.</p>
 <h2 id="43-dataset-format-conversiondataset-splitting-optional">4.3 Dataset Format Conversion/Dataset Splitting (Optional)<a class="headerlink" href="#43-dataset-format-conversiondataset-splitting-optional" title="Permanent link">&para;</a></h2>
 <p>If you need to convert the dataset format or re-split the dataset, you can modify the configuration file or append hyperparameters for settings.</p>
 <p>Parameters related to dataset verification can be set by modifying the fields under <code>CheckDataset</code> in the configuration file. Examples of some parameters in the configuration file are as follows:</p>
@@ -4546,11 +4546,11 @@ The above verification results indicate that the <code>check_pass</code> being <
 </li>
 </ul>
 <p>For more hyperparameter introductions, refer to <a href="../module_usage/instructions/config_parameters_common.html">PaddleX General Model Configuration File Parameter Explanation</a>.</p>
-<p><strong>Note</strong>:
+<p><b>Note</b>:
 - The above parameters can be set by appending command-line parameters, e.g., specifying the mode as model training: <code>-o Global.mode=train</code>; specifying the first two GPUs for training: <code>-o Global.device=gpu:0,1</code>; setting the number of training epochs to 10: <code>-o Train.epochs_iters=10</code>.
 - During model training, PaddleX automatically saves model weight files, with the default being <code>output</code>. To specify a save path, use the <code>-o Global.output</code> field in the configuration file.
 - PaddleX shields you from the concepts of dynamic graph weights and static graph weights. During model training, both dynamic and static graph weights are produced, and static graph weights are selected by default for model inference.</p>
-<p><strong>Explanation of Training Outputs</strong>:</p>
+<p><b>Explanation of Training Outputs</b>:</p>
 <p>After completing model training, all outputs are saved in the specified output directory (default is <code>./output/</code>), typically including the following:</p>
 <ul>
 <li>train_result.json: Training result record file, recording whether the training task completed normally, as well as the output weight metrics, relevant file paths, etc.;</li>
@@ -4565,7 +4565,7 @@ The above verification results indicate that the <code>check_pass</code> being <
 </span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span>-o<span class="w"> </span>Global.dataset_dir<span class="o">=</span>./dataset/fall_det
 </span></code></pre></div>
 <p>Similar to model training, model evaluation supports setting parameters by modifying the configuration file or appending command-line parameters.</p>
-<p><strong>Note</strong>: When evaluating a model, you need to specify the model weight file path. Each configuration file has a default weight save path. If you need to change it, simply set it by appending a command-line parameter, e.g., <code>-o Evaluate.weight_path=./output/best_model/best_model.pdparams</code>.</p>
+<p><b>Note</b>: When evaluating a model, you need to specify the model weight file path. Each configuration file has a default weight save path. If you need to change it, simply set it by appending a command-line parameter, e.g., <code>-o Evaluate.weight_path=./output/best_model/best_model.pdparams</code>.</p>
 <h3 id="53-model-tuning">5.3 Model Tuning<a class="headerlink" href="#53-model-tuning" title="Permanent link">&para;</a></h3>
 <p>After learning about model training and evaluation, we can improve model accuracy by adjusting hyperparameters. By reasonably adjusting the number of training epochs, you can control the depth of model training to avoid overfitting or underfitting. The learning rate setting affects the speed and stability of model convergence. Therefore, when optimizing model performance, carefully consider the values of these two parameters and adjust them flexibly based on actual conditions to achieve the best training results.</p>
 <p>It is recommended to follow the control variable method when debugging parameters:</p>
@@ -4657,7 +4657,7 @@ The above verification results indicate that the <code>check_pass</code> being <
 </table>
 <p></center></p>
 <blockquote>
-<p><strong>Note: The above accuracy metrics are based on the mAP(0.5:0.95) of the <a href="https://cocodataset.org/#home">COCO2017</a> validation set. GPU inference time is measured on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</strong></p>
+<p><b>Note: The above accuracy metrics are based on the mAP(0.5:0.95) of the <a href="https://cocodataset.org/#home">COCO2017</a> validation set. GPU inference time is measured on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b></p>
 </blockquote>
 <h2 id="6-production-line-testing">6. Production Line Testing<a class="headerlink" href="#6-production-line-testing" title="Permanent link">&para;</a></h2>
 <p>Replace the model in the production line with the fine-tuned model for testing, for example:</p>

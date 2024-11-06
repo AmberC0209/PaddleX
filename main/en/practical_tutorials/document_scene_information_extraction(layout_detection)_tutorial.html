@@ -4485,7 +4485,7 @@ You're not viewing the latest version.
 </span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>    <span class="p">)</span>
 </span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="n">chat_result</span><span class="o">.</span><span class="n">print</span><span class="p">()</span>
 </span></code></pre></div>
-<p><strong>Note</strong>: Currently, the large language model only supports Ernie. You can obtain the relevant ak/sk (access_token) on the <a href="https://console.bce.baidu.com/qianfan/ais/console/onlineService">Baidu Cloud Qianfan Platform</a> or <a href="https://aistudio.baidu.com/">Baidu AIStudio Community</a>. If you use the Baidu Cloud Qianfan Platform, you can refer to the <a href="https://cloud.baidu.com/doc/WENXINWORKSHOP/s/Hlwerugt8">AK and SK Authentication API Calling Process</a> to obtain ak/sk. If you use Baidu AIStudio Community, you can obtain the access_token from the <a href="https://aistudio.baidu.com/account/accessToken">Baidu AIStudio Community Access Token</a>.</p>
+<p><b>Note</b>: Currently, the large language model only supports Ernie. You can obtain the relevant ak/sk (access_token) on the <a href="https://console.bce.baidu.com/qianfan/ais/console/onlineService">Baidu Cloud Qianfan Platform</a> or <a href="https://aistudio.baidu.com/">Baidu AIStudio Community</a>. If you use the Baidu Cloud Qianfan Platform, you can refer to the <a href="https://cloud.baidu.com/doc/WENXINWORKSHOP/s/Hlwerugt8">AK and SK Authentication API Calling Process</a> to obtain ak/sk. If you use Baidu AIStudio Community, you can obtain the access_token from the <a href="https://aistudio.baidu.com/account/accessToken">Baidu AIStudio Community Access Token</a>.</p>
 <p>The printed output results are as follows:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>The result has been saved in output/tmpfnss9sq9_layout.jpg.
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>The result has been saved in output/tmpfnss9sq9_ocr.jpg.
@@ -4503,7 +4503,7 @@ You're not viewing the latest version.
 <p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/practical_tutorials/PP-ChatOCRv3_doc/layout_detection_01.png"></p>
 <p>Through the online experience of the document scene information extraction, a Badcase analysis can be conducted to identify issues with the official model of the document scene information extraction pipeline. Due to the current limitation of the official model, which only distinguishes among figures, tables, and seals, it is currently unable to accurately locate and extract other information such as headers and table titles. The results for these in <code>{'chat_res': {'header': 'unknown', 'table caption': 'unknown'}, 'prompt': ''}</code> are unknown. Therefore, this section focuses on the scenario of academic papers. Utilizing a dataset of academic paper documents, with the extraction of header and chart title information as examples, the layout analysis model within the document scene information extraction pipeline is fine-tuned to achieve the ability to accurately extract header and table title information from the document.</p>
 <h3 id="22-online-experience">2.2 Online Experience<a class="headerlink" href="#22-online-experience" title="Permanent link">&para;</a></h3>
-<p>You can experience the effectiveness of the Document Scene Information Extraction v3 pipeline on the <strong>AIStudio Community</strong>. Click the link to download the <a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/doc_images/practical_tutorial/PP-ChatOCRv3_doc_layout/test.jpg">Test Paper Document File</a>, and then upload it to the <a href="https://aistudio.baidu.com/community/app/182491/webUI?source=appCenter">official Document Scene Information Extraction v3 application</a> to experience the extraction results. The process is as follows:</p>
+<p>You can experience the effectiveness of the Document Scene Information Extraction v3 pipeline on the <b>AIStudio Community</b>. Click the link to download the <a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/doc_images/practical_tutorial/PP-ChatOCRv3_doc_layout/test.jpg">Test Paper Document File</a>, and then upload it to the <a href="https://aistudio.baidu.com/community/app/182491/webUI?source=appCenter">official Document Scene Information Extraction v3 application</a> to experience the extraction results. The process is as follows:</p>
 <p><img src="https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/doc_images/practical_tutorial/PP-ChatOCRv3_doc_layout/06.png"></p>
 <h2 id="3-choosing-a-model">3. Choosing a Model<a class="headerlink" href="#3-choosing-a-model" title="Permanent link">&para;</a></h2>
 <p>PaddleX provides 4 end-to-end layout detection models, which can be referenced in the <a href="../support_list/models_list.html">Model List</a>. Some of the benchmarks for these models are as follows:</p>
@@ -4577,7 +4577,7 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-<p><strong>Note: The evaluation set for the above accuracy metrics is PaddleOCR's self-built layout region analysis dataset, containing 10,000 images of common document types, including English and Chinese papers, magazines, research reports, etc. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</strong></p>
+<p><b>Note: The evaluation set for the above accuracy metrics is PaddleOCR's self-built layout region analysis dataset, containing 10,000 images of common document types, including English and Chinese papers, magazines, research reports, etc. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b></p>
 <h2 id="4-data-preparation-and-verification">4. Data Preparation and Verification<a class="headerlink" href="#4-data-preparation-and-verification" title="Permanent link">&para;</a></h2>
 <h3 id="41-data-preparation">4.1 Data Preparation<a class="headerlink" href="#41-data-preparation" title="Permanent link">&para;</a></h3>
 <p>This tutorial uses the <code>Academic paper literature Dataset</code> as an example dataset. You can obtain the example dataset using the following commands. If you are using your own annotated dataset, you need to adjust it according to PaddleX's format requirements to meet PaddleX's data format specifications. For an introduction to data formats, you can refer to the <a href="../data_annotations/cv_modules/object_detection.html">PaddleX Object Detection Task Module Data Annotation Tutorial</a>.</p>
@@ -4645,7 +4645,7 @@ You're not viewing the latest version.
 <center></p>
 <p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/practical_tutorials/PP-ChatOCRv3_doc/layout_detection_02.png" width=600></p>
 <p></center></p>
-<p><strong>Note</strong>: Only data that passes the verification can be used for training and evaluation.</p>
+<p><b>Note</b>: Only data that passes the verification can be used for training and evaluation.</p>
 <h3 id="43-dataset-splitting-optional">4.3 Dataset Splitting (Optional)<a class="headerlink" href="#43-dataset-splitting-optional" title="Permanent link">&para;</a></h3>
 <p>If you need to convert the dataset format or re-split the dataset, you can set it by modifying the configuration file or appending hyperparameters.</p>
 <p>The parameters related to dataset verification can be set by modifying the fields under <code>CheckDataset</code> in the configuration file. Some example explanations of the parameters in the configuration file are as follows:</p>
@@ -4685,11 +4685,11 @@ You're not viewing the latest version.
 </li>
 </ul>
 <p>For more hyperparameter introductions, please refer to <a href="../module_usage/instructions/config_parameters_common.html">PaddleX General Model Configuration File Parameter Explanation</a>.</p>
-<p><strong>Note</strong>:
+<p><b>Note</b>:
 - The above parameters can be set by appending command line arguments, e.g., specifying the mode as model training: <code>-o Global.mode=train</code>; specifying the first two GPUs for training: <code>-o Global.device=gpu:0,1</code>; setting the number of training epochs to 10: <code>-o Train.epochs_iters=10</code>.
 - During model training, PaddleX automatically saves model weight files, with the default being <code>output</code>. If you need to specify a save path, you can use the <code>-o Global.output</code> field in the configuration file.
 - PaddleX shields you from the concepts of dynamic graph weights and static graph weights. During model training, both dynamic and static graph weights are produced, and static graph weights are selected by default for model inference.</p>
-<p><strong>Explanation of Training Outputs</strong>:</p>
+<p><b>Explanation of Training Outputs</b>:</p>
 <p>After completing model training, all outputs are saved in the specified output directory (default is <code>./output/</code>), typically including the following:</p>
 <ul>
 <li>train_result.json: Training result record file, recording whether the training task was completed normally, as well as the output weight metrics and related file paths;</li>
@@ -4704,7 +4704,7 @@ You're not viewing the latest version.
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span>-o<span class="w"> </span>Global.dataset_dir<span class="o">=</span>./dataset/paperlayout
 </span></code></pre></div>
 <p>Similar to model training, model evaluation supports setting by modifying the configuration file or appending command line arguments.</p>
-<p><strong>Note</strong>: When evaluating the model, you need to specify the model weight file path. Each configuration file has a default weight save path. If you need to change it, simply set it by appending a command line argument, e.g., <code>-o Evaluate.weight_path=./output/best_model/best_model.pdparams</code>.</p>
+<p><b>Note</b>: When evaluating the model, you need to specify the model weight file path. Each configuration file has a default weight save path. If you need to change it, simply set it by appending a command line argument, e.g., <code>-o Evaluate.weight_path=./output/best_model/best_model.pdparams</code>.</p>
 <h3 id="53-model-optimization">5.3 Model Optimization<a class="headerlink" href="#53-model-optimization" title="Permanent link">&para;</a></h3>
 <p>After learning about model training and evaluation, we can enhance model accuracy by adjusting hyperparameters. By carefully tuning the number of training epochs, you can control the depth of model training to avoid overfitting or underfitting. Meanwhile, the setting of the learning rate is crucial to the speed and stability of model convergence. Therefore, when optimizing model performance, it is essential to consider the values of these two parameters prudently and adjust them flexibly based on actual conditions to achieve the best training results.</p>
 <p>It is recommended to follow the controlled variable method when debugging parameters:</p>
@@ -4776,7 +4776,7 @@ You're not viewing the latest version.
 </tbody>
 </table>
 <p></center></p>
-<p><strong>Note:</strong> This tutorial is designed for a 4-GPU setup. If you only have 1 GPU, you can complete the experiment by adjusting the number of training GPUs, but the final metrics may not align perfectly with the above indicators, which is normal.</p>
+<p><b>Note:</b> This tutorial is designed for a 4-GPU setup. If you only have 1 GPU, you can complete the experiment by adjusting the number of training GPUs, but the final metrics may not align perfectly with the above indicators, which is normal.</p>
 <p>When selecting a training environment, it is important to consider the relationship between the number of training GPUs, the total batch_size, and the learning rate. Firstly, the total batch_size is equal to the number of training GPUs multiplied by the batch_size per GPU. Secondly, the total batch_size and the learning rate are related, and the learning rate should be adjusted in synchronization with the total batch_size. The default learning rate corresponds to a total batch_size based on 4 GPUs. If you plan to train in a single-GPU environment, you need to divide the learning rate by 4 accordingly. If you plan to train in an 8-GPU environment, you need to multiply the learning rate by 2 accordingly.</p>
 <p>For reference, the command to execute training with different parameter adjustments can be:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>python<span class="w"> </span>main.py<span class="w"> </span>-c<span class="w"> </span>paddlex/configs/structure_analysis/RT-DETR-H_layout_3cls.yaml<span class="w"> </span><span class="se">\</span>

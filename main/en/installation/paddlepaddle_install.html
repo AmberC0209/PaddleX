@@ -4149,7 +4149,7 @@ You're not viewing the latest version.
 <h1 id="paddlepaddle-local-installation-tutorial">PaddlePaddle Local Installation Tutorial<a class="headerlink" href="#paddlepaddle-local-installation-tutorial" title="Permanent link">&para;</a></h1>
 <p>When installing PaddlePaddle, you can choose to install it via Docker or pip.</p>
 <h2 id="installing-paddlepaddle-via-docker">Installing PaddlePaddle via Docker<a class="headerlink" href="#installing-paddlepaddle-via-docker" title="Permanent link">&para;</a></h2>
-<p><strong>If you choose to install via Docker</strong>, please refer to the following commands to use the official PaddlePaddle Docker image to create a container named <code>paddlex</code> and map the current working directory to the <code>/paddle</code> directory inside the container:</p>
+<p><b>If you choose to install via Docker</b>, please refer to the following commands to use the official PaddlePaddle Docker image to create a container named <code>paddlex</code> and map the current working directory to the <code>/paddle</code> directory inside the container:</p>
 <p>If your Docker version &gt;= 19.03, please use:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># For CPU users:</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>paddlex<span class="w"> </span>-v<span class="w"> </span><span class="nv">$PWD</span>:/paddle<span class="w"> </span>--shm-size<span class="o">=</span>8G<span class="w"> </span>--network<span class="o">=</span>host<span class="w"> </span>-it<span class="w"> </span>registry.baidubce.com/paddlepaddle/paddle:3.0.0b1<span class="w"> </span>/bin/bash
@@ -4189,7 +4189,7 @@ You're not viewing the latest version.
 </li>
 </ul>
 <h2 id="installing-paddlepaddle-via-pip">Installing PaddlePaddle via pip<a class="headerlink" href="#installing-paddlepaddle-via-pip" title="Permanent link">&para;</a></h2>
-<p><strong>If you choose to install via pip</strong>, please refer to the following commands to install PaddlePaddle in your current environment using pip:</p>
+<p><b>If you choose to install via pip</b>, please refer to the following commands to install PaddlePaddle in your current environment using pip:</p>
 <p><div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># CPU</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="nv">paddlepaddle</span><span class="o">==</span><span class="m">3</span>.0.0b1<span class="w"> </span>-i<span class="w"> </span>https://www.paddlepaddle.org.cn/packages/stable/cpu/
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
@@ -4200,7 +4200,7 @@ You're not viewing the latest version.
 </span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>paddlepaddle-gpu<span class="o">==</span><span class="m">3</span>.0.0b1<span class="w"> </span>-i<span class="w"> </span>https://www.paddlepaddle.org.cn/packages/stable/cu123/
 </span></code></pre></div>
 Note: For more PaddlePaddle Wheel versions, please refer to the <a href="https://www.paddlepaddle.org.cn/install/quick?docurl=/documentation/docs/en/install/pip/linux-pip.html">PaddlePaddle official website</a>.</p>
-<p><strong>For installing PaddlePaddle on other hardware, please refer to</strong> <a href="../other_devices_support/multi_devices_use_guide.html">PaddleX Multi-hardware Usage Guide</a>.</p>
+<p><b>For installing PaddlePaddle on other hardware, please refer to</b> <a href="../other_devices_support/multi_devices_use_guide.html">PaddleX Multi-hardware Usage Guide</a>.</p>
 <p>After installation, you can verify if PaddlePaddle is successfully installed using the following command:</p>
 <p><div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;import paddle; print(paddle.__version__)&quot;</span>
 </span></code></pre></div>
@@ -4208,7 +4208,7 @@ If the installation is successful, the following content will be output:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="m">3</span>.0.0-beta1
 </span></code></pre></div>
 <blockquote>
-<p>❗ <strong>Note</strong>: If you encounter any issues during the installation process, feel free to <a href="https://github.com/PaddlePaddle/Paddle/issues">submit an issue</a> in the Paddle repository.</p>
+<p>❗ <b>Note</b>: If you encounter any issues during the installation process, feel free to <a href="https://github.com/PaddlePaddle/Paddle/issues">submit an issue</a> in the Paddle repository.</p>
 </blockquote>
 
 

@@ -4387,7 +4387,7 @@ You're not viewing the latest version.
 <li>Compress the <code>fruit</code> directory into a <code>.tar</code> or <code>.zip</code> format archive to obtain the standard <code>labelme</code> format dataset for fruit instance segmentation.</li>
 </ul>
 <h2 id="3-data-format">3. Data Format<a class="headerlink" href="#3-data-format" title="Permanent link">&para;</a></h2>
-<p>PaddleX defines a dataset named <strong>COCOInstSegDataset</strong> for instance segmentation tasks, with the following organizational structure and annotation format:</p>
+<p>PaddleX defines a dataset named <b>COCOInstSegDataset</b> for instance segmentation tasks, with the following organizational structure and annotation format:</p>
 <div class="language-ruby highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">dataset_dir</span><span class="w">                  </span><span class="c1"># Root directory of the dataset, the directory name can be changed</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="err">├──</span><span class="w"> </span><span class="n">annotations</span><span class="w">              </span><span class="c1"># Directory for saving annotation files, the directory name cannot be changed</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">instance_train</span><span class="o">.</span><span class="n">json</span><span class="w">  </span><span class="c1"># Training set annotation file, the file name cannot be changed, using COCO annotation format</span>
@@ -4396,7 +4396,7 @@ You're not viewing the latest version.
 </span></code></pre></div>
 <p>Annotation files adopt the <code>COCO</code> format. Please refer to the above specifications for data preparation. Additionally, refer to: <a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/data/instance_seg_coco_examples.tar">Example Dataset</a>.</p>
 <p>When using PaddleX 2.x version for instance segmentation datasets, please refer to the corresponding format conversion section in <a href="../../module_usage/tutorials/cv_modules/instance_segmentation.html"> Instance Segmentation Module Development Tutorial</a> to convert VOC format datasets to COCO datasets. (Note in module development documentation)</p>
-<p><strong>Note</strong>:</p>
+<p><b>Note</b>:</p>
 <ul>
 <li>Instance segmentation data requires the use of the <code>COCO</code> data format to annotate the pixel boundaries and categories of each target area in each image in the dataset. The polygon boundaries (segmentation) of objects are represented as <code>[x1,y1,x2,y2,...,xn,yn]</code>, where <code>(xn,yn)</code> denotes the coordinates of each corner point of the polygon. Annotation information is stored in <code>json</code> files under the <code>annotations</code> directory, with separate files for the training set (<code>instance_train.json</code>) and validation set (<code>instance_val.json</code>).</li>
 <li>If you have a batch of unlabeled data, we recommend using <code>LabelMe</code> for data annotation. PaddleX Pipelines support data format conversion for datasets annotated with <code>LabelMe</code>.</li>

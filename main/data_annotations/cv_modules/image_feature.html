@@ -4377,7 +4377,7 @@ You're not viewing the latest version.
 </span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">    </span>-o<span class="w"> </span>CheckDataset.convert.src_dataset_type<span class="o">=</span>LabelMe
 </span></code></pre></div>
 <h2 id="3">3. 数据格式<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
-<p>PaddleX 针对图像分类任务定义的数据集，名称是 <strong>ShiTuRecDataset</strong>，组织结构和标注格式如下：</p>
+<p>PaddleX 针对图像分类任务定义的数据集，名称是 <b>ShiTuRecDataset</b>，组织结构和标注格式如下：</p>
 <p><div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>dataset_dir<span class="w">    </span><span class="c1"># 数据集根目录，目录名称可以改变</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>├──<span class="w"> </span>images<span class="w">     </span><span class="c1"># 图像的保存目录，目录名称可以改变，但要注意与train.txt、query.txt、 gallery.txt 的内容对应</span>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>├──<span class="w"> </span>gallery.txt<span class="w">   </span><span class="c1"># 验证集标注文件，文件名称不可改变。每行给出待检索图像路径和图像特征标签，使用空格分隔，内容举例：images/WOMEN/Blouses_Shirts/id_00000001/02_2_side.jpg 3997</span>

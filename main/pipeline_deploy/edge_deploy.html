@@ -4299,17 +4299,17 @@ You're not viewing the latest version.
   </tr>
 </table>
 
-<p><strong>备注</strong>
+<p><b>备注</b>
 - <code>GPU</code> 指的是 <a href="https://www.paddlepaddle.org.cn/lite/develop/demo_guides/opencl.html">使用 OpenCL 将计算映射到 GPU 上执行</a> ，以充分利用 GPU 硬件算力，提高推理性能。</p>
 <h2 id="_1">安装流程与使用方式<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <h3 id="_2">环境准备<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>在本地环境安装好 CMake 编译工具，并在 <a href="https://developer.android.google.cn/ndk/downloads">Android NDK 官网</a>下载当前系统符合要求的版本的 NDK 软件包。例如，在 Mac 上开发，需要在 Android NDK 官网下载 Mac 平台的 NDK 软件包。</p>
-<p><strong>环境要求</strong>
+<p><b>环境要求</b>
 -  <code>CMake &gt;= 3.10</code>（最低版本未经验证，推荐 3.20 及以上）
 -  <code>Android NDK &gt;= r17c</code>（最低版本未经验证，推荐 r20b 及以上）</p>
-<p><strong>本指南所使用的测试环境：</strong>
+<p><b>本指南所使用的测试环境：</b>
 -  <code>cmake == 3.20.0</code>
 -  <code>android-ndk == r20b</code></p>
 </li>
@@ -4348,7 +4348,7 @@ You're not viewing the latest version.
 </span></code></pre></div>
 </li>
 <li>
-<p>填写 <strong>问卷</strong> 下载压缩包，将压缩包放到指定解压目录，切换到指定解压目录后执行解压命令。</p>
+<p>填写 <b>问卷</b> 下载压缩包，将压缩包放到指定解压目录，切换到指定解压目录后执行解压命令。</p>
 <ul>
 <li><a href="https://paddle.wjx.cn/vm/OjV8gAb.aspx#">object_detection（目标检测）问卷</a></li>
 <li><a href="https://paddle.wjx.cn/vm/Q2F1L37.aspx#">semantic_segmentation（语义分割）问卷</a></li>
@@ -4404,7 +4404,7 @@ You're not viewing the latest version.
 </li>
 <li>
 <p>将工作目录切换到 <code>PaddleX-Lite-Deploy/{Task_Name}/android/shell/cxx/{Demo_Name}</code>，运行 <code>run.sh</code> 脚本，完成在端侧的预测。</p>
-<p><strong>注意：</strong>
+<p><b>注意：</b>
 - <code>Pipeline_Name</code> 和 <code>Demo_Name</code> 为占位符，具体值可参考本节最后的表格。
 - <code>download.sh</code> 和 <code>run.sh</code> 支持传入模型名来指定模型，若不指定则使用默认模型。目前适配的模型可参考本节最后表格的 <code>Model_Name</code> 列。
 - 若想使用自己训练的模型，参考 <a href="https://paddlepaddle.github.io/Paddle-Lite/develop/model_optimize_tool/">模型转换方法</a> 得到 <code>.nb</code> 模型，放到<code>PaddleX_Lite_Deploy/{Pipeline_Name}/assets/{Model_Name}</code>目录下，  <code>Model_Name</code>为模型名，例如 <code>PaddleX_Lite_Deploy/object_detection/assets/PicoDet-L</code>。
@@ -4516,7 +4516,7 @@ You're not viewing the latest version.
   </tr>
 </table>
 
-<p><strong>备注</strong>
+<p><b>备注</b>
 - 目前没有版面区域检测模块的端侧部署 demo，因此复用 <code>picodet_detection</code>demo 来部署<code>PicoDet_layout_1x</code>模型。</p>
 <h2 id="_5">参考资料<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>本指南仅介绍端侧部署 demo 的基本安装、使用流程，若想要了解更细致的信息，如代码介绍、代码讲解、更新模型、更新输入和输出预处理、更新预测库等，可参考下列文档：</p>

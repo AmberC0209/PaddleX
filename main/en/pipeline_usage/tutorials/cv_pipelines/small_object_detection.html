@@ -4315,7 +4315,7 @@ You're not viewing the latest version.
 <h2 id="1-introduction-to-small-object-detection-pipeline">1. Introduction to Small Object Detection Pipeline<a class="headerlink" href="#1-introduction-to-small-object-detection-pipeline" title="Permanent link">&para;</a></h2>
 <p>Small object detection is a specialized technique for identifying tiny objects within images, widely applied in fields such as surveillance, autonomous driving, and satellite image analysis. It can accurately locate and classify small-sized objects like pedestrians, traffic signs, or small animals within complex scenes. By leveraging deep learning algorithms and optimized Convolutional Neural Networks (CNNs), small object detection significantly enhances the recognition capabilities for small objects, ensuring no critical information is overlooked in practical applications. This technology plays a pivotal role in enhancing safety and automation levels.</p>
 <p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/small_object_detection/01.png"></p>
-<p><strong>The small object detection pipeline includes a small object detection module. If you prioritize model accuracy, choose a model with higher accuracy. If you prioritize inference speed, select a model with faster inference. If you prioritize model storage size, opt for a model with a smaller storage size.</strong></p>
+<p><b>The small object detection pipeline includes a small object detection module. If you prioritize model accuracy, choose a model with higher accuracy. If you prioritize inference speed, select a model with faster inference. If you prioritize model storage size, opt for a model with a smaller storage size.</b></p>
 <details>
    <summary> 👉Model List Details</summary>
 
@@ -4353,7 +4353,7 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-**Note: The above accuracy metrics are based on the **[VisDrone-DET](https://github.com/VisDrone/VisDrone-Dataset)** validation set mAP(0.5:0.95). All GPU inference times are based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speeds are based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.**
+<b>Note: The above accuracy metrics are based on the </b>[VisDrone-DET](https://github.com/VisDrone/VisDrone-Dataset)<b> validation set mAP(0.5:0.95). All GPU inference times are based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speeds are based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
 
 </details>
 
@@ -4515,8 +4515,8 @@ The results obtained are the same as those from the command line method.</p>
 <p>If the pipeline meets your requirements for inference speed and accuracy in production, you can proceed with development integration/deployment directly.</p>
 <p>If you need to apply the pipeline directly in your Python project, refer to the example code in <a href="#22-python-script-integration">2.2 Python Script Integration</a>.</p>
 <p>Additionally, PaddleX provides three other deployment methods, detailed as follows:</p>
-<p>🚀 <strong>High-Performance Inference</strong>: In actual production environments, many applications have stringent standards for the performance metrics of deployment strategies (especially response speed) to ensure efficient system operation and smooth user experience. To this end, PaddleX provides high-performance inference plugins aimed at deeply optimizing model inference and pre/post-processing for significant end-to-end speedups. For detailed high-performance inference procedures, refer to the <a href="../../../pipeline_deploy/high_performance_inference.html">PaddleX High-Performance Inference Guide</a>.</p>
-<p>☁️ <strong>Service-Oriented Deployment</strong>: Service-oriented deployment is a common deployment form in actual production environments. By encapsulating inference functions as services, clients can access these services through network requests to obtain inference results. PaddleX supports users in achieving low-cost service-oriented deployment of pipelines. For detailed service-oriented deployment procedures, refer to the <a href="../../../pipeline_deploy/service_deploy.html">PaddleX Service-Oriented Deployment Guide</a>.</p>
+<p>🚀 <b>High-Performance Inference</b>: In actual production environments, many applications have stringent standards for the performance metrics of deployment strategies (especially response speed) to ensure efficient system operation and smooth user experience. To this end, PaddleX provides high-performance inference plugins aimed at deeply optimizing model inference and pre/post-processing for significant end-to-end speedups. For detailed high-performance inference procedures, refer to the <a href="../../../pipeline_deploy/high_performance_inference.html">PaddleX High-Performance Inference Guide</a>.</p>
+<p>☁️ <b>Service-Oriented Deployment</b>: Service-oriented deployment is a common deployment form in actual production environments. By encapsulating inference functions as services, clients can access these services through network requests to obtain inference results. PaddleX supports users in achieving low-cost service-oriented deployment of pipelines. For detailed service-oriented deployment procedures, refer to the <a href="../../../pipeline_deploy/service_deploy.html">PaddleX Service-Oriented Deployment Guide</a>.</p>
 <p>Below are the API references and multi-language service invocation examples:</p>
 <details>
 <summary>API Reference</summary>
@@ -4542,7 +4542,7 @@ For all operations provided by the service:
 
 Operations provided by the service are as follows:
 
-- **`infer`**
+- <b>`infer`</b>
 
     Performs object detection on an image.
 
@@ -4962,10 +4962,10 @@ Operations provided by the service are as follows:
 
 </details>
 <p><br/></p>
-<p>📱 <strong>Edge Deployment</strong>: Edge deployment is a method that places computing and data processing capabilities on user devices themselves, allowing devices to process data directly without relying on remote servers. PaddleX supports deploying models on edge devices such as Android. For detailed edge deployment procedures, refer to the <a href="../../../pipeline_deploy/edge_deploy.html">PaddleX Edge Deployment Guide</a>.
+<p>📱 <b>Edge Deployment</b>: Edge deployment is a method that places computing and data processing capabilities on user devices themselves, allowing devices to process data directly without relying on remote servers. PaddleX supports deploying models on edge devices such as Android. For detailed edge deployment procedures, refer to the <a href="../../../pipeline_deploy/edge_deploy.html">PaddleX Edge Deployment Guide</a>.
 Choose the appropriate deployment method for your model pipeline based on your needs, and proceed with subsequent AI application integration.</p>
 <h2 id="4-custom-development">4. Custom Development<a class="headerlink" href="#4-custom-development" title="Permanent link">&para;</a></h2>
-<p>If the default model weights provided by the General Small Object Detection Pipeline do not meet your requirements for accuracy or speed in your specific scenario, you can try to further fine-tune the existing model using <strong>your own domain-specific or application-specific data</strong> to improve the recognition performance of the small object detection pipeline in your scenario.</p>
+<p>If the default model weights provided by the General Small Object Detection Pipeline do not meet your requirements for accuracy or speed in your specific scenario, you can try to further fine-tune the existing model using <b>your own domain-specific or application-specific data</b> to improve the recognition performance of the small object detection pipeline in your scenario.</p>
 <h3 id="41-model-fine-tuning">4.1 Model Fine-tuning<a class="headerlink" href="#41-model-fine-tuning" title="Permanent link">&para;</a></h3>
 <p>Since the General Small Object Detection Pipeline includes a small object detection module, if the performance of the pipeline does not meet expectations, you need to refer to the <a href="../../../module_usage/tutorials/cv_modules/small_object_detection.html#iv-custom-development">Customization</a> section in the <a href="../../../module_usage/tutorials/cv_modules/small_object_detection.html">Small Object Detection Module Tutorial</a> and use your private dataset to fine-tune the small object detection model.</p>
 <h3 id="42-model-application">4.2 Model Application<a class="headerlink" href="#42-model-application" title="Permanent link">&para;</a></h3>
@@ -4980,7 +4980,7 @@ Choose the appropriate deployment method for your model pipeline based on your n
 </span></code></pre></div>
 Then, refer to the command line or Python script methods in the local experience section to load the modified pipeline configuration file.</p>
 <h2 id="multi-hardware-support">Multi-hardware Support<a class="headerlink" href="#multi-hardware-support" title="Permanent link">&para;</a></h2>
-<p>PaddleX supports various mainstream hardware devices such as NVIDIA GPUs, Kunlun XPU, Ascend NPU, and Cambricon MLU. <strong>Simply modify the <code>--device</code> parameter</strong> to seamlessly switch between different hardware.</p>
+<p>PaddleX supports various mainstream hardware devices such as NVIDIA GPUs, Kunlun XPU, Ascend NPU, and Cambricon MLU. <b>Simply modify the <code>--device</code> parameter</b> to seamlessly switch between different hardware.</p>
 <p>For example, if you use an NVIDIA GPU for inference with the small object detection pipeline, the Python command would be:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>paddlex<span class="w"> </span>--pipeline<span class="w"> </span>multilabel_classification<span class="w"> </span>--input<span class="w"> </span>small_object_detection.jpg<span class="w"> </span>--device<span class="w"> </span>gpu:0
 </span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="sb">``````</span>

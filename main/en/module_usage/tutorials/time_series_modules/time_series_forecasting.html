@@ -4455,7 +4455,8 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-<p><strong>Note: The above accuracy metrics are measured on the <a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/data/Etth1.tar">ETTH1</a> test dataset, with an input sequence length of 96, and a prediction sequence length of 96 for all models except TiDE, which has a prediction sequence length of 720.</strong></p>
+
+<p><b>Note: The above accuracy metrics are measured on the <a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/data/Etth1.tar">ETTH1</a> test dataset, with an input sequence length of 96, and a prediction sequence length of 96 for all models except TiDE, which has a prediction sequence length of 720.</b></p>
 <h2 id="iii-quick-integration">III. Quick Integration<a class="headerlink" href="#iii-quick-integration" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>❗ Before quick integration, please install the PaddleX wheel package. For detailed instructions, refer to the <a href="../../../installation/installation.html">PaddleX Local Installation Guide</a></p>
@@ -4472,7 +4473,7 @@ For more information on using PaddleX's single-model inference API, refer to the
 <h2 id="iv-custom-development">IV. Custom Development<a class="headerlink" href="#iv-custom-development" title="Permanent link">&para;</a></h2>
 <p>If you seek higher accuracy, you can leverage PaddleX's custom development capabilities to develop better Time Series Forecasting models. Before developing a Time Series Forecasting model with PaddleX, ensure you have installed PaddleClas plugin for PaddleX. The installation process can be found in the custom development section of the <a href="../../../installation/installation.html">PaddleX Local Installation Tutorial</a>.</p>
 <h3 id="41-dataset-preparation">4.1 Dataset Preparation<a class="headerlink" href="#41-dataset-preparation" title="Permanent link">&para;</a></h3>
-<p>Before model training, you need to prepare a dataset for the task. PaddleX provides data validation functionality for each module. <strong>Only data that passes validation can be used for model training.</strong> Additionally, PaddleX provides demo datasets for each module, which you can use to complete subsequent development. If you wish to use private datasets for model training, refer to <a href="../../../data_annotations/time_series_modules/time_series_forecasting.html">PaddleX Time Series Forecasting Task Module Data Preparation Tutorial</a>.</p>
+<p>Before model training, you need to prepare a dataset for the task. PaddleX provides data validation functionality for each module. <b>Only data that passes validation can be used for model training.</b> Additionally, PaddleX provides demo datasets for each module, which you can use to complete subsequent development. If you wish to use private datasets for model training, refer to <a href="../../../data_annotations/time_series_modules/time_series_forecasting.html">PaddleX Time Series Forecasting Task Module Data Preparation Tutorial</a>.</p>
 <h4 id="411-demo-data-download">4.1.1 Demo Data Download<a class="headerlink" href="#411-demo-data-download" title="Permanent link">&para;</a></h4>
 <p>You can download the demo dataset to a specified folder using the following commands:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>wget<span class="w"> </span>https://paddle-model-ecology.bj.bcebos.com/paddlex/data/ts_dataset_examples.tar<span class="w"> </span>-P<span class="w"> </span>./dataset
@@ -4586,7 +4587,7 @@ The specific content of the verification result file is:
 
 After completing dataset verification, you can convert the dataset format or re-split the training/validation ratio by modifying the configuration file or appending hyperparameters.
 
-**(1) Dataset Format Conversion**
+<b>(1) Dataset Format Conversion</b>
 
 Time Series Forecasting supports converting `xlsx` and `xls` format datasets to the required format.
 
@@ -4624,7 +4625,7 @@ Of course, the above parameters also support being set by appending command-line
 </span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span>-o<span class="w"> </span>CheckDataset.convert.enable<span class="o">=</span>True<span class="w"> </span><span class="se">\</span>
 </span></code></pre></div>
 
-**(2) Dataset Splitting**
+<b>(2) Dataset Splitting</b>
 
 Parameters for dataset splitting can be set by modifying the `CheckDataset` fields in the configuration file. Example explanations for some parameters in the configuration file are as follows:
 
@@ -4742,11 +4743,11 @@ After model evaluation, the following outputs are typically produced:
 <h4 id="442-model-integration">4.4.2 Model Integration<a class="headerlink" href="#442-model-integration" title="Permanent link">&para;</a></h4>
 <p>The model can be directly integrated into the PaddleX pipeline or into your own projects.</p>
 <ol>
-<li><strong>Pipeline Integration</strong></li>
+<li><b>Pipeline Integration</b></li>
 </ol>
 <p>The Time Series Forecasting module can be integrated into PaddleX pipelines such as the <a href="../../../pipeline_usage/tutorials/time_series_pipelines/time_series_forecasting.html">Time Series Forecasting Pipeline (ts_fc)</a>. Simply replace the model path to update the Time Series Forecasting module's model.</p>
 <ol>
-<li><strong>Module Integration</strong></li>
+<li><b>Module Integration</b></li>
 </ol>
 <p>The weights you produce can be directly integrated into the Time Series Forecasting module. You can refer to the Python sample code in <a href="#iii-quick-integration">Quick Integration</a> and just replace the model with the path to the model you trained.</p>
 

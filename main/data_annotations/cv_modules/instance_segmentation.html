@@ -4383,7 +4383,7 @@ You're not viewing the latest version.
 <li>将 <code>fruit</code> 目录打包压缩为 <code>.tar</code> 或 <code>.zip</code> 格式压缩包即可得到水果实例分割标准 <code>labelme</code> 格式数据集。</li>
 </ul>
 <h2 id="3">3. 数据格式<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
-<p>PaddleX 针对实例分割任务定义的数据集，名称是 <strong>COCOInstSegDataset</strong>，组织结构和标注格式如下：</p>
+<p>PaddleX 针对实例分割任务定义的数据集，名称是 <b>COCOInstSegDataset</b>，组织结构和标注格式如下：</p>
 <p><div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>dataset_dir<span class="w">                  </span><span class="c1"># 数据集根目录，目录名称可以改变</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>├──<span class="w"> </span>annotations<span class="w">              </span><span class="c1"># 标注文件的保存目录，目录名称不可改变</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>│<span class="w">   </span>├──<span class="w"> </span>instance_train.json<span class="w">  </span><span class="c1"># 训练集标注文件，文件名称不可改变，采用COCO标注格式</span>
@@ -4392,7 +4392,7 @@ You're not viewing the latest version.
 </span></code></pre></div>
 标注文件采用 <code>COCO</code> 格式。请大家参考上述规范准备数据，此外可以参考：<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/data/instance_seg_coco_examples.tar">示例数据集</a>。</p>
 <p>当大家使用的是 PaddleX 2.x 版本的实例分割数据集时，请参考<a href="../../module_usage/tutorials/cv_modules/instance_segmentation.html">实例分割模块开发教程</a>中对应的格式转换部分，将 VOC 格式数据集转换为 COCO 数据集。（模块开发文件中注明）</p>
-<p><strong>注：</strong></p>
+<p><b>注：</b></p>
 <ul>
 <li>实例分割数据要求采用 <code>COCO</code> 数据格式标注出数据集中每张图像各个目标区域的像素边界和类别，采用 <code>[x1,y1,x2,y2,...,xn,yn]</code> 表示物体的多边形边界（segmentation）。其中，<code>(xn,yn)</code> 表示多边形各个角点坐标。标注信息存放到 <code>annotations</code> 目录下的 <code>json</code> 文件中，训练集 <code>instance_train.json</code> 和验证集 <code>instance_val.json</code> 分开存放。</li>
 <li>如果你有一批未标注数据，我们推荐使用 <code>LabelMe</code> 进行数据标注。对于使用 <code>LabelMe</code> 标注的数据集，PaddleX产线支持进行数据格式转换。</li>

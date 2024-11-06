@@ -4439,7 +4439,7 @@ You're not viewing the latest version.
 
 </table>
 
-<p><strong>Note: The above accuracy metrics are measured on the LaTeX-OCR formula recognition test set.</strong></p>
+<p><b>Note: The above accuracy metrics are measured on the LaTeX-OCR formula recognition test set.</b></p>
 <h2 id="iii-quick-integration">III. Quick Integration<a class="headerlink" href="#iii-quick-integration" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>❗ Before quick integration, please install the PaddleX wheel package. For detailed instructions, refer to the <a href="../../../installation/installation.html">PaddleX Local Installation Guide</a>.</p>
@@ -4456,7 +4456,7 @@ For more information on using PaddleX's single-model inference API, refer to the
 <h2 id="iv-custom-development">IV. Custom Development<a class="headerlink" href="#iv-custom-development" title="Permanent link">&para;</a></h2>
 <p>If you aim for higher accuracy with existing models, you can leverage PaddleX's custom development capabilities to develop better formula recognition models. Before developing formula recognition models with PaddleX, ensure you have installed the PaddleOCR-related model training plugins for PaddleX. The installation process can be found in the <a href="../../../installation/installation.html">PaddleX Local Installation Guide</a>.</p>
 <h3 id="41-data-preparation">4.1 Data Preparation<a class="headerlink" href="#41-data-preparation" title="Permanent link">&para;</a></h3>
-<p>Before model training, you need to prepare the corresponding dataset for the task module. PaddleX provides a data validation function for each module, and <strong>only data that passes the validation can be used for model training</strong>. Additionally, PaddleX provides demo datasets for each module, which you can use to complete subsequent development. If you wish to use private datasets for model training, refer to the <a href="https://github.com/lukas-blecher/LaTeX-OCR">LaTeX-OCR Formula Recognition Project</a>.</p>
+<p>Before model training, you need to prepare the corresponding dataset for the task module. PaddleX provides a data validation function for each module, and <b>only data that passes the validation can be used for model training</b>. Additionally, PaddleX provides demo datasets for each module, which you can use to complete subsequent development. If you wish to use private datasets for model training, refer to the <a href="https://github.com/lukas-blecher/LaTeX-OCR">LaTeX-OCR Formula Recognition Project</a>.</p>
 <h4 id="411-demo-data-download">4.1.1 Demo Data Download<a class="headerlink" href="#411-demo-data-download" title="Permanent link">&para;</a></h4>
 <p>You can download the demo dataset to a specified folder using the following command:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>wget<span class="w"> </span>https://paddle-model-ecology.bj.bcebos.com/paddlex/data/ocr_rec_latexocr_dataset_example.tar<span class="w"> </span>-P<span class="w"> </span>./dataset
@@ -4524,11 +4524,11 @@ Additionally, the dataset verification also analyzes the distribution of sample 
 </details>
 
 <h3 id="413-dataset-format-conversion-dataset-splitting-optional">4.1.3 Dataset Format Conversion / Dataset Splitting (Optional)<a class="headerlink" href="#413-dataset-format-conversion-dataset-splitting-optional" title="Permanent link">&para;</a></h3>
-<p>After completing the data verification, you can convert the dataset format and re-split the training/validation ratio by <strong>modifying the configuration file</strong> or <strong>appending hyperparameters</strong>.</p>
+<p>After completing the data verification, you can convert the dataset format and re-split the training/validation ratio by <b>modifying the configuration file</b> or <b>appending hyperparameters</b>.</p>
 <details>
   <summary>👉 <b>Details of Format Conversion / Dataset Splitting (Click to Expand)</b></summary>
 
-**(1) Dataset Format Conversion**
+<b>(1) Dataset Format Conversion</b>
 
 The formula recognition supports converting `MSTextRecDataset` format datasets to `LaTeXOCRDataset` format ( `PKL` format ). The parameters for dataset format conversion can be set by modifying the fields under `CheckDataset` in the configuration file. Examples of some parameters in the configuration file are as follows:
 
@@ -4563,7 +4563,7 @@ The above parameters also support being set by appending command line arguments:
 </span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span>-o<span class="w"> </span>CheckDataset.convert.enable<span class="o">=</span>True<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span>-o<span class="w"> </span>CheckDataset.convert.src_dataset_type<span class="o">=</span>MSTextRecDataset
 </span></code></pre></div>
-**(2) Dataset Splitting**
+<b>(2) Dataset Splitting</b>
 
 The parameters for dataset splitting can be set by modifying the fields under `CheckDataset` in the configuration file. Examples of some parameters in the configuration file are as follows:
 
@@ -4628,7 +4628,7 @@ Other related parameters can be set by modifying the <code>Global</code> and <co
 * `.pdparams`, `.pdema`, `.pdopt.pdstate`, `.pdiparams`, `.pdmodel`: Model weight-related files, including network parameters, optimizer, EMA, static graph network parameters, static graph network structure, etc.;
 </details>
 
-<h2 id="43-model-evaluation"><strong>4.3 Model Evaluation</strong><a class="headerlink" href="#43-model-evaluation" title="Permanent link">&para;</a></h2>
+<h2 id="43-model-evaluation"><b>4.3 Model Evaluation</b><a class="headerlink" href="#43-model-evaluation" title="Permanent link">&para;</a></h2>
 <p>After completing model training, you can evaluate the specified model weight file on the validation set to verify the model's accuracy. Using PaddleX for model evaluation can be done with a single command:</p>
 <p><div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>python<span class="w"> </span>main.py<span class="w"> </span>-c<span class="w"> </span>paddlex/configs/formula_recognition/LaTeX_OCR_rec.yaml<span class="w">  </span><span class="se">\</span>
 </span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">    </span>-o<span class="w"> </span>Global.mode<span class="o">=</span>evaluate<span class="w"> </span><span class="se">\</span>
@@ -4651,7 +4651,7 @@ After completing the model evaluation, an `evaluate_result.json` file will be pr
 
 </details>
 
-<h3 id="44-model-inference-and-integration"><strong>4.4 Model Inference and Integration</strong><a class="headerlink" href="#44-model-inference-and-integration" title="Permanent link">&para;</a></h3>
+<h3 id="44-model-inference-and-integration"><b>4.4 Model Inference and Integration</b><a class="headerlink" href="#44-model-inference-and-integration" title="Permanent link">&para;</a></h3>
 <p>After completing model training and evaluation, you can use the trained model weights for inference prediction or Python integration.</p>
 <h4 id="441-model-inference">4.4.1 Model Inference<a class="headerlink" href="#441-model-inference" title="Permanent link">&para;</a></h4>
 <p>To perform inference prediction through the command line, simply use the following command. Before running the following code, please download the <a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/general_formula_rec_001.png">demo image</a> to your local machine.

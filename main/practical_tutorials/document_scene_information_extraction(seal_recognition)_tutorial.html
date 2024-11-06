@@ -4247,7 +4247,7 @@ You're not viewing the latest version.
 </span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>    <span class="p">)</span>
 </span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="n">chat_result</span><span class="o">.</span><span class="n">print</span><span class="p">()</span>
 </span></code></pre></div>
-<p><strong>注</strong>：目前仅支持文心大模型，支持在<a href="https://console.bce.baidu.com/qianfan/ais/console/onlineService">百度云千帆平台</a>或者<a href="https://aistudio.baidu.com/">星河社区 AIStudio</a>上获取相关的 ak/sk(access_token)。如果使用百度云千帆平台，可以参考<a href="https://cloud.baidu.com/doc/WENXINWORKSHOP/s/Hlwerugt8">AK和SK鉴权调用API流程</a> 获取ak/sk，如果使用星河社区 AIStudio，可以在<a href="https://aistudio.baidu.com/account/accessToken">星河社区 AIStudio 访问令牌</a>中获取 access_token。</p>
+<p><b>注</b>：目前仅支持文心大模型，支持在<a href="https://console.bce.baidu.com/qianfan/ais/console/onlineService">百度云千帆平台</a>或者<a href="https://aistudio.baidu.com/">星河社区 AIStudio</a>上获取相关的 ak/sk(access_token)。如果使用百度云千帆平台，可以参考<a href="https://cloud.baidu.com/doc/WENXINWORKSHOP/s/Hlwerugt8">AK和SK鉴权调用API流程</a> 获取ak/sk，如果使用星河社区 AIStudio，可以在<a href="https://aistudio.baidu.com/account/accessToken">星河社区 AIStudio 访问令牌</a>中获取 access_token。</p>
 <p>输出打印的结果如下：</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>The result has been saved in output/tmpx5tmgsem_curve_0.jpg.
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>The result has been saved in output/tmpx5tmgsem_layout.jpg.
@@ -4261,7 +4261,7 @@ You're not viewing the latest version.
 <p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/practical_tutorials/PP-ChatOCRv3_doc/seal_01.png"></p>
 <p>通过上面的文档场景信息抽取的快速体验可以进行 Badcase 分析，发现文档场景信息抽取产线的官方模型，在当前需求场景中存在下面的问题：在OCR识别的可视化中，印章的文本弯曲检测框有偏差，导致印章文本识别错误；印章的信息没有被正确的抽取出来。在<code>{'chat_res': {'印章': '未知'}, 'prompt': ''}</code>中的结果是未知。因此，本节工作聚焦于印章信息抽取的场景，对文档场景信息抽取产线中的印章文本检测模型进行微调，从而达到能够精确提取文档中印章文本信息的能力。</p>
 <h3 id="22">2.2 在线体验<a class="headerlink" href="#22" title="Permanent link">&para;</a></h3>
-<p>您可以在 <strong>AI Studio 星河社区</strong> 体验文档场景信息抽取v3产线的效果，点击链接下载 <a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/doc_images/practical_tutorial/PP-ChatOCRv3_doc_seal/test.png">印章测试文件</a>，上传至<a href="https://aistudio.baidu.com/community/app/182491/webUI?source=appCenter">官方文档场景信息抽取v3 应用</a> 体验抽取效果。如下：</p>
+<p>您可以在 <b>AI Studio 星河社区</b> 体验文档场景信息抽取v3产线的效果，点击链接下载 <a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/doc_images/practical_tutorial/PP-ChatOCRv3_doc_seal/test.png">印章测试文件</a>，上传至<a href="https://aistudio.baidu.com/community/app/182491/webUI?source=appCenter">官方文档场景信息抽取v3 应用</a> 体验抽取效果。如下：</p>
 <p><img src="https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/doc_images/practical_tutorial/PP-ChatOCRv3_doc_seal/06.png"></p>
 <h2 id="3">3. 选择模型<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
 <p>PaddleX 提供了 2 个端到端的印章文本检测模型，具体可参考 <a href="../support_list/models_list.html">模型列表</a>，其中印章文本检测模型的 benchmark 如下：</p>
@@ -4295,7 +4295,7 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-<p><strong>注：以上精度指标的评估集是 PaddleX 自建的印章数据集，包含500印章图像。</strong></p>
+<p><b>注：以上精度指标的评估集是 PaddleX 自建的印章数据集，包含500印章图像。</b></p>
 <h2 id="4">4. 数据准备和校验<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
 <h3 id="41">4.1 数据准备<a class="headerlink" href="#41" title="Permanent link">&para;</a></h3>
 <p>本教程采用 <code>印章文本检测数据集</code> 作为示例数据集，可通过以下命令获取示例数据集。如果您使用自备的已标注数据集，需要按照 PaddleX 的格式要求对自备数据集进行调整，以满足 PaddleX 的数据格式要求。关于数据格式介绍，您可以参考 <a href="../data_annotations/ocr_modules/text_detection_recognition.html">PaddleX 目标检测模块数据标注教程</a>。</p>
@@ -4361,7 +4361,7 @@ You're not viewing the latest version.
 <p><center></p>
 <p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/practical_tutorials/PP-ChatOCRv3_doc/seal_02.png" width=600></p>
 <p></center></p>
-<p><strong>注</strong>：只有通过数据校验的数据才可以训练和评估。</p>
+<p><b>注</b>：只有通过数据校验的数据才可以训练和评估。</p>
 <h3 id="43">4.3 数据集划分（非必选）<a class="headerlink" href="#43" title="Permanent link">&para;</a></h3>
 <p>如需对数据集格式进行转换或是重新划分数据集，可通过修改配置文件或是追加超参数的方式进行设置。</p>
 <p>数据集校验相关的参数可以通过修改配置文件中 <code>CheckDataset</code> 下的字段进行设置，配置文件中部分参数的示例说明如下：</p>
@@ -4402,11 +4402,11 @@ You're not viewing the latest version.
 </li>
 </ul>
 <p>更多超参数介绍，请参考 <a href="../module_usage/instructions/config_parameters_common.html">PaddleX 通用模型配置文件参数说明</a>。</p>
-<p><strong>注：</strong>
+<p><b>注：</b>
 - 以上参数可以通过追加令行参数的形式进行设置，如指定模式为模型训练：<code>-o Global.mode=train</code>；指定前 2 卡 gpu 训练：<code>-o Global.device=gpu:0,1</code>；设置训练轮次数为 10：<code>-o Train.epochs_iters=10</code>。
 - 模型训练过程中，PaddleX 会自动保存模型权重文件，默认为<code>output</code>，如需指定保存路径，可通过配置文件中 <code>-o Global.output</code> 字段
 - PaddleX 对您屏蔽了动态图权重和静态图权重的概念。在模型训练的过程中，会同时产出动态图和静态图的权重，在模型推理时，默认选择静态图权重推理。</p>
-<p><strong>训练产出解释:</strong></p>
+<p><b>训练产出解释:</b></p>
 <p>在完成模型训练后，所有产出保存在指定的输出目录（默认为<code>./output/</code>）下，通常有以下产出：</p>
 <ul>
 <li>train_result.json：训练结果记录文件，记录了训练任务是否正常完成，以及产出的权重指标、相关文件路径等；</li>
@@ -4421,7 +4421,7 @@ You're not viewing the latest version.
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span>-o<span class="w"> </span>Global.dataset_dir<span class="o">=</span>./dataset/practical_seal
 </span></code></pre></div>
 <p>与模型训练类似，模型评估支持修改配置文件或追加命令行参数的方式设置。</p>
-<p><strong>注：</strong> 在模型评估时，需要指定模型权重文件路径，每个配置文件中都内置了默认的权重保存路径，如需要改变，只需要通过追加命令行参数的形式进行设置即可，如<code>-o Evaluate.weight_path=./output/best_accuracy/best_accuracy.pdparams</code>。</p>
+<p><b>注：</b> 在模型评估时，需要指定模型权重文件路径，每个配置文件中都内置了默认的权重保存路径，如需要改变，只需要通过追加命令行参数的形式进行设置即可，如<code>-o Evaluate.weight_path=./output/best_accuracy/best_accuracy.pdparams</code>。</p>
 <h3 id="53">5.3 模型调优<a class="headerlink" href="#53" title="Permanent link">&para;</a></h3>
 <p>在学习了模型训练和评估后，我们可以通过调整超参数来提升模型的精度。通过合理调整训练轮数，您可以控制模型的训练深度，避免过拟合或欠拟合；而学习率的设置则关乎模型收敛的速度和稳定性。因此，在优化模型性能时，务必审慎考虑这两个参数的取值，并根据实际情况进行灵活调整，以获得最佳的训练效果。</p>
 <p>推荐在调试参数时遵循控制变量法：
@@ -4481,7 +4481,7 @@ You're not viewing the latest version.
 </tbody>
 </table>
 <p></center></p>
-<p>** 注：本教程为 4 卡教程，如果您只有 1 张 GPU，可通过调整训练卡数完成本次实验，但最终指标未必和上述指标完全对齐，属正常情况。**</p>
+<p><b> 注：本教程为 4 卡教程，如果您只有 1 张 GPU，可通过调整训练卡数完成本次实验，但最终指标未必和上述指标完全对齐，属正常情况。</b></p>
 <p>在选择训练环境时，要考虑训练卡数和总 batch_size，以及学习率的关系。首先训练卡数乘以单卡 batch_size 等于总 batch_size。其次，总 batch_size 和学习率是相关的，学习率应与总 batch_size 保持同步调整。 目前默认学习率对应基于 4 卡训练的总 batch_size，若您打算在单卡环境下进行训练，则设置学习率时需相应除以 4。若您打算在 8 卡环境下进行训练，则设置学习率时需相应乘以 2。</p>
 <p>调整不同参数执行训练的命令可以参考：</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>python<span class="w"> </span>main.py<span class="w"> </span>-c<span class="w"> </span>paddlex/configs/text_detection_seal/PP-OCRv4_server_seal_det.yaml<span class="w"> </span><span class="se">\</span>

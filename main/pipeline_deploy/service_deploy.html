@@ -4262,8 +4262,8 @@ You're not viewing the latest version.
 <p>简体中文 | <a href="service_deploy.en.md">English</a></p>
 <h1 id="paddlex">PaddleX 服务化部署指南<a class="headerlink" href="#paddlex" title="Permanent link">&para;</a></h1>
 <p>服务化部署是实际生产环境中常见的一种部署形式。通过将推理功能封装为服务，客户端可以通过网络请求来访问这些服务，以获取推理结果。PaddleX 支持用户以低成本实现产线的服务化部署。本文档将首先介绍使用 PaddleX 进行服务化部署的基本流程，然后介绍将服务用于生产环境时的注意事项以及可能需要执行的操作。</p>
-<p><strong>注意</strong>
-- <strong>服务化部署提供模型产线的服务，而不具体到某个产线模块。</strong></p>
+<p><b>注意</b>
+- <b>服务化部署提供模型产线的服务，而不具体到某个产线模块。</b></p>
 <p>服务化部署示例图：</p>
 <p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipeline_deploy/serving.png"  width="300" /></p>
 <h2 id="1">1、基本流程<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
@@ -4284,7 +4284,7 @@ You're not viewing the latest version.
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>INFO:     Application startup complete.
 </span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>INFO:     Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)
 </span></code></pre></div>
-<p>--pipeline可指定为官方产线名称或本地产线配置文件路径。PaddleX 以此构建产线并部署为服务。如需调整配置（如模型路径、batch_size、部署设备等），请参考<a href="../pipeline_usage/tutorials/cv_pipelines/image_classification.html">通用图像分类产线使用教程</a>中的 <strong>“模型应用”</strong> 部分（对于其他产线，可参考 <strong>“1.3 调用服务”</strong> 表格中的对应教程）。
+<p>--pipeline可指定为官方产线名称或本地产线配置文件路径。PaddleX 以此构建产线并部署为服务。如需调整配置（如模型路径、batch_size、部署设备等），请参考<a href="../pipeline_usage/tutorials/cv_pipelines/image_classification.html">通用图像分类产线使用教程</a>中的 <b>“模型应用”</b> 部分（对于其他产线，可参考 <b>“1.3 调用服务”</b> 表格中的对应教程）。
 与服务化部署相关的命令行选项如下：</p>
 <table>
 <thead>
@@ -4326,7 +4326,7 @@ You're not viewing the latest version.
 </table>
 </table>
 <h3 id="13">1.3 调用服务<a class="headerlink" href="#13" title="Permanent link">&para;</a></h3>
-<p>请参考各产线使用教程中的 <strong>“开发集成/部署”</strong> 部分。</p>
+<p>请参考各产线使用教程中的 <b>“开发集成/部署”</b> 部分。</p>
 <table>
 <thead>
 <tr>

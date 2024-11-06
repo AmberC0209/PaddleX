@@ -4373,7 +4373,7 @@ You're not viewing the latest version.
 <h2 id="1-select-a-pipeline">1. Select a Pipeline<a class="headerlink" href="#1-select-a-pipeline" title="Permanent link">&para;</a></h2>
 <p>First, choose the corresponding PaddleX pipeline based on your task scenario. For handwritten Chinese recognition, this task falls under the Text Recognition category, corresponding to PaddleX's Universal OCR Pipeline. If you are unsure about the correspondence between tasks and pipelines, you can refer to the <a href="../support_list/pipelines_list.html">Pipeline List</a> for an overview of pipeline capabilities.</p>
 <h2 id="2-quick-start">2. Quick Start<a class="headerlink" href="#2-quick-start" title="Permanent link">&para;</a></h2>
-<p>PaddleX offers two ways to experience the pipeline: one is through the PaddleX wheel package locally, and the other is on the <strong>Baidu AIStudio Community</strong>.</p>
+<p>PaddleX offers two ways to experience the pipeline: one is through the PaddleX wheel package locally, and the other is on the <b>Baidu AIStudio Community</b>.</p>
 <ul>
 <li>
 <p>Local Experience:
@@ -4382,7 +4382,7 @@ You're not viewing the latest version.
 </span></code></pre></div></p>
 </li>
 <li>
-<p>AIStudio Community Experience: Go to <a href="https://aistudio.baidu.com/pipeline/mine">Baidu AIStudio Community</a>, click "Create Pipeline", and create a <strong>Universal OCR</strong> pipeline for a quick trial.</p>
+<p>AIStudio Community Experience: Go to <a href="https://aistudio.baidu.com/pipeline/mine">Baidu AIStudio Community</a>, click "Create Pipeline", and create a <b>Universal OCR</b> pipeline for a quick trial.</p>
 </li>
 </ul>
 <p>Quick trial output example:
@@ -4422,7 +4422,7 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-<p><strong>Note: The evaluation set is a self-built Chinese dataset by PaddleOCR, covering street scenes, web images, documents, and handwritten texts. The text recognition set contains 11,000 images, and the detection set contains 500 images. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</strong></p>
+<p><b>Note: The evaluation set is a self-built Chinese dataset by PaddleOCR, covering street scenes, web images, documents, and handwritten texts. The text recognition set contains 11,000 images, and the detection set contains 500 images. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b></p>
 <p>In summary, models listed from top to bottom have faster inference speeds, while those from bottom to top have higher accuracy. This tutorial uses the <code>PP-OCRv4_server</code> model as an example to complete a full model development process. Based on your actual usage scenario, choose a suitable model for training. After training, evaluate the appropriate model weights within the pipeline and use them in practical scenarios.</p>
 <h2 id="4-data-preparation-and-verification">4. Data Preparation and Verification<a class="headerlink" href="#4-data-preparation-and-verification" title="Permanent link">&para;</a></h2>
 <h3 id="41-data-preparation">4.1 Data Preparation<a class="headerlink" href="#41-data-preparation" title="Permanent link">&para;</a></h3>
@@ -4489,7 +4489,7 @@ You're not viewing the latest version.
 <center></p>
 <p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/practical_tutorials/ocr/05.png" width=600></p>
 <p></center></p>
-<p><strong>Note</strong>: Only data that passes the verification can be used for training and evaluation.</p>
+<p><b>Note</b>: Only data that passes the verification can be used for training and evaluation.</p>
 <h3 id="43-dataset-splitting-optional">4.3 Dataset Splitting (Optional)<a class="headerlink" href="#43-dataset-splitting-optional" title="Permanent link">&para;</a></h3>
 <p>If you need to convert the dataset format or re-split the dataset, you can set it by modifying the configuration file or appending hyperparameters.</p>
 <p>Parameters related to dataset verification can be set by modifying the fields under <code>CheckDataset</code> in the configuration file. Examples of some parameters in the configuration file are as follows:</p>
@@ -4527,11 +4527,11 @@ You're not viewing the latest version.
 </li>
 </ul>
 <p>For more hyperparameter introductions, refer to <a href="../module_usage/instructions/config_parameters_common.html">PaddleX General Model Configuration File Parameter Explanation</a>.</p>
-<p><strong>Note</strong>:
+<p><b>Note</b>:
 - The above parameters can be set by appending command-line arguments, e.g., specifying the mode as model training: <code>-o Global.mode=train</code>; specifying the first two GPUs for training: <code>-o Global.device=gpu:0,1</code>; setting the number of training epochs to 10: <code>-o Train.epochs_iters=10</code>.
 - During model training, PaddleX automatically saves model weight files, with the default being <code>output</code>. To specify a save path, use the <code>-o Global.output</code> field in the configuration file.
 - PaddleX shields you from the concepts of dynamic graph weights and static graph weights. During model training, both dynamic and static graph weights are produced, and static graph weights are selected by default for model inference.</p>
-<p><strong>Training Output Explanation</strong>:</p>
+<p><b>Training Output Explanation</b>:</p>
 <p>After completing model training, all outputs are saved in the specified output directory (default is <code>./output/</code>), typically including the following:</p>
 <ul>
 <li>train_result.json: Training result record file, recording whether the training task completed normally, as well as the output weight metrics, relevant file paths, etc.;</li>
@@ -4546,7 +4546,7 @@ You're not viewing the latest version.
 </span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span>-o<span class="w"> </span>Global.dataset_dir<span class="o">=</span>./dataset/handwrite_chinese_text_rec
 </span></code></pre></div>
 <p>Similar to model training, model evaluation supports setting parameters by modifying the configuration file or appending command-line arguments.</p>
-<p><strong>Note</strong>: When evaluating a model, you need to specify the model weight file path. Each configuration file has a default weight save path. If you need to change it, simply set it by appending a command-line argument, e.g., <code>-o Evaluate.weight_path=./output/best_accuracy/best_accuracy.pdparams</code>.</p>
+<p><b>Note</b>: When evaluating a model, you need to specify the model weight file path. Each configuration file has a default weight save path. If you need to change it, simply set it by appending a command-line argument, e.g., <code>-o Evaluate.weight_path=./output/best_accuracy/best_accuracy.pdparams</code>.</p>
 <h3 id="53-model-optimization">5.3 Model Optimization<a class="headerlink" href="#53-model-optimization" title="Permanent link">&para;</a></h3>
 <p>After learning about model training and evaluation, we can enhance model accuracy by adjusting hyperparameters. By carefully tuning the number of training epochs, you can control the depth of model training to avoid overfitting or underfitting. Meanwhile, the setting of the learning rate is crucial for the speed and stability of model convergence. Therefore, when optimizing model performance, it is essential to consider the values of these two parameters carefully and adjust them flexibly based on actual conditions to achieve the best training results.</p>
 <p>It is recommended to follow the method of controlled variables when debugging parameters:</p>
@@ -4623,7 +4623,7 @@ You're not viewing the latest version.
 </tbody>
 </table>
 <p></center></p>
-<p><strong>Note: This tutorial is designed for 4 GPUs. If you only have 1 GPU, you can adjust the number of training GPUs to complete the experiments, but the final metrics may not align with the above indicators, which is normal.</strong></p>
+<p><b>Note: This tutorial is designed for 4 GPUs. If you only have 1 GPU, you can adjust the number of training GPUs to complete the experiments, but the final metrics may not align with the above indicators, which is normal.</b></p>
 <h2 id="6-production-line-testing">6. Production Line Testing<a class="headerlink" href="#6-production-line-testing" title="Permanent link">&para;</a></h2>
 <p>Replace the model in the production line with the fine-tuned model for testing, for example:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>paddlex<span class="w"> </span>--pipeline<span class="w"> </span>OCR<span class="w"> </span><span class="se">\</span>

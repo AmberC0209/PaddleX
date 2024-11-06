@@ -4437,7 +4437,7 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-<p><strong>Note: The evaluation set for the above accuracy metrics is a self-built dataset containing 500 circular seal images. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</strong></p>
+<p><b>Note: The evaluation set for the above accuracy metrics is a self-built dataset containing 500 circular seal images. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b></p>
 <h2 id="iii-quick-integration">III. Quick Integration<a class="headerlink" href="#iii-quick-integration" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>❗ Before quick integration, please install the PaddleX wheel package. For detailed instructions, refer to the <a href="../../../installation/installation.html">PaddleX Local Installation Guide</a></p>
@@ -4455,7 +4455,7 @@ For more information on using PaddleX's single-model inference API, refer to the
 <h2 id="iv-custom-development">IV. Custom Development<a class="headerlink" href="#iv-custom-development" title="Permanent link">&para;</a></h2>
 <p>If you seek higher accuracy, you can leverage PaddleX's custom development capabilities to develop better Seal Text Detection models. Before developing a Seal Text Detection model with PaddleX, ensure you have installed PaddleOCR plugin for PaddleX. The installation process can be found in the custom development section of the <a href="../../../installation/installation.html">PaddleX Local Installation Tutorial</a>.</p>
 <h3 id="41-dataset-preparation">4.1 Dataset Preparation<a class="headerlink" href="#41-dataset-preparation" title="Permanent link">&para;</a></h3>
-<p>Before model training, you need to prepare a dataset for the task. PaddleX provides data validation functionality for each module. <strong>Only data that passes validation can be used for model training.</strong> Additionally, PaddleX provides demo datasets for each module, which you can use to complete subsequent development. If you wish to use private datasets for model training, refer to <a href="../../../data_annotations/ocr_modules/text_detection_recognition.html">PaddleX Text Detection and Recognition Task Module Data Preparation Tutorial</a>.</p>
+<p>Before model training, you need to prepare a dataset for the task. PaddleX provides data validation functionality for each module. <b>Only data that passes validation can be used for model training.</b> Additionally, PaddleX provides demo datasets for each module, which you can use to complete subsequent development. If you wish to use private datasets for model training, refer to <a href="../../../data_annotations/ocr_modules/text_detection_recognition.html">PaddleX Text Detection and Recognition Task Module Data Preparation Tutorial</a>.</p>
 <h4 id="411-demo-data-download">4.1.1 Demo Data Download<a class="headerlink" href="#411-demo-data-download" title="Permanent link">&para;</a></h4>
 <p>You can download the demo dataset to a specified folder using the following commands:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>wget<span class="w"> </span>https://paddle-model-ecology.bj.bcebos.com/paddlex/data/ocr_curve_det_dataset_examples.tar<span class="w"> </span>-P<span class="w"> </span>./dataset
@@ -4534,11 +4534,11 @@ The dataset verification also analyzes the distribution of sample numbers across
 
 After completing dataset verification, you can convert the dataset format or re-split the training/validation ratio by modifying the configuration file or appending hyperparameters.
 
-**(1) Dataset Format Conversion**
+<b>(1) Dataset Format Conversion</b>
 
 Seal text detection does not support data format conversion.
 
-**(2) Dataset Splitting**
+<b>(2) Dataset Splitting</b>
 
 Parameters for dataset splitting can be set by modifying the `CheckDataset` fields in the configuration file. Example explanations for some parameters in the configuration file are as follows:
 
@@ -4655,11 +4655,11 @@ After model evaluation, the following outputs are typically produced:
 <h4 id="442-model-integration">4.4.2 Model Integration<a class="headerlink" href="#442-model-integration" title="Permanent link">&para;</a></h4>
 <p>The model can be directly integrated into the PaddleX pipeline or into your own projects.</p>
 <ol>
-<li><strong>Pipeline Integration</strong></li>
+<li><b>Pipeline Integration</b></li>
 </ol>
 <p>The document Seal Text Detection module can be integrated into PaddleX pipelines such as the <a href="../../../pipeline_usage/tutorials/ocr_pipelines/OCR.html">General OCR Pipeline</a> and <a href="../../../pipeline_usage/tutorials/information_extraction_pipelines/document_scene_information_extraction.html">Document Scene Information Extraction Pipeline v3 (PP-ChatOCRv3)</a>. Simply replace the model path to update the text detection module of the relevant pipeline.</p>
 <ol>
-<li><strong>Module Integration</strong></li>
+<li><b>Module Integration</b></li>
 </ol>
 <p>The weights you produce can be directly integrated into the Seal Text Detection module. You can refer to the Python sample code in <a href="#iii-quick-integration">Quick Integration</a> and just replace the model with the path to the model you trained.</p>
 

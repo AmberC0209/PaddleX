@@ -4373,7 +4373,7 @@ You're not viewing the latest version.
 <h2 id="1-select-a-pipeline">1. Select a Pipeline<a class="headerlink" href="#1-select-a-pipeline" title="Permanent link">&para;</a></h2>
 <p>First, choose the corresponding PaddleX pipeline based on your task scenario. For this task, the goal is to train a time series classification model based on heartbeat monitoring data to classify heartbeat time series conditions. Recognizing this as a time series classification task, we select PaddleX's Time Series Classification Pipeline. If unsure about the task-pipeline correspondence, consult the <a href="../support_list/models_list.html">PaddleX Pipeline List (CPU/GPU)</a> for pipeline capabilities.</p>
 <h2 id="2-quick-experience">2. Quick Experience<a class="headerlink" href="#2-quick-experience" title="Permanent link">&para;</a></h2>
-<p>PaddleX offers two ways to experience its capabilities: locally or on the <strong>Baidu AIStudio Community</strong>.</p>
+<p>PaddleX offers two ways to experience its capabilities: locally or on the <b>Baidu AIStudio Community</b>.</p>
 <ul>
 <li>Local Experience:
 <div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span> <span class="nn">paddlex</span> <span class="kn">import</span> <span class="n">create_model</span>
@@ -4406,7 +4406,7 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-<p><strong>Note: The evaluation set for the above accuracy metrics is UWaveGestureLibrary.</strong></p>
+<p><b>Note: The evaluation set for the above accuracy metrics is UWaveGestureLibrary.</b></p>
 <h2 id="4-data-preparation-and-verification">4. Data Preparation and Verification<a class="headerlink" href="#4-data-preparation-and-verification" title="Permanent link">&para;</a></h2>
 <h3 id="41-data-preparation">4.1 Data Preparation<a class="headerlink" href="#41-data-preparation" title="Permanent link">&para;</a></h3>
 <p>To demonstrate the entire time series classification process, we will use the public <a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/data/ts_classify_examples.tar">Heartbeat Dataset</a> for model training and validation. The Heartbeat Dataset is part of the UEA Time Series Classification Archive, addressing the practical task of heartbeat monitoring for medical diagnosis. The dataset comprises multiple time series groups, with each data point consisting of a label variable, group ID, and 61 feature variables. This dataset is commonly used to test and validate the performance of time series classification prediction models.</p>
@@ -4416,7 +4416,7 @@ You're not viewing the latest version.
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>wget<span class="w"> </span>https://paddle-model-ecology.bj.bcebos.com/paddlex/data/ts_classify_examples.tar<span class="w"> </span>-P<span class="w"> </span>./dataset
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>tar<span class="w"> </span>-xf<span class="w"> </span>./dataset/ts_classify_examples.tar<span class="w"> </span>-C<span class="w"> </span>./dataset/
 </span></code></pre></div>
-<p><strong>Data Considerations</strong>
+<p><b>Data Considerations</b>
   * Based on collected real data, clarify the classification objectives of the time series data and define corresponding classification labels. For example, in stock price classification, labels might be "Rise" or "Fall." For a time series that is "Rising" over a period, it can be considered a sample (group), where each time point in this period shares a common group_id.
   * Uniform Time Series Length: Ensure that the length of the time series for each group is consistent.
 Missing Value Handling: To guarantee the quality and integrity of the data, missing values can be imputed based on expert experience or statistical methods.
@@ -4458,7 +4458,7 @@ The above verification results have omitted some data parts. <code>check_pass</c
 <li><code>attributes.train_table</code>: Sample data rows from the training set of this dataset.</li>
 <li><code>attributes.val_table</code>: Sample data rows from the validation set of this dataset.</li>
 </ul>
-<p><strong>Note</strong>: Only data that passes the verification can be used for training and evaluation.</p>
+<p><b>Note</b>: Only data that passes the verification can be used for training and evaluation.</p>
 <h3 id="43-dataset-format-conversion-dataset-splitting-optional">4.3 Dataset Format Conversion / Dataset Splitting (Optional)<a class="headerlink" href="#43-dataset-format-conversion-dataset-splitting-optional" title="Permanent link">&para;</a></h3>
 <p>If you need to convert the dataset format or re-split the dataset, please refer to Section 4.1.3 in the <a href="../module_usage/tutorials/time_series_modules/time_series_classification.html">Time Series Classification Module Development Tutorial</a>.</p>
 <h2 id="5-model-training-and-evaluation">5. Model Training and Evaluation<a class="headerlink" href="#5-model-training-and-evaluation" title="Permanent link">&para;</a></h2>
@@ -4493,7 +4493,7 @@ PaddleX supports modifying training hyperparameters and single-machine single-GP
 <li><code>static_cov_cols</code>: Represents the category ID column of the time series. The same sample has the same label. Set the column name of the category based on your data, e.g., <code>label</code>.
 For more hyperparameter introductions, please refer to <a href="../module_usage/instructions/config_parameters_time_series.html">PaddleX Time Series Task Model Configuration File Parameter Description</a>.</li>
 </ul>
-<p><strong>Note</strong>:</p>
+<p><b>Note</b>:</p>
 <ul>
 <li>The above parameters can be set by appending command-line parameters, e.g., specifying the mode as model training: <code>-o Global.mode=train</code>; specifying the first GPU for training: <code>-o Global.device=gpu:0</code>; setting the number of training epochs to 10: <code>-o Train.epochs_iters=10</code>.</li>
 <li>During model training, PaddleX automatically saves model weight files, with the default being <code>output</code>. To specify a save path, use the <code>-o Global.output</code> field in the configuration file.</li>
@@ -4507,7 +4507,7 @@ For more hyperparameter introductions, please refer to <a href="../module_usage/
 
 After completing the model training, all outputs are saved in the specified output directory (default is `./output/`), typically including the following:
 
-**Explanation of Training Outputs:**
+<b>Explanation of Training Outputs:</b>
 
 After completing the model training, all outputs are saved in the specified output directory (default is `./output/`), typically including the following:
 
@@ -4526,7 +4526,7 @@ After completing the model training, all outputs are saved in the specified outp
 </span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    -o Evaluate.weight_path=./output/best_model/model.pdparams
 </span></code></pre></div>
 <p>Similar to model training, model evaluation supports setting through modifying the configuration file or appending command-line parameters.</p>
-<p><strong>Note</strong>: When evaluating the model, you need to specify the model weights file path. Each configuration file has a default weight save path built-in. If you need to change it, simply set it by appending a command-line parameter, such as <code>-o Evaluate.weight_path=./output/best_model/model.pdparams</code>.</p>
+<p><b>Note</b>: When evaluating the model, you need to specify the model weights file path. Each configuration file has a default weight save path built-in. If you need to change it, simply set it by appending a command-line parameter, such as <code>-o Evaluate.weight_path=./output/best_model/model.pdparams</code>.</p>
 <p>After completing the model evaluation, typically, the following outputs are generated:</p>
 <p>Upon completion of model evaluation, <code>evaluate_result.json</code> will be produced, which records the evaluation results, specifically, whether the evaluation task was completed successfully, and the model's evaluation metrics, including Acc Top1.</p>
 <h3 id="53-model-optimization">5.3 Model Optimization<a class="headerlink" href="#53-model-optimization" title="Permanent link">&para;</a></h3>
