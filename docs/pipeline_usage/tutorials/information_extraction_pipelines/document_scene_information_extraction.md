@@ -5,7 +5,7 @@
 ## 1. 文档场景信息抽取v3产线介绍
 文档场景信息抽取v3（PP-ChatOCRv3）是飞桨特色的文档和图像智能分析解决方案，结合了 LLM 和 OCR 技术，一站式解决版面分析、生僻字、多页 pdf、表格、印章识别等常见的复杂文档信息抽取难点问题，结合文心大模型将海量数据和知识相融合，准确率高且应用广泛。
 
-![](https://github.com/user-attachments/assets/90cb740b-7741-4383-bc4c-663f9d042d02)
+<img src="https://github.com/user-attachments/assets/90cb740b-7741-4383-bc4c-663f9d042d02">
 
 文档场景信息抽取v3产线中包含**表格结构识别模块**、**版面区域检测模块**、**文本检测模块**、**文本识别模块**、**印章文本检测模块**、**文本图像矫正模块**、**文档图像方向分类模块**。
 
@@ -322,7 +322,7 @@ PaddleX 所提供的预训练的模型产线均可以快速体验效果，你可
 ### 2.1 在线体验
 您可以[在线体验](https://aistudio.baidu.com/community/app/182491/webUI)文档场景信息抽取v3产线的效果，用官方提供的 Demo 图片进行识别，例如：
 
-![](https://github.com/user-attachments/assets/aa261b2b-b79c-4487-9323-dfcc43c3d581)
+<img src="https://github.com/user-attachments/assets/aa261b2b-b79c-4487-9323-dfcc43c3d581">
 
 如果您对产线运行的效果满意，可以直接对产线进行集成部署，如果不满意，您也可以利用私有数据**对产线中的模型进行在线微调**。
 

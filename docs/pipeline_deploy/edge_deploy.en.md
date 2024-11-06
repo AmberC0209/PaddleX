@@ -238,7 +238,7 @@ avg_duration:274.91
 detection, image size: 768, 576, detect object: bicycle, score: 0.905929, location: x=125, y=1
 ```
 
-![result](https://github.com/PaddlePaddle/Paddle-Lite-Demo/blob/feature/paddle-x/docs_img/object_detection/PicoDet-S.jpg?raw=true)
+<img src="https://github.com/PaddlePaddle/Paddle-Lite-Demo/blob/feature/paddle-x/docs_img/object_detection/PicoDet-S.jpg?raw=true">
 
 This section describes the deployment steps applicable to the demos listed in the following table:
 

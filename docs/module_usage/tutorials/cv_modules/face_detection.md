@@ -122,7 +122,7 @@ python main.py -c paddlex/configs/face_detection/PicoDet_LCNet_x2_5_face.yaml \
 
 
 
-![](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/modules/face_det/01.png)
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/modules/face_det/01.png">
 
 
 </details>

@@ -73,7 +73,7 @@ The result has been saved in output/tmpfnss9sq9/tmpfnss9sq9.xlsx.
 
 其中版面区域定位结果可视化如下：
 
-![](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/practical_tutorials/PP-ChatOCRv3_doc/layout_detection_01.png)
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/practical_tutorials/PP-ChatOCRv3_doc/layout_detection_01.png">
 
 
 通过上面的文档场景信息抽取的快速体验可以进行 Badcase 分析，发现文档场景信息抽取产线的官方模型，在当前需求场景中存在下面的问题：由于官方模型目前只区分了图，表格和印章三个类别，因此目前无法准确的定位并抽取出页眉和表格标题等其他信息，在`{'chat_res': {'页眉': '未知', '表格标题': '未知'}, 'prompt': ''}`中的结果是未知。因此，本节工作聚焦于论文文献的场景，利用论文文档数据集，以页眉和表格标题信息的抽取为例，对文档场景信息抽取产线中的版面分析模型进行微调，从而达到能够精确提取文档中页眉和表格标题信息的能力。
@@ -83,7 +83,7 @@ The result has been saved in output/tmpfnss9sq9/tmpfnss9sq9.xlsx.
 
 您可以在 **AI Studio 星河社区** 体验文档场景信息抽取v3产线的效果，点击链接下载 [论文文献测试文件](https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/doc_images/practical_tutorial/PP-ChatOCRv3_doc_layout/test.jpg)，上传至[官方文档场景信息抽取v3 应用](https://aistudio.baidu.com/community/app/182491/webUI?source=appCenter) 体验抽取效果。如下：
 
-![](https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/doc_images/practical_tutorial/PP-ChatOCRv3_doc_layout/06.png)
+<img src="https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/doc_images/practical_tutorial/PP-ChatOCRv3_doc_layout/06.png">
 
 
 
@@ -424,7 +424,7 @@ python main.py -c paddlex/configs/structure_analysis/RT-DETR-H_layout_3cls.yaml 
 
 通过上述可在`./output`下生成预测结果，其中`test.jpg`的预测结果如下：
 
-![](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/practical_tutorials/PP-ChatOCRv3_doc/layout_detection_03.png)
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/practical_tutorials/PP-ChatOCRv3_doc/layout_detection_03.png">
 
 
 ## 6. 产线测试
@@ -494,7 +494,7 @@ chat_result.print()
 
 版面的可视化结果如下，已经正确增加了页眉和表格标题的区域定位能力：
 
-![](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/practical_tutorials/PP-ChatOCRv3_doc/layout_detection_04.png)
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/practical_tutorials/PP-ChatOCRv3_doc/layout_detection_04.png">
 
 
 ## 7. 开发集成/部署

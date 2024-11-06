@@ -65,7 +65,7 @@ In the `output` directory, the visualization results of seal_recognition and OCR
 
 Among them, the visualization of the seal_recognition results is as follows:
 
-![](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/practical_tutorials/PP-ChatOCRv3_doc/seal_01.png)
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/practical_tutorials/PP-ChatOCRv3_doc/seal_01.png">
 
 Through the online experience of the document scene information extraction, a Badcase analysis can be conducted to identify issues with the official model of the document scene information extraction pipeline. The official model of the document scene information extraction production line has been found to have the following issues in the current demand scenario: in the visualization of OCR recognition, there is a deviation in the text bending detection box of the seal, resulting in incorrect seal text recognition; The information on the seal was not correctly extracted. The results for these in `{'chat_res': {'seal': 'unknown'}, 'prompt': ''}` are unknown. Therefore, this section focuses on the scenario of Seal Text Recognitions. Utilizing a dataset of Seal Text Recognition, with the extraction of seal information as examples, the seal text detection model within the document scene information extraction pipeline is fine-tuned to achieve the ability to accurately extract seal information from the document.
 
@@ -74,7 +74,7 @@ Through the online experience of the document scene information extraction, a Ba
 
 You can experience the effectiveness of the Document Scene Information Extraction v3 pipeline on the **AIStudio Community**. Click the link to download the [Test Seal File](https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/doc_images/practical_tutorial/PP-ChatOCRv3_doc_seal/test.png), and then upload it to the [official Document Scene Information Extraction v3 application](https://aistudio.baidu.com/community/app/182491/webUI?source=appCenter) to experience the extraction results. The process is as follows:
 
-![](https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/doc_images/practical_tutorial/PP-ChatOCRv3_doc_seal/06.png)
+<img src="https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/doc_images/practical_tutorial/PP-ChatOCRv3_doc_seal/06.png">
 
 
 ## 3. Choosing a Model
@@ -430,7 +430,7 @@ It can be observed that after fine-tuning the model, the key information has bee
 
 The visualization result of the seal is as follows, with the correctly added ability to extract the seal text information:
 
-![](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/practical_tutorials/PP-ChatOCRv3_doc/seal_04.png)
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/practical_tutorials/PP-ChatOCRv3_doc/seal_04.png">
 
 
 ## 7. Development Integration/Deployment

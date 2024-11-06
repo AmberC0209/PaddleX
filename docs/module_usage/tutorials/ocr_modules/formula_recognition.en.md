@@ -120,7 +120,7 @@ In the above validation results, `check_pass` being True indicates that the data
 * `attributes.val_sample_paths`: A list of relative paths to the visualized validation samples in this dataset;
 
 Additionally, the dataset verification also analyzes the distribution of sample numbers across all categories in the dataset and generates a distribution histogram (`histogram.png`):
-![](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/formula_recognition/01.jpg)
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/formula_recognition/01.jpg">
 </details>
 
 

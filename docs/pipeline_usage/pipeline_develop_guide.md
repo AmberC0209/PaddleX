@@ -46,7 +46,7 @@ PaddleX提供了三种可以快速体验产线效果的方式，您可以根据�
 
 您可以在AI Studio[在线体验](https://aistudio.baidu.com/community/app/91660/webUI?source=appMineRecent)通用 OCR 产线的效果，用官方提供的 Demo 图片进行识别，例如：
 
-![](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/ocr/02.png)
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/ocr/02.png">
 
 **💻 命令行方式体验**
 
@@ -79,7 +79,7 @@ paddlex --pipeline OCR --input general_ocr_002.png --device gpu:0
 ```
 可视化结果如下：
 
-![](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/boardingpass.png)
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/boardingpass.png">
 
 </details>
 

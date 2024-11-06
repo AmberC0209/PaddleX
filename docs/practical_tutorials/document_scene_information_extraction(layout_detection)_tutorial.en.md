@@ -70,7 +70,7 @@ In the `output` directory, the visualization results of layout area detection, O
 
 Among them, the visualization of the layout area detection results is as follows:
 
-![](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/practical_tutorials/PP-ChatOCRv3_doc/layout_detection_01.png)
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/practical_tutorials/PP-ChatOCRv3_doc/layout_detection_01.png">
 
 Through the online experience of the document scene information extraction, a Badcase analysis can be conducted to identify issues with the official model of the document scene information extraction pipeline. Due to the current limitation of the official model, which only distinguishes among figures, tables, and seals, it is currently unable to accurately locate and extract other information such as headers and table titles. The results for these in `{'chat_res': {'header': 'unknown', 'table caption': 'unknown'}, 'prompt': ''}` are unknown. Therefore, this section focuses on the scenario of academic papers. Utilizing a dataset of academic paper documents, with the extraction of header and chart title information as examples, the layout analysis model within the document scene information extraction pipeline is fine-tuned to achieve the ability to accurately extract header and table title information from the document.
 
@@ -79,7 +79,7 @@ Through the online experience of the document scene information extraction, a Ba
 
 You can experience the effectiveness of the Document Scene Information Extraction v3 pipeline on the **AIStudio Community**. Click the link to download the [Test Paper Document File](https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/doc_images/practical_tutorial/PP-ChatOCRv3_doc_layout/test.jpg), and then upload it to the [official Document Scene Information Extraction v3 application](https://aistudio.baidu.com/community/app/182491/webUI?source=appCenter) to experience the extraction results. The process is as follows:
 
-![](https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/doc_images/practical_tutorial/PP-ChatOCRv3_doc_layout/06.png)
+<img src="https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/doc_images/practical_tutorial/PP-ChatOCRv3_doc_layout/06.png">
 
 
 ## 3. Choosing a Model
@@ -421,7 +421,7 @@ python main.py -c paddlex/configs/structure_analysis/RT-DETR-H_layout_3cls.yaml 
 
 By following the above steps, prediction results can be generated under the ./output directory. The layout prediction result for test.jpg is as follows:
 
-![](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/practical_tutorials/PP-ChatOCRv3_doc/layout_detection_03.png)
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/practical_tutorials/PP-ChatOCRv3_doc/layout_detection_03.png">
 
 ## 6. Pipeline Inference
 
@@ -491,7 +491,7 @@ It can be observed that after fine-tuning the model, the key information has bee
 
 The visualization result of the layout is as follows, with the correctly added ability to locate the areas of headers and table titles:
 
-![](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/practical_tutorials/PP-ChatOCRv3_doc/layout_detection_04.png)
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/practical_tutorials/PP-ChatOCRv3_doc/layout_detection_04.png">
 
 
 ## 7. Development Integration/Deployment

@@ -6,7 +6,7 @@
 
 Formula recognition is a technology that automatically identifies and extracts LaTeX formula content and its structure from documents or images. It is widely used in document editing and data analysis in fields such as mathematics, physics, and computer science. Leveraging computer vision and machine learning algorithms, formula recognition converts complex mathematical formula information into editable LaTeX format, facilitating further data processing and analysis for users.
 
-![](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/formula_recognition/01.jpg)
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/formula_recognition/01.jpg">
 
 **The Formula Recognition Pipeline comprises a layout detection module and a formula recognition module.**
 
@@ -139,7 +139,7 @@ Where `dt_polys` represents the coordinates of the detected formula area, and `r
 </details>
 
 The visualization result is as follows:
-![](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/formula_recognition/02.jpg)
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/formula_recognition/02.jpg">
 
 The visualized image not saved by default. You can customize the save path through `--save_path`, and then all results will be saved in the specified path. Formula recognition visualization requires a separate environment configuration. Please refer to [2.3 Formula Recognition Pipeline Visualization](#23-formula-recognition-pipeline-visualization) to install the LaTeX rendering engine.
 

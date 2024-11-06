@@ -6,7 +6,7 @@
 印章文本识别是一种自动从文档或图像中提取和识别印章内容的技术，印章文本的识别是文档处理的一部分，在很多场景都有用途，例如合同比对，出入库审核以及发票报销审核等场景。
 
 
-![](https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/doc_images/practical_tutorial/PP-ChatOCRv3_doc_seal/01.png)
+<img src="https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/doc_images/practical_tutorial/PP-ChatOCRv3_doc_seal/01.png">
 
 
 **印章文本识别**产线中包含版面区域分析模块、印章印章文本检测模块和文本识别模块。
@@ -321,7 +321,7 @@ paddlex --pipeline seal_recognition.yaml --input seal_text_det.png --save_path .
 ```
 </details>
 
-![](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/seal_recognition/03.png)
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/seal_recognition/03.png">
 
 可视化图片默认保存在 `output` 目录下，您也可以通过 `--save_path` 进行自定义。
 

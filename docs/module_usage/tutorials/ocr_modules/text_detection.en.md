@@ -118,7 +118,7 @@ In the above validation result, `check_pass` being `true` indicates that the dat
 
 Additionally, the dataset validation also analyzed the distribution of the length and width of all images in the dataset and plotted a distribution histogram (histogram.png):
 
-![](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/modules/text_det/01.png)
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/modules/text_det/01.png">
 </details>
 
 ### 4.1.3 Dataset Format Conversion/Dataset Splitting (Optional)

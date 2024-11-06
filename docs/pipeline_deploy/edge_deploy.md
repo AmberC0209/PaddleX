@@ -240,7 +240,7 @@ detection, image size: 768, 576, detect object: truck, score: 0.653789, location
 detection, image size: 768, 576, detect object: dog, score: 0.731584, location: x=128, y=222, width=182, height=319
 ```
 
-![预测结果](https://github.com/PaddlePaddle/Paddle-Lite-Demo/blob/feature/paddle-x/docs_img/object_detection/PicoDet-S.jpg?raw=true)
+<img src="https://github.com/PaddlePaddle/Paddle-Lite-Demo/blob/feature/paddle-x/docs_img/object_detection/PicoDet-S.jpg?raw=true">
 
 本节描述的部署步骤适用于下表中列举的 demo：
 

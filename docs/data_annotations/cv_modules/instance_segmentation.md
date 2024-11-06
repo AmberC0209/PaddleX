@@ -34,11 +34,11 @@ pip install labelme
 * 创建数据集根目录，如 `fruit`。
 * 在 `fruit` 中创建 `images` 目录（必须为 `images` 目录），并将待标注图片存储在 `images` 目录下，如下图所示：
 
-![alt text](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/instance_segmentation/05.png)
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/instance_segmentation/05.png">
 
 * 在 `fruit` 文件夹中创建待标注数据集的类别标签文件 `label.txt`，并在 `label.txt` 中按行写入待标注数据集的类别。以水果实例分割数据集的 `label.txt` 为例，如下图所示：
 
-![alt text](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/instance_segmentation/06.png)
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/instance_segmentation/06.png">
 
 #### 2.3.2 启动 Labelme
 终端进入到带标注数据集根目录，并启动 `labelme` 标注工具。
@@ -54,34 +54,34 @@ labelme images --labels label.txt --nodata --autosave --output annotations
 #### 2.3.3 开始图片标注
 * 启动 `labelme` 后如图所示：
 
-![alt text](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/instance_segmentation/07.png)
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/instance_segmentation/07.png">
 * 点击 `Edit` 选择标注类型，选则 `Create Polygons`。
 * 在图片上创建多边形描绘分割区域边界。
 
-![alt text](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/instance_segmentation/08.png)
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/instance_segmentation/08.png">
 * 再次点击选择分割区域类别。
 
-![alt text](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/instance_segmentation/09.png)
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/instance_segmentation/09.png">
 
 * 标注好后点击存储。（若在启动 `labelme` 时未指定 `output` 字段，会在第一次存储时提示选择存储路径，若指定 `autosave` 字段使用自动保存，则无需点击存储按钮）。
 
-![alt text](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/instance_segmentation/10.png)
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/instance_segmentation/10.png">
 
 * 然后点击 `Next Image` 进行下一张图片的标注。
 
-![alt text](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/instance_segmentation/11.png)
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/instance_segmentation/11.png">
 * 最终标注好的标签文件如图所示。
 
-![alt text](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/instance_segmentation/12.png)
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/instance_segmentation/12.png">
 
 * 调整目录得到水果实例分割标准 `labelme` 格式数据集。
   在数据集根目录创建 `train_anno_list.txt` 和 `val_anno_list.txt` 两个文本文件，并将 `annotations` 目录下的全部 `json` 文件路径按一定比例分别写入 `train_anno_list.txt` 和 `val_anno_list.txt`，也可全部写入到 `train_anno_list.txt` 同时创建一个空的 `val_anno_list.txt` 文件，待上传零代码使用数据划分功能进行重新划分。`train_anno_list.txt` 和 `val_anno_list.txt` 的具体填写格式如图所示：
 
-![alt text](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/instance_segmentation/13.png)
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/instance_segmentation/13.png">
 
 * 经过整理得到的最终目录结构如下：
 
-![alt text](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/instance_segmentation/14.png)
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/instance_segmentation/14.png">
 
 * 将 `fruit` 目录打包压缩为 `.tar` 或 `.zip` 格式压缩包即可得到水果实例分割标准 `labelme` 格式数据集。
 ##  3. 数据格式

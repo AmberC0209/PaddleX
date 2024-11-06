@@ -39,10 +39,10 @@ pip install labelme
 * Create a root directory for the dataset, e.g., `helmet`.
 * Create an `images` directory (must be named `images`) within `helmet` and store the images to be annotated in the `images` directory, as shown below:
 
-![alt text](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/01.png)
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/01.png">
 * Create a category label file `label.txt` in the `helmet` folder and write the categories of the dataset to be annotated into `label.txt` by line. For example, for a helmet detection dataset, `label.txt` would look like this:
 
-![alt text](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/02.png)
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/02.png">
 
 #### 2.3.2 Start Labelme
 Navigate to the root directory of the dataset to be annotated in the terminal and start the `Labelme` annotation tool:
@@ -58,36 +58,36 @@ labelme images --labels label.txt --nodata --autosave --output annotations
 #### 2.3.3 Begin Image Annotation
 * After starting `Labelme`, it will look like this:
 
-![alt text](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/03.png)
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/03.png">
 * Click "Edit" to select the annotation type.
 
-![alt text](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/04.png)
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/04.png">
 * Choose to create a rectangular box.
 
-![alt text](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/05.png)
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/05.png">
 * Drag the crosshair to select the target area on the image.
 
-![alt text](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/06.png)
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/06.png">
 * Click again to select the category of the target box.
 
 
-![alt text](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/07.png)
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/07.png">
 * After labeling, click Save. (If the `output` field is not specified when starting `Labelme`, it will prompt you to select a save path the first time you save. If the `autosave` field is used for automatic saving, there is no need to click the Save button).
 
-![alt text](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/image_classification/05.png)
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/image_classification/05.png">
 * Then click `Next Image` to label the next image.
 
-![alt text](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/image_classification/06.png)
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/image_classification/06.png">
 * The final labeled tag file looks like this:
 
-![alt text](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/08.png)
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/08.png">
 * Adjust the directory to obtain the safety helmet detection dataset in the standard `Labelme` format
   * Create two text files, `train_anno_list.txt` and `val_anno_list.txt`, in the root directory of the dataset. Write the paths of all `json` files in the `annotations` directory into `train_anno_list.txt` and `val_anno_list.txt` at a certain ratio, or write all of them into `train_anno_list.txt` and create an empty `val_anno_list.txt` file. Use the data splitting function to re-split. The specific filling format of `train_anno_list.txt` and `val_anno_list.txt` is shown below:
   
-  ![alt text](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/09.png)
+  <img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/09.png">
   * The final directory structure after organization is as follows:
   
-  ![alt text](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/10.png)
+  <img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/10.png">
 
 #### 2.3.4 Format Conversion
 After labeling with `Labelme`, the data format needs to be converted to `coco` format. Below is a code example for converting the data labeled using `Labelme` according to the above tutorial:
@@ -129,10 +129,10 @@ pdlabel # Abbreviation, identical to paddlelabel
 ### 3.2 Annotation Process with PaddleLabel
 * Open the automatically popped-up webpage, click on the sample project, and click on Object Detection.
 
-![alt text](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/11.png)
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/11.png">
 * Fill in the project name and dataset path. Note that the path is the absolute path on the local machine. Click Create after completion.
 
-![alt text](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/12.png)
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/12.png">
 * First, define the categories that need to be annotated. Taking layout analysis as an example, provide 10 categories, each with a unique corresponding id. Click Add Category to create the required category names.
 * Start annotating
   * Select the label you want to annotate with.
@@ -141,21 +141,21 @@ pdlabel # Abbreviation, identical to paddlelabel
   * After completing the annotation, the result will appear in the lower-right corner. Check if the annotation is correct.
   * Once done, click **Project Overview**.
 
-![alt text](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/13.png)
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/13.png">
 
 * Export Annotated Files
 
   * In the Project Overview, segment the dataset as needed and click "Export Dataset".
 
-![alt text](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/14.png)
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/14.png">
 
 * Fill in the export path and format. The export path should be an absolute path, and the format should be `coco`.
 
-![alt text](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/15.png)
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/15.png">
 
 * After successful export, the annotated files will be available in the specified path.
 
-![alt text](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/16.png)
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/16.png">
 
 * Adjust directories to obtain COCO-formatted dataset for helmet detection
 
@@ -180,7 +180,7 @@ pdlabel # Abbreviation, identical to paddlelabel
 |<code>image</code>|<code>images</code>|</p>
 * Create an `annotations` directory in the root of the dataset and move all `json` files into it. The final dataset structure should look like this:
 
-![alt text](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/17.png)
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/17.png">
 
 * Compress the `helmet` directory into a `.tar` or `.zip` file to obtain the COCO-formatted dataset for helmet detection.
 

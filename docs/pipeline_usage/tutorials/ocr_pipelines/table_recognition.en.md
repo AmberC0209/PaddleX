@@ -5,7 +5,7 @@
 ## 1. Introduction to the General Table Recognition Pipeline
 Table recognition is a technology that automatically identifies and extracts table content and its structure from documents or images. It is widely used in data entry, information retrieval, and document analysis. By leveraging computer vision and machine learning algorithms, table recognition can convert complex table information into editable formats, facilitating further data processing and analysis for users.
 
-![](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/table_recognition/01.png)
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/table_recognition/01.png">
 
 
 **The General Table Recognition Pipeline comprises modules for table structure recognition, layout analysis, text detection, and text recognition.**
@@ -160,7 +160,7 @@ PaddleX's pre-trained model pipelines allow for quick experience of their effect
 ### 2.1 Online Experience
 You can [experience online](https://aistudio.baidu.com/community/app/91661/webUI) the effects of the General Table Recognition pipeline by using the demo images provided by the official. For example:
 
-![](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/table_recognition/02.png)
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/table_recognition/02.png">
 
 If you are satisfied with the pipeline's performance, you can directly integrate and deploy it. If not, you can also use your private data to **fine-tune the models in the pipeline online**.
 
@@ -210,7 +210,7 @@ Here, parameters like `--model` and `--device` do not need to be specified, as t
 
 After running, the result is:
 
-![](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/table_recognition/03.png)
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/table_recognition/03.png">
 
 The visualized image not saved by default. You can customize the save path through `--save_path`, and then all results will be saved in the specified path.
 

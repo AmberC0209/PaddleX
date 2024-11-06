@@ -5,7 +5,7 @@
 ## 1. 通用时序分类产线介绍
 时序分类是一种将时间序列数据归类到预定义类别的技术，广泛应用于行为识别、金融趋势分析等领域。它通过分析随时间变化的特征，识别出不同的模式或事件，例如将一段语音信号分类为“问候”或“请求”，或将股票价格走势划分为“上涨”或“下跌”。时序分类通常使用机器学习和深度学习模型，能够有效捕捉时间依赖性和变化规律，以便为数据提供准确的分类标签。这项技术在智能监控、市场预测等应用中起着关键作用。
 
-![](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/time_series/01.png)
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/time_series/01.png">
 
 
 **通用****时序分类****产线中包含了****时序分类****模块**。
@@ -39,7 +39,7 @@ PaddleX 所提供的预训练的模型产线均可以快速体验效果，你可
 ### 2.1 在线体验
 您可以[在线体验](https://aistudio.baidu.com/community/app/105707/webUI?source=appCenter)通用时序分类产线的效果，用官方提供的 demo 进行识别，例如：
 
-![](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/time_series/02.png)
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/time_series/02.png">
 
 如果您对产线运行的效果满意，可以直接对产线进行集成部署，如果不满意，您也可以利用私有数据**对产线中的模型进行在线微调**。
 

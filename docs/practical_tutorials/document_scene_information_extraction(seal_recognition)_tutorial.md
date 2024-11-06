@@ -67,7 +67,7 @@ The retrieved vectorstore is not for PaddleX and will return vectorstore directl
 
 其中印章文本识别结果可视化如下：
 
-![](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/practical_tutorials/PP-ChatOCRv3_doc/seal_01.png)
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/practical_tutorials/PP-ChatOCRv3_doc/seal_01.png">
 
 
 通过上面的文档场景信息抽取的快速体验可以进行 Badcase 分析，发现文档场景信息抽取产线的官方模型，在当前需求场景中存在下面的问题：在OCR识别的可视化中，印章的文本弯曲检测框有偏差，导致印章文本识别错误；印章的信息没有被正确的抽取出来。在`{'chat_res': {'印章': '未知'}, 'prompt': ''}`中的结果是未知。因此，本节工作聚焦于印章信息抽取的场景，对文档场景信息抽取产线中的印章文本检测模型进行微调，从而达到能够精确提取文档中印章文本信息的能力。
@@ -77,7 +77,7 @@ The retrieved vectorstore is not for PaddleX and will return vectorstore directl
 
 您可以在 **AI Studio 星河社区** 体验文档场景信息抽取v3产线的效果，点击链接下载 [印章测试文件](https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/doc_images/practical_tutorial/PP-ChatOCRv3_doc_seal/test.png)，上传至[官方文档场景信息抽取v3 应用](https://aistudio.baidu.com/community/app/182491/webUI?source=appCenter) 体验抽取效果。如下：
 
-![](https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/doc_images/practical_tutorial/PP-ChatOCRv3_doc_seal/06.png)
+<img src="https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/doc_images/practical_tutorial/PP-ChatOCRv3_doc_seal/06.png">
 
 
 
@@ -421,7 +421,7 @@ chat_result.print()
 
 印章文本检测的可视化结果如下，已经正确抽取印章信息：
 
-![](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/practical_tutorials/PP-ChatOCRv3_doc/seal_04.png)
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/practical_tutorials/PP-ChatOCRv3_doc/seal_04.png">
 
 
 ## 7. 开发集成/部署

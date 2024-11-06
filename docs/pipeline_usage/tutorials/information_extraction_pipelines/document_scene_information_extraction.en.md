@@ -5,7 +5,7 @@
 ## 1. Introduction to PP-ChatOCRv3-doc Pipeline
 PP-ChatOCRv3-doc is a unique intelligent analysis solution for documents and images developed by PaddlePaddle. It combines Large Language Models (LLM) and OCR technology to provide a one-stop solution for complex document information extraction challenges such as layout analysis, rare characters, multi-page PDFs, tables, and seal recognition. By integrating with ERNIE Bot, it fuses massive data and knowledge to achieve high accuracy and wide applicability.
 
-![](https://github.com/user-attachments/assets/90cb740b-7741-4383-bc4c-663f9d042d02)
+<img src="https://github.com/user-attachments/assets/90cb740b-7741-4383-bc4c-663f9d042d02">
 
 The **PP-ChatOCRv3-doc** pipeline includes modules for **Table Structure Recognition**, **Layout Region Detection**, **Text Detection**, **Text Recognition**, **Seal Text Detection**, **Text Image Rectification**, and **Document Image Orientation Classification**.
 
@@ -319,7 +319,7 @@ PaddleX's pre-trained model pipelines can be quickly experienced. You can experi
 ### 2.1 Online Experience
 You can [experience online](https://aistudio.baidu.com/community/app/182491/webUI) the effect of the Document Scene Information Extraction v3 pipeline, using the official demo images for recognition, for example:
 
-![](https://github.com/user-attachments/assets/aa261b2b-b79c-4487-9323-dfcc43c3d581)
+<img src="https://github.com/user-attachments/assets/aa261b2b-b79c-4487-9323-dfcc43c3d581">
 
 If you are satisfied with the pipeline's performance, you can directly integrate and deploy it. If not, you can also use your private data to **fine-tune the models in the pipeline online**.
 

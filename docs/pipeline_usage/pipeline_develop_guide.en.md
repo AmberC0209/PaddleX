@@ -45,7 +45,7 @@ To demonstrate the OCR pipeline for the boarding pass recognition task, you can 
 
 You can experience the effects of the universal OCR pipeline in AI Studio [online](https://aistudio.baidu.com/community/app/91660/webUI?source=appMineRecent). Use the official demo image provided for recognition, for example:
 
-![](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/ocr/02.png)
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/ocr/02.png">
 
 **💻 Command Line Experience**
 
@@ -79,7 +79,7 @@ After running, the result is:
 ```
 The visualization result is as follows:
 
-![](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/boardingpass.png)
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/boardingpass.png">
 
 </details>
 

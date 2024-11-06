@@ -121,7 +121,7 @@ python main.py -c paddlex/configs/formula_recognition/LaTeX_OCR_rec.yaml \
 
 
 另外，数据集校验还对数据集中所有类别的样本数量分布情况进行了分析，并绘制了分布直方图（histogram.png）：
-![](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/formula_recognition/01.jpg)
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/formula_recognition/01.jpg">
 </details>
 
 #### 4.1.3 数据集格式转换/数据集划分（可选）

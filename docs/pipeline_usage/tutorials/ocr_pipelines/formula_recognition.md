@@ -6,7 +6,7 @@
 
 公式识别是一种自动从文档或图像中识别和提取LaTeX公式内容及其结构的技术，广泛应用于数学、物理、计算机科学等领域的文档编辑和数据分析。通过使用计算机视觉和机器学习算法，公式识别能够将复杂的数学公式信息转换为可编辑的LaTeX格式，方便用户进一步处理和分析数据。
 
-![](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/formula_recognition/01.jpg)
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/formula_recognition/01.jpg">
 
 **通用****公式识别****产线中包含版面区域检测模块和公式识别模块**。
 
@@ -140,7 +140,7 @@ paddlex --pipeline ./formula_recognition.yaml --input general_formula_recognitio
 
 可视化结果如下：
 
-![](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/formula_recognition/02.jpg)
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/formula_recognition/02.jpg">
 
 可视化图片默认不进行保存，您可以通过 `--save_path` 自定义保存路径，随后所有结果将被保存在指定路径下。公式识别可视化需要单独配置环境，请您参考[2.3 公式识别产线可视化](#23-公式识别产线可视化) 对LaTeX渲染引擎进行安装。
 

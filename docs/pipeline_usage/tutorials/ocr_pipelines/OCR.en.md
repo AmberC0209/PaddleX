@@ -7,7 +7,7 @@ OCR (Optical Character Recognition) is a technology that converts text in images
 
 The General OCR Pipeline is designed to solve text recognition tasks, extracting text information from images and outputting it in text form. PP-OCRv4 is an end-to-end OCR system that achieves millisecond-level text content prediction on CPUs, reaching state-of-the-art (SOTA) performance in open-source projects for general scenarios. Based on this project, developers from academia, industry, and research have rapidly deployed various OCR applications across fields such as general use, manufacturing, finance, transportation, and more.
 
-![](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/ocr/01.png)
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/ocr/01.png">
 
 **The General OCR Pipeline comprises a text detection module and a text recognition module**, each containing several models. The specific models to use can be selected based on the benchmark data provided below. **If you prioritize model accuracy, choose models with higher accuracy. If you prioritize inference speed, choose models with faster inference. If you prioritize model size, choose models with smaller storage requirements.**
 
@@ -127,7 +127,7 @@ PaddleX provides pre-trained models for the OCR Pipeline, allowing you to quickl
 ### 2.1 Online Experience
 You can [experience the General OCR Pipeline online](https://aistudio.baidu.com/community/app/91660/webUI?source=appMineRecent) using the official demo images for recognition, for example:
 
-![](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/ocr/02.png)
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/ocr/02.png">
 
 If you are satisfied with the pipeline's performance, you can directly integrate and deploy it. You can download the deployment package from the cloud or use the [local experience method in Section 2.2](#22-Local Experience). If not satisfied, you can also use your private data to **fine-tune the models in the pipeline online**.
 
@@ -182,7 +182,7 @@ After running, the result is:
 
 Among them, `dt_polys` is the detected text box coordinates, `dt_polys` is the detected text box coordinates, `dt_scores` is the confidence of the detected text box, `rec_text` is the detected text, `rec_score` is the detection Confidence in the text.
 
-![](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/ocr/03.png)
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/ocr/03.png">
 
 The visualized image not saved by default. You can customize the save path through `--save_path`, and then all results will be saved in the specified path.
 

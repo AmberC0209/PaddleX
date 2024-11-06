@@ -480,7 +480,7 @@ In the above validation results, `check_pass` being True indicates that the data
 
 Additionally, the dataset verification also analyzes the distribution of sample numbers across all classes in the dataset and generates a histogram (histogram.png) for visualization:
 
-![](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/modules/obj_det/01.png)
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/modules/obj_det/01.png">
 </details>
 
 

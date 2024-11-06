@@ -5,7 +5,7 @@
 ## 1. Introduction to the General Semantic Segmentation Pipeline
 Semantic segmentation is a computer vision technique that aims to assign each pixel in an image to a specific category, enabling a detailed understanding of the image content. Semantic segmentation not only identifies the types of objects in an image but also classifies each pixel, allowing regions of the same category to be fully labeled. For example, in a street scene image, semantic segmentation can distinguish pedestrians, cars, the sky, and roads pixel by pixel, forming a detailed label map. This technology is widely used in autonomous driving, medical image analysis, and human-computer interaction, often relying on deep learning models (such as SegFormer, etc.) to extract features by CNN or Transformer, and achieve high-precision pixel-level classification, providing a foundation for further intelligent analysis.
 
-![](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/semantic_segmentation/01.png)
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/semantic_segmentation/01.png">
 
 <details>
    <summary> 👉 Model List Details</summary>
@@ -175,7 +175,7 @@ PaddleX's pre-trained model pipelines can be quickly experienced. You can experi
 ### 2.1 Online Experience
 You can [experience online](https://aistudio.baidu.com/community/app/100062/webUI?source=appCenter) the effects of the General Semantic Segmentation Pipeline, using the official demo images for recognition, for example:
 
-![](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/semantic_segmentation/02.png)
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/semantic_segmentation/02.png">
 
 If you are satisfied with the pipeline's performance, you can directly integrate and deploy it. If not, you can also use your private data to **fine-tune the model in the pipeline online**.
 
@@ -228,7 +228,7 @@ After running, the result is:
 {'input_path': 'general_object_detection_002.png'}
 ```
 
-![](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/semantic_segmentation/03.png)
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/semantic_segmentation/03.png">
 
 The visualized image not saved by default. You can customize the save path through `--save_path`, and then all results will be saved in the specified path.
 

@@ -121,7 +121,7 @@ In the above validation results, `check_pass` being `True` indicates that the da
 
 The dataset validation also analyzes the distribution of sample counts across all classes in the dataset and generates a histogram (histogram.png) to visualize this distribution.
 
-![](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/modules/subj_det/01.png)
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/modules/subj_det/01.png">
 </details>
 
 #### 4.1.3 Dataset Format Conversion / Dataset Splitting (Optional)

@@ -5,7 +5,7 @@
 ## 1. 通用图像多标签分类产线介绍
 图像多标签分类是一种将一张图像同时分配到多个相关类别的技术，广泛应用于图像标注、内容推荐和社交媒体分析等领域。它能够识别图像中存在的多个物体或特征，例如一张图片中同时包含“狗”和“户外”这两个标签。通过使用深度学习模型，图像多标签分类能够自动提取图像特征并进行准确分类，以便为用户提供更加全面的信息。这项技术在智能搜索引擎和自动内容生成等应用中具有重要意义。
 
-![](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/image_multi_label_classification/01.png)
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/image_multi_label_classification/01.png">
 
 **通用图像多标签分类产线中包含了图像多标签分类模块，如您更考虑模型精度，请选择精度较高的模型，如您更考虑模型推理速度，请选择推理速度较快的模型，如您更考虑模型存储大小，请选择存储大小较小的模型**。
 
@@ -107,7 +107,7 @@ paddlex --pipeline ./multi_label_image_classification.yaml --input general_image
 ```
 {'input_path': 'general_image_classification_001.jpg', 'class_ids': [21, 0, 30, 24], 'scores': [0.99257, 0.70596, 0.63001, 0.57852], 'label_names': ['bear', 'person', 'skis', 'backpack']}
 ```
-![](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/image_multi_label_classification/02.png)
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/image_multi_label_classification/02.png">
 
 可视化图片默认不进行保存，您可以通过 `--save_path` 自定义保存路径，随后所有结果将被保存在指定路径下。
 
