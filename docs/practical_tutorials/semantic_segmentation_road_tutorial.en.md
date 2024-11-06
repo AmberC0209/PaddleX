@@ -1,4 +1,6 @@
-[简体中文](semantic_segmentation_road_tutorial.md) | English
+---
+comments: true
+---
 
 # PaddleX 3.0 General Semantic Segmentation Pipeline — Lane Line Segmentation Tutorial
 

@@ -1,4 +1,6 @@
-简体中文 | [English](image_classification.en.md)
+---
+comments: true
+---
 
 # 图像分类模块使用教程
 

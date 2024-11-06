@@ -1,4 +1,6 @@
-[简体中文](CHANGLOG.md) | English
+---
+comments: true
+---
 
 # Version Update Information
 

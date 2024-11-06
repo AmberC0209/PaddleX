@@ -1,4 +1,6 @@
-简体中文 | [English](image_anomaly_detection.en.md)
+---
+comments: true
+---
 
 # 图像异常检测产线使用教程
 

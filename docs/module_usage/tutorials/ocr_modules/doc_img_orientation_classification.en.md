@@ -1,4 +1,6 @@
-[简体中文](doc_img_orientation_classification.md) | English
+---
+comments: true
+---
 
 # Document Image Orientation Classification Module Development Tutorial
 

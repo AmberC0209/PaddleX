@@ -1,4 +1,6 @@
-简体中文 | [English](text_detection.en.md)
+---
+comments: true
+---
 
 # 文本检测模块使用教程
 

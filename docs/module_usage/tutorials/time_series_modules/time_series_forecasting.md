@@ -1,4 +1,6 @@
-简体中文 | [English](time_series_forecasting.en.md)
+---
+comments: true
+---
 
 # 时序预测模块使用教程
 

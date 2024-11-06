@@ -1,4 +1,6 @@
-简体中文 | [English](instance_segmentation.en.md)
+---
+comments: true
+---
 
 # 实例分割模块使用教程
 

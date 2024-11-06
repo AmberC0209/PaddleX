@@ -1,4 +1,6 @@
-[简体中文](layout_detection.md) | English
+---
+comments: true
+---
 
 # Layout Detection Module Development Tutorial
 

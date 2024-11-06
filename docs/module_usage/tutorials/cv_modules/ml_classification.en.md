@@ -1,4 +1,6 @@
-[简体中文](ml_classification.md) | English
+---
+comments: true
+---
 
 # Image Multi-Label Classification Module Development Tutorial
 

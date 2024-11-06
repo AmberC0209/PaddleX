@@ -1,4 +1,6 @@
-简体中文 | [English](models_list.en.md)
+---
+comments: true
+---
 
 # PaddleX模型列表（CPU/GPU）
 

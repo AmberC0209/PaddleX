@@ -1,4 +1,6 @@
-[简体中文](layout_parsing.md) | English
+---
+comments: true
+---
 
 # 通用版面解析产线使用教程
 

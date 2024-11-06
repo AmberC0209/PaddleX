@@ -1,4 +1,6 @@
-简体中文 | [English](OCR.en.md)
+---
+comments: true
+---
 
 # 通用OCR产线使用教程
 

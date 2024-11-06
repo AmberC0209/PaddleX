@@ -1,4 +1,6 @@
-[简体中文](instance_segmentation.md) | English
+---
+comments: true
+---
 
 # PaddleX Instance Segmentation Task Module Data Annotation Tutorial
 

@@ -1,4 +1,6 @@
-[简体中文](vehicle_detection.md) | English
+---
+comments: true
+---
 
 # Vehicle Detection Module Development Tutorial
 

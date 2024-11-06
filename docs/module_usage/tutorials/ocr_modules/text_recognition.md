@@ -1,4 +1,6 @@
-简体中文 | [English](text_recognition.en.md)
+---
+comments: true
+---
 
 # 文本识别模块使用教程
 

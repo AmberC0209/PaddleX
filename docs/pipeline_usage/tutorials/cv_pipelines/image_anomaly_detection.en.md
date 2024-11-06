@@ -1,4 +1,6 @@
-[简体中文](image_anomaly_detection.md) | English
+---
+comments: true
+---
 
 # Image Anomaly Detection Pipeline Tutorial
 

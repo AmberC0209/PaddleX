@@ -1,4 +1,6 @@
-[简体中文](face_detection.md) | English
+---
+comments: true
+---
 
 # Face Detection Module Development Tutorial
 

@@ -1,4 +1,6 @@
-简体中文 | [English](object_detection.en.md)
+---
+comments: true
+---
 
 # 目标检测模块使用教程
 

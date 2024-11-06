@@ -1,4 +1,6 @@
-[简体中文](table_recognition.md) | English
+---
+comments: true
+---
 
 # PaddleX Table Structure Recognition Task Data Annotation Tutorial
 

@@ -1,4 +1,6 @@
-简体中文 | [English](image_classification.en.md)
+---
+comments: true
+---
 
 # PaddleX图像分类任务模块数据标注教程
 

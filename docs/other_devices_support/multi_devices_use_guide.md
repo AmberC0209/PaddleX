@@ -1,4 +1,6 @@
-简体中文 | [English](multi_devices_use_guide.en.md)
+---
+comments: true
+---
 
 # PaddleX多硬件使用指南
 

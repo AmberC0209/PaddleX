@@ -1,4 +1,6 @@
-[简体中文](time_series_classification.md) | English
+---
+comments: true
+---
 
 # PaddleX Time Series Classification Task Data Annotation Tutorial
 

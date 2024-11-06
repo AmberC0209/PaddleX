@@ -1,4 +1,6 @@
-[简体中文](formula_recognition.md) | English
+---
+comments: true
+---
 
 # Formula Recognition Pipeline Tutorial
 

@@ -1,4 +1,6 @@
-简体中文 | [English](paddlepaddle_install.en.md)
+---
+comments: true
+---
 
 # 飞桨PaddlePaddle本地安装教程
 

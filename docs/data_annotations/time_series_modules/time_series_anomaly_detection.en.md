@@ -1,4 +1,6 @@
-[简体中文](time_series_anomaly_detection.md) | English
+---
+comments: true
+---
 
 # PaddleX Time Series Anomaly Detection Task Module Data Annotation Tutorial
 

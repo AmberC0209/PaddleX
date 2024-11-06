@@ -1,4 +1,6 @@
-[简体中文](document_scene_information_extraction(layout_detection)_tutorial.md) | English
+---
+comments: true
+---
 
 # PaddleX 3.0 Document Scene Information Extraction v3 (PP-ChatOCRv3_doc) —— Tutorial on Paper and Literature Information Extraction
 

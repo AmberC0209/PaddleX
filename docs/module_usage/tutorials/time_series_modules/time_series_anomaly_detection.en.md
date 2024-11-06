@@ -1,4 +1,6 @@
-[简体中文](time_series_anomaly_detection.md) | English
+---
+comments: true
+---
 
 # Time Series Anomaly Detection Module Development Tutorial
 

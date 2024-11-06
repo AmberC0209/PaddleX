@@ -1,4 +1,6 @@
-[简体中文](text_recognition.md) | English
+---
+comments: true
+---
 
 # Text Recognition Module Development Tutorial
 

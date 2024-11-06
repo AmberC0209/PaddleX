@@ -1,4 +1,6 @@
-简体中文 | [English](table_structure_recognition.en.md)
+---
+comments: true
+---
 
 # 表格结构识别模块使用教程
 

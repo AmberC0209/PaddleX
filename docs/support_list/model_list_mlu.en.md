@@ -1,4 +1,6 @@
-[简体中文](model_list_mlu.md) | English
+---
+comments: true
+---
 
 # PaddleX Model List (Cambricon MLU)
 

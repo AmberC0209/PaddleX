@@ -1,4 +1,6 @@
-[简体中文](semantic_segmentation.md) | English
+---
+comments: true
+---
 
 # PaddleX Semantic Segmentation Task Module Data Annotation Tutorial
 

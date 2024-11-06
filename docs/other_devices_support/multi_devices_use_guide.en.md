@@ -1,4 +1,6 @@
-[简体中文](multi_devices_use_guide.md) | English
+---
+comments: true
+---
 
 # PaddleX Multi-Hardware Usage Guide
 

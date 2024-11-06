@@ -1,4 +1,6 @@
-简体中文 | [English](service_deploy.en.md)
+---
+comments: true
+---
 
 # PaddleX 服务化部署指南
 

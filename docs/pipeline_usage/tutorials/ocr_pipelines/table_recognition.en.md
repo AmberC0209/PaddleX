@@ -1,4 +1,6 @@
-[简体中文](table_recognition.en.md) | English
+---
+comments: true
+---
 
 # General Table Recognition Pipeline Tutorial
 

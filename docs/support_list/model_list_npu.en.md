@@ -1,4 +1,6 @@
-[简体中文](model_list_npu.md) | English
+---
+comments: true
+---
 
 # PaddleX Model List (Huawei Ascend NPU)
 

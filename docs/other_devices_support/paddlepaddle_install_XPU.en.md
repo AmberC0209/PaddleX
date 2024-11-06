@@ -1,4 +1,6 @@
-[简体中文](paddlepaddle_install_XPU.md) | English
+---
+comments: true
+---
 
 # Kunlun XPU PaddlePaddle Installation Tutorial
 

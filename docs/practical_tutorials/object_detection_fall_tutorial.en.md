@@ -1,4 +1,6 @@
-[简体中文](object_detection_fall_tutorial.md) | English
+---
+comments: true
+---
 
 # PaddleX 3.0 General Object Detection Pipeline — Tutorial on Pedestrian Fall Detection
 

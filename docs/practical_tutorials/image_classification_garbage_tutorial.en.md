@@ -1,4 +1,6 @@
-[简体中文](image_classification_garbage_tutorial.md) | English
+---
+comments: true
+---
 
 # PaddleX 3.0 General Image Classification Pipeline — Garbage Classification Tutorial
 

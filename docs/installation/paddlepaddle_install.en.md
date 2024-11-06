@@ -1,4 +1,6 @@
-[简体中文](paddlepaddle_install.md) | English
+---
+comments: true
+---
 
 # PaddlePaddle Local Installation Tutorial
 

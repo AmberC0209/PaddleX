@@ -1,4 +1,6 @@
-简体中文 | [English](pedestrian_attribute_recognition.en.md)
+---
+comments: true
+---
 
 # 行人属性识别模块使用教程
 

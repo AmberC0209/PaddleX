@@ -1,4 +1,6 @@
-[简体中文](ocr_det_license_tutorial.md) | English
+---
+comments: true
+---
 
 # PaddleX 3.0 General OCR Pipeline — License Plate Recognition Tutorial
 

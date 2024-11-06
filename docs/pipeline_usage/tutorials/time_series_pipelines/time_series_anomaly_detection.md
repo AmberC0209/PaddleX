@@ -1,4 +1,6 @@
-简体中文 | [English](time_series_anomaly_detection.en.md)
+---
+comments: true
+---
 
 # 时序异常检测产线使用教程
 

@@ -1,4 +1,6 @@
-[简体中文](ts_classification.md) | English
+---
+comments: true
+---
 
 # PaddleX 3.0 Time Series Classification Pipeline — Heartbeat Monitoring Time Series Classification Tutorial
 

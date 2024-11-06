@@ -1,4 +1,6 @@
-简体中文 | [English](seal_recognition.en.md)
+---
+comments: true
+---
 
 # 印章文本识别产线使用教程
 

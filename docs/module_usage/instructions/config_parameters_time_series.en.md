@@ -1,4 +1,6 @@
-[简体中文](config_parameters_time_series.md) | English
+---
+comments: true
+---
 
 # PaddleX Time Series Task Model Configuration File Parameters Explanation
 

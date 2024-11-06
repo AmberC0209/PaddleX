@@ -1,4 +1,6 @@
-[简体中文](pipeline_develop_guide.md) | English
+---
+comments: true
+---
 
 # Overview of PaddleX Model Pipeline Usage
 

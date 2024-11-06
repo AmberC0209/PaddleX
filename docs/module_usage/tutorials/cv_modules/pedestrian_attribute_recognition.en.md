@@ -1,4 +1,6 @@
-[简体中文](pedestrian_attribute_recognition.md) | English
+---
+comments: true
+---
 
 # Pedestrian Attribute Recognition Module Development Tutorial
 

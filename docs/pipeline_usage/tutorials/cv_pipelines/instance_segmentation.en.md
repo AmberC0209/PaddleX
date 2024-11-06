@@ -1,4 +1,6 @@
-[简体中文](instance_segmentation.md) | English
+---
+comments: true
+---
 
 # General Instance Segmentation Pipeline Tutorial
 

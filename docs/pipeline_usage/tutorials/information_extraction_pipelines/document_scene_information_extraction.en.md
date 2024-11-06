@@ -1,4 +1,6 @@
-[简体中文](document_scene_information_extraction.md) | English
+---
+comments: true
+---
 
 # PP-ChatOCRv3-doc Pipeline utorial
 

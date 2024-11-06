@@ -1,4 +1,6 @@
-[简体中文](document_scene_information_extraction(seal_recognition)_tutorial.md) | English
+---
+comments: true
+---
 
 # PaddleX 3.0 Document Scene Information Extraction v3 (PP-ChatOCRv3_doc) —— Tutorial on Seal Information Extraction
 

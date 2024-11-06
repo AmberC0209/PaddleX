@@ -1,4 +1,6 @@
-简体中文 | [English](config_parameters_common.en.md)
+---
+comments: true
+---
 
 # PaddleX通用模型配置文件参数说明
 

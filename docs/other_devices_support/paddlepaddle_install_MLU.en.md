@@ -1,4 +1,6 @@
-[简体中文](paddlepaddle_install_MLU.md) | English
+---
+comments: true
+---
 
 # Cambricon MLU Installation Tutorial for PaddlePaddle
 

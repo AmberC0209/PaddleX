@@ -1,4 +1,6 @@
-[简体中文](instance_segmentation_remote_sensing_tutorial.md) | English
+---
+comments: true
+---
 
 # PaddleX 3.0 General Instance Segmentation Pipeline — Tutorial for Remote Sensing Image Instance Segmentation
 

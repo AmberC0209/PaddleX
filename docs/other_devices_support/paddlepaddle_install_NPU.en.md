@@ -1,4 +1,6 @@
-[简体中文](paddlepaddle_install_NPU.md) | English
+---
+comments: true
+---
 
 # Ascend NPU PaddlePaddle Installation Tutorial
 

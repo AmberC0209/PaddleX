@@ -1,4 +1,6 @@
-[简体中文](pipeline_CLI_usage.md) | English
+---
+comments: true
+---
 
 # PaddleX Pipeline CLI Usage Instructions
 

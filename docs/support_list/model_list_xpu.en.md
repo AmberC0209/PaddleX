@@ -1,4 +1,6 @@
-[简体中文](model_list_xpu.md) | English
+---
+comments: true
+---
 
 # PaddleX Model List (Kunlun XPU)
 

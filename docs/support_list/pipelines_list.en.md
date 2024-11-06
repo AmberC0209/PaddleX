@@ -1,4 +1,6 @@
-[简体中文](pipelines_list.md) | English
+---
+comments: true
+---
 
 # PaddleX Pipelines (CPU/GPU)
 

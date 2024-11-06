@@ -1,4 +1,6 @@
-[简体中文](text_detection_recognition.md) | English
+---
+comments: true
+---
 
 # PaddleX Text Detection/Text Recognition Task Module Data Annotation Tutorial
 

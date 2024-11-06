@@ -1,4 +1,6 @@
-[简体中文](table_structure_recognition.md) | English
+---
+comments: true
+---
 
 # Table Structure Recognition Module Development Tutorial
 

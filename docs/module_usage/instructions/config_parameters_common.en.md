@@ -1,4 +1,6 @@
-[简体中文](config_parameters_common.md) | English
+---
+comments: true
+---
 
 # PaddleX Common Model Configuration File Parameter Explanation
 

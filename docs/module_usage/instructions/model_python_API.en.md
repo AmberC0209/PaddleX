@@ -1,4 +1,6 @@
-[简体中文](model_python_API.md) | English
+---
+comments: true
+---
 
 # PaddleX Single Model Python Usage Instructions
 

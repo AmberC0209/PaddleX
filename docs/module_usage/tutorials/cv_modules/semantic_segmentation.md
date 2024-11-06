@@ -1,4 +1,6 @@
-简体中文 | [English](semantic_segmentation.en.md)
+---
+comments: true
+---
 
 # 语义分割模块使用教程
 

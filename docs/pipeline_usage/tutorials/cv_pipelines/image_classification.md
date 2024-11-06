@@ -1,4 +1,6 @@
-简体中文 | [English](image_classification.en.md)
+---
+comments: true
+---
 
 # 通用图像分类产线使用教程
 

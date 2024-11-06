@@ -1,4 +1,6 @@
-简体中文 | [English](time_series_classification.en.md)
+---
+comments: true
+---
 
 # PaddleX时序分类任务模块数据标注教程
 

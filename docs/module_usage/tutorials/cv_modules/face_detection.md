@@ -1,4 +1,6 @@
-简体中文 | [English](face_detection.en.md)
+---
+comments: true
+---
 
 # 人脸检测模块使用教程
 

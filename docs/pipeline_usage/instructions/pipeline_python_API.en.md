@@ -1,4 +1,6 @@
-[简体中文](pipeline_python_API.md) | English
+---
+comments: true
+---
 
 # PaddleX Model Pipeline Python Usage Instructions
 

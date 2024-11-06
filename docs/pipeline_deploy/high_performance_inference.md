@@ -1,4 +1,6 @@
-简体中文 | [English](high_performance_inference.en.md)
+---
+comments: true
+---
 
 # PaddleX 高性能推理指南
 

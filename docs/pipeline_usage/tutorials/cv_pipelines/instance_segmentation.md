@@ -1,4 +1,6 @@
-简体中文 | [English](instance_segmentation.en.md)
+---
+comments: true
+---
 
 # 通用实例分割产线使用教程
 

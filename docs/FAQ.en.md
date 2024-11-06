@@ -1,4 +1,6 @@
-[简体中文](FAQ.md) | English
+---
+comments: true
+---
 
 # FAQ
 

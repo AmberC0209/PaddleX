@@ -1,4 +1,6 @@
-[简体中文](vehicle_attribute_recognition.md) | English
+---
+comments: true
+---
 
 # Vehicle Attribute Recognition Module Development Tutorial
 

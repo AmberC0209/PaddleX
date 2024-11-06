@@ -1,4 +1,6 @@
-简体中文 | [English](formula_recognition.en.md)
+---
+comments: true
+---
 
 # 公式识别模块使用教程
 

@@ -1,4 +1,6 @@
-[简体中文](paddlepaddle_install_DCU.md) | English
+---
+comments: true
+---
 
 # Hygon DCU PaddlePaddle Installation Tutorial
 

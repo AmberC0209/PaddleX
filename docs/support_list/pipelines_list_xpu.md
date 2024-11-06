@@ -1,4 +1,6 @@
-简体中文 | [English](pipelines_list_xpu.en.md)
+---
+comments: true
+---
 
 # PaddleX产线列表(XPU)
 

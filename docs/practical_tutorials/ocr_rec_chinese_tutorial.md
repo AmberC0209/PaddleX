@@ -1,4 +1,6 @@
-简体中文 | [English](ocr_rec_chinese_tutorial.en.md)
+---
+comments: true
+---
 
 # PaddleX 3.0 通用OCR模型产线———手写中文识别教程
 

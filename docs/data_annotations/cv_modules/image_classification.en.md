@@ -1,4 +1,6 @@
-[简体中文](image_classification.md) | English
+---
+comments: true
+---
 
 # PaddleX Image Classification Task Module Data Annotation Tutorial
 

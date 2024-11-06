@@ -1,4 +1,6 @@
-[简体中文](ts_anomaly_detection.md) | English
+---
+comments: true
+---
 
 # PaddleX 3.0 Time Series Anomaly Detection Pipeline — Equipment Anomaly Detection Application Tutorial
 

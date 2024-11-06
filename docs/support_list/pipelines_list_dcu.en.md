@@ -1,4 +1,6 @@
-[简体中文](pipelines_list_dcu.md) | English
+---
+comments: true
+---
 
 # PaddleX Pipelines (DCU)
 

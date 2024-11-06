@@ -1,4 +1,6 @@
-[简体中文](object_detection_fashion_pedia_tutorial.md) | English
+---
+comments: true
+---
 
 # PaddleX 3.0 General Object Detection Pipeline — Tutorial for Fashion Element Detection
 

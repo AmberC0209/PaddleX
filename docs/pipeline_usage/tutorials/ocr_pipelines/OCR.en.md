@@ -1,4 +1,6 @@
-[简体中文](OCR.md) | English
+---
+comments: true
+---
 
 # General OCR Pipeline Tutorial
 

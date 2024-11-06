@@ -1,4 +1,6 @@
-简体中文 | [English](CHANGLOG.en.md)
+---
+comments: true
+---
 
 # 版本更新信息
 

@@ -1,4 +1,6 @@
-[简体中文](text_detection.md) | English
+---
+comments: true
+---
 
 # Text Detection Module Development Tutorial
 

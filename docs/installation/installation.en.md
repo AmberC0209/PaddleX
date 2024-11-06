@@ -1,4 +1,6 @@
-[简体中文](installation.md) | English
+---
+comments: true
+---
 
 # PaddleX Local Installation Tutorial
 > ❗Before installing PaddleX, please ensure you have a basic <b>Python environment</b> (Note: Currently supports Python 3.8 to Python 3.10, with more Python versions being adapted).

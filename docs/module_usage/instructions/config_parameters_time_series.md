@@ -1,4 +1,6 @@
-简体中文 | [English](config_parameters_time_series.en.md)
+---
+comments: true
+---
 
 # PaddleX时序任务模型配置文件参数说明
 

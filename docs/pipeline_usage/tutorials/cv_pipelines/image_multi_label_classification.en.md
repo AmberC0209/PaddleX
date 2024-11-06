@@ -1,4 +1,6 @@
-[简体中文](image_multi_label_classification.md) | English
+---
+comments: true
+---
 
 # General Image Multi-Label Classification Pipeline Tutorial
 

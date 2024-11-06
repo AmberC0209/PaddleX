@@ -1,4 +1,6 @@
-[简体中文](text_image_unwarping.md) | English
+---
+comments: true
+---
 
 # Text Image Unwarping Module Development Tutorial
 

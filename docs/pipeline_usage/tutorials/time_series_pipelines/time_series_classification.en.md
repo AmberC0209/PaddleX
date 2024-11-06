@@ -1,4 +1,6 @@
-[简体中文](time_series_classification.md) | English
+---
+comments: true
+---
 
 # Time Series Classification Pipeline Tutorial
 

@@ -1,4 +1,6 @@
-[简体中文](layout_parsing.md) | English
+---
+comments: true
+---
 
 # General Layout Parsing Pipeline Tutorial
 

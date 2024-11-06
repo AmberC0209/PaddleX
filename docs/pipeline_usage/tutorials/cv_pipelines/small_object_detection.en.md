@@ -1,4 +1,6 @@
-[简体中文](small_object_detection.md) | English
+---
+comments: true
+---
 
 # Small Object Detection Pipeline Tutorial
 

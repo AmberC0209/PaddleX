@@ -1,4 +1,6 @@
-[简体中文](ocr_rec_chinese_tutorial.md) | English
+---
+comments: true
+---
 
 # PaddleX 3.0 General OCR Pipeline — Handwritten Chinese Recognition Tutorial
 

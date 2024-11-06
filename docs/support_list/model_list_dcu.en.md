@@ -1,4 +1,6 @@
-[简体中文](model_list_dcu.md) | English
+---
+comments: true
+---
 
 # PaddleX Model List (Hygon DCU)
 

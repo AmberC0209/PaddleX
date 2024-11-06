@@ -1,4 +1,6 @@
-[简体中文](ml_classification.md) | English
+---
+comments: true
+---
 
 # PaddleX Multi-Label Classification Task Data Annotation Tutorial
 

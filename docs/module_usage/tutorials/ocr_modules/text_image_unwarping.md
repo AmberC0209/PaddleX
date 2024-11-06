@@ -1,4 +1,6 @@
-简体中文 | [English](text_image_unwarping.en.md)
+---
+comments: true
+---
 
 # 文本图像矫正模块使用教程
 

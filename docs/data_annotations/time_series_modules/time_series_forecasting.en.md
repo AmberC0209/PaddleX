@@ -1,4 +1,6 @@
-[简体中文](time_series_forecasting.md) | English
+---
+comments: true
+---
 
 # PaddleX Time Series Forecasting Task Data Annotation Tutorial
 

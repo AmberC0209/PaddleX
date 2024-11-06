@@ -1,4 +1,6 @@
-[简体中文](human_detection.md) | English
+---
+comments: true
+---
 
 # Human Detection Module Development Tutorial
 

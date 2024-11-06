@@ -1,4 +1,6 @@
-[简体中文](mainbody_detection.md) | English
+---
+comments: true
+---
 
 # Mainbody detection Module Development Tutorial
 

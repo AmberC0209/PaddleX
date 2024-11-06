@@ -1,4 +1,6 @@
-[简体中文](object_detection.md) | English
+---
+comments: true
+---
 
 # Object Detection Module Development Tutorial
 

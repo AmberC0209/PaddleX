@@ -1,4 +1,6 @@
-[简体中文](anomaly_detection.md) | English
+---
+comments: true
+---
 
 # Unsupervised Anomaly Detection Module Development Tutorial
 

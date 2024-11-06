@@ -1,4 +1,6 @@
-简体中文 | [English](paddlepaddle_install_DCU.en.md)
+---
+comments: true
+---
 
 # 海光 DCU 飞桨安装教程
 

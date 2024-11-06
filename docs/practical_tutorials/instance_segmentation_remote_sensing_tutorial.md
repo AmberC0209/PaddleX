@@ -1,4 +1,6 @@
-简体中文 | [English](instance_segmentation_remote_sensing_tutorial.en.md)
+---
+comments: true
+---
 
 # PaddleX 3.0 通用实例分割模型产线———遥感图像实例分割教程
 

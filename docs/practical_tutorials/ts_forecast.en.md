@@ -1,4 +1,6 @@
-[简体中文](ts_forecast.md) | English
+---
+comments: true
+---
 
 # PaddleX 3.0 Time Series Forecasting Pipeline — Long-term Electricity Consumption Forecasting Tutorial
 

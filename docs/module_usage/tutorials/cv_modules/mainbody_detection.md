@@ -1,4 +1,6 @@
-简体中文 | [English](mainbody_detection.en.md)
+---
+comments: true
+---
 
 # 主体检测模块使用教程
 

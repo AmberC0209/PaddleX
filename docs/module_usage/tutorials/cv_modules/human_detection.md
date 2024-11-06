@@ -1,4 +1,6 @@
-简体中文 | [English](human_detection.en.md)
+---
+comments: true
+---
 
 # 行人检测模块使用教程
 

@@ -1,4 +1,6 @@
-[简体中文](seal_text_detection.md) | English
+---
+comments: true
+---
 
 # Seal Text Detection Module Development Tutorial
 

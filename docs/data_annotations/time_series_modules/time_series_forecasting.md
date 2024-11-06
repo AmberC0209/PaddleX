@@ -1,4 +1,6 @@
-简体中文 | [English](time_series_forecasting.en.md)
+---
+comments: true
+---
 
 # PaddleX时序预测任务模块数据标注教程
 

@@ -1,4 +1,6 @@
-简体中文 | [English](image_feature.en.md)
+---
+comments: true
+---
 
 # PaddleX图像特征任务模块数据标注教程
 

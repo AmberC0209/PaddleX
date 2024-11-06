@@ -1,4 +1,6 @@
-[简体中文](models_list.md) | English
+---
+comments: true
+---
 
 #  PaddleX Model List（CPU/GPU）
 

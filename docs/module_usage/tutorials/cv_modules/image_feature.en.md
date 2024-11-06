@@ -1,4 +1,6 @@
-[简体中文](image_feature.md) | English
+---
+comments: true
+---
 
 # Image Feature Module Development Tutorial
 

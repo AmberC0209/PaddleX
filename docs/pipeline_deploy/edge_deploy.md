@@ -1,4 +1,6 @@
-简体中文 | [English](edge_deploy.en.md)
+---
+comments: true
+---
 
 # PaddleX 端侧部署 demo 使用指南
 

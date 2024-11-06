@@ -1,4 +1,6 @@
-[简体中文](seal_recognition.md) | English
+---
+comments: true
+---
 
 # Seal Recognition Pipeline Tutorial
  
