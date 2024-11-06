@@ -26,8 +26,7 @@ pip install https://paddle-model-ecology.bj.bcebos.com/paddlex/whl/paddlex-3.0.0
 
 PaddleX支持的插件如下，请您根据开发需求，确定所需的一个或多个插件名称：
 
-<details>
-  <summary>👉 <b>插件和产线对应关系（点击展开）</b></summary>
+<details><summary>👉 <b>插件和产线对应关系（点击展开）</b></summary>
 
 <table>
 <thead>
@@ -104,9 +103,7 @@ PaddleX支持的插件如下，请您根据开发需求，确定所需的一个�
 <td><code>PaddleSeg</code></td>
 </tr>
 </tbody>
-</table>
-
-</details>
+</table></details>
 
 
 
@@ -153,11 +150,9 @@ docker run --gpus all --name paddlex -v $PWD:/paddle --shm-size=8g --network=hos
 
 * 若您使用的 Docker 版本 <= 19.03 但 >= 17.06，请执行：
 
-<details>
-   <summary> 点击展开</summary>
+<details><summary> 点击展开</summary>
 
-```bash
-# 对于 CPU 用户
+<pre><code class="language-bash"># 对于 CPU 用户
 docker run --name paddlex -v $PWD:/paddle --shm-size=8g --network=host -it registry.baidubce.com/paddlex/paddlex:paddlex3.0.0b1-paddlepaddle3.0.0b1-cpu /bin/bash
 
 # 对于 GPU 用户
@@ -166,9 +161,7 @@ nvidia-docker run --name paddlex -v $PWD:/paddle --shm-size=8g --network=host -i
 
 # 对于 CUDA12.3 用户
 nvidia-docker run --name paddlex -v $PWD:/paddle --shm-size=8g --network=host -it registry.baidubce.com/paddlex/paddlex:paddlex3.0.0b1-paddlepaddle3.0.0b1-gpu-cuda12.3-cudnn9.0-trt8.6 /bin/bash
-```
-
-</details>
+</code></pre></details>
 
 * 若您使用的 Docker 版本 <= 17.06，请升级 Docker 版本。
 

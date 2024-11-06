@@ -49,28 +49,17 @@ Parameter Explanation:
 
 When executing the above command, the default image anomaly detection pipeline configuration file is loaded. If you need to customize the configuration file, you can run the following command to obtain it:
 
-<details>
-   <summary> 👉Click to expand</summary>
+<details><summary> 👉Click to expand</summary>
 
-```bash
-paddlex --get_pipeline_config anomaly_detection
-```
-
-After execution, the image anomaly detection pipeline configuration file will be saved in the current directory. If you wish to customize the save location, you can execute the following command (assuming the custom save location is `./my_path`):
-
-```bash
-paddlex --get_pipeline_config anomaly_detection --save_path ./my_path
-```
-
-After obtaining the pipeline configuration file, replace `--pipeline` with the configuration file save path to make the configuration file take effect. For example, if the configuration file save path is `./anomaly_detection.yaml`, simply execute:
-
-```bash
-paddlex --pipeline ./anomaly_detection.yaml --input uad_grid.png --device gpu:0
-```
-
-Here, parameters such as `--model` and `--device` do not need to be specified, as they will use the parameters in the configuration file. If parameters are still specified, the specified parameters will take precedence.
-
-</details>
+<pre><code class="language-bash">paddlex --get_pipeline_config anomaly_detection
+</code></pre>
+<p>After execution, the image anomaly detection pipeline configuration file will be saved in the current directory. If you wish to customize the save location, you can execute the following command (assuming the custom save location is <code>./my_path</code>):</p>
+<pre><code class="language-bash">paddlex --get_pipeline_config anomaly_detection --save_path ./my_path
+</code></pre>
+<p>After obtaining the pipeline configuration file, replace <code>--pipeline</code> with the configuration file save path to make the configuration file take effect. For example, if the configuration file save path is <code>./anomaly_detection.yaml</code>, simply execute:</p>
+<pre><code class="language-bash">paddlex --pipeline ./anomaly_detection.yaml --input uad_grid.png --device gpu:0
+</code></pre>
+<p>Here, parameters such as <code>--model</code> and <code>--device</code> do not need to be specified, as they will use the parameters in the configuration file. If parameters are still specified, the specified parameters will take precedence.</p></details>
 
 After running, the result is:
 
@@ -228,14 +217,13 @@ Additionally, PaddleX provides three other deployment methods, detailed as follo
 
 Below are the API references and multi-language service invocation examples:
 
-<details>
-<summary>API Reference</summary>
+<details><summary>API Reference</summary>
 
-For all operations provided by the service:
-
-- Both the response body and the request body for POST requests are JSON data (JSON objects).
-- When the request is processed successfully, the response status code is `200`, and the response body properties are as follows:
-
+<p>For all operations provided by the service:</p>
+<ul>
+<li>Both the response body and the request body for POST requests are JSON data (JSON objects).</li>
+<li>When the request is processed successfully, the response status code is <code>200</code>, and the response body properties are as follows:</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -258,10 +246,10 @@ For all operations provided by the service:
 </tbody>
 </table>
 
-    The response body may also have a `result` property of type `object`, which stores the operation result information.
-
-- When the request is not processed successfully, the response body properties are as follows:
-
+<p>The response body may also have a <code>result</code> property of type <code>object</code>, which stores the operation result information.</p>
+<ul>
+<li>When the request is not processed successfully, the response body properties are as follows:</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -284,16 +272,15 @@ For all operations provided by the service:
 </tbody>
 </table>
 
-Operations provided by the service:
-
-- <b>`infer`</b>
-
-    Performs anomaly detection on images.
-
-    `POST /image-anomaly-detection`
-
-    - Request body properties:
-
+<p>Operations provided by the service:</p>
+<ul>
+<li><b><code>infer</code></b></li>
+</ul>
+<p>Performs anomaly detection on images.</p>
+<p><code>POST /image-anomaly-detection</code></p>
+<ul>
+<li>Request body properties:</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -313,8 +300,9 @@ Operations provided by the service:
 </tbody>
 </table>
 
-    - When the request is processed successfully, the `result` of the response body has the following properties:
-
+<ul>
+<li>When the request is processed successfully, the <code>result</code> of the response body has the following properties:</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -342,123 +330,110 @@ Operations provided by the service:
 </tbody>
 </table>
 
-        Example of `result`:
+<p>Example of <code>result</code>:</p>
+<pre><code class="language-json">{
+&quot;labelMap&quot;: [
+0,
+0,
+255,
+0
+],
+&quot;size&quot;: [
+2,
+2
+],
+&quot;image&quot;: &quot;xxxxxx&quot;
+}
+</code></pre></details>
 
-        ```json
-        {
-          "labelMap": [
-            0,
-            0,
-            255,
-            0
-          ],
-          "size": [
-            2,
-            2
-          ],
-          "image": "xxxxxx"
-        }
-        ```
-
-</details>
-
-<details>
-<summary>Multi-Language Service Invocation Examples</summary>
+<details><summary>Multi-Language Service Invocation Examples</summary>
 
 <details>
 <summary>Python</summary>
 
-```python
-import base64
+
+<pre><code class="language-python">import base64
 import requests
 
-API_URL = "http://localhost:8080/image-anomaly-detection"
-image_path = "./demo.jpg"
-output_image_path = "./out.jpg"
+API_URL = &quot;http://localhost:8080/image-anomaly-detection&quot;
+image_path = &quot;./demo.jpg&quot;
+output_image_path = &quot;./out.jpg&quot;
 
-with open(image_path, "rb") as file:
+with open(image_path, &quot;rb&quot;) as file:
     image_bytes = file.read()
-    image_data = base64.b64encode(image_bytes).decode("ascii")
+    image_data = base64.b64encode(image_bytes).decode(&quot;ascii&quot;)
 
-payload = {"image": image_data}
+payload = {&quot;image&quot;: image_data}
 
 response = requests.post(API_URL, json=payload)
 
 assert response.status_code == 200
-result = response.json()["result"]
-with open(output_image_path, "wb") as file:
-    file.write(base64.b64decode(result["image"]))
-print(f"Output image saved at {output_image_path}")
-```
+result = response.json()[&quot;result&quot;]
+with open(output_image_path, &quot;wb&quot;) as file:
+    file.write(base64.b64decode(result[&quot;image&quot;]))
+print(f&quot;Output image saved at {output_image_path}&quot;)
+</code></pre></details>
 
-</details>
+<details><summary>C++</summary>
 
-<details>
-<summary>C++</summary>
-
-```cpp
-#include <iostream>
-#include "cpp-httplib/httplib.h" // https://github.com/Huiyicc/cpp-httplib
-#include "nlohmann/json.hpp" // https://github.com/nlohmann/json
-#include "base64.hpp" // https://github.com/tobiaslocker/base64
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &quot;cpp-httplib/httplib.h&quot; // https://github.com/Huiyicc/cpp-httplib
+#include &quot;nlohmann/json.hpp&quot; // https://github.com/nlohmann/json
+#include &quot;base64.hpp&quot; // https://github.com/tobiaslocker/base64
 
 int main() {
-    httplib::Client client("localhost:8080");
-    const std::string imagePath = "./demo.jpg";
-    const std::string outputImagePath = "./out.jpg";
+    httplib::Client client(&quot;localhost:8080&quot;);
+    const std::string imagePath = &quot;./demo.jpg&quot;;
+    const std::string outputImagePath = &quot;./out.jpg&quot;;
 
     httplib::Headers headers = {
-        {"Content-Type", "application/json"}
+        {&quot;Content-Type&quot;, &quot;application/json&quot;}
     };
 
     std::ifstream file(imagePath, std::ios::binary | std::ios::ate);
     std::streamsize size = file.tellg();
     file.seekg(0, std::ios::beg);
 
-    std::vector<char> buffer(size);
+    std::vector&lt;char&gt; buffer(size);
     if (!file.read(buffer.data(), size)) {
-        std::cerr << "Error reading file." << std::endl;
+        std::cerr &lt;&lt; &quot;Error reading file.&quot; &lt;&lt; std::endl;
         return 1;
     }
-    std::string bufferStr(reinterpret_cast<const char*>(buffer.data()), buffer.size());
+    std::string bufferStr(reinterpret_cast&lt;const char*&gt;(buffer.data()), buffer.size());
     std::string encodedImage = base64::to_base64(bufferStr);
 
     nlohmann::json jsonObj;
-    jsonObj["image"] = encodedImage;
+    jsonObj[&quot;image&quot;] = encodedImage;
     std::string body = jsonObj.dump();
 
-    auto response = client.Post("/image-anomaly-detection", headers, body, "application/json");
-    if (response && response->status == 200) {
-        nlohmann::json jsonResponse = nlohmann::json::parse(response->body);
-        auto result = jsonResponse["result"];
+    auto response = client.Post(&quot;/image-anomaly-detection&quot;, headers, body, &quot;application/json&quot;);
+    if (response &amp;&amp; response-&gt;status == 200) {
+        nlohmann::json jsonResponse = nlohmann::json::parse(response-&gt;body);
+        auto result = jsonResponse[&quot;result&quot;];
 
-        encodedImage = result["image"];
+        encodedImage = result[&quot;image&quot;];
         std::string decodedString = base64::from_base64(encodedImage);
-        std::vector<unsigned char> decodedImage(decodedString.begin(), decodedString.end());
+        std::vector&lt;unsigned char&gt; decodedImage(decodedString.begin(), decodedString.end());
         std::ofstream outputImage(outPutImagePath, std::ios::binary | std::ios::out);
         if (outputImage.is_open()) {
-            outputImage.write(reinterpret_cast<char*>(decodedImage.data()), decodedImage.size());
+            outputImage.write(reinterpret_cast&lt;char*&gt;(decodedImage.data()), decodedImage.size());
             outputImage.close();
-            std::cout << "Output image saved at " << outPutImagePath << std::endl;
+            std::cout &lt;&lt; &quot;Output image saved at &quot; &lt;&lt; outPutImagePath &lt;&lt; std::endl;
         } else {
-            std::cerr << "Unable to open file for writing: " << outPutImagePath << std::endl;
+            std::cerr &lt;&lt; &quot;Unable to open file for writing: &quot; &lt;&lt; outPutImagePath &lt;&lt; std::endl;
         }
     } else {
-        std::cout << "Failed to send HTTP request." << std::endl;
+        std::cout &lt;&lt; &quot;Failed to send HTTP request.&quot; &lt;&lt; std::endl;
         return 1;
     }
 
     return 0;
 }
-```
+</code></pre></details>
 
-</details>
+<details><summary>Java</summary>
 
-<details>
-<summary>Java</summary>
-
-```java
-import okhttp3.*;
+<pre><code class="language-java">import okhttp3.*;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
@@ -470,9 +445,9 @@ import java.util.Base64;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        String API_URL = "http://localhost:8080/image-anomaly-detection";
-        String imagePath = "./demo.jpg";
-        String outputImagePath = "./out.jpg";
+        String API_URL = &quot;http://localhost:8080/image-anomaly-detection&quot;;
+        String imagePath = &quot;./demo.jpg&quot;;
+        String outputImagePath = &quot;./out.jpg&quot;;
 
         File file = new File(imagePath);
         byte[] fileContent = java.nio.file.Files.readAllBytes(file.toPath());
@@ -480,10 +455,10 @@ public class Main {
 
         ObjectMapper objectMapper = new ObjectMapper();
         ObjectNode params = objectMapper.createObjectNode();
-        params.put("image", imageData);
+        params.put(&quot;image&quot;, imageData);
 
         OkHttpClient client = new OkHttpClient();
-        MediaType JSON = MediaType.Companion.get("application/json; charset=utf-8");
+        MediaType JSON = MediaType.Companion.get(&quot;application/json; charset=utf-8&quot;);
         RequestBody body = RequestBody.Companion.create(params.toString(), JSON);
         Request request = new Request.Builder()
                 .url(API_URL)
@@ -494,112 +469,104 @@ public class Main {
             if (response.isSuccessful()) {
                 String responseBody = response.body().string();
                 JsonNode resultNode = objectMapper.readTree(responseBody);
-                JsonNode result = resultNode.get("result");
-                String base64Image = result.get("image").asText();
-                JsonNode labelMap = result.get("labelMap");
+                JsonNode result = resultNode.get(&quot;result&quot;);
+                String base64Image = result.get(&quot;image&quot;).asText();
+                JsonNode labelMap = result.get(&quot;labelMap&quot;);
 
                 byte[] imageBytes = Base64.getDecoder().decode(base64Image);
                 try (FileOutputStream fos = new FileOutputStream(outputImagePath)) {
                     fos.write(imageBytes);
                 }
-                System.out.println("Output image saved at " + outputImagePath);
+                System.out.println(&quot;Output image saved at &quot; + outputImagePath);
             } else {
-                System.err.println("Request failed with code: " + response.code());
+                System.err.println(&quot;Request failed with code: &quot; + response.code());
             }
         }
     }
 }
-```
+</code></pre></details>
 
-</details>
+<details><summary>Go</summary>
 
-<details>
-<summary>Go</summary>
-
-```go
-package main
+<pre><code class="language-go">package main
 
 import (
-    "bytes"
-    "encoding/base64"
-    "encoding/json"
-    "fmt"
-    "io/ioutil"
-    "net/http"
+    &quot;bytes&quot;
+    &quot;encoding/base64&quot;
+    &quot;encoding/json&quot;
+    &quot;fmt&quot;
+    &quot;io/ioutil&quot;
+    &quot;net/http&quot;
 )
 
 func main() {
-    API_URL := "http://localhost:8080/image-anomaly-detection"
-    imagePath := "./demo.jpg"
-    outputImagePath := "./out.jpg"
+    API_URL := &quot;http://localhost:8080/image-anomaly-detection&quot;
+    imagePath := &quot;./demo.jpg&quot;
+    outputImagePath := &quot;./out.jpg&quot;
 
     imageBytes, err := ioutil.ReadFile(imagePath)
     if err != nil {
-        fmt.Println("Error reading image file:", err)
+        fmt.Println(&quot;Error reading image file:&quot;, err)
         return
     }
     imageData := base64.StdEncoding.EncodeToString(imageBytes)
 
-    payload := map[string]string{"image": imageData}
+    payload := map[string]string{&quot;image&quot;: imageData}
     payloadBytes, err := json.Marshal(payload)
     if err != nil {
-        fmt.Println("Error marshaling payload:", err)
+        fmt.Println(&quot;Error marshaling payload:&quot;, err)
         return
     }
 
-    client := &http.Client{}
-    req, err := http.NewRequest("POST", API_URL, bytes.NewBuffer(payloadBytes))
+    client := &amp;http.Client{}
+    req, err := http.NewRequest(&quot;POST&quot;, API_URL, bytes.NewBuffer(payloadBytes))
     if err != nil {
-        fmt.Println("Error creating request:", err)
+        fmt.Println(&quot;Error creating request:&quot;, err)
         return
     }
 
     res, err := client.Do(req)
     if err != nil {
-        fmt.Println("Error sending request:", err)
+        fmt.Println(&quot;Error sending request:&quot;, err)
         return
     }
     defer res.Body.Close()
 
     body, err := ioutil.ReadAll(res.Body)
     if err != nil {
-        fmt.Println("Error reading response body:", err)
+        fmt.Println(&quot;Error reading response body:&quot;, err)
         return
     }
     type Response struct {
         Result struct {
-            Image      string   `json:"image"`
-            Labelmap []map[string]interface{} `json:"labelMap"`
-        } `json:"result"`
+            Image      string   `json:&quot;image&quot;`
+            Labelmap []map[string]interface{} `json:&quot;labelMap&quot;`
+        } `json:&quot;result&quot;`
     }
     var respData Response
-    err = json.Unmarshal([]byte(string(body)), &respData)
+    err = json.Unmarshal([]byte(string(body)), &amp;respData)
     if err != nil {
-        fmt.Println("Error unmarshaling response body:", err)
+        fmt.Println(&quot;Error unmarshaling response body:&quot;, err)
         return
     }
 
     outputImageData, err := base64.StdEncoding.DecodeString(respData.Result.Image)
     if err != nil {
-        fmt.Println("Error decoding base64 image data:", err)
+        fmt.Println(&quot;Error decoding base64 image data:&quot;, err)
         return
     }
     err = ioutil.WriteFile(outputImagePath, outputImageData, 0644)
     if err != nil {
-        fmt.Println("Error writing image to file:", err)
+        fmt.Println(&quot;Error writing image to file:&quot;, err)
         return
     }
-    fmt.Printf("Image saved at %s.jpg\n", outputImagePath)
+    fmt.Printf(&quot;Image saved at %s.jpg\n&quot;, outputImagePath)
 }
-```
+</code></pre></details>
 
-</details>
+<details><summary>C#</summary>
 
-<details>
-<summary>C#</summary>
-
-```csharp
-using System;
+<pre><code class="language-csharp">using System;
 using System.IO;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -609,9 +576,9 @@ using Newtonsoft.Json.Linq;
 
 class Program
 {
-    static readonly string API_URL = "http://localhost:8080/image-anomaly-detection";
-    static readonly string imagePath = "./demo.jpg";
-    static readonly string outputImagePath = "./out.jpg";
+    static readonly string API_URL = &quot;http://localhost:8080/image-anomaly-detection&quot;;
+    static readonly string imagePath = &quot;./demo.jpg&quot;;
+    static readonly string outputImagePath = &quot;./out.jpg&quot;;
 
     static async Task Main(string[] args)
     {
@@ -620,8 +587,8 @@ class Program
         byte[] imageBytes = File.ReadAllBytes(imagePath);
         string image_data = Convert.ToBase64String(imageBytes);
 
-        var payload = new JObject{ { "image", image_data } };
-        var content = new StringContent(payload.ToString(), Encoding.UTF8, "application/json");
+        var payload = new JObject{ { &quot;image&quot;, image_data } };
+        var content = new StringContent(payload.ToString(), Encoding.UTF8, &quot;application/json&quot;);
 
         HttpResponseMessage response = await httpClient.PostAsync(API_URL, content);
         response.EnsureSuccessStatusCode();
@@ -629,27 +596,23 @@ class Program
         string responseBody = await response.Content.ReadAsStringAsync();
         JObject jsonResponse = JObject.Parse(responseBody);
 
-        string base64Image = jsonResponse["result"]["image"].ToString();
+        string base64Image = jsonResponse[&quot;result&quot;][&quot;image&quot;].ToString();
         byte[] outputImageBytes = Convert.FromBase64String(base64Image);
 
         File.WriteAllBytes(outputImagePath, outputImageBytes);
-        Console.WriteLine($"Output image saved at {outputImagePath}");
+        Console.WriteLine($&quot;Output image saved at {outputImagePath}&quot;);
     }
 }
-```
+</code></pre></details>
 
-</details>
+<details><summary>Node.js</summary>
 
-<details>
-<summary>Node.js</summary>
-
-```js
-const axios = require('axios');
+<pre><code class="language-js">const axios = require('axios');
 const fs = require('fs');
 
 const API_URL = 'http://localhost:8080/image-anomaly-detection'
 const imagePath = './demo.jpg'
-const outputImagePath = "./out.jpg";
+const outputImagePath = &quot;./out.jpg&quot;;
 
 let config = {
    method: 'POST',
@@ -666,33 +629,29 @@ function encodeImageToBase64(filePath) {
 }
 
 axios.request(config)
-.then((response) => {
-    const result = response.data["result"];
-    const imageBuffer = Buffer.from(result["image"], 'base64');
-    fs.writeFile(outputImagePath, imageBuffer, (err) => {
+.then((response) =&gt; {
+    const result = response.data[&quot;result&quot;];
+    const imageBuffer = Buffer.from(result[&quot;image&quot;], 'base64');
+    fs.writeFile(outputImagePath, imageBuffer, (err) =&gt; {
       if (err) throw err;
       console.log(`Output image saved at ${outputImagePath}`);
     });
 })
-.catch((error) => {
+.catch((error) =&gt; {
   console.log(error);
 });
-```
+</code></pre></details>
 
-</details>
+<details><summary>PHP</summary>
 
-<details>
-<summary>PHP</summary>
+<pre><code class="language-php">&lt;?php
 
-```php
-<?php
-
-$API_URL = "http://localhost:8080/image-anomaly-detection";
-$image_path = "./demo.jpg";
-$output_image_path = "./out.jpg";
+$API_URL = &quot;http://localhost:8080/image-anomaly-detection&quot;;
+$image_path = &quot;./demo.jpg&quot;;
+$output_image_path = &quot;./out.jpg&quot;;
 
 $image_data = base64_encode(file_get_contents($image_path));
-$payload = array("image" => $image_data);
+$payload = array(&quot;image&quot; =&gt; $image_data);
 
 $ch = curl_init($API_URL);
 curl_setopt($ch, CURLOPT_POST, true);
@@ -701,13 +660,11 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $response = curl_exec($ch);
 curl_close($ch);
 
-$result = json_decode($response, true)["result"];
-file_put_contents($output_image_path, base64_decode($result["image"]));
-echo "Output image saved at " . $output_image_path . "\n";
-?>
-```
-
-</details>
+$result = json_decode($response, true)[&quot;result&quot;];
+file_put_contents($output_image_path, base64_decode($result[&quot;image&quot;]));
+echo &quot;Output image saved at &quot; . $output_image_path . &quot;\n&quot;;
+?&gt;
+</code></pre></details>
 </details>
 <br/>
 

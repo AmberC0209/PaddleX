@@ -83,142 +83,122 @@ python main.py -c paddlex/configs/general_recognition/PP-ShiTuV2_rec.yaml \
 ```
 执行上述命令后，PaddleX 会对数据集进行校验，并统计数据集的基本信息，命令运行成功后会在log中打印出`Check dataset passed !`信息。校验结果文件保存在`./output/check_dataset_result.json`，同时相关产出会保存在当前目录的`./output/check_dataset`目录下，产出目录中包括可视化的示例样本图片和样本分布直方图。
 
-<details>
-  <summary>👉 <b>校验结果详情（点击展开）</b></summary>
+<details><summary>👉 <b>校验结果详情（点击展开）</b></summary>
 
-
-校验结果文件具体内容为：
-
-```bash
-
-  "done_flag": true,
-  "check_pass": true,
-  "attributes": {
-    "train_samples": 1000,
-    "train_sample_paths": [
-      "check_dataset/demo_img/05_1_front.jpg",
-      "check_dataset/demo_img/02_1_front.jpg",
-      "check_dataset/demo_img/02_3_back.jpg",
-      "check_dataset/demo_img/04_3_back.jpg",
-      "check_dataset/demo_img/04_2_side.jpg",
-      "check_dataset/demo_img/12_1_front.jpg",
-      "check_dataset/demo_img/07_2_side.jpg",
-      "check_dataset/demo_img/04_7_additional.jpg",
-      "check_dataset/demo_img/04_4_full.jpg",
-      "check_dataset/demo_img/01_1_front.jpg"
+<p>校验结果文件具体内容为：</p>
+<pre><code class="language-bash">
+  &quot;done_flag&quot;: true,
+  &quot;check_pass&quot;: true,
+  &quot;attributes&quot;: {
+    &quot;train_samples&quot;: 1000,
+    &quot;train_sample_paths&quot;: [
+      &quot;check_dataset/demo_img/05_1_front.jpg&quot;,
+      &quot;check_dataset/demo_img/02_1_front.jpg&quot;,
+      &quot;check_dataset/demo_img/02_3_back.jpg&quot;,
+      &quot;check_dataset/demo_img/04_3_back.jpg&quot;,
+      &quot;check_dataset/demo_img/04_2_side.jpg&quot;,
+      &quot;check_dataset/demo_img/12_1_front.jpg&quot;,
+      &quot;check_dataset/demo_img/07_2_side.jpg&quot;,
+      &quot;check_dataset/demo_img/04_7_additional.jpg&quot;,
+      &quot;check_dataset/demo_img/04_4_full.jpg&quot;,
+      &quot;check_dataset/demo_img/01_1_front.jpg&quot;
     ],
-    "gallery_samples": 110,
-    "gallery_sample_paths": [
-      "check_dataset/demo_img/06_2_side.jpg",
-      "check_dataset/demo_img/01_4_full.jpg",
-      "check_dataset/demo_img/04_7_additional.jpg",
-      "check_dataset/demo_img/02_1_front.jpg",
-      "check_dataset/demo_img/02_3_back.jpg",
-      "check_dataset/demo_img/02_3_back.jpg",
-      "check_dataset/demo_img/02_4_full.jpg",
-      "check_dataset/demo_img/03_4_full.jpg",
-      "check_dataset/demo_img/02_2_side.jpg",
-      "check_dataset/demo_img/03_2_side.jpg"
+    &quot;gallery_samples&quot;: 110,
+    &quot;gallery_sample_paths&quot;: [
+      &quot;check_dataset/demo_img/06_2_side.jpg&quot;,
+      &quot;check_dataset/demo_img/01_4_full.jpg&quot;,
+      &quot;check_dataset/demo_img/04_7_additional.jpg&quot;,
+      &quot;check_dataset/demo_img/02_1_front.jpg&quot;,
+      &quot;check_dataset/demo_img/02_3_back.jpg&quot;,
+      &quot;check_dataset/demo_img/02_3_back.jpg&quot;,
+      &quot;check_dataset/demo_img/02_4_full.jpg&quot;,
+      &quot;check_dataset/demo_img/03_4_full.jpg&quot;,
+      &quot;check_dataset/demo_img/02_2_side.jpg&quot;,
+      &quot;check_dataset/demo_img/03_2_side.jpg&quot;
     ],
-    "query_samples": 125,
-    "query_sample_paths": [
-      "check_dataset/demo_img/08_7_additional.jpg",
-      "check_dataset/demo_img/01_7_additional.jpg",
-      "check_dataset/demo_img/02_4_full.jpg",
-      "check_dataset/demo_img/04_4_full.jpg",
-      "check_dataset/demo_img/09_7_additional.jpg",
-      "check_dataset/demo_img/04_3_back.jpg",
-      "check_dataset/demo_img/02_1_front.jpg",
-      "check_dataset/demo_img/06_2_side.jpg",
-      "check_dataset/demo_img/02_7_additional.jpg",
-      "check_dataset/demo_img/02_2_side.jpg"
+    &quot;query_samples&quot;: 125,
+    &quot;query_sample_paths&quot;: [
+      &quot;check_dataset/demo_img/08_7_additional.jpg&quot;,
+      &quot;check_dataset/demo_img/01_7_additional.jpg&quot;,
+      &quot;check_dataset/demo_img/02_4_full.jpg&quot;,
+      &quot;check_dataset/demo_img/04_4_full.jpg&quot;,
+      &quot;check_dataset/demo_img/09_7_additional.jpg&quot;,
+      &quot;check_dataset/demo_img/04_3_back.jpg&quot;,
+      &quot;check_dataset/demo_img/02_1_front.jpg&quot;,
+      &quot;check_dataset/demo_img/06_2_side.jpg&quot;,
+      &quot;check_dataset/demo_img/02_7_additional.jpg&quot;,
+      &quot;check_dataset/demo_img/02_2_side.jpg&quot;
     ]
   },
-  "analysis": {
-    "histogram": "check_dataset/histogram.png"
+  &quot;analysis&quot;: {
+    &quot;histogram&quot;: &quot;check_dataset/histogram.png&quot;
   },
-  "dataset_path": "./dataset/Inshop_examples",
-  "show_type": "image",
-  "dataset_type": "ShiTuRecDataset"
+  &quot;dataset_path&quot;: &quot;./dataset/Inshop_examples&quot;,
+  &quot;show_type&quot;: &quot;image&quot;,
+  &quot;dataset_type&quot;: &quot;ShiTuRecDataset&quot;
 }
-```
-上述校验结果中，check_pass  为 true 表示数据集格式符合要求，其他部分指标的说明如下：
-
-* `attributes.train_samples`：该数据集训练样本数量为 1000；
-* `attributes.gallery_samples`：该数据集被查询样本数量为 110；
-* `attributes.query_samples`：该数据集查询样本数量为 125；
-* `attributes.train_sample_paths`：该数据集训练样本可视化图片相对路径列表；
-* `attributes.gallery_sample_paths`：该数据集被查询样本可视化图片相对路径列表；
-* `attributes.query_sample_paths`：该数据集查询样本可视化图片相对路径列表；
-另外，数据集校验还对数据集中图像数量和图像类别情况进行了分析，并绘制了分布直方图（histogram.png）：
-
-<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/modules/img_recognition/01.png">
-</details>
+</code></pre>
+<p>上述校验结果中，check_pass  为 true 表示数据集格式符合要求，其他部分指标的说明如下：</p>
+<ul>
+<li><code>attributes.train_samples</code>：该数据集训练样本数量为 1000；</li>
+<li><code>attributes.gallery_samples</code>：该数据集被查询样本数量为 110；</li>
+<li><code>attributes.query_samples</code>：该数据集查询样本数量为 125；</li>
+<li><code>attributes.train_sample_paths</code>：该数据集训练样本可视化图片相对路径列表；</li>
+<li><code>attributes.gallery_sample_paths</code>：该数据集被查询样本可视化图片相对路径列表；</li>
+<li><code>attributes.query_sample_paths</code>：该数据集查询样本可视化图片相对路径列表；
+另外，数据集校验还对数据集中图像数量和图像类别情况进行了分析，并绘制了分布直方图（histogram.png）：</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/modules/img_recognition/01.png"></p></details>
 
 ### 4.1.3 数据集格式转换/数据集划分（可选）
 在您完成数据校验之后，可以通过<b>修改配置文件</b>或是<b>追加超参数</b>的方式对数据集的格式进行转换，也可以对数据集的训练/验证比例进行重新划分。
 
-<details>
-  <summary>👉 <b>格式转换/数据集划分详情（点击展开）</b></summary>
+<details><summary>👉 <b>格式转换/数据集划分详情（点击展开）</b></summary>
 
-
-
-<b>（1）数据集格式转换</b>
-
-图像特征任务支持 `LabelMe`格式的数据集转换为 `ShiTuRecDataset`格式，数据集格式转换的参数可以通过修改配置文件中 `CheckDataset` 下的字段进行设置，配置文件中部分参数的示例说明如下：
-
-* `CheckDataset`:
-  * `convert`:
-    * `enable`: 是否进行数据集格式转换，图像特征任务支持 `LabelMe`格式的数据集转换为 `ShiTuRecDataset`格式，默认为 `False`;
-    * `src_dataset_type`: 如果进行数据集格式转换，则需设置源数据集格式，默认为 `null`，可选值为 `LabelMe` ；
-例如，您想将`LabelMe`格式的数据集转换为 `ShiTuRecDataset`格式，则需将配置文件修改为：
-
-```bash
-cd /path/to/paddlex
+<p><b>（1）数据集格式转换</b></p>
+<p>图像特征任务支持 <code>LabelMe</code>格式的数据集转换为 <code>ShiTuRecDataset</code>格式，数据集格式转换的参数可以通过修改配置文件中 <code>CheckDataset</code> 下的字段进行设置，配置文件中部分参数的示例说明如下：</p>
+<ul>
+<li><code>CheckDataset</code>:</li>
+<li><code>convert</code>:</li>
+<li><code>enable</code>: 是否进行数据集格式转换，图像特征任务支持 <code>LabelMe</code>格式的数据集转换为 <code>ShiTuRecDataset</code>格式，默认为 <code>False</code>;</li>
+<li><code>src_dataset_type</code>: 如果进行数据集格式转换，则需设置源数据集格式，默认为 <code>null</code>，可选值为 <code>LabelMe</code> ；
+例如，您想将<code>LabelMe</code>格式的数据集转换为 <code>ShiTuRecDataset</code>格式，则需将配置文件修改为：</li>
+</ul>
+<pre><code class="language-bash">cd /path/to/paddlex
 wget https://paddle-model-ecology.bj.bcebos.com/paddlex/data/image_classification_labelme_examples.tar -P ./dataset
 tar -xf ./dataset/image_classification_labelme_examples.tar -C ./dataset/
-```
-```bash
-......
+</code></pre>
+<pre><code class="language-bash">......
 CheckDataset:
   ......
   convert:
     enable: True
     src_dataset_type: LabelMe
   ......
-```
-随后执行命令：
-
-```bash
-python main.py -c  paddlex/configs/general_recognition/PP-ShiTuV2_rec.yaml  \
+</code></pre>
+<p>随后执行命令：</p>
+<pre><code class="language-bash">python main.py -c  paddlex/configs/general_recognition/PP-ShiTuV2_rec.yaml  \
     -o Global.mode=check_dataset \
     -o Global.dataset_dir=./dataset/image_classification_labelme_examples
-```
-数据转换执行之后，原有标注文件会被在原路径下重命名为 `xxx.bak`。
-
-以上参数同样支持通过追加命令行参数的方式进行设置：
-
-```bash
-python main.py -c paddlex/configs/general_recognition/PP-ShiTuV2_rec.yaml  \
+</code></pre>
+<p>数据转换执行之后，原有标注文件会被在原路径下重命名为 <code>xxx.bak</code>。</p>
+<p>以上参数同样支持通过追加命令行参数的方式进行设置：</p>
+<pre><code class="language-bash">python main.py -c paddlex/configs/general_recognition/PP-ShiTuV2_rec.yaml  \
     -o Global.mode=check_dataset \
     -o Global.dataset_dir=./dataset/image_classification_labelme_examples \
     -o CheckDataset.convert.enable=True \
     -o CheckDataset.convert.src_dataset_type=LabelMe
-```
-<b>（2）数据集划分</b>
-
-数据集划分的参数可以通过修改配置文件中 `CheckDataset` 下的字段进行设置，配置文件中部分参数的示例说明如下：
-
-* `CheckDataset`:
-  * `split`:
-    * `enable`: 是否进行重新划分数据集，为 `True` 时进行数据集格式转换，默认为 `False`；
-    * `train_percent`: 如果重新划分数据集，则需要设置训练集的百分比，类型为 0-100 之间的任意整数，需要保证和 `gallery_percent 、query_percent` 值加和为100；
-
-
-例如，您想重新划分数据集为 训练集占比70%、被查询数据集占比20%，查询数据集占比10%，则需将配置文件修改为：
-
-```bash
-......
+</code></pre>
+<p><b>（2）数据集划分</b></p>
+<p>数据集划分的参数可以通过修改配置文件中 <code>CheckDataset</code> 下的字段进行设置，配置文件中部分参数的示例说明如下：</p>
+<ul>
+<li><code>CheckDataset</code>:</li>
+<li><code>split</code>:</li>
+<li><code>enable</code>: 是否进行重新划分数据集，为 <code>True</code> 时进行数据集格式转换，默认为 <code>False</code>；</li>
+<li><code>train_percent</code>: 如果重新划分数据集，则需要设置训练集的百分比，类型为 0-100 之间的任意整数，需要保证和 <code>gallery_percent 、query_percent</code> 值加和为100；</li>
+</ul>
+<p>例如，您想重新划分数据集为 训练集占比70%、被查询数据集占比20%，查询数据集占比10%，则需将配置文件修改为：</p>
+<pre><code class="language-bash">......
 CheckDataset:
   ......
   split:
@@ -227,30 +207,25 @@ CheckDataset:
     gallery_percent: 20
     query_percent: 10
   ......
-```
-随后执行命令：
-
-```bash
-python main.py -c paddlex/configs/general_recognition/PP-ShiTuV2_rec.yaml  \
+</code></pre>
+<p>随后执行命令：</p>
+<pre><code class="language-bash">python main.py -c paddlex/configs/general_recognition/PP-ShiTuV2_rec.yaml  \
     -o Global.mode=check_dataset \
     -o Global.dataset_dir=./dataset/Inshop_examples
-```
-数据划分执行之后，原有标注文件会被在原路径下重命名为 `xxx.bak`。
-
-以上参数同样支持通过追加命令行参数的方式进行设置：
-
-```bash
-python main.py -c paddlex/configs/general_recognition/PP-ShiTuV2_rec.yaml  \
+</code></pre>
+<p>数据划分执行之后，原有标注文件会被在原路径下重命名为 <code>xxx.bak</code>。</p>
+<p>以上参数同样支持通过追加命令行参数的方式进行设置：</p>
+<pre><code class="language-bash">python main.py -c paddlex/configs/general_recognition/PP-ShiTuV2_rec.yaml  \
     -o Global.mode=check_dataset \
     -o Global.dataset_dir=./dataset/Inshop_examples \
     -o CheckDataset.split.enable=True \
     -o CheckDataset.split.train_percent=70 \
     -o CheckDataset.split.gallery_percent=20 \
     -o CheckDataset.split.query_percent=10
-```
-> ❗注意 ：由于图像特征模型评估的特殊性，当且仅当 train、query、gallery 集合属于同一类别体系下，数据切分才有意义，在图像特征模的评估过程中，必须满足 gallery 集合和 query 集合属于同一类别体系，其允许和 train 集合不在同一类别体系， 如果 gallery 集合和 query 集合与 train 集合不在同一类别体系，则数据划分后的评估没有意义，建议谨慎操作。
-
-</details>
+</code></pre>
+<blockquote>
+<p>❗注意 ：由于图像特征模型评估的特殊性，当且仅当 train、query、gallery 集合属于同一类别体系下，数据切分才有意义，在图像特征模的评估过程中，必须满足 gallery 集合和 query 集合属于同一类别体系，其允许和 train 集合不在同一类别体系， 如果 gallery 集合和 query 集合与 train 集合不在同一类别体系，则数据划分后的评估没有意义，建议谨慎操作。</p>
+</blockquote></details>
 
 ### 4.2 模型训练
 一条命令即可完成模型的训练，以此处图像特征模型 PP-ShiTuV2_rec 的训练为例：
@@ -267,19 +242,21 @@ python main.py -c paddlex/configs/general_recognition/PP-ShiTuV2_rec.yaml \
 * 指定训练数据集路径：`-o Global.dataset_dir`
 其他相关参数均可通过修改`.yaml`配置文件中的`Global`和`Train`下的字段来进行设置，也可以通过在命令行中追加参数来进行调整。如指定前 2 卡 gpu 训练：`-o Global.device=gpu:0,1`；设置训练轮次数为 10：`-o Train.epochs_iters=10`。更多可修改的参数及其详细解释，可以查阅模型对应任务模块的配置文件说明[PaddleX通用模型配置文件参数说明](../../instructions/config_parameters_common.md)。
 
-<details>
-  <summary>👉 <b>更多说明（点击展开）</b></summary>
+<details><summary>👉 <b>更多说明（点击展开）</b></summary>
 
-
-* 模型训练过程中，PaddleX 会自动保存模型权重文件，默认为`output`，如需指定保存路径，可通过配置文件中 `-o Global.output` 字段进行设置。
-* PaddleX 对您屏蔽了动态图权重和静态图权重的概念。在模型训练的过程中，会同时产出动态图和静态图的权重，在模型推理时，默认选择静态图权重推理。
-* 在完成模型训练后，所有产出保存在指定的输出目录（默认为`./output/`）下，通常有以下产出：
-
-* `train_result.json`：训练结果记录文件，记录了训练任务是否正常完成，以及产出的权重指标、相关文件路径等；
-* `train.log`：训练日志文件，记录了训练过程中的模型指标变化、loss 变化等；
-* `config.yaml`：训练配置文件，记录了本次训练的超参数的配置；
-* `.pdparams`、`.pdema`、`.pdopt.pdstate`、`.pdiparams`、`.pdmodel`：模型权重相关文件，包括网络参数、优化器、EMA、静态图网络参数、静态图网络结构等；
-</details>
+<ul>
+<li>模型训练过程中，PaddleX 会自动保存模型权重文件，默认为<code>output</code>，如需指定保存路径，可通过配置文件中 <code>-o Global.output</code> 字段进行设置。</li>
+<li>PaddleX 对您屏蔽了动态图权重和静态图权重的概念。在模型训练的过程中，会同时产出动态图和静态图的权重，在模型推理时，默认选择静态图权重推理。</li>
+<li>
+<p>在完成模型训练后，所有产出保存在指定的输出目录（默认为<code>./output/</code>）下，通常有以下产出：</p>
+</li>
+<li>
+<p><code>train_result.json</code>：训练结果记录文件，记录了训练任务是否正常完成，以及产出的权重指标、相关文件路径等；</p>
+</li>
+<li><code>train.log</code>：训练日志文件，记录了训练过程中的模型指标变化、loss 变化等；</li>
+<li><code>config.yaml</code>：训练配置文件，记录了本次训练的超参数的配置；</li>
+<li><code>.pdparams</code>、<code>.pdema</code>、<code>.pdopt.pdstate</code>、<code>.pdiparams</code>、<code>.pdmodel</code>：模型权重相关文件，包括网络参数、优化器、EMA、静态图网络参数、静态图网络结构等；</li>
+</ul></details>
 
 ## <b>4.3 模型评估</b>
 在完成模型训练后，可以对指定的模型权重文件在验证集上进行评估，验证模型精度。使用 PaddleX 进行模型评估，一条命令即可完成模型的评估：
@@ -296,15 +273,10 @@ python main.py -c paddlex/configs/general_recognition/PP-ShiTuV2_rec.yaml \
 * 指定验证数据集路径：`-o Global.dataset_dir`.
 其他相关参数均可通过修改`.yaml`配置文件中的`Global`和`Evaluate`下的字段来进行设置，详细请参考[PaddleX通用模型配置文件参数说明](../../instructions/config_parameters_common.md)。
 
-<details>
-  <summary>👉 <b>更多说明（点击展开）</b></summary>
+<details><summary>👉 <b>更多说明（点击展开）</b></summary>
 
-
-在模型评估时，需要指定模型权重文件路径，每个配置文件中都内置了默认的权重保存路径，如需要改变，只需要通过追加命令行参数的形式进行设置即可，如`-o Evaluate.weight_path=./output/best_model/best_model.pdparams`。
-
-在完成模型评估后，会产出`evaluate_result.json，其记录了`评估的结果，具体来说，记录了评估任务是否正常完成，以及模型的评估指标，包含 recall1、recall5、mAP；
-
-</details>
+<p>在模型评估时，需要指定模型权重文件路径，每个配置文件中都内置了默认的权重保存路径，如需要改变，只需要通过追加命令行参数的形式进行设置即可，如<code>-o Evaluate.weight_path=./output/best_model/best_model.pdparams</code>。</p>
+<p>在完成模型评估后，会产出<code>evaluate_result.json，其记录了</code>评估的结果，具体来说，记录了评估任务是否正常完成，以及模型的评估指标，包含 recall1、recall5、mAP；</p></details>
 
 ### <b>4.4 模型推理</b>
 在完成模型的训练和评估后，即可使用训练好的模型权重进行推理预测或者进行 Python 集成。

@@ -39,8 +39,7 @@ pip install https://paddle-model-ecology.bj.bcebos.com/paddlex/whl/paddlex-3.0.0
 PaddleX支持的插件如下，请您根据开发需求，确定所需的一个或多个插件名称：
 
 
-<details>
-  <summary>👉 <b>插件和产线对应关系（点击展开）</b></summary>
+<details><summary>👉 <b>插件和产线对应关系（点击展开）</b></summary>
 
 <table>
 <thead>
@@ -117,9 +116,7 @@ PaddleX支持的插件如下，请您根据开发需求，确定所需的一个�
 <td>PaddleSeg</td>
 </tr>
 </tbody>
-</table>
-
-</details>
+</table></details>
 
 
 若您需要安装的插件为PaddleXXX（可以有多个），在安装飞桨后，您可以直接执行如下指令快速安装PaddleX的对应插件：

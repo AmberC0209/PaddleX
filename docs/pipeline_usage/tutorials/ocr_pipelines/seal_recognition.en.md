@@ -11,12 +11,9 @@ The <b>Seal Recognition</b> pipeline includes a layout area analysis module, a s
 
 <b>If you prioritize model accuracy, please choose a model with higher accuracy. If you prioritize inference speed, please choose a model with faster inference. If you prioritize model storage size, please choose a model with a smaller storage footprint.</b>
 
-<details>
-   <summary> 👉 Detailed Model List </summary>
+<details><summary> 👉 Detailed Model List </summary>
 
-
-<b>Layout Analysis Module Models:</b>
-
+<p><b>Layout Analysis Module Models:</b></p>
 <table>
 <thead>
 <tr>
@@ -88,11 +85,8 @@ The <b>Seal Recognition</b> pipeline includes a layout area analysis module, a s
 </tbody>
 </table>
 
-<b>Note: The evaluation set for the above accuracy metrics is PaddleOCR's self-built layout region analysis dataset, containing 10,000 images of common document types, including English and Chinese papers, magazines, research reports, etc. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
-
-
-<b>Seal Detection Module Models</b>:
-
+<p><b>Note: The evaluation set for the above accuracy metrics is PaddleOCR's self-built layout region analysis dataset, containing 10,000 images of common document types, including English and Chinese papers, magazines, research reports, etc. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b></p>
+<p><b>Seal Detection Module Models</b>:</p>
 <table>
 <thead>
 <tr>
@@ -124,11 +118,8 @@ The <b>Seal Recognition</b> pipeline includes a layout area analysis module, a s
 </tbody>
 </table>
 
-<b>Note: The above accuracy metrics are evaluated on a self-built dataset containing 500 circular seal images. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
-
-<b>Text Recognition Module Models</b>:
-
-
+<p><b>Note: The above accuracy metrics are evaluated on a self-built dataset containing 500 circular seal images. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b></p>
+<p><b>Text Recognition Module Models</b>:</p>
 <table>
 <thead>
 <tr>
@@ -157,9 +148,7 @@ The <b>Seal Recognition</b> pipeline includes a layout area analysis module, a s
 </tbody>
 </table>
 
-<b>Note: The evaluation set for the above accuracy indicators is a self-built Chinese dataset from PaddleOCR, covering various scenarios such as street scenes, web images, documents, and handwriting. The text recognition subset includes 11,000 images. The GPU inference time for all models above is based on an NVIDIA Tesla T4 machine with a precision type of FP32. The CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads, and the precision type is also FP32.</b>
-
-</details>
+<p><b>Note: The evaluation set for the above accuracy indicators is a self-built Chinese dataset from PaddleOCR, covering various scenarios such as street scenes, web images, documents, and handwriting. The text recognition subset includes 11,000 images. The GPU inference time for all models above is based on an NVIDIA Tesla T4 machine with a precision type of FP32. The CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads, and the precision type is also FP32.</b></p></details>
 
 ## 2.  Quick Start
 The pre trained model production line provided by PaddleX can quickly experience the effect. You can experience the effect of the seal recognition production line online, or use the command line or Python locally to experience the effect of the seal recognition production line.
@@ -184,35 +173,23 @@ Parameter description:
 
 When executing the above Python script, the default seal recognition production line configuration file is loaded. If you need to customize the configuration file, you can execute the following command to obtain it:
 
-<details>
-<summary>  👉 Click to expand</summary>
+<details><summary>  👉 Click to expand</summary>
 
-```bash
-paddlex --get_pipeline_config seal_recognition
-```
-
-After execution, the seal recognition production line configuration file will be saved in the current path. If you want to customize the save location, you can execute the following command (assuming the custom save location is `./my_path `):
-
-```bash
-paddlex --get_pipeline_config seal_recognition --save_path ./my_path --save_path output
-```
-
-After obtaining the production line configuration file, you can replace '-- pipeline' with the configuration file save path to make the configuration file effective. For example, if the configuration file save path is `/ seal_recognition.yaml`， Just need to execute:
-
-```bash
-paddlex --pipeline ./seal_recognition.yaml --input seal_text_det.png --save_path output
-```
-Among them, parameters such as `--model` and `--device` do not need to be specified and will use the parameters in the configuration file. If the parameters are still specified, the specified parameters will prevail.
-
-</details>
+<pre><code class="language-bash">paddlex --get_pipeline_config seal_recognition
+</code></pre>
+<p>After execution, the seal recognition production line configuration file will be saved in the current path. If you want to customize the save location, you can execute the following command (assuming the custom save location is <code>./my_path</code>):</p>
+<pre><code class="language-bash">paddlex --get_pipeline_config seal_recognition --save_path ./my_path --save_path output
+</code></pre>
+<p>After obtaining the production line configuration file, you can replace '-- pipeline' with the configuration file save path to make the configuration file effective. For example, if the configuration file save path is <code>/ seal_recognition.yaml</code>， Just need to execute:</p>
+<pre><code class="language-bash">paddlex --pipeline ./seal_recognition.yaml --input seal_text_det.png --save_path output
+</code></pre>
+<p>Among them, parameters such as <code>--model</code> and <code>--device</code> do not need to be specified and will use the parameters in the configuration file. If the parameters are still specified, the specified parameters will prevail.</p></details>
 
 After running, the result obtained is:
 
-<details>
-<summary>  👉 Click to expand</summary>
+<details><summary>  👉 Click to expand</summary>
 
-```
-{'input_path': 'seal_text_det.png', 'layout_result': {'input_path': 'seal_text_det.png', 'boxes': [{'cls_id': 2, 'label': 'seal', 'score': 0.9813116192817688, 'coordinate': [0, 5.2238655, 639.59766, 637.6985]}]}, 'ocr_result': [{'input_path': PosixPath('/root/.paddlex/temp/tmp19fn93y5.png'), 'dt_polys': [array([[468, 469],
+<pre><code>{'input_path': 'seal_text_det.png', 'layout_result': {'input_path': 'seal_text_det.png', 'boxes': [{'cls_id': 2, 'label': 'seal', 'score': 0.9813116192817688, 'coordinate': [0, 5.2238655, 639.59766, 637.6985]}]}, 'ocr_result': [{'input_path': PosixPath('/root/.paddlex/temp/tmp19fn93y5.png'), 'dt_polys': [array([[468, 469],
        [472, 469],
        [477, 471],
        [507, 501],
@@ -319,8 +296,7 @@ After running, the result obtained is:
        [157,  84],
        [318,  34],
        [322,  33]])], 'dt_scores': [0.9943362380813267, 0.9994290391836306, 0.9945320407374245, 0.9908104427126033], 'rec_text': ['5263647368706', '吗繁物', '发票专用章', '天津君和缘商贸有限公司'], 'rec_score': [0.9921098351478577, 0.997374951839447, 0.9999369382858276, 0.9901710152626038]}]}
-```
-</details>
+</code></pre></details>
 
 <img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/seal_recognition/03.png">
 
@@ -465,14 +441,13 @@ In addition, PaddleX also offers three other deployment methods, detailed as fol
 
 Below are the API references and multi-language service invocation examples:
 
-<details>
-<summary>API Reference</summary>
+<details><summary>API Reference</summary>
 
-For all operations provided by the service:
-
-- Both the response body and the request body for POST requests are JSON data (JSON objects).
-- When the request is processed successfully, the response status code is `200`, and the response body properties are as follows:
-
+<p>For all operations provided by the service:</p>
+<ul>
+<li>Both the response body and the request body for POST requests are JSON data (JSON objects).</li>
+<li>When the request is processed successfully, the response status code is <code>200</code>, and the response body properties are as follows:</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -495,10 +470,10 @@ For all operations provided by the service:
 </tbody>
 </table>
 
-    The response body may also have a `result` property of type `object`, which stores the operation result information.
-
-- When the request is not processed successfully, the response body properties are as follows:
-
+<p>The response body may also have a <code>result</code> property of type <code>object</code>, which stores the operation result information.</p>
+<ul>
+<li>When the request is not processed successfully, the response body properties are as follows:</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -521,16 +496,15 @@ For all operations provided by the service:
 </tbody>
 </table>
 
-Operations provided by the service:
-
-- <b>`infer`</b>
-
-    Obtain seal recognition results from an image.
-
-    `POST /seal-recognition`
-
-    - Request body properties:
-
+<p>Operations provided by the service:</p>
+<ul>
+<li><b><code>infer</code></b></li>
+</ul>
+<p>Obtain seal recognition results from an image.</p>
+<p><code>POST /seal-recognition</code></p>
+<ul>
+<li>Request body properties:</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -556,8 +530,7 @@ Operations provided by the service:
 </tbody>
 </table>
 
-        Properties of `inferenceParams`:
-
+<p>Properties of <code>inferenceParams</code>:</p>
 <table>
 <thead>
 <tr>
@@ -577,8 +550,9 @@ Operations provided by the service:
 </tbody>
 </table>
 
-    - When the request is processed successfully, the `result` of the response body has the following properties:
-
+<ul>
+<li>When the request is processed successfully, the <code>result</code> of the response body has the following properties:</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -601,8 +575,7 @@ Operations provided by the service:
 </tbody>
 </table>
 
-        Each element in `sealImpressions` is an `object` with the following properties:
-
+<p>Each element in <code>sealImpressions</code> is an <code>object</code> with the following properties:</p>
 <table>
 <thead>
 <tr>
@@ -628,115 +601,104 @@ Operations provided by the service:
 <td>Text recognition score.</td>
 </tr>
 </tbody>
-</table>
+</table></details>
 
-</details>
-
-<details>
-<summary>Multi-Language Service Invocation Examples</summary>
+<details><summary>Multi-Language Service Invocation Examples</summary>
 
 <details>
 <summary>Python</summary>
 
-```python
-import base64
+
+<pre><code class="language-python">import base64
 import requests
 
-API_URL = "http://localhost:8080/seal-recognition"
-image_path = "./demo.jpg"
-layout_image_path = "./layout.jpg"
+API_URL = &quot;http://localhost:8080/seal-recognition&quot;
+image_path = &quot;./demo.jpg&quot;
+layout_image_path = &quot;./layout.jpg&quot;
 
-with open(image_path, "rb") as file:
+with open(image_path, &quot;rb&quot;) as file:
     image_bytes = file.read()
-    image_data = base64.b64encode(image_bytes).decode("ascii")
+    image_data = base64.b64encode(image_bytes).decode(&quot;ascii&quot;)
 
-payload = {"image": image_data}
+payload = {&quot;image&quot;: image_data}
 
 response = requests.post(API_URL, json=payload)
 
 assert response.status_code == 200
-result = response.json()["result"]
-with open(layout_image_path, "wb") as file:
-    file.write(base64.b64decode(result["layoutImage"]))
-print(f"Output image saved at {layout_image_path}")
-print("\nDetected seal impressions:")
-print(result["sealImpressions"])
-```
+result = response.json()[&quot;result&quot;]
+with open(layout_image_path, &quot;wb&quot;) as file:
+    file.write(base64.b64decode(result[&quot;layoutImage&quot;]))
+print(f&quot;Output image saved at {layout_image_path}&quot;)
+print(&quot;\nDetected seal impressions:&quot;)
+print(result[&quot;sealImpressions&quot;])
+</code></pre></details>
 
-</details>
+<details><summary>C++</summary>
 
-<details>
-<summary>C++</summary>
-
-```cpp
-#include <iostream>
-#include "cpp-httplib/httplib.h" // https://github.com/Huiyicc/cpp-httplib
-#include "nlohmann/json.hpp" // https://github.com/nlohmann/json
-#include "base64.hpp" // https://github.com/tobiaslocker/base64
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &quot;cpp-httplib/httplib.h&quot; // https://github.com/Huiyicc/cpp-httplib
+#include &quot;nlohmann/json.hpp&quot; // https://github.com/nlohmann/json
+#include &quot;base64.hpp&quot; // https://github.com/tobiaslocker/base64
 
 int main() {
-    httplib::Client client("localhost:8080");
-    const std::string imagePath = "./demo.jpg";
-    const std::string layoutImagePath = "./layout.jpg";
+    httplib::Client client(&quot;localhost:8080&quot;);
+    const std::string imagePath = &quot;./demo.jpg&quot;;
+    const std::string layoutImagePath = &quot;./layout.jpg&quot;;
 
     httplib::Headers headers = {
-        {"Content-Type", "application/json"}
+        {&quot;Content-Type&quot;, &quot;application/json&quot;}
     };
 
     std::ifstream file(imagePath, std::ios::binary | std::ios::ate);
     std::streamsize size = file.tellg();
     file.seekg(0, std::ios::beg);
 
-    std::vector<char> buffer(size);
+    std::vector&lt;char&gt; buffer(size);
     if (!file.read(buffer.data(), size)) {
-        std::cerr << "Error reading file." << std::endl;
+        std::cerr &lt;&lt; &quot;Error reading file.&quot; &lt;&lt; std::endl;
         return 1;
     }
-    std::string bufferStr(reinterpret_cast<const char*>(buffer.data()), buffer.size());
+    std::string bufferStr(reinterpret_cast&lt;const char*&gt;(buffer.data()), buffer.size());
     std::string encodedImage = base64::to_base64(bufferStr);
 
     nlohmann::json jsonObj;
-    jsonObj["image"] = encodedImage;
+    jsonObj[&quot;image&quot;] = encodedImage;
     std::string body = jsonObj.dump();
 
-    auto response = client.Post("/seal-recognition", headers, body, "application/json");
-    if (response && response->status == 200) {
-        nlohmann::json jsonResponse = nlohmann::json::parse(response->body);
-        auto result = jsonResponse["result"];
+    auto response = client.Post(&quot;/seal-recognition&quot;, headers, body, &quot;application/json&quot;);
+    if (response &amp;&amp; response-&gt;status == 200) {
+        nlohmann::json jsonResponse = nlohmann::json::parse(response-&gt;body);
+        auto result = jsonResponse[&quot;result&quot;];
 
-        encodedImage = result["layoutImage"];
+        encodedImage = result[&quot;layoutImage&quot;];
         decodedString = base64::from_base64(encodedImage);
-        std::vector<unsigned char> decodedLayoutImage(decodedString.begin(), decodedString.end());
+        std::vector&lt;unsigned char&gt; decodedLayoutImage(decodedString.begin(), decodedString.end());
         std::ofstream outputLayoutFile(layoutImagePath, std::ios::binary | std::ios::out);
         if (outputLayoutFile.is_open()) {
-            outputLayoutFile.write(reinterpret_cast<char*>(decodedLayoutImage.data()), decodedLayoutImage.size());
+            outputLayoutFile.write(reinterpret_cast&lt;char*&gt;(decodedLayoutImage.data()), decodedLayoutImage.size());
             outputLayoutFile.close();
-            std::cout << "Output image saved at " << layoutImagePath << std::endl;
+            std::cout &lt;&lt; &quot;Output image saved at &quot; &lt;&lt; layoutImagePath &lt;&lt; std::endl;
         } else {
-            std::cerr << "Unable to open file for writing: " << layoutImagePath << std::endl;
+            std::cerr &lt;&lt; &quot;Unable to open file for writing: &quot; &lt;&lt; layoutImagePath &lt;&lt; std::endl;
         }
 
-        auto impressions = result["sealImpressions"];
-        std::cout << "\nDetected seal impressions:" << std::endl;
-        for (const auto& impression : impressions) {
-            std::cout << impression << std::endl;
+        auto impressions = result[&quot;sealImpressions&quot;];
+        std::cout &lt;&lt; &quot;\nDetected seal impressions:&quot; &lt;&lt; std::endl;
+        for (const auto&amp; impression : impressions) {
+            std::cout &lt;&lt; impression &lt;&lt; std::endl;
         }
     } else {
-        std::cout << "Failed to send HTTP request." << std::endl;
+        std::cout &lt;&lt; &quot;Failed to send HTTP request.&quot; &lt;&lt; std::endl;
         return 1;
     }
 
     return 0;
 }
-```
+</code></pre></details>
 
-</details>
+<details><summary>Java</summary>
 
-<details>
-<summary>Java</summary>
-
-```java
-import okhttp3.*;
+<pre><code class="language-java">import okhttp3.*;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
@@ -748,9 +710,9 @@ import java.util.Base64;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        String API_URL = "http://localhost:8080/seal-recognition";
-        String imagePath = "./demo.jpg";
-        String layoutImagePath = "./layout.jpg";
+        String API_URL = &quot;http://localhost:8080/seal-recognition&quot;;
+        String imagePath = &quot;./demo.jpg&quot;;
+        String layoutImagePath = &quot;./layout.jpg&quot;;
 
         File file = new File(imagePath);
         byte[] fileContent = java.nio.file.Files.readAllBytes(file.toPath());
@@ -758,10 +720,10 @@ public class Main {
 
         ObjectMapper objectMapper = new ObjectMapper();
         ObjectNode params = objectMapper.createObjectNode();
-        params.put("image", imageData);
+        params.put(&quot;image&quot;, imageData);
 
         OkHttpClient client = new OkHttpClient();
-        MediaType JSON = MediaType.Companion.get("application/json; charset=utf-8");
+        MediaType JSON = MediaType.Companion.get(&quot;application/json; charset=utf-8&quot;);
         RequestBody body = RequestBody.Companion.create(params.toString(), JSON);
         Request request = new Request.Builder()
                 .url(API_URL)
@@ -772,119 +734,111 @@ public class Main {
             if (response.isSuccessful()) {
                 String responseBody = response.body().string();
                 JsonNode resultNode = objectMapper.readTree(responseBody);
-                JsonNode result = resultNode.get("result");
-                String layoutBase64Image = result.get("layoutImage").asText();
-                JsonNode impressions = result.get("sealImpressions");
+                JsonNode result = resultNode.get(&quot;result&quot;);
+                String layoutBase64Image = result.get(&quot;layoutImage&quot;).asText();
+                JsonNode impressions = result.get(&quot;sealImpressions&quot;);
 
                 imageBytes = Base64.getDecoder().decode(layoutBase64Image);
                 try (FileOutputStream fos = new FileOutputStream(layoutImagePath)) {
                     fos.write(imageBytes);
                 }
-                System.out.println("Output image saved at " + layoutImagePath);
+                System.out.println(&quot;Output image saved at &quot; + layoutImagePath);
 
-                System.out.println("\nDetected seal impressions: " + impressions.toString());
+                System.out.println(&quot;\nDetected seal impressions: &quot; + impressions.toString());
             } else {
-                System.err.println("Request failed with code: " + response.code());
+                System.err.println(&quot;Request failed with code: &quot; + response.code());
             }
         }
     }
 }
-```
+</code></pre></details>
 
-</details>
+<details><summary>Go</summary>
 
-<details>
-<summary>Go</summary>
-
-```go
-package main
+<pre><code class="language-go">package main
 
 import (
-    "bytes"
-    "encoding/base64"
-    "encoding/json"
-    "fmt"
-    "io/ioutil"
-    "net/http"
+    &quot;bytes&quot;
+    &quot;encoding/base64&quot;
+    &quot;encoding/json&quot;
+    &quot;fmt&quot;
+    &quot;io/ioutil&quot;
+    &quot;net/http&quot;
 )
 
 func main() {
-    API_URL := "http://localhost:8080/seal-recognition"
-    imagePath := "./demo.jpg"
-    layoutImagePath := "./layout.jpg"
+    API_URL := &quot;http://localhost:8080/seal-recognition&quot;
+    imagePath := &quot;./demo.jpg&quot;
+    layoutImagePath := &quot;./layout.jpg&quot;
 
     imageBytes, err := ioutil.ReadFile(imagePath)
     if err != nil {
-        fmt.Println("Error reading image file:", err)
+        fmt.Println(&quot;Error reading image file:&quot;, err)
         return
     }
     imageData := base64.StdEncoding.EncodeToString(imageBytes)
 
-    payload := map[string]string{"image": imageData}
+    payload := map[string]string{&quot;image&quot;: imageData}
     payloadBytes, err := json.Marshal(payload)
     if err != nil {
-        fmt.Println("Error marshaling payload:", err)
+        fmt.Println(&quot;Error marshaling payload:&quot;, err)
         return
     }
 
-    client := &http.Client{}
-    req, err := http.NewRequest("POST", API_URL, bytes.NewBuffer(payloadBytes))
+    client := &amp;http.Client{}
+    req, err := http.NewRequest(&quot;POST&quot;, API_URL, bytes.NewBuffer(payloadBytes))
     if err != nil {
-        fmt.Println("Error creating request:", err)
+        fmt.Println(&quot;Error creating request:&quot;, err)
         return
     }
 
     res, err := client.Do(req)
     if err != nil {
-        fmt.Println("Error sending request:", err)
+        fmt.Println(&quot;Error sending request:&quot;, err)
         return
     }
     defer res.Body.Close()
 
     body, err := ioutil.ReadAll(res.Body)
     if err != nil {
-        fmt.Println("Error reading response body:", err)
+        fmt.Println(&quot;Error reading response body:&quot;, err)
         return
     }
     type Response struct {
         Result struct {
-            LayoutImage      string   `json:"layoutImage"`
-            Impressions []map[string]interface{} `json:"sealImpressions"`
-        } `json:"result"`
+            LayoutImage      string   `json:&quot;layoutImage&quot;`
+            Impressions []map[string]interface{} `json:&quot;sealImpressions&quot;`
+        } `json:&quot;result&quot;`
     }
     var respData Response
-    err = json.Unmarshal([]byte(string(body)), &respData)
+    err = json.Unmarshal([]byte(string(body)), &amp;respData)
     if err != nil {
-        fmt.Println("Error unmarshaling response body:", err)
+        fmt.Println(&quot;Error unmarshaling response body:&quot;, err)
         return
     }
 
     layoutImageData, err := base64.StdEncoding.DecodeString(respData.Result.LayoutImage)
     if err != nil {
-        fmt.Println("Error decoding base64 image data:", err)
+        fmt.Println(&quot;Error decoding base64 image data:&quot;, err)
         return
     }
     err = ioutil.WriteFile(layoutImagePath, layoutImageData, 0644)
     if err != nil {
-        fmt.Println("Error writing image to file:", err)
+        fmt.Println(&quot;Error writing image to file:&quot;, err)
         return
     }
-    fmt.Printf("Image saved at %s.jpg\n", layoutImagePath)
+    fmt.Printf(&quot;Image saved at %s.jpg\n&quot;, layoutImagePath)
 
-    fmt.Println("\nDetected seal impressions:")
+    fmt.Println(&quot;\nDetected seal impressions:&quot;)
     for _, impression := range respData.Result.Impressions {
         fmt.Println(impression)
     }
 }
-```
+</code></pre></details>
 
-</details>
+<details><summary>C#</summary>
 
-<details>
-<summary>C#</summary>
-
-```csharp
-using System;
+<pre><code class="language-csharp">using System;
 using System.IO;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -894,9 +848,9 @@ using Newtonsoft.Json.Linq;
 
 class Program
 {
-    static readonly string API_URL = "http://localhost:8080/seal-recognition";
-    static readonly string imagePath = "./demo.jpg";
-    static readonly string layoutImagePath = "./layout.jpg";
+    static readonly string API_URL = &quot;http://localhost:8080/seal-recognition&quot;;
+    static readonly string imagePath = &quot;./demo.jpg&quot;;
+    static readonly string layoutImagePath = &quot;./layout.jpg&quot;;
 
     static async Task Main(string[] args)
     {
@@ -905,8 +859,8 @@ class Program
         byte[] imageBytes = File.ReadAllBytes(imagePath);
         string image_data = Convert.ToBase64String(imageBytes);
 
-        var payload = new JObject{ { "image", image_data } };
-        var content = new StringContent(payload.ToString(), Encoding.UTF8, "application/json");
+        var payload = new JObject{ { &quot;image&quot;, image_data } };
+        var content = new StringContent(payload.ToString(), Encoding.UTF8, &quot;application/json&quot;);
 
         HttpResponseMessage response = await httpClient.PostAsync(API_URL, content);
         response.EnsureSuccessStatusCode();
@@ -914,29 +868,25 @@ class Program
         string responseBody = await response.Content.ReadAsStringAsync();
         JObject jsonResponse = JObject.Parse(responseBody);
 
-        string layoutBase64Image = jsonResponse["result"]["layoutImage"].ToString();
+        string layoutBase64Image = jsonResponse[&quot;result&quot;][&quot;layoutImage&quot;].ToString();
         byte[] layoutImageBytes = Convert.FromBase64String(layoutBase64Image);
         File.WriteAllBytes(layoutImagePath, layoutImageBytes);
-        Console.WriteLine($"Output image saved at {layoutImagePath}");
+        Console.WriteLine($&quot;Output image saved at {layoutImagePath}&quot;);
 
-        Console.WriteLine("\nDetected seal impressions:");
-        Console.WriteLine(jsonResponse["result"]["sealImpressions"].ToString());
+        Console.WriteLine(&quot;\nDetected seal impressions:&quot;);
+        Console.WriteLine(jsonResponse[&quot;result&quot;][&quot;sealImpressions&quot;].ToString());
     }
 }
-```
+</code></pre></details>
 
-</details>
+<details><summary>Node.js</summary>
 
-<details>
-<summary>Node.js</summary>
-
-```js
-const axios = require('axios');
+<pre><code class="language-js">const axios = require('axios');
 const fs = require('fs');
 
 const API_URL = 'http://localhost:8080/seal-recognition'
 const imagePath = './demo.jpg'
-const layoutImagePath = "./layout.jpg";
+const layoutImagePath = &quot;./layout.jpg&quot;;
 
 let config = {
    method: 'POST',
@@ -953,37 +903,33 @@ function encodeImageToBase64(filePath) {
 }
 
 axios.request(config)
-.then((response) => {
-    const result = response.data["result"];
+.then((response) =&gt; {
+    const result = response.data[&quot;result&quot;];
 
-    imageBuffer = Buffer.from(result["layoutImage"], 'base64');
-    fs.writeFile(layoutImagePath, imageBuffer, (err) => {
+    imageBuffer = Buffer.from(result[&quot;layoutImage&quot;], 'base64');
+    fs.writeFile(layoutImagePath, imageBuffer, (err) =&gt; {
       if (err) throw err;
       console.log(`Output image saved at ${layoutImagePath}`);
     });
 
-    console.log("\nDetected seal impressions:");
-    console.log(result["sealImpressions"]);
+    console.log(&quot;\nDetected seal impressions:&quot;);
+    console.log(result[&quot;sealImpressions&quot;]);
 })
-.catch((error) => {
+.catch((error) =&gt; {
   console.log(error);
 });
-```
+</code></pre></details>
 
-</details>
+<details><summary>PHP</summary>
 
-<details>
-<summary>PHP</summary>
+<pre><code class="language-php">&lt;?php
 
-```php
-<?php
-
-$API_URL = "http://localhost:8080/seal-recognition";
-$image_path = "./demo.jpg";
-$layout_image_path = "./layout.jpg";
+$API_URL = &quot;http://localhost:8080/seal-recognition&quot;;
+$image_path = &quot;./demo.jpg&quot;;
+$layout_image_path = &quot;./layout.jpg&quot;;
 
 $image_data = base64_encode(file_get_contents($image_path));
-$payload = array("image" => $image_data);
+$payload = array(&quot;image&quot; =&gt; $image_data);
 
 $ch = curl_init($API_URL);
 curl_setopt($ch, CURLOPT_POST, true);
@@ -992,18 +938,16 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $response = curl_exec($ch);
 curl_close($ch);
 
-$result = json_decode($response, true)["result"];
+$result = json_decode($response, true)[&quot;result&quot;];
 
-file_put_contents($layout_image_path, base64_decode($result["layoutImage"]));
-echo "Output image saved at " . $layout_image_path . "\n";
+file_put_contents($layout_image_path, base64_decode($result[&quot;layoutImage&quot;]));
+echo &quot;Output image saved at &quot; . $layout_image_path . &quot;\n&quot;;
 
-echo "\nDetected seal impressions:\n";
-print_r($result["sealImpressions"]);
+echo &quot;\nDetected seal impressions:\n&quot;;
+print_r($result[&quot;sealImpressions&quot;]);
 
-?>
-```
-
-</details>
+?&gt;
+</code></pre></details>
 </details>
 <br/>
 

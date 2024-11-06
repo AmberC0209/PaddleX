@@ -61,13 +61,10 @@ Parameter description:
 --device: GPU serial number used (for example, gpu:0 means using the 0th GPU, gpu:1,2 means using the 1st and 2nd GPUs), or you can choose to use CPU (--device cpu).
 ```
 
-<details>
-   <summary>👉Click to view the running results</summary>
+<details><summary>👉Click to view the running results</summary>
 
-After running, the result is:
-
-```bash
-{'input_path': 'general_ocr_002.png', 'dt_polys': [array([[ 6, 13],
+<p>After running, the result is:</p>
+<pre><code class="language-bash">{'input_path': 'general_ocr_002.png', 'dt_polys': [array([[ 6, 13],
        [64, 13],
        [64, 31],
        [ 6, 31]], dtype=int16), array([[210,  14],
@@ -76,34 +73,24 @@ After running, the result is:
        [830, 445],
        [830, 464],
        [338, 473]], dtype=int16)], 'dt_scores': [0.7629529090100092, 0.7717284653547034, 0.7139251666762622, 0.8057611181556994, 0.8840947658872964, 0.793295938183885, 0.8342027855884783, 0.8081378522874861, 0.8436969344212185, 0.8500845646497226, 0.7932189714842249, 0.8875924621248228, 0.8827884273639948, 0.8322404317386042, 0.8614796803023563, 0.8804252994596097, 0.9069978945305474, 0.8383917914190059, 0.8495824076580516, 0.8825556800041383, 0.852788927706737, 0.8379584696974435, 0.8633519228646618, 0.763234473595298, 0.8602154244410916, 0.9206341882426813, 0.6341425973804049, 0.8490156149797171, 0.758314821564747, 0.8757849788793592, 0.772485060565334, 0.8404023012596349, 0.8190037953773427, 0.851908529295617, 0.6126112758079643, 0.7324388418218587], 'rec_text': ['www.9', '5', 'boarding pass', 'BOARDING', 'PASS', 'cabin class', '', 'CLASS', 'SERIAL NO', 'seat number', 'SEAT NO', 'flight FLIGHT', 'date DATE', '03DEC', 'W', '035', 'MU 2379', 'departure city', 'FROM', 'boarding gate', 'GATE', 'boarding time BDT', 'destination TO', 'Fuzhou', 'Taiyuan', 'G11', 'FUZHOU', 'ID NO', 'NAME', 'ZHANGQIWEI', 'ticket number TKTNO', 'Zhang Qiwei', 'fare FARE', 'ETKT7813699238489/1', 'The boarding gate closes 10 minutes before departure', 'GATES CLOSE 10 MINUTES BEFORE DEPARTURE TIME'], 'rec_score': [0.683099627494812, 0.23417049646377563, 0.9969978928565979, 0.9945957660675049, 0.9787729382514954, 0.9983421564102173, 0.0, 0.9896272420883179, 0.9927973747253418, 0.9976049065589905, 0.9330753684043884, 0.9562691450119019, 0.9312669038772583, 0.9749765396118164, 0.9749416708946228, 0.9988260865211487, 0.9319792985916138, 0.9979889988899231, 0.9956836700439453, 0.9991750717163086, 0.9938803315162659, 0.9982991218566895, 0.9701204299926758, 0.9986245632171631, 0.9888408780097961, 0.9793729782104492, 0.9952947497367859, 0.9945247173309326, 0.9919753670692444, 0.991995632648468, 0.9937331080436707, 0.9963390827178955, 0.9954304695129395, 0.9934715628623962, 0.9974429607391357, 0.9529641270637512]}
-```
-The visualization result is as follows:
-
-<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/boardingpass.png">
-
-</details>
+</code></pre>
+<p>The visualization result is as follows:</p>
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/boardingpass.png"></p></details>
 
 When executing the above command, the default OCR pipeline configuration file is loaded. If you need a custom configuration file, you can follow the steps below:
 
-<details>
-   <summary>👉Click to expand</summary>
+<details><summary>👉Click to expand</summary>
 
-Get the OCR pipeline configuration file:
-```bash
-paddlex --get_pipeline_config OCR
-```
-
-After execution, the OCR pipeline configuration file will be saved in the current path. If you want to customize the save location, you can execute the following command (assuming the custom save location is `./my_path`):
-```bash
-paddlex --get_pipeline_config OCR --save_path ./my_path
-```
-
-After obtaining the pipeline configuration file, you can replace `--pipeline` with the configuration file save path to make the configuration file take effect. For example, if the configuration file save path is `./ocr.yaml`, just execute:
-```bash
-paddlex --pipeline ./ocr.yaml --input general_ocr_002.png
-```
-Parameters such as `--model`, `--device` do not need to be specified, and the parameters in the configuration file will be used. If parameters are still specified, the specified parameters will prevail.
-</details>
+<p>Get the OCR pipeline configuration file:</p>
+<pre><code class="language-bash">paddlex --get_pipeline_config OCR
+</code></pre>
+<p>After execution, the OCR pipeline configuration file will be saved in the current path. If you want to customize the save location, you can execute the following command (assuming the custom save location is <code>./my_path</code>):</p>
+<pre><code class="language-bash">paddlex --get_pipeline_config OCR --save_path ./my_path
+</code></pre>
+<p>After obtaining the pipeline configuration file, you can replace <code>--pipeline</code> with the configuration file save path to make the configuration file take effect. For example, if the configuration file save path is <code>./ocr.yaml</code>, just execute:</p>
+<pre><code class="language-bash">paddlex --pipeline ./ocr.yaml --input general_ocr_002.png
+</code></pre>
+<p>Parameters such as <code>--model</code>, <code>--device</code> do not need to be specified, and the parameters in the configuration file will be used. If parameters are still specified, the specified parameters will prevail.</p></details>
 
 <b>💻 Python Script Experience</b>
 

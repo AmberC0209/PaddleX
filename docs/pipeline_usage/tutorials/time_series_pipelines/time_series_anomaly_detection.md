@@ -12,8 +12,7 @@
 
 
 
-<details>
-   <summary> 👉模型列表详情</summary>
+<details><summary> 👉模型列表详情</summary>
 
 <table>
 <thead>
@@ -64,9 +63,7 @@
 </tbody>
 </table>
 
-<b>注：以上精度指标测量自 </b>[PSM](https://paddle-model-ecology.bj.bcebos.com/paddlex/data/ts_anomaly_examples.tar)<b> 数据集。以上所有模型 GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为8，精度类型为 FP32。</b>
-
-</details>
+<p><b>注：以上精度指标测量自 </b><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/data/ts_anomaly_examples.tar">PSM</a><b> 数据集。以上所有模型 GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为8，精度类型为 FP32。</b></p></details>
 
 
 ## 2. 快速开始
@@ -100,26 +97,17 @@ paddlex --pipeline ts_ad --input ts_ad.csv --device gpu:0
 
 在执行上述 Python 脚本时，加载的是默认的时序异常检测产线配置文件，若您需要自定义配置文件，可执行如下命令获取：
 
-<details>
-   <summary> 👉点击展开</summary>
+<details><summary> 👉点击展开</summary>
 
-```
-paddlex --get_pipeline_config ts_ad
-```
-执行后，时序异常检测产线配置文件将被保存在当前路径。若您希望自定义保存位置，可执行如下命令（假设自定义保存位置为 `./my_path` ）：
-
-```
-paddlex --get_pipeline_config ts_ad --save_path ./my_path
-```
-
-获取产线配置文件后，可将` --pipeline` 替换为配置文件保存路径，即可使配置文件生效。例如，若配置文件保存路径为 `./ts_ad.yaml`，只需执行：
-
-```bash
-paddlex --pipeline ./ts_ad.yaml --input ts_ad.cs --device gpu:0
-```
-其中，`--model`、`--device` 等参数无需指定，将使用配置文件中的参数。若依然指定了参数，将以指定的参数为准。
-
-</details>
+<pre><code>paddlex --get_pipeline_config ts_ad
+</code></pre>
+<p>执行后，时序异常检测产线配置文件将被保存在当前路径。若您希望自定义保存位置，可执行如下命令（假设自定义保存位置为 <code>./my_path</code> ）：</p>
+<pre><code>paddlex --get_pipeline_config ts_ad --save_path ./my_path
+</code></pre>
+<p>获取产线配置文件后，可将<code>--pipeline</code> 替换为配置文件保存路径，即可使配置文件生效。例如，若配置文件保存路径为 <code>./ts_ad.yaml</code>，只需执行：</p>
+<pre><code class="language-bash">paddlex --pipeline ./ts_ad.yaml --input ts_ad.cs --device gpu:0
+</code></pre>
+<p>其中，<code>--model</code>、<code>--device</code> 等参数无需指定，将使用配置文件中的参数。若依然指定了参数，将以指定的参数为准。</p></details>
 
 运行后，得到的结果为：
 
@@ -280,14 +268,13 @@ for res in output:
 
 下面是API参考和多语言服务调用示例：
 
-<details>
-<summary>API参考</summary>
+<details><summary>API参考</summary>
 
-对于服务提供的所有操作：
-
-- 响应体以及POST请求的请求体均为JSON数据（JSON对象）。
-- 当请求处理成功时，响应状态码为`200`，响应体的属性如下：
-
+<p>对于服务提供的所有操作：</p>
+<ul>
+<li>响应体以及POST请求的请求体均为JSON数据（JSON对象）。</li>
+<li>当请求处理成功时，响应状态码为<code>200</code>，响应体的属性如下：</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -310,10 +297,10 @@ for res in output:
 </tbody>
 </table>
 
-    响应体还可能有`result`属性，类型为`object`，其中存储操作结果信息。
-
-- 当请求处理未成功时，响应体的属性如下：
-
+<p>响应体还可能有<code>result</code>属性，类型为<code>object</code>，其中存储操作结果信息。</p>
+<ul>
+<li>当请求处理未成功时，响应体的属性如下：</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -336,16 +323,15 @@ for res in output:
 </tbody>
 </table>
 
-服务提供的操作如下：
-
-- <b>`infer`</b>
-
-    进行时序异常检测。
-
-    `POST /time-series-anomaly-detection`
-
-    - 请求体的属性如下：
-
+<p>服务提供的操作如下：</p>
+<ul>
+<li><b><code>infer</code></b></li>
+</ul>
+<p>进行时序异常检测。</p>
+<p><code>POST /time-series-anomaly-detection</code></p>
+<ul>
+<li>请求体的属性如下：</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -365,8 +351,9 @@ for res in output:
 </tbody>
 </table>
 
-    - 请求处理成功时，响应体的`result`具有如下属性：
-
+<ul>
+<li>请求处理成功时，响应体的<code>result</code>具有如下属性：</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -384,66 +371,57 @@ for res in output:
 </tbody>
 </table>
 
-        `result`示例如下：
+<p><code>result</code>示例如下：</p>
+<pre><code class="language-json">{
+&quot;csv&quot;: &quot;xxxxxx&quot;
+}
+</code></pre></details>
 
-        ```json
-        {
-          "csv": "xxxxxx"
-        }
-        ```
-
-</details>
-
-<details>
-<summary>多语言调用服务示例</summary>
+<details><summary>多语言调用服务示例</summary>
 
 <details>
 <summary>Python</summary>
 
-```python
-import base64
+
+<pre><code class="language-python">import base64
 import requests
 
-API_URL = "http://localhost:8080/time-series-anomaly-detection" # 服务URL
-csv_path = "./test.csv"
-output_csv_path = "./out.csv"
+API_URL = &quot;http://localhost:8080/time-series-anomaly-detection&quot; # 服务URL
+csv_path = &quot;./test.csv&quot;
+output_csv_path = &quot;./out.csv&quot;
 
 # 对本地图像进行Base64编码
-with open(csv_path, "rb") as file:
+with open(csv_path, &quot;rb&quot;) as file:
     csv_bytes = file.read()
-    csv_data = base64.b64encode(csv_bytes).decode("ascii")
+    csv_data = base64.b64encode(csv_bytes).decode(&quot;ascii&quot;)
 
-payload = {"csv": csv_data}
+payload = {&quot;csv&quot;: csv_data}
 
 # 调用API
 response = requests.post(API_URL, json=payload)
 
 # 处理接口返回数据
 assert response.status_code == 200
-result = response.json()["result"]
-with open(output_csv_path, "wb") as f:
-    f.write(base64.b64decode(result["csv"]))
-print(f"Output time-series data saved at  {output_csv_path}")
-```
+result = response.json()[&quot;result&quot;]
+with open(output_csv_path, &quot;wb&quot;) as f:
+    f.write(base64.b64decode(result[&quot;csv&quot;]))
+print(f&quot;Output time-series data saved at  {output_csv_path}&quot;)
+</code></pre></details>
 
-</details>
+<details><summary>C++</summary>
 
-<details>
-<summary>C++</summary>
-
-```cpp
-#include <iostream>
-#include "cpp-httplib/httplib.h" // https://github.com/Huiyicc/cpp-httplib
-#include "nlohmann/json.hpp" // https://github.com/nlohmann/json
-#include "base64.hpp" // https://github.com/tobiaslocker/base64
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &quot;cpp-httplib/httplib.h&quot; // https://github.com/Huiyicc/cpp-httplib
+#include &quot;nlohmann/json.hpp&quot; // https://github.com/nlohmann/json
+#include &quot;base64.hpp&quot; // https://github.com/tobiaslocker/base64
 
 int main() {
-    httplib::Client client("localhost:8080");
-    const std::string csvPath = "./test.csv";
-    const std::string outputCsvPath = "./out.csv";
+    httplib::Client client(&quot;localhost:8080&quot;);
+    const std::string csvPath = &quot;./test.csv&quot;;
+    const std::string outputCsvPath = &quot;./out.csv&quot;;
 
     httplib::Headers headers = {
-        {"Content-Type", "application/json"}
+        {&quot;Content-Type&quot;, &quot;application/json&quot;}
     };
 
     // 进行Base64编码
@@ -451,54 +429,50 @@ int main() {
     std::streamsize size = file.tellg();
     file.seekg(0, std::ios::beg);
 
-    std::vector<char> buffer(size);
+    std::vector&lt;char&gt; buffer(size);
     if (!file.read(buffer.data(), size)) {
-        std::cerr << "Error reading file." << std::endl;
+        std::cerr &lt;&lt; &quot;Error reading file.&quot; &lt;&lt; std::endl;
         return 1;
     }
-    std::string bufferStr(reinterpret_cast<const char*>(buffer.data()), buffer.size());
+    std::string bufferStr(reinterpret_cast&lt;const char*&gt;(buffer.data()), buffer.size());
     std::string encodedCsv = base64::to_base64(bufferStr);
 
     nlohmann::json jsonObj;
-    jsonObj["csv"] = encodedCsv;
+    jsonObj[&quot;csv&quot;] = encodedCsv;
     std::string body = jsonObj.dump();
 
     // 调用API
-    auto response = client.Post("/time-series-anomaly-detection", headers, body, "application/json");
+    auto response = client.Post(&quot;/time-series-anomaly-detection&quot;, headers, body, &quot;application/json&quot;);
     // 处理接口返回数据
-    if (response && response->status == 200) {
-        nlohmann::json jsonResponse = nlohmann::json::parse(response->body);
-        auto result = jsonResponse["result"];
+    if (response &amp;&amp; response-&gt;status == 200) {
+        nlohmann::json jsonResponse = nlohmann::json::parse(response-&gt;body);
+        auto result = jsonResponse[&quot;result&quot;];
 
         // 保存数据
-        encodedCsv = result["csv"];
+        encodedCsv = result[&quot;csv&quot;];
         decodedString = base64::from_base64(encodedCsv);
-        std::vector<unsigned char> decodedCsv(decodedString.begin(), decodedString.end());
+        std::vector&lt;unsigned char&gt; decodedCsv(decodedString.begin(), decodedString.end());
         std::ofstream outputCsv(outputCsvPath, std::ios::binary | std::ios::out);
         if (outputCsv.is_open()) {
-            outputCsv.write(reinterpret_cast<char*>(decodedCsv.data()), decodedCsv.size());
+            outputCsv.write(reinterpret_cast&lt;char*&gt;(decodedCsv.data()), decodedCsv.size());
             outputCsv.close();
-            std::cout << "Output time-series data saved at " << outputCsvPath << std::endl;
+            std::cout &lt;&lt; &quot;Output time-series data saved at &quot; &lt;&lt; outputCsvPath &lt;&lt; std::endl;
         } else {
-            std::cerr << "Unable to open file for writing: " << outputCsvPath << std::endl;
+            std::cerr &lt;&lt; &quot;Unable to open file for writing: &quot; &lt;&lt; outputCsvPath &lt;&lt; std::endl;
         }
     } else {
-        std::cout << "Failed to send HTTP request." << std::endl;
-        std::cout << response->body << std::endl;
+        std::cout &lt;&lt; &quot;Failed to send HTTP request.&quot; &lt;&lt; std::endl;
+        std::cout &lt;&lt; response-&gt;body &lt;&lt; std::endl;
         return 1;
     }
 
     return 0;
 }
-```
+</code></pre></details>
 
-</details>
+<details><summary>Java</summary>
 
-<details>
-<summary>Java</summary>
-
-```java
-import okhttp3.*;
+<pre><code class="language-java">import okhttp3.*;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
@@ -510,9 +484,9 @@ import java.util.Base64;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        String API_URL = "http://localhost:8080/time-series-anomaly-detection";
-        String csvPath = "./test.csv";
-        String outputCsvPath = "./out.csv";
+        String API_URL = &quot;http://localhost:8080/time-series-anomaly-detection&quot;;
+        String csvPath = &quot;./test.csv&quot;;
+        String outputCsvPath = &quot;./out.csv&quot;;
 
         // 对本地csv进行Base64编码
         File file = new File(csvPath);
@@ -521,11 +495,11 @@ public class Main {
 
         ObjectMapper objectMapper = new ObjectMapper();
         ObjectNode params = objectMapper.createObjectNode();
-        params.put("csv", csvData);
+        params.put(&quot;csv&quot;, csvData);
 
         // 创建 OkHttpClient 实例
         OkHttpClient client = new OkHttpClient();
-        MediaType JSON = MediaType.Companion.get("application/json; charset=utf-8");
+        MediaType JSON = MediaType.Companion.get(&quot;application/json; charset=utf-8&quot;);
         RequestBody body = RequestBody.Companion.create(params.toString(), JSON);
         Request request = new Request.Builder()
                 .url(API_URL)
@@ -537,71 +511,67 @@ public class Main {
             if (response.isSuccessful()) {
                 String responseBody = response.body().string();
                 JsonNode resultNode = objectMapper.readTree(responseBody);
-                JsonNode result = resultNode.get("result");
+                JsonNode result = resultNode.get(&quot;result&quot;);
 
                 // 保存返回的数据
-                String base64Csv = result.get("csv").asText();
+                String base64Csv = result.get(&quot;csv&quot;).asText();
                 byte[] csvBytes = Base64.getDecoder().decode(base64Csv);
                 try (FileOutputStream fos = new FileOutputStream(outputCsvPath)) {
                     fos.write(csvBytes);
                 }
-                System.out.println("Output time-series data saved at " + outputCsvPath);
+                System.out.println(&quot;Output time-series data saved at &quot; + outputCsvPath);
             } else {
-                System.err.println("Request failed with code: " + response.code());
+                System.err.println(&quot;Request failed with code: &quot; + response.code());
             }
         }
     }
 }
-```
+</code></pre></details>
 
-</details>
+<details><summary>Go</summary>
 
-<details>
-<summary>Go</summary>
-
-```go
-package main
+<pre><code class="language-go">package main
 
 import (
-    "bytes"
-    "encoding/base64"
-    "encoding/json"
-    "fmt"
-    "io/ioutil"
-    "net/http"
+    &quot;bytes&quot;
+    &quot;encoding/base64&quot;
+    &quot;encoding/json&quot;
+    &quot;fmt&quot;
+    &quot;io/ioutil&quot;
+    &quot;net/http&quot;
 )
 
 func main() {
-    API_URL := "http://localhost:8080/time-series-anomaly-detection"
-    csvPath := "./test.csv";
-    outputCsvPath := "./out.csv";
+    API_URL := &quot;http://localhost:8080/time-series-anomaly-detection&quot;
+    csvPath := &quot;./test.csv&quot;;
+    outputCsvPath := &quot;./out.csv&quot;;
 
     // 读取csv文件并进行Base64编码
     csvBytes, err := ioutil.ReadFile(csvPath)
     if err != nil {
-        fmt.Println("Error reading csv file:", err)
+        fmt.Println(&quot;Error reading csv file:&quot;, err)
         return
     }
     csvData := base64.StdEncoding.EncodeToString(csvBytes)
 
-    payload := map[string]string{"csv": csvData} // Base64编码的文件内容
+    payload := map[string]string{&quot;csv&quot;: csvData} // Base64编码的文件内容
     payloadBytes, err := json.Marshal(payload)
     if err != nil {
-        fmt.Println("Error marshaling payload:", err)
+        fmt.Println(&quot;Error marshaling payload:&quot;, err)
         return
     }
 
     // 调用API
-    client := &http.Client{}
-    req, err := http.NewRequest("POST", API_URL, bytes.NewBuffer(payloadBytes))
+    client := &amp;http.Client{}
+    req, err := http.NewRequest(&quot;POST&quot;, API_URL, bytes.NewBuffer(payloadBytes))
     if err != nil {
-        fmt.Println("Error creating request:", err)
+        fmt.Println(&quot;Error creating request:&quot;, err)
         return
     }
 
     res, err := client.Do(req)
     if err != nil {
-        fmt.Println("Error sending request:", err)
+        fmt.Println(&quot;Error sending request:&quot;, err)
         return
     }
     defer res.Body.Close()
@@ -609,43 +579,39 @@ func main() {
     // 处理返回数据
     body, err := ioutil.ReadAll(res.Body)
     if err != nil {
-        fmt.Println("Error reading response body:", err)
+        fmt.Println(&quot;Error reading response body:&quot;, err)
         return
     }
     type Response struct {
         Result struct {
-            Csv string `json:"csv"`
-        } `json:"result"`
+            Csv string `json:&quot;csv&quot;`
+        } `json:&quot;result&quot;`
     }
     var respData Response
-    err = json.Unmarshal([]byte(string(body)), &respData)
+    err = json.Unmarshal([]byte(string(body)), &amp;respData)
     if err != nil {
-        fmt.Println("Error unmarshaling response body:", err)
+        fmt.Println(&quot;Error unmarshaling response body:&quot;, err)
         return
     }
 
     // 将Base64编码的csv数据解码并保存为文件
     outputCsvData, err := base64.StdEncoding.DecodeString(respData.Result.Csv)
     if err != nil {
-        fmt.Println("Error decoding base64 csv data:", err)
+        fmt.Println(&quot;Error decoding base64 csv data:&quot;, err)
         return
     }
     err = ioutil.WriteFile(outputCsvPath, outputCsvData, 0644)
     if err != nil {
-        fmt.Println("Error writing csv to file:", err)
+        fmt.Println(&quot;Error writing csv to file:&quot;, err)
         return
     }
-    fmt.Printf("Output time-series data saved at %s.csv", outputCsvPath)
+    fmt.Printf(&quot;Output time-series data saved at %s.csv&quot;, outputCsvPath)
 }
-```
+</code></pre></details>
 
-</details>
+<details><summary>C#</summary>
 
-<details>
-<summary>C#</summary>
-
-```csharp
-using System;
+<pre><code class="language-csharp">using System;
 using System.IO;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -655,9 +621,9 @@ using Newtonsoft.Json.Linq;
 
 class Program
 {
-    static readonly string API_URL = "http://localhost:8080/time-series-anomaly-detection";
-    static readonly string csvPath = "./test.csv";
-    static readonly string outputCsvPath = "./out.csv";
+    static readonly string API_URL = &quot;http://localhost:8080/time-series-anomaly-detection&quot;;
+    static readonly string csvPath = &quot;./test.csv&quot;;
+    static readonly string outputCsvPath = &quot;./out.csv&quot;;
 
     static async Task Main(string[] args)
     {
@@ -667,8 +633,8 @@ class Program
         byte[] csvBytes = File.ReadAllBytes(csvPath);
         string csvData = Convert.ToBase64String(csvBytes);
 
-        var payload = new JObject{ { "csv", csvData } }; // Base64编码的文件内容
-        var content = new StringContent(payload.ToString(), Encoding.UTF8, "application/json");
+        var payload = new JObject{ { &quot;csv&quot;, csvData } }; // Base64编码的文件内容
+        var content = new StringContent(payload.ToString(), Encoding.UTF8, &quot;application/json&quot;);
 
         // 调用API
         HttpResponseMessage response = await httpClient.PostAsync(API_URL, content);
@@ -679,26 +645,22 @@ class Program
         JObject jsonResponse = JObject.Parse(responseBody);
 
         // 保存csv文件
-        string base64Csv = jsonResponse["result"]["csv"].ToString();
+        string base64Csv = jsonResponse[&quot;result&quot;][&quot;csv&quot;].ToString();
         byte[] outputCsvBytes = Convert.FromBase64String(base64Csv);
         File.WriteAllBytes(outputCsvPath, outputCsvBytes);
-        Console.WriteLine($"Output time-series data saved at {outputCsvPath}");
+        Console.WriteLine($&quot;Output time-series data saved at {outputCsvPath}&quot;);
     }
 }
-```
+</code></pre></details>
 
-</details>
+<details><summary>Node.js</summary>
 
-<details>
-<summary>Node.js</summary>
-
-```js
-const axios = require('axios');
+<pre><code class="language-js">const axios = require('axios');
 const fs = require('fs');
 
 const API_URL = 'http://localhost:8080/time-series-anomaly-detection'
-const csvPath = "./test.csv";
-const outputCsvPath = "./out.csv";
+const csvPath = &quot;./test.csv&quot;;
+const outputCsvPath = &quot;./out.csv&quot;;
 
 let config = {
    method: 'POST',
@@ -716,36 +678,32 @@ function encodeFileToBase64(filePath) {
 }
 
 axios.request(config)
-.then((response) => {
-    const result = response.data["result"];
+.then((response) =&gt; {
+    const result = response.data[&quot;result&quot;];
 
     // 保存csv文件
-    const csvBuffer = Buffer.from(result["csv"], 'base64');
-    fs.writeFile(outputCsvPath, csvBuffer, (err) => {
+    const csvBuffer = Buffer.from(result[&quot;csv&quot;], 'base64');
+    fs.writeFile(outputCsvPath, csvBuffer, (err) =&gt; {
       if (err) throw err;
       console.log(`Output time-series data saved at ${outputCsvPath}`);
     });
 })
-.catch((error) => {
+.catch((error) =&gt; {
   console.log(error);
 });
-```
+</code></pre></details>
 
-</details>
+<details><summary>PHP</summary>
 
-<details>
-<summary>PHP</summary>
+<pre><code class="language-php">&lt;?php
 
-```php
-<?php
-
-$API_URL = "http://localhost:8080/time-series-anomaly-detection"; // 服务URL
-$csv_path = "./test.csv";
-$output_csv_path = "./out.csv";
+$API_URL = &quot;http://localhost:8080/time-series-anomaly-detection&quot;; // 服务URL
+$csv_path = &quot;./test.csv&quot;;
+$output_csv_path = &quot;./out.csv&quot;;
 
 // 对本地csv文件进行Base64编码
 $csv_data = base64_encode(file_get_contents($csv_path));
-$payload = array("csv" => $csv_data); // Base64编码的文件内容
+$payload = array(&quot;csv&quot; =&gt; $csv_data); // Base64编码的文件内容
 
 // 调用API
 $ch = curl_init($API_URL);
@@ -756,15 +714,13 @@ $response = curl_exec($ch);
 curl_close($ch);
 
 // 处理接口返回数据
-$result = json_decode($response, true)["result"];
+$result = json_decode($response, true)[&quot;result&quot;];
 
-file_put_contents($output_csv_path, base64_decode($result["csv"]));
-echo "Output time-series data saved at " . $output_csv_path . "\n";
+file_put_contents($output_csv_path, base64_decode($result[&quot;csv&quot;]));
+echo &quot;Output time-series data saved at &quot; . $output_csv_path . &quot;\n&quot;;
 
-?>
-```
-
-</details>
+?&gt;
+</code></pre></details>
 </details>
 <br/>
 

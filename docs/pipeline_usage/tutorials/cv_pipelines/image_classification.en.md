@@ -9,607 +9,604 @@ Image classification is a technique that assigns images to predefined categories
 
 <b>The General Image Classification Pipeline includes an image classification module. If you prioritize model accuracy, choose a model with higher accuracy. If you prioritize inference speed, select a model with faster inference. If you prioritize model storage size, choose a model with a smaller storage size.</b>
 
-<details>
-   <summary> 👉Details of Model List</summary>
+<details><summary> 👉Details of Model List</summary>
 
 <table>
-  <tr>
-    <th>Model</th>
-    <th>Top-1 Accuracy (%)</th>
-    <th>GPU Inference Time (ms)</th>
-    <th>CPU Inference Time (ms)</th>
-    <th>Model Size (M)</th>
-    <th>Description</th>
-  </tr>
 <tr>
-    <td>CLIP_vit_base_patch16_224</td>
-    <td>85.36</td>
-    <td>13.1957</td>
-    <td>285.493</td>
-    <td >306.5 M</td>
-    <td rowspan="2">CLIP is an image classification model based on the correlation between vision and language. It adopts contrastive learning and pre-training methods to achieve unsupervised or weakly supervised image classification, especially suitable for large-scale datasets. By mapping images and texts into the same representation space, the model learns general features, exhibiting good generalization ability and interpretability. With relatively good training errors, it performs well in many downstream tasks.</td>
-  </tr>
-  <tr>
-    <td>CLIP_vit_large_patch14_224</td>
-    <td>88.1</td>
-    <td>51.1284</td>
-    <td>1131.28</td>
-    <td>1.04 G</td>
-  </tr>
-  <tr>
-    <td>ConvNeXt_base_224</td>
-    <td>83.84</td>
-    <td>12.8473</td>
-    <td>1513.87</td>
-    <td>313.9 M</td>
-    <td rowspan="6">The ConvNeXt series of models were proposed by Meta in 2022, based on the CNN architecture. This series of models builds upon ResNet, incorporating the advantages of SwinTransformer, including training strategies and network structure optimization ideas, to improve the pure CNN architecture network. It explores the performance limits of convolutional neural networks. The ConvNeXt series of models possesses many advantages of convolutional neural networks, including high inference efficiency and ease of migration to downstream tasks.</td>
-  </tr>
-  <tr>
-    <td>ConvNeXt_base_384</td>
-    <td>84.90</td>
-    <td>31.7607</td>
-    <td>3967.05</td>
-    <td>313.9 M</td>
-  </tr>
-  <tr>
-    <td>ConvNeXt_large_224</td>
-    <td>84.26</td>
-    <td>26.8103</td>
-    <td>2463.56</td>
-    <td>700.7 M</td>
-  </tr>
-  <tr>
-    <td>ConvNeXt_large_384</td>
-    <td>85.27</td>
-    <td>66.4058</td>
-    <td>6598.92</td>
-    <td>700.7 M</td>
-  </tr>
-  <tr>
-    <td>ConvNeXt_small</td>
-    <td>83.13</td>
-    <td>9.74075</td>
-    <td>1127.6</td>
-    <td>178.0 M</td>
-  </tr>
-  <tr>
-    <td>ConvNeXt_tiny</td>
-    <td>82.03</td>
-    <td>5.48923</td>
-    <td>672.559</td>
-    <td>104.1 M</td>
-  </tr>
-  <tr>
-    <td>FasterNet-L</td>
-    <td>83.5</td>
-    <td>23.4415</td>
-    <td>-</td>
-    <td>357.1 M</td>
-    <td rowspan="6">FasterNet is a neural network designed to improve runtime speed. Its key improvements are as follows:<br>
-      1. Re-examined popular operators and found that low FLOPS mainly stem from frequent memory accesses, especially in depthwise convolutions;<br>
-      2. Proposed Partial Convolution (PConv) to extract image features more efficiently by reducing redundant computations and memory accesses;<br>
-      3. Launched the FasterNet series of models based on PConv, a new design scheme that achieves significantly higher runtime speeds on various devices without compromising model task performance.</td>
-  </tr>
-  <tr>
-    <td>FasterNet-M</td>
-    <td>83.0</td>
-    <td>21.8936</td>
-    <td>-</td>
-    <td>204.6 M</td>
-  </tr>
-  <tr>
-    <td>FasterNet-S</td>
-    <td>81.3</td>
-    <td>13.0409</td>
-    <td>-</td>
-    <td>119.3 M</td>
-  </tr>
-  <tr>
-    <td>FasterNet-T0</td>
-    <td>71.9</td>
-    <td>12.2432</td>
-    <td>-</td>
-    <td>15.1 M</td>
-  </tr>
-  <tr>
-    <td>FasterNet-T1</td>
-    <td>75.9</td>
-    <td>11.3562</td>
-    <td>-</td>
-    <td>29.2 M</td>
-  </tr>
-  <tr>
-    <td>FasterNet-T2</td>
-    <td>79.1</td>
-    <td>10.703</td>
-    <td>-</td>
-    <td>57.4 M</td>
-  </tr>
-  <tr>
-    <td>MobileNetV1_x0_5</td>
-    <td>63.5</td>
-    <td>1.86754</td>
-    <td>7.48297</td>
-    <td>4.8 M</td>
-    <td rowspan="4">MobileNetV1 is a network released by Google in 2017 for mobile devices or embedded devices. This network decomposes traditional convolution operations into depthwise separable convolutions, which are a combination of Depthwise convolution and Pointwise convolution. Compared to traditional convolutional networks, this combination can significantly reduce the number of parameters and computations. Additionally, this network can be used for image classification and other vision tasks.</td>
-  </tr>
-  <tr>
-    <td>MobileNetV1_x0_25</td>
-    <td>51.4</td>
-    <td>1.83478</td>
-    <td>4.83674</td>
-    <td>1.8 M</td>
-  </tr>
-  <tr>
-    <td>MobileNetV1_x0_75</td>
-    <td>68.8</td>
-    <td>2.57903</td>
-    <td>10.6343</td>
-    <td>9.3 M</td>
-  </tr>
-  <tr>
-    <td>MobileNetV1_x1_0</td>
-    <td>71.0</td>
-    <td>2.78781</td>
-    <td>13.98</td>
-    <td>15.2 M</td>
-  </tr>
-  <tr>
-    <td>MobileNetV2_x0_5</td>
-    <td>65.0</td>
-    <td>4.94234</td>
-    <td>11.1629</td>
-    <td>7.1 M</td>
-    <td rowspan="5">MobileNetV2 is a lightweight network proposed by Google following MobileNetV1. Compared to MobileNetV1, MobileNetV2 introduces Linear bottlenecks and Inverted residual blocks as the basic structure of the network. By stacking these basic modules extensively, the network structure of MobileNetV2 is formed. Finally, it achieves higher classification accuracy with only half the FLOPs of MobileNetV1.</td>
-  </tr>
-  <tr>
-    <td>MobileNetV2_x0_25</td>
-    <td>53.2</td>
-    <td>4.50856</td>
-    <td>9.40991</td>
-    <td>5.5 M</td>
-  </tr>
-  <tr>
-    <td>MobileNetV2_x1_0</td>
-    <td>72.2</td>
-    <td>6.12159</td>
-    <td>16.0442</td>
-    <td>12.6 M</td>
-  </tr>
-  <tr>
-    <td>MobileNetV2_x1_5</td>
-    <td>74.1</td>
-    <td>6.28385</td>
-    <td>22.5129</td>
-    <td>25.0 M</td>
-  </tr>
-  <tr>
-    <td>MobileNetV2_x2_0</td>
-    <td>75.2</td>
-    <td>6.12888</td>
-    <td>30.8612</td>
-    <td>41.2 M</td>
-  </tr>
-  <tr>
-    <td>MobileNetV3_large_x0_5</td>
-    <td>69.2</td>
-    <td>6.31302</td>
-    <td>14.5588</td>
-    <td>9.6 M</td>
-    <td rowspan="10">MobileNetV3 is a NAS-based lightweight network proposed by Google in 2019. To further enhance performance, relu and sigmoid activation functions are replaced with hard_swish and hard_sigmoid activation functions, respectively. Additionally, some improvement strategies specifically designed to reduce network computations are introduced.</td>
-  </tr>
-  <tr>
-    <td>MobileNetV3_large_x0_35</td>
-    <td>64.3</td>
-    <td>5.76207</td>
-    <td>13.9041</td>
-    <td>7.5 M</td>
-  </tr>
-  <tr>
-    <td>MobileNetV3_large_x0_75</td>
-    <td>73.1</td>
-    <td>8.41737</td>
-    <td>16.9506</td>
-    <td>14.0 M</td>
-  </tr>
-  <tr>
-    <td>MobileNetV3_large_x1_0</td>
-    <td>75.3</td>
-    <td>8.64112</td>
-    <td>19.1614</td>
-    <td>19.5 M</td>
-  </tr>
-  <tr>
-    <td>MobileNetV3_large_x1_25</td>
-    <td>76.4</td>
-    <td>8.73358</td>
-    <td>22.1296</td>
-    <td>26.5 M</td>
-  </tr>
-  <tr>
-    <td>MobileNetV3_small_x0_5</td>
-    <td>59.2</td>
-    <td>5.16721</td>
-    <td>11.2688</td>
-    <td>6.8 M</td>
-  </tr>
-  <tr>
-    <td>MobileNetV3_small_x0_35</td>
-    <td>53.0</td>
-    <td>5.22053</td>
-    <td>11.0055</td>
-    <td>6.0 M</td>
-  </tr>
-  <tr>
-    <td>MobileNetV3_small_x0_75</td>
-    <td>66.0</td>
-    <td>5.39831</td>
-    <td>12.8313</td>
-    <td>8.5 M</td>
-  </tr>
-  <tr>
-    <td>MobileNetV3_small_x1_0</td>
-    <td>68.2</td>
-    <td>6.00993</td>
-    <td>12.9598</td>
-    <td>10.5 M</td>
-  </tr>
-  <tr>
-    <td>MobileNetV3_small_x1_25</td>
-    <td>70.7</td>
-    <td>6.9589</td>
-    <td>14.3995</td>
-    <td>13.0 M</td>
-  </tr>
-  <tr>
-    <td>MobileNetV4_conv_large</td>
-    <td>83.4</td>
-    <td>12.5485</td>
-    <td>51.6453</td>
-    <td>125.2 M</td>
-    <td rowspan="5">MobileNetV4 is an efficient architecture specifically designed for mobile devices. Its core lies in the introduction of the UIB (Universal Inverted Bottleneck) module, a unified and flexible structure that integrates IB (Inverted Bottleneck), ConvNeXt, FFN (Feed Forward Network), and the latest ExtraDW (Extra Depthwise) module. Alongside UIB, Mobile MQA, a customized attention block for mobile accelerators, was also introduced, achieving up to 39% significant acceleration. Furthermore, MobileNetV4 introduces a novel Neural Architecture Search (NAS) scheme to enhance the effectiveness of the search process.</td>
-  </tr>
-  <tr>
-    <td>MobileNetV4_conv_medium</td>
-    <td>79.9</td>
-    <td>9.65509</td>
-    <td>26.6157</td>
-    <td>37.6 M</td>
-  </tr>
-  <tr>
-    <td>MobileNetV4_conv_small</td>
-    <td>74.6</td>
-    <td>5.24172</td>
-    <td>11.0893</td>
-    <td>14.7 M</td>
-  </tr>
-  <tr>
-    <td>MobileNetV4_hybrid_large</td>
-    <td>83.8</td>
-    <td>20.0726</td>
-    <td>213.769</td>
-    <td>145.1 M</td>
-  </tr>
-  <tr>
-    <td>MobileNetV4_hybrid_medium</td>
-    <td>80.5</td>
-    <td>19.7543</td>
-    <td>62.2624</td>
-    <td>42.9 M</td>
-  </tr>
-  <tr>
-    <td>PP-HGNet_base</td>
-    <td>85.0</td>
-    <td>14.2969</td>
-    <td>327.114</td>
-    <td>249.4 M</td>
-    <td rowspan="3">PP-HGNet (High Performance GPU Net) is a high-performance backbone network developed by Baidu PaddlePaddle's vision team, tailored for GPU platforms. This network combines the fundamentals of VOVNet with learnable downsampling layers (LDS Layer), incorporating the advantages of models such as ResNet_vd and PPHGNet. On GPU platforms, this model achieves higher accuracy compared to other SOTA models at the same speed. Specifically, it outperforms ResNet34-0 by 3.8 percentage points and ResNet50-0 by 2.4 percentage points. Under the same SLSD conditions, it ultimately surpasses ResNet50-D by 4.7 percentage points. Additionally, at the same level of accuracy, its inference speed significantly exceeds that of mainstream Vision Transformers.</td>
-  </tr>
-  <tr>
-    <td>PP-HGNet_small</td>
-    <td>81.51</td>
-    <td>5.50661</td>
-    <td>119.041</td>
-    <td>86.5 M</td>
-  </tr>
-  <tr>
-    <td>PP-HGNet_tiny</td>
-    <td>79.83</td>
-    <td>5.22006</td>
-    <td>69.396</td>
-    <td>52.4 M</td>
-  </tr>
-  <tr>
-    <td>PP-HGNetV2-B0</td>
-    <td>77.77</td>
-    <td>6.53694</td>
-    <td>23.352</td>
-    <td>21.4 M</td>
-    <td rowspan="7">PP-HGNetV2 (High Performance GPU Network V2) is the next-generation version of Baidu PaddlePaddle's PP-HGNet, featuring further optimizations and improvements upon its predecessor. It pushes the limits of NVIDIA's "Accuracy-Latency Balance," significantly outperforming other models with similar inference speeds in terms of accuracy. It demonstrates strong performance across various label classification and evaluation scenarios.</td>
-  </tr>
-  <tr>
-    <td>PP-HGNetV2-B1</td>
-    <td>79.18</td>
-    <td>6.56034</td>
-    <td>27.3099</td>
-    <td>22.6 M</td>
-  </tr>
-  <tr>
-    <td>PP-HGNetV2-B2</td>
-    <td>81.74</td>
-    <td>9.60494</td>
-    <td>43.1219</td>
-    <td>39.9 M</td>
-  </tr>
-  <tr>
-    <td>PP-HGNetV2-B3</td>
-    <td>82.98</td>
-    <td>11.0042</td>
-    <td>55.1367</td>
-    <td>57.9 M</td>
-  </tr>
-  <tr>
-    <td>PP-HGNetV2-B4</td>
-    <td>83.57</td>
-    <td>9.66407</td>
-    <td>54.2462</td>
-    <td>70.4 M</td>
-  </tr>
-  <tr>
-    <td>PP-HGNetV2-B5</td>
-    <td>84.75</td>
-    <td>15.7091</td>
-    <td>115.926</td>
-    <td>140.8 M</td>
-  </tr>
-  <tr>
-    <td>PP-HGNetV2-B6</td>
-    <td>86.30</td>
-    <td>21.226</td>
-    <td>255.279</td>
-    <td>268.4 M</td>
-  </tr>
-  <tr>
-    <td>PP-LCNet_x0_5</td>
-    <td>63.14</td>
-    <td>3.67722</td>
-    <td>6.66857</td>
-    <td>6.7 M</td>
-    <td rowspan="8">PP-LCNet is a lightweight backbone network developed by Baidu PaddlePaddle's vision team. It enhances model performance without increasing inference time, significantly surpassing other lightweight SOTA models.</td>
-  </tr>
-  <tr>
-    <td>PP-LCNet_x0_25</td>
-    <td>51.86</td>
-    <td>2.65341</td>
-    <td>5.81357</td>
-    <td>5.5 M</td>
-  </tr>
-  <tr>
-    <td>PP-LCNet_x0_35</td>
-    <td>58.09</td>
-    <td>2.7212</td>
-    <td>6.28944</td>
-    <td>5.9 M</td>
-  </tr>
-  <tr>
-    <td>PP-LCNet_x0_75</td>
-    <td>68.18</td>
-    <td>3.91032</td>
-    <td>8.06953</td>
-    <td>8.4 M</td>
-  </tr>
-  <tr>
-    <td>PP-LCNet_x1_0</td>
-    <td>71.32</td>
-    <td>3.84845</td>
-    <td>9.23735</td>
-    <td>10.5 M</td>
-  </tr>
-  <tr>
-    <td>PP-LCNet_x1_5</td>
-    <td>73.71</td>
-    <td>3.97666</td>
-    <td>12.3457</td>
-    <td>16.0 M</td>
-  </tr>
-  <tr>
-    <td>PP-LCNet_x2_0</td>
-    <td>75.18</td>
-    <td>4.07556</td>
-    <td>16.2752</td>
-    <td>23.2 M</td>
-  </tr>
-     <tr>
-    <td>PP-LCNet_x2_5</td>
-    <td>76.60</td>
-    <td>4.06028</td>
-    <td>21.5063</td>
-    <td>32.1 M</td>
-  </tr>
-  <tr>
+<th>Model</th>
+<th>Top-1 Accuracy (%)</th>
+<th>GPU Inference Time (ms)</th>
+<th>CPU Inference Time (ms)</th>
+<th>Model Size (M)</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>CLIP_vit_base_patch16_224</td>
+<td>85.36</td>
+<td>13.1957</td>
+<td>285.493</td>
+<td >306.5 M</td>
+<td rowspan="2">CLIP is an image classification model based on the correlation between vision and language. It adopts contrastive learning and pre-training methods to achieve unsupervised or weakly supervised image classification, especially suitable for large-scale datasets. By mapping images and texts into the same representation space, the model learns general features, exhibiting good generalization ability and interpretability. With relatively good training errors, it performs well in many downstream tasks.</td>
+</tr>
+<tr>
+<td>CLIP_vit_large_patch14_224</td>
+<td>88.1</td>
+<td>51.1284</td>
+<td>1131.28</td>
+<td>1.04 G</td>
+</tr>
+<tr>
+<td>ConvNeXt_base_224</td>
+<td>83.84</td>
+<td>12.8473</td>
+<td>1513.87</td>
+<td>313.9 M</td>
+<td rowspan="6">The ConvNeXt series of models were proposed by Meta in 2022, based on the CNN architecture. This series of models builds upon ResNet, incorporating the advantages of SwinTransformer, including training strategies and network structure optimization ideas, to improve the pure CNN architecture network. It explores the performance limits of convolutional neural networks. The ConvNeXt series of models possesses many advantages of convolutional neural networks, including high inference efficiency and ease of migration to downstream tasks.</td>
+</tr>
+<tr>
+<td>ConvNeXt_base_384</td>
+<td>84.90</td>
+<td>31.7607</td>
+<td>3967.05</td>
+<td>313.9 M</td>
+</tr>
+<tr>
+<td>ConvNeXt_large_224</td>
+<td>84.26</td>
+<td>26.8103</td>
+<td>2463.56</td>
+<td>700.7 M</td>
+</tr>
+<tr>
+<td>ConvNeXt_large_384</td>
+<td>85.27</td>
+<td>66.4058</td>
+<td>6598.92</td>
+<td>700.7 M</td>
+</tr>
+<tr>
+<td>ConvNeXt_small</td>
+<td>83.13</td>
+<td>9.74075</td>
+<td>1127.6</td>
+<td>178.0 M</td>
+</tr>
+<tr>
+<td>ConvNeXt_tiny</td>
+<td>82.03</td>
+<td>5.48923</td>
+<td>672.559</td>
+<td>104.1 M</td>
+</tr>
+<tr>
+<td>FasterNet-L</td>
+<td>83.5</td>
+<td>23.4415</td>
+<td>-</td>
+<td>357.1 M</td>
+<td rowspan="6">FasterNet is a neural network designed to improve runtime speed. Its key improvements are as follows:<br>
+1. Re-examined popular operators and found that low FLOPS mainly stem from frequent memory accesses, especially in depthwise convolutions;<br>
+2. Proposed Partial Convolution (PConv) to extract image features more efficiently by reducing redundant computations and memory accesses;<br>
+3. Launched the FasterNet series of models based on PConv, a new design scheme that achieves significantly higher runtime speeds on various devices without compromising model task performance.</td>
+</tr>
+<tr>
+<td>FasterNet-M</td>
+<td>83.0</td>
+<td>21.8936</td>
+<td>-</td>
+<td>204.6 M</td>
+</tr>
+<tr>
+<td>FasterNet-S</td>
+<td>81.3</td>
+<td>13.0409</td>
+<td>-</td>
+<td>119.3 M</td>
+</tr>
+<tr>
+<td>FasterNet-T0</td>
+<td>71.9</td>
+<td>12.2432</td>
+<td>-</td>
+<td>15.1 M</td>
+</tr>
+<tr>
+<td>FasterNet-T1</td>
+<td>75.9</td>
+<td>11.3562</td>
+<td>-</td>
+<td>29.2 M</td>
+</tr>
+<tr>
+<td>FasterNet-T2</td>
+<td>79.1</td>
+<td>10.703</td>
+<td>-</td>
+<td>57.4 M</td>
+</tr>
+<tr>
+<td>MobileNetV1_x0_5</td>
+<td>63.5</td>
+<td>1.86754</td>
+<td>7.48297</td>
+<td>4.8 M</td>
+<td rowspan="4">MobileNetV1 is a network released by Google in 2017 for mobile devices or embedded devices. This network decomposes traditional convolution operations into depthwise separable convolutions, which are a combination of Depthwise convolution and Pointwise convolution. Compared to traditional convolutional networks, this combination can significantly reduce the number of parameters and computations. Additionally, this network can be used for image classification and other vision tasks.</td>
+</tr>
+<tr>
+<td>MobileNetV1_x0_25</td>
+<td>51.4</td>
+<td>1.83478</td>
+<td>4.83674</td>
+<td>1.8 M</td>
+</tr>
+<tr>
+<td>MobileNetV1_x0_75</td>
+<td>68.8</td>
+<td>2.57903</td>
+<td>10.6343</td>
+<td>9.3 M</td>
+</tr>
+<tr>
+<td>MobileNetV1_x1_0</td>
+<td>71.0</td>
+<td>2.78781</td>
+<td>13.98</td>
+<td>15.2 M</td>
+</tr>
+<tr>
+<td>MobileNetV2_x0_5</td>
+<td>65.0</td>
+<td>4.94234</td>
+<td>11.1629</td>
+<td>7.1 M</td>
+<td rowspan="5">MobileNetV2 is a lightweight network proposed by Google following MobileNetV1. Compared to MobileNetV1, MobileNetV2 introduces Linear bottlenecks and Inverted residual blocks as the basic structure of the network. By stacking these basic modules extensively, the network structure of MobileNetV2 is formed. Finally, it achieves higher classification accuracy with only half the FLOPs of MobileNetV1.</td>
+</tr>
+<tr>
+<td>MobileNetV2_x0_25</td>
+<td>53.2</td>
+<td>4.50856</td>
+<td>9.40991</td>
+<td>5.5 M</td>
+</tr>
+<tr>
+<td>MobileNetV2_x1_0</td>
+<td>72.2</td>
+<td>6.12159</td>
+<td>16.0442</td>
+<td>12.6 M</td>
+</tr>
+<tr>
+<td>MobileNetV2_x1_5</td>
+<td>74.1</td>
+<td>6.28385</td>
+<td>22.5129</td>
+<td>25.0 M</td>
+</tr>
+<tr>
+<td>MobileNetV2_x2_0</td>
+<td>75.2</td>
+<td>6.12888</td>
+<td>30.8612</td>
+<td>41.2 M</td>
+</tr>
+<tr>
+<td>MobileNetV3_large_x0_5</td>
+<td>69.2</td>
+<td>6.31302</td>
+<td>14.5588</td>
+<td>9.6 M</td>
+<td rowspan="10">MobileNetV3 is a NAS-based lightweight network proposed by Google in 2019. To further enhance performance, relu and sigmoid activation functions are replaced with hard_swish and hard_sigmoid activation functions, respectively. Additionally, some improvement strategies specifically designed to reduce network computations are introduced.</td>
+</tr>
+<tr>
+<td>MobileNetV3_large_x0_35</td>
+<td>64.3</td>
+<td>5.76207</td>
+<td>13.9041</td>
+<td>7.5 M</td>
+</tr>
+<tr>
+<td>MobileNetV3_large_x0_75</td>
+<td>73.1</td>
+<td>8.41737</td>
+<td>16.9506</td>
+<td>14.0 M</td>
+</tr>
+<tr>
+<td>MobileNetV3_large_x1_0</td>
+<td>75.3</td>
+<td>8.64112</td>
+<td>19.1614</td>
+<td>19.5 M</td>
+</tr>
+<tr>
+<td>MobileNetV3_large_x1_25</td>
+<td>76.4</td>
+<td>8.73358</td>
+<td>22.1296</td>
+<td>26.5 M</td>
+</tr>
+<tr>
+<td>MobileNetV3_small_x0_5</td>
+<td>59.2</td>
+<td>5.16721</td>
+<td>11.2688</td>
+<td>6.8 M</td>
+</tr>
+<tr>
+<td>MobileNetV3_small_x0_35</td>
+<td>53.0</td>
+<td>5.22053</td>
+<td>11.0055</td>
+<td>6.0 M</td>
+</tr>
+<tr>
+<td>MobileNetV3_small_x0_75</td>
+<td>66.0</td>
+<td>5.39831</td>
+<td>12.8313</td>
+<td>8.5 M</td>
+</tr>
+<tr>
+<td>MobileNetV3_small_x1_0</td>
+<td>68.2</td>
+<td>6.00993</td>
+<td>12.9598</td>
+<td>10.5 M</td>
+</tr>
+<tr>
+<td>MobileNetV3_small_x1_25</td>
+<td>70.7</td>
+<td>6.9589</td>
+<td>14.3995</td>
+<td>13.0 M</td>
+</tr>
+<tr>
+<td>MobileNetV4_conv_large</td>
+<td>83.4</td>
+<td>12.5485</td>
+<td>51.6453</td>
+<td>125.2 M</td>
+<td rowspan="5">MobileNetV4 is an efficient architecture specifically designed for mobile devices. Its core lies in the introduction of the UIB (Universal Inverted Bottleneck) module, a unified and flexible structure that integrates IB (Inverted Bottleneck), ConvNeXt, FFN (Feed Forward Network), and the latest ExtraDW (Extra Depthwise) module. Alongside UIB, Mobile MQA, a customized attention block for mobile accelerators, was also introduced, achieving up to 39% significant acceleration. Furthermore, MobileNetV4 introduces a novel Neural Architecture Search (NAS) scheme to enhance the effectiveness of the search process.</td>
+</tr>
+<tr>
+<td>MobileNetV4_conv_medium</td>
+<td>79.9</td>
+<td>9.65509</td>
+<td>26.6157</td>
+<td>37.6 M</td>
+</tr>
+<tr>
+<td>MobileNetV4_conv_small</td>
+<td>74.6</td>
+<td>5.24172</td>
+<td>11.0893</td>
+<td>14.7 M</td>
+</tr>
+<tr>
+<td>MobileNetV4_hybrid_large</td>
+<td>83.8</td>
+<td>20.0726</td>
+<td>213.769</td>
+<td>145.1 M</td>
+</tr>
+<tr>
+<td>MobileNetV4_hybrid_medium</td>
+<td>80.5</td>
+<td>19.7543</td>
+<td>62.2624</td>
+<td>42.9 M</td>
+</tr>
+<tr>
+<td>PP-HGNet_base</td>
+<td>85.0</td>
+<td>14.2969</td>
+<td>327.114</td>
+<td>249.4 M</td>
+<td rowspan="3">PP-HGNet (High Performance GPU Net) is a high-performance backbone network developed by Baidu PaddlePaddle's vision team, tailored for GPU platforms. This network combines the fundamentals of VOVNet with learnable downsampling layers (LDS Layer), incorporating the advantages of models such as ResNet_vd and PPHGNet. On GPU platforms, this model achieves higher accuracy compared to other SOTA models at the same speed. Specifically, it outperforms ResNet34-0 by 3.8 percentage points and ResNet50-0 by 2.4 percentage points. Under the same SLSD conditions, it ultimately surpasses ResNet50-D by 4.7 percentage points. Additionally, at the same level of accuracy, its inference speed significantly exceeds that of mainstream Vision Transformers.</td>
+</tr>
+<tr>
+<td>PP-HGNet_small</td>
+<td>81.51</td>
+<td>5.50661</td>
+<td>119.041</td>
+<td>86.5 M</td>
+</tr>
+<tr>
+<td>PP-HGNet_tiny</td>
+<td>79.83</td>
+<td>5.22006</td>
+<td>69.396</td>
+<td>52.4 M</td>
+</tr>
+<tr>
+<td>PP-HGNetV2-B0</td>
+<td>77.77</td>
+<td>6.53694</td>
+<td>23.352</td>
+<td>21.4 M</td>
+<td rowspan="7">PP-HGNetV2 (High Performance GPU Network V2) is the next-generation version of Baidu PaddlePaddle's PP-HGNet, featuring further optimizations and improvements upon its predecessor. It pushes the limits of NVIDIA's "Accuracy-Latency Balance," significantly outperforming other models with similar inference speeds in terms of accuracy. It demonstrates strong performance across various label classification and evaluation scenarios.</td>
+</tr>
+<tr>
+<td>PP-HGNetV2-B1</td>
+<td>79.18</td>
+<td>6.56034</td>
+<td>27.3099</td>
+<td>22.6 M</td>
+</tr>
+<tr>
+<td>PP-HGNetV2-B2</td>
+<td>81.74</td>
+<td>9.60494</td>
+<td>43.1219</td>
+<td>39.9 M</td>
+</tr>
+<tr>
+<td>PP-HGNetV2-B3</td>
+<td>82.98</td>
+<td>11.0042</td>
+<td>55.1367</td>
+<td>57.9 M</td>
+</tr>
+<tr>
+<td>PP-HGNetV2-B4</td>
+<td>83.57</td>
+<td>9.66407</td>
+<td>54.2462</td>
+<td>70.4 M</td>
+</tr>
+<tr>
+<td>PP-HGNetV2-B5</td>
+<td>84.75</td>
+<td>15.7091</td>
+<td>115.926</td>
+<td>140.8 M</td>
+</tr>
+<tr>
+<td>PP-HGNetV2-B6</td>
+<td>86.30</td>
+<td>21.226</td>
+<td>255.279</td>
+<td>268.4 M</td>
+</tr>
+<tr>
+<td>PP-LCNet_x0_5</td>
+<td>63.14</td>
+<td>3.67722</td>
+<td>6.66857</td>
+<td>6.7 M</td>
+<td rowspan="8">PP-LCNet is a lightweight backbone network developed by Baidu PaddlePaddle's vision team. It enhances model performance without increasing inference time, significantly surpassing other lightweight SOTA models.</td>
+</tr>
+<tr>
+<td>PP-LCNet_x0_25</td>
+<td>51.86</td>
+<td>2.65341</td>
+<td>5.81357</td>
+<td>5.5 M</td>
+</tr>
+<tr>
+<td>PP-LCNet_x0_35</td>
+<td>58.09</td>
+<td>2.7212</td>
+<td>6.28944</td>
+<td>5.9 M</td>
+</tr>
+<tr>
+<td>PP-LCNet_x0_75</td>
+<td>68.18</td>
+<td>3.91032</td>
+<td>8.06953</td>
+<td>8.4 M</td>
+</tr>
+<tr>
+<td>PP-LCNet_x1_0</td>
+<td>71.32</td>
+<td>3.84845</td>
+<td>9.23735</td>
+<td>10.5 M</td>
+</tr>
+<tr>
+<td>PP-LCNet_x1_5</td>
+<td>73.71</td>
+<td>3.97666</td>
+<td>12.3457</td>
+<td>16.0 M</td>
+</tr>
+<tr>
+<td>PP-LCNet_x2_0</td>
+<td>75.18</td>
+<td>4.07556</td>
+<td>16.2752</td>
+<td>23.2 M</td>
+</tr>
+<tr>
+<td>PP-LCNet_x2_5</td>
+<td>76.60</td>
+<td>4.06028</td>
+<td>21.5063</td>
+<td>32.1 M</td>
+</tr>
+<tr>
 
-  <tr>
-    <td>PP-LCNetV2_base</td>
-    <td>77.05</td>
-    <td>5.23428</td>
-    <td>19.6005</td>
-    <td>23.7 M</td>
-    <td rowspan="3">The PP-LCNetV2 image classification model is the next-generation version of PP-LCNet, self-developed by Baidu PaddlePaddle's vision team. Based on PP-LCNet, it has undergone further optimization and improvements, primarily utilizing re-parameterization strategies to combine depthwise convolutions with varying kernel sizes and optimizing pointwise convolutions, Shortcuts, etc. Without using additional data, the PPLCNetV2_base model achieves over 77% Top-1 Accuracy on the ImageNet dataset for image classification, while maintaining an inference time of less than 4.4 ms on Intel CPU platforms.</td>
-  </tr>
-  <tr>
-    <td>PP-LCNetV2_large </td>
-    <td>78.51</td>
-    <td>6.78335</td>
-    <td>30.4378</td>
-    <td>37.3 M</td>
-  </tr>
-  <tr>
-    <td>PP-LCNetV2_small</td>
-    <td>73.97</td>
-    <td>3.89762</td>
-    <td>13.0273</td>
-    <td>14.6 M</td>
-  </tr>
+<tr>
+<td>PP-LCNetV2_base</td>
+<td>77.05</td>
+<td>5.23428</td>
+<td>19.6005</td>
+<td>23.7 M</td>
+<td rowspan="3">The PP-LCNetV2 image classification model is the next-generation version of PP-LCNet, self-developed by Baidu PaddlePaddle's vision team. Based on PP-LCNet, it has undergone further optimization and improvements, primarily utilizing re-parameterization strategies to combine depthwise convolutions with varying kernel sizes and optimizing pointwise convolutions, Shortcuts, etc. Without using additional data, the PPLCNetV2_base model achieves over 77% Top-1 Accuracy on the ImageNet dataset for image classification, while maintaining an inference time of less than 4.4 ms on Intel CPU platforms.</td>
+</tr>
+<tr>
+<td>PP-LCNetV2_large </td>
+<td>78.51</td>
+<td>6.78335</td>
+<td>30.4378</td>
+<td>37.3 M</td>
+</tr>
+<tr>
+<td>PP-LCNetV2_small</td>
+<td>73.97</td>
+<td>3.89762</td>
+<td>13.0273</td>
+<td>14.6 M</td>
+</tr>
 <tr>
 <tr>
-    <td>ResNet18_vd</td>
-    <td>72.3</td>
-    <td>3.53048</td>
-    <td>31.3014</td>
-    <td>41.5 M</td>
-    <td rowspan="11">The ResNet series of models were introduced in 2015, winning the ILSVRC2015 competition with a top-5 error rate of 3.57%. This network innovatively proposed residual structures, which are stacked to construct the ResNet network. Experiments have shown that using residual blocks can effectively improve convergence speed and accuracy.</td>
-  </tr>
-  <tr>
-    <td>ResNet18 </td>
-    <td>71.0</td>
-    <td>2.4868</td>
-    <td>27.4601</td>
-    <td>41.5 M</td>
-  </tr>
-  <tr>
-    <td>ResNet34_vd</td>
-    <td>76.0</td>
-    <td>5.60675</td>
-    <td>56.0653</td>
-    <td>77.3 M</td>
-  </tr>
-    <tr>
-    <td>ResNet34</td>
-    <td>74.6</td>
-    <td>4.16902</td>
-    <td>51.925</td>
-    <td>77.3 M</td>
-  </tr>
-  <tr>
-    <td>ResNet50_vd</td>
-    <td>79.1</td>
-    <td>10.1885</td>
-    <td>68.446</td>
-    <td>90.8 M</td>
-  </tr>
-    <tr>
-    <td>ResNet50</td>
-    <td>76.5</td>
-    <td>9.62383</td>
-    <td>64.8135</td>
-    <td>90.8 M</td>
-  </tr>
-     <tr>
-    <td>ResNet101_vd</td>
-    <td>80.2</td>
-    <td>20.0563</td>
-    <td>124.85</td>
-    <td>158.4 M</td>
-  </tr>
-     <tr>
-    <td>ResNet101</td>
-    <td>77.6</td>
-    <td>19.2297</td>
-    <td>121.006</td>
-    <td>158.4 M</td>
-  </tr>
-  <tr>
-    <td>ResNet152_vd</td>
-    <td>80.6</td>
-    <td>29.6439</td>
-    <td>181.678</td>
-    <td>214.3 M</td>
-  </tr>
-    <tr>
-    <td>ResNet152</td>
-    <td>78.3</td>
-    <td>30.0461</td>
-    <td>177.707</td>
-    <td>214.2 M</td>
-  </tr>
-     <tr>
-    <td>ResNet200_vd</td>
-    <td>80.9</td>
-    <td>39.1628</td>
-    <td>235.185</td>
-    <td>266.0 M</td>
-  </tr>
+<td>ResNet18_vd</td>
+<td>72.3</td>
+<td>3.53048</td>
+<td>31.3014</td>
+<td>41.5 M</td>
+<td rowspan="11">The ResNet series of models were introduced in 2015, winning the ILSVRC2015 competition with a top-5 error rate of 3.57%. This network innovatively proposed residual structures, which are stacked to construct the ResNet network. Experiments have shown that using residual blocks can effectively improve convergence speed and accuracy.</td>
+</tr>
 <tr>
-  <tr>
-    <td>StarNet-S1</td>
-    <td>73.6</td>
-    <td>9.895</td>
-    <td>23.0465</td>
-    <td>11.2 M</td>
-    <td rowspan="4">StarNet focuses on exploring the untapped potential of "star operations" (i.e., element-wise multiplication) in network design. It reveals that star operations can map inputs to high-dimensional, nonlinear feature spaces, a process akin to kernel tricks but without the need to expand the network size. Consequently, StarNet, a simple yet powerful prototype network, is further proposed, demonstrating exceptional performance and low latency under compact network structures and limited computational resources.</td>
-  </tr>
-  <tr>
-    <td>StarNet-S2 </td>
-    <td>74.8</td>
-    <td>7.91279</td>
-    <td>21.9571</td>
-    <td>14.3 M</td>
-  </tr>
-  <tr>
-    <td>StarNet-S3</td>
-    <td>77.0</td>
-    <td>10.7531</td>
-    <td>30.7656</td>
-    <td>22.2 M</td>
-  </tr>
-    <tr>
-    <td>StarNet-S4</td>
-    <td>79.0</td>
-    <td>15.2868</td>
-    <td>43.2497</td>
-    <td>28.9 M</td>
-  </tr>
+<td>ResNet18 </td>
+<td>71.0</td>
+<td>2.4868</td>
+<td>27.4601</td>
+<td>41.5 M</td>
+</tr>
 <tr>
-  <tr>
-    <td>SwinTransformer_base_patch4_window7_224</td>
-    <td>83.37</td>
-    <td>16.9848</td>
-    <td>383.83</td>
-    <td>310.5 M</td>
-    <td rowspan="6">SwinTransformer is a novel vision Transformer network that can serve as a general-purpose backbone for computer vision tasks. SwinTransformer consists of a hierarchical Transformer structure represented by shifted windows. Shifted windows restrict self-attention computations to non-overlapping local windows while allowing cross-window connections, thereby enhancing network performance.</td>
-  </tr>
-  <tr>
-    <td>SwinTransformer_base_patch4_window12_384</td>
-    <td>84.17</td>
-    <td>37.2855</td>
-    <td>1178.63</td>
-    <td>311.4 M</td>
-  </tr>
-  <tr>
-    <td>SwinTransformer_large_patch4_window7_224</td>
-    <td>86.19</td>
-    <td>27.5498</td>
-    <td>689.729</td>
-    <td>694.8 M</td>
-  </tr>
-    <tr>
-    <td>SwinTransformer_large_patch4_window12_384</td>
-    <td>87.06</td>
-    <td>74.1768</td>
-    <td>2105.22</td>
-    <td>696.1 M</td>
-  </tr>
-     <tr>
-    <td>SwinTransformer_small_patch4_window7_224</td>
-    <td>83.21</td>
-    <td>16.3982</td>
-    <td>285.56</td>
-    <td>175.6 M</td>
-  </tr>
-       <tr>
-    <td>SwinTransformer_tiny_patch4_window7_224</td>
-    <td>81.10</td>
-    <td>8.54846</td>
-    <td>156.306</td>
-    <td>100.1 M</td>
-  </tr>
+<td>ResNet34_vd</td>
+<td>76.0</td>
+<td>5.60675</td>
+<td>56.0653</td>
+<td>77.3 M</td>
+</tr>
+<tr>
+<td>ResNet34</td>
+<td>74.6</td>
+<td>4.16902</td>
+<td>51.925</td>
+<td>77.3 M</td>
+</tr>
+<tr>
+<td>ResNet50_vd</td>
+<td>79.1</td>
+<td>10.1885</td>
+<td>68.446</td>
+<td>90.8 M</td>
+</tr>
+<tr>
+<td>ResNet50</td>
+<td>76.5</td>
+<td>9.62383</td>
+<td>64.8135</td>
+<td>90.8 M</td>
+</tr>
+<tr>
+<td>ResNet101_vd</td>
+<td>80.2</td>
+<td>20.0563</td>
+<td>124.85</td>
+<td>158.4 M</td>
+</tr>
+<tr>
+<td>ResNet101</td>
+<td>77.6</td>
+<td>19.2297</td>
+<td>121.006</td>
+<td>158.4 M</td>
+</tr>
+<tr>
+<td>ResNet152_vd</td>
+<td>80.6</td>
+<td>29.6439</td>
+<td>181.678</td>
+<td>214.3 M</td>
+</tr>
+<tr>
+<td>ResNet152</td>
+<td>78.3</td>
+<td>30.0461</td>
+<td>177.707</td>
+<td>214.2 M</td>
+</tr>
+<tr>
+<td>ResNet200_vd</td>
+<td>80.9</td>
+<td>39.1628</td>
+<td>235.185</td>
+<td>266.0 M</td>
+</tr>
+<tr>
+<tr>
+<td>StarNet-S1</td>
+<td>73.6</td>
+<td>9.895</td>
+<td>23.0465</td>
+<td>11.2 M</td>
+<td rowspan="4">StarNet focuses on exploring the untapped potential of "star operations" (i.e., element-wise multiplication) in network design. It reveals that star operations can map inputs to high-dimensional, nonlinear feature spaces, a process akin to kernel tricks but without the need to expand the network size. Consequently, StarNet, a simple yet powerful prototype network, is further proposed, demonstrating exceptional performance and low latency under compact network structures and limited computational resources.</td>
+</tr>
+<tr>
+<td>StarNet-S2 </td>
+<td>74.8</td>
+<td>7.91279</td>
+<td>21.9571</td>
+<td>14.3 M</td>
+</tr>
+<tr>
+<td>StarNet-S3</td>
+<td>77.0</td>
+<td>10.7531</td>
+<td>30.7656</td>
+<td>22.2 M</td>
+</tr>
+<tr>
+<td>StarNet-S4</td>
+<td>79.0</td>
+<td>15.2868</td>
+<td>43.2497</td>
+<td>28.9 M</td>
+</tr>
+<tr>
+<tr>
+<td>SwinTransformer_base_patch4_window7_224</td>
+<td>83.37</td>
+<td>16.9848</td>
+<td>383.83</td>
+<td>310.5 M</td>
+<td rowspan="6">SwinTransformer is a novel vision Transformer network that can serve as a general-purpose backbone for computer vision tasks. SwinTransformer consists of a hierarchical Transformer structure represented by shifted windows. Shifted windows restrict self-attention computations to non-overlapping local windows while allowing cross-window connections, thereby enhancing network performance.</td>
+</tr>
+<tr>
+<td>SwinTransformer_base_patch4_window12_384</td>
+<td>84.17</td>
+<td>37.2855</td>
+<td>1178.63</td>
+<td>311.4 M</td>
+</tr>
+<tr>
+<td>SwinTransformer_large_patch4_window7_224</td>
+<td>86.19</td>
+<td>27.5498</td>
+<td>689.729</td>
+<td>694.8 M</td>
+</tr>
+<tr>
+<td>SwinTransformer_large_patch4_window12_384</td>
+<td>87.06</td>
+<td>74.1768</td>
+<td>2105.22</td>
+<td>696.1 M</td>
+</tr>
+<tr>
+<td>SwinTransformer_small_patch4_window7_224</td>
+<td>83.21</td>
+<td>16.3982</td>
+<td>285.56</td>
+<td>175.6 M</td>
+</tr>
+<tr>
+<td>SwinTransformer_tiny_patch4_window7_224</td>
+<td>81.10</td>
+<td>8.54846</td>
+<td>156.306</td>
+<td>100.1 M</td>
+</tr>
 
 
 </table>
 
-
-<b>Note: The above accuracy metrics refer to Top-1 Accuracy on the [ImageNet-1k](https://www.image-net.org/index.php) validation set. </b><b>All model GPU inference times are based on NVIDIA Tesla T4 machines, with precision type FP32. CPU inference speeds are based on Intel® Xeon® Gold 5117 CPU @ 2.00GHz, with 8 threads and precision type FP32.</b>
-</details>
+<p><b>Note: The above accuracy metrics refer to Top-1 Accuracy on the <a href="https://www.image-net.org/index.php">ImageNet-1k</a> validation set. </b><b>All model GPU inference times are based on NVIDIA Tesla T4 machines, with precision type FP32. CPU inference speeds are based on Intel® Xeon® Gold 5117 CPU @ 2.00GHz, with 8 threads and precision type FP32.</b></p></details>
 
 ## 2. Quick Start
 PaddleX provides pre-trained model pipelines that can be quickly experienced. You can experience the effects of the General Image Classification Pipeline online or locally using command line or Python.
@@ -640,26 +637,17 @@ Parameter Explanation:
 
 When executing the above command, the default image classification pipeline configuration file is loaded. If you need to customize the configuration file, you can execute the following command to obtain it:
 
-<details>
-   <summary> 👉Click to expand</summary>
+<details><summary> 👉Click to expand</summary>
 
-```bash
-paddlex --get_pipeline_config image_classification
-```
-After execution, the image classification pipeline configuration file will be saved in the current path. If you wish to customize the save location, you can execute the following command (assuming the custom save location is `./my_path`):
-
-```bash
-paddlex --get_pipeline_config image_classification --save_path ./my_path
-```
-
-After obtaining the pipeline configuration file, replace `--pipeline` with the configuration file's save path to make the configuration file take effect. For example, if the configuration file's save path is `./image_classification.yaml`, simply execute:
-
-```bash
-paddlex --pipeline ./image_classification.yaml --input general_image_classification_001.jpg --device gpu:0
-```
-Here, parameters such as `--model` and `--device` do not need to be specified, as they will use the parameters in the configuration file. If you still specify parameters, the specified parameters will take precedence.
-
-</details>
+<pre><code class="language-bash">paddlex --get_pipeline_config image_classification
+</code></pre>
+<p>After execution, the image classification pipeline configuration file will be saved in the current path. If you wish to customize the save location, you can execute the following command (assuming the custom save location is <code>./my_path</code>):</p>
+<pre><code class="language-bash">paddlex --get_pipeline_config image_classification --save_path ./my_path
+</code></pre>
+<p>After obtaining the pipeline configuration file, replace <code>--pipeline</code> with the configuration file's save path to make the configuration file take effect. For example, if the configuration file's save path is <code>./image_classification.yaml</code>, simply execute:</p>
+<pre><code class="language-bash">paddlex --pipeline ./image_classification.yaml --input general_image_classification_001.jpg --device gpu:0
+</code></pre>
+<p>Here, parameters such as <code>--model</code> and <code>--device</code> do not need to be specified, as they will use the parameters in the configuration file. If you still specify parameters, the specified parameters will take precedence.</p></details>
 
 After running, the result will be:
 
@@ -817,14 +805,13 @@ Additionally, PaddleX provides three other deployment methods, detailed as follo
 
 Below are the API references and multi-language service invocation examples:
 
-<details>
-<summary>API Reference</summary>
+<details><summary>API Reference</summary>
 
-For all operations provided by the service:
-
-- Both the response body and the request body for POST requests are JSON data (JSON objects).
-- When the request is processed successfully, the response status code is `200`, and the response body properties are as follows:
-
+<p>For all operations provided by the service:</p>
+<ul>
+<li>Both the response body and the request body for POST requests are JSON data (JSON objects).</li>
+<li>When the request is processed successfully, the response status code is <code>200</code>, and the response body properties are as follows:</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -847,10 +834,10 @@ For all operations provided by the service:
 </tbody>
 </table>
 
-    The response body may also have a `result` property of type `object`, which stores the operation result information.
-
-- When the request is not processed successfully, the response body properties are as follows:
-
+<p>The response body may also have a <code>result</code> property of type <code>object</code>, which stores the operation result information.</p>
+<ul>
+<li>When the request is not processed successfully, the response body properties are as follows:</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -873,16 +860,15 @@ For all operations provided by the service:
 </tbody>
 </table>
 
-Operations provided by the service are as follows:
-
-- <b>`infer`</b>
-
-    Classify images.
-
-    `POST /image-classification`
-
-    - The request body properties are as follows:
-
+<p>Operations provided by the service are as follows:</p>
+<ul>
+<li><b><code>infer</code></b></li>
+</ul>
+<p>Classify images.</p>
+<p><code>POST /image-classification</code></p>
+<ul>
+<li>The request body properties are as follows:</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -908,8 +894,7 @@ Operations provided by the service are as follows:
 </tbody>
 </table>
 
-        The properties of `inferenceParams` are as follows:
-
+<p>The properties of <code>inferenceParams</code> are as follows:</p>
 <table>
 <thead>
 <tr>
@@ -929,8 +914,9 @@ Operations provided by the service are as follows:
 </tbody>
 </table>
 
-    - When the request is processed successfully, the `result` of the response body has the following properties:
-
+<ul>
+<li>When the request is processed successfully, the <code>result</code> of the response body has the following properties:</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -953,8 +939,7 @@ Operations provided by the service are as follows:
 </tbody>
 </table>
 
-        Each element in `categories` is an `object` with the following properties:
-
+<p>Each element in <code>categories</code> is an <code>object</code> with the following properties:</p>
 <table>
 <thead>
 <tr>
@@ -982,127 +967,114 @@ Operations provided by the service are as follows:
 </tbody>
 </table>
 
-        An example of `result` is as follows:
+<p>An example of <code>result</code> is as follows:</p>
+<pre><code class="language-json">{
+&quot;categories&quot;: [
+{
+&quot;id&quot;: 5,
+&quot;name&quot;: &quot;Rabbit&quot;,
+&quot;score&quot;: 0.93
+}
+],
+&quot;image&quot;: &quot;xxxxxx&quot;
+}
+</code></pre></details>
 
-        ```json
-        {
-          "categories": [
-            {
-              "id": 5,
-              "name": "Rabbit",
-              "score": 0.93
-            }
-          ],
-          "image": "xxxxxx"
-        }
-        ```
-
-</details>
-
-<details>
-<summary>Multi-Language Service Invocation Examples</summary>
+<details><summary>Multi-Language Service Invocation Examples</summary>
 
 <details>
 <summary>Python</summary>
 
-```python
-import base64
+
+<pre><code class="language-python">import base64
 import requests
 
-API_URL = "http://localhost:8080/image-classification"
-image_path = "./demo.jpg"
-output_image_path = "./out.jpg"
+API_URL = &quot;http://localhost:8080/image-classification&quot;
+image_path = &quot;./demo.jpg&quot;
+output_image_path = &quot;./out.jpg&quot;
 
-with open(image_path, "rb") as file:
+with open(image_path, &quot;rb&quot;) as file:
     image_bytes = file.read()
-    image_data = base64.b64encode(image_bytes).decode("ascii")
+    image_data = base64.b64encode(image_bytes).decode(&quot;ascii&quot;)
 
-payload = {"image": image_data}
+payload = {&quot;image&quot;: image_data}
 
 response = requests.post(API_URL, json=payload)
 
 assert response.status_code == 200
-result = response.json()["result"]
-with open(output_image_path, "wb") as file:
-    file.write(base64.b64decode(result["image"]))
-print(f"Output image saved at {output_image_path}")
-print("\nCategories:")
-print(result["categories"])
-```
+result = response.json()[&quot;result&quot;]
+with open(output_image_path, &quot;wb&quot;) as file:
+    file.write(base64.b64decode(result[&quot;image&quot;]))
+print(f&quot;Output image saved at {output_image_path}&quot;)
+print(&quot;\nCategories:&quot;)
+print(result[&quot;categories&quot;])
+</code></pre></details>
+<details><summary>C++</summary>
 
-</details>
-<details>
-<summary>C++</summary>
-
-```cpp
-#include <iostream>
-#include "cpp-httplib/httplib.h" // https://github.com/Huiyicc/cpp-httplib
-#include "nlohmann/json.hpp" // https://github.com/nlohmann/json
-#include "base64.hpp" // https://github.com/tobiaslocker/base64
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &quot;cpp-httplib/httplib.h&quot; // https://github.com/Huiyicc/cpp-httplib
+#include &quot;nlohmann/json.hpp&quot; // https://github.com/nlohmann/json
+#include &quot;base64.hpp&quot; // https://github.com/tobiaslocker/base64
 
 int main() {
-    httplib::Client client("localhost:8080");
-    const std::string imagePath = "./demo.jpg";
-    const std::string outputImagePath = "./out.jpg";
+    httplib::Client client(&quot;localhost:8080&quot;);
+    const std::string imagePath = &quot;./demo.jpg&quot;;
+    const std::string outputImagePath = &quot;./out.jpg&quot;;
 
     httplib::Headers headers = {
-        {"Content-Type", "application/json"}
+        {&quot;Content-Type&quot;, &quot;application/json&quot;}
     };
 
     std::ifstream file(imagePath, std::ios::binary | std::ios::ate);
     std::streamsize size = file.tellg();
     file.seekg(0, std::ios::beg);
 
-    std::vector<char> buffer(size);
+    std::vector&lt;char&gt; buffer(size);
     if (!file.read(buffer.data(), size)) {
-        std::cerr << "Error reading file." << std::endl;
+        std::cerr &lt;&lt; &quot;Error reading file.&quot; &lt;&lt; std::endl;
         return 1;
     }
-    std::string bufferStr(reinterpret_cast<const char*>(buffer.data()), buffer.size());
+    std::string bufferStr(reinterpret_cast&lt;const char*&gt;(buffer.data()), buffer.size());
     std::string encodedImage = base64::to_base64(bufferStr);
 
     nlohmann::json jsonObj;
-    jsonObj["image"] = encodedImage;
+    jsonObj[&quot;image&quot;] = encodedImage;
     std::string body = jsonObj.dump();
 
-    auto response = client.Post("/image-classification", headers, body, "application/json");
-    if (response && response->status == 200) {
-        nlohmann::json jsonResponse = nlohmann::json::parse(response->body);
-        auto result = jsonResponse["result"];
+    auto response = client.Post(&quot;/image-classification&quot;, headers, body, &quot;application/json&quot;);
+    if (response &amp;&amp; response-&gt;status == 200) {
+        nlohmann::json jsonResponse = nlohmann::json::parse(response-&gt;body);
+        auto result = jsonResponse[&quot;result&quot;];
 
-        encodedImage = result["image"];
+        encodedImage = result[&quot;image&quot;];
         std::string decodedString = base64::from_base64(encodedImage);
-        std::vector<unsigned char> decodedImage(decodedString.begin(), decodedString.end());
+        std::vector&lt;unsigned char&gt; decodedImage(decodedString.begin(), decodedString.end());
         std::ofstream outputImage(outPutImagePath, std::ios::binary | std::ios::out);
         if (outputImage.is_open()) {
-            outputImage.write(reinterpret_cast<char*>(decodedImage.data()), decodedImage.size());
+            outputImage.write(reinterpret_cast&lt;char*&gt;(decodedImage.data()), decodedImage.size());
             outputImage.close();
-            std::cout << "Output image saved at " << outPutImagePath << std::endl;
+            std::cout &lt;&lt; &quot;Output image saved at &quot; &lt;&lt; outPutImagePath &lt;&lt; std::endl;
         } else {
-            std::cerr << "Unable to open file for writing: " << outPutImagePath << std::endl;
+            std::cerr &lt;&lt; &quot;Unable to open file for writing: &quot; &lt;&lt; outPutImagePath &lt;&lt; std::endl;
         }
 
-        auto categories = result["categories"];
-        std::cout << "\nCategories:" << std::endl;
-        for (const auto& category : categories) {
-            std::cout << category << std::endl;
+        auto categories = result[&quot;categories&quot;];
+        std::cout &lt;&lt; &quot;\nCategories:&quot; &lt;&lt; std::endl;
+        for (const auto&amp; category : categories) {
+            std::cout &lt;&lt; category &lt;&lt; std::endl;
         }
     } else {
-        std::cout << "Failed to send HTTP request." << std::endl;
+        std::cout &lt;&lt; &quot;Failed to send HTTP request.&quot; &lt;&lt; std::endl;
         return 1;
     }
 
     return 0;
 }
-```
+</code></pre></details>
 
-</details>
+<details><summary>Java</summary>
 
-<details>
-<summary>Java</summary>
-
-```java
-import okhttp3.*;
+<pre><code class="language-java">import okhttp3.*;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
@@ -1114,9 +1086,9 @@ import java.util.Base64;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        String API_URL = "http://localhost:8080/image-classification";
-        String imagePath = "./demo.jpg";
-        String outputImagePath = "./out.jpg";
+        String API_URL = &quot;http://localhost:8080/image-classification&quot;;
+        String imagePath = &quot;./demo.jpg&quot;;
+        String outputImagePath = &quot;./out.jpg&quot;;
 
         File file = new File(imagePath);
         byte[] fileContent = java.nio.file.Files.readAllBytes(file.toPath());
@@ -1124,10 +1096,10 @@ public class Main {
 
         ObjectMapper objectMapper = new ObjectMapper();
         ObjectNode params = objectMapper.createObjectNode();
-        params.put("image", imageData);
+        params.put(&quot;image&quot;, imageData);
 
         OkHttpClient client = new OkHttpClient();
-        MediaType JSON = MediaType.Companion.get("application/json; charset=utf-8");
+        MediaType JSON = MediaType.Companion.get(&quot;application/json; charset=utf-8&quot;);
         RequestBody body = RequestBody.Companion.create(params.toString(), JSON);
         Request request = new Request.Builder()
                 .url(API_URL)
@@ -1138,117 +1110,109 @@ public class Main {
             if (response.isSuccessful()) {
                 String responseBody = response.body().string();
                 JsonNode resultNode = objectMapper.readTree(responseBody);
-                JsonNode result = resultNode.get("result");
-                String base64Image = result.get("image").asText();
-                JsonNode categories = result.get("categories");
+                JsonNode result = resultNode.get(&quot;result&quot;);
+                String base64Image = result.get(&quot;image&quot;).asText();
+                JsonNode categories = result.get(&quot;categories&quot;);
 
                 byte[] imageBytes = Base64.getDecoder().decode(base64Image);
                 try (FileOutputStream fos = new FileOutputStream(outputImagePath)) {
                     fos.write(imageBytes);
                 }
-                System.out.println("Output image saved at " + outputImagePath);
-                System.out.println("\nCategories: " + categories.toString());
+                System.out.println(&quot;Output image saved at &quot; + outputImagePath);
+                System.out.println(&quot;\nCategories: &quot; + categories.toString());
             } else {
-                System.err.println("Request failed with code: " + response.code());
+                System.err.println(&quot;Request failed with code: &quot; + response.code());
             }
         }
     }
 }
-```
+</code></pre></details>
 
-</details>
+<details><summary>Go</summary>
 
-<details>
-<summary>Go</summary>
-
-```go
-package main
+<pre><code class="language-go">package main
 
 import (
-    "bytes"
-    "encoding/base64"
-    "encoding/json"
-    "fmt"
-    "io/ioutil"
-    "net/http"
+    &quot;bytes&quot;
+    &quot;encoding/base64&quot;
+    &quot;encoding/json&quot;
+    &quot;fmt&quot;
+    &quot;io/ioutil&quot;
+    &quot;net/http&quot;
 )
 
 func main() {
-    API_URL := "http://localhost:8080/image-classification"
-    imagePath := "./demo.jpg"
-    outputImagePath := "./out.jpg"
+    API_URL := &quot;http://localhost:8080/image-classification&quot;
+    imagePath := &quot;./demo.jpg&quot;
+    outputImagePath := &quot;./out.jpg&quot;
 
     imageBytes, err := ioutil.ReadFile(imagePath)
     if err != nil {
-        fmt.Println("Error reading image file:", err)
+        fmt.Println(&quot;Error reading image file:&quot;, err)
         return
     }
     imageData := base64.StdEncoding.EncodeToString(imageBytes)
 
-    payload := map[string]string{"image": imageData}
+    payload := map[string]string{&quot;image&quot;: imageData}
     payloadBytes, err := json.Marshal(payload)
     if err != nil {
-        fmt.Println("Error marshaling payload:", err)
+        fmt.Println(&quot;Error marshaling payload:&quot;, err)
         return
     }
 
-    client := &http.Client{}
-    req, err := http.NewRequest("POST", API_URL, bytes.NewBuffer(payloadBytes))
+    client := &amp;http.Client{}
+    req, err := http.NewRequest(&quot;POST&quot;, API_URL, bytes.NewBuffer(payloadBytes))
     if err != nil {
-        fmt.Println("Error creating request:", err)
+        fmt.Println(&quot;Error creating request:&quot;, err)
         return
     }
 
     res, err := client.Do(req)
     if err != nil {
-        fmt.Println("Error sending request:", err)
+        fmt.Println(&quot;Error sending request:&quot;, err)
         return
     }
     defer res.Body.Close()
 
     body, err := ioutil.ReadAll(res.Body)
     if err != nil {
-        fmt.Println("Error reading response body:", err)
+        fmt.Println(&quot;Error reading response body:&quot;, err)
         return
     }
     type Response struct {
         Result struct {
-            Image      string   `json:"image"`
-            Categories []map[string]interface{} `json:"categories"`
-        } `json:"result"`
+            Image      string   `json:&quot;image&quot;`
+            Categories []map[string]interface{} `json:&quot;categories&quot;`
+        } `json:&quot;result&quot;`
     }
     var respData Response
-    err = json.Unmarshal([]byte(string(body)), &respData)
+    err = json.Unmarshal([]byte(string(body)), &amp;respData)
     if err != nil {
-        fmt.Println("Error unmarshaling response body:", err)
+        fmt.Println(&quot;Error unmarshaling response body:&quot;, err)
         return
     }
 
     outputImageData, err := base64.StdEncoding.DecodeString(respData.Result.Image)
     if err != nil {
-        fmt.Println("Error decoding base64 image data:", err)
+        fmt.Println(&quot;Error decoding base64 image data:&quot;, err)
         return
     }
     err = ioutil.WriteFile(outputImagePath, outputImageData, 0644)
     if err != nil {
-        fmt.Println("Error writing image to file:", err)
+        fmt.Println(&quot;Error writing image to file:&quot;, err)
         return
     }
-    fmt.Printf("Image saved at %s.jpg\n", outputImagePath)
-    fmt.Println("\nCategories:")
+    fmt.Printf(&quot;Image saved at %s.jpg\n&quot;, outputImagePath)
+    fmt.Println(&quot;\nCategories:&quot;)
     for _, category := range respData.Result.Categories {
         fmt.Println(category)
     }
 }
-```
+</code></pre></details>
 
-</details>
+<details><summary>C#</summary>
 
-<details>
-<summary>C#</summary>
-
-```csharp
-using System;
+<pre><code class="language-csharp">using System;
 using System.IO;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -1258,9 +1222,9 @@ using Newtonsoft.Json.Linq;
 
 class Program
 {
-    static readonly string API_URL = "http://localhost:8080/image-classification";
-    static readonly string imagePath = "./demo.jpg";
-    static readonly string outputImagePath = "./out.jpg";
+    static readonly string API_URL = &quot;http://localhost:8080/image-classification&quot;;
+    static readonly string imagePath = &quot;./demo.jpg&quot;;
+    static readonly string outputImagePath = &quot;./out.jpg&quot;;
 
     static async Task Main(string[] args)
     {
@@ -1269,8 +1233,8 @@ class Program
         byte[] imageBytes = File.ReadAllBytes(imagePath);
         string image_data = Convert.ToBase64String(imageBytes);
 
-        var payload = new JObject{ { "image", image_data } };
-        var content = new StringContent(payload.ToString(), Encoding.UTF8, "application/json");
+        var payload = new JObject{ { &quot;image&quot;, image_data } };
+        var content = new StringContent(payload.ToString(), Encoding.UTF8, &quot;application/json&quot;);
 
         HttpResponseMessage response = await httpClient.PostAsync(API_URL, content);
         response.EnsureSuccessStatusCode();
@@ -1278,29 +1242,25 @@ class Program
         string responseBody = await response.Content.ReadAsStringAsync();
         JObject jsonResponse = JObject.Parse(responseBody);
 
-        string base64Image = jsonResponse["result"]["image"].ToString();
+        string base64Image = jsonResponse[&quot;result&quot;][&quot;image&quot;].ToString();
         byte[] outputImageBytes = Convert.FromBase64String(base64Image);
 
         File.WriteAllBytes(outputImagePath, outputImageBytes);
-        Console.WriteLine($"Output image saved at {outputImagePath}");
-        Console.WriteLine("\nCategories:");
-        Console.WriteLine(jsonResponse["result"]["categories"].ToString());
+        Console.WriteLine($&quot;Output image saved at {outputImagePath}&quot;);
+        Console.WriteLine(&quot;\nCategories:&quot;);
+        Console.WriteLine(jsonResponse[&quot;result&quot;][&quot;categories&quot;].ToString());
     }
 }
-```
+</code></pre></details>
 
-</details>
+<details><summary>Node.js</summary>
 
-<details>
-<summary>Node.js</summary>
-
-```js
-const axios = require('axios');
+<pre><code class="language-js">const axios = require('axios');
 const fs = require('fs');
 
 const API_URL = 'http://localhost:8080/image-classification'
 const imagePath = './demo.jpg'
-const outputImagePath = "./out.jpg";
+const outputImagePath = &quot;./out.jpg&quot;;
 
 let config = {
    method: 'POST',
@@ -1317,34 +1277,30 @@ function encodeImageToBase64(filePath) {
 }
 
 axios.request(config)
-.then((response) => {
-    const result = response.data["result"];
-    const imageBuffer = Buffer.from(result["image"], 'base64');
-    fs.writeFile(outputImagePath, imageBuffer, (err) => {
+.then((response) =&gt; {
+    const result = response.data[&quot;result&quot;];
+    const imageBuffer = Buffer.from(result[&quot;image&quot;], 'base64');
+    fs.writeFile(outputImagePath, imageBuffer, (err) =&gt; {
       if (err) throw err;
       console.log(`Output image saved at ${outputImagePath}`);
     });
-    console.log("\nCategories:");
-    console.log(result["categories"]);
+    console.log(&quot;\nCategories:&quot;);
+    console.log(result[&quot;categories&quot;]);
 })
-.catch((error) => {
+.catch((error) =&gt; {
   console.log(error);
 });
-```
+</code></pre></details>
+<details><summary>PHP</summary>
 
-</details>
-<details>
-<summary>PHP</summary>
+<pre><code class="language-php">&lt;?php
 
-```php
-<?php
-
-$API_URL = "http://localhost:8080/image-classification";
-$image_path = "./demo.jpg";
-$output_image_path = "./out.jpg";
+$API_URL = &quot;http://localhost:8080/image-classification&quot;;
+$image_path = &quot;./demo.jpg&quot;;
+$output_image_path = &quot;./out.jpg&quot;;
 
 $image_data = base64_encode(file_get_contents($image_path));
-$payload = array("image" => $image_data);
+$payload = array(&quot;image&quot; =&gt; $image_data);
 
 $ch = curl_init($API_URL);
 curl_setopt($ch, CURLOPT_POST, true);
@@ -1353,15 +1309,13 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $response = curl_exec($ch);
 curl_close($ch);
 
-$result = json_decode($response, true)["result"];
-file_put_contents($output_image_path, base64_decode($result["image"]));
-echo "Output image saved at " . $output_image_path . "\n";
-echo "\nCategories:\n";
-print_r($result["categories"]);
-?>
-```
-
-</details>
+$result = json_decode($response, true)[&quot;result&quot;];
+file_put_contents($output_image_path, base64_decode($result[&quot;image&quot;]));
+echo &quot;Output image saved at &quot; . $output_image_path . &quot;\n&quot;;
+echo &quot;\nCategories:\n&quot;;
+print_r($result[&quot;categories&quot;]);
+?&gt;
+</code></pre></details>
 
 </details>
 <br/>

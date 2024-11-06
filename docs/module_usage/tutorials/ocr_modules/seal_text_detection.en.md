@@ -89,90 +89,74 @@ python main.py -c paddlex/configs/text_detection_seal/PP-OCRv4_server_seal_det.y
 After executing the above command, PaddleX will verify the dataset and collect basic information about it. Once the command runs successfully, a message saying `Check dataset passed !` will be printed in the log. The verification results will be saved in `./output/check_dataset_result.json`, and related outputs will be stored in the `./output/check_dataset` directory, including visual examples of sample images and a histogram of sample distribution.
 
 
-<details>
-  <summary>👉 <b>Verification Result Details (click to expand)</b></summary>
+<details><summary>👉 <b>Verification Result Details (click to expand)</b></summary>
 
-The specific content of the verification result file is:
-
-```bash
-{
-  "done_flag": true,
-  "check_pass": true,
-  "attributes": {
-    "train_samples": 606,
-    "train_sample_paths": [
-      "..\/ocr_curve_det_dataset_examples\/images\/circle_Aug07834.png",
-      "..\/ocr_curve_det_dataset_examples\/images\/circle_Aug09943.png",
-      "..\/ocr_curve_det_dataset_examples\/images\/circle_Aug04079.png",
-      "..\/ocr_curve_det_dataset_examples\/images\/circle_Aug05701.png",
-      "..\/ocr_curve_det_dataset_examples\/images\/circle_Aug08324.png",
-      "..\/ocr_curve_det_dataset_examples\/images\/circle_Aug07451.png",
-      "..\/ocr_curve_det_dataset_examples\/images\/circle_Aug09562.png",
-      "..\/ocr_curve_det_dataset_examples\/images\/circle_Aug08237.png",
-      "..\/ocr_curve_det_dataset_examples\/images\/circle_Aug01788.png",
-      "..\/ocr_curve_det_dataset_examples\/images\/circle_Aug06481.png"
+<p>The specific content of the verification result file is:</p>
+<pre><code class="language-bash">{
+  &quot;done_flag&quot;: true,
+  &quot;check_pass&quot;: true,
+  &quot;attributes&quot;: {
+    &quot;train_samples&quot;: 606,
+    &quot;train_sample_paths&quot;: [
+      &quot;..\/ocr_curve_det_dataset_examples\/images\/circle_Aug07834.png&quot;,
+      &quot;..\/ocr_curve_det_dataset_examples\/images\/circle_Aug09943.png&quot;,
+      &quot;..\/ocr_curve_det_dataset_examples\/images\/circle_Aug04079.png&quot;,
+      &quot;..\/ocr_curve_det_dataset_examples\/images\/circle_Aug05701.png&quot;,
+      &quot;..\/ocr_curve_det_dataset_examples\/images\/circle_Aug08324.png&quot;,
+      &quot;..\/ocr_curve_det_dataset_examples\/images\/circle_Aug07451.png&quot;,
+      &quot;..\/ocr_curve_det_dataset_examples\/images\/circle_Aug09562.png&quot;,
+      &quot;..\/ocr_curve_det_dataset_examples\/images\/circle_Aug08237.png&quot;,
+      &quot;..\/ocr_curve_det_dataset_examples\/images\/circle_Aug01788.png&quot;,
+      &quot;..\/ocr_curve_det_dataset_examples\/images\/circle_Aug06481.png&quot;
     ],
-    "val_samples": 152,
-    "val_sample_paths": [
-      "..\/ocr_curve_det_dataset_examples\/images\/circle_Aug03724.png",
-      "..\/ocr_curve_det_dataset_examples\/images\/circle_Aug06456.png",
-      "..\/ocr_curve_det_dataset_examples\/images\/circle_Aug04029.png",
-      "..\/ocr_curve_det_dataset_examples\/images\/circle_Aug03603.png",
-      "..\/ocr_curve_det_dataset_examples\/images\/circle_Aug05454.png",
-      "..\/ocr_curve_det_dataset_examples\/images\/circle_Aug06269.png",
-      "..\/ocr_curve_det_dataset_examples\/images\/circle_Aug00624.png",
-      "..\/ocr_curve_det_dataset_examples\/images\/circle_Aug02818.png",
-      "..\/ocr_curve_det_dataset_examples\/images\/circle_Aug00538.png",
-      "..\/ocr_curve_det_dataset_examples\/images\/circle_Aug04935.png"
+    &quot;val_samples&quot;: 152,
+    &quot;val_sample_paths&quot;: [
+      &quot;..\/ocr_curve_det_dataset_examples\/images\/circle_Aug03724.png&quot;,
+      &quot;..\/ocr_curve_det_dataset_examples\/images\/circle_Aug06456.png&quot;,
+      &quot;..\/ocr_curve_det_dataset_examples\/images\/circle_Aug04029.png&quot;,
+      &quot;..\/ocr_curve_det_dataset_examples\/images\/circle_Aug03603.png&quot;,
+      &quot;..\/ocr_curve_det_dataset_examples\/images\/circle_Aug05454.png&quot;,
+      &quot;..\/ocr_curve_det_dataset_examples\/images\/circle_Aug06269.png&quot;,
+      &quot;..\/ocr_curve_det_dataset_examples\/images\/circle_Aug00624.png&quot;,
+      &quot;..\/ocr_curve_det_dataset_examples\/images\/circle_Aug02818.png&quot;,
+      &quot;..\/ocr_curve_det_dataset_examples\/images\/circle_Aug00538.png&quot;,
+      &quot;..\/ocr_curve_det_dataset_examples\/images\/circle_Aug04935.png&quot;
     ]
   },
-  "analysis": {
-    "histogram": "check_dataset\/histogram.png"
+  &quot;analysis&quot;: {
+    &quot;histogram&quot;: &quot;check_dataset\/histogram.png&quot;
   },
-  "dataset_path": ".\/ocr_curve_det_dataset_examples",
-  "show_type": "image",
-  "dataset_type": "TextDetDataset"
+  &quot;dataset_path&quot;: &quot;.\/ocr_curve_det_dataset_examples&quot;,
+  &quot;show_type&quot;: &quot;image&quot;,
+  &quot;dataset_type&quot;: &quot;TextDetDataset&quot;
 }
-```
-
-
-
-The verification results above indicate that `check_pass` being `True` means the dataset format meets the requirements. Explanations for other indicators are as follows:
-
-* `attributes.train_samples`: The number of training samples in this dataset is 606;
-* `attributes.val_samples`: The number of validation samples in this dataset is 152;
-* `attributes.train_sample_paths`: A list of relative paths to the visualization images of training samples in this dataset;
-* `attributes.val_sample_paths`: A list of relative paths to the visualization images of validation samples in this dataset;
-
-The dataset verification also analyzes the distribution of sample numbers across all classes and plots a histogram (histogram.png):
-
-<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/modules/curved_text_dec/01.png">
-
-</details>
+</code></pre>
+<p>The verification results above indicate that <code>check_pass</code> being <code>True</code> means the dataset format meets the requirements. Explanations for other indicators are as follows:</p>
+<ul>
+<li><code>attributes.train_samples</code>: The number of training samples in this dataset is 606;</li>
+<li><code>attributes.val_samples</code>: The number of validation samples in this dataset is 152;</li>
+<li><code>attributes.train_sample_paths</code>: A list of relative paths to the visualization images of training samples in this dataset;</li>
+<li><code>attributes.val_sample_paths</code>: A list of relative paths to the visualization images of validation samples in this dataset;</li>
+</ul>
+<p>The dataset verification also analyzes the distribution of sample numbers across all classes and plots a histogram (histogram.png):</p>
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/modules/curved_text_dec/01.png"></p></details>
 
 #### 4.1.3 Dataset Format Conversion/Dataset Splitting (Optional) 
-<details>
-  <summary>👉 <b>Details on Format Conversion/Dataset Splitting (Click to Expand)</b></summary>
+<details><summary>👉 <b>Details on Format Conversion/Dataset Splitting (Click to Expand)</b></summary>
 
-After completing dataset verification, you can convert the dataset format or re-split the training/validation ratio by modifying the configuration file or appending hyperparameters.
-
-<b>(1) Dataset Format Conversion</b>
-
-Seal text detection does not support data format conversion.
-
-<b>(2) Dataset Splitting</b>
-
-Parameters for dataset splitting can be set by modifying the `CheckDataset` fields in the configuration file. Example explanations for some parameters in the configuration file are as follows:
-
-* `CheckDataset`:
-  * `split`:
-    * `enable`: Whether to enable re-splitting the dataset, set to `True` to perform dataset splitting, default is `False`;
-    * `train_percent`: If re-splitting the dataset, set the percentage of the training set, which should be an integer between 0 and 100, ensuring the sum with `val_percent` is 100;
-
-For example, if you want to re-split the dataset with a 90% training set and a 10% validation set, modify the configuration file as follows:
-
-```bash
-......
+<p>After completing dataset verification, you can convert the dataset format or re-split the training/validation ratio by modifying the configuration file or appending hyperparameters.</p>
+<p><b>(1) Dataset Format Conversion</b></p>
+<p>Seal text detection does not support data format conversion.</p>
+<p><b>(2) Dataset Splitting</b></p>
+<p>Parameters for dataset splitting can be set by modifying the <code>CheckDataset</code> fields in the configuration file. Example explanations for some parameters in the configuration file are as follows:</p>
+<ul>
+<li><code>CheckDataset</code>:</li>
+<li><code>split</code>:</li>
+<li><code>enable</code>: Whether to enable re-splitting the dataset, set to <code>True</code> to perform dataset splitting, default is <code>False</code>;</li>
+<li><code>train_percent</code>: If re-splitting the dataset, set the percentage of the training set, which should be an integer between 0 and 100, ensuring the sum with <code>val_percent</code> is 100;</li>
+</ul>
+<p>For example, if you want to re-split the dataset with a 90% training set and a 10% validation set, modify the configuration file as follows:</p>
+<pre><code class="language-bash">......
 CheckDataset:
   ......
   split:
@@ -180,28 +164,21 @@ CheckDataset:
     train_percent: 90
     val_percent: 10
   ......
-```
-
-Then execute the command:
-
-```bash
-python main.py -c paddlex/configs/text_detection_seal/PP-OCRv4_server_seal_det.yaml \
+</code></pre>
+<p>Then execute the command:</p>
+<pre><code class="language-bash">python main.py -c paddlex/configs/text_detection_seal/PP-OCRv4_server_seal_det.yaml \
     -o Global.mode=check_dataset \
     -o Global.dataset_dir=./dataset/ocr_curve_det_dataset_examples
-```
-After dataset splitting, the original annotation files will be renamed to `xxx.bak` in the original path.
-
-The above parameters also support setting through appending command line arguments:
-
-```bash
-python main.py -c paddlex/configs/text_detection_seal/PP-OCRv4_server_seal_det.yaml  \
+</code></pre>
+<p>After dataset splitting, the original annotation files will be renamed to <code>xxx.bak</code> in the original path.</p>
+<p>The above parameters also support setting through appending command line arguments:</p>
+<pre><code class="language-bash">python main.py -c paddlex/configs/text_detection_seal/PP-OCRv4_server_seal_det.yaml  \
     -o Global.mode=check_dataset \
     -o Global.dataset_dir=./dataset/ocr_curve_det_dataset_examples \
     -o CheckDataset.split.enable=True \
     -o CheckDataset.split.train_percent=90 \
     -o CheckDataset.split.val_percent=10
-```
-</details>
+</code></pre></details>
 
 ### 4.2 Model Training
 
@@ -222,18 +199,21 @@ You need to follow these steps:
 Other related parameters can be set by modifying the `Global` and `Train` fields in the `.yaml` configuration file, or adjusted by appending parameters in the command line. For example, to train using the first two GPUs: `-o Global.device=gpu:0,1`; to set the number of training epochs to 10: `-o Train.epochs_iters=10`. For more modifiable parameters and their detailed explanations, refer to the [PaddleX Common Configuration Parameters Documentation](../../instructions/config_parameters_common.en.md).
 </details>
 
-<details>
-  <summary>👉 <b>More Details (Click to Expand)</b></summary>
+<details><summary>👉 <b>More Details (Click to Expand)</b></summary>
 
-* During model training, PaddleX automatically saves model weight files, with the default path being `output`. To specify a different save path, use the `-o Global.output` field in the configuration file.
-* PaddleX abstracts the concepts of dynamic graph weights and static graph weights from you. During model training, both dynamic and static graph weights are produced, and static graph weights are used by default for model inference.
-* After model training, all outputs are saved in the specified output directory (default is `./output/`), typically including:
-
-* `train_result.json`: Training result record file, including whether the training task completed successfully, produced weight metrics, and related file paths.
-* `train.log`: Training log file, recording model metric changes, loss changes, etc.
-* `config.yaml`: Training configuration file, recording the hyperparameters used for this training session.
-* `.pdparams`, `.pdema`, `.pdopt.pdstate`, `.pdiparams`, `.pdmodel`: Model weight-related files, including network parameters, optimizer, EMA, static graph network parameters, and static graph network structure.
-</details>
+<ul>
+<li>During model training, PaddleX automatically saves model weight files, with the default path being <code>output</code>. To specify a different save path, use the <code>-o Global.output</code> field in the configuration file.</li>
+<li>PaddleX abstracts the concepts of dynamic graph weights and static graph weights from you. During model training, both dynamic and static graph weights are produced, and static graph weights are used by default for model inference.</li>
+<li>
+<p>After model training, all outputs are saved in the specified output directory (default is <code>./output/</code>), typically including:</p>
+</li>
+<li>
+<p><code>train_result.json</code>: Training result record file, including whether the training task completed successfully, produced weight metrics, and related file paths.</p>
+</li>
+<li><code>train.log</code>: Training log file, recording model metric changes, loss changes, etc.</li>
+<li><code>config.yaml</code>: Training configuration file, recording the hyperparameters used for this training session.</li>
+<li><code>.pdparams</code>, <code>.pdema</code>, <code>.pdopt.pdstate</code>, <code>.pdiparams</code>, <code>.pdmodel</code>: Model weight-related files, including network parameters, optimizer, EMA, static graph network parameters, and static graph network structure.</li>
+</ul></details>
 
 ### 4.3 Model Evaluation
 After model training, you can evaluate the specified model weights on the validation set to verify model accuracy. Using PaddleX for model evaluation requires just one command:
@@ -252,16 +232,13 @@ Similar to model training, follow these steps:
 
 Other related parameters can be set by modifying the `Global` and `Evaluate` fields in the `.yaml` configuration file. For more details, refer to the [PaddleX Common Configuration Parameters Documentation](../../instructions/config_parameters_common.en.md).
 
-<details>
-  <summary>👉 <b>More Details (Click to Expand)</b></summary>
+<details><summary>👉 <b>More Details (Click to Expand)</b></summary>
 
-When evaluating the model, you need to specify the model weight file path. Each configuration file has a default weight save path. If you need to change it, simply append the command line parameter, e.g., `-o Evaluate.weight_path=./output/best_model/best_model.pdparams`.
-
-After model evaluation, the following outputs are typically produced:
-
-* `evaluate_result.json`: Records the evaluation results, specifically whether the evaluation task completed successfully and the model's evaluation metrics, including precision, recall and Hmean.
-
-</details>
+<p>When evaluating the model, you need to specify the model weight file path. Each configuration file has a default weight save path. If you need to change it, simply append the command line parameter, e.g., <code>-o Evaluate.weight_path=./output/best_model/best_model.pdparams</code>.</p>
+<p>After model evaluation, the following outputs are typically produced:</p>
+<ul>
+<li><code>evaluate_result.json</code>: Records the evaluation results, specifically whether the evaluation task completed successfully and the model's evaluation metrics, including precision, recall and Hmean.</li>
+</ul></details>
 
 ### 4.4 Model Inference and Integration
 After model training and evaluation, you can use the trained model weights for inference predictions or Python integration.

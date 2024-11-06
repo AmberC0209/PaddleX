@@ -75,92 +75,79 @@ python main.py -c paddlex/configs/doc_text_orientation/PP-LCNet_x1_0_doc_ori.yam
 
 After executing the above command, PaddleX will verify the dataset and collect basic information about it. Once the command runs successfully, a message saying `Check dataset passed !` will be printed in the log. The verification results will be saved in `./output/check_dataset_result.json`, and related outputs will be stored in the `./output/check_dataset` directory, including visual examples of sample images and a histogram of sample distribution.
 
-<details>
-  <summary>👉 <b>Verification Result Details (click to expand)</b></summary>
+<details><summary>👉 <b>Verification Result Details (click to expand)</b></summary>
 
-The specific content of the verification result file is:
-
-```bash
-{
-  "done_flag": true,
-  "check_pass": true,
-  "attributes": {
-    "label_file": "..\/..\/text_image_orientation\/label.txt",
-    "num_classes": 4,
-    "train_samples": 1553,
-    "train_sample_paths": [
-      "check_dataset\/demo_img\/img_rot270_10351.jpg",
-      "check_dataset\/demo_img\/img_rot0_3908.jpg",
-      "check_dataset\/demo_img\/img_rot180_7712.jpg",
-      "check_dataset\/demo_img\/img_rot0_7480.jpg",
-      "check_dataset\/demo_img\/img_rot270_9599.jpg",
-      "check_dataset\/demo_img\/img_rot90_10323.jpg",
-      "check_dataset\/demo_img\/img_rot90_4885.jpg",
-      "check_dataset\/demo_img\/img_rot180_3939.jpg",
-      "check_dataset\/demo_img\/img_rot90_7153.jpg",
-      "check_dataset\/demo_img\/img_rot180_1747.jpg"
+<p>The specific content of the verification result file is:</p>
+<pre><code class="language-bash">{
+  &quot;done_flag&quot;: true,
+  &quot;check_pass&quot;: true,
+  &quot;attributes&quot;: {
+    &quot;label_file&quot;: &quot;..\/..\/text_image_orientation\/label.txt&quot;,
+    &quot;num_classes&quot;: 4,
+    &quot;train_samples&quot;: 1553,
+    &quot;train_sample_paths&quot;: [
+      &quot;check_dataset\/demo_img\/img_rot270_10351.jpg&quot;,
+      &quot;check_dataset\/demo_img\/img_rot0_3908.jpg&quot;,
+      &quot;check_dataset\/demo_img\/img_rot180_7712.jpg&quot;,
+      &quot;check_dataset\/demo_img\/img_rot0_7480.jpg&quot;,
+      &quot;check_dataset\/demo_img\/img_rot270_9599.jpg&quot;,
+      &quot;check_dataset\/demo_img\/img_rot90_10323.jpg&quot;,
+      &quot;check_dataset\/demo_img\/img_rot90_4885.jpg&quot;,
+      &quot;check_dataset\/demo_img\/img_rot180_3939.jpg&quot;,
+      &quot;check_dataset\/demo_img\/img_rot90_7153.jpg&quot;,
+      &quot;check_dataset\/demo_img\/img_rot180_1747.jpg&quot;
     ],
-    "val_samples": 2593,
-    "val_sample_paths": [
-      "check_dataset\/demo_img\/img_rot270_3190.jpg",
-      "check_dataset\/demo_img\/img_rot0_10272.jpg",
-      "check_dataset\/demo_img\/img_rot0_9930.jpg",
-      "check_dataset\/demo_img\/img_rot90_918.jpg",
-      "check_dataset\/demo_img\/img_rot180_2079.jpg",
-      "check_dataset\/demo_img\/img_rot90_8574.jpg",
-      "check_dataset\/demo_img\/img_rot90_7595.jpg",
-      "check_dataset\/demo_img\/img_rot90_1751.jpg",
-      "check_dataset\/demo_img\/img_rot180_1573.jpg",
-      "check_dataset\/demo_img\/img_rot90_4401.jpg"
+    &quot;val_samples&quot;: 2593,
+    &quot;val_sample_paths&quot;: [
+      &quot;check_dataset\/demo_img\/img_rot270_3190.jpg&quot;,
+      &quot;check_dataset\/demo_img\/img_rot0_10272.jpg&quot;,
+      &quot;check_dataset\/demo_img\/img_rot0_9930.jpg&quot;,
+      &quot;check_dataset\/demo_img\/img_rot90_918.jpg&quot;,
+      &quot;check_dataset\/demo_img\/img_rot180_2079.jpg&quot;,
+      &quot;check_dataset\/demo_img\/img_rot90_8574.jpg&quot;,
+      &quot;check_dataset\/demo_img\/img_rot90_7595.jpg&quot;,
+      &quot;check_dataset\/demo_img\/img_rot90_1751.jpg&quot;,
+      &quot;check_dataset\/demo_img\/img_rot180_1573.jpg&quot;,
+      &quot;check_dataset\/demo_img\/img_rot90_4401.jpg&quot;
     ]
   },
-  "analysis": {
-    "histogram": "check_dataset\/histogram.png"
+  &quot;analysis&quot;: {
+    &quot;histogram&quot;: &quot;check_dataset\/histogram.png&quot;
   },
-  "dataset_path": ".\/text_image_orientation",
-  "show_type": "image",
-  "dataset_type": "ClsDataset"
+  &quot;dataset_path&quot;: &quot;.\/text_image_orientation&quot;,
+  &quot;show_type&quot;: &quot;image&quot;,
+  &quot;dataset_type&quot;: &quot;ClsDataset&quot;
 }
-```
-
-In the verification results above, `check_pass` being True indicates that the dataset format meets the requirements. Explanations of other indicators are as follows:
-
-* `attributes.num_classes`: The number of classes in this dataset is 4;
-* `attributes.train_samples`: The number of training samples in this dataset is 1552;
-* `attributes.val_samples`: The number of validation samples in this dataset is 2593;
-* `attributes.train_sample_paths`: A list of relative paths to visual sample images for the training set of this dataset;
-* `attributes.val_sample_paths`: A list of relative paths to the visual samples in the validation set of this dataset;
-
-Additionally, the dataset validation analyzes the sample number distribution across all classes in the dataset and generates a distribution histogram (histogram.png):
-
-<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/modules/doc_img_ori_classification/01.png">
-
-</details>
+</code></pre>
+<p>In the verification results above, <code>check_pass</code> being True indicates that the dataset format meets the requirements. Explanations of other indicators are as follows:</p>
+<ul>
+<li><code>attributes.num_classes</code>: The number of classes in this dataset is 4;</li>
+<li><code>attributes.train_samples</code>: The number of training samples in this dataset is 1552;</li>
+<li><code>attributes.val_samples</code>: The number of validation samples in this dataset is 2593;</li>
+<li><code>attributes.train_sample_paths</code>: A list of relative paths to visual sample images for the training set of this dataset;</li>
+<li><code>attributes.val_sample_paths</code>: A list of relative paths to the visual samples in the validation set of this dataset;</li>
+</ul>
+<p>Additionally, the dataset validation analyzes the sample number distribution across all classes in the dataset and generates a distribution histogram (histogram.png):</p>
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/modules/doc_img_ori_classification/01.png"></p></details>
 
 
 #### 4.1.3 Dataset Format Conversion / Dataset Splitting (Optional)
 After completing data validation, you can convert the dataset format and re-split the training/validation ratio by <b>modifying the configuration file</b> or <b>appending hyperparameters</b>.
 
-<details>
-  <summary>👉 <b>Details of Format Conversion / Dataset Splitting (Click to Expand)</b></summary>
+<details><summary>👉 <b>Details of Format Conversion / Dataset Splitting (Click to Expand)</b></summary>
 
-<b>(1) Dataset Format Conversion</b>
-
-Document image orientation classification does not currently support dataset format conversion.
-
-<b>(2) Dataset Splitting</b>
-
-Parameters for dataset splitting can be set by modifying the fields under `CheckDataset` in the configuration file. Examples of some parameters in the configuration file are as follows:
-
-* `CheckDataset`:
-  * `split`:
-    * `enable`: Whether to re-split the dataset. Set to `True` to enable dataset splitting, default is `False`;
-    * `train_percent`: If re-splitting the dataset, set the percentage of the training set. The type is any integer between 0-100, ensuring the sum with `val_percent` is 100;
-
-For example, if you want to re-split the dataset with a 90% training set and a 10% validation set, modify the configuration file as follows:
-
-```bash
-......
+<p><b>(1) Dataset Format Conversion</b></p>
+<p>Document image orientation classification does not currently support dataset format conversion.</p>
+<p><b>(2) Dataset Splitting</b></p>
+<p>Parameters for dataset splitting can be set by modifying the fields under <code>CheckDataset</code> in the configuration file. Examples of some parameters in the configuration file are as follows:</p>
+<ul>
+<li><code>CheckDataset</code>:</li>
+<li><code>split</code>:</li>
+<li><code>enable</code>: Whether to re-split the dataset. Set to <code>True</code> to enable dataset splitting, default is <code>False</code>;</li>
+<li><code>train_percent</code>: If re-splitting the dataset, set the percentage of the training set. The type is any integer between 0-100, ensuring the sum with <code>val_percent</code> is 100;</li>
+</ul>
+<p>For example, if you want to re-split the dataset with a 90% training set and a 10% validation set, modify the configuration file as follows:</p>
+<pre><code class="language-bash">......
 CheckDataset:
   ......
   split:
@@ -168,27 +155,21 @@ CheckDataset:
     train_percent: 90
     val_percent: 10
   ......
-```
-Then execute the command:
-
-```bash
-python main.py -c paddlex/configs/doc_text_orientation/PP-LCNet_x1_0_doc_ori.yaml \
+</code></pre>
+<p>Then execute the command:</p>
+<pre><code class="language-bash">python main.py -c paddlex/configs/doc_text_orientation/PP-LCNet_x1_0_doc_ori.yaml \
     -o Global.mode=check_dataset \
     -o Global.dataset_dir=./dataset/text_image_orientation
-```
-After dataset splitting, the original annotation files will be renamed to `xxx.bak` in the original path.
-
-The above parameters also support setting through appending command line arguments:
-
-```bash
-python main.py -c paddlex/configs/doc_text_orientation/PP-LCNet_x1_0_doc_ori.yaml \
+</code></pre>
+<p>After dataset splitting, the original annotation files will be renamed to <code>xxx.bak</code> in the original path.</p>
+<p>The above parameters also support setting through appending command line arguments:</p>
+<pre><code class="language-bash">python main.py -c paddlex/configs/doc_text_orientation/PP-LCNet_x1_0_doc_ori.yaml \
     -o Global.mode=check_dataset \
     -o Global.dataset_dir=./dataset/text_image_orientation \
     -o CheckDataset.split.enable=True \
     -o CheckDataset.split.train_percent=90 \
     -o CheckDataset.split.val_percent=10
-```
-</details>
+</code></pre></details>
 
 
 ### 4.2 Model Training
@@ -209,19 +190,21 @@ You need to follow these steps:
 
 Other relevant parameters can be set by modifying fields under `Global` and `Train` in the `.yaml` configuration file, or by appending arguments to the command line. For example, to specify the first two GPUs for training: `-o Global.device=gpu:0,1`; to set the number of training epochs to 10: `-o Train.epochs_iters=10`. For more modifiable parameters and detailed explanations, refer to the [PaddleX General Model Configuration File Parameters](../../instructions/config_parameters_common.en.md).
 
-<details>
-  <summary>👉 <b>More Information (click to expand)</b></summary>
+<details><summary>👉 <b>More Information (click to expand)</b></summary>
 
-* During model training, PaddleX automatically saves the model weight files, defaulting to `output`. If you want to specify a different save path, you can set it using the `-o Global.output` field in the configuration file.
-* PaddleX abstracts away the concept of dynamic graph weights and static graph weights. During model training, it produces both dynamic and static graph weights. For model inference, it defaults to using static graph weights.
-* After completing model training, all outputs are saved in the specified output directory (default is `./output/`), typically including the following:
-
-* `train_result.json`: Training result record file, which records whether the training task was completed normally, as well as the output weight metrics and related file paths.
-* `train.log`: Training log file, which records changes in model metrics and loss during training.
-* `config.yaml`: Training configuration file, which records the hyperparameter configuration for this training.
-* `.pdparams`, `.pdema`, `.pdopt.pdstate`, `.pdiparams`, `.pdmodel`: Model weight-related files, including network parameters, optimizer, EMA, static graph network parameters, static graph network structure, etc.
-
-</details>
+<ul>
+<li>During model training, PaddleX automatically saves the model weight files, defaulting to <code>output</code>. If you want to specify a different save path, you can set it using the <code>-o Global.output</code> field in the configuration file.</li>
+<li>PaddleX abstracts away the concept of dynamic graph weights and static graph weights. During model training, it produces both dynamic and static graph weights. For model inference, it defaults to using static graph weights.</li>
+<li>
+<p>After completing model training, all outputs are saved in the specified output directory (default is <code>./output/</code>), typically including the following:</p>
+</li>
+<li>
+<p><code>train_result.json</code>: Training result record file, which records whether the training task was completed normally, as well as the output weight metrics and related file paths.</p>
+</li>
+<li><code>train.log</code>: Training log file, which records changes in model metrics and loss during training.</li>
+<li><code>config.yaml</code>: Training configuration file, which records the hyperparameter configuration for this training.</li>
+<li><code>.pdparams</code>, <code>.pdema</code>, <code>.pdopt.pdstate</code>, <code>.pdiparams</code>, <code>.pdmodel</code>: Model weight-related files, including network parameters, optimizer, EMA, static graph network parameters, static graph network structure, etc.</li>
+</ul></details>
 
 ### <b>4.3 Model Evaluation</b>
 
@@ -240,16 +223,19 @@ Similar to model training and evaluation, the following steps are required:
 * Specify the input data path: `-o Predict.input="..."`.
 Other relevant parameters can be set by modifying the fields under `Global` and `Predict` in the `.yaml` configuration file. For details, please refer to [PaddleX General Model Configuration File Parameter Description](../../instructions/config_parameters_common.en.md).
 
-<details>
-  <summary>👉 <b>More Information (click to expand)</b></summary>
+<details><summary>👉 <b>More Information (click to expand)</b></summary>
 
-* When conducting model evaluation, it is necessary to specify the model weight file path. Each configuration file has a built-in default path for saving weights. If you need to change this path, you can simply append a command line argument to set it, for example: `-o Evaluate.weight_path=./output/best_model/best_model.pdparams`.
-
-* After the model evaluation is completed, typically, the following outputs are generated:
-
-* Upon finishing the model evaluation, an evaluate_result.json file is produced, which records the results of the evaluation. Specifically, it logs whether the evaluation task was successfully completed and the evaluation metrics of the model, including `Top1 Accuracy (Top1 Acc)`.
-
-</details>
+<ul>
+<li>
+<p>When conducting model evaluation, it is necessary to specify the model weight file path. Each configuration file has a built-in default path for saving weights. If you need to change this path, you can simply append a command line argument to set it, for example: <code>-o Evaluate.weight_path=./output/best_model/best_model.pdparams</code>.</p>
+</li>
+<li>
+<p>After the model evaluation is completed, typically, the following outputs are generated:</p>
+</li>
+<li>
+<p>Upon finishing the model evaluation, an evaluate_result.json file is produced, which records the results of the evaluation. Specifically, it logs whether the evaluation task was successfully completed and the evaluation metrics of the model, including <code>Top1 Accuracy (Top1 Acc)</code>.</p>
+</li>
+</ul></details>
 
 ### <b>4.4 Model Inference and Model Integration</b>
 

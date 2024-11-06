@@ -12,11 +12,9 @@ Formula recognition is a technology that automatically identifies and extracts L
 
 <b>If you prioritize model accuracy, choose a model with higher accuracy. If you prioritize inference speed, select a model with faster inference. If you prioritize model size, choose a model with a smaller storage footprint.</b>
 
-<details>
-   <summary> 👉Model List Details</summary>
+<details><summary> 👉Model List Details</summary>
 
-<b>Layout Detection Module Models</b>:
-
+<p><b>Layout Detection Module Models</b>:</p>
 <table>
 <thead>
 <tr>
@@ -38,10 +36,8 @@ Formula recognition is a technology that automatically identifies and extracts L
 </tbody>
 </table>
 
-<b>Note: The above accuracy metrics are evaluated on PaddleX's self-built layout detection dataset, containing 10,000 images. All GPU inference times are based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speeds are based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
-
-<b>Formula Recognition Module Models</b>:
-
+<p><b>Note: The above accuracy metrics are evaluated on PaddleX's self-built layout detection dataset, containing 10,000 images. All GPU inference times are based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speeds are based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b></p>
+<p><b>Formula Recognition Module Models</b>:</p>
 <table>
 <thead>
 <tr>
@@ -67,9 +63,7 @@ Formula recognition is a technology that automatically identifies and extracts L
 </tbody>
 </table>
 
-<b>Note: The above accuracy metrics are measured on the [LaTeX-OCR Formula Recognition Test Set](https://drive.google.com/drive/folders/13CA4vAmOmD_I_dSbvLp-Lf0s6KiaNfuO). All GPU inference times are based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speeds are based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
-
-</details>
+<p><b>Note: The above accuracy metrics are measured on the <a href="https://drive.google.com/drive/folders/13CA4vAmOmD_I_dSbvLp-Lf0s6KiaNfuO">LaTeX-OCR Formula Recognition Test Set</a>. All GPU inference times are based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speeds are based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b></p></details>
 
 ## 2. Quick Start
 PaddleX supports experiencing the effects of the formula recognition pipeline through command line or Python locally.
@@ -93,33 +87,22 @@ Parameter Explanation:
 
 When executing the above command, the default formula recognition pipeline configuration file is loaded. If you need to customize the configuration file, you can run the following command to obtain it:
 
-<details>
-   <summary> 👉Click to Expand</summary>
+<details><summary> 👉Click to Expand</summary>
 
-```bash
-paddlex --get_pipeline_config formula_recognition
-```
-
-After execution, the formula recognition pipeline configuration file will be saved in the current directory. If you wish to customize the save location, you can run the following command (assuming the custom save location is `./my_path`):
-
-```bash
-paddlex --get_pipeline_config formula_recognition --save_path ./my_path
-```
-
-After obtaining the Pipeline configuration file, replace `--pipeline` with the configuration file's save path to make the configuration file effective. For example, if the configuration file is saved as  `./formula_recognition.yaml`, simply execute:
-```bash
-paddlex --pipeline ./formula_recognition.yaml --input general_formula_recognition.png --device gpu:0
-```
-Here, parameters such as `--model` and `--device` do not need to be specified, as they will use the parameters in the configuration file. If parameters are still specified, the specified parameters will take precedence.
-
-</details>
+<pre><code class="language-bash">paddlex --get_pipeline_config formula_recognition
+</code></pre>
+<p>After execution, the formula recognition pipeline configuration file will be saved in the current directory. If you wish to customize the save location, you can run the following command (assuming the custom save location is <code>./my_path</code>):</p>
+<pre><code class="language-bash">paddlex --get_pipeline_config formula_recognition --save_path ./my_path
+</code></pre>
+<p>After obtaining the Pipeline configuration file, replace <code>--pipeline</code> with the configuration file's save path to make the configuration file effective. For example, if the configuration file is saved as  <code>./formula_recognition.yaml</code>, simply execute:</p>
+<pre><code class="language-bash">paddlex --pipeline ./formula_recognition.yaml --input general_formula_recognition.png --device gpu:0
+</code></pre>
+<p>Here, parameters such as <code>--model</code> and <code>--device</code> do not need to be specified, as they will use the parameters in the configuration file. If parameters are still specified, the specified parameters will take precedence.</p></details>
 
 After execution, the result is:
-<details>
-   <summary> 👉Click to Expand</summary>
+<details><summary> 👉Click to Expand</summary>
 
-```
-{'input_path': 'general_formula_recognition.png', 'layout_result': {'input_path': 'general_formula_recognition.png', 'boxes': [{'cls_id': 3, 'label': 'number', 'score': 0.7580855488777161, 'coordinate': [1028.3635, 205.46213, 1038.953, 222.99033]}, {'cls_id': 0, 'label': 'paragraph_title', 'score': 0.8882032632827759, 'coordinate': [272.75305, 204.50894, 433.7473, 226.17996]}, {'cls_id': 2, 'label': 'text', 'score': 0.9685840606689453, 'coordinate': [272.75928, 282.17773, 1041.9316, 374.44687]}, {'cls_id': 2, 'label': 'text', 'score': 0.9559416770935059, 'coordinate': [272.39056, 385.54114, 1044.1521, 443.8598]}, {'cls_id': 2, 'label': 'text', 'score': 0.9610629081726074, 'coordinate': [272.40817, 467.2738, 1045.1033, 563.4855]}, {'cls_id': 7, 'label': 'formula', 'score': 0.8916195034980774, 'coordinate': [503.45743, 594.6236, 1040.6804, 619.73895]}, {'cls_id': 2, 'label': 'text', 'score': 0.973675549030304, 'coordinate': [272.32007, 648.8599, 1040.8702, 775.15686]}, {'cls_id': 7, 'label': 'formula', 'score': 0.9038916230201721, 'coordinate': [554.2307, 803.5825, 1040.4657, 855.3159]}, {'cls_id': 2, 'label': 'text', 'score': 0.9025381803512573, 'coordinate': [272.535, 875.1402, 573.1086, 898.3587]}, {'cls_id': 2, 'label': 'text', 'score': 0.8336610794067383, 'coordinate': [317.48013, 909.60864, 966.8498, 933.7868]}, {'cls_id': 2, 'label': 'text', 'score': 0.8779091238975525, 'coordinate': [19.704018, 653.322, 72.433235, 1215.1992]}, {'cls_id': 2, 'label': 'text', 'score': 0.8832409977912903, 'coordinate': [272.13028, 958.50806, 1039.7928, 1019.476]}, {'cls_id': 7, 'label': 'formula', 'score': 0.9088466167449951, 'coordinate': [517.1226, 1042.3978, 1040.2208, 1095.7457]}, {'cls_id': 2, 'label': 'text', 'score': 0.9587949514389038, 'coordinate': [272.03336, 1112.9269, 1041.0201, 1206.8417]}, {'cls_id': 2, 'label': 'text', 'score': 0.8885666131973267, 'coordinate': [271.7495, 1231.8752, 710.44495, 1255.7981]}, {'cls_id': 7, 'label': 'formula', 'score': 0.8907185196876526, 'coordinate': [581.2295, 1287.4525, 1039.8014, 1312.772]}, {'cls_id': 2, 'label': 'text', 'score': 0.9559596180915833, 'coordinate': [273.1827, 1341.421, 1041.0299, 1401.7255]}, {'cls_id': 2, 'label': 'text', 'score': 0.875311553478241, 'coordinate': [272.8338, 1427.3711, 789.7108, 1451.1359]}, {'cls_id': 7, 'label': 'formula', 'score': 0.9152213931083679, 'coordinate': [524.9582, 1474.8136, 1041.6333, 1530.7142]}, {'cls_id': 2, 'label': 'text', 'score': 0.9584835767745972, 'coordinate': [272.81665, 1549.524, 1042.9962, 1608.7157]}]}, 'ocr_result': {}, 'table_result': [], 'dt_polys': [array([[ 503.45743,  594.6236 ],
+<pre><code>{'input_path': 'general_formula_recognition.png', 'layout_result': {'input_path': 'general_formula_recognition.png', 'boxes': [{'cls_id': 3, 'label': 'number', 'score': 0.7580855488777161, 'coordinate': [1028.3635, 205.46213, 1038.953, 222.99033]}, {'cls_id': 0, 'label': 'paragraph_title', 'score': 0.8882032632827759, 'coordinate': [272.75305, 204.50894, 433.7473, 226.17996]}, {'cls_id': 2, 'label': 'text', 'score': 0.9685840606689453, 'coordinate': [272.75928, 282.17773, 1041.9316, 374.44687]}, {'cls_id': 2, 'label': 'text', 'score': 0.9559416770935059, 'coordinate': [272.39056, 385.54114, 1044.1521, 443.8598]}, {'cls_id': 2, 'label': 'text', 'score': 0.9610629081726074, 'coordinate': [272.40817, 467.2738, 1045.1033, 563.4855]}, {'cls_id': 7, 'label': 'formula', 'score': 0.8916195034980774, 'coordinate': [503.45743, 594.6236, 1040.6804, 619.73895]}, {'cls_id': 2, 'label': 'text', 'score': 0.973675549030304, 'coordinate': [272.32007, 648.8599, 1040.8702, 775.15686]}, {'cls_id': 7, 'label': 'formula', 'score': 0.9038916230201721, 'coordinate': [554.2307, 803.5825, 1040.4657, 855.3159]}, {'cls_id': 2, 'label': 'text', 'score': 0.9025381803512573, 'coordinate': [272.535, 875.1402, 573.1086, 898.3587]}, {'cls_id': 2, 'label': 'text', 'score': 0.8336610794067383, 'coordinate': [317.48013, 909.60864, 966.8498, 933.7868]}, {'cls_id': 2, 'label': 'text', 'score': 0.8779091238975525, 'coordinate': [19.704018, 653.322, 72.433235, 1215.1992]}, {'cls_id': 2, 'label': 'text', 'score': 0.8832409977912903, 'coordinate': [272.13028, 958.50806, 1039.7928, 1019.476]}, {'cls_id': 7, 'label': 'formula', 'score': 0.9088466167449951, 'coordinate': [517.1226, 1042.3978, 1040.2208, 1095.7457]}, {'cls_id': 2, 'label': 'text', 'score': 0.9587949514389038, 'coordinate': [272.03336, 1112.9269, 1041.0201, 1206.8417]}, {'cls_id': 2, 'label': 'text', 'score': 0.8885666131973267, 'coordinate': [271.7495, 1231.8752, 710.44495, 1255.7981]}, {'cls_id': 7, 'label': 'formula', 'score': 0.8907185196876526, 'coordinate': [581.2295, 1287.4525, 1039.8014, 1312.772]}, {'cls_id': 2, 'label': 'text', 'score': 0.9559596180915833, 'coordinate': [273.1827, 1341.421, 1041.0299, 1401.7255]}, {'cls_id': 2, 'label': 'text', 'score': 0.875311553478241, 'coordinate': [272.8338, 1427.3711, 789.7108, 1451.1359]}, {'cls_id': 7, 'label': 'formula', 'score': 0.9152213931083679, 'coordinate': [524.9582, 1474.8136, 1041.6333, 1530.7142]}, {'cls_id': 2, 'label': 'text', 'score': 0.9584835767745972, 'coordinate': [272.81665, 1549.524, 1042.9962, 1608.7157]}]}, 'ocr_result': {}, 'table_result': [], 'dt_polys': [array([[ 503.45743,  594.6236 ],
        [1040.6804 ,  594.6236 ],
        [1040.6804 ,  619.73895],
        [ 503.45743,  619.73895]], dtype=float32), array([[ 554.2307,  803.5825],
@@ -135,10 +118,8 @@ After execution, the result is:
        [1041.6333, 1474.8136],
        [1041.6333, 1530.7142],
        [ 524.9582, 1530.7142]], dtype=float32)], 'rec_formula': ['F({\bf x})=C(F_{1}(x_{1}),\cdot\cdot\cdot,F_{N}(x_{N})).\qquad\qquad\qquad(1)', 'p(\mathbf{x})=c(\mathbf{u})\prod_{i}p(x_{i}).\qquad\qquad\qquad\qquad\qquad\quad\quad~~\quad~~~~~~~~~~~~~~~(2)', 'H_{c}({\bf x})=-\int_{{\bf{u}}}c({\bf{u}})\log c({\bf{u}})d{\bf{u}}.~~~~~~~~~~~~~~~~~~~~~(3)', 'I({\bf x})=-H_{c}({\bf x}).\qquad\qquad\qquad\qquad(4)', 'H({\bf x})=\sum_{i}H(x_{i})+H_{c}({\bf x}).\eqno\qquad\qquad\qquad(5)']}
-```
-
-Where `dt_polys` represents the coordinates of the detected formula area, and `rec_formula` is the detected formula.
-</details>
+</code></pre>
+<p>Where <code>dt_polys</code> represents the coordinates of the detected formula area, and <code>rec_formula</code> is the detected formula.</p></details>
 
 The visualization result is as follows:
 <img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/formula_recognition/02.jpg">
@@ -310,14 +291,13 @@ Additionally, PaddleX provides three other deployment methods, detailed as follo
 
 Below are the API references and multi-language service invocation examples:
 
-<details>
-<summary>API Reference</summary>
+<details><summary>API Reference</summary>
 
-For all operations provided by the service:
-
-- Both the response body and the request body for POST requests are JSON data (JSON objects).
-- When the request is processed successfully, the response status code is `200`, and the response body properties are as follows:
-
+<p>For all operations provided by the service:</p>
+<ul>
+<li>Both the response body and the request body for POST requests are JSON data (JSON objects).</li>
+<li>When the request is processed successfully, the response status code is <code>200</code>, and the response body properties are as follows:</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -340,10 +320,10 @@ For all operations provided by the service:
 </tbody>
 </table>
 
-    The response body may also have a `result` property of type `object`, which stores the operation result information.
-
-- When the request is not processed successfully, the response body properties are as follows:
-
+<p>The response body may also have a <code>result</code> property of type <code>object</code>, which stores the operation result information.</p>
+<ul>
+<li>When the request is not processed successfully, the response body properties are as follows:</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -366,16 +346,15 @@ For all operations provided by the service:
 </tbody>
 </table>
 
-Operations provided by the service:
-
-- <b>`infer`</b>
-
-    Obtain formula recognition results from an image.
-
-    `POST /formula-recognition`
-
-    - Request body properties:
-
+<p>Operations provided by the service:</p>
+<ul>
+<li><b><code>infer</code></b></li>
+</ul>
+<p>Obtain formula recognition results from an image.</p>
+<p><code>POST /formula-recognition</code></p>
+<ul>
+<li>Request body properties:</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -401,8 +380,7 @@ Operations provided by the service:
 </tbody>
 </table>
 
-        Properties of `inferenceParams`:
-
+<p>Properties of <code>inferenceParams</code>:</p>
 <table>
 <thead>
 <tr>
@@ -422,8 +400,9 @@ Operations provided by the service:
 </tbody>
 </table>
 
-    - When the request is processed successfully, the `result` in the response body has the following properties:
-
+<ul>
+<li>When the request is processed successfully, the <code>result</code> in the response body has the following properties:</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -446,8 +425,7 @@ Operations provided by the service:
 </tbody>
 </table>
 
-        Each element in `formulas` is an `object` with the following properties:
-
+<p>Each element in <code>formulas</code> is an <code>object</code> with the following properties:</p>
 <table>
 <thead>
 <tr>
@@ -470,144 +448,131 @@ Operations provided by the service:
 </tbody>
 </table>
 
-        Example of `result`:
+<p>Example of <code>result</code>:</p>
+<pre><code class="language-json">{
+&quot;formulas&quot;: [
+{
+&quot;poly&quot;: [
+[
+444.0,
+244.0
+],
+[
+705.4,
+244.5
+],
+[
+705.8,
+311.3
+],
+[
+444.1,
+311.0
+]
+],
+&quot;latex&quot;: &quot;F({\bf x})=C(F_{1}(x_{1}),\cdot\cdot\cdot,F_{N}(x_{N})).\qquad\qquad\qquad(1)&quot;
+}
+],
+&quot;image&quot;: &quot;xxxxxx&quot;
+}
+</code></pre></details>
 
-        ```json
-        {
-          "formulas": [
-            {
-              "poly": [
-                [
-                  444.0,
-                  244.0
-                ],
-                [
-                  705.4,
-                  244.5
-                ],
-                [
-                  705.8,
-                  311.3
-                ],
-                [
-                  444.1,
-                  311.0
-                ]
-              ],
-              "latex": "F({\bf x})=C(F_{1}(x_{1}),\cdot\cdot\cdot,F_{N}(x_{N})).\qquad\qquad\qquad(1)"
-            }
-          ],
-          "image": "xxxxxx"
-        }
-        ```
-
-</details>
-
-<details>
-<summary>Multi-Language Service Invocation Examples</summary>
+<details><summary>Multi-Language Service Invocation Examples</summary>
 
 <details>
 <summary>Python</summary>
 
-```python
-import base64
+
+<pre><code class="language-python">import base64
 import requests
 
-API_URL = "http://localhost:8080/formula-recognition"
-image_path = "./demo.jpg"
-output_image_path = "./out.jpg"
+API_URL = &quot;http://localhost:8080/formula-recognition&quot;
+image_path = &quot;./demo.jpg&quot;
+output_image_path = &quot;./out.jpg&quot;
 
-with open(image_path, "rb") as file:
+with open(image_path, &quot;rb&quot;) as file:
     image_bytes = file.read()
-    image_data = base64.b64encode(image_bytes).decode("ascii")
+    image_data = base64.b64encode(image_bytes).decode(&quot;ascii&quot;)
 
-payload = {"image": image_data}
+payload = {&quot;image&quot;: image_data}
 
 response = requests.post(API_URL, json=payload)
 
 assert response.status_code == 200
-result = response.json()["result"]
-with open(output_image_path, "wb") as file:
-    file.write(base64.b64decode(result["image"]))
-print(f"Output image saved at {output_image_path}")
-print("\nDetected formulas:")
-print(result["formulas"])
-```
+result = response.json()[&quot;result&quot;]
+with open(output_image_path, &quot;wb&quot;) as file:
+    file.write(base64.b64decode(result[&quot;image&quot;]))
+print(f&quot;Output image saved at {output_image_path}&quot;)
+print(&quot;\nDetected formulas:&quot;)
+print(result[&quot;formulas&quot;])
+</code></pre></details>
 
-</details>
+<details><summary>C++</summary>
 
-<details>
-<summary>C++</summary>
-
-```cpp
-#include <iostream>
-#include "cpp-httplib/httplib.h" // https://github.com/Huiyicc/cpp-httplib
-#include "nlohmann/json.hpp" // https://github.com/nlohmann/json
-#include "base64.hpp" // https://github.com/tobiaslocker/base64
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &quot;cpp-httplib/httplib.h&quot; // https://github.com/Huiyicc/cpp-httplib
+#include &quot;nlohmann/json.hpp&quot; // https://github.com/nlohmann/json
+#include &quot;base64.hpp&quot; // https://github.com/tobiaslocker/base64
 
 int main() {
-    httplib::Client client("localhost:8080");
-    const std::string imagePath = "./demo.jpg";
-    const std::string outputImagePath = "./out.jpg";
+    httplib::Client client(&quot;localhost:8080&quot;);
+    const std::string imagePath = &quot;./demo.jpg&quot;;
+    const std::string outputImagePath = &quot;./out.jpg&quot;;
 
     httplib::Headers headers = {
-        {"Content-Type", "application/json"}
+        {&quot;Content-Type&quot;, &quot;application/json&quot;}
     };
 
     std::ifstream file(imagePath, std::ios::binary | std::ios::ate);
     std::streamsize size = file.tellg();
     file.seekg(0, std::ios::beg);
 
-    std::vector<char> buffer(size);
+    std::vector&lt;char&gt; buffer(size);
     if (!file.read(buffer.data(), size)) {
-        std::cerr << "Error reading file." << std::endl;
+        std::cerr &lt;&lt; &quot;Error reading file.&quot; &lt;&lt; std::endl;
         return 1;
     }
-    std::string bufferStr(reinterpret_cast<const char*>(buffer.data()), buffer.size());
+    std::string bufferStr(reinterpret_cast&lt;const char*&gt;(buffer.data()), buffer.size());
     std::string encodedImage = base64::to_base64(bufferStr);
 
     nlohmann::json jsonObj;
-    jsonObj["image"] = encodedImage;
+    jsonObj[&quot;image&quot;] = encodedImage;
     std::string body = jsonObj.dump();
 
-    auto response = client.Post("/formula-recognition", headers, body, "application/json");
-    if (response && response->status == 200) {
-        nlohmann::json jsonResponse = nlohmann::json::parse(response->body);
-        auto result = jsonResponse["result"];
+    auto response = client.Post(&quot;/formula-recognition&quot;, headers, body, &quot;application/json&quot;);
+    if (response &amp;&amp; response-&gt;status == 200) {
+        nlohmann::json jsonResponse = nlohmann::json::parse(response-&gt;body);
+        auto result = jsonResponse[&quot;result&quot;];
 
-        encodedImage = result["image"];
+        encodedImage = result[&quot;image&quot;];
         std::string decodedString = base64::from_base64(encodedImage);
-        std::vector<unsigned char> decodedImage(decodedString.begin(), decodedString.end());
+        std::vector&lt;unsigned char&gt; decodedImage(decodedString.begin(), decodedString.end());
         std::ofstream outputImage(outPutImagePath, std::ios::binary | std::ios::out);
         if (outputImage.is_open()) {
-            outputImage.write(reinterpret_cast<char*>(decodedImage.data()), decodedImage.size());
+            outputImage.write(reinterpret_cast&lt;char*&gt;(decodedImage.data()), decodedImage.size());
             outputImage.close();
-            std::cout << "Output image saved at " << outPutImagePath << std::endl;
+            std::cout &lt;&lt; &quot;Output image saved at &quot; &lt;&lt; outPutImagePath &lt;&lt; std::endl;
         } else {
-            std::cerr << "Unable to open file for writing: " << outPutImagePath << std::endl;
+            std::cerr &lt;&lt; &quot;Unable to open file for writing: &quot; &lt;&lt; outPutImagePath &lt;&lt; std::endl;
         }
 
-        auto formulas = result["formulas"];
-        std::cout << "\nDetected formulas:" << std::endl;
-        for (const auto& formula : formulas) {
-            std::cout << formula << std::endl;
+        auto formulas = result[&quot;formulas&quot;];
+        std::cout &lt;&lt; &quot;\nDetected formulas:&quot; &lt;&lt; std::endl;
+        for (const auto&amp; formula : formulas) {
+            std::cout &lt;&lt; formula &lt;&lt; std::endl;
         }
     } else {
-        std::cout << "Failed to send HTTP request." << std::endl;
+        std::cout &lt;&lt; &quot;Failed to send HTTP request.&quot; &lt;&lt; std::endl;
         return 1;
     }
 
     return 0;
 }
-```
+</code></pre></details>
 
-</details>
+<details><summary>Java</summary>
 
-<details>
-<summary>Java</summary>
-
-```java
-import okhttp3.*;
+<pre><code class="language-java">import okhttp3.*;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
@@ -619,9 +584,9 @@ import java.util.Base64;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        String API_URL = "http://localhost:8080/formula-recognition";
-        String imagePath = "./demo.jpg";
-        String outputImagePath = "./out.jpg";
+        String API_URL = &quot;http://localhost:8080/formula-recognition&quot;;
+        String imagePath = &quot;./demo.jpg&quot;;
+        String outputImagePath = &quot;./out.jpg&quot;;
 
         File file = new File(imagePath);
         byte[] fileContent = java.nio.file.Files.readAllBytes(file.toPath());
@@ -629,10 +594,10 @@ public class Main {
 
         ObjectMapper objectMapper = new ObjectMapper();
         ObjectNode params = objectMapper.createObjectNode();
-        params.put("image", imageData);
+        params.put(&quot;image&quot;, imageData);
 
         OkHttpClient client = new OkHttpClient();
-        MediaType JSON = MediaType.Companion.get("application/json; charset=utf-8");
+        MediaType JSON = MediaType.Companion.get(&quot;application/json; charset=utf-8&quot;);
         RequestBody body = RequestBody.Companion.create(params.toString(), JSON);
         Request request = new Request.Builder()
                 .url(API_URL)
@@ -643,117 +608,109 @@ public class Main {
             if (response.isSuccessful()) {
                 String responseBody = response.body().string();
                 JsonNode resultNode = objectMapper.readTree(responseBody);
-                JsonNode result = resultNode.get("result");
-                String base64Image = result.get("image").asText();
-                JsonNode formulas = result.get("formulas");
+                JsonNode result = resultNode.get(&quot;result&quot;);
+                String base64Image = result.get(&quot;image&quot;).asText();
+                JsonNode formulas = result.get(&quot;formulas&quot;);
 
                 byte[] imageBytes = Base64.getDecoder().decode(base64Image);
                 try (FileOutputStream fos = new FileOutputStream(outputImagePath)) {
                     fos.write(imageBytes);
                 }
-                System.out.println("Output image saved at " + outputImagePath);
-                System.out.println("\nDetected formulas: " + formulas.toString());
+                System.out.println(&quot;Output image saved at &quot; + outputImagePath);
+                System.out.println(&quot;\nDetected formulas: &quot; + formulas.toString());
             } else {
-                System.err.println("Request failed with code: " + response.code());
+                System.err.println(&quot;Request failed with code: &quot; + response.code());
             }
         }
     }
 }
-```
+</code></pre></details>
 
-</details>
+<details><summary>Go</summary>
 
-<details>
-<summary>Go</summary>
-
-```go
-package main
+<pre><code class="language-go">package main
 
 import (
-    "bytes"
-    "encoding/base64"
-    "encoding/json"
-    "fmt"
-    "io/ioutil"
-    "net/http"
+    &quot;bytes&quot;
+    &quot;encoding/base64&quot;
+    &quot;encoding/json&quot;
+    &quot;fmt&quot;
+    &quot;io/ioutil&quot;
+    &quot;net/http&quot;
 )
 
 func main() {
-    API_URL := "http://localhost:8080/formula-recognition"
-    imagePath := "./demo.jpg"
-    outputImagePath := "./out.jpg"
+    API_URL := &quot;http://localhost:8080/formula-recognition&quot;
+    imagePath := &quot;./demo.jpg&quot;
+    outputImagePath := &quot;./out.jpg&quot;
 
     imageBytes, err := ioutil.ReadFile(imagePath)
     if err != nil {
-        fmt.Println("Error reading image file:", err)
+        fmt.Println(&quot;Error reading image file:&quot;, err)
         return
     }
     imageData := base64.StdEncoding.EncodeToString(imageBytes)
 
-    payload := map[string]string{"image": imageData}
+    payload := map[string]string{&quot;image&quot;: imageData}
     payloadBytes, err := json.Marshal(payload)
     if err != nil {
-        fmt.Println("Error marshaling payload:", err)
+        fmt.Println(&quot;Error marshaling payload:&quot;, err)
         return
     }
 
-    client := &http.Client{}
-    req, err := http.NewRequest("POST", API_URL, bytes.NewBuffer(payloadBytes))
+    client := &amp;http.Client{}
+    req, err := http.NewRequest(&quot;POST&quot;, API_URL, bytes.NewBuffer(payloadBytes))
     if err != nil {
-        fmt.Println("Error creating request:", err)
+        fmt.Println(&quot;Error creating request:&quot;, err)
         return
     }
 
     res, err := client.Do(req)
     if err != nil {
-        fmt.Println("Error sending request:", err)
+        fmt.Println(&quot;Error sending request:&quot;, err)
         return
     }
     defer res.Body.Close()
 
     body, err := ioutil.ReadAll(res.Body)
     if err != nil {
-        fmt.Println("Error reading response body:", err)
+        fmt.Println(&quot;Error reading response body:&quot;, err)
         return
     }
     type Response struct {
         Result struct {
-            Image      string   `json:"image"`
-            Formulas []map[string]interface{} `json:"formulas"`
-        } `json:"result"`
+            Image      string   `json:&quot;image&quot;`
+            Formulas []map[string]interface{} `json:&quot;formulas&quot;`
+        } `json:&quot;result&quot;`
     }
     var respData Response
-    err = json.Unmarshal([]byte(string(body)), &respData)
+    err = json.Unmarshal([]byte(string(body)), &amp;respData)
     if err != nil {
-        fmt.Println("Error unmarshaling response body:", err)
+        fmt.Println(&quot;Error unmarshaling response body:&quot;, err)
         return
     }
 
     outputImageData, err := base64.StdEncoding.DecodeString(respData.Result.Image)
     if err != nil {
-        fmt.Println("Error decoding base64 image data:", err)
+        fmt.Println(&quot;Error decoding base64 image data:&quot;, err)
         return
     }
     err = ioutil.WriteFile(outputImagePath, outputImageData, 0644)
     if err != nil {
-        fmt.Println("Error writing image to file:", err)
+        fmt.Println(&quot;Error writing image to file:&quot;, err)
         return
     }
-    fmt.Printf("Image saved at %s.jpg\n", outputImagePath)
-    fmt.Println("\nDetected formulas:")
+    fmt.Printf(&quot;Image saved at %s.jpg\n&quot;, outputImagePath)
+    fmt.Println(&quot;\nDetected formulas:&quot;)
     for _, formula := range respData.Result.Formulas {
         fmt.Println(formula)
     }
 }
-```
+</code></pre></details>
 
-</details>
+<details><summary>C#</summary>
 
-<details>
-<summary>C#</summary>
-
-```csharp
-using System;
+<pre><code class="language-csharp">using System;
 using System.IO;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -763,9 +720,9 @@ using Newtonsoft.Json.Linq;
 
 class Program
 {
-    static readonly string API_URL = "http://localhost:8080/formula-recognition";
-    static readonly string imagePath = "./demo.jpg";
-    static readonly string outputImagePath = "./out.jpg";
+    static readonly string API_URL = &quot;http://localhost:8080/formula-recognition&quot;;
+    static readonly string imagePath = &quot;./demo.jpg&quot;;
+    static readonly string outputImagePath = &quot;./out.jpg&quot;;
 
     static async Task Main(string[] args)
     {
@@ -774,8 +731,8 @@ class Program
         byte[] imageBytes = File.ReadAllBytes(imagePath);
         string image_data = Convert.ToBase64String(imageBytes);
 
-        var payload = new JObject{ { "image", image_data } };
-        var content = new StringContent(payload.ToString(), Encoding.UTF8, "application/json");
+        var payload = new JObject{ { &quot;image&quot;, image_data } };
+        var content = new StringContent(payload.ToString(), Encoding.UTF8, &quot;application/json&quot;);
 
         HttpResponseMessage response = await httpClient.PostAsync(API_URL, content);
         response.EnsureSuccessStatusCode();
@@ -783,29 +740,25 @@ class Program
         string responseBody = await response.Content.ReadAsStringAsync();
         JObject jsonResponse = JObject.Parse(responseBody);
 
-        string base64Image = jsonResponse["result"]["image"].ToString();
+        string base64Image = jsonResponse[&quot;result&quot;][&quot;image&quot;].ToString();
         byte[] outputImageBytes = Convert.FromBase64String(base64Image);
 
         File.WriteAllBytes(outputImagePath, outputImageBytes);
-        Console.WriteLine($"Output image saved at {outputImagePath}");
-        Console.WriteLine("\nDetected formulas:");
-        Console.WriteLine(jsonResponse["result"]["formulas"].ToString());
+        Console.WriteLine($&quot;Output image saved at {outputImagePath}&quot;);
+        Console.WriteLine(&quot;\nDetected formulas:&quot;);
+        Console.WriteLine(jsonResponse[&quot;result&quot;][&quot;formulas&quot;].ToString());
     }
 }
-```
+</code></pre></details>
 
-</details>
+<details><summary>Node.js</summary>
 
-<details>
-<summary>Node.js</summary>
-
-```js
-const axios = require('axios');
+<pre><code class="language-js">const axios = require('axios');
 const fs = require('fs');
 
 const API_URL = 'http://localhost:8080/formula-recognition'
 const imagePath = './demo.jpg'
-const outputImagePath = "./out.jpg";
+const outputImagePath = &quot;./out.jpg&quot;;
 
 let config = {
    method: 'POST',
@@ -822,35 +775,31 @@ function encodeImageToBase64(filePath) {
 }
 
 axios.request(config)
-.then((response) => {
-    const result = response.data["result"];
-    const imageBuffer = Buffer.from(result["image"], 'base64');
-    fs.writeFile(outputImagePath, imageBuffer, (err) => {
+.then((response) =&gt; {
+    const result = response.data[&quot;result&quot;];
+    const imageBuffer = Buffer.from(result[&quot;image&quot;], 'base64');
+    fs.writeFile(outputImagePath, imageBuffer, (err) =&gt; {
       if (err) throw err;
       console.log(`Output image saved at ${outputImagePath}`);
     });
-    console.log("\nDetected formulas:");
-    console.log(result["formulas"]);
+    console.log(&quot;\nDetected formulas:&quot;);
+    console.log(result[&quot;formulas&quot;]);
 })
-.catch((error) => {
+.catch((error) =&gt; {
   console.log(error);
 });
-```
+</code></pre></details>
 
-</details>
+<details><summary>PHP</summary>
 
-<details>
-<summary>PHP</summary>
+<pre><code class="language-php">&lt;?php
 
-```php
-<?php
-
-$API_URL = "http://localhost:8080/formula-recognition";
-$image_path = "./demo.jpg";
-$output_image_path = "./out.jpg";
+$API_URL = &quot;http://localhost:8080/formula-recognition&quot;;
+$image_path = &quot;./demo.jpg&quot;;
+$output_image_path = &quot;./out.jpg&quot;;
 
 $image_data = base64_encode(file_get_contents($image_path));
-$payload = array("image" => $image_data);
+$payload = array(&quot;image&quot; =&gt; $image_data);
 
 $ch = curl_init($API_URL);
 curl_setopt($ch, CURLOPT_POST, true);
@@ -859,16 +808,14 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $response = curl_exec($ch);
 curl_close($ch);
 
-$result = json_decode($response, true)["result"];
-file_put_contents($output_image_path, base64_decode($result["image"]));
-echo "Output image saved at " . $output_image_path . "\n";
-echo "\nDetected formulas:\n";
-print_r($result["formulas"]);
+$result = json_decode($response, true)[&quot;result&quot;];
+file_put_contents($output_image_path, base64_decode($result[&quot;image&quot;]));
+echo &quot;Output image saved at &quot; . $output_image_path . &quot;\n&quot;;
+echo &quot;\nDetected formulas:\n&quot;;
+print_r($result[&quot;formulas&quot;]);
 
-?>
-```
-
-</details>
+?&gt;
+</code></pre></details>
 </details>
 <br/>
 

@@ -37,8 +37,7 @@ After installing the PaddleX plugins you need, you can not only perform inferenc
 
 The plugins supported by PaddleX are as follows. Please determine the name(s) of the plugin(s) you need based on your development requirements:
 
-<details>
-  <summary>👉 <b>Plugin and Pipeline Correspondence (Click to Expand)</b></summary>
+<details><summary>👉 <b>Plugin and Pipeline Correspondence (Click to Expand)</b></summary>
 
 <table>
 <thead>
@@ -115,9 +114,7 @@ The plugins supported by PaddleX are as follows. Please determine the name(s) of
 <td><code>PaddleSeg</code></td>
 </tr>
 </tbody>
-</table>
-
-</details>
+</table></details>
 
 
 If the plugin(s) you need to install is/are PaddleXXX (can be multiple), after installing PaddlePaddle, you can directly execute the following commands to quickly install the corresponding PaddleX plugin(s):

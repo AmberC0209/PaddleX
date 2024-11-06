@@ -25,8 +25,7 @@ After installing the PaddleX plugins you need, you can not only perform inferenc
 
 The plugins supported by PaddleX are listed below. Please determine the name(s) of the plugin(s) you need based on your development requirements:
 
-<details>
-  <summary>👉 <b>Plugin and Pipeline Correspondence (Click to Expand)</b></summary>
+<details><summary>👉 <b>Plugin and Pipeline Correspondence (Click to Expand)</b></summary>
 
 <table>
 <thead>
@@ -103,9 +102,7 @@ The plugins supported by PaddleX are listed below. Please determine the name(s) 
 <td><code>PaddleSeg</code></td>
 </tr>
 </tbody>
-</table>
-
-</details>
+</table></details>
 
 If the plugin you need to install is `PaddleXXX`, after installing PaddlePaddle (refer to the [PaddlePaddle Local Installation Tutorial](paddlepaddle_install.en.md)), you can quickly install the corresponding PaddleX plugin by executing the following commands:
 
@@ -145,11 +142,9 @@ docker run --gpus all --name paddlex -v $PWD:/paddle --shm-size=8g --network=hos
 
 * If your Docker version <= 19.03 and >= 17.06, please use:
 
-<details>
-   <summary> Click Here</summary>
+<details><summary> Click Here</summary>
 
-```bash
-# For CPU
+<pre><code class="language-bash"># For CPU
 docker run --name paddlex -v $PWD:/paddle --shm-size=8g --network=host -it registry.baidubce.com/paddlex/paddlex:paddlex3.0.0b1-paddlepaddle3.0.0b1-cpu /bin/bash
 
 # For GPU
@@ -158,9 +153,7 @@ nvidia-docker run --name paddlex -v $PWD:/paddle --shm-size=8g --network=host -i
 
 # For CUDA12.3
 nvidia-docker run --name paddlex -v $PWD:/paddle --shm-size=8g --network=host -it registry.baidubce.com/paddlex/paddlex:paddlex3.0.0b1-paddlepaddle3.0.0b1-gpu-cuda12.3-cudnn9.0-trt8.6 /bin/bash
-```
-
-</details>
+</code></pre></details>
 
 * If your Docker version <= 17.06, please update your Docker.
 

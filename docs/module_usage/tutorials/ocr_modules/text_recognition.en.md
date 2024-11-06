@@ -38,86 +38,76 @@ The text recognition module is the core component of an OCR (Optical Character R
 
 > ❗ The above list features the <b>2 core models</b> that the image classification module primarily supports. In total, this module supports <b>4 models</b>. The complete list of models is as follows:
 
-<details>
-   <summary> 👉Model List Details</summary>
+<details><summary> 👉Model List Details</summary>
 
 <table>
-  <tr>
-    <th>Model</th>
-    <th>Recognition Avg Accuracy(%)</th>
-    <th>GPU Inference Time (ms)</th>
-    <th>CPU Inference Time (ms)</th>
-    <th>Model Size (M)</th>
-    <th>Description</th>
-  </tr>
-   <tr>
-        <td>PP-OCRv4_mobile_rec</td>
-        <td>78.20</td>
-        <td>7.95018</td>
-        <td>46.7868</td>
-        <td>10.6 M</td>
-        <td rowspan="2">PP-OCRv4, developed by Baidu's PaddlePaddle Vision Team, is the next version of the PP-OCRv3 text recognition model. By introducing data augmentation schemes, GTC-NRTR guidance branches, and other strategies, it further improves text recognition accuracy without compromising model inference speed. The model offers both server and mobile versions to meet industrial needs in different scenarios.</td>
-    </tr>
-    <tr>
-        <td>PP-OCRv4_server_rec </td>
-        <td>79.20</td>
-        <td>7.19439</td>
-        <td>140.179</td>
-        <td>71.2 M</td>
-    </tr>
+<tr>
+<th>Model</th>
+<th>Recognition Avg Accuracy(%)</th>
+<th>GPU Inference Time (ms)</th>
+<th>CPU Inference Time (ms)</th>
+<th>Model Size (M)</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>PP-OCRv4_mobile_rec</td>
+<td>78.20</td>
+<td>7.95018</td>
+<td>46.7868</td>
+<td>10.6 M</td>
+<td rowspan="2">PP-OCRv4, developed by Baidu's PaddlePaddle Vision Team, is the next version of the PP-OCRv3 text recognition model. By introducing data augmentation schemes, GTC-NRTR guidance branches, and other strategies, it further improves text recognition accuracy without compromising model inference speed. The model offers both server and mobile versions to meet industrial needs in different scenarios.</td>
+</tr>
+<tr>
+<td>PP-OCRv4_server_rec </td>
+<td>79.20</td>
+<td>7.19439</td>
+<td>140.179</td>
+<td>71.2 M</td>
+</tr>
 </table>
 
-
-<b>Note: The evaluation set for the above accuracy metrics is PaddleOCR's self-built Chinese dataset, covering street scenes, web images, documents, handwriting, and more, with 1.1w images for text recognition. GPU inference time for all models is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
-
-
+<p><b>Note: The evaluation set for the above accuracy metrics is PaddleOCR's self-built Chinese dataset, covering street scenes, web images, documents, handwriting, and more, with 1.1w images for text recognition. GPU inference time for all models is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b></p>
 <table>
-  <tr>
-    <th>Model</th>
-    <th>Recognition Avg Accuracy(%)</th>
-    <th>GPU Inference Time (ms)</th>
-    <th>CPU Inference Time</th>
-    <th>Model Size (M)</th>
-    <th>Description</th>
-  </tr>
-   <tr>
-        <td>ch_SVTRv2_rec</td>
-        <td>68.81</td>
-        <td>8.36801</td>
-        <td>165.706</td>
-        <td>73.9 M</td>
-        <td rowspan="1">SVTRv2, a server-side text recognition model developed by the OpenOCR team at the Vision and Learning Lab (FVL) of Fudan University, also won first place in the OCR End-to-End Recognition Task of the PaddleOCR Algorithm Model Challenge. Its A-rank end-to-end recognition accuracy is 6% higher than PP-OCRv4.
+<tr>
+<th>Model</th>
+<th>Recognition Avg Accuracy(%)</th>
+<th>GPU Inference Time (ms)</th>
+<th>CPU Inference Time</th>
+<th>Model Size (M)</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>ch_SVTRv2_rec</td>
+<td>68.81</td>
+<td>8.36801</td>
+<td>165.706</td>
+<td>73.9 M</td>
+<td rowspan="1">SVTRv2, a server-side text recognition model developed by the OpenOCR team at the Vision and Learning Lab (FVL) of Fudan University, also won first place in the OCR End-to-End Recognition Task of the PaddleOCR Algorithm Model Challenge. Its A-rank end-to-end recognition accuracy is 6% higher than PP-OCRv4.
 </td>
-    </tr>
+</tr>
 </table>
 
-
-<b>Note: The evaluation set for the above accuracy metrics is the [OCR End-to-End Recognition Task of the PaddleOCR Algorithm Model Challenge - Track 1](https://aistudio.baidu.com/competition/detail/1131/0/introduction) A-rank. GPU inference time for all models is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
-
+<p><b>Note: The evaluation set for the above accuracy metrics is the <a href="https://aistudio.baidu.com/competition/detail/1131/0/introduction">OCR End-to-End Recognition Task of the PaddleOCR Algorithm Model Challenge - Track 1</a> A-rank. GPU inference time for all models is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b></p>
 <table>
-  <tr>
-    <th>Model</th>
-    <th>Recognition Avg Accuracy(%)</th>
-    <th>GPU Inference Time (ms)</th>
-    <th>CPU Inference Time</th>
-    <th>Model Size (M)</th>
-    <th>Description</th>
-  </tr>
-   <tr>
-        <td>ch_RepSVTR_rec</td>
-        <td>65.07</td>
-        <td>10.5047</td>
-        <td>51.5647</td>
-        <td>22.1 M</td>
-        <td rowspan="1">  RepSVTR, a mobile text recognition model based on SVTRv2, won first place in the OCR End-to-End Recognition Task of the PaddleOCR Algorithm Model Challenge. Its B-rank end-to-end recognition accuracy is 2.5% higher than PP-OCRv4, with comparable inference speed.</td>
-    </tr>
+<tr>
+<th>Model</th>
+<th>Recognition Avg Accuracy(%)</th>
+<th>GPU Inference Time (ms)</th>
+<th>CPU Inference Time</th>
+<th>Model Size (M)</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>ch_RepSVTR_rec</td>
+<td>65.07</td>
+<td>10.5047</td>
+<td>51.5647</td>
+<td>22.1 M</td>
+<td rowspan="1">  RepSVTR, a mobile text recognition model based on SVTRv2, won first place in the OCR End-to-End Recognition Task of the PaddleOCR Algorithm Model Challenge. Its B-rank end-to-end recognition accuracy is 2.5% higher than PP-OCRv4, with comparable inference speed.</td>
+</tr>
 </table>
 
-
-
-<b>Note: The evaluation set for the above accuracy metrics is the [OCR End-to-End Recognition Task of the PaddleOCR Algorithm Model Challenge - Track 1](https://aistudio.baidu.com/competition/detail/1131/0/introduction) B-rank. GPU inference time for all models is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
-
-</details>
+<p><b>Note: The evaluation set for the above accuracy metrics is the <a href="https://aistudio.baidu.com/competition/detail/1131/0/introduction">OCR End-to-End Recognition Task of the PaddleOCR Algorithm Model Challenge - Track 1</a> B-rank. GPU inference time for all models is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b></p></details>
 
 ## III. Quick Integration
 Before quick integration, you need to install the PaddleX wheel package. For the installation method, please refer to the [PaddleX Local Installation Tutorial](../../../installation/installation.en.md). After installing the wheel package, a few lines of code can complete the inference of the text recognition module. You can switch models under this module freely, and you can also integrate the model inference of the text recognition module into your project.
@@ -159,70 +149,61 @@ python main.py -c paddlex/configs/text_recognition/PP-OCRv4_mobile_rec.yaml \
 ```
 After executing the above command, PaddleX will validate the dataset and summarize its basic information. If the command runs successfully, it will print `Check dataset passed !` in the log. The validation results file is saved in `./output/check_dataset_result.json`, and related outputs are saved in the `./output/check_dataset` directory in the current directory, including visual examples of sample images and sample distribution histograms.
 
-<details>
-  <summary>👉 <b>Validation Result Details (Click to Expand)</b></summary>
+<details><summary>👉 <b>Validation Result Details (Click to Expand)</b></summary>
 
-The specific content of the validation result file is:
-
-```bash
-{
-  "done_flag": true,
-  "check_pass": true,
-  "attributes": {
-    "train_samples": 4468,
-    "train_sample_paths": [
-      "../dataset/ocr_rec_dataset_examples/images/train_word_1.png",
-      "../dataset/ocr_rec_dataset_examples/images/train_word_10.png"
+<p>The specific content of the validation result file is:</p>
+<pre><code class="language-bash">{
+  &quot;done_flag&quot;: true,
+  &quot;check_pass&quot;: true,
+  &quot;attributes&quot;: {
+    &quot;train_samples&quot;: 4468,
+    &quot;train_sample_paths&quot;: [
+      &quot;../dataset/ocr_rec_dataset_examples/images/train_word_1.png&quot;,
+      &quot;../dataset/ocr_rec_dataset_examples/images/train_word_10.png&quot;
     ],
-    "val_samples": 2077,
-    "val_sample_paths": [
-      "../dataset/ocr_rec_dataset_examples/images/val_word_1.png",
-      "../dataset/ocr_rec_dataset_examples/images/val_word_10.png"
+    &quot;val_samples&quot;: 2077,
+    &quot;val_sample_paths&quot;: [
+      &quot;../dataset/ocr_rec_dataset_examples/images/val_word_1.png&quot;,
+      &quot;../dataset/ocr_rec_dataset_examples/images/val_word_10.png&quot;
     ]
   },
-  "analysis": {
-    "histogram": "check_dataset/histogram.png"
+  &quot;analysis&quot;: {
+    &quot;histogram&quot;: &quot;check_dataset/histogram.png&quot;
   },
-  "dataset_path": "./dataset/ocr_rec_dataset_examples",
-  "show_type": "image",
-  "dataset_type": "MSTextRecDataset"
+  &quot;dataset_path&quot;: &quot;./dataset/ocr_rec_dataset_examples&quot;,
+  &quot;show_type&quot;: &quot;image&quot;,
+  &quot;dataset_type&quot;: &quot;MSTextRecDataset&quot;
 }
-```
-In the above validation result, `check_pass` being `true` indicates that the dataset format meets the requirements. Explanations for other indicators are as follows:
-
-* `attributes.train_samples`: The number of training set samples in this dataset is 4468;
-* `attributes.val_samples`: The number of validation set samples in this dataset is 2077;
-* `attributes.train_sample_paths`: A list of relative paths to the visualized training set samples in this dataset;
-* `attributes.val_sample_paths`: A list of relative paths to the visualized validation set samples in this dataset;
-Additionally, the dataset validation also analyzes the distribution of character length ratios in the dataset and generates a distribution histogram (histogram.png):
-
-<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/modules/text_recog/01.png">
-</details>
+</code></pre>
+<p>In the above validation result, <code>check_pass</code> being <code>true</code> indicates that the dataset format meets the requirements. Explanations for other indicators are as follows:</p>
+<ul>
+<li><code>attributes.train_samples</code>: The number of training set samples in this dataset is 4468;</li>
+<li><code>attributes.val_samples</code>: The number of validation set samples in this dataset is 2077;</li>
+<li><code>attributes.train_sample_paths</code>: A list of relative paths to the visualized training set samples in this dataset;</li>
+<li><code>attributes.val_sample_paths</code>: A list of relative paths to the visualized validation set samples in this dataset;
+Additionally, the dataset validation also analyzes the distribution of character length ratios in the dataset and generates a distribution histogram (histogram.png):</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/modules/text_recog/01.png"></p></details>
 
 #### 4.1.3 Dataset Format Conversion/Dataset Splitting (Optional)
 
 
 After completing data validation, you can convert the dataset format or re-split the training/validation ratio of the dataset by <b>modifying the configuration file</b> or <b>appending hyperparameters</b>.
 
-<details>
-  <summary>👉 <b>Dataset Format Conversion/Dataset Splitting Details (Click to Expand)</b></summary>
+<details><summary>👉 <b>Dataset Format Conversion/Dataset Splitting Details (Click to Expand)</b></summary>
 
-<b>(1) Dataset Format Conversion</b>
-
-Text recognition does not currently support data conversion.
-
-<b>(2) Dataset Splitting</b>
-
-The parameters for dataset splitting can be set by modifying the `CheckDataset` section in the configuration file. Examples of some parameters in the configuration file are as follows:
-
-* `CheckDataset`:
-  * `split`:
-    * `enable`: Whether to re-split the dataset. Set to `True` to enable dataset splitting, default is `False`;
-    * `train_percent`: If re-splitting the dataset, set the percentage of the training set. The type is any integer between 0-100, and it must sum up to 100 with `val_percent`;
-For example, if you want to re-split the dataset with a 90% training set and a 10% validation set, modify the configuration file as follows:
-
-```bash
-......
+<p><b>(1) Dataset Format Conversion</b></p>
+<p>Text recognition does not currently support data conversion.</p>
+<p><b>(2) Dataset Splitting</b></p>
+<p>The parameters for dataset splitting can be set by modifying the <code>CheckDataset</code> section in the configuration file. Examples of some parameters in the configuration file are as follows:</p>
+<ul>
+<li><code>CheckDataset</code>:</li>
+<li><code>split</code>:</li>
+<li><code>enable</code>: Whether to re-split the dataset. Set to <code>True</code> to enable dataset splitting, default is <code>False</code>;</li>
+<li><code>train_percent</code>: If re-splitting the dataset, set the percentage of the training set. The type is any integer between 0-100, and it must sum up to 100 with <code>val_percent</code>;
+For example, if you want to re-split the dataset with a 90% training set and a 10% validation set, modify the configuration file as follows:</li>
+</ul>
+<pre><code class="language-bash">......
 CheckDataset:
   ......
   split:
@@ -230,27 +211,21 @@ CheckDataset:
     train_percent: 90
     val_percent: 10
   ......
-```
-Then execute the command:
-
-```bash
-python main.py -c paddlex/configs/text_recognition/PP-OCRv4_mobile_rec.yaml \
+</code></pre>
+<p>Then execute the command:</p>
+<pre><code class="language-bash">python main.py -c paddlex/configs/text_recognition/PP-OCRv4_mobile_rec.yaml \
     -o Global.mode=check_dataset \
     -o Global.dataset_dir=./dataset/ocr_rec_dataset_examples
-```
-After data splitting, the original annotation files will be renamed to `xxx.bak` in the original path.
-
-The above parameters also support setting through appending command line arguments:
-
-```bash
-python main.py -c paddlex/configs/text_recognition/PP-OCRv4_mobile_rec.yaml \
+</code></pre>
+<p>After data splitting, the original annotation files will be renamed to <code>xxx.bak</code> in the original path.</p>
+<p>The above parameters also support setting through appending command line arguments:</p>
+<pre><code class="language-bash">python main.py -c paddlex/configs/text_recognition/PP-OCRv4_mobile_rec.yaml \
     -o Global.mode=check_dataset \
     -o Global.dataset_dir=./dataset/ocr_rec_dataset_examples \
     -o CheckDataset.split.enable=True \
     -o CheckDataset.split.train_percent=90 \
     -o CheckDataset.split.val_percent=10
-```
-</details>
+</code></pre></details>
 
 ### 4.2 Model Training
 Model training can be completed with a single command. Here's an example of training the PP-OCRv4 mobile text recognition model (PP-OCRv4_mobile_rec):
@@ -268,19 +243,21 @@ The steps required are:
 Other related parameters can be set by modifying the `Global` and `Train` fields in the `.yaml` configuration file or adjusted by appending parameters in the command line. For example, to specify training on the first 2 GPUs: `-o Global.device=gpu:0,1`; to set the number of training epochs to 10: `-o Train.epochs_iters=10`. For more modifiable parameters and their detailed explanations, refer to the [PaddleX Common Configuration File Parameters](../../instructions/config_parameters_common.en.md).
 
 
-<details>
-  <summary>👉 <b>More Information (Click to Expand)</b></summary>
+<details><summary>👉 <b>More Information (Click to Expand)</b></summary>
 
-
-* During model training, PaddleX automatically saves the model weight files, with the default being `output`. If you need to specify a save path, you can set it through the `-o Global.output` field in the configuration file.
-* PaddleX shields you from the concepts of dynamic graph weights and static graph weights. During model training, both dynamic and static graph weights are produced, and static graph weights are selected by default for model inference.
-* After completing the model training, all outputs are saved in the specified output directory (default is `./output/`), typically including:
-
-* `train_result.json`: Training result record file, recording whether the training task was completed normally, as well as the output weight metrics, related file paths, etc.;
-* `train.log`: Training log file, recording changes in model metrics and loss during training;
-* `config.yaml`: Training configuration file, recording the hyperparameter configuration for this training session;
-* `.pdparams`, `.pdema`, `.pdopt.pdstate`, `.pdiparams`, `.pdmodel`: Model weight-related files, including network parameters, optimizer, EMA, static graph network parameters, static graph network structure, etc.;
-</details>
+<ul>
+<li>During model training, PaddleX automatically saves the model weight files, with the default being <code>output</code>. If you need to specify a save path, you can set it through the <code>-o Global.output</code> field in the configuration file.</li>
+<li>PaddleX shields you from the concepts of dynamic graph weights and static graph weights. During model training, both dynamic and static graph weights are produced, and static graph weights are selected by default for model inference.</li>
+<li>
+<p>After completing the model training, all outputs are saved in the specified output directory (default is <code>./output/</code>), typically including:</p>
+</li>
+<li>
+<p><code>train_result.json</code>: Training result record file, recording whether the training task was completed normally, as well as the output weight metrics, related file paths, etc.;</p>
+</li>
+<li><code>train.log</code>: Training log file, recording changes in model metrics and loss during training;</li>
+<li><code>config.yaml</code>: Training configuration file, recording the hyperparameter configuration for this training session;</li>
+<li><code>.pdparams</code>, <code>.pdema</code>, <code>.pdopt.pdstate</code>, <code>.pdiparams</code>, <code>.pdmodel</code>: Model weight-related files, including network parameters, optimizer, EMA, static graph network parameters, static graph network structure, etc.;</li>
+</ul></details>
 
 ## <b>4.3 Model Evaluation</b>
 After completing model training, you can evaluate the specified model weights file on the validation set to verify the model's accuracy. Using PaddleX for model evaluation can be done with a single command:
@@ -301,14 +278,10 @@ Similar to model training, the following steps are required:
 Other related parameters can be set by modifying the `Global` and `Evaluate` fields in the `.yaml` configuration file. For details, refer to [PaddleX Common Model Configuration File Parameter Description](../../instructions/config_parameters_common.en.md).
 
 
-<details>
-  <summary>👉 <b>More Information (Click to Expand)</b></summary>
+<details><summary>👉 <b>More Information (Click to Expand)</b></summary>
 
-When evaluating the model, you need to specify the model weights file path. Each configuration file has a default weight save path. If you need to change it, simply append the command line parameter to set it, such as `-o Evaluate.weight_path=./output/best_model/best_model.pdparams`.
-
-After completing the model evaluation, an `evaluate_result.json` file will be produced, which records the evaluation results, specifically, whether the evaluation task was completed successfully and the model's evaluation metrics, including  acc、norm_edit_dis；
-
-</details>
+<p>When evaluating the model, you need to specify the model weights file path. Each configuration file has a default weight save path. If you need to change it, simply append the command line parameter to set it, such as <code>-o Evaluate.weight_path=./output/best_model/best_model.pdparams</code>.</p>
+<p>After completing the model evaluation, an <code>evaluate_result.json</code> file will be produced, which records the evaluation results, specifically, whether the evaluation task was completed successfully and the model's evaluation metrics, including  acc、norm_edit_dis；</p></details>
 
 ### <b>4.4 Model Inference and Model Integration</b>
 After completing model training and evaluation, you can use the trained model weights for inference prediction or Python integration.

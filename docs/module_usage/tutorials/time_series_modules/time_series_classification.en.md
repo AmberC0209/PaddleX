@@ -69,26 +69,23 @@ After executing the above command, PaddleX will validate the dataset, summarize 
 
 
 
-<details>
-  <summary>👉 <b>Validation Result Details (Click to Expand)</b></summary>
+<details><summary>👉 <b>Validation Result Details (Click to Expand)</b></summary>
 
-The specific content of the validation result file is:
-
-```bash
-{
-  "done_flag": true,
-  "check_pass": true,
-  "attributes": {
-    "train_samples": 82620,
-    "train_table": [
+<p>The specific content of the validation result file is:</p>
+<pre><code class="language-bash">{
+  &quot;done_flag&quot;: true,
+  &quot;check_pass&quot;: true,
+  &quot;attributes&quot;: {
+    &quot;train_samples&quot;: 82620,
+    &quot;train_table&quot;: [
       [
-        "Unnamed: 0",
-        "group_id",
-        "dim_0",
+        &quot;Unnamed: 0&quot;,
+        &quot;group_id&quot;,
+        &quot;dim_0&quot;,
         ...,
-        "dim_60",
-        "label",
-        "time"
+        &quot;dim_60&quot;,
+        &quot;label&quot;,
+        &quot;time&quot;
       ],
       [
         0.0,
@@ -100,16 +97,16 @@ The specific content of the validation result file is:
         0.0
       ]
     ],
-    "val_samples": 83025,
-    "val_table": [
+    &quot;val_samples&quot;: 83025,
+    &quot;val_table&quot;: [
       [
-        "Unnamed: 0",
-        "group_id",
-        "dim_0",
+        &quot;Unnamed: 0&quot;,
+        &quot;group_id&quot;,
+        &quot;dim_0&quot;,
         ...,
-        "dim_60",
-        "label",
-        "time"
+        &quot;dim_60&quot;,
+        &quot;label&quot;,
+        &quot;time&quot;
       ],
       [
         0.0,
@@ -122,92 +119,73 @@ The specific content of the validation result file is:
       ]
     ]
   },
-  "analysis": {
-    "histogram": "check_dataset/histogram.png"
+  &quot;analysis&quot;: {
+    &quot;histogram&quot;: &quot;check_dataset/histogram.png&quot;
   },
-  "dataset_path": "./dataset/ts_classify_examples",
-  "show_type": "csv",
-  "dataset_type": "TSCLSDataset"
+  &quot;dataset_path&quot;: &quot;./dataset/ts_classify_examples&quot;,
+  &quot;show_type&quot;: &quot;csv&quot;,
+  &quot;dataset_type&quot;: &quot;TSCLSDataset&quot;
 }
-```
-
-The verification results above indicate that `check_pass` being `True` means the dataset format meets the requirements. Explanations for other indicators are as follows:
-
-
-* `attributes.train_samples`: The number of training samples in this dataset is 12194;
-* `attributes.val_samples`: The number of validation samples in this dataset is 3484;
-* `attributes.train_sample_paths`: A list of relative paths to the top 10 rows of training samples in this dataset;
-* `attributes.val_sample_paths`: A list of relative paths to the top 10 rows of validation samples in this dataset;
-
-Furthermore, the dataset validation also involved an analysis of the distribution of sample numbers across all categories within the dataset, and a distribution histogram (histogram.png) was generated accordingly.
-
-<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/modules/time_classification/01.png">
-
-
-<b>Note</b>: Only data that has passed validation can be used for training and evaluation.
-</details>
+</code></pre>
+<p>The verification results above indicate that <code>check_pass</code> being <code>True</code> means the dataset format meets the requirements. Explanations for other indicators are as follows:</p>
+<ul>
+<li><code>attributes.train_samples</code>: The number of training samples in this dataset is 12194;</li>
+<li><code>attributes.val_samples</code>: The number of validation samples in this dataset is 3484;</li>
+<li><code>attributes.train_sample_paths</code>: A list of relative paths to the top 10 rows of training samples in this dataset;</li>
+<li><code>attributes.val_sample_paths</code>: A list of relative paths to the top 10 rows of validation samples in this dataset;</li>
+</ul>
+<p>Furthermore, the dataset validation also involved an analysis of the distribution of sample numbers across all categories within the dataset, and a distribution histogram (histogram.png) was generated accordingly.</p>
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/modules/time_classification/01.png"></p>
+<p><b>Note</b>: Only data that has passed validation can be used for training and evaluation.</p></details>
 
 #### 4.1.3 Dataset Format Conversion/Dataset Splitting (Optional)
 After completing data validation, you can convert the dataset format and re-split the training/validation ratio by <b>modifying the configuration file</b> or <b>appending hyperparameters</b>.
 
-<details>
-  <summary>👉 <b>Details on Format Conversion/Dataset Splitting (Click to Expand)</b></summary>
+<details><summary>👉 <b>Details on Format Conversion/Dataset Splitting (Click to Expand)</b></summary>
 
-<b>(1) Dataset Format Conversion</b>
-
-Time-series classification supports converting `xlsx` and `xls` format datasets to `csv` format.
-
-Parameters related to dataset validation can be set by modifying the fields under `CheckDataset` in the configuration file. Examples of some parameters in the configuration file are as follows:
-
-* `CheckDataset`:
-  * `convert`:
-    * `enable`: Whether to perform dataset format conversion, supporting conversion from `xlsx` and `xls` formats to `CSV` format, default is `False`;
-    * `src_dataset_type`: If dataset format conversion is performed, the source dataset format does not need to be set, default is `null`;
-
-To enable format conversion, modify the configuration as follows:
-
-```bash
-......
+<p><b>(1) Dataset Format Conversion</b></p>
+<p>Time-series classification supports converting <code>xlsx</code> and <code>xls</code> format datasets to <code>csv</code> format.</p>
+<p>Parameters related to dataset validation can be set by modifying the fields under <code>CheckDataset</code> in the configuration file. Examples of some parameters in the configuration file are as follows:</p>
+<ul>
+<li><code>CheckDataset</code>:</li>
+<li><code>convert</code>:</li>
+<li><code>enable</code>: Whether to perform dataset format conversion, supporting conversion from <code>xlsx</code> and <code>xls</code> formats to <code>CSV</code> format, default is <code>False</code>;</li>
+<li><code>src_dataset_type</code>: If dataset format conversion is performed, the source dataset format does not need to be set, default is <code>null</code>;</li>
+</ul>
+<p>To enable format conversion, modify the configuration as follows:</p>
+<pre><code class="language-bash">......
 CheckDataset:
   ......
   convert:
     enable: True
     src_dataset_type: null
   ......
-```
-Then execute the command:
-
-```bash
-python main.py -c paddlex/configs/ts_classification/TimesNet_cls.yaml \
+</code></pre>
+<p>Then execute the command:</p>
+<pre><code class="language-bash">python main.py -c paddlex/configs/ts_classification/TimesNet_cls.yaml \
     -o Global.mode=check_dataset \
     -o Global.dataset_dir=./dataset/ts_classify_examples
-```
-The above parameters can also be set by appending command line arguments:
-
-```bash
-python main.py -c paddlex/configs/ts_classification/TimesNet_cls.yaml \
+</code></pre>
+<p>The above parameters can also be set by appending command line arguments:</p>
+<pre><code class="language-bash">python main.py -c paddlex/configs/ts_classification/TimesNet_cls.yaml \
     -o Global.mode=check_dataset \
     -o Global.dataset_dir=./dataset/ts_classify_examples \
     -o CheckDataset.convert.enable=True
-```
-
-<b>(2) Dataset Splitting</b>
-
-Parameters related to dataset validation can be set by modifying the fields under `CheckDataset` in the configuration file. Examples of some parameters in the configuration file are as follows:
-
-* `CheckDataset`:
-  * `convert`:
-    * `enable`: Whether to perform dataset format conversion, `True` to enable, default is `False`;
-    * `src_dataset_type`: If dataset format conversion is performed, time-series classification only supports converting xlsx annotation files to csv, the source dataset format does not need to be set, default is `null`;
-  * `split`:
-    * `enable`: Whether to re-split the dataset, `True` to enable, default is `False`;
-    * `train_percent`: If the dataset is re-split, the percentage of the training set needs to be set, an integer between 0-100, ensuring the sum with `val_percent` is 100;
-    * `val_percent`: If the dataset is re-split, the percentage of the validation set needs to be set, an integer between 0-100, ensuring the sum with `train_percent` is 100;
-
-For example, if you want to re-split the dataset with a 90% training set and a 10% validation set, modify the configuration file as follows:
-
-```bash
-......
+</code></pre>
+<p><b>(2) Dataset Splitting</b></p>
+<p>Parameters related to dataset validation can be set by modifying the fields under <code>CheckDataset</code> in the configuration file. Examples of some parameters in the configuration file are as follows:</p>
+<ul>
+<li><code>CheckDataset</code>:</li>
+<li><code>convert</code>:</li>
+<li><code>enable</code>: Whether to perform dataset format conversion, <code>True</code> to enable, default is <code>False</code>;</li>
+<li><code>src_dataset_type</code>: If dataset format conversion is performed, time-series classification only supports converting xlsx annotation files to csv, the source dataset format does not need to be set, default is <code>null</code>;</li>
+<li><code>split</code>:</li>
+<li><code>enable</code>: Whether to re-split the dataset, <code>True</code> to enable, default is <code>False</code>;</li>
+<li><code>train_percent</code>: If the dataset is re-split, the percentage of the training set needs to be set, an integer between 0-100, ensuring the sum with <code>val_percent</code> is 100;</li>
+<li><code>val_percent</code>: If the dataset is re-split, the percentage of the validation set needs to be set, an integer between 0-100, ensuring the sum with <code>train_percent</code> is 100;</li>
+</ul>
+<p>For example, if you want to re-split the dataset with a 90% training set and a 10% validation set, modify the configuration file as follows:</p>
+<pre><code class="language-bash">......
 CheckDataset:
   ......
   split:
@@ -215,27 +193,21 @@ CheckDataset:
     train_percent: 90
     val_percent: 10
   ......
-```
-Then execute the command:
-
-```bash
-python main.py -c paddlex/configs/ts_classification/TimesNet_cls.yaml \
+</code></pre>
+<p>Then execute the command:</p>
+<pre><code class="language-bash">python main.py -c paddlex/configs/ts_classification/TimesNet_cls.yaml \
     -o Global.mode=check_dataset \
     -o Global.dataset_dir=./dataset/ts_classify_examples
-```
-After dataset splitting, the original annotation files will be renamed to `xxx.bak` in the original path.
-
-The above parameters can also be set by appending command line arguments:
-
-```bash
-python main.py -c paddlex/configs/ts_classification/TimesNet_cls.yaml \
+</code></pre>
+<p>After dataset splitting, the original annotation files will be renamed to <code>xxx.bak</code> in the original path.</p>
+<p>The above parameters can also be set by appending command line arguments:</p>
+<pre><code class="language-bash">python main.py -c paddlex/configs/ts_classification/TimesNet_cls.yaml \
     -o Global.mode=check_dataset \
     -o Global.dataset_dir=./dataset/ts_classify_examples \
     -o CheckDataset.split.enable=True \
     -o CheckDataset.split.train_percent=90 \
     -o CheckDataset.split.val_percent=10
-```
-</details>
+</code></pre></details>
 
 
 ### 4.2 Model Training
@@ -256,18 +228,21 @@ You need to follow these steps:
 
 Other related parameters can be set by modifying the `Global` and `Train` fields in the `.yaml` configuration file, or adjusted by appending parameters in the command line. For example, to train using the first two GPUs: `-o Global.device=gpu:0,1`; to set the number of training epochs to 10: `-o Train.epochs_iters=10`. For more modifiable parameters and their detailed explanations, refer to the [PaddleX TS Configuration Parameters Documentation](../../instructions/config_parameters_time_series.en.md).
 
-<details>
-  <summary>👉 <b>More Details (Click to Expand)</b></summary>
+<details><summary>👉 <b>More Details (Click to Expand)</b></summary>
 
-* During model training, PaddleX automatically saves model weight files, with the default path being `output`. To specify a different save path, use the `-o Global.output` field in the configuration file.
-* PaddleX abstracts the concepts of dynamic graph weights and static graph weights from you. During model training, both dynamic and static graph weights are produced, and static graph weights are used by default for model inference.
-* After model training, all outputs are saved in the specified output directory (default is `./output/`), typically including:
-
-* `train_result.json`: Training result record file, including whether the training task completed successfully, produced weight metrics, and related file paths.
-* `train.log`: Training log file, recording model metric changes, loss changes, etc.
-* `config.yaml`: Training configuration file, recording the hyperparameters used for this training session.
-* `best_accuracy.pdparams.tar`, `scaler.pkl`, `.checkpoints`, `.inference`: Model weight-related files, including Model weight-related files, including network parameters, optimizers, and network architecture.
-</details>
+<ul>
+<li>During model training, PaddleX automatically saves model weight files, with the default path being <code>output</code>. To specify a different save path, use the <code>-o Global.output</code> field in the configuration file.</li>
+<li>PaddleX abstracts the concepts of dynamic graph weights and static graph weights from you. During model training, both dynamic and static graph weights are produced, and static graph weights are used by default for model inference.</li>
+<li>
+<p>After model training, all outputs are saved in the specified output directory (default is <code>./output/</code>), typically including:</p>
+</li>
+<li>
+<p><code>train_result.json</code>: Training result record file, including whether the training task completed successfully, produced weight metrics, and related file paths.</p>
+</li>
+<li><code>train.log</code>: Training log file, recording model metric changes, loss changes, etc.</li>
+<li><code>config.yaml</code>: Training configuration file, recording the hyperparameters used for this training session.</li>
+<li><code>best_accuracy.pdparams.tar</code>, <code>scaler.pkl</code>, <code>.checkpoints</code>, <code>.inference</code>: Model weight-related files, including Model weight-related files, including network parameters, optimizers, and network architecture.</li>
+</ul></details>
 
 
 ### 4.3 Model Evaluation
@@ -285,16 +260,11 @@ Similar to model training, the following steps are required:
 * Specify the path to the validation dataset: `-o Global.dataset_dir`
 Other relevant parameters can be set by modifying the `Global` and `Evaluate` fields in the `.yaml` configuration file. For details, refer to [PaddleX Time Series Task Model Configuration File Parameter Description](../../instructions/config_parameters_time_series.en.md).
 
-<details>
-  <summary>👉 <b>More Details (Click to Expand)</b></summary>
+<details><summary>👉 <b>More Details (Click to Expand)</b></summary>
 
-When evaluating the model, you need to specify the model weights file path. Each configuration file has a default weight save path built-in. If you need to change it, simply set it by appending a command line parameter, such as `-o Evaluate.weight_path=./output/best_model/model.pdparams`.
-
-After completing the model evaluation, typically, the following outputs are generated:
-
-Upon completion of model evaluation, an `evaluate_result.json` file is produced, which records the evaluation results, specifically whether the evaluation task was completed successfully and the model's evaluation metrics, including Top-1 Accuracy and F1 score.
-
-</details>
+<p>When evaluating the model, you need to specify the model weights file path. Each configuration file has a default weight save path built-in. If you need to change it, simply set it by appending a command line parameter, such as <code>-o Evaluate.weight_path=./output/best_model/model.pdparams</code>.</p>
+<p>After completing the model evaluation, typically, the following outputs are generated:</p>
+<p>Upon completion of model evaluation, an <code>evaluate_result.json</code> file is produced, which records the evaluation results, specifically whether the evaluation task was completed successfully and the model's evaluation metrics, including Top-1 Accuracy and F1 score.</p></details>
 
 ### 4.4 Model Inference and Model Integration
 After completing model training and evaluation, you can use the trained model weights for inference prediction or Python integration.

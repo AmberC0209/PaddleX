@@ -25,11 +25,9 @@ docker run --gpus all --name paddlex -v $PWD:/paddle --shm-size=8G --network=hos
 
 * 若您使用的 Docker 版本 <= 19.03 但 >= 17.06，请执行：
 
-<details>
-   <summary> 点击展开</summary>
+<details><summary> 点击展开</summary>
 
-```bash
-# 对于 cpu 用户:
+<pre><code class="language-bash"># 对于 cpu 用户:
 docker run --name paddlex -v $PWD:/paddle --shm-size=8G --network=host -it registry.baidubce.com/paddlepaddle/paddle:3.0.0b1 /bin/bash
 
 # 对于 gpu 用户:
@@ -38,9 +36,7 @@ nvidia-docker run --name paddlex -v $PWD:/paddle --shm-size=8G --network=host -i
 
 # CUDA12.3 用户
 nvidia-docker run --name paddlex -v $PWD:/paddle --shm-size=8G --network=host -it registry.baidubce.com/paddlepaddle/paddle:3.0.0b1-gpu-cuda12.3-cudnn9.0-trt8.6 /bin/bash
-```
-
-</details>
+</code></pre></details>
 
 * 若您使用的 Docker 版本 <= 17.06，请升级 Docker 版本。
 

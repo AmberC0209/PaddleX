@@ -37,8 +37,7 @@ Semantic segmentation is a technique in computer vision that classifies each pix
 
 > ❗ The above list features the <b>2 core models</b> that the image classification module primarily supports. In total, this module supports <b>18 models</b>. The complete list of models is as follows:
 
-<details>
-   <summary> 👉Model List Details</summary>
+<details><summary> 👉Model List Details</summary>
 <table>
 <thead>
 <tr>
@@ -151,9 +150,7 @@ Semantic segmentation is a technique in computer vision that classifies each pix
 </tbody>
 </table>
 
-<b>The accuracy metrics of the above models are measured on the [Cityscapes](https://www.cityscapes-dataset.com/) dataset. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
-
-
+<p><b>The accuracy metrics of the above models are measured on the <a href="https://www.cityscapes-dataset.com/">Cityscapes</a> dataset. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b></p>
 <table>
 <thead>
 <tr>
@@ -196,9 +193,7 @@ Semantic segmentation is a technique in computer vision that classifies each pix
 </tbody>
 </table>
 
-<b>The accuracy metrics of the SeaFormer series models are measured on the [ADE20k](https://groups.csail.mit.edu/vision/datasets/ADE20K/) dataset. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
-
-</details>
+<p><b>The accuracy metrics of the SeaFormer series models are measured on the <a href="https://groups.csail.mit.edu/vision/datasets/ADE20K/">ADE20k</a> dataset. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b></p></details>
 
 ## III. Quick Integration
 > ❗ Before quick integration, please install the PaddleX wheel package. For detailed instructions, refer to the [PaddleX Local Installation Guide](../../../installation/installation.en.md)
@@ -246,118 +241,92 @@ python main.py -c paddlex/configs/semantic_segmentation/PP-LiteSeg-T.yaml \
 
 After executing the above command, PaddleX will verify the dataset and collect basic information about it. Once the command runs successfully, a message saying `Check dataset passed !` will be printed in the log. The verification results will be saved in `./output/check_dataset_result.json`, and related outputs will be stored in the `./output/check_dataset` directory, including visual examples of sample images and a histogram of sample distribution.
 
-<details>
-  <summary>👉 <b>Verification Result Details (click to expand)</b></summary>
+<details><summary>👉 <b>Verification Result Details (click to expand)</b></summary>
 
-The specific content of the verification result file is:
-
-```bash
-{
-  "done_flag": true,
-  "check_pass": true,
-  "attributes": {
-    "train_sample_paths": [
-      "check_dataset/demo_img/P0005.jpg",
-      "check_dataset/demo_img/P0050.jpg"
+<p>The specific content of the verification result file is:</p>
+<pre><code class="language-bash">{
+  &quot;done_flag&quot;: true,
+  &quot;check_pass&quot;: true,
+  &quot;attributes&quot;: {
+    &quot;train_sample_paths&quot;: [
+      &quot;check_dataset/demo_img/P0005.jpg&quot;,
+      &quot;check_dataset/demo_img/P0050.jpg&quot;
     ],
-    "train_samples": 267,
-    "val_sample_paths": [
-      "check_dataset/demo_img/N0139.jpg",
-      "check_dataset/demo_img/P0137.jpg"
+    &quot;train_samples&quot;: 267,
+    &quot;val_sample_paths&quot;: [
+      &quot;check_dataset/demo_img/N0139.jpg&quot;,
+      &quot;check_dataset/demo_img/P0137.jpg&quot;
     ],
-    "val_samples": 76,
-    "num_classes": 2
+    &quot;val_samples&quot;: 76,
+    &quot;num_classes&quot;: 2
   },
-  "analysis": {
-    "histogram": "check_dataset/histogram.png"
+  &quot;analysis&quot;: {
+    &quot;histogram&quot;: &quot;check_dataset/histogram.png&quot;
   },
-  "dataset_path": "./dataset/seg_optic_examples",
-  "show_type": "image",
-  "dataset_type": "SegDataset"
+  &quot;dataset_path&quot;: &quot;./dataset/seg_optic_examples&quot;,
+  &quot;show_type&quot;: &quot;image&quot;,
+  &quot;dataset_type&quot;: &quot;SegDataset&quot;
 }
-```
-
-The verification results above indicate that `check_pass` being `True` means the dataset format meets the requirements. Explanations for other indicators are as follows:
-
-* `attributes.num_classes`: The number of classes in this dataset is 2;
-* `attributes.train_samples`: The number of training samples in this dataset is 267;
-* `attributes.val_samples`: The number of validation samples in this dataset is 76;
-* `attributes.train_sample_paths`: A list of relative paths to the visualization images of training samples in this dataset;
-* `attributes.val_sample_paths`: A list of relative paths to the visualization images of validation samples in this dataset;
-
-The dataset verification also analyzes the distribution of sample numbers across all classes and plots a histogram (histogram.png):
-
-<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/modules/semanticseg/01.png">
-
-</details>
+</code></pre>
+<p>The verification results above indicate that <code>check_pass</code> being <code>True</code> means the dataset format meets the requirements. Explanations for other indicators are as follows:</p>
+<ul>
+<li><code>attributes.num_classes</code>: The number of classes in this dataset is 2;</li>
+<li><code>attributes.train_samples</code>: The number of training samples in this dataset is 267;</li>
+<li><code>attributes.val_samples</code>: The number of validation samples in this dataset is 76;</li>
+<li><code>attributes.train_sample_paths</code>: A list of relative paths to the visualization images of training samples in this dataset;</li>
+<li><code>attributes.val_sample_paths</code>: A list of relative paths to the visualization images of validation samples in this dataset;</li>
+</ul>
+<p>The dataset verification also analyzes the distribution of sample numbers across all classes and plots a histogram (histogram.png):</p>
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/modules/semanticseg/01.png"></p></details>
 
 #### 4.1.3 Dataset Format Conversion/Dataset Splitting (Optional) (Click to Expand)
-<details>
-  <summary>👉 <b>Details on Format Conversion/Dataset Splitting (Click to Expand)</b></summary>
+<details><summary>👉 <b>Details on Format Conversion/Dataset Splitting (Click to Expand)</b></summary>
 
-After completing dataset verification, you can convert the dataset format or re-split the training/validation ratio by modifying the configuration file or appending hyperparameters.
-
-<b>(1) Dataset Format Conversion</b>
-
-Semantic segmentation supports converting `LabelMe` format datasets to the required format.
-
-Parameters related to dataset verification can be set by modifying the `CheckDataset` fields in the configuration file. Example explanations for some parameters in the configuration file are as follows:
-
-* `CheckDataset`:
-  * `convert`:
-    * `enable`: Whether to enable dataset format conversion, supporting `LabelMe` format conversion, default is `False`;
-    * `src_dataset_type`: If dataset format conversion is enabled, the source dataset format needs to be set, default is `null`, and the supported source dataset format is `LabelMe`;
-
-For example, if you want to convert a `LabelMe` format dataset, you can download a sample `LabelMe` format dataset as follows:
-
-```bash
-wget https://paddle-model-ecology.bj.bcebos.com/paddlex/data/seg_dataset_to_convert.tar -P ./dataset
+<p>After completing dataset verification, you can convert the dataset format or re-split the training/validation ratio by modifying the configuration file or appending hyperparameters.</p>
+<p><b>(1) Dataset Format Conversion</b></p>
+<p>Semantic segmentation supports converting <code>LabelMe</code> format datasets to the required format.</p>
+<p>Parameters related to dataset verification can be set by modifying the <code>CheckDataset</code> fields in the configuration file. Example explanations for some parameters in the configuration file are as follows:</p>
+<ul>
+<li><code>CheckDataset</code>:</li>
+<li><code>convert</code>:</li>
+<li><code>enable</code>: Whether to enable dataset format conversion, supporting <code>LabelMe</code> format conversion, default is <code>False</code>;</li>
+<li><code>src_dataset_type</code>: If dataset format conversion is enabled, the source dataset format needs to be set, default is <code>null</code>, and the supported source dataset format is <code>LabelMe</code>;</li>
+</ul>
+<p>For example, if you want to convert a <code>LabelMe</code> format dataset, you can download a sample <code>LabelMe</code> format dataset as follows:</p>
+<pre><code class="language-bash">wget https://paddle-model-ecology.bj.bcebos.com/paddlex/data/seg_dataset_to_convert.tar -P ./dataset
 tar -xf ./dataset/seg_dataset_to_convert.tar -C ./dataset/
-```
-
-After downloading, modify the `paddlex/configs/semantic_segmentation/PP-LiteSeg-T.yaml` configuration as follows:
-
-```bash
-......
+</code></pre>
+<p>After downloading, modify the <code>paddlex/configs/semantic_segmentation/PP-LiteSeg-T.yaml</code> configuration as follows:</p>
+<pre><code class="language-bash">......
 CheckDataset:
   ......
   convert:
     enable: True
     src_dataset_type: LabelMe
   ......
-```
-
-Then execute the command:
-
-```bash
-python main.py -c paddlex/configs/semantic_segmentation/PP-LiteSeg-T.yaml \
+</code></pre>
+<p>Then execute the command:</p>
+<pre><code class="language-bash">python main.py -c paddlex/configs/semantic_segmentation/PP-LiteSeg-T.yaml \
     -o Global.mode=check_dataset \
     -o Global.dataset_dir=./dataset/seg_dataset_to_convert
-```
-
-Of course, the above parameters also support being set by appending command-line arguments. For a `LabelMe` format dataset, the command is:
-
-```bash
-python main.py -c paddlex/configs/semantic_segmentation/PP-LiteSeg-T.yaml \
+</code></pre>
+<p>Of course, the above parameters also support being set by appending command-line arguments. For a <code>LabelMe</code> format dataset, the command is:</p>
+<pre><code class="language-bash">python main.py -c paddlex/configs/semantic_segmentation/PP-LiteSeg-T.yaml \
     -o Global.mode=check_dataset \
     -o Global.dataset_dir=./dataset/seg_dataset_to_convert \
     -o CheckDataset.convert.enable=True \
     -o CheckDataset.convert.src_dataset_type=LabelMe
-```
-
-<b>(2) Dataset Splitting</b>
-
-Parameters for dataset splitting can be set by modifying the `CheckDataset` fields in the configuration file. Example explanations for some parameters in the configuration file are as follows:
-
-* `CheckDataset`:
-  * `split`:
-    * `enable`: Whether to enable re-splitting the dataset, set to `True` to perform dataset splitting, default is `False`;
-    * `train_percent`: If re-splitting the dataset, set the percentage of the training set, which should be an integer between 0 and 100, ensuring the sum with `val_percent` is 100;
-
-For example, if you want to re-split the dataset with a 90% training set and a 10% validation set, modify the configuration file as follows:
-
-```bash
-......
+</code></pre>
+<p><b>(2) Dataset Splitting</b></p>
+<p>Parameters for dataset splitting can be set by modifying the <code>CheckDataset</code> fields in the configuration file. Example explanations for some parameters in the configuration file are as follows:</p>
+<ul>
+<li><code>CheckDataset</code>:</li>
+<li><code>split</code>:</li>
+<li><code>enable</code>: Whether to enable re-splitting the dataset, set to <code>True</code> to perform dataset splitting, default is <code>False</code>;</li>
+<li><code>train_percent</code>: If re-splitting the dataset, set the percentage of the training set, which should be an integer between 0 and 100, ensuring the sum with <code>val_percent</code> is 100;</li>
+</ul>
+<p>For example, if you want to re-split the dataset with a 90% training set and a 10% validation set, modify the configuration file as follows:</p>
+<pre><code class="language-bash">......
 CheckDataset:
   ......
   split:
@@ -365,28 +334,21 @@ CheckDataset:
     train_percent: 90
     val_percent: 10
   ......
-```
-
-Then execute the command:
-
-```bash
-python main.py -c paddlex/configs/semantic_segmentation/PP-LiteSeg-T.yaml \
+</code></pre>
+<p>Then execute the command:</p>
+<pre><code class="language-bash">python main.py -c paddlex/configs/semantic_segmentation/PP-LiteSeg-T.yaml \
     -o Global.mode=check_dataset \
     -o Global.dataset_dir=./dataset/seg_optic_examples
-```
-After dataset splitting, the original annotation files will be renamed to `xxx.bak` in the original path.
-
-The above parameters also support setting through appending command line arguments:
-
-```bash
-python main.py -c paddlex/configs/semantic_segmentation/PP-LiteSeg-T.yaml  \
+</code></pre>
+<p>After dataset splitting, the original annotation files will be renamed to <code>xxx.bak</code> in the original path.</p>
+<p>The above parameters also support setting through appending command line arguments:</p>
+<pre><code class="language-bash">python main.py -c paddlex/configs/semantic_segmentation/PP-LiteSeg-T.yaml  \
     -o Global.mode=check_dataset \
     -o Global.dataset_dir=./dataset/seg_optic_examples \
     -o CheckDataset.split.enable=True \
     -o CheckDataset.split.train_percent=90 \
     -o CheckDataset.split.val_percent=10
-```
-</details>
+</code></pre></details>
 
 ### 4.2 Model Training
 
@@ -406,18 +368,21 @@ You need to follow these steps:
 
 Other related parameters can be set by modifying the `Global` and `Train` fields in the `.yaml` configuration file, or adjusted by appending parameters in the command line. For example, to train using the first two GPUs: `-o Global.device=gpu:0,1`; to set the number of training epochs to 10: `-o Train.epochs_iters=10`. For more modifiable parameters and their detailed explanations, refer to the [PaddleX Common Configuration Parameters Documentation](../../instructions/config_parameters_common.en.md).
 
-<details>
-  <summary>👉 <b>More Details (Click to Expand)</b></summary>
+<details><summary>👉 <b>More Details (Click to Expand)</b></summary>
 
-* During model training, PaddleX automatically saves model weight files, with the default path being `output`. To specify a different save path, use the `-o Global.output` field in the configuration file.
-* PaddleX abstracts the concepts of dynamic graph weights and static graph weights from you. During model training, both dynamic and static graph weights are produced, and static graph weights are used by default for model inference.
-* After model training, all outputs are saved in the specified output directory (default is `./output/`), typically including:
-
-* `train_result.json`: Training result record file, including whether the training task completed successfully, produced weight metrics, and related file paths.
-* `train.log`: Training log file, recording model metric changes, loss changes, etc.
-* `config.yaml`: Training configuration file, recording the hyperparameters used for this training session.
-* `.pdparams`, `.pdema`, `.pdopt.pdstate`, `.pdiparams`, `.pdmodel`: Model weight-related files, including network parameters, optimizer, EMA, static graph network parameters, and static graph network structure.
-</details>
+<ul>
+<li>During model training, PaddleX automatically saves model weight files, with the default path being <code>output</code>. To specify a different save path, use the <code>-o Global.output</code> field in the configuration file.</li>
+<li>PaddleX abstracts the concepts of dynamic graph weights and static graph weights from you. During model training, both dynamic and static graph weights are produced, and static graph weights are used by default for model inference.</li>
+<li>
+<p>After model training, all outputs are saved in the specified output directory (default is <code>./output/</code>), typically including:</p>
+</li>
+<li>
+<p><code>train_result.json</code>: Training result record file, including whether the training task completed successfully, produced weight metrics, and related file paths.</p>
+</li>
+<li><code>train.log</code>: Training log file, recording model metric changes, loss changes, etc.</li>
+<li><code>config.yaml</code>: Training configuration file, recording the hyperparameters used for this training session.</li>
+<li><code>.pdparams</code>, <code>.pdema</code>, <code>.pdopt.pdstate</code>, <code>.pdiparams</code>, <code>.pdmodel</code>: Model weight-related files, including network parameters, optimizer, EMA, static graph network parameters, and static graph network structure.</li>
+</ul></details>
 
 ### 4.3 Model Evaluation
 After model training, you can evaluate the specified model weights on the validation set to verify model accuracy. Using PaddleX for model evaluation requires just one command:
@@ -436,16 +401,13 @@ Similar to model training, follow these steps:
 
 Other related parameters can be set by modifying the `Global` and `Evaluate` fields in the `.yaml` configuration file. For more details, refer to the [PaddleX Common Configuration Parameters Documentation](../../instructions/config_parameters_common.en.md).
 
-<details>
-  <summary>👉 <b>More Details (Click to Expand)</b></summary>
+<details><summary>👉 <b>More Details (Click to Expand)</b></summary>
 
-When evaluating the model, you need to specify the model weight file path. Each configuration file has a default weight save path. If you need to change it, simply append the command line parameter, e.g., `-o Evaluate.weight_path=./output/best_model/best_model.pdparams`.
-
-After model evaluation, the following outputs are typically produced:
-
-* `evaluate_result.json`: Records the evaluation results, specifically whether the evaluation task completed successfully and the model's evaluation metrics, including mIoU.
-
-</details>
+<p>When evaluating the model, you need to specify the model weight file path. Each configuration file has a default weight save path. If you need to change it, simply append the command line parameter, e.g., <code>-o Evaluate.weight_path=./output/best_model/best_model.pdparams</code>.</p>
+<p>After model evaluation, the following outputs are typically produced:</p>
+<ul>
+<li><code>evaluate_result.json</code>: Records the evaluation results, specifically whether the evaluation task completed successfully and the model's evaluation metrics, including mIoU.</li>
+</ul></details>
 
 ### 4.4 Model Inference and Integration
 After model training and evaluation, you can use the trained model weights for inference predictions or Python integration.

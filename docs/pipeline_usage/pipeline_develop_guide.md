@@ -61,13 +61,10 @@ paddlex --pipeline OCR --input general_ocr_002.png --device gpu:0
 --input：待处理的输入图片的本地路径或URL
 --device 使用的GPU序号（例如gpu:0表示使用第0号GPU，gpu:1,2表示使用第1、2号GPU），也可选择使用CPU（--device cpu）
 ```
-<details>
-   <summary> 👉点击查看运行结果</summary>
+<details><summary> 👉点击查看运行结果</summary>
 
-运行后，得到的结果为：
-
-```bash
-{'input_path': 'general_ocr_002.png', 'dt_polys': [array([[ 6, 13],
+<p>运行后，得到的结果为：</p>
+<pre><code class="language-bash">{'input_path': 'general_ocr_002.png', 'dt_polys': [array([[ 6, 13],
        [64, 13],
        [64, 31],
        [ 6, 31]], dtype=int16), array([[210,  14],
@@ -76,36 +73,24 @@ paddlex --pipeline OCR --input general_ocr_002.png --device gpu:0
        [830, 445],
        [830, 464],
        [338, 473]], dtype=int16)], 'dt_scores': [0.7629529090100092, 0.7717284653547034, 0.7139251666762622, 0.8057611181556994, 0.8840947658872964, 0.793295938183885, 0.8342027855884783, 0.8081378522874861, 0.8436969344212185, 0.8500845646497226, 0.7932189714842249, 0.8875924621248228, 0.8827884273639948, 0.8322404317386042, 0.8614796803023563, 0.8804252994596097, 0.9069978945305474, 0.8383917914190059, 0.8495824076580516, 0.8825556800041383, 0.852788927706737, 0.8379584696974435, 0.8633519228646618, 0.763234473595298, 0.8602154244410916, 0.9206341882426813, 0.6341425973804049, 0.8490156149797171, 0.758314821564747, 0.8757849788793592, 0.772485060565334, 0.8404023012596349, 0.8190037953773427, 0.851908529295617, 0.6126112758079643, 0.7324388418218587], 'rec_text': ['www.9', '5', '登机牌', 'BOARDING', 'PASS', '舱位', '', 'CLASS', '序号SERIALNO', '座位号', 'SEAT NO', '航班 FLIGHT', '日期 DATE', '03DEC', 'W', '035', 'MU 2379', '始发地', 'FROM', '登机口', 'GATE', '登机时间BDT', '目的地TO', '福州', 'TAIYUAN', 'G11', 'FUZHOU', '身份识别IDNO', '姓名NAME', 'ZHANGQIWEI', '票号TKTNO', '张祺伟', '票价FARE', 'ETKT7813699238489/1', '登机口于起飞前10分钟关闭', 'GATES CLOSE 1O MINUTESBEFOREDEPARTURE TIME'], 'rec_score': [0.683099627494812, 0.23417049646377563, 0.9969978928565979, 0.9945957660675049, 0.9787729382514954, 0.9983421564102173, 0.0, 0.9896272420883179, 0.9927973747253418, 0.9976049065589905, 0.9330753684043884, 0.9562691450119019, 0.9312669038772583, 0.9749765396118164, 0.9749416708946228, 0.9988260865211487, 0.9319792985916138, 0.9979889988899231, 0.9956836700439453, 0.9991750717163086, 0.9938803315162659, 0.9982991218566895, 0.9701204299926758, 0.9986245632171631, 0.9888408780097961, 0.9793729782104492, 0.9952947497367859, 0.9945247173309326, 0.9919753670692444, 0.991995632648468, 0.9937331080436707, 0.9963390827178955, 0.9954304695129395, 0.9934715628623962, 0.9974429607391357, 0.9529641270637512]}
-```
-可视化结果如下：
-
-<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/boardingpass.png">
-
-</details>
+</code></pre>
+<p>可视化结果如下：</p>
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/boardingpass.png"></p></details>
 
 在执行上述命令时，加载的是默认的OCR产线配置文件，若您需要自定义配置文件，可按照下面的步骤进行操作：
 
-<details>
-   <summary> 👉点击展开</summary>
+<details><summary> 👉点击展开</summary>
 
-获取OCR产线配置文件：
-```bash
-paddlex --get_pipeline_config OCR
-```
-
-执行后，OCR产线配置文件将被保存在当前路径。若您希望自定义保存位置，可执行如下命令（假设自定义保存位置为 `./my_path`）：
-
-```bash
-paddlex --get_pipeline_config OCR --save_path ./my_path
-```
-
-获取产线配置文件后，可将 `--pipeline` 替换为配置文件保存路径，即可使配置文件生效。例如，若配置文件保存路径为 `./ocr.yaml`，只需执行：
-
-```bash
-paddlex --pipeline ./ocr.yaml --input general_ocr_002.png
-```
-其中，`--model`、`--device` 等参数无需指定，将使用配置文件中的参数。若依然指定了参数，将以指定的参数为准。
-</details>
+<p>获取OCR产线配置文件：</p>
+<pre><code class="language-bash">paddlex --get_pipeline_config OCR
+</code></pre>
+<p>执行后，OCR产线配置文件将被保存在当前路径。若您希望自定义保存位置，可执行如下命令（假设自定义保存位置为 <code>./my_path</code>）：</p>
+<pre><code class="language-bash">paddlex --get_pipeline_config OCR --save_path ./my_path
+</code></pre>
+<p>获取产线配置文件后，可将 <code>--pipeline</code> 替换为配置文件保存路径，即可使配置文件生效。例如，若配置文件保存路径为 <code>./ocr.yaml</code>，只需执行：</p>
+<pre><code class="language-bash">paddlex --pipeline ./ocr.yaml --input general_ocr_002.png
+</code></pre>
+<p>其中，<code>--model</code>、<code>--device</code> 等参数无需指定，将使用配置文件中的参数。若依然指定了参数，将以指定的参数为准。</p></details>
 
 <b>💻Python脚本体验</b>
 

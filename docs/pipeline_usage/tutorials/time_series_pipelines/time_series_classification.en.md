@@ -9,8 +9,7 @@ Time series classification is a technique that categorizes time-series data into
 
 <b>The General Time Series Classification Pipeline includes a Time Series Classification module.</b>
 
-<details>
-   <summary> 👉Model List Details</summary>
+<details><summary> 👉Model List Details</summary>
 
 <table>
 <thead>
@@ -29,9 +28,7 @@ Time series classification is a technique that categorizes time-series data into
 </tbody>
 </table>
 
-<b>Note: The above accuracy metrics are measured on the [UWaveGestureLibrary](https://paddlets.bj.bcebos.com/classification/UWaveGestureLibrary_TEST.csv) dataset. All model GPU inference times are based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speeds are based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
-
-</details>
+<p><b>Note: The above accuracy metrics are measured on the <a href="https://paddlets.bj.bcebos.com/classification/UWaveGestureLibrary_TEST.csv">UWaveGestureLibrary</a> dataset. All model GPU inference times are based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speeds are based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b></p></details>
 
 ## 2. Quick Start
 PaddleX provides pre-trained model pipelines that can be quickly experienced. You can experience the effects of the General Time Series Classification Pipeline online or locally using command line or Python.
@@ -66,27 +63,17 @@ Parameter Explanation:
 
 When executing the above command, the default time series classification pipeline configuration file is loaded. If you need to customize the configuration file, you can execute the following command to obtain it:
 
-<details>
-   <summary> 👉Click to Expand</summary>
+<details><summary> 👉Click to Expand</summary>
 
-```bash
-paddlex --get_pipeline_yaml ts_cls
-```
-After execution, the time series classification pipeline configuration file will be saved in the current path. If you wish to customize the save location, you can execute the following command (assuming the custom save location is `./my_path`):
-
-```bash
-paddlex --get_pipeline_config ts_cls --save_path ./my_path
-```
-
-After obtaining the pipeline configuration file, you can replace `--pipeline` with the configuration file save path to make the configuration file take effect. For example, if the configuration file save path is `./ts_ad.yaml`, simply execute:
-
-```bash
-paddlex --pipeline ./ts_cls.yaml --input ts_cls.csv --device gpu:0
-```
-
-In this command, parameters such as `--model` and `--device` are not required to be specified, as they will use the parameters defined in the configuration file. If these parameters are specified, the specified values will take precedence.
-
-</details>
+<pre><code class="language-bash">paddlex --get_pipeline_yaml ts_cls
+</code></pre>
+<p>After execution, the time series classification pipeline configuration file will be saved in the current path. If you wish to customize the save location, you can execute the following command (assuming the custom save location is <code>./my_path</code>):</p>
+<pre><code class="language-bash">paddlex --get_pipeline_config ts_cls --save_path ./my_path
+</code></pre>
+<p>After obtaining the pipeline configuration file, you can replace <code>--pipeline</code> with the configuration file save path to make the configuration file take effect. For example, if the configuration file save path is <code>./ts_ad.yaml</code>, simply execute:</p>
+<pre><code class="language-bash">paddlex --pipeline ./ts_cls.yaml --input ts_cls.csv --device gpu:0
+</code></pre>
+<p>In this command, parameters such as <code>--model</code> and <code>--device</code> are not required to be specified, as they will use the parameters defined in the configuration file. If these parameters are specified, the specified values will take precedence.</p></details>
 
 After execution, the result is:
 
@@ -242,14 +229,13 @@ Additionally, PaddleX provides three other deployment methods, detailed as follo
 
 Below are the API references and multi-language service invocation examples:
 
-<details>
-<summary>API Reference</summary>
+<details><summary>API Reference</summary>
 
-For all operations provided by the service:
-
-- Both the response body and the request body for POST requests are JSON data (JSON objects).
-- When the request is processed successfully, the response status code is `200`, and the response body properties are as follows:
-
+<p>For all operations provided by the service:</p>
+<ul>
+<li>Both the response body and the request body for POST requests are JSON data (JSON objects).</li>
+<li>When the request is processed successfully, the response status code is <code>200</code>, and the response body properties are as follows:</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -272,10 +258,10 @@ For all operations provided by the service:
 </tbody>
 </table>
 
-    The response body may also have a `result` property of type `object`, which stores the operation result information.
-
-- When the request is not processed successfully, the response body properties are as follows:
-
+<p>The response body may also have a <code>result</code> property of type <code>object</code>, which stores the operation result information.</p>
+<ul>
+<li>When the request is not processed successfully, the response body properties are as follows:</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -298,16 +284,15 @@ For all operations provided by the service:
 </tbody>
 </table>
 
-Operations provided by the service:
-
-- <b>`infer`</b>
-
-    Classify time-series data.
-
-    `POST /time-series-classification`
-
-    - The request body properties are as follows:
-
+<p>Operations provided by the service:</p>
+<ul>
+<li><b><code>infer</code></b></li>
+</ul>
+<p>Classify time-series data.</p>
+<p><code>POST /time-series-classification</code></p>
+<ul>
+<li>The request body properties are as follows:</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -327,8 +312,9 @@ Operations provided by the service:
 </tbody>
 </table>
 
-    - When the request is processed successfully, the `result` in the response body has the following properties:
-
+<ul>
+<li>When the request is processed successfully, the <code>result</code> in the response body has the following properties:</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -351,100 +337,87 @@ Operations provided by the service:
 </tbody>
 </table>
 
-        An example of `result` is as follows:
+<p>An example of <code>result</code> is as follows:</p>
+<pre><code class="language-json">{
+&quot;label&quot;: &quot;running&quot;,
+&quot;score&quot;: 0.97
+}
+</code></pre></details>
 
-        ```json
-        {
-          "label": "running",
-          "score": 0.97
-        }
-        ```
-
-</details>
-
-<details>
-<summary>Multi-Language Service Invocation Examples</summary>
+<details><summary>Multi-Language Service Invocation Examples</summary>
 
 <details>
 <summary>Python</summary>
 
-```python
-import base64
+
+<pre><code class="language-python">import base64
 import requests
 
-API_URL = "http://localhost:8080/time-series-classification"
-csv_path = "./test.csv"
+API_URL = &quot;http://localhost:8080/time-series-classification&quot;
+csv_path = &quot;./test.csv&quot;
 
-with open(csv_path, "rb") as file:
+with open(csv_path, &quot;rb&quot;) as file:
     csv_bytes = file.read()
-    csv_data = base64.b64encode(csv_bytes).decode("ascii")
+    csv_data = base64.b64encode(csv_bytes).decode(&quot;ascii&quot;)
 
-payload = {"csv": csv_data}
+payload = {&quot;csv&quot;: csv_data}
 
 response = requests.post(API_URL, json=payload)
 
 assert response.status_code == 200
-result = response.json()["result"]
-print(f"label: {result['label']}, score: {result['score']}")
-```
+result = response.json()[&quot;result&quot;]
+print(f&quot;label: {result['label']}, score: {result['score']}&quot;)
+</code></pre></details>
 
-</details>
+<details><summary>C++</summary>
 
-<details>
-<summary>C++</summary>
-
-```cpp
-#include <iostream>
-#include "cpp-httplib/httplib.h" // https://github.com/Huiyicc/cpp-httplib
-#include "nlohmann/json.hpp" // https://github.com/nlohmann/json
-#include "base64.hpp" // https://github.com/tobiaslocker/base64
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &quot;cpp-httplib/httplib.h&quot; // https://github.com/Huiyicc/cpp-httplib
+#include &quot;nlohmann/json.hpp&quot; // https://github.com/nlohmann/json
+#include &quot;base64.hpp&quot; // https://github.com/tobiaslocker/base64
 
 int main() {
-    httplib::Client client("localhost:8080");
-    const std::string csvPath = "./test.csv";
+    httplib::Client client(&quot;localhost:8080&quot;);
+    const std::string csvPath = &quot;./test.csv&quot;;
 
     httplib::Headers headers = {
-        {"Content-Type", "application/json"}
+        {&quot;Content-Type&quot;, &quot;application/json&quot;}
     };
 
     std::ifstream file(csvPath, std::ios::binary | std::ios::ate);
     std::streamsize size = file.tellg();
     file.seekg(0, std::ios::beg);
 
-    std::vector<char> buffer(size);
+    std::vector&lt;char&gt; buffer(size);
     if (!file.read(buffer.data(), size)) {
-        std::cerr << "Error reading file." << std::endl;
+        std::cerr &lt;&lt; &quot;Error reading file.&quot; &lt;&lt; std::endl;
         return 1;
     }
-    std::string bufferStr(reinterpret_cast<const char*>(buffer.data()), buffer.size());
+    std::string bufferStr(reinterpret_cast&lt;const char*&gt;(buffer.data()), buffer.size());
     std::string encodedCsv = base64::to_base64(bufferStr);
 
     nlohmann::json jsonObj;
-    jsonObj["csv"] = encodedCsv;
+    jsonObj[&quot;csv&quot;] = encodedCsv;
     std::string body = jsonObj.dump();
 
-    auto response = client.Post("/time-series-classification", headers, body, "application/json");
-    if (response && response->status == 200) {
-        nlohmann::json jsonResponse = nlohmann::json::parse(response->body);
-        auto result = jsonResponse["result"];
-        std::cout << "label: " << result["label"] << ", score: " << result["score"] << std::endl;
+    auto response = client.Post(&quot;/time-series-classification&quot;, headers, body, &quot;application/json&quot;);
+    if (response &amp;&amp; response-&gt;status == 200) {
+        nlohmann::json jsonResponse = nlohmann::json::parse(response-&gt;body);
+        auto result = jsonResponse[&quot;result&quot;];
+        std::cout &lt;&lt; &quot;label: &quot; &lt;&lt; result[&quot;label&quot;] &lt;&lt; &quot;, score: &quot; &lt;&lt; result[&quot;score&quot;] &lt;&lt; std::endl;
     } else {
-        std::cout << "Failed to send HTTP request." << std::endl;
-        std::cout << response->body << std::endl;
+        std::cout &lt;&lt; &quot;Failed to send HTTP request.&quot; &lt;&lt; std::endl;
+        std::cout &lt;&lt; response-&gt;body &lt;&lt; std::endl;
         return 1;
     }
 
     return 0;
 }
-```
+</code></pre></details>
 
-</details>
+<details><summary>Java</summary>
 
-<details>
-<summary>Java</summary>
-
-```java
-import okhttp3.*;
+<pre><code class="language-java">import okhttp3.*;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
@@ -456,8 +429,8 @@ import java.util.Base64;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        String API_URL = "http://localhost:8080/time-series-classification";
-        String csvPath = "./test.csv";
+        String API_URL = &quot;http://localhost:8080/time-series-classification&quot;;
+        String csvPath = &quot;./test.csv&quot;;
 
         File file = new File(csvPath);
         byte[] fileContent = java.nio.file.Files.readAllBytes(file.toPath());
@@ -465,10 +438,10 @@ public class Main {
 
         ObjectMapper objectMapper = new ObjectMapper();
         ObjectNode params = objectMapper.createObjectNode();
-        params.put("csv", csvData);
+        params.put(&quot;csv&quot;, csvData);
 
         OkHttpClient client = new OkHttpClient();
-        MediaType JSON = MediaType.Companion.get("application/json; charset=utf-8");
+        MediaType JSON = MediaType.Companion.get(&quot;application/json; charset=utf-8&quot;);
         RequestBody body = RequestBody.Companion.create(params.toString(), JSON);
         Request request = new Request.Builder()
                 .url(API_URL)
@@ -479,94 +452,86 @@ public class Main {
             if (response.isSuccessful()) {
                 String responseBody = response.body().string();
                 JsonNode resultNode = objectMapper.readTree(responseBody);
-                JsonNode result = resultNode.get("result");
-                System.out.println("label: " + result.get("label").asText() + ", score: " + result.get("score").asText());
+                JsonNode result = resultNode.get(&quot;result&quot;);
+                System.out.println(&quot;label: &quot; + result.get(&quot;label&quot;).asText() + &quot;, score: &quot; + result.get(&quot;score&quot;).asText());
             } else {
-                System.err.println("Request failed with code: " + response.code());
+                System.err.println(&quot;Request failed with code: &quot; + response.code());
             }
         }
     }
 }
-```
+</code></pre></details>
 
-</details>
+<details><summary>Go</summary>
 
-<details>
-<summary>Go</summary>
-
-```go
-package main
+<pre><code class="language-go">package main
 
 import (
-    "bytes"
-    "encoding/base64"
-    "encoding/json"
-    "fmt"
-    "io/ioutil"
-    "net/http"
+    &quot;bytes&quot;
+    &quot;encoding/base64&quot;
+    &quot;encoding/json&quot;
+    &quot;fmt&quot;
+    &quot;io/ioutil&quot;
+    &quot;net/http&quot;
 )
 
 func main() {
-    API_URL := "http://localhost:8080/time-series-classification"
-    csvPath := "./test.csv";
+    API_URL := &quot;http://localhost:8080/time-series-classification&quot;
+    csvPath := &quot;./test.csv&quot;;
 
     csvBytes, err := ioutil.ReadFile(csvPath)
     if err != nil {
-        fmt.Println("Error reading csv file:", err)
+        fmt.Println(&quot;Error reading csv file:&quot;, err)
         return
     }
     csvData := base64.StdEncoding.EncodeToString(csvBytes)
 
-    payload := map[string]string{"csv": csvData}
+    payload := map[string]string{&quot;csv&quot;: csvData}
     payloadBytes, err := json.Marshal(payload)
     if err != nil {
-        fmt.Println("Error marshaling payload:", err)
+        fmt.Println(&quot;Error marshaling payload:&quot;, err)
         return
     }
 
-    client := &http.Client{}
-    req, err := http.NewRequest("POST", API_URL, bytes.NewBuffer(payloadBytes))
+    client := &amp;http.Client{}
+    req, err := http.NewRequest(&quot;POST&quot;, API_URL, bytes.NewBuffer(payloadBytes))
     if err != nil {
-        fmt.Println("Error creating request:", err)
+        fmt.Println(&quot;Error creating request:&quot;, err)
         return
     }
 
     res, err := client.Do(req)
     if err != nil {
-        fmt.Println("Error sending request:", err)
+        fmt.Println(&quot;Error sending request:&quot;, err)
         return
     }
     defer res.Body.Close()
 
     body, err := ioutil.ReadAll(res.Body)
     if err != nil {
-        fmt.Println("Error reading response body:", err)
+        fmt.Println(&quot;Error reading response body:&quot;, err)
         return
     }
     type Response struct {
         Result struct {
-            Label string `json:"label"`
-            Score string `json:"score"`
-        } `json:"result"`
+            Label string `json:&quot;label&quot;`
+            Score string `json:&quot;score&quot;`
+        } `json:&quot;result&quot;`
     }
     var respData Response
-    err = json.Unmarshal([]byte(string(body)), &respData)
+    err = json.Unmarshal([]byte(string(body)), &amp;respData)
     if err != nil {
-        fmt.Println("Error unmarshaling response body:", err)
+        fmt.Println(&quot;Error unmarshaling response body:&quot;, err)
         return
     }
 
-    fmt.Printf("label: %s, score: %s\n", respData.Result.Label, respData.Result.Score)
+    fmt.Printf(&quot;label: %s, score: %s\n&quot;, respData.Result.Label, respData.Result.Score)
 }
-```
+</code></pre></details>
 
-</details>
+<details><summary>C#</summary>
 
-<details>
-<summary>C#</summary>
-
-```csharp
-using System;
+<pre><code class="language-csharp">using System;
 using System.IO;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -576,8 +541,8 @@ using Newtonsoft.Json.Linq;
 
 class Program
 {
-    static readonly string API_URL = "http://localhost:8080/time-series-classification";
-    static readonly string csvPath = "./test.csv";
+    static readonly string API_URL = &quot;http://localhost:8080/time-series-classification&quot;;
+    static readonly string csvPath = &quot;./test.csv&quot;;
 
     static async Task Main(string[] args)
     {
@@ -586,8 +551,8 @@ class Program
         byte[] csveBytes = File.ReadAllBytes(csvPath);
         string csvData = Convert.ToBase64String(csveBytes);
 
-        var payload = new JObject{ { "csv", csvData } };
-        var content = new StringContent(payload.ToString(), Encoding.UTF8, "application/json");
+        var payload = new JObject{ { &quot;csv&quot;, csvData } };
+        var content = new StringContent(payload.ToString(), Encoding.UTF8, &quot;application/json&quot;);
 
         HttpResponseMessage response = await httpClient.PostAsync(API_URL, content);
         response.EnsureSuccessStatusCode();
@@ -595,24 +560,20 @@ class Program
         string responseBody = await response.Content.ReadAsStringAsync();
         JObject jsonResponse = JObject.Parse(responseBody);
 
-        string label = jsonResponse["result"]["label"].ToString();
-        string score = jsonResponse["result"]["score"].ToString();
-        Console.WriteLine($"label: {label}, score: {score}");
+        string label = jsonResponse[&quot;result&quot;][&quot;label&quot;].ToString();
+        string score = jsonResponse[&quot;result&quot;][&quot;score&quot;].ToString();
+        Console.WriteLine($&quot;label: {label}, score: {score}&quot;);
     }
 }
-```
+</code></pre></details>
 
-</details>
+<details><summary>Node.js</summary>
 
-<details>
-<summary>Node.js</summary>
-
-```js
-const axios = require('axios');
+<pre><code class="language-js">const axios = require('axios');
 const fs = require('fs');
 
 const API_URL = 'http://localhost:8080/time-series-classification'
-const csvPath = "./test.csv";
+const csvPath = &quot;./test.csv&quot;;
 
 let config = {
    method: 'POST',
@@ -629,28 +590,24 @@ function encodeFileToBase64(filePath) {
 }
 
 axios.request(config)
-.then((response) => {
-    const result = response.data["result"];
-    console.log(`label: ${result["label"]}, score: ${result["score"]}`);
+.then((response) =&gt; {
+    const result = response.data[&quot;result&quot;];
+    console.log(`label: ${result[&quot;label&quot;]}, score: ${result[&quot;score&quot;]}`);
 })
-.catch((error) => {
+.catch((error) =&gt; {
   console.log(error);
 });
-```
+</code></pre></details>
 
-</details>
+<details><summary>PHP</summary>
 
-<details>
-<summary>PHP</summary>
+<pre><code class="language-php">&lt;?php
 
-```php
-<?php
-
-$API_URL = "http://localhost:8080/time-series-classification";
-$csv_path = "./test.csv";
+$API_URL = &quot;http://localhost:8080/time-series-classification&quot;;
+$csv_path = &quot;./test.csv&quot;;
 
 $csv_data = base64_encode(file_get_contents($csv_path));
-$payload = array("csv" => $csv_data);
+$payload = array(&quot;csv&quot; =&gt; $csv_data);
 
 $ch = curl_init($API_URL);
 curl_setopt($ch, CURLOPT_POST, true);
@@ -659,13 +616,11 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $response = curl_exec($ch);
 curl_close($ch);
 
-$result = json_decode($response, true)["result"];
-echo "label: " . $result["label"] . ", score: " . $result["score"];
+$result = json_decode($response, true)[&quot;result&quot;];
+echo &quot;label: &quot; . $result[&quot;label&quot;] . &quot;, score: &quot; . $result[&quot;score&quot;];
 
-?>
-```
-
-</details>
+?&gt;
+</code></pre></details>
 </details>
 <br/>
 

@@ -9,8 +9,7 @@
 
 <b>通用实例分割产线中包含了</b><b>目标检测</b><b>模块，如您更考虑模型精度，请选择精度较高的模型，如您更考虑模型推理速度，请选择推理速度较快的模型，如您更考虑模型存储大小，请选择存储大小较小的模型</b>。
 
-<details>
-   <summary> 👉模型列表详情</summary>
+<details><summary> 👉模型列表详情</summary>
 
 <table>
 <thead>
@@ -131,9 +130,7 @@
 </tbody>
 </table>
 
-<b>注：以上精度指标为 </b>[COCO2017](https://cocodataset.org/#home)<b> 验证集 Mask AP(0.5:0.95)。以上所有模型 GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为8，精度类型为 FP32。</b>
-
-</details>
+<p><b>注：以上精度指标为 </b><a href="https://cocodataset.org/#home">COCO2017</a><b> 验证集 Mask AP(0.5:0.95)。以上所有模型 GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为8，精度类型为 FP32。</b></p></details>
 
 ## 2. 快速开始
 PaddleX 所提供的预训练的模型产线均可以快速体验效果，你可以在线体验通用实例分割产线的效果，也可以在本地使用命令行或 Python 体验通用实例分割产线的效果。
@@ -164,26 +161,17 @@ paddlex --pipeline instance_segmentation --input general_instance_segmentation_0
 
 在执行上述 Python 脚本时，加载的是默认的实例分割产线配置文件，若您需要自定义配置文件，可执行如下命令获取：
 
-<details>
-   <summary> 👉点击展开</summary>
+<details><summary> 👉点击展开</summary>
 
-```
-paddlex --get_pipeline_config instance_segmentation
-```
-执行后，实例分割产线配置文件将被保存在当前路径。若您希望自定义保存位置，可执行如下命令（假设自定义保存位置为 `./my_path` ）：
-
-```
-paddlex --get_pipeline_config instance_segmentation --save_path ./my_path
-```
-
-获取产线配置文件后，可将 `--pipeline` 替换为配置文件保存路径，即可使配置文件生效。例如，若配置文件保存路径为 ./instance_segmentation.yaml，只需执行：
-
-```bash
-paddlex --pipeline ./instance_segmentation.yaml --input general_instance_segmentation_004.png --device gpu:0
-```
-其中，`--model`、`--device` 等参数无需指定，将使用配置文件中的参数。若依然指定了参数，将以指定的参数为准。
-
-</details>
+<pre><code>paddlex --get_pipeline_config instance_segmentation
+</code></pre>
+<p>执行后，实例分割产线配置文件将被保存在当前路径。若您希望自定义保存位置，可执行如下命令（假设自定义保存位置为 <code>./my_path</code> ）：</p>
+<pre><code>paddlex --get_pipeline_config instance_segmentation --save_path ./my_path
+</code></pre>
+<p>获取产线配置文件后，可将 <code>--pipeline</code> 替换为配置文件保存路径，即可使配置文件生效。例如，若配置文件保存路径为 ./instance_segmentation.yaml，只需执行：</p>
+<pre><code class="language-bash">paddlex --pipeline ./instance_segmentation.yaml --input general_instance_segmentation_004.png --device gpu:0
+</code></pre>
+<p>其中，<code>--model</code>、<code>--device</code> 等参数无需指定，将使用配置文件中的参数。若依然指定了参数，将以指定的参数为准。</p></details>
 
 运行后，得到的结果为：
 
@@ -339,14 +327,13 @@ for res in output:
 
 下面是API参考和多语言服务调用示例：
 
-<details>
-<summary>API参考</summary>
+<details><summary>API参考</summary>
 
-对于服务提供的所有操作：
-
-- 响应体以及POST请求的请求体均为JSON数据（JSON对象）。
-- 当请求处理成功时，响应状态码为`200`，响应体的属性如下：
-
+<p>对于服务提供的所有操作：</p>
+<ul>
+<li>响应体以及POST请求的请求体均为JSON数据（JSON对象）。</li>
+<li>当请求处理成功时，响应状态码为<code>200</code>，响应体的属性如下：</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -369,10 +356,10 @@ for res in output:
 </tbody>
 </table>
 
-    响应体还可能有`result`属性，类型为`object`，其中存储操作结果信息。
-
-- 当请求处理未成功时，响应体的属性如下：
-
+<p>响应体还可能有<code>result</code>属性，类型为<code>object</code>，其中存储操作结果信息。</p>
+<ul>
+<li>当请求处理未成功时，响应体的属性如下：</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -395,16 +382,15 @@ for res in output:
 </tbody>
 </table>
 
-服务提供的操作如下：
-
-- <b>`infer`</b>
-
-    对图像进行实例分割。
-
-    `POST /instance-segmentation`
-
-    - 请求体的属性如下：
-
+<p>服务提供的操作如下：</p>
+<ul>
+<li><b><code>infer</code></b></li>
+</ul>
+<p>对图像进行实例分割。</p>
+<p><code>POST /instance-segmentation</code></p>
+<ul>
+<li>请求体的属性如下：</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -424,8 +410,9 @@ for res in output:
 </tbody>
 </table>
 
-    - 请求处理成功时，响应体的`result`具有如下属性：
-
+<ul>
+<li>请求处理成功时，响应体的<code>result</code>具有如下属性：</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -448,8 +435,7 @@ for res in output:
 </tbody>
 </table>
 
-        `instances`中的每个元素为一个`object`，具有如下属性：
-
+<p><code>instances</code>中的每个元素为一个<code>object</code>，具有如下属性：</p>
 <table>
 <thead>
 <tr>
@@ -482,8 +468,7 @@ for res in output:
 </tbody>
 </table>
 
-        `mask`的属性如下：
-
+<p><code>mask</code>的属性如下：</p>
 <table>
 <thead>
 <tr>
@@ -506,87 +491,78 @@ for res in output:
 </tbody>
 </table>
 
-        `result`示例如下：
+<p><code>result</code>示例如下：</p>
+<pre><code class="language-json">{
+&quot;instances&quot;: [
+{
+&quot;bbox&quot;: [
+162.39381408691406,
+83.88176727294922,
+624.0797119140625,
+343.4986877441406
+],
+&quot;categoryId&quot;: 33,
+&quot;score&quot;: 0.8691174983978271,
+&quot;mask&quot;: {
+&quot;rleResult&quot;: &quot;xxxxxx&quot;,
+&quot;size&quot;: [
+259,
+462
+]
+}
+}
+],
+&quot;image&quot;: &quot;xxxxxx&quot;
+}
+</code></pre></details>
 
-        ```json
-        {
-          "instances": [
-            {
-              "bbox": [
-                162.39381408691406,
-                83.88176727294922,
-                624.0797119140625,
-                343.4986877441406
-              ],
-              "categoryId": 33,
-              "score": 0.8691174983978271,
-              "mask": {
-                "rleResult": "xxxxxx",
-                "size": [
-                  259,
-                  462
-                ]
-              }
-            }
-          ],
-          "image": "xxxxxx"
-        }
-        ```
-
-</details>
-
-<details>
-<summary>多语言调用服务示例</summary>
+<details><summary>多语言调用服务示例</summary>
 
 <details>
 <summary>Python</summary>
 
-```python
-import base64
+
+<pre><code class="language-python">import base64
 import requests
 
-API_URL = "http://localhost:8080/instance-segmentation" # 服务URL
-image_path = "./demo.jpg"
-output_image_path = "./out.jpg"
+API_URL = &quot;http://localhost:8080/instance-segmentation&quot; # 服务URL
+image_path = &quot;./demo.jpg&quot;
+output_image_path = &quot;./out.jpg&quot;
 
 # 对本地图像进行Base64编码
-with open(image_path, "rb") as file:
+with open(image_path, &quot;rb&quot;) as file:
     image_bytes = file.read()
-    image_data = base64.b64encode(image_bytes).decode("ascii")
+    image_data = base64.b64encode(image_bytes).decode(&quot;ascii&quot;)
 
-payload = {"image": image_data}  # Base64编码的文件内容或者图像URL
+payload = {&quot;image&quot;: image_data}  # Base64编码的文件内容或者图像URL
 
 # 调用API
 response = requests.post(API_URL, json=payload)
 
 # 处理接口返回数据
 assert response.status_code == 200
-result = response.json()["result"]
-with open(output_image_path, "wb") as file:
-    file.write(base64.b64decode(result["image"]))
-print(f"Output image saved at {output_image_path}")
-print("\nInstances:")
-print(result["instances"])
-```
+result = response.json()[&quot;result&quot;]
+with open(output_image_path, &quot;wb&quot;) as file:
+    file.write(base64.b64decode(result[&quot;image&quot;]))
+print(f&quot;Output image saved at {output_image_path}&quot;)
+print(&quot;\nInstances:&quot;)
+print(result[&quot;instances&quot;])
+</code></pre></details>
 
-</details>
+<details><summary>C++</summary>
 
-<details>
-<summary>C++</summary>
-
-```cpp
-#include <iostream>
-#include "cpp-httplib/httplib.h" // https://github.com/Huiyicc/cpp-httplib
-#include "nlohmann/json.hpp" // https://github.com/nlohmann/json
-#include "base64.hpp" // https://github.com/tobiaslocker/base64
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &quot;cpp-httplib/httplib.h&quot; // https://github.com/Huiyicc/cpp-httplib
+#include &quot;nlohmann/json.hpp&quot; // https://github.com/nlohmann/json
+#include &quot;base64.hpp&quot; // https://github.com/tobiaslocker/base64
 
 int main() {
-    httplib::Client client("localhost:8080");
-    const std::string imagePath = "./demo.jpg";
-    const std::string outputImagePath = "./out.jpg";
+    httplib::Client client(&quot;localhost:8080&quot;);
+    const std::string imagePath = &quot;./demo.jpg&quot;;
+    const std::string outputImagePath = &quot;./out.jpg&quot;;
 
     httplib::Headers headers = {
-        {"Content-Type", "application/json"}
+        {&quot;Content-Type&quot;, &quot;application/json&quot;}
     };
 
     // 对本地图像进行Base64编码
@@ -594,58 +570,54 @@ int main() {
     std::streamsize size = file.tellg();
     file.seekg(0, std::ios::beg);
 
-    std::vector<char> buffer(size);
+    std::vector&lt;char&gt; buffer(size);
     if (!file.read(buffer.data(), size)) {
-        std::cerr << "Error reading file." << std::endl;
+        std::cerr &lt;&lt; &quot;Error reading file.&quot; &lt;&lt; std::endl;
         return 1;
     }
-    std::string bufferStr(reinterpret_cast<const char*>(buffer.data()), buffer.size());
+    std::string bufferStr(reinterpret_cast&lt;const char*&gt;(buffer.data()), buffer.size());
     std::string encodedImage = base64::to_base64(bufferStr);
 
     nlohmann::json jsonObj;
-    jsonObj["image"] = encodedImage;
+    jsonObj[&quot;image&quot;] = encodedImage;
     std::string body = jsonObj.dump();
 
     // 调用API
-    auto response = client.Post("/instance-segmentation", headers, body, "application/json");
+    auto response = client.Post(&quot;/instance-segmentation&quot;, headers, body, &quot;application/json&quot;);
     // 处理接口返回数据
-    if (response && response->status == 200) {
-        nlohmann::json jsonResponse = nlohmann::json::parse(response->body);
-        auto result = jsonResponse["result"];
+    if (response &amp;&amp; response-&gt;status == 200) {
+        nlohmann::json jsonResponse = nlohmann::json::parse(response-&gt;body);
+        auto result = jsonResponse[&quot;result&quot;];
 
-        encodedImage = result["image"];
+        encodedImage = result[&quot;image&quot;];
         std::string decodedString = base64::from_base64(encodedImage);
-        std::vector<unsigned char> decodedImage(decodedString.begin(), decodedString.end());
+        std::vector&lt;unsigned char&gt; decodedImage(decodedString.begin(), decodedString.end());
         std::ofstream outputImage(outPutImagePath, std::ios::binary | std::ios::out);
         if (outputImage.is_open()) {
-            outputImage.write(reinterpret_cast<char*>(decodedImage.data()), decodedImage.size());
+            outputImage.write(reinterpret_cast&lt;char*&gt;(decodedImage.data()), decodedImage.size());
             outputImage.close();
-            std::cout << "Output image saved at " << outPutImagePath << std::endl;
+            std::cout &lt;&lt; &quot;Output image saved at &quot; &lt;&lt; outPutImagePath &lt;&lt; std::endl;
         } else {
-            std::cerr << "Unable to open file for writing: " << outPutImagePath << std::endl;
+            std::cerr &lt;&lt; &quot;Unable to open file for writing: &quot; &lt;&lt; outPutImagePath &lt;&lt; std::endl;
         }
 
-        auto instances = result["instances"];
-        std::cout << "\nInstances:" << std::endl;
-        for (const auto& inst : instances) {
-            std::cout << inst << std::endl;
+        auto instances = result[&quot;instances&quot;];
+        std::cout &lt;&lt; &quot;\nInstances:&quot; &lt;&lt; std::endl;
+        for (const auto&amp; inst : instances) {
+            std::cout &lt;&lt; inst &lt;&lt; std::endl;
         }
     } else {
-        std::cout << "Failed to send HTTP request." << std::endl;
+        std::cout &lt;&lt; &quot;Failed to send HTTP request.&quot; &lt;&lt; std::endl;
         return 1;
     }
 
     return 0;
 }
-```
+</code></pre></details>
 
-</details>
+<details><summary>Java</summary>
 
-<details>
-<summary>Java</summary>
-
-```java
-import okhttp3.*;
+<pre><code class="language-java">import okhttp3.*;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
@@ -657,9 +629,9 @@ import java.util.Base64;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        String API_URL = "http://localhost:8080/instance-segmentation"; // 服务URL
-        String imagePath = "./demo.jpg"; // 本地图像
-        String outputImagePath = "./out.jpg"; // 输出图像
+        String API_URL = &quot;http://localhost:8080/instance-segmentation&quot;; // 服务URL
+        String imagePath = &quot;./demo.jpg&quot;; // 本地图像
+        String outputImagePath = &quot;./out.jpg&quot;; // 输出图像
 
         // 对本地图像进行Base64编码
         File file = new File(imagePath);
@@ -668,11 +640,11 @@ public class Main {
 
         ObjectMapper objectMapper = new ObjectMapper();
         ObjectNode params = objectMapper.createObjectNode();
-        params.put("image", imageData); // Base64编码的文件内容或者图像URL
+        params.put(&quot;image&quot;, imageData); // Base64编码的文件内容或者图像URL
 
         // 创建 OkHttpClient 实例
         OkHttpClient client = new OkHttpClient();
-        MediaType JSON = MediaType.Companion.get("application/json; charset=utf-8");
+        MediaType JSON = MediaType.Companion.get(&quot;application/json; charset=utf-8&quot;);
         RequestBody body = RequestBody.Companion.create(params.toString(), JSON);
         Request request = new Request.Builder()
                 .url(API_URL)
@@ -684,72 +656,68 @@ public class Main {
             if (response.isSuccessful()) {
                 String responseBody = response.body().string();
                 JsonNode resultNode = objectMapper.readTree(responseBody);
-                JsonNode result = resultNode.get("result");
-                String base64Image = result.get("image").asText();
-                JsonNode instances = result.get("instances");
+                JsonNode result = resultNode.get(&quot;result&quot;);
+                String base64Image = result.get(&quot;image&quot;).asText();
+                JsonNode instances = result.get(&quot;instances&quot;);
 
                 byte[] imageBytes = Base64.getDecoder().decode(base64Image);
                 try (FileOutputStream fos = new FileOutputStream(outputImagePath)) {
                     fos.write(imageBytes);
                 }
-                System.out.println("Output image saved at " + outputImagePath);
-                System.out.println("\nInstances: " + instances.toString());
+                System.out.println(&quot;Output image saved at &quot; + outputImagePath);
+                System.out.println(&quot;\nInstances: &quot; + instances.toString());
             } else {
-                System.err.println("Request failed with code: " + response.code());
+                System.err.println(&quot;Request failed with code: &quot; + response.code());
             }
         }
     }
 }
-```
+</code></pre></details>
 
-</details>
+<details><summary>Go</summary>
 
-<details>
-<summary>Go</summary>
-
-```go
-package main
+<pre><code class="language-go">package main
 
 import (
-    "bytes"
-    "encoding/base64"
-    "encoding/json"
-    "fmt"
-    "io/ioutil"
-    "net/http"
+    &quot;bytes&quot;
+    &quot;encoding/base64&quot;
+    &quot;encoding/json&quot;
+    &quot;fmt&quot;
+    &quot;io/ioutil&quot;
+    &quot;net/http&quot;
 )
 
 func main() {
-    API_URL := "http://localhost:8080/instance-segmentation"
-    imagePath := "./demo.jpg"
-    outputImagePath := "./out.jpg"
+    API_URL := &quot;http://localhost:8080/instance-segmentation&quot;
+    imagePath := &quot;./demo.jpg&quot;
+    outputImagePath := &quot;./out.jpg&quot;
 
     // 对本地图像进行Base64编码
     imageBytes, err := ioutil.ReadFile(imagePath)
     if err != nil {
-        fmt.Println("Error reading image file:", err)
+        fmt.Println(&quot;Error reading image file:&quot;, err)
         return
     }
     imageData := base64.StdEncoding.EncodeToString(imageBytes)
 
-    payload := map[string]string{"image": imageData} // Base64编码的文件内容或者图像URL
+    payload := map[string]string{&quot;image&quot;: imageData} // Base64编码的文件内容或者图像URL
     payloadBytes, err := json.Marshal(payload)
     if err != nil {
-        fmt.Println("Error marshaling payload:", err)
+        fmt.Println(&quot;Error marshaling payload:&quot;, err)
         return
     }
 
     // 调用API
-    client := &http.Client{}
-    req, err := http.NewRequest("POST", API_URL, bytes.NewBuffer(payloadBytes))
+    client := &amp;http.Client{}
+    req, err := http.NewRequest(&quot;POST&quot;, API_URL, bytes.NewBuffer(payloadBytes))
     if err != nil {
-        fmt.Println("Error creating request:", err)
+        fmt.Println(&quot;Error creating request:&quot;, err)
         return
     }
 
     res, err := client.Do(req)
     if err != nil {
-        fmt.Println("Error sending request:", err)
+        fmt.Println(&quot;Error sending request:&quot;, err)
         return
     }
     defer res.Body.Close()
@@ -757,47 +725,43 @@ func main() {
     // 处理接口返回数据
     body, err := ioutil.ReadAll(res.Body)
     if err != nil {
-        fmt.Println("Error reading response body:", err)
+        fmt.Println(&quot;Error reading response body:&quot;, err)
         return
     }
     type Response struct {
         Result struct {
-            Image      string   `json:"image"`
-            Instances []map[string]interface{} `json:"instances"`
-        } `json:"result"`
+            Image      string   `json:&quot;image&quot;`
+            Instances []map[string]interface{} `json:&quot;instances&quot;`
+        } `json:&quot;result&quot;`
     }
     var respData Response
-    err = json.Unmarshal([]byte(string(body)), &respData)
+    err = json.Unmarshal([]byte(string(body)), &amp;respData)
     if err != nil {
-        fmt.Println("Error unmarshaling response body:", err)
+        fmt.Println(&quot;Error unmarshaling response body:&quot;, err)
         return
     }
 
     outputImageData, err := base64.StdEncoding.DecodeString(respData.Result.Image)
     if err != nil {
-        fmt.Println("Error decoding base64 image data:", err)
+        fmt.Println(&quot;Error decoding base64 image data:&quot;, err)
         return
     }
     err = ioutil.WriteFile(outputImagePath, outputImageData, 0644)
     if err != nil {
-        fmt.Println("Error writing image to file:", err)
+        fmt.Println(&quot;Error writing image to file:&quot;, err)
         return
     }
-    fmt.Printf("Image saved at %s.jpg\n", outputImagePath)
-    fmt.Println("\nInstances:")
+    fmt.Printf(&quot;Image saved at %s.jpg\n&quot;, outputImagePath)
+    fmt.Println(&quot;\nInstances:&quot;)
     for _, inst := range respData.Result.Instances {
         fmt.Println(inst)
     }
 }
-```
+</code></pre></details>
 
-</details>
+<details><summary>C#</summary>
 
-<details>
-<summary>C#</summary>
-
-```csharp
-using System;
+<pre><code class="language-csharp">using System;
 using System.IO;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -807,9 +771,9 @@ using Newtonsoft.Json.Linq;
 
 class Program
 {
-    static readonly string API_URL = "http://localhost:8080/instance-segmentation";
-    static readonly string imagePath = "./demo.jpg";
-    static readonly string outputImagePath = "./out.jpg";
+    static readonly string API_URL = &quot;http://localhost:8080/instance-segmentation&quot;;
+    static readonly string imagePath = &quot;./demo.jpg&quot;;
+    static readonly string outputImagePath = &quot;./out.jpg&quot;;
 
     static async Task Main(string[] args)
     {
@@ -819,8 +783,8 @@ class Program
         byte[] imageBytes = File.ReadAllBytes(imagePath);
         string image_data = Convert.ToBase64String(imageBytes);
 
-        var payload = new JObject{ { "image", image_data } }; // Base64编码的文件内容或者图像URL
-        var content = new StringContent(payload.ToString(), Encoding.UTF8, "application/json");
+        var payload = new JObject{ { &quot;image&quot;, image_data } }; // Base64编码的文件内容或者图像URL
+        var content = new StringContent(payload.ToString(), Encoding.UTF8, &quot;application/json&quot;);
 
         // 调用API
         HttpResponseMessage response = await httpClient.PostAsync(API_URL, content);
@@ -830,29 +794,25 @@ class Program
         string responseBody = await response.Content.ReadAsStringAsync();
         JObject jsonResponse = JObject.Parse(responseBody);
 
-        string base64Image = jsonResponse["result"]["image"].ToString();
+        string base64Image = jsonResponse[&quot;result&quot;][&quot;image&quot;].ToString();
         byte[] outputImageBytes = Convert.FromBase64String(base64Image);
 
         File.WriteAllBytes(outputImagePath, outputImageBytes);
-        Console.WriteLine($"Output image saved at {outputImagePath}");
-        Console.WriteLine("\nInstances:");
-        Console.WriteLine(jsonResponse["result"]["instances"].ToString());
+        Console.WriteLine($&quot;Output image saved at {outputImagePath}&quot;);
+        Console.WriteLine(&quot;\nInstances:&quot;);
+        Console.WriteLine(jsonResponse[&quot;result&quot;][&quot;instances&quot;].ToString());
     }
 }
-```
+</code></pre></details>
 
-</details>
+<details><summary>Node.js</summary>
 
-<details>
-<summary>Node.js</summary>
-
-```js
-const axios = require('axios');
+<pre><code class="language-js">const axios = require('axios');
 const fs = require('fs');
 
 const API_URL = 'http://localhost:8080/instance-segmentation'
 const imagePath = './demo.jpg'
-const outputImagePath = "./out.jpg";
+const outputImagePath = &quot;./out.jpg&quot;;
 
 let config = {
    method: 'POST',
@@ -871,37 +831,33 @@ function encodeImageToBase64(filePath) {
 
 // 调用API
 axios.request(config)
-.then((response) => {
+.then((response) =&gt; {
     // 处理接口返回数据
-    const result = response.data["result"];
-    const imageBuffer = Buffer.from(result["image"], 'base64');
-    fs.writeFile(outputImagePath, imageBuffer, (err) => {
+    const result = response.data[&quot;result&quot;];
+    const imageBuffer = Buffer.from(result[&quot;image&quot;], 'base64');
+    fs.writeFile(outputImagePath, imageBuffer, (err) =&gt; {
       if (err) throw err;
       console.log(`Output image saved at ${outputImagePath}`);
     });
-    console.log("\nInstances:");
-    console.log(result["instances"]);
+    console.log(&quot;\nInstances:&quot;);
+    console.log(result[&quot;instances&quot;]);
 })
-.catch((error) => {
+.catch((error) =&gt; {
   console.log(error);
 });
-```
+</code></pre></details>
 
-</details>
+<details><summary>PHP</summary>
 
-<details>
-<summary>PHP</summary>
+<pre><code class="language-php">&lt;?php
 
-```php
-<?php
-
-$API_URL = "http://localhost:8080/instance-segmentation"; // 服务URL
-$image_path = "./demo.jpg";
-$output_image_path = "./out.jpg";
+$API_URL = &quot;http://localhost:8080/instance-segmentation&quot;; // 服务URL
+$image_path = &quot;./demo.jpg&quot;;
+$output_image_path = &quot;./out.jpg&quot;;
 
 // 对本地图像进行Base64编码
 $image_data = base64_encode(file_get_contents($image_path));
-$payload = array("image" => $image_data); // Base64编码的文件内容或者图像URL
+$payload = array(&quot;image&quot; =&gt; $image_data); // Base64编码的文件内容或者图像URL
 
 // 调用API
 $ch = curl_init($API_URL);
@@ -912,16 +868,14 @@ $response = curl_exec($ch);
 curl_close($ch);
 
 // 处理接口返回数据
-$result = json_decode($response, true)["result"];
-file_put_contents($output_image_path, base64_decode($result["image"]));
-echo "Output image saved at " . $output_image_path . "\n";
-echo "\nInstances:\n";
-print_r($result["instances"]);
+$result = json_decode($response, true)[&quot;result&quot;];
+file_put_contents($output_image_path, base64_decode($result[&quot;image&quot;]));
+echo &quot;Output image saved at &quot; . $output_image_path . &quot;\n&quot;;
+echo &quot;\nInstances:\n&quot;;
+print_r($result[&quot;instances&quot;]);
 
-?>
-```
-
-</details>
+?&gt;
+</code></pre></details>
 </details>
 <br/>
 

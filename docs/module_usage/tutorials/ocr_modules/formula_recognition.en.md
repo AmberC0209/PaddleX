@@ -69,119 +69,102 @@ python main.py -c paddlex/configs/formula_recognition/LaTeX_OCR_rec.yaml \
     -o Global.dataset_dir=./dataset/ocr_rec_latexocr_dataset_example
 ```
 After executing the above command, PaddleX will validate the dataset and summarize its basic information. If the command runs successfully, it will print `Check dataset passed !` in the log. The validation results file is saved in `./output/check_dataset_result.json`, and related outputs are saved in the `./output/check_dataset` directory in the current directory, including visual examples of sample images and sample distribution histograms.
-<details>
-  <summary>👉 <b>Details of Validation Results (Click to Expand)</b></summary>
+<details><summary>👉 <b>Details of Validation Results (Click to Expand)</b></summary>
 
-The specific content of the validation result file is:
-
-```bash
-{
-  "done_flag": true,
-  "check_pass": true,
-  "attributes": {
-    "train_samples": 9452,
-    "train_sample_paths": [
-      "../dataset/ocr_rec_latexocr_dataset_example/images/train_0109284.png",
-      "../dataset/ocr_rec_latexocr_dataset_example/images/train_0217434.png",
-      "../dataset/ocr_rec_latexocr_dataset_example/images/train_0166758.png",
-      "../dataset/ocr_rec_latexocr_dataset_example/images/train_0022294.png",
-      "../dataset/ocr_rec_latexocr_dataset_example/images/val_0071799.png",
-      "../dataset/ocr_rec_latexocr_dataset_example/images/train_0017043.png",
-      "../dataset/ocr_rec_latexocr_dataset_example/images/train_0026204.png",
-      "../dataset/ocr_rec_latexocr_dataset_example/images/train_0209202.png",
-      "../dataset/ocr_rec_latexocr_dataset_example/images/val_0157332.png",
-      "../dataset/ocr_rec_latexocr_dataset_example/images/train_0232582.png"
+<p>The specific content of the validation result file is:</p>
+<pre><code class="language-bash">{
+  &quot;done_flag&quot;: true,
+  &quot;check_pass&quot;: true,
+  &quot;attributes&quot;: {
+    &quot;train_samples&quot;: 9452,
+    &quot;train_sample_paths&quot;: [
+      &quot;../dataset/ocr_rec_latexocr_dataset_example/images/train_0109284.png&quot;,
+      &quot;../dataset/ocr_rec_latexocr_dataset_example/images/train_0217434.png&quot;,
+      &quot;../dataset/ocr_rec_latexocr_dataset_example/images/train_0166758.png&quot;,
+      &quot;../dataset/ocr_rec_latexocr_dataset_example/images/train_0022294.png&quot;,
+      &quot;../dataset/ocr_rec_latexocr_dataset_example/images/val_0071799.png&quot;,
+      &quot;../dataset/ocr_rec_latexocr_dataset_example/images/train_0017043.png&quot;,
+      &quot;../dataset/ocr_rec_latexocr_dataset_example/images/train_0026204.png&quot;,
+      &quot;../dataset/ocr_rec_latexocr_dataset_example/images/train_0209202.png&quot;,
+      &quot;../dataset/ocr_rec_latexocr_dataset_example/images/val_0157332.png&quot;,
+      &quot;../dataset/ocr_rec_latexocr_dataset_example/images/train_0232582.png&quot;
     ],
-    "val_samples": 1050,
-    "val_sample_paths": [
-      "../dataset/ocr_rec_latexocr_dataset_example/images/train_0070221.png",
-      "../dataset/ocr_rec_latexocr_dataset_example/images/train_0157901.png",
-      "../dataset/ocr_rec_latexocr_dataset_example/images/train_0085392.png",
-      "../dataset/ocr_rec_latexocr_dataset_example/images/train_0196480.png",
-      "../dataset/ocr_rec_latexocr_dataset_example/images/train_0096180.png",
-      "../dataset/ocr_rec_latexocr_dataset_example/images/train_0136149.png",
-      "../dataset/ocr_rec_latexocr_dataset_example/images/train_0143310.png",
-      "../dataset/ocr_rec_latexocr_dataset_example/images/train_0004560.png",
-      "../dataset/ocr_rec_latexocr_dataset_example/images/train_0115191.png",
-      "../dataset/ocr_rec_latexocr_dataset_example/images/train_0015323.png"
+    &quot;val_samples&quot;: 1050,
+    &quot;val_sample_paths&quot;: [
+      &quot;../dataset/ocr_rec_latexocr_dataset_example/images/train_0070221.png&quot;,
+      &quot;../dataset/ocr_rec_latexocr_dataset_example/images/train_0157901.png&quot;,
+      &quot;../dataset/ocr_rec_latexocr_dataset_example/images/train_0085392.png&quot;,
+      &quot;../dataset/ocr_rec_latexocr_dataset_example/images/train_0196480.png&quot;,
+      &quot;../dataset/ocr_rec_latexocr_dataset_example/images/train_0096180.png&quot;,
+      &quot;../dataset/ocr_rec_latexocr_dataset_example/images/train_0136149.png&quot;,
+      &quot;../dataset/ocr_rec_latexocr_dataset_example/images/train_0143310.png&quot;,
+      &quot;../dataset/ocr_rec_latexocr_dataset_example/images/train_0004560.png&quot;,
+      &quot;../dataset/ocr_rec_latexocr_dataset_example/images/train_0115191.png&quot;,
+      &quot;../dataset/ocr_rec_latexocr_dataset_example/images/train_0015323.png&quot;
     ]
   },
-  "analysis": {
-    "histogram": "check_dataset/histogram.png"
+  &quot;analysis&quot;: {
+    &quot;histogram&quot;: &quot;check_dataset/histogram.png&quot;
   },
-  "dataset_path": "./dataset/ocr_rec_latexocr_dataset_example",
-  "show_type": "image",
-  "dataset_type": "LaTeXOCRDataset"
+  &quot;dataset_path&quot;: &quot;./dataset/ocr_rec_latexocr_dataset_example&quot;,
+  &quot;show_type&quot;: &quot;image&quot;,
+  &quot;dataset_type&quot;: &quot;LaTeXOCRDataset&quot;
 }
-```
-In the above validation results, `check_pass` being True indicates that the dataset format meets the requirements. Explanations for other indicators are as follows:
-* `attributes.train_samples`: The number of training samples in this dataset is 9452;
-* `attributes.val_samples`: The number of validation samples in this dataset is 1050;
-* `attributes.train_sample_paths`: A list of relative paths to the visualized training samples in this dataset;
-* `attributes.val_sample_paths`: A list of relative paths to the visualized validation samples in this dataset;
-
-Additionally, the dataset verification also analyzes the distribution of sample numbers across all categories in the dataset and generates a distribution histogram (`histogram.png`):
-<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/formula_recognition/01.jpg">
-</details>
+</code></pre>
+<p>In the above validation results, <code>check_pass</code> being True indicates that the dataset format meets the requirements. Explanations for other indicators are as follows:
+* <code>attributes.train_samples</code>: The number of training samples in this dataset is 9452;
+* <code>attributes.val_samples</code>: The number of validation samples in this dataset is 1050;
+* <code>attributes.train_sample_paths</code>: A list of relative paths to the visualized training samples in this dataset;
+* <code>attributes.val_sample_paths</code>: A list of relative paths to the visualized validation samples in this dataset;</p>
+<p>Additionally, the dataset verification also analyzes the distribution of sample numbers across all categories in the dataset and generates a distribution histogram (<code>histogram.png</code>):
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/formula_recognition/01.jpg"></p></details>
 
 
 ### 4.1.3 Dataset Format Conversion / Dataset Splitting (Optional)
 After completing the data verification, you can convert the dataset format and re-split the training/validation ratio by <b>modifying the configuration file</b> or <b>appending hyperparameters</b>.
 
-<details>
-  <summary>👉 <b>Details of Format Conversion / Dataset Splitting (Click to Expand)</b></summary>
+<details><summary>👉 <b>Details of Format Conversion / Dataset Splitting (Click to Expand)</b></summary>
 
-<b>(1) Dataset Format Conversion</b>
-
-The formula recognition supports converting `MSTextRecDataset` format datasets to `LaTeXOCRDataset` format ( `PKL` format ). The parameters for dataset format conversion can be set by modifying the fields under `CheckDataset` in the configuration file. Examples of some parameters in the configuration file are as follows:
-
-* `CheckDataset`:
-  * `convert`:
-    * `enable`: Whether to perform dataset format conversion. Formula recognition supports converting `MSTextRecDataset` format datasets to `LaTeXOCRDataset` format, default is `True`;
-    * `src_dataset_type`: If dataset format conversion is performed, the source dataset format needs to be set, default is `MSTextRecDataset`;
-
-For example, if you want to convert a `MSTextRecDataset` format dataset to `LaTeXOCRDataset` format, you need to modify the configuration file as follows:
-
-```bash
-......
+<p><b>(1) Dataset Format Conversion</b></p>
+<p>The formula recognition supports converting <code>MSTextRecDataset</code> format datasets to <code>LaTeXOCRDataset</code> format ( <code>PKL</code> format ). The parameters for dataset format conversion can be set by modifying the fields under <code>CheckDataset</code> in the configuration file. Examples of some parameters in the configuration file are as follows:</p>
+<ul>
+<li><code>CheckDataset</code>:</li>
+<li><code>convert</code>:</li>
+<li><code>enable</code>: Whether to perform dataset format conversion. Formula recognition supports converting <code>MSTextRecDataset</code> format datasets to <code>LaTeXOCRDataset</code> format, default is <code>True</code>;</li>
+<li><code>src_dataset_type</code>: If dataset format conversion is performed, the source dataset format needs to be set, default is <code>MSTextRecDataset</code>;</li>
+</ul>
+<p>For example, if you want to convert a <code>MSTextRecDataset</code> format dataset to <code>LaTeXOCRDataset</code> format, you need to modify the configuration file as follows:</p>
+<pre><code class="language-bash">......
 CheckDataset:
   ......
   convert:
     enable: True
     src_dataset_type: MSTextRecDataset
   ......
-```
-Then execute the command:
-
-```bash
-python main.py -c paddlex/configs/formula_recognition/LaTeX_OCR_rec.yaml \
+</code></pre>
+<p>Then execute the command:</p>
+<pre><code class="language-bash">python main.py -c paddlex/configs/formula_recognition/LaTeX_OCR_rec.yaml \
     -o Global.mode=check_dataset \
     -o Global.dataset_dir=./dataset/ocr_rec_latexocr_dataset_example
-```
-After the data conversion is executed, the original annotation files will be renamed to `xxx.bak` in the original path.
-
-The above parameters also support being set by appending command line arguments:
-
-```bash
-python main.py -c  paddlex/configs/formula_recognition/LaTeX_OCR_rec.yaml \
+</code></pre>
+<p>After the data conversion is executed, the original annotation files will be renamed to <code>xxx.bak</code> in the original path.</p>
+<p>The above parameters also support being set by appending command line arguments:</p>
+<pre><code class="language-bash">python main.py -c  paddlex/configs/formula_recognition/LaTeX_OCR_rec.yaml \
     -o Global.mode=check_dataset \
     -o Global.dataset_dir=./dataset/ocr_rec_latexocr_dataset_example \
     -o CheckDataset.convert.enable=True \
     -o CheckDataset.convert.src_dataset_type=MSTextRecDataset
-```
-<b>(2) Dataset Splitting</b>
-
-The parameters for dataset splitting can be set by modifying the fields under `CheckDataset` in the configuration file. Examples of some parameters in the configuration file are as follows:
-
-* `CheckDataset`:
-  * `split`:
-    * `enable`: Whether to re-split the dataset. When set to `True`, dataset splitting is performed, default is `False`;
-    * `train_percent`: If the dataset is re-split, the percentage of the training set needs to be set, which is an integer between 0 and 100, and the sum with `val_percent` should be 100;
-
-For example, if you want to re-split the dataset with 90% for the training set and 10% for the validation set, you need to modify the configuration file as follows:
-
-```bash
-......
+</code></pre>
+<p><b>(2) Dataset Splitting</b></p>
+<p>The parameters for dataset splitting can be set by modifying the fields under <code>CheckDataset</code> in the configuration file. Examples of some parameters in the configuration file are as follows:</p>
+<ul>
+<li><code>CheckDataset</code>:</li>
+<li><code>split</code>:</li>
+<li><code>enable</code>: Whether to re-split the dataset. When set to <code>True</code>, dataset splitting is performed, default is <code>False</code>;</li>
+<li><code>train_percent</code>: If the dataset is re-split, the percentage of the training set needs to be set, which is an integer between 0 and 100, and the sum with <code>val_percent</code> should be 100;</li>
+</ul>
+<p>For example, if you want to re-split the dataset with 90% for the training set and 10% for the validation set, you need to modify the configuration file as follows:</p>
+<pre><code class="language-bash">......
 CheckDataset:
   ......
   split:
@@ -189,27 +172,21 @@ CheckDataset:
     train_percent: 90
     val_percent: 10
   ......
-```
-Then execute the command:
-
-```bash
-python main.py -c paddlex/configs/formula_recognition/LaTeX_OCR_rec.yaml \
+</code></pre>
+<p>Then execute the command:</p>
+<pre><code class="language-bash">python main.py -c paddlex/configs/formula_recognition/LaTeX_OCR_rec.yaml \
     -o Global.mode=check_dataset \
     -o Global.dataset_dir=./dataset/ocr_rec_latexocr_dataset_example
-```
-After the data splitting is executed, the original annotation files will be renamed to `xxx.bak` in the original path.
-
-The above parameters also support being set by appending command line arguments:
-
-```bash
-python main.py -c  paddlex/configs/formula_recognition/LaTeX_OCR_rec.yaml \
+</code></pre>
+<p>After the data splitting is executed, the original annotation files will be renamed to <code>xxx.bak</code> in the original path.</p>
+<p>The above parameters also support being set by appending command line arguments:</p>
+<pre><code class="language-bash">python main.py -c  paddlex/configs/formula_recognition/LaTeX_OCR_rec.yaml \
     -o Global.mode=check_dataset \
     -o Global.dataset_dir=./dataset/ocr_rec_latexocr_dataset_example \
     -o CheckDataset.split.enable=True \
     -o CheckDataset.split.train_percent=90 \
     -o CheckDataset.split.val_percent=10
-```
-</details>
+</code></pre></details>
 
 ### 4.2 Model Training
 Model training can be completed with a single command, taking the training of the formula recognition model LaTeX_OCR_rec as an example:
@@ -226,18 +203,21 @@ The following steps are required:
 * Specify the path to the training dataset: `-o Global.dataset_dir`.
 Other related parameters can be set by modifying the `Global` and `Train` fields in the `.yaml` configuration file, or adjusted by appending parameters in the command line. For example, to specify training on the first two GPUs: `-o Global.device=gpu:0,1`; to set the number of training epochs to 10: `-o Train.epochs_iters=10`. For more modifiable parameters and their detailed explanations, refer to the configuration file instructions for the corresponding task module of the model [PaddleX Common Configuration File Parameters](../../instructions/config_parameters_common.en.md).
 
-<details>
-  <summary>👉 <b>More Details (Click to Expand)</b></summary>
+<details><summary>👉 <b>More Details (Click to Expand)</b></summary>
 
-* During model training, PaddleX automatically saves the model weight files, with the default being `output`. If you need to specify a save path, you can set it through the `-o Global.output` field in the configuration file.
-* PaddleX shields you from the concepts of dynamic graph weights and static graph weights. During model training, both dynamic and static graph weights are produced, and static graph weights are selected by default for model inference.
-* After completing the model training, all outputs are saved in the specified output directory (default is `./output/`), typically including:
-
-* `train_result.json`: Training result record file, recording whether the training task was completed normally, as well as the output weight metrics, related file paths, etc.;
-* `train.log`: Training log file, recording changes in model metrics and loss during training;
-* `config.yaml`: Training configuration file, recording the hyperparameter configuration for this training session;
-* `.pdparams`, `.pdema`, `.pdopt.pdstate`, `.pdiparams`, `.pdmodel`: Model weight-related files, including network parameters, optimizer, EMA, static graph network parameters, static graph network structure, etc.;
-</details>
+<ul>
+<li>During model training, PaddleX automatically saves the model weight files, with the default being <code>output</code>. If you need to specify a save path, you can set it through the <code>-o Global.output</code> field in the configuration file.</li>
+<li>PaddleX shields you from the concepts of dynamic graph weights and static graph weights. During model training, both dynamic and static graph weights are produced, and static graph weights are selected by default for model inference.</li>
+<li>
+<p>After completing the model training, all outputs are saved in the specified output directory (default is <code>./output/</code>), typically including:</p>
+</li>
+<li>
+<p><code>train_result.json</code>: Training result record file, recording whether the training task was completed normally, as well as the output weight metrics, related file paths, etc.;</p>
+</li>
+<li><code>train.log</code>: Training log file, recording changes in model metrics and loss during training;</li>
+<li><code>config.yaml</code>: Training configuration file, recording the hyperparameter configuration for this training session;</li>
+<li><code>.pdparams</code>, <code>.pdema</code>, <code>.pdopt.pdstate</code>, <code>.pdiparams</code>, <code>.pdmodel</code>: Model weight-related files, including network parameters, optimizer, EMA, static graph network parameters, static graph network structure, etc.;</li>
+</ul></details>
 
 
 ## <b>4.3 Model Evaluation</b>
@@ -255,15 +235,10 @@ Similar to model training, the following steps are required:
 * Specify the path to the validation dataset: `-o Global.dataset_dir`.
 Other related parameters can be set by modifying the `Global` and `Evaluate` fields in the `.yaml` configuration file, detailed instructions can be found in [PaddleX Common Configuration File Parameters](../../instructions/config_parameters_common.en.md).
 
-<details>
-  <summary>👉 <b>More Details (Click to Expand)</b></summary>
+<details><summary>👉 <b>More Details (Click to Expand)</b></summary>
 
-
-When evaluating the model, you need to specify the model weights file path. Each configuration file has a default weight save path built-in. If you need to change it, simply set it by appending a command line parameter, such as `-o Evaluate.weight_path=./output/best_accuracy/best_accuracy.pdparams`.
-
-After completing the model evaluation, an `evaluate_result.json` file will be produced, which records the evaluation results, specifically, whether the evaluation task was completed successfully and the model's evaluation metrics, including recall1、recall5、mAP；
-
-</details>
+<p>When evaluating the model, you need to specify the model weights file path. Each configuration file has a default weight save path built-in. If you need to change it, simply set it by appending a command line parameter, such as <code>-o Evaluate.weight_path=./output/best_accuracy/best_accuracy.pdparams</code>.</p>
+<p>After completing the model evaluation, an <code>evaluate_result.json</code> file will be produced, which records the evaluation results, specifically, whether the evaluation task was completed successfully and the model's evaluation metrics, including recall1、recall5、mAP；</p></details>
 
 
 ### <b>4.4 Model Inference and Integration</b>

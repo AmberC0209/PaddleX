@@ -11,44 +11,38 @@
 
 <b>如您更考虑模型精度，请选择精度较高的模型，如您更考虑模型推理速度，请选择推理速度较快的模型，如您更考虑模型存储大小，请选择存储大小较小的模型</b>。其中部分模型的 benchmark 如下：
 
-<details>
-   <summary> 👉模型列表详情</summary>
+<details><summary> 👉模型列表详情</summary>
 
-<b>表格结构识别模块模型：</b>
-
+<p><b>表格结构识别模块模型：</b></p>
 <table>
-  <tr>
-    <th>模型</th>
-    <th>精度（%）</th>
-    <th>GPU推理耗时 (ms)</th>
-    <th>CPU推理耗时（ms）</th>
-    <th>模型存储大小 (M)</th>
-    <th>介绍</th>
-  </tr>
-  <tr>
-    <td>SLANet</td>
-    <td>59.52</td>
-    <td>522.536</td>
-    <td>1845.37</td>
-    <td>6.9 M</td>
-    <td>SLANet 是百度飞桨视觉团队自研的表格结构识别模型。该模型通过采用CPU 友好型轻量级骨干网络PP-LCNet、高低层特征融合模块CSP-PAN、结构与位置信息对齐的特征解码模块SLA Head，大幅提升了表格结构识别的精度和推理速度。</td>
-  </tr>
-   <tr>
-    <td>SLANet_plus</td>
-    <td>63.69</td>
-    <td>522.536</td>
-    <td>1845.37</td>
-    <td>6.9 M</td>
-    <td>SLANet_plus 是百度飞桨视觉团队自研的表格结构识别模型SLANet的增强版。相较于SLANet，SLANet_plus 对无线表、复杂表格的识别能力得到了大幅提升，并降低了模型对表格定位准确性的敏感度，即使表格定位出现偏移，也能够较准确地进行识别。</td>
-  </tr>
+<tr>
+<th>模型</th>
+<th>精度（%）</th>
+<th>GPU推理耗时 (ms)</th>
+<th>CPU推理耗时（ms）</th>
+<th>模型存储大小 (M)</th>
+<th>介绍</th>
+</tr>
+<tr>
+<td>SLANet</td>
+<td>59.52</td>
+<td>522.536</td>
+<td>1845.37</td>
+<td>6.9 M</td>
+<td>SLANet 是百度飞桨视觉团队自研的表格结构识别模型。该模型通过采用CPU 友好型轻量级骨干网络PP-LCNet、高低层特征融合模块CSP-PAN、结构与位置信息对齐的特征解码模块SLA Head，大幅提升了表格结构识别的精度和推理速度。</td>
+</tr>
+<tr>
+<td>SLANet_plus</td>
+<td>63.69</td>
+<td>522.536</td>
+<td>1845.37</td>
+<td>6.9 M</td>
+<td>SLANet_plus 是百度飞桨视觉团队自研的表格结构识别模型SLANet的增强版。相较于SLANet，SLANet_plus 对无线表、复杂表格的识别能力得到了大幅提升，并降低了模型对表格定位准确性的敏感度，即使表格定位出现偏移，也能够较准确地进行识别。</td>
+</tr>
 </table>
 
-
-<b>注：以上精度指标测量PaddleX 内部自建英文表格识别数据集。所有模型 GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为8，精度类型为 FP32。</b>
-
-
-<b>版面区域检测模块模型：</b>
-
+<p><b>注：以上精度指标测量PaddleX 内部自建英文表格识别数据集。所有模型 GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为8，精度类型为 FP32。</b></p>
+<p><b>版面区域检测模块模型：</b></p>
 <table>
 <thead>
 <tr>
@@ -120,10 +114,8 @@
 </tbody>
 </table>
 
-<b>注：以上精度指标的评估集是 PaddleOCR 自建的版面区域分析数据集，包含中英文论文、杂志和研报等常见的 1w 张文档类型图片。GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为 8，精度类型为 FP32。</b>
-
-<b>文本检测模块模型：</b>
-
+<p><b>注：以上精度指标的评估集是 PaddleOCR 自建的版面区域分析数据集，包含中英文论文、杂志和研报等常见的 1w 张文档类型图片。GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为 8，精度类型为 FP32。</b></p>
+<p><b>文本检测模块模型：</b></p>
 <table>
 <thead>
 <tr>
@@ -155,89 +147,78 @@
 </tbody>
 </table>
 
-<b>注：以上精度指标的评估集是 PaddleOCR 自建的中文数据集，覆盖街景、网图、文档、手写多个场景，其中检测包含 500 张图片。以上所有模型 GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为8，精度类型为 FP32。</b>
-
-<b>文本识别模块模型：</b>
-
+<p><b>注：以上精度指标的评估集是 PaddleOCR 自建的中文数据集，覆盖街景、网图、文档、手写多个场景，其中检测包含 500 张图片。以上所有模型 GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为8，精度类型为 FP32。</b></p>
+<p><b>文本识别模块模型：</b></p>
 <table >
-    <tr>
-        <th>模型</th>
-        <th>识别 Avg Accuracy(%)</th>
-        <th>GPU推理耗时（ms）</th>
-        <th>CPU推理耗时 (ms)</th>
-        <th>模型存储大小（M）</th>
-        <th>介绍</th>
-    </tr>
-    <tr>
-        <td>PP-OCRv4_mobile_rec</td>
-        <td>78.20</td>
-        <td>7.95018</td>
-        <td>46.7868</td>
-        <td>10.6 M</td>
-        <td rowspan="2">PP-OCRv4是百度飞桨视觉团队自研的文本识别模型PP-OCRv3的下一个版本，通过引入数据增强方案、GTC-NRTR指导分支等策略，在模型推理速度不变的情况下，进一步提升了文本识别精度。该模型提供了服务端（server）和移动端（mobile）两个不同版本，来满足不同场景下的工业需求。</td>
-    </tr>
-    <tr>
-        <td>PP-OCRv4_server_rec </td>
-        <td>79.20</td>
-        <td>7.19439</td>
-        <td>140.179</td>
-        <td>71.2 M</td>
-    </tr>
+<tr>
+<th>模型</th>
+<th>识别 Avg Accuracy(%)</th>
+<th>GPU推理耗时（ms）</th>
+<th>CPU推理耗时 (ms)</th>
+<th>模型存储大小（M）</th>
+<th>介绍</th>
+</tr>
+<tr>
+<td>PP-OCRv4_mobile_rec</td>
+<td>78.20</td>
+<td>7.95018</td>
+<td>46.7868</td>
+<td>10.6 M</td>
+<td rowspan="2">PP-OCRv4是百度飞桨视觉团队自研的文本识别模型PP-OCRv3的下一个版本，通过引入数据增强方案、GTC-NRTR指导分支等策略，在模型推理速度不变的情况下，进一步提升了文本识别精度。该模型提供了服务端（server）和移动端（mobile）两个不同版本，来满足不同场景下的工业需求。</td>
+</tr>
+<tr>
+<td>PP-OCRv4_server_rec </td>
+<td>79.20</td>
+<td>7.19439</td>
+<td>140.179</td>
+<td>71.2 M</td>
+</tr>
 </table>
 
-
-<b>注：以上精度指标的评估集是 PaddleOCR 自建的中文数据集，覆盖街景、网图、文档、手写多个场景，其中文本识别包含 1.1w 张图片。所有模型 GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为8，精度类型为 FP32。</b>
-
-
+<p><b>注：以上精度指标的评估集是 PaddleOCR 自建的中文数据集，覆盖街景、网图、文档、手写多个场景，其中文本识别包含 1.1w 张图片。所有模型 GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为8，精度类型为 FP32。</b></p>
 <table >
-    <tr>
-        <th>模型</th>
-        <th>识别 Avg Accuracy(%)</th>
-        <th>GPU推理耗时（ms）</th>
-        <th>CPU推理耗时（ms）</th>
-        <th>模型存储大小（M）</th>
-        <th>介绍</th>
-    </tr>
-    <tr>
-        <td>ch_SVTRv2_rec</td>
-        <td>68.81</td>
-        <td>8.36801</td>
-        <td>165.706</td>
-        <td>73.9 M</td>
-        <td rowspan="1">
-        SVTRv2 是一种由复旦大学视觉与学习实验室（FVL）的OpenOCR团队研发的服务端文本识别模型，其在PaddleOCR算法模型挑战赛 - 赛题一：OCR端到端识别任务中荣获一等奖，A榜端到端识别精度相比PP-OCRv4提升6%。
-    </td>
-    </tr>
+<tr>
+<th>模型</th>
+<th>识别 Avg Accuracy(%)</th>
+<th>GPU推理耗时（ms）</th>
+<th>CPU推理耗时（ms）</th>
+<th>模型存储大小（M）</th>
+<th>介绍</th>
+</tr>
+<tr>
+<td>ch_SVTRv2_rec</td>
+<td>68.81</td>
+<td>8.36801</td>
+<td>165.706</td>
+<td>73.9 M</td>
+<td rowspan="1">
+SVTRv2 是一种由复旦大学视觉与学习实验室（FVL）的OpenOCR团队研发的服务端文本识别模型，其在PaddleOCR算法模型挑战赛 - 赛题一：OCR端到端识别任务中荣获一等奖，A榜端到端识别精度相比PP-OCRv4提升6%。
+</td>
+</tr>
 </table>
 
-
-
-<b>注：以上精度指标的评估集是 [PaddleOCR算法模型挑战赛 - 赛题一：OCR端到端识别任务](https://aistudio.baidu.com/competition/detail/1131/0/introduction)A榜。 所有模型 GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为8，精度类型为 FP32。</b>
-
+<p><b>注：以上精度指标的评估集是 <a href="https://aistudio.baidu.com/competition/detail/1131/0/introduction">PaddleOCR算法模型挑战赛 - 赛题一：OCR端到端识别任务</a>A榜。 所有模型 GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为8，精度类型为 FP32。</b></p>
 <table >
-    <tr>
-        <th>模型</th>
-        <th>识别 Avg Accuracy(%)</th>
-        <th>GPU推理耗时（ms）</th>
-        <th>CPU推理耗时（ms）</th>
-        <th>模型存储大小（M）</th>
-        <th>介绍</th>
-    </tr>
-    <tr>
-        <td>ch_RepSVTR_rec</td>
-        <td>65.07</td>
-        <td>10.5047</td>
-        <td>51.5647</td>
-        <td>22.1 M</td>
-        <td rowspan="1">    RepSVTR 文本识别模型是一种基于SVTRv2 的移动端文本识别模型，其在PaddleOCR算法模型挑战赛 - 赛题一：OCR端到端识别任务中荣获一等奖，B榜端到端识别精度相比PP-OCRv4提升2.5%，推理速度持平。</td>
-    </tr>
+<tr>
+<th>模型</th>
+<th>识别 Avg Accuracy(%)</th>
+<th>GPU推理耗时（ms）</th>
+<th>CPU推理耗时（ms）</th>
+<th>模型存储大小（M）</th>
+<th>介绍</th>
+</tr>
+<tr>
+<td>ch_RepSVTR_rec</td>
+<td>65.07</td>
+<td>10.5047</td>
+<td>51.5647</td>
+<td>22.1 M</td>
+<td rowspan="1">    RepSVTR 文本识别模型是一种基于SVTRv2 的移动端文本识别模型，其在PaddleOCR算法模型挑战赛 - 赛题一：OCR端到端识别任务中荣获一等奖，B榜端到端识别精度相比PP-OCRv4提升2.5%，推理速度持平。</td>
+</tr>
 </table>
 
-
-<b>注：以上精度指标的评估集是 [PaddleOCR算法模型挑战赛 - 赛题一：OCR端到端识别任务](https://aistudio.baidu.com/competition/detail/1131/0/introduction)B榜。 所有模型 GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为8，精度类型为 FP32。</b>
-
-<b>印章文本检测模块模型：</b>
-
+<p><b>注：以上精度指标的评估集是 <a href="https://aistudio.baidu.com/competition/detail/1131/0/introduction">PaddleOCR算法模型挑战赛 - 赛题一：OCR端到端识别任务</a>B榜。 所有模型 GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为8，精度类型为 FP32。</b></p>
+<p><b>印章文本检测模块模型：</b></p>
 <table>
 <thead>
 <tr>
@@ -269,10 +250,8 @@
 </tbody>
 </table>
 
-<b>注：以上精度指标的评估集是自建的数据集，包含500张圆形印章图像。GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为 8，精度类型为 FP32。</b>
-
-<b>文本图像矫正模块模型：</b>
-
+<p><b>注：以上精度指标的评估集是自建的数据集，包含500张圆形印章图像。GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为 8，精度类型为 FP32。</b></p>
+<p><b>文本图像矫正模块模型：</b></p>
 <table>
 <thead>
 <tr>
@@ -292,10 +271,8 @@
 </tbody>
 </table>
 
-<b>模型的精度指标测量自 [DocUNet benchmark](https://www3.cs.stonybrook.edu/~cvl/docunet.html)。</b>
-
-<b>文档图像方向分类模块模型：</b>
-
+<p><b>模型的精度指标测量自 <a href="https://www3.cs.stonybrook.edu/~cvl/docunet.html">DocUNet benchmark</a>。</b></p>
+<p><b>文档图像方向分类模块模型：</b></p>
 <table>
 <thead>
 <tr>
@@ -319,9 +296,7 @@
 </tbody>
 </table>
 
-<b>注：以上精度指标的评估集是自建的数据集，覆盖证件和文档等多个场景，包含 1000 张图片。GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为 8，精度类型为 FP32。</b>
-
-</details>
+<p><b>注：以上精度指标的评估集是自建的数据集，覆盖证件和文档等多个场景，包含 1000 张图片。GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为 8，精度类型为 FP32。</b></p></details>
 
 
 ## 2. 快速开始
@@ -615,14 +590,13 @@ chat_result.print()
 
 下面是API参考和多语言服务调用示例：
 
-<details>
-<summary>API参考</summary>
+<details><summary>API参考</summary>
 
-对于服务提供的所有操作：
-
-- 响应体以及POST请求的请求体均为JSON数据（JSON对象）。
-- 当请求处理成功时，响应状态码为`200`，响应体的属性如下：
-
+<p>对于服务提供的所有操作：</p>
+<ul>
+<li>响应体以及POST请求的请求体均为JSON数据（JSON对象）。</li>
+<li>当请求处理成功时，响应状态码为<code>200</code>，响应体的属性如下：</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -645,10 +619,10 @@ chat_result.print()
 </tbody>
 </table>
 
-    响应体还可能有`result`属性，类型为`object`，其中存储操作结果信息。
-
-- 当请求处理未成功时，响应体的属性如下：
-
+<p>响应体还可能有<code>result</code>属性，类型为<code>object</code>，其中存储操作结果信息。</p>
+<ul>
+<li>当请求处理未成功时，响应体的属性如下：</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -671,16 +645,15 @@ chat_result.print()
 </tbody>
 </table>
 
-服务提供的操作如下：
-
-- <b>`analyzeImage`</b>
-
-    使用计算机视觉模型对图像进行分析，获得OCR、表格识别结果等，并提取图像中的关键信息。
-
-    `POST /chatocr-vision`
-
-    - 请求体的属性如下：
-
+<p>服务提供的操作如下：</p>
+<ul>
+<li><b><code>analyzeImage</code></b></li>
+</ul>
+<p>使用计算机视觉模型对图像进行分析，获得OCR、表格识别结果等，并提取图像中的关键信息。</p>
+<p><code>POST /chatocr-vision</code></p>
+<ul>
+<li>请求体的属性如下：</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -730,8 +703,7 @@ chat_result.print()
 </tbody>
 </table>
 
-        `inferenceParams`的属性如下：
-
+<p><code>inferenceParams</code>的属性如下：</p>
 <table>
 <thead>
 <tr>
@@ -751,8 +723,9 @@ chat_result.print()
 </tbody>
 </table>
 
-    - 请求处理成功时，响应体的`result`具有如下属性：
-
+<ul>
+<li>请求处理成功时，响应体的<code>result</code>具有如下属性：</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -775,8 +748,7 @@ chat_result.print()
 </tbody>
 </table>
 
-        `visionResults`中的每个元素为一个`object`，具有如下属性：
-
+<p><code>visionResults</code>中的每个元素为一个<code>object</code>，具有如下属性：</p>
 <table>
 <thead>
 <tr>
@@ -814,8 +786,7 @@ chat_result.print()
 </tbody>
 </table>
 
-        `texts`中的每个元素为一个`object`，具有如下属性：
-
+<p><code>texts</code>中的每个元素为一个<code>object</code>，具有如下属性：</p>
 <table>
 <thead>
 <tr>
@@ -843,8 +814,7 @@ chat_result.print()
 </tbody>
 </table>
 
-        `tables`中的每个元素为一个`object`，具有如下属性：
-
+<p><code>tables</code>中的每个元素为一个<code>object</code>，具有如下属性：</p>
 <table>
 <thead>
 <tr>
@@ -867,14 +837,14 @@ chat_result.print()
 </tbody>
 </table>
 
-- <b>`buildVectorStore`</b>
-
-    构建向量数据库。
-
-    `POST /chatocr-vector`
-
-    - 请求体的属性如下：
-
+<ul>
+<li><b><code>buildVectorStore</code></b></li>
+</ul>
+<p>构建向量数据库。</p>
+<p><code>POST /chatocr-vector</code></p>
+<ul>
+<li>请求体的属性如下：</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -918,18 +888,16 @@ chat_result.print()
 </tbody>
 </table>
 
-        当前，`llmParams` 可以采用如下形式：
-
-        ```json
-        {
-          "apiType": "qianfan",
-          "apiKey": "{千帆平台API key}",
-          "secretKey": "{千帆平台secret key}"
-        }
-        ```
-
-    - 请求处理成功时，响应体的`result`具有如下属性：
-
+<p>当前，<code>llmParams</code> 可以采用如下形式：</p>
+<pre><code class="language-json">{
+&quot;apiType&quot;: &quot;qianfan&quot;,
+&quot;apiKey&quot;: &quot;{千帆平台API key}&quot;,
+&quot;secretKey&quot;: &quot;{千帆平台secret key}&quot;
+}
+</code></pre>
+<ul>
+<li>请求处理成功时，响应体的<code>result</code>具有如下属性：</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -947,14 +915,14 @@ chat_result.print()
 </tbody>
 </table>
 
-- <b>`retrieveKnowledge`</b>
-
-    进行知识检索。
-
-    `POST /chatocr-retrieval`
-
-    - 请求体的属性如下：
-
+<ul>
+<li><b><code>retrieveKnowledge</code></b></li>
+</ul>
+<p>进行知识检索。</p>
+<p><code>POST /chatocr-retrieval</code></p>
+<ul>
+<li>请求体的属性如下：</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -992,18 +960,16 @@ chat_result.print()
 </tbody>
 </table>
 
-        当前，`llmParams` 可以采用如下形式：
-
-        ```json
-        {
-          "apiType": "qianfan",
-          "apiKey": "{千帆平台API key}",
-          "secretKey": "{千帆平台secret key}"
-        }
-        ```
-
-    - 请求处理成功时，响应体的`result`具有如下属性：
-
+<p>当前，<code>llmParams</code> 可以采用如下形式：</p>
+<pre><code class="language-json">{
+&quot;apiType&quot;: &quot;qianfan&quot;,
+&quot;apiKey&quot;: &quot;{千帆平台API key}&quot;,
+&quot;secretKey&quot;: &quot;{千帆平台secret key}&quot;
+}
+</code></pre>
+<ul>
+<li>请求处理成功时，响应体的<code>result</code>具有如下属性：</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -1021,14 +987,14 @@ chat_result.print()
 </tbody>
 </table>
 
-- <b>`chat`</b>
-
-    与大语言模型交互，利用大语言模型提炼关键信息。
-
-    `POST /chatocr-vision`
-
-    - 请求体的属性如下：
-
+<ul>
+<li><b><code>chat</code></b></li>
+</ul>
+<p>与大语言模型交互，利用大语言模型提炼关键信息。</p>
+<p><code>POST /chatocr-vision</code></p>
+<ul>
+<li>请求体的属性如下：</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -1102,18 +1068,16 @@ chat_result.print()
 </tbody>
 </table>
 
-        当前，`llmParams` 可以采用如下形式：
-
-        ```json
-        {
-          "apiType": "qianfan",
-          "apiKey": "{千帆平台API key}",
-          "secretKey": "{千帆平台secret key}"
-        }
-        ```
-
-    - 请求处理成功时，响应体的`result`具有如下属性：
-
+<p>当前，<code>llmParams</code> 可以采用如下形式：</p>
+<pre><code class="language-json">{
+&quot;apiType&quot;: &quot;qianfan&quot;,
+&quot;apiKey&quot;: &quot;{千帆平台API key}&quot;,
+&quot;secretKey&quot;: &quot;{千帆平台secret key}&quot;
+}
+</code></pre>
+<ul>
+<li>请求处理成功时，响应体的<code>result</code>具有如下属性：</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -1136,8 +1100,7 @@ chat_result.print()
 </tbody>
 </table>
 
-        `prompts`的属性如下：
-
+<p><code>prompts</code>的属性如下：</p>
 <table>
 <thead>
 <tr>
@@ -1163,130 +1126,126 @@ chat_result.print()
 <td>HTML提示词。</td>
 </tr>
 </tbody>
-</table>
+</table></details>
 
-</details>
-
-<details>
-<summary>多语言调用服务示例</summary>
+<details><summary>多语言调用服务示例</summary>
 
 <details>
 <summary>Python</summary>
 
-```python
-import base64
+
+<pre><code class="language-python">import base64
 import pprint
 import sys
 
 import requests
 
 
-API_BASE_URL = "http://0.0.0.0:8080"
-API_KEY = "{千帆平台API key}"
-SECRET_KEY = "{千帆平台secret key}"
-LLM_NAME = "ernie-3.5"
+API_BASE_URL = &quot;http://0.0.0.0:8080&quot;
+API_KEY = &quot;{千帆平台API key}&quot;
+SECRET_KEY = &quot;{千帆平台secret key}&quot;
+LLM_NAME = &quot;ernie-3.5&quot;
 LLM_PARAMS = {
-    "apiType": "qianfan",
-    "apiKey": API_KEY,
-    "secretKey": SECRET_KEY,
+    &quot;apiType&quot;: &quot;qianfan&quot;,
+    &quot;apiKey&quot;: API_KEY,
+    &quot;secretKey&quot;: SECRET_KEY,
 }
 
-file_path = "./demo.jpg"
-keys = ["电话"]
+file_path = &quot;./demo.jpg&quot;
+keys = [&quot;电话&quot;]
 
-with open(file_path, "rb") as file:
+with open(file_path, &quot;rb&quot;) as file:
     file_bytes = file.read()
-    file_data = base64.b64encode(file_bytes).decode("ascii")
+    file_data = base64.b64encode(file_bytes).decode(&quot;ascii&quot;)
 
 payload = {
-    "file": file_data,
-    "fileType": 1,
-    "useImgOrientationCls": True,
-    "useImgUnwrapping": True,
-    "useSealTextDet": True,
+    &quot;file&quot;: file_data,
+    &quot;fileType&quot;: 1,
+    &quot;useImgOrientationCls&quot;: True,
+    &quot;useImgUnwrapping&quot;: True,
+    &quot;useSealTextDet&quot;: True,
 }
-resp_vision = requests.post(url=f"{API_BASE_URL}/chatocr-vision", json=payload)
+resp_vision = requests.post(url=f&quot;{API_BASE_URL}/chatocr-vision&quot;, json=payload)
 if resp_vision.status_code != 200:
     print(
-        f"Request to chatocr-vision failed with status code {resp_vision.status_code}."
+        f&quot;Request to chatocr-vision failed with status code {resp_vision.status_code}.&quot;
     )
     pprint.pp(resp_vision.json())
     sys.exit(1)
-result_vision = resp_vision.json()["result"]
+result_vision = resp_vision.json()[&quot;result&quot;]
 
-for i, res in enumerate(result_vision["visionResults"]):
-    print("Texts:")
-    pprint.pp(res["texts"])
-    print("Tables:")
-    pprint.pp(res["tables"])
-    ocr_img_path = f"ocr_{i}.jpg"
-    with open(ocr_img_path, "wb") as f:
-        f.write(base64.b64decode(res["ocrImage"]))
-    layout_img_path = f"layout_{i}.jpg"
-    with open(layout_img_path, "wb") as f:
-        f.write(base64.b64decode(res["layoutImage"]))
-    print(f"Output images saved at {ocr_img_path} and {layout_img_path}")
+for i, res in enumerate(result_vision[&quot;visionResults&quot;]):
+    print(&quot;Texts:&quot;)
+    pprint.pp(res[&quot;texts&quot;])
+    print(&quot;Tables:&quot;)
+    pprint.pp(res[&quot;tables&quot;])
+    ocr_img_path = f&quot;ocr_{i}.jpg&quot;
+    with open(ocr_img_path, &quot;wb&quot;) as f:
+        f.write(base64.b64decode(res[&quot;ocrImage&quot;]))
+    layout_img_path = f&quot;layout_{i}.jpg&quot;
+    with open(layout_img_path, &quot;wb&quot;) as f:
+        f.write(base64.b64decode(res[&quot;layoutImage&quot;]))
+    print(f&quot;Output images saved at {ocr_img_path} and {layout_img_path}&quot;)
 
 payload = {
-    "visionInfo": result_vision["visionInfo"],
-    "minChars": 200,
-    "llmRequestInterval": 1000,
-    "llmName": LLM_NAME,
-    "llmParams": LLM_PARAMS,
+    &quot;visionInfo&quot;: result_vision[&quot;visionInfo&quot;],
+    &quot;minChars&quot;: 200,
+    &quot;llmRequestInterval&quot;: 1000,
+    &quot;llmName&quot;: LLM_NAME,
+    &quot;llmParams&quot;: LLM_PARAMS,
 }
-resp_vector = requests.post(url=f"{API_BASE_URL}/chatocr-vector", json=payload)
+resp_vector = requests.post(url=f&quot;{API_BASE_URL}/chatocr-vector&quot;, json=payload)
 if resp_vector.status_code != 200:
     print(
-        f"Request to chatocr-vector failed with status code {resp_vector.status_code}."
+        f&quot;Request to chatocr-vector failed with status code {resp_vector.status_code}.&quot;
     )
     pprint.pp(resp_vector.json())
     sys.exit(1)
-result_vector = resp_vector.json()["result"]
+result_vector = resp_vector.json()[&quot;result&quot;]
 
 payload = {
-    "keys": keys,
-    "vectorStore": result_vector["vectorStore"],
-    "llmName": LLM_NAME,
-    "llmParams": LLM_PARAMS,
+    &quot;keys&quot;: keys,
+    &quot;vectorStore&quot;: result_vector[&quot;vectorStore&quot;],
+    &quot;llmName&quot;: LLM_NAME,
+    &quot;llmParams&quot;: LLM_PARAMS,
 }
-resp_retrieval = requests.post(url=f"{API_BASE_URL}/chatocr-retrieval", json=payload)
+resp_retrieval = requests.post(url=f&quot;{API_BASE_URL}/chatocr-retrieval&quot;, json=payload)
 if resp_retrieval.status_code != 200:
     print(
-        f"Request to chatocr-retrieval failed with status code {resp_retrieval.status_code}."
+        f&quot;Request to chatocr-retrieval failed with status code {resp_retrieval.status_code}.&quot;
     )
     pprint.pp(resp_retrieval.json())
     sys.exit(1)
-result_retrieval = resp_retrieval.json()["result"]
+result_retrieval = resp_retrieval.json()[&quot;result&quot;]
 
 payload = {
-    "keys": keys,
-    "visionInfo": result_vision["visionInfo"],
-    "taskDescription": "",
-    "rules": "",
-    "fewShot": "",
-    "vectorStore": result_vector["vectorStore"],
-    "retrievalResult": result_retrieval["retrievalResult"],
-    "returnPrompts": True,
-    "llmName": LLM_NAME,
-    "llmParams": LLM_PARAMS,
+    &quot;keys&quot;: keys,
+    &quot;visionInfo&quot;: result_vision[&quot;visionInfo&quot;],
+    &quot;taskDescription&quot;: &quot;&quot;,
+    &quot;rules&quot;: &quot;&quot;,
+    &quot;fewShot&quot;: &quot;&quot;,
+    &quot;vectorStore&quot;: result_vector[&quot;vectorStore&quot;],
+    &quot;retrievalResult&quot;: result_retrieval[&quot;retrievalResult&quot;],
+    &quot;returnPrompts&quot;: True,
+    &quot;llmName&quot;: LLM_NAME,
+    &quot;llmParams&quot;: LLM_PARAMS,
 }
-resp_chat = requests.post(url=f"{API_BASE_URL}/chatocr-chat", json=payload)
+resp_chat = requests.post(url=f&quot;{API_BASE_URL}/chatocr-chat&quot;, json=payload)
 if resp_chat.status_code != 200:
     print(
-        f"Request to chatocr-chat failed with status code {resp_chat.status_code}."
+        f&quot;Request to chatocr-chat failed with status code {resp_chat.status_code}.&quot;
     )
     pprint.pp(resp_chat.json())
     sys.exit(1)
-result_chat = resp_chat.json()["result"]
-print("\nPrompts:")
-pprint.pp(result_chat["prompts"])
-print("Final result:")
-print(result_chat["chatResult"])
-```
+result_chat = resp_chat.json()[&quot;result&quot;]
+print(&quot;\nPrompts:&quot;)
+pprint.pp(result_chat[&quot;prompts&quot;])
+print(&quot;Final result:&quot;)
+print(result_chat[&quot;chatResult&quot;])
+</code></pre>
 
-<b>注</b>：请在 `API_KEY`、`SECRET_KEY` 处填入您的 API key 和 secret key。
 
-</details>
+<b>注</b>：请在 `API_KEY`、`SECRET_KEY` 处填入您的 API key 和 secret key。</details>
 </details>
 <br/>
 

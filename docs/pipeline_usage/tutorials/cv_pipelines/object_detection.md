@@ -9,319 +9,315 @@
 
 <b>通用</b><b>目标检测</b><b>产线中包含了</b><b>目标检测</b><b>模块，如您更考虑模型精度，请选择精度较高的模型，如您更考虑模型推理速度，请选择推理速度较快的模型，如您更考虑模型存储大小，请选择存储大小较小的模型</b>。
 
-<details>
-   <summary> 👉模型列表详情</summary>
+<details><summary> 👉模型列表详情</summary>
 
 <table >
-  <tr>
-    <th>模型</th>
-    <th>mAP(%)</th>
-    <th>GPU推理耗时 (ms)</th>
-    <th>CPU推理耗时 (ms)</th>
-    <th>模型存储大小 (M)</th>
-    <th>介绍</th>
-  </tr>
-  <tr>
-    <td>Cascade-FasterRCNN-ResNet50-FPN</td>
-    <td>41.1</td>
-    <td>-</td>
-    <td>-</td>
-    <td>245.4 M</td>
-    <td rowspan="2">Cascade-FasterRCNN 是一种改进的Faster R-CNN目标检测模型，通过耦联多个检测器，利用不同IoU阈值优化检测结果，解决训练和预测阶段的mismatch问题，提高目标检测的准确性。</td>
-  </tr>
-  <tr>
-    <td>Cascade-FasterRCNN-ResNet50-vd-SSLDv2-FPN</td>
-    <td>45.0</td>
-    <td>-</td>
-    <td>-</td>
-    <td>246.2 M</td>
-  </tr>
-  <tr>
-    <td>CenterNet-DLA-34</td>
-    <td>37.6</td>
-    <td>-</td>
-    <td>-</td>
-    <td>75.4 M</td>
-    <td rowspan="2">CenterNet是一种anchor-free目标检测模型，把待检测物体的关键点视为单一点-即其边界框的中心点，并通过关键点进行回归。</td>
-  </tr>
-  <tr>
-    <td>CenterNet-ResNet50</td>
-    <td>38.9</td>
-    <td>-</td>
-    <td>-</td>
-    <td>319.7 M</td>
+<tr>
+<th>模型</th>
+<th>mAP(%)</th>
+<th>GPU推理耗时 (ms)</th>
+<th>CPU推理耗时 (ms)</th>
+<th>模型存储大小 (M)</th>
+<th>介绍</th>
+</tr>
+<tr>
+<td>Cascade-FasterRCNN-ResNet50-FPN</td>
+<td>41.1</td>
+<td>-</td>
+<td>-</td>
+<td>245.4 M</td>
+<td rowspan="2">Cascade-FasterRCNN 是一种改进的Faster R-CNN目标检测模型，通过耦联多个检测器，利用不同IoU阈值优化检测结果，解决训练和预测阶段的mismatch问题，提高目标检测的准确性。</td>
+</tr>
+<tr>
+<td>Cascade-FasterRCNN-ResNet50-vd-SSLDv2-FPN</td>
+<td>45.0</td>
+<td>-</td>
+<td>-</td>
+<td>246.2 M</td>
+</tr>
+<tr>
+<td>CenterNet-DLA-34</td>
+<td>37.6</td>
+<td>-</td>
+<td>-</td>
+<td>75.4 M</td>
+<td rowspan="2">CenterNet是一种anchor-free目标检测模型，把待检测物体的关键点视为单一点-即其边界框的中心点，并通过关键点进行回归。</td>
+</tr>
+<tr>
+<td>CenterNet-ResNet50</td>
+<td>38.9</td>
+<td>-</td>
+<td>-</td>
+<td>319.7 M</td>
 
-  </tr>
-  <tr>
-    <td>DETR-R50</td>
-    <td>42.3</td>
-    <td>59.2132</td>
-    <td>5334.52</td>
-    <td>159.3 M</td>
-    <td >DETR 是Facebook提出的一种transformer目标检测模型，该模型在不需要预定义的先验框anchor和NMS的后处理策略的情况下，就可以实现端到端的目标检测。</td>
-  </tr>
-  <tr>
-    <td>FasterRCNN-ResNet34-FPN</td>
-    <td>37.8</td>
-    <td>-</td>
-    <td>-</td>
-    <td>137.5 M</td>
-    <td rowspan="9">Faster R-CNN是典型的two-stage目标检测模型，即先生成区域建议（Region Proposal），然后在生成的Region Proposal上做分类和回归。相较于前代R-CNN和Fast R-CNN，Faster R-CNN的改进主要在于区域建议方面，使用区域建议网络（Region Proposal Network, RPN）提供区域建议，以取代传统选择性搜索。RPN是卷积神经网络，并与检测网络共享图像的卷积特征，减少了区域建议的计算开销。</td>
-  </tr>
-  <tr>
-    <td>FasterRCNN-ResNet50-FPN</td>
-    <td>38.4</td>
-    <td>-</td>
-    <td>-</td>
-    <td>148.1 M</td>
+</tr>
+<tr>
+<td>DETR-R50</td>
+<td>42.3</td>
+<td>59.2132</td>
+<td>5334.52</td>
+<td>159.3 M</td>
+<td >DETR 是Facebook提出的一种transformer目标检测模型，该模型在不需要预定义的先验框anchor和NMS的后处理策略的情况下，就可以实现端到端的目标检测。</td>
+</tr>
+<tr>
+<td>FasterRCNN-ResNet34-FPN</td>
+<td>37.8</td>
+<td>-</td>
+<td>-</td>
+<td>137.5 M</td>
+<td rowspan="9">Faster R-CNN是典型的two-stage目标检测模型，即先生成区域建议（Region Proposal），然后在生成的Region Proposal上做分类和回归。相较于前代R-CNN和Fast R-CNN，Faster R-CNN的改进主要在于区域建议方面，使用区域建议网络（Region Proposal Network, RPN）提供区域建议，以取代传统选择性搜索。RPN是卷积神经网络，并与检测网络共享图像的卷积特征，减少了区域建议的计算开销。</td>
+</tr>
+<tr>
+<td>FasterRCNN-ResNet50-FPN</td>
+<td>38.4</td>
+<td>-</td>
+<td>-</td>
+<td>148.1 M</td>
 
-  </tr>
-  <tr>
-    <td>FasterRCNN-ResNet50-vd-FPN</td>
-    <td>39.5</td>
-    <td>-</td>
-    <td>-</td>
-    <td>148.1 M</td>
+</tr>
+<tr>
+<td>FasterRCNN-ResNet50-vd-FPN</td>
+<td>39.5</td>
+<td>-</td>
+<td>-</td>
+<td>148.1 M</td>
 
-  </tr>
-  <tr>
-    <td>FasterRCNN-ResNet50-vd-SSLDv2-FPN</td>
-    <td>41.4</td>
-    <td>-</td>
-    <td>-</td>
-    <td>148.1 M</td>
+</tr>
+<tr>
+<td>FasterRCNN-ResNet50-vd-SSLDv2-FPN</td>
+<td>41.4</td>
+<td>-</td>
+<td>-</td>
+<td>148.1 M</td>
 
-  </tr>
-  <tr>
-    <td>FasterRCNN-ResNet50</td>
-    <td>36.7</td>
-    <td>-</td>
-    <td>-</td>
-    <td>120.2 M</td>
+</tr>
+<tr>
+<td>FasterRCNN-ResNet50</td>
+<td>36.7</td>
+<td>-</td>
+<td>-</td>
+<td>120.2 M</td>
 
-  </tr>
-  <tr>
-    <td>FasterRCNN-ResNet101-FPN</td>
-    <td>41.4</td>
-    <td>-</td>
-    <td>-</td>
-    <td>216.3 M</td>
+</tr>
+<tr>
+<td>FasterRCNN-ResNet101-FPN</td>
+<td>41.4</td>
+<td>-</td>
+<td>-</td>
+<td>216.3 M</td>
 
-  </tr>
-  <tr>
-    <td>FasterRCNN-ResNet101</td>
-    <td>39.0</td>
-    <td>-</td>
-    <td>-</td>
-    <td>188.1 M</td>
+</tr>
+<tr>
+<td>FasterRCNN-ResNet101</td>
+<td>39.0</td>
+<td>-</td>
+<td>-</td>
+<td>188.1 M</td>
 
-  </tr>
-  <tr>
-    <td>FasterRCNN-ResNeXt101-vd-FPN</td>
-    <td>43.4</td>
-    <td>-</td>
-    <td>-</td>
-    <td>360.6 M</td>
+</tr>
+<tr>
+<td>FasterRCNN-ResNeXt101-vd-FPN</td>
+<td>43.4</td>
+<td>-</td>
+<td>-</td>
+<td>360.6 M</td>
 
-  </tr>
-  <tr>
-    <td>FasterRCNN-Swin-Tiny-FPN</td>
-    <td>42.6</td>
-    <td>-</td>
-    <td>-</td>
-    <td>159.8 M</td>
+</tr>
+<tr>
+<td>FasterRCNN-Swin-Tiny-FPN</td>
+<td>42.6</td>
+<td>-</td>
+<td>-</td>
+<td>159.8 M</td>
 
-  </tr>
-  <tr>
-    <td>FCOS-ResNet50</td>
-    <td>39.6</td>
-    <td>103.367</td>
-    <td>3424.91</td>
-    <td>124.2 M</td>
-    <td>FCOS是一种密集预测的anchor-free目标检测模型，使用RetinaNet的骨架，直接在feature map上回归目标物体的长宽，并预测物体的类别以及centerness（feature map上像素点离物体中心的偏移程度），centerness最终会作为权重来调整物体得分。</td>
-  </tr>
-  <tr>
-    <td>PicoDet-L</td>
-    <td>42.6</td>
-    <td>16.6715</td>
-    <td>169.904</td>
-    <td>20.9 M</td>
-    <td rowspan="4">PP-PicoDet是一种全尺寸、棱视宽目标的轻量级目标检测算法，它考虑移动端设备运算量。与传统目标检测算法相比，PP-PicoDet具有更小的模型尺寸和更低的计算复杂度，并在保证检测精度的同时更高的速度和更低的延迟。</td>
-  </tr>
-  <tr>
-    <td>PicoDet-M</td>
-    <td>37.5</td>
-    <td>16.2311</td>
-    <td>71.7257</td>
-    <td>16.8 M</td>
+</tr>
+<tr>
+<td>FCOS-ResNet50</td>
+<td>39.6</td>
+<td>103.367</td>
+<td>3424.91</td>
+<td>124.2 M</td>
+<td>FCOS是一种密集预测的anchor-free目标检测模型，使用RetinaNet的骨架，直接在feature map上回归目标物体的长宽，并预测物体的类别以及centerness（feature map上像素点离物体中心的偏移程度），centerness最终会作为权重来调整物体得分。</td>
+</tr>
+<tr>
+<td>PicoDet-L</td>
+<td>42.6</td>
+<td>16.6715</td>
+<td>169.904</td>
+<td>20.9 M</td>
+<td rowspan="4">PP-PicoDet是一种全尺寸、棱视宽目标的轻量级目标检测算法，它考虑移动端设备运算量。与传统目标检测算法相比，PP-PicoDet具有更小的模型尺寸和更低的计算复杂度，并在保证检测精度的同时更高的速度和更低的延迟。</td>
+</tr>
+<tr>
+<td>PicoDet-M</td>
+<td>37.5</td>
+<td>16.2311</td>
+<td>71.7257</td>
+<td>16.8 M</td>
 
-  </tr>
-  <tr>
-    <td>PicoDet-S</td>
-    <td>29.1</td>
-    <td>14.097</td>
-    <td>37.6563</td>
-    <td>4.4 M</td>
+</tr>
+<tr>
+<td>PicoDet-S</td>
+<td>29.1</td>
+<td>14.097</td>
+<td>37.6563</td>
+<td>4.4 M</td>
 
-  </tr>
-  <tr>
-    <td>PicoDet-XS</td>
-    <td>26.2</td>
-    <td>13.8102</td>
-    <td>48.3139</td>
-    <td>5.7 M</td>
+</tr>
+<tr>
+<td>PicoDet-XS</td>
+<td>26.2</td>
+<td>13.8102</td>
+<td>48.3139</td>
+<td>5.7 M</td>
 
-  </tr>
-    <tr>
-    <td>PP-YOLOE_plus-L</td>
-    <td>52.9</td>
-    <td>33.5644</td>
-    <td>814.825</td>
-    <td>185.3 M</td>
-    <td rowspan="4">PP-YOLOE_plus 是一种是百度飞桨视觉团队自研的云边一体高精度模型PP-YOLOE迭代优化升级的版本，通过使用Objects365大规模数据集、优化预处理，大幅提升了模型端到端推理速度。</td>
-  </tr>
-  <tr>
-    <td>PP-YOLOE_plus-M</td>
-    <td>49.8</td>
-    <td>19.843</td>
-    <td>449.261</td>
-    <td>82.3 M</td>
+</tr>
+<tr>
+<td>PP-YOLOE_plus-L</td>
+<td>52.9</td>
+<td>33.5644</td>
+<td>814.825</td>
+<td>185.3 M</td>
+<td rowspan="4">PP-YOLOE_plus 是一种是百度飞桨视觉团队自研的云边一体高精度模型PP-YOLOE迭代优化升级的版本，通过使用Objects365大规模数据集、优化预处理，大幅提升了模型端到端推理速度。</td>
+</tr>
+<tr>
+<td>PP-YOLOE_plus-M</td>
+<td>49.8</td>
+<td>19.843</td>
+<td>449.261</td>
+<td>82.3 M</td>
 
-  </tr>
-  <tr>
-    <td>PP-YOLOE_plus-S</td>
-    <td>43.7</td>
-    <td>16.8884</td>
-    <td>223.059</td>
-    <td>28.3 M</td>
+</tr>
+<tr>
+<td>PP-YOLOE_plus-S</td>
+<td>43.7</td>
+<td>16.8884</td>
+<td>223.059</td>
+<td>28.3 M</td>
 
-  </tr>
-  <tr>
-    <td>PP-YOLOE_plus-X</td>
-    <td>54.7</td>
-    <td>57.8995</td>
-    <td>1439.93</td>
-    <td>349.4 M</td>
+</tr>
+<tr>
+<td>PP-YOLOE_plus-X</td>
+<td>54.7</td>
+<td>57.8995</td>
+<td>1439.93</td>
+<td>349.4 M</td>
 
-  </tr>
-  <tr>
-    <td>RT-DETR-H</td>
-    <td>56.3</td>
-    <td>114.814</td>
-    <td>3933.39</td>
-    <td>435.8 M</td>
-    <td rowspan="5">RT-DETR是第一个实时端到端目标检测器。该模型设计了一个高效的混合编码器，满足模型效果与吞吐率的双需求，高效处理多尺度特征，并提出了加速和优化的查询选择机制，以优化解码器查询的动态化。RT-DETR支持通过使用不同的解码器来实现灵活端到端推理速度。</td>
-  </tr>
-  <tr>
-    <td>RT-DETR-L</td>
-    <td>53.0</td>
-    <td>34.5252</td>
-    <td>1454.27</td>
-    <td>113.7 M</td>
+</tr>
+<tr>
+<td>RT-DETR-H</td>
+<td>56.3</td>
+<td>114.814</td>
+<td>3933.39</td>
+<td>435.8 M</td>
+<td rowspan="5">RT-DETR是第一个实时端到端目标检测器。该模型设计了一个高效的混合编码器，满足模型效果与吞吐率的双需求，高效处理多尺度特征，并提出了加速和优化的查询选择机制，以优化解码器查询的动态化。RT-DETR支持通过使用不同的解码器来实现灵活端到端推理速度。</td>
+</tr>
+<tr>
+<td>RT-DETR-L</td>
+<td>53.0</td>
+<td>34.5252</td>
+<td>1454.27</td>
+<td>113.7 M</td>
 
-  </tr>
-  <tr>
-    <td>RT-DETR-R18</td>
-    <td>46.5</td>
-    <td>19.89</td>
-    <td>784.824</td>
-    <td>70.7 M</td>
+</tr>
+<tr>
+<td>RT-DETR-R18</td>
+<td>46.5</td>
+<td>19.89</td>
+<td>784.824</td>
+<td>70.7 M</td>
 
-  </tr>
-  <tr>
-    <td>RT-DETR-R50</td>
-    <td>53.1</td>
-    <td>41.9327</td>
-    <td>1625.95</td>
-    <td>149.1 M</td>
+</tr>
+<tr>
+<td>RT-DETR-R50</td>
+<td>53.1</td>
+<td>41.9327</td>
+<td>1625.95</td>
+<td>149.1 M</td>
 
-  </tr>
-  <tr>
-    <td>RT-DETR-X</td>
-    <td>54.8</td>
-    <td>61.8042</td>
-    <td>2246.64</td>
-    <td>232.9 M</td>
+</tr>
+<tr>
+<td>RT-DETR-X</td>
+<td>54.8</td>
+<td>61.8042</td>
+<td>2246.64</td>
+<td>232.9 M</td>
 
-  </tr>
-  <tr>
-    <td>YOLOv3-DarkNet53</td>
-    <td>39.1</td>
-    <td>40.1055</td>
-    <td>883.041</td>
-    <td>219.7 M</td>
-    <td rowspan="3">YOLOv3是一种实时的端到端目标检测器。它使用一个独特的单个卷积神经网络，将目标检测问题分解为一个回归问题，从而实现实时的检测。该模型采用了多个尺度的检测，提高了不同尺度目标物体的检测性能。</td>
-  </tr>
-  <tr>
-    <td>YOLOv3-MobileNetV3</td>
-    <td>31.4</td>
-    <td>18.6692</td>
-    <td>267.214</td>
-    <td>83.8 M</td>
+</tr>
+<tr>
+<td>YOLOv3-DarkNet53</td>
+<td>39.1</td>
+<td>40.1055</td>
+<td>883.041</td>
+<td>219.7 M</td>
+<td rowspan="3">YOLOv3是一种实时的端到端目标检测器。它使用一个独特的单个卷积神经网络，将目标检测问题分解为一个回归问题，从而实现实时的检测。该模型采用了多个尺度的检测，提高了不同尺度目标物体的检测性能。</td>
+</tr>
+<tr>
+<td>YOLOv3-MobileNetV3</td>
+<td>31.4</td>
+<td>18.6692</td>
+<td>267.214</td>
+<td>83.8 M</td>
 
-  </tr>
-  <tr>
-    <td>YOLOv3-ResNet50_vd_DCN</td>
-    <td>40.6</td>
-    <td>31.6276</td>
-    <td>856.047</td>
-    <td>163.0 M</td>
+</tr>
+<tr>
+<td>YOLOv3-ResNet50_vd_DCN</td>
+<td>40.6</td>
+<td>31.6276</td>
+<td>856.047</td>
+<td>163.0 M</td>
 
-  </tr>
-  <tr>
-    <td>YOLOX-L</td>
-    <td>50.1</td>
-    <td>185.691</td>
-    <td>1250.58</td>
-    <td>192.5 M</td>
-    <td rowspan="6">YOLOX模型以YOLOv3作为目标检测网络的框架，通过设计Decoupled Head、Data Aug、Anchor Free以及SimOTA组件，显著提升了模型在各种复杂场景下的检测性能。</td>
-  </tr>
-  <tr>
-    <td>YOLOX-M</td>
-    <td>46.9</td>
-    <td>123.324</td>
-    <td>688.071</td>
-    <td>90.0 M</td>
+</tr>
+<tr>
+<td>YOLOX-L</td>
+<td>50.1</td>
+<td>185.691</td>
+<td>1250.58</td>
+<td>192.5 M</td>
+<td rowspan="6">YOLOX模型以YOLOv3作为目标检测网络的框架，通过设计Decoupled Head、Data Aug、Anchor Free以及SimOTA组件，显著提升了模型在各种复杂场景下的检测性能。</td>
+</tr>
+<tr>
+<td>YOLOX-M</td>
+<td>46.9</td>
+<td>123.324</td>
+<td>688.071</td>
+<td>90.0 M</td>
 
-  </tr>
-  <tr>
-    <td>YOLOX-N</td>
-    <td>26.1</td>
-    <td>79.1665</td>
-    <td>155.59</td>
-    <td>3.4 M</td>
+</tr>
+<tr>
+<td>YOLOX-N</td>
+<td>26.1</td>
+<td>79.1665</td>
+<td>155.59</td>
+<td>3.4 M</td>
 
-  </tr>
-  <tr>
-    <td>YOLOX-S</td>
-    <td>40.4</td>
-    <td>184.828</td>
-    <td>474.446</td>
-    <td>32.0 M</td>
+</tr>
+<tr>
+<td>YOLOX-S</td>
+<td>40.4</td>
+<td>184.828</td>
+<td>474.446</td>
+<td>32.0 M</td>
 
-  </tr>
-  <tr>
-    <td>YOLOX-T</td>
-    <td>32.9</td>
-    <td>102.748</td>
-    <td>212.52</td>
-    <td>18.1 M</td>
+</tr>
+<tr>
+<td>YOLOX-T</td>
+<td>32.9</td>
+<td>102.748</td>
+<td>212.52</td>
+<td>18.1 M</td>
 
-  </tr>
-  <tr>
-    <td>YOLOX-X</td>
-    <td>51.8</td>
-    <td>227.361</td>
-    <td>2067.84</td>
-    <td>351.5 M</td>
+</tr>
+<tr>
+<td>YOLOX-X</td>
+<td>51.8</td>
+<td>227.361</td>
+<td>2067.84</td>
+<td>351.5 M</td>
 
-  </tr>
+</tr>
 </table>
 
-
-
-<b>注：以上精度指标为[COCO2017](https://cocodataset.org/#home)验证集 mAP(0.5:0.95)。所有模型 GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为8，精度类型为 FP32。</b>
-</details>
+<p><b>注：以上精度指标为<a href="https://cocodataset.org/#home">COCO2017</a>验证集 mAP(0.5:0.95)。所有模型 GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为8，精度类型为 FP32。</b></p></details>
 
 </details>
 
@@ -354,28 +350,17 @@ paddlex --pipeline object_detection --input general_object_detection_002.png --d
 
 在执行上述 Python 脚本时，加载的是默认的目标检测产线配置文件，若您需要自定义配置文件，可执行如下命令获取：
 
-<details>
-   <summary> 👉点击展开</summary>
+<details><summary> 👉点击展开</summary>
 
-```
-paddlex --get_pipeline_config object_detection
-```
-
-执行后，目标检测产线配置文件将被保存在当前路径。若您希望自定义保存位置，可执行如下命令（假设自定义保存位置为 `./my_path` ）：
-
-```
-paddlex --get_pipeline_config object_detection --save_path ./my_path
-```
-
-获取产线配置文件后，可将 `--pipeline` 替换为配置文件保存路径，即可使配置文件生效。例如，若配置文件保存路径为 `./object_detection.yaml`，只需执行：
-
-```bash
-paddlex --pipeline ./object_detection.yaml --input general_object_detection_002.png --device gpu:0
-```
-
-其中，`--model`、`--device` 等参数无需指定，将使用配置文件中的参数。若依然指定了参数，将以指定的参数为准。
-
-</details>
+<pre><code>paddlex --get_pipeline_config object_detection
+</code></pre>
+<p>执行后，目标检测产线配置文件将被保存在当前路径。若您希望自定义保存位置，可执行如下命令（假设自定义保存位置为 <code>./my_path</code> ）：</p>
+<pre><code>paddlex --get_pipeline_config object_detection --save_path ./my_path
+</code></pre>
+<p>获取产线配置文件后，可将 <code>--pipeline</code> 替换为配置文件保存路径，即可使配置文件生效。例如，若配置文件保存路径为 <code>./object_detection.yaml</code>，只需执行：</p>
+<pre><code class="language-bash">paddlex --pipeline ./object_detection.yaml --input general_object_detection_002.png --device gpu:0
+</code></pre>
+<p>其中，<code>--model</code>、<code>--device</code> 等参数无需指定，将使用配置文件中的参数。若依然指定了参数，将以指定的参数为准。</p></details>
 
 运行后，得到的结果为：
 
@@ -533,14 +518,13 @@ for res in output:
 
 下面是API参考和多语言服务调用示例：
 
-<details>
-<summary>API参考</summary>
+<details><summary>API参考</summary>
 
-对于服务提供的所有操作：
-
-- 响应体以及POST请求的请求体均为JSON数据（JSON对象）。
-- 当请求处理成功时，响应状态码为`200`，响应体的属性如下：
-
+<p>对于服务提供的所有操作：</p>
+<ul>
+<li>响应体以及POST请求的请求体均为JSON数据（JSON对象）。</li>
+<li>当请求处理成功时，响应状态码为<code>200</code>，响应体的属性如下：</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -563,10 +547,10 @@ for res in output:
 </tbody>
 </table>
 
-    响应体还可能有`result`属性，类型为`object`，其中存储操作结果信息。
-
-- 当请求处理未成功时，响应体的属性如下：
-
+<p>响应体还可能有<code>result</code>属性，类型为<code>object</code>，其中存储操作结果信息。</p>
+<ul>
+<li>当请求处理未成功时，响应体的属性如下：</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -589,16 +573,15 @@ for res in output:
 </tbody>
 </table>
 
-服务提供的操作如下：
-
-- <b>`infer`</b>
-
-    对图像进行目标检测。
-
-    `POST /object-detection`
-
-    - 请求体的属性如下：
-
+<p>服务提供的操作如下：</p>
+<ul>
+<li><b><code>infer</code></b></li>
+</ul>
+<p>对图像进行目标检测。</p>
+<p><code>POST /object-detection</code></p>
+<ul>
+<li>请求体的属性如下：</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -618,8 +601,9 @@ for res in output:
 </tbody>
 </table>
 
-    - 请求处理成功时，响应体的`result`具有如下属性：
-
+<ul>
+<li>请求处理成功时，响应体的<code>result</code>具有如下属性：</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -642,8 +626,7 @@ for res in output:
 </tbody>
 </table>
 
-        `detectedObjects`中的每个元素为一个`object`，具有如下属性：
-
+<p><code>detectedObjects</code>中的每个元素为一个<code>object</code>，具有如下属性：</p>
 <table>
 <thead>
 <tr>
@@ -671,90 +654,81 @@ for res in output:
 </tbody>
 </table>
 
-        `result`示例如下：
+<p><code>result</code>示例如下：</p>
+<pre><code class="language-json">{
+&quot;detectedObjects&quot;: [
+{
+&quot;bbox&quot;: [
+404.4967956542969,
+90.15770721435547,
+506.2465515136719,
+285.4187316894531
+],
+&quot;categoryId&quot;: 0,
+&quot;score&quot;: 0.7418514490127563
+},
+{
+&quot;bbox&quot;: [
+155.33145141601562,
+81.10954284667969,
+199.71136474609375,
+167.4235382080078
+],
+&quot;categoryId&quot;: 1,
+&quot;score&quot;: 0.7328268885612488
+}
+],
+&quot;image&quot;: &quot;xxxxxx&quot;
+}
+</code></pre></details>
 
-        ```json
-        {
-          "detectedObjects": [
-            {
-              "bbox": [
-                404.4967956542969,
-                90.15770721435547,
-                506.2465515136719,
-                285.4187316894531
-              ],
-              "categoryId": 0,
-              "score": 0.7418514490127563
-            },
-            {
-              "bbox": [
-                155.33145141601562,
-                81.10954284667969,
-                199.71136474609375,
-                167.4235382080078
-              ],
-              "categoryId": 1,
-              "score": 0.7328268885612488
-            }
-          ],
-          "image": "xxxxxx"
-        }
-        ```
-
-</details>
-
-<details>
-<summary>多语言调用服务示例</summary>
+<details><summary>多语言调用服务示例</summary>
 
 <details>
 <summary>Python</summary>
 
-```python
-import base64
+
+<pre><code class="language-python">import base64
 import requests
 
-API_URL = "http://localhost:8080/object-detection" # 服务URL
-image_path = "./demo.jpg"
-output_image_path = "./out.jpg"
+API_URL = &quot;http://localhost:8080/object-detection&quot; # 服务URL
+image_path = &quot;./demo.jpg&quot;
+output_image_path = &quot;./out.jpg&quot;
 
 # 对本地图像进行Base64编码
-with open(image_path, "rb") as file:
+with open(image_path, &quot;rb&quot;) as file:
     image_bytes = file.read()
-    image_data = base64.b64encode(image_bytes).decode("ascii")
+    image_data = base64.b64encode(image_bytes).decode(&quot;ascii&quot;)
 
-payload = {"image": image_data}  # Base64编码的文件内容或者图像URL
+payload = {&quot;image&quot;: image_data}  # Base64编码的文件内容或者图像URL
 
 # 调用API
 response = requests.post(API_URL, json=payload)
 
 # 处理接口返回数据
 assert response.status_code == 200
-result = response.json()["result"]
-with open(output_image_path, "wb") as file:
-    file.write(base64.b64decode(result["image"]))
-print(f"Output image saved at {output_image_path}")
-print("\nDetected objects:")
-print(result["detectedObjects"])
-```
+result = response.json()[&quot;result&quot;]
+with open(output_image_path, &quot;wb&quot;) as file:
+    file.write(base64.b64decode(result[&quot;image&quot;]))
+print(f&quot;Output image saved at {output_image_path}&quot;)
+print(&quot;\nDetected objects:&quot;)
+print(result[&quot;detectedObjects&quot;])
+</code></pre></details>
 
-</details>
+<details><summary>C++</summary>
 
-<details>
-<summary>C++</summary>
-
-```cpp
-#include <iostream>
-#include "cpp-httplib/httplib.h" // https://github.com/Huiyicc/cpp-httplib
-#include "nlohmann/json.hpp" // https://github.com/nlohmann/json
-#include "base64.hpp" // https://github.com/tobiaslocker/base64
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &quot;cpp-httplib/httplib.h&quot; // https://github.com/Huiyicc/cpp-httplib
+#include &quot;nlohmann/json.hpp&quot; // https://github.com/nlohmann/json
+#include &quot;base64.hpp&quot; // https://github.com/tobiaslocker/base64
 
 int main() {
-    httplib::Client client("localhost:8080");
-    const std::string imagePath = "./demo.jpg";
-    const std::string outputImagePath = "./out.jpg";
+    httplib::Client client(&quot;localhost:8080&quot;);
+    const std::string imagePath = &quot;./demo.jpg&quot;;
+    const std::string outputImagePath = &quot;./out.jpg&quot;;
 
     httplib::Headers headers = {
-        {"Content-Type", "application/json"}
+        {&quot;Content-Type&quot;, &quot;application/json&quot;}
     };
 
     // 对本地图像进行Base64编码
@@ -762,58 +736,54 @@ int main() {
     std::streamsize size = file.tellg();
     file.seekg(0, std::ios::beg);
 
-    std::vector<char> buffer(size);
+    std::vector&lt;char&gt; buffer(size);
     if (!file.read(buffer.data(), size)) {
-        std::cerr << "Error reading file." << std::endl;
+        std::cerr &lt;&lt; &quot;Error reading file.&quot; &lt;&lt; std::endl;
         return 1;
     }
-    std::string bufferStr(reinterpret_cast<const char*>(buffer.data()), buffer.size());
+    std::string bufferStr(reinterpret_cast&lt;const char*&gt;(buffer.data()), buffer.size());
     std::string encodedImage = base64::to_base64(bufferStr);
 
     nlohmann::json jsonObj;
-    jsonObj["image"] = encodedImage;
+    jsonObj[&quot;image&quot;] = encodedImage;
     std::string body = jsonObj.dump();
 
     // 调用API
-    auto response = client.Post("/object-detection", headers, body, "application/json");
+    auto response = client.Post(&quot;/object-detection&quot;, headers, body, &quot;application/json&quot;);
     // 处理接口返回数据
-    if (response && response->status == 200) {
-        nlohmann::json jsonResponse = nlohmann::json::parse(response->body);
-        auto result = jsonResponse["result"];
+    if (response &amp;&amp; response-&gt;status == 200) {
+        nlohmann::json jsonResponse = nlohmann::json::parse(response-&gt;body);
+        auto result = jsonResponse[&quot;result&quot;];
 
-        encodedImage = result["image"];
+        encodedImage = result[&quot;image&quot;];
         std::string decodedString = base64::from_base64(encodedImage);
-        std::vector<unsigned char> decodedImage(decodedString.begin(), decodedString.end());
+        std::vector&lt;unsigned char&gt; decodedImage(decodedString.begin(), decodedString.end());
         std::ofstream outputImage(outPutImagePath, std::ios::binary | std::ios::out);
         if (outputImage.is_open()) {
-            outputImage.write(reinterpret_cast<char*>(decodedImage.data()), decodedImage.size());
+            outputImage.write(reinterpret_cast&lt;char*&gt;(decodedImage.data()), decodedImage.size());
             outputImage.close();
-            std::cout << "Output image saved at " << outPutImagePath << std::endl;
+            std::cout &lt;&lt; &quot;Output image saved at &quot; &lt;&lt; outPutImagePath &lt;&lt; std::endl;
         } else {
-            std::cerr << "Unable to open file for writing: " << outPutImagePath << std::endl;
+            std::cerr &lt;&lt; &quot;Unable to open file for writing: &quot; &lt;&lt; outPutImagePath &lt;&lt; std::endl;
         }
 
-        auto detectedObjects = result["detectedObjects"];
-        std::cout << "\nDetected objects:" << std::endl;
-        for (const auto& obj : detectedObjects) {
-            std::cout << obj << std::endl;
+        auto detectedObjects = result[&quot;detectedObjects&quot;];
+        std::cout &lt;&lt; &quot;\nDetected objects:&quot; &lt;&lt; std::endl;
+        for (const auto&amp; obj : detectedObjects) {
+            std::cout &lt;&lt; obj &lt;&lt; std::endl;
         }
     } else {
-        std::cout << "Failed to send HTTP request." << std::endl;
+        std::cout &lt;&lt; &quot;Failed to send HTTP request.&quot; &lt;&lt; std::endl;
         return 1;
     }
 
     return 0;
 }
-```
+</code></pre></details>
 
-</details>
+<details><summary>Java</summary>
 
-<details>
-<summary>Java</summary>
-
-```java
-import okhttp3.*;
+<pre><code class="language-java">import okhttp3.*;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
@@ -825,9 +795,9 @@ import java.util.Base64;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        String API_URL = "http://localhost:8080/object-detection"; // 服务URL
-        String imagePath = "./demo.jpg"; // 本地图像
-        String outputImagePath = "./out.jpg"; // 输出图像
+        String API_URL = &quot;http://localhost:8080/object-detection&quot;; // 服务URL
+        String imagePath = &quot;./demo.jpg&quot;; // 本地图像
+        String outputImagePath = &quot;./out.jpg&quot;; // 输出图像
 
         // 对本地图像进行Base64编码
         File file = new File(imagePath);
@@ -836,11 +806,11 @@ public class Main {
 
         ObjectMapper objectMapper = new ObjectMapper();
         ObjectNode params = objectMapper.createObjectNode();
-        params.put("image", imageData); // Base64编码的文件内容或者图像URL
+        params.put(&quot;image&quot;, imageData); // Base64编码的文件内容或者图像URL
 
         // 创建 OkHttpClient 实例
         OkHttpClient client = new OkHttpClient();
-        MediaType JSON = MediaType.Companion.get("application/json; charset=utf-8");
+        MediaType JSON = MediaType.Companion.get(&quot;application/json; charset=utf-8&quot;);
         RequestBody body = RequestBody.Companion.create(params.toString(), JSON);
         Request request = new Request.Builder()
                 .url(API_URL)
@@ -852,72 +822,68 @@ public class Main {
             if (response.isSuccessful()) {
                 String responseBody = response.body().string();
                 JsonNode resultNode = objectMapper.readTree(responseBody);
-                JsonNode result = resultNode.get("result");
-                String base64Image = result.get("image").asText();
-                JsonNode detectedObjects = result.get("detectedObjects");
+                JsonNode result = resultNode.get(&quot;result&quot;);
+                String base64Image = result.get(&quot;image&quot;).asText();
+                JsonNode detectedObjects = result.get(&quot;detectedObjects&quot;);
 
                 byte[] imageBytes = Base64.getDecoder().decode(base64Image);
                 try (FileOutputStream fos = new FileOutputStream(outputImagePath)) {
                     fos.write(imageBytes);
                 }
-                System.out.println("Output image saved at " + outputImagePath);
-                System.out.println("\nDetected objects: " + detectedObjects.toString());
+                System.out.println(&quot;Output image saved at &quot; + outputImagePath);
+                System.out.println(&quot;\nDetected objects: &quot; + detectedObjects.toString());
             } else {
-                System.err.println("Request failed with code: " + response.code());
+                System.err.println(&quot;Request failed with code: &quot; + response.code());
             }
         }
     }
 }
-```
+</code></pre></details>
 
-</details>
+<details><summary>Go</summary>
 
-<details>
-<summary>Go</summary>
-
-```go
-package main
+<pre><code class="language-go">package main
 
 import (
-    "bytes"
-    "encoding/base64"
-    "encoding/json"
-    "fmt"
-    "io/ioutil"
-    "net/http"
+    &quot;bytes&quot;
+    &quot;encoding/base64&quot;
+    &quot;encoding/json&quot;
+    &quot;fmt&quot;
+    &quot;io/ioutil&quot;
+    &quot;net/http&quot;
 )
 
 func main() {
-    API_URL := "http://localhost:8080/object-detection"
-    imagePath := "./demo.jpg"
-    outputImagePath := "./out.jpg"
+    API_URL := &quot;http://localhost:8080/object-detection&quot;
+    imagePath := &quot;./demo.jpg&quot;
+    outputImagePath := &quot;./out.jpg&quot;
 
     // 对本地图像进行Base64编码
     imageBytes, err := ioutil.ReadFile(imagePath)
     if err != nil {
-        fmt.Println("Error reading image file:", err)
+        fmt.Println(&quot;Error reading image file:&quot;, err)
         return
     }
     imageData := base64.StdEncoding.EncodeToString(imageBytes)
 
-    payload := map[string]string{"image": imageData} // Base64编码的文件内容或者图像URL
+    payload := map[string]string{&quot;image&quot;: imageData} // Base64编码的文件内容或者图像URL
     payloadBytes, err := json.Marshal(payload)
     if err != nil {
-        fmt.Println("Error marshaling payload:", err)
+        fmt.Println(&quot;Error marshaling payload:&quot;, err)
         return
     }
 
     // 调用API
-    client := &http.Client{}
-    req, err := http.NewRequest("POST", API_URL, bytes.NewBuffer(payloadBytes))
+    client := &amp;http.Client{}
+    req, err := http.NewRequest(&quot;POST&quot;, API_URL, bytes.NewBuffer(payloadBytes))
     if err != nil {
-        fmt.Println("Error creating request:", err)
+        fmt.Println(&quot;Error creating request:&quot;, err)
         return
     }
 
     res, err := client.Do(req)
     if err != nil {
-        fmt.Println("Error sending request:", err)
+        fmt.Println(&quot;Error sending request:&quot;, err)
         return
     }
     defer res.Body.Close()
@@ -925,47 +891,43 @@ func main() {
     // 处理接口返回数据
     body, err := ioutil.ReadAll(res.Body)
     if err != nil {
-        fmt.Println("Error reading response body:", err)
+        fmt.Println(&quot;Error reading response body:&quot;, err)
         return
     }
     type Response struct {
         Result struct {
-            Image      string   `json:"image"`
-            DetectedObjects []map[string]interface{} `json:"detectedObjects"`
-        } `json:"result"`
+            Image      string   `json:&quot;image&quot;`
+            DetectedObjects []map[string]interface{} `json:&quot;detectedObjects&quot;`
+        } `json:&quot;result&quot;`
     }
     var respData Response
-    err = json.Unmarshal([]byte(string(body)), &respData)
+    err = json.Unmarshal([]byte(string(body)), &amp;respData)
     if err != nil {
-        fmt.Println("Error unmarshaling response body:", err)
+        fmt.Println(&quot;Error unmarshaling response body:&quot;, err)
         return
     }
 
     outputImageData, err := base64.StdEncoding.DecodeString(respData.Result.Image)
     if err != nil {
-        fmt.Println("Error decoding base64 image data:", err)
+        fmt.Println(&quot;Error decoding base64 image data:&quot;, err)
         return
     }
     err = ioutil.WriteFile(outputImagePath, outputImageData, 0644)
     if err != nil {
-        fmt.Println("Error writing image to file:", err)
+        fmt.Println(&quot;Error writing image to file:&quot;, err)
         return
     }
-    fmt.Printf("Image saved at %s.jpg\n", outputImagePath)
-    fmt.Println("\nDetected objects:")
+    fmt.Printf(&quot;Image saved at %s.jpg\n&quot;, outputImagePath)
+    fmt.Println(&quot;\nDetected objects:&quot;)
     for _, obj := range respData.Result.DetectedObjects {
         fmt.Println(obj)
     }
 }
-```
+</code></pre></details>
 
-</details>
+<details><summary>C#</summary>
 
-<details>
-<summary>C#</summary>
-
-```csharp
-using System;
+<pre><code class="language-csharp">using System;
 using System.IO;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -975,9 +937,9 @@ using Newtonsoft.Json.Linq;
 
 class Program
 {
-    static readonly string API_URL = "http://localhost:8080/object-detection";
-    static readonly string imagePath = "./demo.jpg";
-    static readonly string outputImagePath = "./out.jpg";
+    static readonly string API_URL = &quot;http://localhost:8080/object-detection&quot;;
+    static readonly string imagePath = &quot;./demo.jpg&quot;;
+    static readonly string outputImagePath = &quot;./out.jpg&quot;;
 
     static async Task Main(string[] args)
     {
@@ -987,8 +949,8 @@ class Program
         byte[] imageBytes = File.ReadAllBytes(imagePath);
         string image_data = Convert.ToBase64String(imageBytes);
 
-        var payload = new JObject{ { "image", image_data } }; // Base64编码的文件内容或者图像URL
-        var content = new StringContent(payload.ToString(), Encoding.UTF8, "application/json");
+        var payload = new JObject{ { &quot;image&quot;, image_data } }; // Base64编码的文件内容或者图像URL
+        var content = new StringContent(payload.ToString(), Encoding.UTF8, &quot;application/json&quot;);
 
         // 调用API
         HttpResponseMessage response = await httpClient.PostAsync(API_URL, content);
@@ -998,29 +960,25 @@ class Program
         string responseBody = await response.Content.ReadAsStringAsync();
         JObject jsonResponse = JObject.Parse(responseBody);
 
-        string base64Image = jsonResponse["result"]["image"].ToString();
+        string base64Image = jsonResponse[&quot;result&quot;][&quot;image&quot;].ToString();
         byte[] outputImageBytes = Convert.FromBase64String(base64Image);
 
         File.WriteAllBytes(outputImagePath, outputImageBytes);
-        Console.WriteLine($"Output image saved at {outputImagePath}");
-        Console.WriteLine("\nDetected objects:");
-        Console.WriteLine(jsonResponse["result"]["detectedObjects"].ToString());
+        Console.WriteLine($&quot;Output image saved at {outputImagePath}&quot;);
+        Console.WriteLine(&quot;\nDetected objects:&quot;);
+        Console.WriteLine(jsonResponse[&quot;result&quot;][&quot;detectedObjects&quot;].ToString());
     }
 }
-```
+</code></pre></details>
 
-</details>
+<details><summary>Node.js</summary>
 
-<details>
-<summary>Node.js</summary>
-
-```js
-const axios = require('axios');
+<pre><code class="language-js">const axios = require('axios');
 const fs = require('fs');
 
 const API_URL = 'http://localhost:8080/object-detection'
 const imagePath = './demo.jpg'
-const outputImagePath = "./out.jpg";
+const outputImagePath = &quot;./out.jpg&quot;;
 
 let config = {
    method: 'POST',
@@ -1039,37 +997,33 @@ function encodeImageToBase64(filePath) {
 
 // 调用API
 axios.request(config)
-.then((response) => {
+.then((response) =&gt; {
     // 处理接口返回数据
-    const result = response.data["result"];
-    const imageBuffer = Buffer.from(result["image"], 'base64');
-    fs.writeFile(outputImagePath, imageBuffer, (err) => {
+    const result = response.data[&quot;result&quot;];
+    const imageBuffer = Buffer.from(result[&quot;image&quot;], 'base64');
+    fs.writeFile(outputImagePath, imageBuffer, (err) =&gt; {
       if (err) throw err;
       console.log(`Output image saved at ${outputImagePath}`);
     });
-    console.log("\nDetected objects:");
-    console.log(result["detectedObjects"]);
+    console.log(&quot;\nDetected objects:&quot;);
+    console.log(result[&quot;detectedObjects&quot;]);
 })
-.catch((error) => {
+.catch((error) =&gt; {
   console.log(error);
 });
-```
+</code></pre></details>
 
-</details>
+<details><summary>PHP</summary>
 
-<details>
-<summary>PHP</summary>
+<pre><code class="language-php">&lt;?php
 
-```php
-<?php
-
-$API_URL = "http://localhost:8080/object-detection"; // 服务URL
-$image_path = "./demo.jpg";
-$output_image_path = "./out.jpg";
+$API_URL = &quot;http://localhost:8080/object-detection&quot;; // 服务URL
+$image_path = &quot;./demo.jpg&quot;;
+$output_image_path = &quot;./out.jpg&quot;;
 
 // 对本地图像进行Base64编码
 $image_data = base64_encode(file_get_contents($image_path));
-$payload = array("image" => $image_data); // Base64编码的文件内容或者图像URL
+$payload = array(&quot;image&quot; =&gt; $image_data); // Base64编码的文件内容或者图像URL
 
 // 调用API
 $ch = curl_init($API_URL);
@@ -1080,16 +1034,14 @@ $response = curl_exec($ch);
 curl_close($ch);
 
 // 处理接口返回数据
-$result = json_decode($response, true)["result"];
-file_put_contents($output_image_path, base64_decode($result["image"]));
-echo "Output image saved at " . $output_image_path . "\n";
-echo "\nDetected objects:\n";
-print_r($result["detectedObjects"]);
+$result = json_decode($response, true)[&quot;result&quot;];
+file_put_contents($output_image_path, base64_decode($result[&quot;image&quot;]));
+echo &quot;Output image saved at &quot; . $output_image_path . &quot;\n&quot;;
+echo &quot;\nDetected objects:\n&quot;;
+print_r($result[&quot;detectedObjects&quot;]);
 
-?>
-```
-
-</details>
+?&gt;
+</code></pre></details>
 </details>
 <br/>
 

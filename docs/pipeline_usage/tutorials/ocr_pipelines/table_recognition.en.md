@@ -12,46 +12,41 @@ Table recognition is a technology that automatically identifies and extracts tab
 
 <b>If you prioritize model accuracy, choose a model with higher accuracy. If you prioritize inference speed, select a model with faster inference. If you prioritize model size, choose a model with a smaller storage footprint.</b>
 
-<details>
-   <summary> 👉Model List Details</summary>
+<details><summary> 👉Model List Details</summary>
 
-<b>Table Recognition Module Models</b>:
-
+<p><b>Table Recognition Module Models</b>:</p>
 <table>
-  <tr>
-    <th>Model</th>
-    <th>Accuracy (%)</th>
-    <th>GPU Inference Time (ms)</th>
-    <th>CPU Inference Time (ms)</th>
-    <th>Model Size (M)</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-     <td>SLANet</td>
-    <td>59.52</td>
-    <td>522.536</td>
-    <td>1845.37</td>
-    <td>6.9 M</td>
-    <td rowspan="1">SLANet is a table structure recognition model developed by Baidu PaddleX Team. The model significantly improves the accuracy and inference speed of table structure recognition by adopting a CPU-friendly lightweight backbone network PP-LCNet, a high-low-level feature fusion module CSP-PAN, and a feature decoding module SLA Head that aligns structural and positional information.</td>
-  </tr>
-   </tr>
-   <tr>
-    <td>SLANet_plus</td>
-    <td>63.69</td>
-    <td>522.536</td>
-    <td>1845.37</td>
-    <td>6.9 M</td>
-        <td rowspan="1">
+<tr>
+<th>Model</th>
+<th>Accuracy (%)</th>
+<th>GPU Inference Time (ms)</th>
+<th>CPU Inference Time (ms)</th>
+<th>Model Size (M)</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>SLANet</td>
+<td>59.52</td>
+<td>522.536</td>
+<td>1845.37</td>
+<td>6.9 M</td>
+<td rowspan="1">SLANet is a table structure recognition model developed by Baidu PaddleX Team. The model significantly improves the accuracy and inference speed of table structure recognition by adopting a CPU-friendly lightweight backbone network PP-LCNet, a high-low-level feature fusion module CSP-PAN, and a feature decoding module SLA Head that aligns structural and positional information.</td>
+</tr>
+</tr>
+<tr>
+<td>SLANet_plus</td>
+<td>63.69</td>
+<td>522.536</td>
+<td>1845.37</td>
+<td>6.9 M</td>
+<td rowspan="1">
 SLANet_plus is an enhanced version of SLANet, a table structure recognition model developed by Baidu PaddleX Team. Compared to SLANet, SLANet_plus significantly improves its recognition capabilities for wireless and complex tables, while reducing the model's sensitivity to the accuracy of table localization. Even when there are offsets in table localization, it can still perform relatively accurate recognition.
 </td>
-  </tr>
+</tr>
 </table>
 
-
-<b>Note: The above accuracy metrics are measured on PaddleX's internal self-built English table recognition dataset. All GPU inference times are based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speeds are based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
-
-<b>Layout Analysis Module Models</b>:
-
+<p><b>Note: The above accuracy metrics are measured on PaddleX's internal self-built English table recognition dataset. All GPU inference times are based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speeds are based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b></p>
+<p><b>Layout Analysis Module Models</b>:</p>
 <table>
 <thead>
 <tr>
@@ -123,10 +118,8 @@ SLANet_plus is an enhanced version of SLANet, a table structure recognition mode
 </tbody>
 </table>
 
-<b>Note: The above accuracy metrics are evaluated on PaddleX's self-built layout analysis dataset containing 10,000 images. All GPU inference times are based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speeds are based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
-
-<b>Text Detection Module Models</b>:
-
+<p><b>Note: The above accuracy metrics are evaluated on PaddleX's self-built layout analysis dataset containing 10,000 images. All GPU inference times are based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speeds are based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b></p>
+<p><b>Text Detection Module Models</b>:</p>
 <table>
 <thead>
 <tr>
@@ -153,9 +146,7 @@ SLANet_plus is an enhanced version of SLANet, a table structure recognition mode
 <td>100.1M</td>
 </tr>
 </tbody>
-</table>
-
-</details>
+</table></details>
 
 ## 2. Quick Start
 PaddleX's pre-trained model pipelines allow for quick experience of their effects. You can experience the effects of the General Image Classification pipeline online or locally using command line or Python.
@@ -188,28 +179,17 @@ Parameter Explanation:
 
 When executing the above command, the default table recognition pipeline configuration file is loaded. If you need to customize the configuration file, you can execute the following command to obtain it:
 
-<details>
-   <summary> 👉Click to expand</summary>
+<details><summary> 👉Click to expand</summary>
 
-```bash
-paddlex --get_pipeline_config table_recognition
-```
-
-After execution, the table recognition pipeline configuration file will be saved in the current directory. If you wish to customize the save location, you can execute the following command (assuming the custom save location is `./my_path`):
-
-```bash
-paddlex --get_pipeline_config table_recognition --save_path ./my_path
-```
-
-After obtaining the pipeline configuration file, replace `--pipeline` with the configuration file save path to make the configuration file take effect. For example, if the configuration file save path is `./table_recognition.yaml`, simply execute:
-
-```bash
-paddlex --pipeline ./table_recognition.yaml --input table_recognition.jpg --device gpu:0
-```
-
-Here, parameters like `--model` and `--device` do not need to be specified, as they will use the parameters in the configuration file. If they are still specified, the specified parameters will take precedence.
-
-</details>
+<pre><code class="language-bash">paddlex --get_pipeline_config table_recognition
+</code></pre>
+<p>After execution, the table recognition pipeline configuration file will be saved in the current directory. If you wish to customize the save location, you can execute the following command (assuming the custom save location is <code>./my_path</code>):</p>
+<pre><code class="language-bash">paddlex --get_pipeline_config table_recognition --save_path ./my_path
+</code></pre>
+<p>After obtaining the pipeline configuration file, replace <code>--pipeline</code> with the configuration file save path to make the configuration file take effect. For example, if the configuration file save path is <code>./table_recognition.yaml</code>, simply execute:</p>
+<pre><code class="language-bash">paddlex --pipeline ./table_recognition.yaml --input table_recognition.jpg --device gpu:0
+</code></pre>
+<p>Here, parameters like <code>--model</code> and <code>--device</code> do not need to be specified, as they will use the parameters in the configuration file. If they are still specified, the specified parameters will take precedence.</p></details>
 
 After running, the result is:
 
@@ -367,14 +347,13 @@ Additionally, PaddleX provides three other deployment methods, detailed as follo
 
 Below are the API references and multi-language service invocation examples:
 
-<details>
-<summary>API Reference</summary>
+<details><summary>API Reference</summary>
 
-For all operations provided by the service:
-
-- Both the response body and the request body for POST requests are JSON data (JSON objects).
-- When the request is processed successfully, the response status code is `200`, and the response body properties are as follows:
-
+<p>For all operations provided by the service:</p>
+<ul>
+<li>Both the response body and the request body for POST requests are JSON data (JSON objects).</li>
+<li>When the request is processed successfully, the response status code is <code>200</code>, and the response body properties are as follows:</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -397,10 +376,10 @@ For all operations provided by the service:
 </tbody>
 </table>
 
-    The response body may also have a `result` property of type `object`, which stores the operation result information.
-
-- When the request is not processed successfully, the response body properties are as follows:
-
+<p>The response body may also have a <code>result</code> property of type <code>object</code>, which stores the operation result information.</p>
+<ul>
+<li>When the request is not processed successfully, the response body properties are as follows:</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -423,16 +402,15 @@ For all operations provided by the service:
 </tbody>
 </table>
 
-Operations provided by the service:
-
-- <b>`infer`</b>
-
-    Locate and recognize tables in images.
-
-    `POST /table-recognition`
-
-    - Request body properties:
-
+<p>Operations provided by the service:</p>
+<ul>
+<li><b><code>infer</code></b></li>
+</ul>
+<p>Locate and recognize tables in images.</p>
+<p><code>POST /table-recognition</code></p>
+<ul>
+<li>Request body properties:</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -458,8 +436,7 @@ Operations provided by the service:
 </tbody>
 </table>
 
-        Properties of `inferenceParams`:
-
+<p>Properties of <code>inferenceParams</code>:</p>
 <table>
 <thead>
 <tr>
@@ -479,8 +456,9 @@ Operations provided by the service:
 </tbody>
 </table>
 
-    - When the request is processed successfully, the `result` of the response body has the following properties:
-
+<ul>
+<li>When the request is processed successfully, the <code>result</code> of the response body has the following properties:</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -508,8 +486,7 @@ Operations provided by the service:
 </tbody>
 </table>
 
-        Each element in `tables` is an `object` with the following properties:
-
+<p>Each element in <code>tables</code> is an <code>object</code> with the following properties:</p>
 <table>
 <thead>
 <tr>
@@ -530,133 +507,122 @@ Operations provided by the service:
 <td>Table recognition result in HTML format.</td>
 </tr>
 </tbody>
-</table>
+</table></details>
 
-</details>
-
-<details>
-<summary>Multi-Language Service Invocation Examples</summary>
+<details><summary>Multi-Language Service Invocation Examples</summary>
 
 <details>
 <summary>Python</summary>
 
-```python
-import base64
+
+<pre><code class="language-python">import base64
 import requests
 
-API_URL = "http://localhost:8080/table-recognition"
-image_path = "./demo.jpg"
-ocr_image_path = "./ocr.jpg"
-layout_image_path = "./layout.jpg"
+API_URL = &quot;http://localhost:8080/table-recognition&quot;
+image_path = &quot;./demo.jpg&quot;
+ocr_image_path = &quot;./ocr.jpg&quot;
+layout_image_path = &quot;./layout.jpg&quot;
 
-with open(image_path, "rb") as file:
+with open(image_path, &quot;rb&quot;) as file:
     image_bytes = file.read()
-    image_data = base64.b64encode(image_bytes).decode("ascii")
+    image_data = base64.b64encode(image_bytes).decode(&quot;ascii&quot;)
 
-payload = {"image": image_data}
+payload = {&quot;image&quot;: image_data}
 
 response = requests.post(API_URL, json=payload)
 
 assert response.status_code == 200
-result = response.json()["result"]
-with open(ocr_image_path, "wb") as file:
-    file.write(base64.b64decode(result["ocrImage"]))
-print(f"Output image saved at {ocr_image_path}")
-with open(layout_image_path, "wb") as file:
-    file.write(base64.b64decode(result["layoutImage"]))
-print(f"Output image saved at {layout_image_path}")
-print("\nDetected tables:")
-print(result["tables"])
-```
+result = response.json()[&quot;result&quot;]
+with open(ocr_image_path, &quot;wb&quot;) as file:
+    file.write(base64.b64decode(result[&quot;ocrImage&quot;]))
+print(f&quot;Output image saved at {ocr_image_path}&quot;)
+with open(layout_image_path, &quot;wb&quot;) as file:
+    file.write(base64.b64decode(result[&quot;layoutImage&quot;]))
+print(f&quot;Output image saved at {layout_image_path}&quot;)
+print(&quot;\nDetected tables:&quot;)
+print(result[&quot;tables&quot;])
+</code></pre></details>
 
-</details>
+<details><summary>C++</summary>
 
-<details>
-<summary>C++</summary>
-
-```cpp
-#include <iostream>
-#include "cpp-httplib/httplib.h" // https://github.com/Huiyicc/cpp-httplib
-#include "nlohmann/json.hpp" // https://github.com/nlohmann/json
-#include "base64.hpp" // https://github.com/tobiaslocker/base64
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &quot;cpp-httplib/httplib.h&quot; // https://github.com/Huiyicc/cpp-httplib
+#include &quot;nlohmann/json.hpp&quot; // https://github.com/nlohmann/json
+#include &quot;base64.hpp&quot; // https://github.com/tobiaslocker/base64
 
 int main() {
-    httplib::Client client("localhost:8080");
-    const std::string imagePath = "./demo.jpg";
-    const std::string ocrImagePath = "./ocr.jpg";
-    const std::string layoutImagePath = "./layout.jpg";
+    httplib::Client client(&quot;localhost:8080&quot;);
+    const std::string imagePath = &quot;./demo.jpg&quot;;
+    const std::string ocrImagePath = &quot;./ocr.jpg&quot;;
+    const std::string layoutImagePath = &quot;./layout.jpg&quot;;
 
     httplib::Headers headers = {
-        {"Content-Type", "application/json"}
+        {&quot;Content-Type&quot;, &quot;application/json&quot;}
     };
 
     std::ifstream file(imagePath, std::ios::binary | std::ios::ate);
     std::streamsize size = file.tellg();
     file.seekg(0, std::ios::beg);
 
-    std::vector<char> buffer(size);
+    std::vector&lt;char&gt; buffer(size);
     if (!file.read(buffer.data(), size)) {
-        std::cerr << "Error reading file." << std::endl;
+        std::cerr &lt;&lt; &quot;Error reading file.&quot; &lt;&lt; std::endl;
         return 1;
     }
-    std::string bufferStr(reinterpret_cast<const char*>(buffer.data()), buffer.size());
+    std::string bufferStr(reinterpret_cast&lt;const char*&gt;(buffer.data()), buffer.size());
     std::string encodedImage = base64::to_base64(bufferStr);
 
     nlohmann::json jsonObj;
-    jsonObj["image"] = encodedImage;
+    jsonObj[&quot;image&quot;] = encodedImage;
     std::string body = jsonObj.dump();
 
-    auto response = client.Post("/table-recognition", headers, body, "application/json");
+    auto response = client.Post(&quot;/table-recognition&quot;, headers, body, &quot;application/json&quot;);
 
-    if (response && response->status == 200) {
-        nlohmann::json jsonResponse = nlohmann::json::parse(response->body);
-        auto result = jsonResponse["result"];
+    if (response &amp;&amp; response-&gt;status == 200) {
+        nlohmann::json jsonResponse = nlohmann::json::parse(response-&gt;body);
+        auto result = jsonResponse[&quot;result&quot;];
 
-        encodedImage = result["ocrImage"];
+        encodedImage = result[&quot;ocrImage&quot;];
         std::string decoded_string = base64::from_base64(encodedImage);
-        std::vector<unsigned char> decodedOcrImage(decoded_string.begin(), decoded_string.end());
+        std::vector&lt;unsigned char&gt; decodedOcrImage(decoded_string.begin(), decoded_string.end());
         std::ofstream outputOcrFile(ocrImagePath, std::ios::binary | std::ios::out);
         if (outputOcrFile.is_open()) {
-            outputOcrFile.write(reinterpret_cast<char*>(decodedOcrImage.data()), decodedOcrImage.size());
+            outputOcrFile.write(reinterpret_cast&lt;char*&gt;(decodedOcrImage.data()), decodedOcrImage.size());
             outputOcrFile.close();
-            std::cout << "Output image saved at " << ocrImagePath << std::endl;
+            std::cout &lt;&lt; &quot;Output image saved at &quot; &lt;&lt; ocrImagePath &lt;&lt; std::endl;
         } else {
-            std::cerr << "Unable to open file for writing: " << ocrImagePath << std::endl;
+            std::cerr &lt;&lt; &quot;Unable to open file for writing: &quot; &lt;&lt; ocrImagePath &lt;&lt; std::endl;
         }
 
-        encodedImage = result["layoutImage"];
+        encodedImage = result[&quot;layoutImage&quot;];
         decodedString = base64::from_base64(encodedImage);
-        std::vector<unsigned char> decodedLayoutImage(decodedString.begin(), decodedString.end());
+        std::vector&lt;unsigned char&gt; decodedLayoutImage(decodedString.begin(), decodedString.end());
         std::ofstream outputLayoutFile(layoutImagePath, std::ios::binary | std::ios::out);
         if (outputLayoutFile.is_open()) {
-            outputLayoutFile.write(reinterpret_cast<char*>(decodedLayoutImage.data()), decodedlayoutImage.size());
+            outputLayoutFile.write(reinterpret_cast&lt;char*&gt;(decodedLayoutImage.data()), decodedlayoutImage.size());
             outputLayoutFile.close();
-            std::cout << "Output image saved at " << layoutImagePath << std::endl;
+            std::cout &lt;&lt; &quot;Output image saved at &quot; &lt;&lt; layoutImagePath &lt;&lt; std::endl;
         } else {
-            std::cerr << "Unable to open file for writing: " << layoutImagePath << std::endl;
+            std::cerr &lt;&lt; &quot;Unable to open file for writing: &quot; &lt;&lt; layoutImagePath &lt;&lt; std::endl;
         }
 
-        auto tables = result["tables"];
-        std::cout << "\nDetected tables:" << std::endl;
-        for (const auto& table : tables) {
-            std::cout << table << std::endl;
+        auto tables = result[&quot;tables&quot;];
+        std::cout &lt;&lt; &quot;\nDetected tables:&quot; &lt;&lt; std::endl;
+        for (const auto&amp; table : tables) {
+            std::cout &lt;&lt; table &lt;&lt; std::endl;
         }
     } else {
-        std::cout << "Failed to send HTTP request." << std::endl;
+        std::cout &lt;&lt; &quot;Failed to send HTTP request.&quot; &lt;&lt; std::endl;
         return 1;
     }
 
     return 0;
 }
-```
+</code></pre></details>
 
-</details>
+<details><summary>Java</summary>
 
-<details>
-<summary>Java</summary>
-
-```java
-import okhttp3.*;
+<pre><code class="language-java">import okhttp3.*;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
@@ -668,10 +634,10 @@ import java.util.Base64;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        String API_URL = "http://localhost:8080/table-recognition";
-        String imagePath = "./demo.jpg";
-        String ocrImagePath = "./ocr.jpg";
-        String layoutImagePath = "./layout.jpg";
+        String API_URL = &quot;http://localhost:8080/table-recognition&quot;;
+        String imagePath = &quot;./demo.jpg&quot;;
+        String ocrImagePath = &quot;./ocr.jpg&quot;;
+        String layoutImagePath = &quot;./layout.jpg&quot;;
 
         File file = new File(imagePath);
         byte[] fileContent = java.nio.file.Files.readAllBytes(file.toPath());
@@ -679,10 +645,10 @@ public class Main {
 
         ObjectMapper objectMapper = new ObjectMapper();
         ObjectNode params = objectMapper.createObjectNode();
-        params.put("image", imageData);
+        params.put(&quot;image&quot;, imageData);
 
         OkHttpClient client = new OkHttpClient();
-        MediaType JSON = MediaType.Companion.get("application/json; charset=utf-8");
+        MediaType JSON = MediaType.Companion.get(&quot;application/json; charset=utf-8&quot;);
         RequestBody body = RequestBody.Companion.create(params.toString(), JSON);
         Request request = new Request.Builder()
                 .url(API_URL)
@@ -693,140 +659,132 @@ public class Main {
             if (response.isSuccessful()) {
                 String responseBody = response.body().string();
                 JsonNode resultNode = objectMapper.readTree(responseBody);
-                JsonNode result = resultNode.get("result");
-                String ocrBase64Image = result.get("ocrImage").asText();
-                String layoutBase64Image = result.get("layoutImage").asText();
-                JsonNode tables = result.get("tables");
+                JsonNode result = resultNode.get(&quot;result&quot;);
+                String ocrBase64Image = result.get(&quot;ocrImage&quot;).asText();
+                String layoutBase64Image = result.get(&quot;layoutImage&quot;).asText();
+                JsonNode tables = result.get(&quot;tables&quot;);
 
                 byte[] imageBytes = Base64.getDecoder().decode(ocrBase64Image);
                 try (FileOutputStream fos = new FileOutputStream(ocrImagePath)) {
                     fos.write(imageBytes);
                 }
-                System.out.println("Output image saved at " + ocrBase64Image);
+                System.out.println(&quot;Output image saved at &quot; + ocrBase64Image);
 
                 imageBytes = Base64.getDecoder().decode(layoutBase64Image);
                 try (FileOutputStream fos = new FileOutputStream(layoutImagePath)) {
                     fos.write(imageBytes);
                 }
-                System.out.println("Output image saved at " + layoutImagePath);
+                System.out.println(&quot;Output image saved at &quot; + layoutImagePath);
 
-                System.out.println("\nDetected tables: " + tables.toString());
+                System.out.println(&quot;\nDetected tables: &quot; + tables.toString());
             } else {
-                System.err.println("Request failed with code: " + response.code());
+                System.err.println(&quot;Request failed with code: &quot; + response.code());
             }
         }
     }
 }
-```
+</code></pre></details>
 
-</details>
+<details><summary>Go</summary>
 
-<details>
-<summary>Go</summary>
-
-```go
-package main
+<pre><code class="language-go">package main
 
 import (
-    "bytes"
-    "encoding/base64"
-    "encoding/json"
-    "fmt"
-    "io/ioutil"
-    "net/http"
+    &quot;bytes&quot;
+    &quot;encoding/base64&quot;
+    &quot;encoding/json&quot;
+    &quot;fmt&quot;
+    &quot;io/ioutil&quot;
+    &quot;net/http&quot;
 )
 
 func main() {
-    API_URL := "http://localhost:8080/table-recognition"
-    imagePath := "./demo.jpg"
-    ocrImagePath := "./ocr.jpg"
-    layoutImagePath := "./layout.jpg"
+    API_URL := &quot;http://localhost:8080/table-recognition&quot;
+    imagePath := &quot;./demo.jpg&quot;
+    ocrImagePath := &quot;./ocr.jpg&quot;
+    layoutImagePath := &quot;./layout.jpg&quot;
 
     imageBytes, err := ioutil.ReadFile(imagePath)
     if err != nil {
-        fmt.Println("Error reading image file:", err)
+        fmt.Println(&quot;Error reading image file:&quot;, err)
         return
     }
     imageData := base64.StdEncoding.EncodeToString(imageBytes)
 
-    payload := map[string]string{"image": imageData}
+    payload := map[string]string{&quot;image&quot;: imageData}
     payloadBytes, err := json.Marshal(payload)
     if err != nil {
-        fmt.Println("Error marshaling payload:", err)
+        fmt.Println(&quot;Error marshaling payload:&quot;, err)
         return
     }
 
-    client := &http.Client{}
-    req, err := http.NewRequest("POST", API_URL, bytes.NewBuffer(payloadBytes))
+    client := &amp;http.Client{}
+    req, err := http.NewRequest(&quot;POST&quot;, API_URL, bytes.NewBuffer(payloadBytes))
     if err != nil {
-        fmt.Println("Error creating request:", err)
+        fmt.Println(&quot;Error creating request:&quot;, err)
         return
     }
 
     res, err := client.Do(req)
     if err != nil {
-        fmt.Println("Error sending request:", err)
+        fmt.Println(&quot;Error sending request:&quot;, err)
         return
     }
     defer res.Body.Close()
 
     body, err := ioutil.ReadAll(res.Body)
     if err != nil {
-        fmt.Println("Error reading response body:", err)
+        fmt.Println(&quot;Error reading response body:&quot;, err)
         return
     }
     type Response struct {
         Result struct {
-            OcrImage      string   `json:"ocrImage"`
-            LayoutImage      string   `json:"layoutImage"`
-            Tables []map[string]interface{} `json:"tables"`
-        } `json:"result"`
+            OcrImage      string   `json:&quot;ocrImage&quot;`
+            LayoutImage      string   `json:&quot;layoutImage&quot;`
+            Tables []map[string]interface{} `json:&quot;tables&quot;`
+        } `json:&quot;result&quot;`
     }
     var respData Response
-    err = json.Unmarshal([]byte(string(body)), &respData)
+    err = json.Unmarshal([]byte(string(body)), &amp;respData)
     if err != nil {
-        fmt.Println("Error unmarshaling response body:", err)
+        fmt.Println(&quot;Error unmarshaling response body:&quot;, err)
         return
     }
 
     ocrImageData, err := base64.StdEncoding.DecodeString(respData.Result.OcrImage)
     if err != nil {
-        fmt.Println("Error decoding base64 image data:", err)
+        fmt.Println(&quot;Error decoding base64 image data:&quot;, err)
         return
     }
     err = ioutil.WriteFile(ocrImagePath, ocrImageData, 0644)
     if err != nil {
-        fmt.Println("Error writing image to file:", err)
+        fmt.Println(&quot;Error writing image to file:&quot;, err)
         return
     }
-    fmt.Printf("Image saved at %s.jpg\n", ocrImagePath)
+    fmt.Printf(&quot;Image saved at %s.jpg\n&quot;, ocrImagePath)
 
     layoutImageData, err := base64.StdEncoding.DecodeString(respData.Result.LayoutImage)
     if err != nil {
-        fmt.Println("Error decoding base64 image data:", err)
+        fmt.Println(&quot;Error decoding base64 image data:&quot;, err)
         return
     }
     err = ioutil.WriteFile(layoutImagePath, layoutImageData, 0644)
     if err != nil {
-        fmt.Println("Error writing image to file:", err)
+        fmt.Println(&quot;Error writing image to file:&quot;, err)
         return
     }
-    fmt.Printf("Image saved at %s.jpg\n", layoutImagePath)
+    fmt.Printf(&quot;Image saved at %s.jpg\n&quot;, layoutImagePath)
 
-    fmt.Println("\nDetected tables:")
+    fmt.Println(&quot;\nDetected tables:&quot;)
     for _, table := range respData.Result.Tables {
         fmt.Println(table)
     }
 }
-```
+</code></pre></details>
 
-</details>
+<details><summary>C#</summary>
 
-<details>
-<summary>C#</summary>
-
-```csharp
-using System;
+<pre><code class="language-csharp">using System;
 using System.IO;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -836,10 +794,10 @@ using Newtonsoft.Json.Linq;
 
 class Program
 {
-    static readonly string API_URL = "http://localhost:8080/table-recognition";
-    static readonly string imagePath = "./demo.jpg";
-    static readonly string ocrImagePath = "./ocr.jpg";
-    static readonly string layoutImagePath = "./layout.jpg";
+    static readonly string API_URL = &quot;http://localhost:8080/table-recognition&quot;;
+    static readonly string imagePath = &quot;./demo.jpg&quot;;
+    static readonly string ocrImagePath = &quot;./ocr.jpg&quot;;
+    static readonly string layoutImagePath = &quot;./layout.jpg&quot;;
 
     static async Task Main(string[] args)
     {
@@ -848,8 +806,8 @@ class Program
         byte[] imageBytes = File.ReadAllBytes(imagePath);
         string image_data = Convert.ToBase64String(imageBytes);
 
-        var payload = new JObject{ { "image", image_data } };
-        var content = new StringContent(payload.ToString(), Encoding.UTF8, "application/json");
+        var payload = new JObject{ { &quot;image&quot;, image_data } };
+        var content = new StringContent(payload.ToString(), Encoding.UTF8, &quot;application/json&quot;);
 
         HttpResponseMessage response = await httpClient.PostAsync(API_URL, content);
         response.EnsureSuccessStatusCode();
@@ -857,35 +815,31 @@ class Program
         string responseBody = await response.Content.ReadAsStringAsync();
         JObject jsonResponse = JObject.Parse(responseBody);
 
-        string ocrBase64Image = jsonResponse["result"]["ocrImage"].ToString();
+        string ocrBase64Image = jsonResponse[&quot;result&quot;][&quot;ocrImage&quot;].ToString();
         byte[] ocrImageBytes = Convert.FromBase64String(ocrBase64Image);
         File.WriteAllBytes(ocrImagePath, ocrImageBytes);
-        Console.WriteLine($"Output image saved at {ocrImagePath}");
+        Console.WriteLine($&quot;Output image saved at {ocrImagePath}&quot;);
 
-        string layoutBase64Image = jsonResponse["result"]["layoutImage"].ToString();
+        string layoutBase64Image = jsonResponse[&quot;result&quot;][&quot;layoutImage&quot;].ToString();
         byte[] layoutImageBytes = Convert.FromBase64String(layoutBase64Image);
         File.WriteAllBytes(layoutImagePath, layoutImageBytes);
-        Console.WriteLine($"Output image saved at {layoutImagePath}");
+        Console.WriteLine($&quot;Output image saved at {layoutImagePath}&quot;);
 
-        Console.WriteLine("\nDetected tables:");
-        Console.WriteLine(jsonResponse["result"]["tables"].ToString());
+        Console.WriteLine(&quot;\nDetected tables:&quot;);
+        Console.WriteLine(jsonResponse[&quot;result&quot;][&quot;tables&quot;].ToString());
     }
 }
-```
+</code></pre></details>
 
-</details>
+<details><summary>Node.js</summary>
 
-<details>
-<summary>Node.js</summary>
-
-```js
-const axios = require('axios');
+<pre><code class="language-js">const axios = require('axios');
 const fs = require('fs');
 
 const API_URL = 'http://localhost:8080/table-recognition'
 const imagePath = './demo.jpg'
-const ocrImagePath = "./ocr.jpg";
-const layoutImagePath = "./layout.jpg";
+const ocrImagePath = &quot;./ocr.jpg&quot;;
+const layoutImagePath = &quot;./layout.jpg&quot;;
 
 let config = {
    method: 'POST',
@@ -902,44 +856,40 @@ function encodeImageToBase64(filePath) {
 }
 
 axios.request(config)
-.then((response) => {
-    const result = response.data["result"];
+.then((response) =&gt; {
+    const result = response.data[&quot;result&quot;];
 
-    const imageBuffer = Buffer.from(result["ocrImage"], 'base64');
-    fs.writeFile(ocrImagePath, imageBuffer, (err) => {
+    const imageBuffer = Buffer.from(result[&quot;ocrImage&quot;], 'base64');
+    fs.writeFile(ocrImagePath, imageBuffer, (err) =&gt; {
       if (err) throw err;
       console.log(`Output image saved at ${ocrImagePath}`);
     });
 
-    imageBuffer = Buffer.from(result["layoutImage"], 'base64');
-    fs.writeFile(layoutImagePath, imageBuffer, (err) => {
+    imageBuffer = Buffer.from(result[&quot;layoutImage&quot;], 'base64');
+    fs.writeFile(layoutImagePath, imageBuffer, (err) =&gt; {
       if (err) throw err;
       console.log(`Output image saved at ${layoutImagePath}`);
     });
 
-    console.log("\nDetected tables:");
-    console.log(result["tables"]);
+    console.log(&quot;\nDetected tables:&quot;);
+    console.log(result[&quot;tables&quot;]);
 })
-.catch((error) => {
+.catch((error) =&gt; {
   console.log(error);
 });
-```
+</code></pre></details>
 
-</details>
+<details><summary>PHP</summary>
 
-<details>
-<summary>PHP</summary>
+<pre><code class="language-php">&lt;?php
 
-```php
-<?php
-
-$API_URL = "http://localhost:8080/table-recognition";
-$image_path = "./demo.jpg";
-$ocr_image_path = "./ocr.jpg";
-$layout_image_path = "./layout.jpg";
+$API_URL = &quot;http://localhost:8080/table-recognition&quot;;
+$image_path = &quot;./demo.jpg&quot;;
+$ocr_image_path = &quot;./ocr.jpg&quot;;
+$layout_image_path = &quot;./layout.jpg&quot;;
 
 $image_data = base64_encode(file_get_contents($image_path));
-$payload = array("image" => $image_data);
+$payload = array(&quot;image&quot; =&gt; $image_data);
 
 $ch = curl_init($API_URL);
 curl_setopt($ch, CURLOPT_POST, true);
@@ -948,20 +898,18 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $response = curl_exec($ch);
 curl_close($ch);
 
-$result = json_decode($response, true)["result"];
-file_put_contents($ocr_image_path, base64_decode($result["ocrImage"]));
-echo "Output image saved at " . $ocr_image_path . "\n";
+$result = json_decode($response, true)[&quot;result&quot;];
+file_put_contents($ocr_image_path, base64_decode($result[&quot;ocrImage&quot;]));
+echo &quot;Output image saved at &quot; . $ocr_image_path . &quot;\n&quot;;
 
-file_put_contents($layout_image_path, base64_decode($result["layoutImage"]));
-echo "Output image saved at " . $layout_image_path . "\n";
+file_put_contents($layout_image_path, base64_decode($result[&quot;layoutImage&quot;]));
+echo &quot;Output image saved at &quot; . $layout_image_path . &quot;\n&quot;;
 
-echo "\nDetected tables:\n";
-print_r($result["tables"]);
+echo &quot;\nDetected tables:\n&quot;;
+print_r($result[&quot;tables&quot;]);
 
-?>
-```
-
-</details>
+?&gt;
+</code></pre></details>
 </details>
 <br/>
 

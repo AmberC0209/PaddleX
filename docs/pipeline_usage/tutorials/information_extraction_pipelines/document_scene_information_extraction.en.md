@@ -11,43 +11,38 @@ The <b>PP-ChatOCRv3-doc</b> pipeline includes modules for <b>Table Structure Rec
 
 <b>If you prioritize model accuracy, choose a model with higher accuracy. If you prioritize inference speed, choose a model with faster inference speed. If you prioritize model storage size, choose a model with a smaller storage size.</b> Some benchmarks for these models are as follows:
 
-<details>
-   <summary> 👉Model List Details</summary>
+<details><summary> 👉Model List Details</summary>
 
-<b>Table Structure Recognition Module Models</b>:
-
+<p><b>Table Structure Recognition Module Models</b>:</p>
 <table>
-  <tr>
-    <th>Model</th>
-    <th>Accuracy (%)</th>
-    <th>GPU Inference Time (ms)</th>
-    <th>CPU Inference Time (ms)</th>
-    <th>Model Size (M)</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td>SLANet</td>
-    <td>59.52</td>
-    <td>522.536</td>
-    <td>1845.37</td>
-    <td>6.9 M</td>
-    <td>SLANet is a table structure recognition model developed by Baidu PaddleX Team. The model significantly improves the accuracy and inference speed of table structure recognition by adopting a CPU-friendly lightweight backbone network PP-LCNet, a high-low-level feature fusion module CSP-PAN, and a feature decoding module SLA Head that aligns structural and positional information.</td>
-  </tr>
-  <tr>
-    <td>SLANet_plus</td>
-    <td>63.69</td>
-    <td>522.536</td>
-    <td>1845.37</td>
-    <td>6.9 M</td>
-    <td>SLANet_plus is an enhanced version of SLANet, the table structure recognition model developed by Baidu PaddleX Team. Compared to SLANet, SLANet_plus significantly improves the recognition ability for wireless and complex tables and reduces the model's sensitivity to the accuracy of table positioning, enabling more accurate recognition even with offset table positioning.</td>
-  </tr>
+<tr>
+<th>Model</th>
+<th>Accuracy (%)</th>
+<th>GPU Inference Time (ms)</th>
+<th>CPU Inference Time (ms)</th>
+<th>Model Size (M)</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>SLANet</td>
+<td>59.52</td>
+<td>522.536</td>
+<td>1845.37</td>
+<td>6.9 M</td>
+<td>SLANet is a table structure recognition model developed by Baidu PaddleX Team. The model significantly improves the accuracy and inference speed of table structure recognition by adopting a CPU-friendly lightweight backbone network PP-LCNet, a high-low-level feature fusion module CSP-PAN, and a feature decoding module SLA Head that aligns structural and positional information.</td>
+</tr>
+<tr>
+<td>SLANet_plus</td>
+<td>63.69</td>
+<td>522.536</td>
+<td>1845.37</td>
+<td>6.9 M</td>
+<td>SLANet_plus is an enhanced version of SLANet, the table structure recognition model developed by Baidu PaddleX Team. Compared to SLANet, SLANet_plus significantly improves the recognition ability for wireless and complex tables and reduces the model's sensitivity to the accuracy of table positioning, enabling more accurate recognition even with offset table positioning.</td>
+</tr>
 </table>
 
-
-<b>Note: The above accuracy metrics are measured on PaddleX's internally built English table recognition dataset. All GPU inference times are based on NVIDIA Tesla T4 machines with FP32 precision. CPU inference speeds are based on Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
-
-<b>Layout Detection Module Models</b>:
-
+<p><b>Note: The above accuracy metrics are measured on PaddleX's internally built English table recognition dataset. All GPU inference times are based on NVIDIA Tesla T4 machines with FP32 precision. CPU inference speeds are based on Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b></p>
+<p><b>Layout Detection Module Models</b>:</p>
 <table>
 <thead>
 <tr>
@@ -119,10 +114,8 @@ The <b>PP-ChatOCRv3-doc</b> pipeline includes modules for <b>Table Structure Rec
 </tbody>
 </table>
 
-<b>Note: The evaluation set for the above accuracy metrics is PaddleOCR's self-built layout region analysis dataset, containing 10,000 images of common document types, including English and Chinese papers, magazines, research reports, etc. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
-
-<b>Text Detection Module Models</b>:
-
+<p><b>Note: The evaluation set for the above accuracy metrics is PaddleOCR's self-built layout region analysis dataset, containing 10,000 images of common document types, including English and Chinese papers, magazines, research reports, etc. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b></p>
+<p><b>Text Detection Module Models</b>:</p>
 <table>
 <thead>
 <tr>
@@ -154,89 +147,80 @@ The <b>PP-ChatOCRv3-doc</b> pipeline includes modules for <b>Table Structure Rec
 </tbody>
 </table>
 
-<b>Note: The evaluation set for the above accuracy metrics is PaddleOCR's self-built Chinese dataset, covering street scenes, web images, documents, and handwritten texts, with 500 images for detection. All GPU inference times are based on NVIDIA Tesla T4 machines with FP32 precision. CPU inference speeds are based on Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
-
-<b>Text Recognition Module Models</b>:
-
+<p><b>Note: The evaluation set for the above accuracy metrics is PaddleOCR's self-built Chinese dataset, covering street scenes, web images, documents, and handwritten texts, with 500 images for detection. All GPU inference times are based on NVIDIA Tesla T4 machines with FP32 precision. CPU inference speeds are based on Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b></p>
+<p><b>Text Recognition Module Models</b>:</p>
 <table>
-    <tr>
-        <th>Model</th>
-        <th>Recognition Avg Accuracy (%)</th>
-        <th>GPU Inference Time (ms)</th>
-        <th>CPU Inference Time (ms)</th>
-        <th>Model Size (M)</th>
-        <th>Description</th>
-    </tr>
-    <tr>
-        <td>PP-OCRv4_mobile_rec</td>
-        <td>78.20</td>
-        <td>7.95018</td>
-        <td>46.7868</td>
-        <td>10.6 M</td>
-        <td rowspan="2">PP-OCRv4 is the next version of Baidu PaddlePaddle's self-developed text recognition model PP-OCRv3. By introducing data augmentation schemes and GTC-NRTR guidance branches, it further improves text recognition accuracy without compromising inference speed. The model offers both server (server) and mobile (mobile) versions to meet industrial needs in different scenarios.</td>
-    </tr>
-    <tr>
-        <td>PP-OCRv4_server_rec</td>
-        <td>79.20</td>
-        <td>7.19439</td>
-        <td>140.179</td>
-        <td>71.2 M</td>
-    </tr>
+<tr>
+<th>Model</th>
+<th>Recognition Avg Accuracy (%)</th>
+<th>GPU Inference Time (ms)</th>
+<th>CPU Inference Time (ms)</th>
+<th>Model Size (M)</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>PP-OCRv4_mobile_rec</td>
+<td>78.20</td>
+<td>7.95018</td>
+<td>46.7868</td>
+<td>10.6 M</td>
+<td rowspan="2">PP-OCRv4 is the next version of Baidu PaddlePaddle's self-developed text recognition model PP-OCRv3. By introducing data augmentation schemes and GTC-NRTR guidance branches, it further improves text recognition accuracy without compromising inference speed. The model offers both server (server) and mobile (mobile) versions to meet industrial needs in different scenarios.</td>
+</tr>
+<tr>
+<td>PP-OCRv4_server_rec</td>
+<td>79.20</td>
+<td>7.19439</td>
+<td>140.179</td>
+<td>71.2 M</td>
+</tr>
 </table>
 
-
-<b>Note: The evaluation set for the above accuracy metrics is PaddleOCR's self-built Chinese dataset, covering street scenes, web images, documents, and handwritten texts, with 11,000 images for text recognition. All GPU inference times are based on NVIDIA Tesla T4 machines with FP32 precision. CPU inference speeds are based on Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
-
+<p><b>Note: The evaluation set for the above accuracy metrics is PaddleOCR's self-built Chinese dataset, covering street scenes, web images, documents, and handwritten texts, with 11,000 images for text recognition. All GPU inference times are based on NVIDIA Tesla T4 machines with FP32 precision. CPU inference speeds are based on Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b></p>
 <table >
-    <tr>
-        <th>Model</th>
-        <th>Recognition Avg Accuracy (%)</th>
-        <th>GPU Inference Time (ms)</th>
-        <th>CPU Inference Time (ms)</th>
-        <th>Model Size (M)</th>
-        <th>Description</th>
-    </tr>
-    <tr>
-        <td>ch_SVTRv2_rec</td>
-        <td>68.81</td>
-        <td>8.36801</td>
-        <td>165.706</td>
-        <td>73.9 M</td>
-        <td rowspan="1">
-        SVTRv2 is a server-side text recognition model developed by the OpenOCR team at the Vision and Learning Lab (FVL) of Fudan University. It won the first prize in the OCR End-to-End Recognition Task of the PaddleOCR Algorithm Model Challenge, with a 6% improvement in end-to-end recognition accuracy compared to PP-OCRv4 on the A-list.
-    </td>
-    </tr>
+<tr>
+<th>Model</th>
+<th>Recognition Avg Accuracy (%)</th>
+<th>GPU Inference Time (ms)</th>
+<th>CPU Inference Time (ms)</th>
+<th>Model Size (M)</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>ch_SVTRv2_rec</td>
+<td>68.81</td>
+<td>8.36801</td>
+<td>165.706</td>
+<td>73.9 M</td>
+<td rowspan="1">
+SVTRv2 is a server-side text recognition model developed by the OpenOCR team at the Vision and Learning Lab (FVL) of Fudan University. It won the first prize in the OCR End-to-End Recognition Task of the PaddleOCR Algorithm Model Challenge, with a 6% improvement in end-to-end recognition accuracy compared to PP-OCRv4 on the A-list.
+</td>
+</tr>
 </table>
 
-
-<b>Note: The evaluation set for the above accuracy metrics is the [PaddleOCR Algorithm Model Challenge - Task 1: OCR End-to-End Recognition Task](https://aistudio.baidu.com/competition/detail/1131/0/introduction) A-list. GPU inference time is based on NVIDIA Tesla T4 with FP32 precision. CPU inference speed is based on Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
-
+<p><b>Note: The evaluation set for the above accuracy metrics is the <a href="https://aistudio.baidu.com/competition/detail/1131/0/introduction">PaddleOCR Algorithm Model Challenge - Task 1: OCR End-to-End Recognition Task</a> A-list. GPU inference time is based on NVIDIA Tesla T4 with FP32 precision. CPU inference speed is based on Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b></p>
 <table >
-    <tr>
-        <th>Model</th>
-        <th>Recognition Avg Accuracy (%)</th>
-        <th>GPU Inference Time (ms)</th>
-        <th>CPU Inference Time (ms)</th>
-        <th>Model Size (M)</th>
-        <th>Description</th>
-    </tr>
-    <tr>
-        <td>ch_RepSVTR_rec</td>
-        <td>65.07</td>
-        <td>10.5047</td>
-        <td>51.5647</td>
-        <td>22.1 M</td>
-        <td rowspan="1">
-        The RepSVTR text recognition model is a mobile-oriented text recognition model based on SVTRv2. It won the first prize in the OCR End-to-End Recognition Task of the PaddleOCR Algorithm Model Challenge, with a 2.5% improvement in end-to-end recognition accuracy compared to PP-OCRv4 on the B-list, while maintaining similar inference speed.
-    </td>
-    </tr>
+<tr>
+<th>Model</th>
+<th>Recognition Avg Accuracy (%)</th>
+<th>GPU Inference Time (ms)</th>
+<th>CPU Inference Time (ms)</th>
+<th>Model Size (M)</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>ch_RepSVTR_rec</td>
+<td>65.07</td>
+<td>10.5047</td>
+<td>51.5647</td>
+<td>22.1 M</td>
+<td rowspan="1">
+The RepSVTR text recognition model is a mobile-oriented text recognition model based on SVTRv2. It won the first prize in the OCR End-to-End Recognition Task of the PaddleOCR Algorithm Model Challenge, with a 2.5% improvement in end-to-end recognition accuracy compared to PP-OCRv4 on the B-list, while maintaining similar inference speed.
+</td>
+</tr>
 </table>
 
-
-<b>Note: The evaluation set for the above accuracy metrics is the [PaddleOCR Algorithm Model Challenge - Task 1: OCR End-to-End Recognition Task](https://aistudio.baidu.com/competition/detail/1131/0/introduction) B-list. GPU inference time is based on NVIDIA Tesla T4 with FP32 precision. CPU inference speed is based on Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
-
-<b>Seal Text Detection Module Models</b>:
-
+<p><b>Note: The evaluation set for the above accuracy metrics is the <a href="https://aistudio.baidu.com/competition/detail/1131/0/introduction">PaddleOCR Algorithm Model Challenge - Task 1: OCR End-to-End Recognition Task</a> B-list. GPU inference time is based on NVIDIA Tesla T4 with FP32 precision. CPU inference speed is based on Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b></p>
+<p><b>Seal Text Detection Module Models</b>:</p>
 <table>
 <thead>
 <tr>
@@ -268,10 +252,8 @@ The <b>PP-ChatOCRv3-doc</b> pipeline includes modules for <b>Table Structure Rec
 </tbody>
 </table>
 
-<b>Note: The above accuracy metrics are evaluated on a self-built dataset containing 500 circular seal images. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
-
-<b>Text Image Rectification Module Models</b>:
-
+<p><b>Note: The above accuracy metrics are evaluated on a self-built dataset containing 500 circular seal images. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b></p>
+<p><b>Text Image Rectification Module Models</b>:</p>
 <table>
 <thead>
 <tr>
@@ -291,10 +273,8 @@ The <b>PP-ChatOCRv3-doc</b> pipeline includes modules for <b>Table Structure Rec
 </tbody>
 </table>
 
-<b>The accuracy metrics of the models are measured from the [DocUNet benchmark](https://www3.cs.stonybrook.edu/~cvl/docunet.html).</b>
-
-<b>Document Image Orientation Classification Module Models</b>:
-
+<p><b>The accuracy metrics of the models are measured from the <a href="https://www3.cs.stonybrook.edu/~cvl/docunet.html">DocUNet benchmark</a>.</b></p>
+<p><b>Document Image Orientation Classification Module Models</b>:</p>
 <table>
 <thead>
 <tr>
@@ -318,9 +298,7 @@ The <b>PP-ChatOCRv3-doc</b> pipeline includes modules for <b>Table Structure Rec
 </tbody>
 </table>
 
-<b>Note: The above accuracy metrics are evaluated on a self-built dataset covering various scenarios such as certificates and documents, containing 1000 images. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
-
-</details>
+<p><b>Note: The above accuracy metrics are evaluated on a self-built dataset covering various scenarios such as certificates and documents, containing 1000 images. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b></p></details>
 
 ## 2. Quick Start
 PaddleX's pre-trained model pipelines can be quickly experienced. You can experience the effect of the Document Scene Information Extraction v3 pipeline online or locally using Python.
@@ -645,14 +623,13 @@ Additionally, PaddleX provides three other deployment methods, detailed as follo
 
 Below are the API references and multi-language service invocation examples:
 
-<details>
-<summary>API Reference</summary>
+<details><summary>API Reference</summary>
 
-For all operations provided by the service:
-
-- Both the response body and the request body for POST requests are JSON data (JSON objects).
-- When the request is processed successfully, the response status code is `200`, and the response body properties are as follows:
-
+<p>For all operations provided by the service:</p>
+<ul>
+<li>Both the response body and the request body for POST requests are JSON data (JSON objects).</li>
+<li>When the request is processed successfully, the response status code is <code>200</code>, and the response body properties are as follows:</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -675,10 +652,10 @@ For all operations provided by the service:
 </tbody>
 </table>
 
-    The response body may also have a `result` property of type `object`, which stores the operation result information.
-
-- When the request is not processed successfully, the response body properties are as follows:
-
+<p>The response body may also have a <code>result</code> property of type <code>object</code>, which stores the operation result information.</p>
+<ul>
+<li>When the request is not processed successfully, the response body properties are as follows:</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -701,16 +678,15 @@ For all operations provided by the service:
 </tbody>
 </table>
 
-Operations provided by the service are as follows:
-
-- <b>`analyzeImage`</b>
-
-    Analyze images using computer vision models to obtain OCR, table recognition results, and extract key information from the images.
-
-    `POST /chatocr-vision`
-
-    - Request body properties:
-
+<p>Operations provided by the service are as follows:</p>
+<ul>
+<li><b><code>analyzeImage</code></b></li>
+</ul>
+<p>Analyze images using computer vision models to obtain OCR, table recognition results, and extract key information from the images.</p>
+<p><code>POST /chatocr-vision</code></p>
+<ul>
+<li>Request body properties:</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -760,8 +736,7 @@ Operations provided by the service are as follows:
 </tbody>
 </table>
 
-        Properties of `inferenceParams`:
-
+<p>Properties of <code>inferenceParams</code>:</p>
 <table>
 <thead>
 <tr>
@@ -781,8 +756,9 @@ Operations provided by the service are as follows:
 </tbody>
 </table>
 
-    - When the request is processed successfully, the `result` in the response body has the following properties:
-
+<ul>
+<li>When the request is processed successfully, the <code>result</code> in the response body has the following properties:</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -805,8 +781,7 @@ Operations provided by the service are as follows:
 </tbody>
 </table>
 
-        Each element in `visionResults` is an `object` with the following properties:
-
+<p>Each element in <code>visionResults</code> is an <code>object</code> with the following properties:</p>
 <table>
 <thead>
 <tr>
@@ -844,8 +819,7 @@ Operations provided by the service are as follows:
 </tbody>
 </table>
 
-        Each element in `texts` is an `object` with the following properties:
-
+<p>Each element in <code>texts</code> is an <code>object</code> with the following properties:</p>
 <table>
 <thead>
 <tr>
@@ -873,8 +847,7 @@ Operations provided by the service are as follows:
 </tbody>
 </table>
 
-        Each element in `tables` is an `object` with the following properties:
-
+<p>Each element in <code>tables</code> is an <code>object</code> with the following properties:</p>
 <table>
 <thead>
 <tr>
@@ -897,14 +870,14 @@ Operations provided by the service are as follows:
 </tbody>
 </table>
 
-- <b>`buildVectorStore`</b>
-
-    Builds a vector database.
-
-    `POST /chatocr-vector`
-
-    - The request body properties are as follows:
-
+<ul>
+<li><b><code>buildVectorStore</code></b></li>
+</ul>
+<p>Builds a vector database.</p>
+<p><code>POST /chatocr-vector</code></p>
+<ul>
+<li>The request body properties are as follows:</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -948,18 +921,16 @@ Operations provided by the service are as follows:
 </tbody>
 </table>
 
-        Currently, `llmParams` can take the following form:
-
-        ```json
-        {
-          "apiType": "qianfan",
-          "apiKey": "{qianfan API key}",
-          "secretKey": "{qianfan secret key}"
-        }
-        ```
-
-    - When the request is processed successfully, the `result` in the response body has the following properties:
-
+<p>Currently, <code>llmParams</code> can take the following form:</p>
+<pre><code class="language-json">{
+&quot;apiType&quot;: &quot;qianfan&quot;,
+&quot;apiKey&quot;: &quot;{qianfan API key}&quot;,
+&quot;secretKey&quot;: &quot;{qianfan secret key}&quot;
+}
+</code></pre>
+<ul>
+<li>When the request is processed successfully, the <code>result</code> in the response body has the following properties:</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -977,14 +948,14 @@ Operations provided by the service are as follows:
 </tbody>
 </table>
 
-- <b>`retrieveKnowledge`</b>
-
-    Perform knowledge retrieval.
-
-    `POST /chatocr-retrieval`
-
-    - The request body properties are as follows:
-
+<ul>
+<li><b><code>retrieveKnowledge</code></b></li>
+</ul>
+<p>Perform knowledge retrieval.</p>
+<p><code>POST /chatocr-retrieval</code></p>
+<ul>
+<li>The request body properties are as follows:</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -1022,18 +993,16 @@ Operations provided by the service are as follows:
 </tbody>
 </table>
 
-        Currently, `llmParams` can take the following form:
-
-        ```json
-        {
-          "apiType": "qianfan",
-          "apiKey": "{Qianfan Platform API key}",
-          "secretKey": "{Qianfan Platform secret key}"
-        }
-        ```
-
-    - When the request is processed successfully, the `result` in the response body has the following properties:
-
+<p>Currently, <code>llmParams</code> can take the following form:</p>
+<pre><code class="language-json">{
+&quot;apiType&quot;: &quot;qianfan&quot;,
+&quot;apiKey&quot;: &quot;{Qianfan Platform API key}&quot;,
+&quot;secretKey&quot;: &quot;{Qianfan Platform secret key}&quot;
+}
+</code></pre>
+<ul>
+<li>When the request is processed successfully, the <code>result</code> in the response body has the following properties:</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -1051,14 +1020,14 @@ Operations provided by the service are as follows:
 </tbody>
 </table>
 
-- <b>`chat`</b>
-
-    Interact with large language models to extract key information.
-
-    `POST /chatocr-vision`
-
-    - Request body properties:
-
+<ul>
+<li><b><code>chat</code></b></li>
+</ul>
+<p>Interact with large language models to extract key information.</p>
+<p><code>POST /chatocr-vision</code></p>
+<ul>
+<li>Request body properties:</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -1132,18 +1101,16 @@ Operations provided by the service are as follows:
 </tbody>
 </table>
 
-        Currently, `llmParams` can take the following form:
-
-        ```json
-        {
-          "apiType": "qianfan",
-          "apiKey": "{Qianfan Platform API key}",
-          "secretKey": "{Qianfan Platform secret key}"
-        }
-        ```
-
-    - On successful request processing, the `result` in the response body has the following properties:
-
+<p>Currently, <code>llmParams</code> can take the following form:</p>
+<pre><code class="language-json">{
+&quot;apiType&quot;: &quot;qianfan&quot;,
+&quot;apiKey&quot;: &quot;{Qianfan Platform API key}&quot;,
+&quot;secretKey&quot;: &quot;{Qianfan Platform secret key}&quot;
+}
+</code></pre>
+<ul>
+<li>On successful request processing, the <code>result</code> in the response body has the following properties:</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -1166,8 +1133,7 @@ Operations provided by the service are as follows:
 </tbody>
 </table>
 
-        Properties of `prompts`:
-
+<p>Properties of <code>prompts</code>:</p>
 <table>
 <thead>
 <tr>
@@ -1193,129 +1159,125 @@ Operations provided by the service are as follows:
 <td>HTML prompt.</td>
 </tr>
 </tbody>
-</table>
+</table></details>
 
-</details>
-
-<details>
-<summary>Multi-Language Service Invocation Examples</summary>
+<details><summary>Multi-Language Service Invocation Examples</summary>
 
 <details>
 <summary>Python</summary>
 
-```python
-import base64
+
+<pre><code class="language-python">import base64
 import pprint
 import sys
 
 import requests
 
-API_BASE_URL = "http://0.0.0.0:8080"
-API_KEY = "{Qianfan Platform API key}"
-SECRET_KEY = "{Qianfan Platform secret key}"
-LLM_NAME = "ernie-3.5"
+API_BASE_URL = &quot;http://0.0.0.0:8080&quot;
+API_KEY = &quot;{Qianfan Platform API key}&quot;
+SECRET_KEY = &quot;{Qianfan Platform secret key}&quot;
+LLM_NAME = &quot;ernie-3.5&quot;
 LLM_PARAMS = {
-    "apiType": "qianfan",
-    "apiKey": API_KEY,
-    "secretKey": SECRET_KEY,
+    &quot;apiType&quot;: &quot;qianfan&quot;,
+    &quot;apiKey&quot;: API_KEY,
+    &quot;secretKey&quot;: SECRET_KEY,
 }
 
-file_path = "./demo.jpg"
-keys = ["电话"]
+file_path = &quot;./demo.jpg&quot;
+keys = [&quot;电话&quot;]
 
-with open(file_path, "rb") as file:
+with open(file_path, &quot;rb&quot;) as file:
     file_bytes = file.read()
-    file_data = base64.b64encode(file_bytes).decode("ascii")
+    file_data = base64.b64encode(file_bytes).decode(&quot;ascii&quot;)
 
 payload = {
-    "file": file_data,
-    "fileType": 1,
-    "useImgOrientationCls": True,
-    "useImgUnwrapping": True,
-    "useSealTextDet": True,
+    &quot;file&quot;: file_data,
+    &quot;fileType&quot;: 1,
+    &quot;useImgOrientationCls&quot;: True,
+    &quot;useImgUnwrapping&quot;: True,
+    &quot;useSealTextDet&quot;: True,
 }
-resp_vision = requests.post(url=f"{API_BASE_URL}/chatocr-vision", json=payload)
+resp_vision = requests.post(url=f&quot;{API_BASE_URL}/chatocr-vision&quot;, json=payload)
 if resp_vision.status_code != 200:
     print(
-        f"Request to chatocr-vision failed with status code {resp_vision.status_code}."
+        f&quot;Request to chatocr-vision failed with status code {resp_vision.status_code}.&quot;
     )
     pprint.pp(resp_vision.json())
     sys.exit(1)
-result_vision = resp_vision.json()["result"]
+result_vision = resp_vision.json()[&quot;result&quot;]
 
-for i, res in enumerate(result_vision["visionResults"]):
-    print("Texts:")
-    pprint.pp(res["texts"])
-    print("Tables:")
-    pprint.pp(res["tables"])
-    ocr_img_path = f"ocr_{i}.jpg"
-    with open(ocr_img_path, "wb") as f:
-        f.write(base64.b64decode(res["ocrImage"]))
-    layout_img_path = f"layout_{i}.jpg"
-    with open(layout_img_path, "wb") as f:
-        f.write(base64.b64decode(res["layoutImage"]))
-    print(f"Output images saved at {ocr_img_path} and {layout_img_path}")
+for i, res in enumerate(result_vision[&quot;visionResults&quot;]):
+    print(&quot;Texts:&quot;)
+    pprint.pp(res[&quot;texts&quot;])
+    print(&quot;Tables:&quot;)
+    pprint.pp(res[&quot;tables&quot;])
+    ocr_img_path = f&quot;ocr_{i}.jpg&quot;
+    with open(ocr_img_path, &quot;wb&quot;) as f:
+        f.write(base64.b64decode(res[&quot;ocrImage&quot;]))
+    layout_img_path = f&quot;layout_{i}.jpg&quot;
+    with open(layout_img_path, &quot;wb&quot;) as f:
+        f.write(base64.b64decode(res[&quot;layoutImage&quot;]))
+    print(f&quot;Output images saved at {ocr_img_path} and {layout_img_path}&quot;)
 
 payload = {
-    "visionInfo": result_vision["visionInfo"],
-    "minChars": 200,
-    "llmRequestInterval": 1000,
-    "llmName": LLM_NAME,
-    "llmParams": LLM_PARAMS,
+    &quot;visionInfo&quot;: result_vision[&quot;visionInfo&quot;],
+    &quot;minChars&quot;: 200,
+    &quot;llmRequestInterval&quot;: 1000,
+    &quot;llmName&quot;: LLM_NAME,
+    &quot;llmParams&quot;: LLM_PARAMS,
 }
-resp_vector = requests.post(url=f"{API_BASE_URL}/chatocr-vector", json=payload)
+resp_vector = requests.post(url=f&quot;{API_BASE_URL}/chatocr-vector&quot;, json=payload)
 if resp_vector.status_code != 200:
     print(
-        f"Request to chatocr-vector failed with status code {resp_vector.status_code}."
+        f&quot;Request to chatocr-vector failed with status code {resp_vector.status_code}.&quot;
     )
     pprint.pp(resp_vector.json())
     sys.exit(1)
-result_vector = resp_vector.json()["result"]
+result_vector = resp_vector.json()[&quot;result&quot;]
 
 payload = {
-    "keys": keys,
-    "vectorStore": result_vector["vectorStore"],
-    "llmName": LLM_NAME,
-    "llmParams": LLM_PARAMS,
+    &quot;keys&quot;: keys,
+    &quot;vectorStore&quot;: result_vector[&quot;vectorStore&quot;],
+    &quot;llmName&quot;: LLM_NAME,
+    &quot;llmParams&quot;: LLM_PARAMS,
 }
-resp_retrieval = requests.post(url=f"{API_BASE_URL}/chatocr-retrieval", json=payload)
+resp_retrieval = requests.post(url=f&quot;{API_BASE_URL}/chatocr-retrieval&quot;, json=payload)
 if resp_retrieval.status_code != 200:
     print(
-        f"Request to chatocr-retrieval failed with status code {resp_retrieval.status_code}."
+        f&quot;Request to chatocr-retrieval failed with status code {resp_retrieval.status_code}.&quot;
     )
     pprint.pp(resp_retrieval.json())
     sys.exit(1)
-result_retrieval = resp_retrieval.json()["result"]
+result_retrieval = resp_retrieval.json()[&quot;result&quot;]
 
 payload = {
-    "keys": keys,
-    "visionInfo": result_vision["visionInfo"],
-    "taskDescription": "",
-    "rules": "",
-    "fewShot": "",
-    "vectorStore": result_vector["vectorStore"],
-    "retrievalResult": result_retrieval["retrievalResult"],
-    "returnPrompts": True,
-    "llmName": LLM_NAME,
-    "llmParams": LLM_PARAMS,
+    &quot;keys&quot;: keys,
+    &quot;visionInfo&quot;: result_vision[&quot;visionInfo&quot;],
+    &quot;taskDescription&quot;: &quot;&quot;,
+    &quot;rules&quot;: &quot;&quot;,
+    &quot;fewShot&quot;: &quot;&quot;,
+    &quot;vectorStore&quot;: result_vector[&quot;vectorStore&quot;],
+    &quot;retrievalResult&quot;: result_retrieval[&quot;retrievalResult&quot;],
+    &quot;returnPrompts&quot;: True,
+    &quot;llmName&quot;: LLM_NAME,
+    &quot;llmParams&quot;: LLM_PARAMS,
 }
-resp_chat = requests.post(url=f"{API_BASE_URL}/chatocr-chat", json=payload)
+resp_chat = requests.post(url=f&quot;{API_BASE_URL}/chatocr-chat&quot;, json=payload)
 if resp_chat.status_code != 200:
     print(
-        f"Request to chatocr-chat failed with status code {resp_chat.status_code}."
+        f&quot;Request to chatocr-chat failed with status code {resp_chat.status_code}.&quot;
     )
     pprint.pp(resp_chat.json())
     sys.exit(1)
-result_chat = resp_chat.json()["result"]
-print("\nPrompts:")
-pprint.pp(result_chat["prompts"])
-print("Final result:")
-print(result_chat["chatResult"])
-```
+result_chat = resp_chat.json()[&quot;result&quot;]
+print(&quot;\nPrompts:&quot;)
+pprint.pp(result_chat[&quot;prompts&quot;])
+print(&quot;Final result:&quot;)
+print(result_chat[&quot;chatResult&quot;])
+</code></pre>
 
-<b>Note</b>: Please fill in your API key and secret key at `API_KEY` and `SECRET_KEY`.
 
-</details>
+<b>Note</b>: Please fill in your API key and secret key at `API_KEY` and `SECRET_KEY`.</details>
 </details>
 <br/>
 

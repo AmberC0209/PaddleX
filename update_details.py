@@ -4,6 +4,23 @@ import markdown
 
 def convert_specific_markdown_to_html(content):
     """Convert markdown tables, bold text, lists, and code blocks to HTML within <details>."""
+    # 去除所有行的前导空格或制表符，但保留代码块的缩进
+    lines = content.split('\n')
+    cleaned_lines = []
+    in_code_block = False
+
+    for line in lines:
+        if line.startswith("```"):
+            in_code_block = not in_code_block
+        
+        # 如果不在代码块中，去除行首的空格或制表符
+        if not in_code_block:
+            cleaned_lines.append(line.lstrip())
+        else:
+            cleaned_lines.append(line)
+
+    content = '\n'.join(cleaned_lines)
+
     # Convert markdown tables, allowing for leading spaces or tabs
     table_pattern = re.compile(r'(?:^[ \t]*\|.*\|.*\|\s*$\n?)+', re.MULTILINE)
     content = table_pattern.sub(lambda match: markdown.markdown(match.group(0), extensions=['tables']), content)

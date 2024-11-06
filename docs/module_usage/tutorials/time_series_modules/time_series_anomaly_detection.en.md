@@ -102,132 +102,115 @@ python main.py -c paddlex/configs/ts_anomaly_detection/AutoEncoder_ad.yaml \
 ```
 After executing the above command, PaddleX will validate the dataset, summarize its basic information, and print `Check dataset passed !` in the log if the command runs successfully. The validation result file is saved in `./output/check_dataset_result.json`, and related outputs are saved in the current directory's `./output/check_dataset` directory, including example time series data.
 
-<details>
-  <summary>👉 <b>Validation Result Details (Click to Expand)</b></summary>
+<details><summary>👉 <b>Validation Result Details (Click to Expand)</b></summary>
 
-The specific content of the validation result file is:
-
-```bash
-{
-  "done_flag": true,
-  "check_pass": true,
-  "attributes": {
-    "train_samples": 22032,
-    "train_table": [
+<p>The specific content of the validation result file is:</p>
+<pre><code class="language-bash">{
+  &quot;done_flag&quot;: true,
+  &quot;check_pass&quot;: true,
+  &quot;attributes&quot;: {
+    &quot;train_samples&quot;: 22032,
+    &quot;train_table&quot;: [
       [
-        "timestamp",
-        "feature_0",
-        "...",
-        "feature_24",
-        "label"
+        &quot;timestamp&quot;,
+        &quot;feature_0&quot;,
+        &quot;...&quot;,
+        &quot;feature_24&quot;,
+        &quot;label&quot;
       ],
       [
         0.0,
         0.7326893750079723,
-        "...",
+        &quot;...&quot;,
         0.1382488479262673,
         0.0
       ]
     ],
-    "val_samples": 198290,
-    "val_table": [
+    &quot;val_samples&quot;: 198290,
+    &quot;val_table&quot;: [
       [
-        "timestamp",
-        "feature_0",
-        "...",
-        "feature_24",
-        "label"
+        &quot;timestamp&quot;,
+        &quot;feature_0&quot;,
+        &quot;...&quot;,
+        &quot;feature_24&quot;,
+        &quot;label&quot;
       ],
       [
         22032.0,
         0.8604795809835284,
-        "...",
+        &quot;...&quot;,
         0.1428571428571428,
         0.0
       ]
     ]
   },
-  "analysis": {
-    "histogram": ""
+  &quot;analysis&quot;: {
+    &quot;histogram&quot;: &quot;&quot;
   },
-  "dataset_path": "./dataset/ts_anomaly_examples",
-  "show_type": "csv",
-  "dataset_type": "TSADDataset"
+  &quot;dataset_path&quot;: &quot;./dataset/ts_anomaly_examples&quot;,
+  &quot;show_type&quot;: &quot;csv&quot;,
+  &quot;dataset_type&quot;: &quot;TSADDataset&quot;
 }
-```
-
-The verification results above indicate that `check_pass` being `True` means the dataset format meets the requirements. Explanations for other indicators are as follows:
-
-* `attributes.train_samples`: The number of training samples in this dataset is 22032;
-* `attributes.val_samples`: The number of validation samples in this dataset is 198290;
-* `attributes.train_sample_paths`: A list of relative paths to the top 10 rows of training samples in this dataset;
-* `attributes.val_sample_paths`: A list of relative paths to the top 10 rows of validation samples in this dataset.
-<b>Note</b>: Only data that has passed validation can be used for training and evaluation.
-</details>
+</code></pre>
+<p>The verification results above indicate that <code>check_pass</code> being <code>True</code> means the dataset format meets the requirements. Explanations for other indicators are as follows:</p>
+<ul>
+<li><code>attributes.train_samples</code>: The number of training samples in this dataset is 22032;</li>
+<li><code>attributes.val_samples</code>: The number of validation samples in this dataset is 198290;</li>
+<li><code>attributes.train_sample_paths</code>: A list of relative paths to the top 10 rows of training samples in this dataset;</li>
+<li><code>attributes.val_sample_paths</code>: A list of relative paths to the top 10 rows of validation samples in this dataset.
+<b>Note</b>: Only data that has passed validation can be used for training and evaluation.</li>
+</ul></details>
 
 
 ### 4.1.3 Dataset Format Conversion / Dataset Splitting (Optional)
 After completing the data validation, you can convert the dataset format and re-split the training/validation ratio by <b>modifying the configuration file</b> or <b>appending hyperparameters</b>.
 
 
-<details>
-  <summary>👉 <b>Details of Format Conversion / Dataset Splitting (Click to Expand)</b></summary>
+<details><summary>👉 <b>Details of Format Conversion / Dataset Splitting (Click to Expand)</b></summary>
 
-<b>(1) Dataset Format Conversion</b>
-
-Time series anomaly detection supports converting `xlsx` and `xls` format datasets to `csv` format.
-
-Parameters related to dataset validation can be set by modifying the fields under `CheckDataset` in the configuration file. Some example parameter descriptions in the configuration file are as follows:
-
-* `CheckDataset`:
-  * `convert`:
-    * `enable`: Whether to convert the dataset format, supporting `xlsx` and `xls` formats to `CSV` format, default is `False`;
-    * `src_dataset_type`: If dataset format conversion is performed, the source dataset format does not need to be set, default is `null`;
-
-To enable format conversion, modify the configuration as follows:
-
-```bash
-......
+<p><b>(1) Dataset Format Conversion</b></p>
+<p>Time series anomaly detection supports converting <code>xlsx</code> and <code>xls</code> format datasets to <code>csv</code> format.</p>
+<p>Parameters related to dataset validation can be set by modifying the fields under <code>CheckDataset</code> in the configuration file. Some example parameter descriptions in the configuration file are as follows:</p>
+<ul>
+<li><code>CheckDataset</code>:</li>
+<li><code>convert</code>:</li>
+<li><code>enable</code>: Whether to convert the dataset format, supporting <code>xlsx</code> and <code>xls</code> formats to <code>CSV</code> format, default is <code>False</code>;</li>
+<li><code>src_dataset_type</code>: If dataset format conversion is performed, the source dataset format does not need to be set, default is <code>null</code>;</li>
+</ul>
+<p>To enable format conversion, modify the configuration as follows:</p>
+<pre><code class="language-bash">......
 CheckDataset:
   ......
   convert:
     enable: True
     src_dataset_type: null
   ......
-```
-Then execute the command:
-
-```bash
-python main.py -c paddlex/configs/ts_anomaly_detection/AutoEncoder_ad.yaml \
+</code></pre>
+<p>Then execute the command:</p>
+<pre><code class="language-bash">python main.py -c paddlex/configs/ts_anomaly_detection/AutoEncoder_ad.yaml \
     -o Global.mode=check_dataset \
     -o Global.dataset_dir=./dataset/ts_anomaly_examples
-```
-The above parameters also support setting through appending command line arguments:
-
-```bash
-python main.py -c paddlex/configs/ts_anomaly_detection/AutoEncoder_ad.yaml \
+</code></pre>
+<p>The above parameters also support setting through appending command line arguments:</p>
+<pre><code class="language-bash">python main.py -c paddlex/configs/ts_anomaly_detection/AutoEncoder_ad.yaml \
     -o Global.mode=check_dataset \
     -o Global.dataset_dir=./dataset/ts_anomaly_examples \
     -o CheckDataset.convert.enable=True
-```
-
-<b>(2) Dataset Splitting</b>
-
-Parameters related to dataset validation can be set by modifying the fields under `CheckDataset` in the configuration file. Some example parameter descriptions in the configuration file are as follows:
-
-* `CheckDataset`:
-  * `convert`:
-    * `enable`: Whether to convert the dataset format, `True` to enable dataset format conversion, default is `False`;
-    * `src_dataset_type`: If dataset format conversion is performed, time series anomaly detection only supports converting xlsx annotation files to csv, the source dataset format does not need to be set, default is `null`;
-  * `split`:
-    * `enable`: Whether to re-split the dataset, `True` to enable dataset splitting, default is `False`;
-    * `train_percent`: If re-splitting the dataset, set the percentage of the training set, an integer between 0-100, ensuring the sum with `val_percent` is 100;
-    * `val_percent`: If re-splitting the dataset, set the percentage of the validation set, an integer between 0-100, ensuring the sum with `train_percent` is 100;
-
-For example, if you want to re-split the dataset with 90% training set and 10% validation set, modify the configuration file as follows:
-
-```bash
-......
+</code></pre>
+<p><b>(2) Dataset Splitting</b></p>
+<p>Parameters related to dataset validation can be set by modifying the fields under <code>CheckDataset</code> in the configuration file. Some example parameter descriptions in the configuration file are as follows:</p>
+<ul>
+<li><code>CheckDataset</code>:</li>
+<li><code>convert</code>:</li>
+<li><code>enable</code>: Whether to convert the dataset format, <code>True</code> to enable dataset format conversion, default is <code>False</code>;</li>
+<li><code>src_dataset_type</code>: If dataset format conversion is performed, time series anomaly detection only supports converting xlsx annotation files to csv, the source dataset format does not need to be set, default is <code>null</code>;</li>
+<li><code>split</code>:</li>
+<li><code>enable</code>: Whether to re-split the dataset, <code>True</code> to enable dataset splitting, default is <code>False</code>;</li>
+<li><code>train_percent</code>: If re-splitting the dataset, set the percentage of the training set, an integer between 0-100, ensuring the sum with <code>val_percent</code> is 100;</li>
+<li><code>val_percent</code>: If re-splitting the dataset, set the percentage of the validation set, an integer between 0-100, ensuring the sum with <code>train_percent</code> is 100;</li>
+</ul>
+<p>For example, if you want to re-split the dataset with 90% training set and 10% validation set, modify the configuration file as follows:</p>
+<pre><code class="language-bash">......
 CheckDataset:
   ......
   split:
@@ -235,27 +218,21 @@ CheckDataset:
     train_percent: 90
     val_percent: 10
   ......
-```
-Then execute the command:
-
-```bash
-python main.py -c paddlex/configs/ts_anomaly_detection/AutoEncoder_ad.yaml \
+</code></pre>
+<p>Then execute the command:</p>
+<pre><code class="language-bash">python main.py -c paddlex/configs/ts_anomaly_detection/AutoEncoder_ad.yaml \
     -o Global.mode=check_dataset \
     -o Global.dataset_dir=./dataset/ts_anomaly_examples
-```
-After dataset splitting, the original annotation files will be renamed to `xxx.bak` in the original path.
-
-The above parameters also support setting through appending command line arguments:
-
-```bash
-python main.py -c paddlex/configs/ts_anomaly_detection/AutoEncoder_ad.yaml \
+</code></pre>
+<p>After dataset splitting, the original annotation files will be renamed to <code>xxx.bak</code> in the original path.</p>
+<p>The above parameters also support setting through appending command line arguments:</p>
+<pre><code class="language-bash">python main.py -c paddlex/configs/ts_anomaly_detection/AutoEncoder_ad.yaml \
     -o Global.mode=check_dataset \
     -o Global.dataset_dir=./dataset/ts_anomaly_examples \
     -o CheckDataset.split.enable=True \
     -o CheckDataset.split.train_percent=90 \
     -o CheckDataset.split.val_percent=10
-```
-</details>
+</code></pre></details>
 
 ### 4.2 Model Training
 Model training can be completed with just one command. Here, we use the Time Series Forecasting model (AutoEncoder_ad) as an example:
@@ -274,19 +251,21 @@ You need to follow these steps:
 
 Other related parameters can be set by modifying the `Global` and `Train` fields in the `.yaml` configuration file, or adjusted by appending parameters in the command line. For example, to train using the first two GPUs: `-o Global.device=gpu:0,1`; to set the number of training epochs to 10: `-o Train.epochs_iters=10`. For more modifiable parameters and their detailed explanations, refer to the [PaddleX TS Configuration Parameters Documentation](../../instructions/config_parameters_time_series.en.md).
 
-<details>
-  <summary>👉 <b>More Details (Click to Expand)</b></summary>
+<details><summary>👉 <b>More Details (Click to Expand)</b></summary>
 
-* During model training, PaddleX automatically saves model weight files, with the default path being `output`. To specify a different save path, use the `-o Global.output` field in the configuration file.
-* PaddleX abstracts the concepts of dynamic graph weights and static graph weights from you. During model training, both dynamic and static graph weights are produced, and static graph weights are used by default for model inference.
-* After model training, all outputs are saved in the specified output directory (default is `./output/`), typically including:
-
-
-* `train_result.json`: Training result record file, including whether the training task completed successfully, produced weight metrics, and related file paths.
-* `train.log`: Training log file, recording model metric changes, loss changes, etc.
-* `config.yaml`: Training configuration file, recording the hyperparameters used for this training session.
-* `best_accuracy.pdparams.tar`, `scaler.pkl`, `.checkpoints`, `.inference`: Model weight-related files, including Model weight-related files, including network parameters, optimizers, and network architecture.
-</details>
+<ul>
+<li>During model training, PaddleX automatically saves model weight files, with the default path being <code>output</code>. To specify a different save path, use the <code>-o Global.output</code> field in the configuration file.</li>
+<li>PaddleX abstracts the concepts of dynamic graph weights and static graph weights from you. During model training, both dynamic and static graph weights are produced, and static graph weights are used by default for model inference.</li>
+<li>
+<p>After model training, all outputs are saved in the specified output directory (default is <code>./output/</code>), typically including:</p>
+</li>
+<li>
+<p><code>train_result.json</code>: Training result record file, including whether the training task completed successfully, produced weight metrics, and related file paths.</p>
+</li>
+<li><code>train.log</code>: Training log file, recording model metric changes, loss changes, etc.</li>
+<li><code>config.yaml</code>: Training configuration file, recording the hyperparameters used for this training session.</li>
+<li><code>best_accuracy.pdparams.tar</code>, <code>scaler.pkl</code>, <code>.checkpoints</code>, <code>.inference</code>: Model weight-related files, including Model weight-related files, including network parameters, optimizers, and network architecture.</li>
+</ul></details>
 
 
 ### 4.3 Model Evaluation
@@ -304,16 +283,11 @@ Similar to model training, the following steps are required:
 * Specify the path to the validation dataset: `-o Global.dataset_dir`
 Other related parameters can be set by modifying the `Global` and `Evaluate` fields in the `.yaml` configuration file. For details, refer to [PaddleX Time Series Task Model Configuration File Parameter Description](../../instructions/config_parameters_time_series.en.md).
 
-<details>
-  <summary>👉 <b>More Details (Click to Expand)</b></summary>
+<details><summary>👉 <b>More Details (Click to Expand)</b></summary>
 
-When evaluating the model, you need to specify the model weights file path. Each configuration file has a default weight save path built-in. If you need to change it, simply set it by appending a command line parameter, such as `-o Evaluate.weight_path=./output/best_model/model.pdparams`.
-
-After completing the model evaluation, the following outputs are typically generated:
-
-Upon completion of model evaluation, an `evaluate_result.json` file will be produced, which records the evaluation results, specifically indicating whether the evaluation task was completed successfully and the model's evaluation metrics, including `f1`, `recall`, and `precision`.
-
-</details>
+<p>When evaluating the model, you need to specify the model weights file path. Each configuration file has a default weight save path built-in. If you need to change it, simply set it by appending a command line parameter, such as <code>-o Evaluate.weight_path=./output/best_model/model.pdparams</code>.</p>
+<p>After completing the model evaluation, the following outputs are typically generated:</p>
+<p>Upon completion of model evaluation, an <code>evaluate_result.json</code> file will be produced, which records the evaluation results, specifically indicating whether the evaluation task was completed successfully and the model's evaluation metrics, including <code>f1</code>, <code>recall</code>, and <code>precision</code>.</p></details>
 
 ### 4.4 Model Inference and Integration
 After completing model training and evaluation, you can use the trained model weights for inference predictions or Python integration.

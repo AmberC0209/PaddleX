@@ -74,47 +74,42 @@ python main.py -c paddlex/configs/anomaly_detection/STFPM.yaml \
 
 After executing the above command, PaddleX will validate the dataset and collect its basic information. Upon successful execution, the log will print the message `Check dataset passed !`. The validation result file will be saved in `./output/check_dataset_result.json`, and related outputs will be saved in the `./output/check_dataset` directory of the current directory. The output directory includes visualized example images and histograms of sample distributions.
 
-<details>
-  <summary>👉 <b>Validation Result Details (Click to Expand)</b></summary>
+<details><summary>👉 <b>Validation Result Details (Click to Expand)</b></summary>
 
-The specific content of the validation result file is:
-
-```bash
-{
-  "done_flag": true,
-  "check_pass": true,
-  "attributes": {
-    "train_sample_paths": [
-      "check_dataset/demo_img/000.png",
-      "check_dataset/demo_img/001.png",
-      "check_dataset/demo_img/002.png"
+<p>The specific content of the validation result file is:</p>
+<pre><code class="language-bash">{
+  &quot;done_flag&quot;: true,
+  &quot;check_pass&quot;: true,
+  &quot;attributes&quot;: {
+    &quot;train_sample_paths&quot;: [
+      &quot;check_dataset/demo_img/000.png&quot;,
+      &quot;check_dataset/demo_img/001.png&quot;,
+      &quot;check_dataset/demo_img/002.png&quot;
     ],
-    "train_samples": 264,
-    "val_sample_paths": [
-      "check_dataset/demo_img/000.png",
-      "check_dataset/demo_img/001.png",
-      "check_dataset/demo_img/002.png"
+    &quot;train_samples&quot;: 264,
+    &quot;val_sample_paths&quot;: [
+      &quot;check_dataset/demo_img/000.png&quot;,
+      &quot;check_dataset/demo_img/001.png&quot;,
+      &quot;check_dataset/demo_img/002.png&quot;
     ],
-    "val_samples": 57,
-    "num_classes": 231
+    &quot;val_samples&quot;: 57,
+    &quot;num_classes&quot;: 231
   },
-  "analysis": {
-    "histogram": "check_dataset/histogram.png"
+  &quot;analysis&quot;: {
+    &quot;histogram&quot;: &quot;check_dataset/histogram.png&quot;
   },
-  "dataset_path": "./dataset/example_data/mvtec_examples",
-  "show_type": "image",
-  "dataset_type": "SegDataset"
+  &quot;dataset_path&quot;: &quot;./dataset/example_data/mvtec_examples&quot;,
+  &quot;show_type&quot;: &quot;image&quot;,
+  &quot;dataset_type&quot;: &quot;SegDataset&quot;
 }
-```
-
-The verification results mentioned above indicate that `check_pass` being `True` means the dataset format meets the requirements. Details of other indicators are as follows:
-
-* `attributes.train_samples`: The number of training samples in this dataset is 264;
-* `attributes.val_samples`: The number of validation samples in this dataset is 57;
-* `attributes.train_sample_paths`: The list of relative paths to the visualization images of training samples in this dataset;
-* `attributes.val_sample_paths`: The list of relative paths to the visualization images of validation samples in this dataset;
-
-</details>
+</code></pre>
+<p>The verification results mentioned above indicate that <code>check_pass</code> being <code>True</code> means the dataset format meets the requirements. Details of other indicators are as follows:</p>
+<ul>
+<li><code>attributes.train_samples</code>: The number of training samples in this dataset is 264;</li>
+<li><code>attributes.val_samples</code>: The number of validation samples in this dataset is 57;</li>
+<li><code>attributes.train_sample_paths</code>: The list of relative paths to the visualization images of training samples in this dataset;</li>
+<li><code>attributes.val_sample_paths</code>: The list of relative paths to the visualization images of validation samples in this dataset;</li>
+</ul></details>
 
 
 ### 4.2 Model Training
@@ -134,18 +129,21 @@ The steps required are:
 
 Other related parameters can be set by modifying the `Global` and `Train` fields in the `.yaml` configuration file, or adjusted by appending parameters in the command line. For example, to specify training on the first two GPUs: `-o Global.device=gpu:0,1`; to set the number of training epochs to 10: `-o Train.epochs_iters=10`. For more modifiable parameters and their detailed explanations, refer to the [PaddleX Common Configuration Parameters for Model Tasks](../../instructions/config_parameters_common.en.md).
 
-<details>
-  <summary>👉 <b>More Details (Click to Expand)</b></summary>
+<details><summary>👉 <b>More Details (Click to Expand)</b></summary>
 
-* During model training, PaddleX automatically saves model weight files, defaulting to `output`. To specify a save path, use the `-o Global.output` field in the configuration file.
-* PaddleX shields you from the concepts of dynamic graph weights and static graph weights. During model training, both dynamic and static graph weights are produced, and static graph weights are selected by default for model inference.
-* After completing the model training, all outputs are saved in the specified output directory (default is `./output/`), typically including:
-
-* `train_result.json`: Training result record file, recording whether the training task was completed normally, as well as the output weight metrics, related file paths, etc.;
-* `train.log`: Training log file, recording changes in model metrics and loss during training;
-* `config.yaml`: Training configuration file, recording the hyperparameter configuration for this training session;
-* `.pdparams`, `.pdema`, `.pdopt.pdstate`, `.pdiparams`, `.pdmodel`: Model weight-related files, including network parameters, optimizer, EMA, static graph network parameters, static graph network structure, etc.;
-</details>
+<ul>
+<li>During model training, PaddleX automatically saves model weight files, defaulting to <code>output</code>. To specify a save path, use the <code>-o Global.output</code> field in the configuration file.</li>
+<li>PaddleX shields you from the concepts of dynamic graph weights and static graph weights. During model training, both dynamic and static graph weights are produced, and static graph weights are selected by default for model inference.</li>
+<li>
+<p>After completing the model training, all outputs are saved in the specified output directory (default is <code>./output/</code>), typically including:</p>
+</li>
+<li>
+<p><code>train_result.json</code>: Training result record file, recording whether the training task was completed normally, as well as the output weight metrics, related file paths, etc.;</p>
+</li>
+<li><code>train.log</code>: Training log file, recording changes in model metrics and loss during training;</li>
+<li><code>config.yaml</code>: Training configuration file, recording the hyperparameter configuration for this training session;</li>
+<li><code>.pdparams</code>, <code>.pdema</code>, <code>.pdopt.pdstate</code>, <code>.pdiparams</code>, <code>.pdmodel</code>: Model weight-related files, including network parameters, optimizer, EMA, static graph network parameters, static graph network structure, etc.;</li>
+</ul></details>
 
 ### <b>4.3 Model Evaluation</b>
 After completing model training, you can evaluate the specified model weight file on the validation set to verify the model's accuracy. Using PaddleX for model evaluation, you can complete the evaluation with a single command:
@@ -162,15 +160,10 @@ Similar to model training, the process involves the following steps:
 * Specify the path to the validation dataset: `-o Global.dataset_dir`
 Other related parameters can be configured by modifying the fields under `Global` and `Evaluate` in the `.yaml` configuration file. For detailed information, please refer to [PaddleX Common Configuration Parameters for Models](../../instructions/config_parameters_common.en.md)。
 
-<details>
-  <summary>👉 <b>More Details (Click to Expand)</b></summary>
+<details><summary>👉 <b>More Details (Click to Expand)</b></summary>
 
-
-When evaluating the model, you need to specify the model weights file path. Each configuration file has a default weight save path built-in. If you need to change it, simply set it by appending a command line parameter, such as `-o Evaluate.weight_path=./output/best_model/best_model/model.pdparams`.
-
-After completing the model evaluation, an `evaluate_result.json` file will be generated, which records the evaluation results, specifically whether the evaluation task was completed successfully, and the model's evaluation metrics, including AP.
-
-</details>
+<p>When evaluating the model, you need to specify the model weights file path. Each configuration file has a default weight save path built-in. If you need to change it, simply set it by appending a command line parameter, such as <code>-o Evaluate.weight_path=./output/best_model/best_model/model.pdparams</code>.</p>
+<p>After completing the model evaluation, an <code>evaluate_result.json</code> file will be generated, which records the evaluation results, specifically whether the evaluation task was completed successfully, and the model's evaluation metrics, including AP.</p></details>
 
 ### <b>4.4 Model Inference</b>
 After completing model training and evaluation, you can use the trained model weights for inference prediction. In PaddleX, model inference prediction can be achieved through two methods: command line and wheel package.
