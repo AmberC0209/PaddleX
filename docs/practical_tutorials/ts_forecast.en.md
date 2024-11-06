@@ -26,14 +26,54 @@ Note: Due to the tight correlation between time series data and scenarios, the o
 ## 3. Choose a Model
 PaddleX provides five end-to-end time series forecasting models. For details, refer to the [Model List](../support_list/models_list.en.md). The benchmarks of these models are as follows:
 
-| Model Name | MSE | MAE | Model Size (M) | Description |
-|-|-|-|-|-|
-| DLinear | 0.382 | 0.394 | 76k | A simple, efficient, and easy-to-use time series forecasting model |
-| Nonstationary | 0.600 | 0.515 | 60.3M | Based on transformer architecture, optimized for long-term forecasting of non-stationary time series |
-| PatchTST | 0.385 | 0.397 | 2.2M | A high-accuracy long-term forecasting model that balances local patterns and global dependencies |
-| TiDE | 0.405 | 0.412 | 34.9M | A high-accuracy model suitable for handling multivariate, long-term time series forecasting problems |
-| TimesNet | 0.417 | 0.431 | 5.2M | Through multi-period analysis, TimesNet is an adaptable and high-accuracy time series analysis model |
-
+<table>
+<thead>
+<tr>
+<th>Model Name</th>
+<th>MSE</th>
+<th>MAE</th>
+<th>Model Size (M)</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DLinear</td>
+<td>0.382</td>
+<td>0.394</td>
+<td>76k</td>
+<td>A simple, efficient, and easy-to-use time series forecasting model</td>
+</tr>
+<tr>
+<td>Nonstationary</td>
+<td>0.600</td>
+<td>0.515</td>
+<td>60.3M</td>
+<td>Based on transformer architecture, optimized for long-term forecasting of non-stationary time series</td>
+</tr>
+<tr>
+<td>PatchTST</td>
+<td>0.385</td>
+<td>0.397</td>
+<td>2.2M</td>
+<td>A high-accuracy long-term forecasting model that balances local patterns and global dependencies</td>
+</tr>
+<tr>
+<td>TiDE</td>
+<td>0.405</td>
+<td>0.412</td>
+<td>34.9M</td>
+<td>A high-accuracy model suitable for handling multivariate, long-term time series forecasting problems</td>
+</tr>
+<tr>
+<td>TimesNet</td>
+<td>0.417</td>
+<td>0.431</td>
+<td>5.2M</td>
+<td>Through multi-period analysis, TimesNet is an adaptable and high-accuracy time series analysis model</td>
+</tr>
+</tbody>
+</table>
 **Note: The above accuracy metrics are measured on the ETTH1 test dataset with an input sequence length of 96 and a prediction sequence length of 96 for all models except TiDE, which is 720.**
 
 Based on your actual usage scenario, select an appropriate model for training. After training, evaluate the model weights within the pipeline and use them in practical scenarios.
@@ -296,26 +336,128 @@ After increasing the training epochs, Experiment 4 achieves the highest accuracy
 
 **Learning Rate Exploration Results**:
 
-| Experiment ID | Epochs | Learning Rate | Batch Size | Input Length | Prediction Length | Training Environment | Validation MSE |
-|---------------|--------|---------------|------------|--------------|-------------------|--------------------|----------------|
-| Experiment 1  | 5      | 0.0001        | 16         | 96           | 96                | 1 GPU              | 0.314          |
-| Experiment 2  | 5      | 0.001         | 16         | 96           | 96                | 1 GPU              | 0.302          |
-| Experiment 3  | 5      | 0.01          | 16         | 96           | 96                | 1 GPU              | 0.320          |
-
+<table>
+<thead>
+<tr>
+<th>Experiment ID</th>
+<th>Epochs</th>
+<th>Learning Rate</th>
+<th>Batch Size</th>
+<th>Input Length</th>
+<th>Prediction Length</th>
+<th>Training Environment</th>
+<th>Validation MSE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Experiment 1</td>
+<td>5</td>
+<td>0.0001</td>
+<td>16</td>
+<td>96</td>
+<td>96</td>
+<td>1 GPU</td>
+<td>0.314</td>
+</tr>
+<tr>
+<td>Experiment 2</td>
+<td>5</td>
+<td>0.001</td>
+<td>16</td>
+<td>96</td>
+<td>96</td>
+<td>1 GPU</td>
+<td>0.302</td>
+</tr>
+<tr>
+<td>Experiment 3</td>
+<td>5</td>
+<td>0.01</td>
+<td>16</td>
+<td>96</td>
+<td>96</td>
+<td>1 GPU</td>
+<td>0.320</td>
+</tr>
+</tbody>
+</table>
 **Increasing Training Epochs Results**:
 
-| Experiment ID | Epochs | Learning Rate | Batch Size | Input Length | Prediction Length | Training Environment | Validation MSE |
-|---------------|--------|---------------|------------|--------------|-------------------|--------------------|----------------|
-| Experiment 2  | 5      | 0.001         | 16         | 96           | 96                | 1 GPU              | 0.302          |
-| Experiment 4  | 30     | 0.001         | 16         | 96           | 96                | 1 GPU              | 0.301          |
-
+<table>
+<thead>
+<tr>
+<th>Experiment ID</th>
+<th>Epochs</th>
+<th>Learning Rate</th>
+<th>Batch Size</th>
+<th>Input Length</th>
+<th>Prediction Length</th>
+<th>Training Environment</th>
+<th>Validation MSE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Experiment 2</td>
+<td>5</td>
+<td>0.001</td>
+<td>16</td>
+<td>96</td>
+<td>96</td>
+<td>1 GPU</td>
+<td>0.302</td>
+</tr>
+<tr>
+<td>Experiment 4</td>
+<td>30</td>
+<td>0.001</td>
+<td>16</td>
+<td>96</td>
+<td>96</td>
+<td>1 GPU</td>
+<td>0.301</td>
+</tr>
+</tbody>
+</table>
 **Increasing Input Length Results**:
 
-| Experiment ID | Epochs | Learning Rate | Batch Size | Input Length | Prediction Length | Training Environment | Validation MSE |
-|---------------|--------|---------------|------------|--------------|-------------------|--------------------|----------------|
-| Experiment 4  | 30     | 0.001         | 16         | 96           | 96                | 1 GPU              | 0.301          |
-| Experiment 5  | 30     | 0.001         | 16         | 144          | 96                | 1 GPU              | 0.188          |
-
+<table>
+<thead>
+<tr>
+<th>Experiment ID</th>
+<th>Epochs</th>
+<th>Learning Rate</th>
+<th>Batch Size</th>
+<th>Input Length</th>
+<th>Prediction Length</th>
+<th>Training Environment</th>
+<th>Validation MSE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Experiment 4</td>
+<td>30</td>
+<td>0.001</td>
+<td>16</td>
+<td>96</td>
+<td>96</td>
+<td>1 GPU</td>
+<td>0.301</td>
+</tr>
+<tr>
+<td>Experiment 5</td>
+<td>30</td>
+<td>0.001</td>
+<td>16</td>
+<td>144</td>
+<td>96</td>
+<td>1 GPU</td>
+<td>0.188</td>
+</tr>
+</tbody>
+</table>
 ## 6. Production Line Testing
 Replace the model in the production line with the fine-tuned model and test using [this power test data](https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/doc_images/practical_tutorial/timeseries_forecast/test.csv) for prediction:
 

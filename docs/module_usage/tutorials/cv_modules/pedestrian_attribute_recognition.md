@@ -8,10 +8,28 @@
 ## 二、支持模型列表
 
 
-|模型|mA（%）|GPU推理耗时（ms）|CPU推理耗时 (ms)|模型存储大小（M)|介绍|
-|-|-|-|-|-|-|
-|PP-LCNet_x1_0_pedestrian_attribute|92.2|3.84845|9.23735|6.7 M  |PP-LCNet_x1_0_pedestrian_attribute 是一种基于PP-LCNet的轻量级行人属性识别模型，包含26个类别|
-
+<table>
+<thead>
+<tr>
+<th>模型</th>
+<th>mA（%）</th>
+<th>GPU推理耗时（ms）</th>
+<th>CPU推理耗时 (ms)</th>
+<th>模型存储大小（M)</th>
+<th>介绍</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PP-LCNet_x1_0_pedestrian_attribute</td>
+<td>92.2</td>
+<td>3.84845</td>
+<td>9.23735</td>
+<td>6.7 M</td>
+<td>PP-LCNet_x1_0_pedestrian_attribute 是一种基于PP-LCNet的轻量级行人属性识别模型，包含26个类别</td>
+</tr>
+</tbody>
+</table>
 **注：以上精度指标为 PaddleX 内部自建数据集 mA。GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为 8，精度类型为 FP32。**
 
 ## 三、快速集成

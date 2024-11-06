@@ -12,15 +12,47 @@ Image multi-label classification is a technique that assigns multiple relevant c
 <details>
    <summary> 👉Model List Details</summary>
 
-|Model Name|mAP (%)|Model Storage Size (M)|
-|-|-|-|
-|CLIP_vit_base_patch16_448_ML|89.15|-|-|325.6|
-|PP-HGNetV2-B0_ML|80.98|39.6|
-|PP-HGNetV2-B4_ML|87.96|88.5|
-|PP-HGNetV2-B6_ML|91.25|286.5|
-|PP-LCNet_x1_0_ML|77.96|29.4|
-|ResNet50_ML|83.50|108.9|
-
+<table>
+<thead>
+<tr>
+<th>Model Name</th>
+<th>mAP (%)</th>
+<th>Model Storage Size (M)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CLIP_vit_base_patch16_448_ML</td>
+<td>89.15</td>
+<td>-</td>
+</tr>
+<tr>
+<td>PP-HGNetV2-B0_ML</td>
+<td>80.98</td>
+<td>39.6</td>
+</tr>
+<tr>
+<td>PP-HGNetV2-B4_ML</td>
+<td>87.96</td>
+<td>88.5</td>
+</tr>
+<tr>
+<td>PP-HGNetV2-B6_ML</td>
+<td>91.25</td>
+<td>286.5</td>
+</tr>
+<tr>
+<td>PP-LCNet_x1_0_ML</td>
+<td>77.96</td>
+<td>29.4</td>
+</tr>
+<tr>
+<td>ResNet50_ML</td>
+<td>83.50</td>
+<td>108.9</td>
+</tr>
+</tbody>
+</table>
 **Note: The above accuracy metrics are mAP for the multi-label classification task on **[COCO2017](https://cocodataset.org/#home)**. The GPU inference time for all models is based on an NVIDIA Tesla T4 machine with FP32 precision. The CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.**
 </details>
 
@@ -96,33 +128,102 @@ In the above Python script, the following steps are executed:
 
 (1) Instantiate the `create_pipeline` to create a pipeline object: Specific parameter descriptions are as follows:
 
-| Parameter | Description | Type | Default Value |
-|-----------|-------------|------|---------------|
-|`pipeline` | The name of the pipeline or the path of the pipeline configuration file. If it is the name of the pipeline, it must be a pipeline supported by PaddleX. | `str` | None |
-|`device` | The device for pipeline model inference. Supports: "gpu", "cpu". | `str` | "gpu" |
-|`use_hpip` | Whether to enable high-performance inference, which is only available when the pipeline supports it. | `bool` | `False` |
-
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pipeline</code></td>
+<td>The name of the pipeline or the path of the pipeline configuration file. If it is the name of the pipeline, it must be a pipeline supported by PaddleX.</td>
+<td><code>str</code></td>
+<td>None</td>
+</tr>
+<tr>
+<td><code>device</code></td>
+<td>The device for pipeline model inference. Supports: "gpu", "cpu".</td>
+<td><code>str</code></td>
+<td>"gpu"</td>
+</tr>
+<tr>
+<td><code>use_hpip</code></td>
+<td>Whether to enable high-performance inference, which is only available when the pipeline supports it.</td>
+<td><code>bool</code></td>
+<td><code>False</code></td>
+</tr>
+</tbody>
+</table>
 (2) Call the `predict` method of the multi-label classification pipeline object for inference prediction: The `predict` method parameter is `x`, which is used to input data to be predicted, supporting multiple input methods, as shown in the following examples:
 
-| Parameter Type | Description |
-|----------------|-------------|
-| Python Var | Supports directly passing in Python variables, such as numpy.ndarray representing image data. |
-| str | Supports passing in the file path of the data file to be predicted, such as the local path of an image file: `/root/data/img.jpg`. |
-| str | Supports passing in the URL of the data file to be predicted, such as the network URL of an image file: [Example](https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/general_image_classification_001.jpg). |
-| str | Supports passing in a local directory, which should contain the data files to be predicted, such as the local path: `/root/data/`. |
-| dict | Supports passing in a dictionary type, where the key of the dictionary needs to correspond to the specific task, such as "img" for image classification tasks, and the value of the dictionary supports the above data types, for example: `{"img": "/root/data1"}`. |
-| list | Supports passing in a list, where the list elements need to be the above data types, such as `[numpy.ndarray, numpy.ndarray], ["/root/data/img1.jpg", "/root/data/img2.jpg"], ["/root/data1", "/root/data2"], [{"img": "/root/data1"}, {"img": "/root/data2/img.jpg"}]`. |
-
+<table>
+<thead>
+<tr>
+<th>Parameter Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Python Var</td>
+<td>Supports directly passing in Python variables, such as numpy.ndarray representing image data.</td>
+</tr>
+<tr>
+<td>str</td>
+<td>Supports passing in the file path of the data file to be predicted, such as the local path of an image file: <code>/root/data/img.jpg</code>.</td>
+</tr>
+<tr>
+<td>str</td>
+<td>Supports passing in the URL of the data file to be predicted, such as the network URL of an image file: <a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/general_image_classification_001.jpg">Example</a>.</td>
+</tr>
+<tr>
+<td>str</td>
+<td>Supports passing in a local directory, which should contain the data files to be predicted, such as the local path: <code>/root/data/</code>.</td>
+</tr>
+<tr>
+<td>dict</td>
+<td>Supports passing in a dictionary type, where the key of the dictionary needs to correspond to the specific task, such as "img" for image classification tasks, and the value of the dictionary supports the above data types, for example: <code>{"img": "/root/data1"}</code>.</td>
+</tr>
+<tr>
+<td>list</td>
+<td>Supports passing in a list, where the list elements need to be the above data types, such as <code>[numpy.ndarray, numpy.ndarray], ["/root/data/img1.jpg", "/root/data/img2.jpg"], ["/root/data1", "/root/data2"], [{"img": "/root/data1"}, {"img": "/root/data2/img.jpg"}]</code>.</td>
+</tr>
+</tbody>
+</table>
 （3）Obtain prediction results by calling the `predict` method: The `predict` method is a `generator`, so prediction results need to be obtained through iteration. The `predict` method predicts data in batches, so the prediction results are in the form of a list.
 
 （4）Process the prediction results: The prediction result for each sample is of `dict` type and supports printing or saving to files, with the supported file types depending on the specific pipeline. For example:
 
-| Method         | Description                     | Method Parameters |
-|--------------|-----------------------------|--------------------------------------------------------------------------------------------------------|
-| print        | Prints results to the terminal  | `- format_json`: bool, whether to format the output content with json indentation, default is True;<br>`- indent`: int, json formatting setting, only valid when format_json is True, default is 4;<br>`- ensure_ascii`: bool, json formatting setting, only valid when format_json is True, default is False; |
-| save_to_json | Saves results as a json file   | `- save_path`: str, the path to save the file, when it's a directory, the saved file name is consistent with the input file type;<br>`- indent`: int, json formatting setting, default is 4;<br>`- ensure_ascii`: bool, json formatting setting, default is False; |
-| save_to_img  | Saves results as an image file | `- save_path`: str, the path to save the file, when it's a directory, the saved file name is consistent with the input file type; |
-
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+<th>Method Parameters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>print</td>
+<td>Prints results to the terminal</td>
+<td><code>- format_json</code>: bool, whether to format the output content with json indentation, default is True;<br><code>- indent</code>: int, json formatting setting, only valid when format_json is True, default is 4;<br><code>- ensure_ascii</code>: bool, json formatting setting, only valid when format_json is True, default is False;</td>
+</tr>
+<tr>
+<td>save_to_json</td>
+<td>Saves results as a json file</td>
+<td><code>- save_path</code>: str, the path to save the file, when it's a directory, the saved file name is consistent with the input file type;<br><code>- indent</code>: int, json formatting setting, default is 4;<br><code>- ensure_ascii</code>: bool, json formatting setting, default is False;</td>
+</tr>
+<tr>
+<td>save_to_img</td>
+<td>Saves results as an image file</td>
+<td><code>- save_path</code>: str, the path to save the file, when it's a directory, the saved file name is consistent with the input file type;</td>
+</tr>
+</tbody>
+</table>
 If you have a configuration file, you can customize the configurations of the image anomaly detection pipeline by simply modifying the `pipeline` parameter in the `create_pipeline` method to the path of the pipeline configuration file.
 
 For example, if your configuration file is saved at `./my_path/multi_label_image_classification.yaml`, you only need to execute:

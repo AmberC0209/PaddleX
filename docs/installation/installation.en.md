@@ -28,22 +28,82 @@ The plugins supported by PaddleX are listed below. Please determine the name(s) 
 <details>
   <summary>👉 <b>Plugin and Pipeline Correspondence (Click to Expand)</b></summary>
 
-| Pipeline | Module | Corresponding Plugin |
-|-|-|-|
-| General Image Classification | Image Classification | `PaddleClas` |
-| General Object Detection | Object Detection | `PaddleDetection` |
-| General Semantic Segmentation | Semantic Segmentation | `PaddleSeg` |
-| General Instance Segmentation | Instance Segmentation | `PaddleDetection` |
-| General OCR | Text Detection<br>Text Recognition | `PaddleOCR` |
-| Table Recognition | Layout Region Detection<br>Table Structure Recognition<br>Text Detection<br>Text Recognition | `PaddleOCR`<br>`PaddleDetection` |
-| PP-ChatOCRv3-doc | Table Structure Recognition<br>Layout Region Detection<br>Text Detection<br>Text Recognition<br>Seal Text Detection<br>Text Image Correction<br>Document Image Orientation Classification | `PaddleOCR`<br>`PaddleDetection`<br>`PaddleClas` |
-| Time Series Forecasting | Time Series Forecasting Module | `PaddleTS` |
-| Time Series Anomaly Detection | Time Series Anomaly Detection Module | `PaddleTS` |
-| Time Series Classification | Time Series Classification Module | `PaddleTS` |
-| Image Multi-Label Classification | Image Multi-label Classification | `PaddleClas` |
-| Small Object Detection | Small Object Detection | `PaddleDetection` |
-| Image Anomaly Detection | Unsupervised Anomaly Detection | `PaddleSeg` |
-
+<table>
+<thead>
+<tr>
+<th>Pipeline</th>
+<th>Module</th>
+<th>Corresponding Plugin</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>General Image Classification</td>
+<td>Image Classification</td>
+<td><code>PaddleClas</code></td>
+</tr>
+<tr>
+<td>General Object Detection</td>
+<td>Object Detection</td>
+<td><code>PaddleDetection</code></td>
+</tr>
+<tr>
+<td>General Semantic Segmentation</td>
+<td>Semantic Segmentation</td>
+<td><code>PaddleSeg</code></td>
+</tr>
+<tr>
+<td>General Instance Segmentation</td>
+<td>Instance Segmentation</td>
+<td><code>PaddleDetection</code></td>
+</tr>
+<tr>
+<td>General OCR</td>
+<td>Text Detection<br>Text Recognition</td>
+<td><code>PaddleOCR</code></td>
+</tr>
+<tr>
+<td>Table Recognition</td>
+<td>Layout Region Detection<br>Table Structure Recognition<br>Text Detection<br>Text Recognition</td>
+<td><code>PaddleOCR</code><br><code>PaddleDetection</code></td>
+</tr>
+<tr>
+<td>PP-ChatOCRv3-doc</td>
+<td>Table Structure Recognition<br>Layout Region Detection<br>Text Detection<br>Text Recognition<br>Seal Text Detection<br>Text Image Correction<br>Document Image Orientation Classification</td>
+<td><code>PaddleOCR</code><br><code>PaddleDetection</code><br><code>PaddleClas</code></td>
+</tr>
+<tr>
+<td>Time Series Forecasting</td>
+<td>Time Series Forecasting Module</td>
+<td><code>PaddleTS</code></td>
+</tr>
+<tr>
+<td>Time Series Anomaly Detection</td>
+<td>Time Series Anomaly Detection Module</td>
+<td><code>PaddleTS</code></td>
+</tr>
+<tr>
+<td>Time Series Classification</td>
+<td>Time Series Classification Module</td>
+<td><code>PaddleTS</code></td>
+</tr>
+<tr>
+<td>Image Multi-Label Classification</td>
+<td>Image Multi-label Classification</td>
+<td><code>PaddleClas</code></td>
+</tr>
+<tr>
+<td>Small Object Detection</td>
+<td>Small Object Detection</td>
+<td><code>PaddleDetection</code></td>
+</tr>
+<tr>
+<td>Image Anomaly Detection</td>
+<td>Unsupervised Anomaly Detection</td>
+<td><code>PaddleSeg</code></td>
+</tr>
+</tbody>
+</table>
 </details>
 
 If the plugin you need to install is `PaddleXXX`, after installing PaddlePaddle (refer to the [PaddlePaddle Local Installation Tutorial](paddlepaddle_install.en.md)), you can quickly install the corresponding PaddleX plugin by executing the following commands:

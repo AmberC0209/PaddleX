@@ -34,11 +34,33 @@ PaddleX 提供了两种体验的方式，一种是可以直接通过 PaddleX whe
 
 PaddleX 提供了 18 个端到端的语义分割模型，具体可参考 [模型列表](../support_list/models_list.md)，其中部分模型的benchmark如下：
 
-| 模型列表          | mIoU (%) | GPU 推理耗时(ms) | CPU 推理耗时(ms) | 模型存储大小 (M)|
-| ---------------- | -------  | --------------- | -------------- | ------------- |
-| OCRNet_HRNet-W48 | 82.15    | 87.97           | 2180.76        | 270           |
-| PP-LiteSeg-T     | 77.04    | 5.98            | 140.02         | 31            |
-
+<table>
+<thead>
+<tr>
+<th>模型列表</th>
+<th>mIoU (%)</th>
+<th>GPU 推理耗时(ms)</th>
+<th>CPU 推理耗时(ms)</th>
+<th>模型存储大小 (M)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OCRNet_HRNet-W48</td>
+<td>82.15</td>
+<td>87.97</td>
+<td>2180.76</td>
+<td>270</td>
+</tr>
+<tr>
+<td>PP-LiteSeg-T</td>
+<td>77.04</td>
+<td>5.98</td>
+<td>140.02</td>
+<td>31</td>
+</tr>
+</tbody>
+</table>
 > **注：以上精度指标测量自[Cityscapes](https://www.cityscapes-dataset.com/)数据集。GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为8，精度类型为 FP32。**
 
 简单来说，表格从上到下，模型推理速度更快，从下到上，模型精度更高。本教程以 PP-LiteSeg-T 模型为例，完成一次模型全流程开发。你可以依据自己的实际使用场景，判断并选择一个合适的模型做训练，训练完成后可在产线内评估合适的模型权重，并最终用于实际使用场景中。
@@ -192,23 +214,95 @@ python main.py -c paddlex/configs/semantic_segmentation/PP-LiteSeg-T.yaml \
 学习率探寻实验结果：
 <center>
 
-| 实验  | 迭代次数 | 学习率 | batch\_size | 训练环境 | mIoU |
-|-------|------|--------|----------|-------|----------|
-| 实验一 | 5000 | 0\.006 | 2        | 4卡   | 0\.623   |
-| 实验二 | 5000 | 0\.008 | 2        | 4卡   |**0\.629**|
-| 实验三 | 5000 | 0\.01  | 2        | 4卡   | 0\.619   |
-
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>迭代次数</th>
+<th>学习率</th>
+<th>batch_size</th>
+<th>训练环境</th>
+<th>mIoU</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>实验一</td>
+<td>5000</td>
+<td>0.006</td>
+<td>2</td>
+<td>4卡</td>
+<td>0.623</td>
+</tr>
+<tr>
+<td>实验二</td>
+<td>5000</td>
+<td>0.008</td>
+<td>2</td>
+<td>4卡</td>
+<td><strong>0.629</strong></td>
+</tr>
+<tr>
+<td>实验三</td>
+<td>5000</td>
+<td>0.01</td>
+<td>2</td>
+<td>4卡</td>
+<td>0.619</td>
+</tr>
+</tbody>
+</table>
 </center>
 
 改变 epoch 实验结果：
 <center>
 
-| 实验                | 迭代次数 | 学习率 | batch\_size| 训练环境 | mIoU |
-|--------------------|---------|-------|------------|------|----------|
-| 实验二              | 5000    | 0\.008 | 2         | 4卡   | 0\.629   |
-| 实验二减少训练迭代次数 | 10000   | 0\.008 | 2         | 4卡   | 0\.773   |
-| 实验二增大训练迭代次数 | 40000   | 0\.008 | 2         | 4卡   | 0\.855|
-| 实验二增大训练迭代次数 | 80000   | 0\.008 | 2         | 4卡   | **0\.863**   |
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>迭代次数</th>
+<th>学习率</th>
+<th>batch_size</th>
+<th>训练环境</th>
+<th>mIoU</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>实验二</td>
+<td>5000</td>
+<td>0.008</td>
+<td>2</td>
+<td>4卡</td>
+<td>0.629</td>
+</tr>
+<tr>
+<td>实验二减少训练迭代次数</td>
+<td>10000</td>
+<td>0.008</td>
+<td>2</td>
+<td>4卡</td>
+<td>0.773</td>
+</tr>
+<tr>
+<td>实验二增大训练迭代次数</td>
+<td>40000</td>
+<td>0.008</td>
+<td>2</td>
+<td>4卡</td>
+<td>0.855</td>
+</tr>
+<tr>
+<td>实验二增大训练迭代次数</td>
+<td>80000</td>
+<td>0.008</td>
+<td>2</td>
+<td>4卡</td>
+<td><strong>0.863</strong></td>
+</tr>
+</tbody>
+</table>
 </center>
 
 **注：本教程为4卡教程，如果您只有1张GPU，可通过调整训练卡数完成本次实验，但最终指标未必和上述指标对齐，属正常情况。**

@@ -12,10 +12,22 @@ Time series classification is a technique that categorizes time-series data into
 <details>
    <summary> 👉Model List Details</summary>
 
-|Model Name|Acc(%)|Model Size (M)|
-|-|-|-|
-|TimesNet_cls|87.5|792K|
-
+<table>
+<thead>
+<tr>
+<th>Model Name</th>
+<th>Acc(%)</th>
+<th>Model Size (M)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TimesNet_cls</td>
+<td>87.5</td>
+<td>792K</td>
+</tr>
+</tbody>
+</table>
 **Note: The above accuracy metrics are measured on the [UWaveGestureLibrary](https://paddlets.bj.bcebos.com/classification/UWaveGestureLibrary_TEST.csv) dataset. All model GPU inference times are based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speeds are based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.**
 
 </details>
@@ -104,33 +116,102 @@ In the above Python script, the following steps are executed:
 
 (1) Instantiate the `create_pipeline` to create a pipeline object: Specific parameter descriptions are as follows:
 
-| Parameter | Description | Type | Default |
-|-----------|-------------|------|---------|
-| `pipeline` | The name of the pipeline or the path to the pipeline configuration file. If it's a pipeline name, it must be supported by PaddleX. | `str` | None |
-| `device` | The device for pipeline model inference. Supports: "gpu", "cpu". | `str` | "gpu" |
-| `use_hpip` | Whether to enable high-performance inference. Available only if the pipeline supports it. | `bool` | `False` |
-
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pipeline</code></td>
+<td>The name of the pipeline or the path to the pipeline configuration file. If it's a pipeline name, it must be supported by PaddleX.</td>
+<td><code>str</code></td>
+<td>None</td>
+</tr>
+<tr>
+<td><code>device</code></td>
+<td>The device for pipeline model inference. Supports: "gpu", "cpu".</td>
+<td><code>str</code></td>
+<td>"gpu"</td>
+</tr>
+<tr>
+<td><code>use_hpip</code></td>
+<td>Whether to enable high-performance inference. Available only if the pipeline supports it.</td>
+<td><code>bool</code></td>
+<td><code>False</code></td>
+</tr>
+</tbody>
+</table>
 (2) Call the `predict` method of the pipeline object for inference: The `predict` method takes `x` as a parameter, which is used to input data to be predicted, supporting multiple input methods, as shown in the following examples:
 
-| Parameter Type | Description |
-|----------------|-------------|
-| Python Var | Supports directly passing Python variables, such as numpy.ndarray representing image data. |
-| `str` | Supports passing the path of the file to be predicted, such as the local path of an image file: `/root/data/img.jpg`. |
-| `str` | Supports passing the URL of the file to be predicted, such as the network URL of an image file: [Example](https://paddle-model-ecology.bj.bcebos.com/paddlex/ts/demo_ts/ts_cls.csv). |
-| `str` | Supports passing a local directory, which should contain files to be predicted, such as the local path: `/root/data/`. |
-| `dict` | Supports passing a dictionary type, where the key needs to correspond to the specific task, e.g., "img" for image classification tasks, and the value of the dictionary supports the above data types, e.g., `{"img": "/root/data1"}`. |
-| `list` | Supports passing a list, where the list elements need to be of the above types, such as `[numpy.ndarray, numpy.ndarray]`, `["/root/data/img1.jpg", "/root/data/img2.jpg"]`, `["/root/data1", "/root/data2"]`, `[{"img": "/root/data1"}, {"img": "/root/data2/img.jpg"}]`. |
-
+<table>
+<thead>
+<tr>
+<th>Parameter Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Python Var</td>
+<td>Supports directly passing Python variables, such as numpy.ndarray representing image data.</td>
+</tr>
+<tr>
+<td><code>str</code></td>
+<td>Supports passing the path of the file to be predicted, such as the local path of an image file: <code>/root/data/img.jpg</code>.</td>
+</tr>
+<tr>
+<td><code>str</code></td>
+<td>Supports passing the URL of the file to be predicted, such as the network URL of an image file: <a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/ts/demo_ts/ts_cls.csv">Example</a>.</td>
+</tr>
+<tr>
+<td><code>str</code></td>
+<td>Supports passing a local directory, which should contain files to be predicted, such as the local path: <code>/root/data/</code>.</td>
+</tr>
+<tr>
+<td><code>dict</code></td>
+<td>Supports passing a dictionary type, where the key needs to correspond to the specific task, e.g., "img" for image classification tasks, and the value of the dictionary supports the above data types, e.g., <code>{"img": "/root/data1"}</code>.</td>
+</tr>
+<tr>
+<td><code>list</code></td>
+<td>Supports passing a list, where the list elements need to be of the above types, such as <code>[numpy.ndarray, numpy.ndarray]</code>, <code>["/root/data/img1.jpg", "/root/data/img2.jpg"]</code>, <code>["/root/data1", "/root/data2"]</code>, <code>[{"img": "/root/data1"}, {"img": "/root/data2/img.jpg"}]</code>.</td>
+</tr>
+</tbody>
+</table>
 (3) Obtain the prediction results by calling the `predict` method: The `predict` method is a `generator`, so prediction results need to be obtained by iteration. The `predict` method predicts data in batches, so the prediction results are in the form of a list.
 
 （4）Process the prediction results: The prediction result for each sample is of `dict` type and supports printing or saving to files, with the supported file types depending on the specific pipeline. For example:
 
-| Method         | Description                     | Method Parameters |
-|--------------|-----------------------------|--------------------------------------------------------------------------------------------------------|
-| print        | Prints results to the terminal  | `- format_json`: bool, whether to format the output content with json indentation, default is True;<br>`- indent`: int, json formatting setting, only valid when format_json is True, default is 4;<br>`- ensure_ascii`: bool, json formatting setting, only valid when format_json is True, default is False; |
-| save_to_json | Saves results as a json file   | `- save_path`: str, the path to save the file, when it's a directory, the saved file name is consistent with the input file type;<br>`- indent`: int, json formatting setting, default is 4;<br>`- ensure_ascii`: bool, json formatting setting, default is False; |
-| save_to_img  | Saves results as an image file | `- save_path`: str, the path to save the file, when it's a directory, the saved file name is consistent with the input file type; |
-
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+<th>Method Parameters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>print</td>
+<td>Prints results to the terminal</td>
+<td><code>- format_json</code>: bool, whether to format the output content with json indentation, default is True;<br><code>- indent</code>: int, json formatting setting, only valid when format_json is True, default is 4;<br><code>- ensure_ascii</code>: bool, json formatting setting, only valid when format_json is True, default is False;</td>
+</tr>
+<tr>
+<td>save_to_json</td>
+<td>Saves results as a json file</td>
+<td><code>- save_path</code>: str, the path to save the file, when it's a directory, the saved file name is consistent with the input file type;<br><code>- indent</code>: int, json formatting setting, default is 4;<br><code>- ensure_ascii</code>: bool, json formatting setting, default is False;</td>
+</tr>
+<tr>
+<td>save_to_img</td>
+<td>Saves results as an image file</td>
+<td><code>- save_path</code>: str, the path to save the file, when it's a directory, the saved file name is consistent with the input file type;</td>
+</tr>
+</tbody>
+</table>
 If you have a configuration file, you can customize the configurations of the image anomaly detection pipeline by simply modifying the `pipeline` parameter in the `create_pipeline` method to the path of the pipeline configuration file.
 
 For example, if your configuration file is saved at `./my_path/ts_cls.yaml`, you only need to execute:

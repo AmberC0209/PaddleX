@@ -191,21 +191,77 @@ Pipeline:
 
 > ❗ PaddleX为每个产线都提供了详细的使用说明，您可以根据需要进行选择，所有产线对应的使用说明如下：
 
-| 产线名称           | 详细说明                                                                                                      |
-|--------------------|----------------------------------------------------------------------------------------------------------------|
-| 文档场景信息抽取v3   | [文档场景信息抽取v3产线使用教程](./tutorials/information_extraction_pipelines/document_scene_information_extraction.md) |
-| 通用图像分类       | [通用图像分类产线使用教程](./tutorials/cv_pipelines/image_classification.md) |
-| 通用目标检测       | [通用目标检测产线使用教程](./tutorials/cv_pipelines/object_detection.md) |
-| 通用实例分割       | [通用实例分割产线使用教程](./tutorials/cv_pipelines/instance_segmentation.md) |
-| 通用语义分割       | [通用语义分割产线使用教程](./tutorials/cv_pipelines/semantic_segmentation.md) |
-| 通用图像多标签分类 | [通用图像多标签分类产线使用教程](./tutorials/cv_pipelines/image_multi_label_classification.md) |
-| 小目标检测         |  [小目标检测产线使用教程](./tutorials/cv_pipelines/small_object_detection.md) |
-| 图像异常检测       | [图像异常检测产线使用教程](./tutorials/cv_pipelines/image_anomaly_detection.md) |
-| 通用OCR            | [通用OCR产线使用教程](./tutorials/ocr_pipelines/OCR.md) |
-| 通用表格识别       | [通用表格识别产线使用教程](./tutorials/ocr_pipelines/table_recognition.md) |
-| 通用版面解析       | [通用版面解析产线使用教程](./tutorials/ocr_pipelines/layout_parsing.md) |
-| 公式识别       | [公式识别产线使用教程](./tutorials/ocr_pipelines/formula_recognition.md) |
-| 印章文本识别       | [印章文本识别产线使用教程](./tutorials/ocr_pipelines/seal_recognition.md) |
-| 时序预测       | [通用时序预测产线使用教程](./tutorials/time_series_pipelines/time_series_forecasting.md) |
-| 时序异常检测   | [通用时序异常检测产线使用教程](./tutorials/time_series_pipelines/time_series_anomaly_detection.md) |
-| 时序分类       | [通用时序分类产线使用教程](./tutorials/time_series_pipelines/time_series_classification.md) |
+<table>
+<thead>
+<tr>
+<th>产线名称</th>
+<th>详细说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>文档场景信息抽取v3</td>
+<td><a href="./tutorials/information_extraction_pipelines/document_scene_information_extraction.md">文档场景信息抽取v3产线使用教程</a></td>
+</tr>
+<tr>
+<td>通用图像分类</td>
+<td><a href="./tutorials/cv_pipelines/image_classification.md">通用图像分类产线使用教程</a></td>
+</tr>
+<tr>
+<td>通用目标检测</td>
+<td><a href="./tutorials/cv_pipelines/object_detection.md">通用目标检测产线使用教程</a></td>
+</tr>
+<tr>
+<td>通用实例分割</td>
+<td><a href="./tutorials/cv_pipelines/instance_segmentation.md">通用实例分割产线使用教程</a></td>
+</tr>
+<tr>
+<td>通用语义分割</td>
+<td><a href="./tutorials/cv_pipelines/semantic_segmentation.md">通用语义分割产线使用教程</a></td>
+</tr>
+<tr>
+<td>通用图像多标签分类</td>
+<td><a href="./tutorials/cv_pipelines/image_multi_label_classification.md">通用图像多标签分类产线使用教程</a></td>
+</tr>
+<tr>
+<td>小目标检测</td>
+<td><a href="./tutorials/cv_pipelines/small_object_detection.md">小目标检测产线使用教程</a></td>
+</tr>
+<tr>
+<td>图像异常检测</td>
+<td><a href="./tutorials/cv_pipelines/image_anomaly_detection.md">图像异常检测产线使用教程</a></td>
+</tr>
+<tr>
+<td>通用OCR</td>
+<td><a href="./tutorials/ocr_pipelines/OCR.md">通用OCR产线使用教程</a></td>
+</tr>
+<tr>
+<td>通用表格识别</td>
+<td><a href="./tutorials/ocr_pipelines/table_recognition.md">通用表格识别产线使用教程</a></td>
+</tr>
+<tr>
+<td>通用版面解析</td>
+<td><a href="./tutorials/ocr_pipelines/layout_parsing.md">通用版面解析产线使用教程</a></td>
+</tr>
+<tr>
+<td>公式识别</td>
+<td><a href="./tutorials/ocr_pipelines/formula_recognition.md">公式识别产线使用教程</a></td>
+</tr>
+<tr>
+<td>印章文本识别</td>
+<td><a href="./tutorials/ocr_pipelines/seal_recognition.md">印章文本识别产线使用教程</a></td>
+</tr>
+<tr>
+<td>时序预测</td>
+<td><a href="./tutorials/time_series_pipelines/time_series_forecasting.md">通用时序预测产线使用教程</a></td>
+</tr>
+<tr>
+<td>时序异常检测</td>
+<td><a href="./tutorials/time_series_pipelines/time_series_anomaly_detection.md">通用时序异常检测产线使用教程</a></td>
+</tr>
+<tr>
+<td>时序分类</td>
+<td><a href="./tutorials/time_series_pipelines/time_series_classification.md">通用时序分类产线使用教程</a></td>
+</tr>
+</tbody>
+</table>

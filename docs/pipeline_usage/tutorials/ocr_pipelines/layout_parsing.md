@@ -46,26 +46,110 @@
 
 **版面区域检测模块模型：**
 
-|模型|mAP(0.5)（%）|GPU推理耗时（ms）|CPU推理耗时 (ms)|模型存储大小（M）|介绍|
-|-|-|-|-|-|-|
-|PicoDet_layout_1x|86.8|13.0|91.3|7.4|基于PicoDet-1x在PubLayNet数据集训练的高效率版面区域定位模型，可定位包含文字、标题、表格、图片以及列表这5类区域|
-|PicoDet-S_layout_3cls|87.1|13.5 |45.8 |4.8|基于PicoDet-S轻量模型在中英文论文、杂志和研报等场景上自建数据集训练的高效率版面区域定位模型，包含3个类别：表格，图像和印章|
-|PicoDet-S_layout_17cls|70.3|13.6|46.2|4.8|基于PicoDet-S轻量模型在中英文论文、杂志和研报等场景上自建数据集训练的高效率版面区域定位模型，包含17个版面常见类别，分别是：段落标题、图片、文本、数字、摘要、内容、图表标题、公式、表格、表格标题、参考文献、文档标题、脚注、页眉、算法、页脚、印章|
-|PicoDet-L_layout_3cls|89.3|15.7|159.8|22.6|基于PicoDet-L在中英文论文、杂志和研报等场景上自建数据集训练的高效率版面区域定位模型，包含3个类别：表格，图像和印章|
-|PicoDet-L_layout_17cls|79.9|17.2 |160.2|22.6|基于PicoDet-L在中英文论文、杂志和研报等场景上自建数据集训练的高效率版面区域定位模型，包含17个版面常见类别，分别是：段落标题、图片、文本、数字、摘要、内容、图表标题、公式、表格、表格标题、参考文献、文档标题、脚注、页眉、算法、页脚、印章|
-|RT-DETR-H_layout_3cls|95.9|114.6|3832.6|470.1|基于RT-DETR-H在中英文论文、杂志和研报等场景上自建数据集训练的高精度版面区域定位模型，包含3个类别：表格，图像和印章|
-|RT-DETR-H_layout_17cls|92.6|115.1|3827.2|470.2|基于RT-DETR-H在中英文论文、杂志和研报等场景上自建数据集训练的高精度版面区域定位模型，包含17个版面常见类别，分别是：段落标题、图片、文本、数字、摘要、内容、图表标题、公式、表格、表格标题、参考文献、文档标题、脚注、页眉、算法、页脚、印章|
-
-
+<table>
+<thead>
+<tr>
+<th>模型</th>
+<th>mAP(0.5)（%）</th>
+<th>GPU推理耗时（ms）</th>
+<th>CPU推理耗时 (ms)</th>
+<th>模型存储大小（M）</th>
+<th>介绍</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PicoDet_layout_1x</td>
+<td>86.8</td>
+<td>13.0</td>
+<td>91.3</td>
+<td>7.4</td>
+<td>基于PicoDet-1x在PubLayNet数据集训练的高效率版面区域定位模型，可定位包含文字、标题、表格、图片以及列表这5类区域</td>
+</tr>
+<tr>
+<td>PicoDet-S_layout_3cls</td>
+<td>87.1</td>
+<td>13.5</td>
+<td>45.8</td>
+<td>4.8</td>
+<td>基于PicoDet-S轻量模型在中英文论文、杂志和研报等场景上自建数据集训练的高效率版面区域定位模型，包含3个类别：表格，图像和印章</td>
+</tr>
+<tr>
+<td>PicoDet-S_layout_17cls</td>
+<td>70.3</td>
+<td>13.6</td>
+<td>46.2</td>
+<td>4.8</td>
+<td>基于PicoDet-S轻量模型在中英文论文、杂志和研报等场景上自建数据集训练的高效率版面区域定位模型，包含17个版面常见类别，分别是：段落标题、图片、文本、数字、摘要、内容、图表标题、公式、表格、表格标题、参考文献、文档标题、脚注、页眉、算法、页脚、印章</td>
+</tr>
+<tr>
+<td>PicoDet-L_layout_3cls</td>
+<td>89.3</td>
+<td>15.7</td>
+<td>159.8</td>
+<td>22.6</td>
+<td>基于PicoDet-L在中英文论文、杂志和研报等场景上自建数据集训练的高效率版面区域定位模型，包含3个类别：表格，图像和印章</td>
+</tr>
+<tr>
+<td>PicoDet-L_layout_17cls</td>
+<td>79.9</td>
+<td>17.2</td>
+<td>160.2</td>
+<td>22.6</td>
+<td>基于PicoDet-L在中英文论文、杂志和研报等场景上自建数据集训练的高效率版面区域定位模型，包含17个版面常见类别，分别是：段落标题、图片、文本、数字、摘要、内容、图表标题、公式、表格、表格标题、参考文献、文档标题、脚注、页眉、算法、页脚、印章</td>
+</tr>
+<tr>
+<td>RT-DETR-H_layout_3cls</td>
+<td>95.9</td>
+<td>114.6</td>
+<td>3832.6</td>
+<td>470.1</td>
+<td>基于RT-DETR-H在中英文论文、杂志和研报等场景上自建数据集训练的高精度版面区域定位模型，包含3个类别：表格，图像和印章</td>
+</tr>
+<tr>
+<td>RT-DETR-H_layout_17cls</td>
+<td>92.6</td>
+<td>115.1</td>
+<td>3827.2</td>
+<td>470.2</td>
+<td>基于RT-DETR-H在中英文论文、杂志和研报等场景上自建数据集训练的高精度版面区域定位模型，包含17个版面常见类别，分别是：段落标题、图片、文本、数字、摘要、内容、图表标题、公式、表格、表格标题、参考文献、文档标题、脚注、页眉、算法、页脚、印章</td>
+</tr>
+</tbody>
+</table>
 **注：以上精度指标的评估集是 PaddleOCR 自建的版面区域分析数据集，包含中英文论文、杂志和研报等常见的 1w 张文档类型图片。GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为 8，精度类型为 FP32。**
 
 **文本检测模块模型：**
 
-|模型|检测Hmean（%）|GPU推理耗时（ms）|CPU推理耗时 (ms)|模型存储大小（M)|介绍|
-|-|-|-|-|-|-|
-|PP-OCRv4_server_det|82.69|83.3501|2434.01|109|PP-OCRv4 的服务端文本检测模型，精度更高，适合在性能较好的服务器上部署|
-|PP-OCRv4_mobile_det|77.79|10.6923|120.177|4.7|PP-OCRv4 的移动端文本检测模型，效率更高，适合在端侧设备部署|
-
+<table>
+<thead>
+<tr>
+<th>模型</th>
+<th>检测Hmean（%）</th>
+<th>GPU推理耗时（ms）</th>
+<th>CPU推理耗时 (ms)</th>
+<th>模型存储大小（M)</th>
+<th>介绍</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PP-OCRv4_server_det</td>
+<td>82.69</td>
+<td>83.3501</td>
+<td>2434.01</td>
+<td>109</td>
+<td>PP-OCRv4 的服务端文本检测模型，精度更高，适合在性能较好的服务器上部署</td>
+</tr>
+<tr>
+<td>PP-OCRv4_mobile_det</td>
+<td>77.79</td>
+<td>10.6923</td>
+<td>120.177</td>
+<td>4.7</td>
+<td>PP-OCRv4 的移动端文本检测模型，效率更高，适合在端侧设备部署</td>
+</tr>
+</tbody>
+</table>
 **注：以上精度指标的评估集是 PaddleOCR 自建的中文数据集，覆盖街景、网图、文档、手写多个场景，其中检测包含 500 张图片。以上所有模型 GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为8，精度类型为 FP32。**
 
 **文本识别模块模型：**
@@ -145,36 +229,113 @@
 **注：以上精度指标的评估集是 [PaddleOCR算法模型挑战赛 - 赛题一：OCR端到端识别任务](https://aistudio.baidu.com/competition/detail/1131/0/introduction)B榜。 所有模型 GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为8，精度类型为 FP32。**
 
 **公式识别模块模型：**
-|模型名称|BLEU score|normed edit distance|ExpRate （%）|GPU推理耗时（ms）|CPU推理耗时（ms）|模型存储大小|
-|-|-|-|-|-|-|-|
-|LaTeX_OCR_rec|0.8821|0.0823|40.01|-|-|89.7 M|
-
+<table>
+<thead>
+<tr>
+<th>模型名称</th>
+<th>BLEU score</th>
+<th>normed edit distance</th>
+<th>ExpRate （%）</th>
+<th>GPU推理耗时（ms）</th>
+<th>CPU推理耗时（ms）</th>
+<th>模型存储大小</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LaTeX_OCR_rec</td>
+<td>0.8821</td>
+<td>0.0823</td>
+<td>40.01</td>
+<td>-</td>
+<td>-</td>
+<td>89.7 M</td>
+</tr>
+</tbody>
+</table>
 **注：以上精度指标测量自 [LaTeX-OCR公式识别测试集](https://drive.google.com/drive/folders/13CA4vAmOmD_I_dSbvLp-Lf0s6KiaNfuO)。以上所有模型 GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为8，精度类型为 FP32。**
 
 
 **印章文本检测模块模型：**
 
-|模型|检测Hmean（%）|GPU推理耗时（ms）|CPU推理耗时 (ms)|模型存储大小（M)|介绍|
-|-|-|-|-|-|-|
-|PP-OCRv4_server_seal_det|98.21|84.341|2425.06|109|PP-OCRv4的服务端印章文本检测模型，精度更高，适合在较好的服务器上部署|
-|PP-OCRv4_mobile_seal_det|96.47|10.5878|131.813|4.6|PP-OCRv4的移动端印章文本检测模型，效率更高，适合在端侧部署|
-
+<table>
+<thead>
+<tr>
+<th>模型</th>
+<th>检测Hmean（%）</th>
+<th>GPU推理耗时（ms）</th>
+<th>CPU推理耗时 (ms)</th>
+<th>模型存储大小（M)</th>
+<th>介绍</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PP-OCRv4_server_seal_det</td>
+<td>98.21</td>
+<td>84.341</td>
+<td>2425.06</td>
+<td>109</td>
+<td>PP-OCRv4的服务端印章文本检测模型，精度更高，适合在较好的服务器上部署</td>
+</tr>
+<tr>
+<td>PP-OCRv4_mobile_seal_det</td>
+<td>96.47</td>
+<td>10.5878</td>
+<td>131.813</td>
+<td>4.6</td>
+<td>PP-OCRv4的移动端印章文本检测模型，效率更高，适合在端侧部署</td>
+</tr>
+</tbody>
+</table>
 **注：以上精度指标的评估集是自建的数据集，包含500张圆形印章图像。GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为 8，精度类型为 FP32。**
 
 **文本图像矫正模块模型：**
 
-|模型|MS-SSIM （%）|模型存储大小（M)|介绍|
-|-|-|-|-|
-|UVDoc|54.40|30.3 M|高精度文本图像矫正模型|
-
+<table>
+<thead>
+<tr>
+<th>模型</th>
+<th>MS-SSIM （%）</th>
+<th>模型存储大小（M)</th>
+<th>介绍</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UVDoc</td>
+<td>54.40</td>
+<td>30.3 M</td>
+<td>高精度文本图像矫正模型</td>
+</tr>
+</tbody>
+</table>
 **模型的精度指标测量自 [DocUNet benchmark](https://www3.cs.stonybrook.edu/~cvl/docunet.html)。**
 
 **文档图像方向分类模块模型：**
 
-|模型|Top-1 Acc（%）|GPU推理耗时（ms）|CPU推理耗时 (ms)|模型存储大小（M)|介绍|
-|-|-|-|-|-|-|
-|PP-LCNet_x1_0_doc_ori|99.06|3.84845|9.23735|7|基于PP-LCNet_x1_0的文档图像分类模型，含有四个类别，即0度，90度，180度，270度|
-
+<table>
+<thead>
+<tr>
+<th>模型</th>
+<th>Top-1 Acc（%）</th>
+<th>GPU推理耗时（ms）</th>
+<th>CPU推理耗时 (ms)</th>
+<th>模型存储大小（M)</th>
+<th>介绍</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PP-LCNet_x1_0_doc_ori</td>
+<td>99.06</td>
+<td>3.84845</td>
+<td>9.23735</td>
+<td>7</td>
+<td>基于PP-LCNet_x1_0的文档图像分类模型，含有四个类别，即0度，90度，180度，270度</td>
+</tr>
+</tbody>
+</table>
 **注：以上精度指标的评估集是自建的数据集，覆盖证件和文档等多个场景，包含 1000 张图片。GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为 8，精度类型为 FP32。**
 
 </details>
@@ -276,34 +437,103 @@ for res in output:
 
 （1）实例化 `create_pipeline` 实例化产线对象：具体参数说明如下：
 
-|参数|参数说明|参数类型|默认值|
-|-|-|-|-|
-|`pipeline`|产线名称或是产线配置文件路径。如为产线名称，则必须为 PaddleX 所支持的产线。|`str`|无|
-|`device`|产线模型推理设备。支持：“gpu”，“cpu”。|`str`|`gpu`|
-|`use_hpip`|是否启用高性能推理，仅当该产线支持高性能推理时可用。|`bool`|`False`|
-
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>参数说明</th>
+<th>参数类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pipeline</code></td>
+<td>产线名称或是产线配置文件路径。如为产线名称，则必须为 PaddleX 所支持的产线。</td>
+<td><code>str</code></td>
+<td>无</td>
+</tr>
+<tr>
+<td><code>device</code></td>
+<td>产线模型推理设备。支持：“gpu”，“cpu”。</td>
+<td><code>str</code></td>
+<td><code>gpu</code></td>
+</tr>
+<tr>
+<td><code>use_hpip</code></td>
+<td>是否启用高性能推理，仅当该产线支持高性能推理时可用。</td>
+<td><code>bool</code></td>
+<td><code>False</code></td>
+</tr>
+</tbody>
+</table>
 （2）调用产线对象的 `predict` 方法进行推理预测：`predict` 方法参数为`x`，用于输入待预测数据，支持多种输入方式，具体示例如下：
 
-| 参数类型      | 参数说明                                                                                                  |
-|---------------|-----------------------------------------------------------------------------------------------------------|
-| Python Var    | 支持直接传入Python变量，如numpy.ndarray表示的图像数据。                                               |
-| str         | 支持传入待预测数据文件路径，如图像文件的本地路径：`/root/data/img.jpg`。                                   |
-| str           | 支持传入待预测数据文件URL，如图像文件的网络URL：[示例](https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/demo_paper.png)。|
-| str           | 支持传入本地目录，该目录下需包含待预测数据文件，如本地路径：`/root/data/`。                               |
-| dict          | 支持传入字典类型，字典的key需与具体任务对应，如图像分类任务对应\"img\"，字典的val支持上述类型数据，例如：`{\"img\": \"/root/data1\"}`。|
-| list          | 支持传入列表，列表元素需为上述类型数据，如`[numpy.ndarray, numpy.ndarray]，[\"/root/data/img1.jpg\", \"/root/data/img2.jpg\"]`，`[\"/root/data1\", \"/root/data2\"]`，`[{\"img\": \"/root/data1\"}, {\"img\": \"/root/data2/img.jpg\"}]`。|
-
+<table>
+<thead>
+<tr>
+<th>参数类型</th>
+<th>参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Python Var</td>
+<td>支持直接传入Python变量，如numpy.ndarray表示的图像数据。</td>
+</tr>
+<tr>
+<td>str</td>
+<td>支持传入待预测数据文件路径，如图像文件的本地路径：<code>/root/data/img.jpg</code>。</td>
+</tr>
+<tr>
+<td>str</td>
+<td>支持传入待预测数据文件URL，如图像文件的网络URL：<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/demo_paper.png">示例</a>。</td>
+</tr>
+<tr>
+<td>str</td>
+<td>支持传入本地目录，该目录下需包含待预测数据文件，如本地路径：<code>/root/data/</code>。</td>
+</tr>
+<tr>
+<td>dict</td>
+<td>支持传入字典类型，字典的key需与具体任务对应，如图像分类任务对应\"img\"，字典的val支持上述类型数据，例如：<code>{\"img\": \"/root/data1\"}</code>。</td>
+</tr>
+<tr>
+<td>list</td>
+<td>支持传入列表，列表元素需为上述类型数据，如<code>[numpy.ndarray, numpy.ndarray]，[\"/root/data/img1.jpg\", \"/root/data/img2.jpg\"]</code>，<code>[\"/root/data1\", \"/root/data2\"]</code>，<code>[{\"img\": \"/root/data1\"}, {\"img\": \"/root/data2/img.jpg\"}]</code>。</td>
+</tr>
+</tbody>
+</table>
 （3）调用`predict`方法获取预测结果：`predict` 方法为`generator`，因此需要通过调用获得预测结果，`predict`方法以batch为单位对数据进行预测，因此预测结果为list形式表示的一组预测结果。
 
 （4）对预测结果进行处理：每个样本的预测结果均为`dict`类型，且支持打印，或保存为文件，支持保存的类型与具体产线相关，如：
 
 
-|方法|说明|方法参数|
-|-|-|-|
-|save_to_img|将结果保存为img格式的文件|`- save_path`：str类型，保存的文件路径，当为目录时，保存文件命名与输入文件类型命名一致；|
-|save_to_html|将结果保存为html格式的文件|`- save_path`：str类型，保存的文件路径，当为目录时，保存文件命名与输入文件类型命名一致；|
-|save_to_xlsx|将结果保存为表格格式的文件|`- save_path`：str类型，保存的文件路径，当为目录时，保存文件命名与输入文件类型命名一致；|
-
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+<th>方法参数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>save_to_img</td>
+<td>将结果保存为img格式的文件</td>
+<td><code>- save_path</code>：str类型，保存的文件路径，当为目录时，保存文件命名与输入文件类型命名一致；</td>
+</tr>
+<tr>
+<td>save_to_html</td>
+<td>将结果保存为html格式的文件</td>
+<td><code>- save_path</code>：str类型，保存的文件路径，当为目录时，保存文件命名与输入文件类型命名一致；</td>
+</tr>
+<tr>
+<td>save_to_xlsx</td>
+<td>将结果保存为表格格式的文件</td>
+<td><code>- save_path</code>：str类型，保存的文件路径，当为目录时，保存文件命名与输入文件类型命名一致；</td>
+</tr>
+</tbody>
+</table>
 其中，`save_to_img` 能够保存可视化结果（包括OCR结果图片、版面分析结果图片、表格结构识别结果图片）， `save_to_html` 能够将表格直接保存为html文件（包括文本和表格格式），`save_to_xlsx` 能够将表格保存为Excel格式文件（包括文本和格式）。
 
 若您获取了配置文件，即可对版面解析产线各项配置进行自定义，只需要修改 `create_pipeline` 方法中的 `pipeline` 参数值为产线配置文件路径即可。

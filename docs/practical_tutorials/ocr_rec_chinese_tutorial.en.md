@@ -33,11 +33,36 @@ After experiencing the pipeline, determine if it meets your expectations (includ
 
 PaddleX provides four end-to-end OCR models. For details, refer to the [Model List](../support_list/models_list.en.md). Benchmarks for some models are as follows:
 
-| Model List         | Detection Hmean(%) | Recognition Avg Accuracy(%) | GPU Inference Time(ms) | CPU Inference Time(ms) | Model Size(M) |
-| --------------- | ----------- | ------------------- | --------------- | --------------- |---------------|
-|PP-OCRv4_server |     82.69     | 79.20     | 22.20346     | 2662.158     | 198|
-|PP-OCRv4_mobile     | 77.79     | 78.20 |     2.719474 |     79.1097     | 15|
-
+<table>
+<thead>
+<tr>
+<th>Model List</th>
+<th>Detection Hmean(%)</th>
+<th>Recognition Avg Accuracy(%)</th>
+<th>GPU Inference Time(ms)</th>
+<th>CPU Inference Time(ms)</th>
+<th>Model Size(M)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PP-OCRv4_server</td>
+<td>82.69</td>
+<td>79.20</td>
+<td>22.20346</td>
+<td>2662.158</td>
+<td>198</td>
+</tr>
+<tr>
+<td>PP-OCRv4_mobile</td>
+<td>77.79</td>
+<td>78.20</td>
+<td>2.719474</td>
+<td>79.1097</td>
+<td>15</td>
+</tr>
+</tbody>
+</table>
 **Note: The evaluation set is a self-built Chinese dataset by PaddleOCR, covering street scenes, web images, documents, and handwritten texts. The text recognition set contains 11,000 images, and the detection set contains 500 images. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.**
 
 In summary, models listed from top to bottom have faster inference speeds, while those from bottom to top have higher accuracy. This tutorial uses the `PP-OCRv4_server` model as an example to complete a full model development process. Based on your actual usage scenario, choose a suitable model for training. After training, evaluate the appropriate model weights within the pipeline and use them in practical scenarios.
@@ -204,23 +229,73 @@ It is recommended to follow the method of controlled variables when debugging pa
 Learning Rate Exploration Results:
 <center>
 
-| Experiment ID | Learning Rate | Recognition Acc (%) |
-|---------------|-------------|-------------------|
-| 1             | 0.001       | 43.28             |
-| 2             | 0.005       | 32.63             |
-| 3             | 0.0002      | 49.64             |
-| 4             | 0.0001      | 46.32             |
+<table>
+<thead>
+<tr>
+<th>Experiment ID</th>
+<th>Learning Rate</th>
+<th>Recognition Acc (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>0.001</td>
+<td>43.28</td>
+</tr>
+<tr>
+<td>2</td>
+<td>0.005</td>
+<td>32.63</td>
+</tr>
+<tr>
+<td>3</td>
+<td>0.0002</td>
+<td>49.64</td>
+</tr>
+<tr>
+<td>4</td>
+<td>0.0001</td>
+<td>46.32</td>
+</tr>
+</tbody>
+</table>
 </center>
 
 Next, based on a learning rate of 0.0002, we can increase the number of training epochs. Comparing Experiments [4, 5, 6, 7] below, it can be seen that increasing the number of training epochs further improves model accuracy.
 <center>
 
-| Experiment ID | Number of Training Epochs | Recognition Acc (%) |
-|---------------|---------------------------|-------------------|
-| 4             | 20                        | 49.64             |
-| 5             | 30                        | 52.03             |
-| 6             | 50                        | 54.15             |
-| 7             | 80                        | 54.35             |
+<table>
+<thead>
+<tr>
+<th>Experiment ID</th>
+<th>Number of Training Epochs</th>
+<th>Recognition Acc (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td>20</td>
+<td>49.64</td>
+</tr>
+<tr>
+<td>5</td>
+<td>30</td>
+<td>52.03</td>
+</tr>
+<tr>
+<td>6</td>
+<td>50</td>
+<td>54.15</td>
+</tr>
+<tr>
+<td>7</td>
+<td>80</td>
+<td>54.35</td>
+</tr>
+</tbody>
+</table>
 </center>
 
 **Note: This tutorial is designed for 4 GPUs. If you only have 1 GPU, you can adjust the number of training GPUs to complete the experiments, but the final metrics may not align with the above indicators, which is normal.**

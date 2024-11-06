@@ -139,13 +139,32 @@ PaddleLabel 启动后会自动在浏览器中打开网页，接下来可以根�
 * 调整目录得到安全帽检测标准`coco`格式数据集
   * 并将三个`json`文件以及`image`目录进行重命名，对应关系如下：
 
-|源文件(目录)名|重命名后文件(目录)名|
-|-|-|
-|`train.json`|`instance_train.json`|
-|`val.json`|`instance_train.json`|
-|`test.json`|`instance_test.json`|
-|`image`|`images`|
-
+<table>
+<thead>
+<tr>
+<th>源文件(目录)名</th>
+<th>重命名后文件(目录)名</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>train.json</code></td>
+<td><code>instance_train.json</code></td>
+</tr>
+<tr>
+<td><code>val.json</code></td>
+<td><code>instance_train.json</code></td>
+</tr>
+<tr>
+<td><code>test.json</code></td>
+<td><code>instance_test.json</code></td>
+</tr>
+<tr>
+<td><code>image</code></td>
+<td><code>images</code></td>
+</tr>
+</tbody>
+</table>
   * 在数据集根目录创建`annotations`目录，并将`json`文件全部移动到`annotations`目录下，得到最后的数据集目录如下：
   
   ![alt text](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/17.png)

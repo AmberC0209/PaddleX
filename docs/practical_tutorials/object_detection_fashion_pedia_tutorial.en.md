@@ -33,15 +33,61 @@ After the trial, determine if the pipeline meets your expectations (including ac
 
 PaddleX provides 37 end-to-end object detection models. Refer to the [Model List](../support_list/models_list.en.md) for details. Below are benchmarks for some models:
 
-| Model List         | mAP(%) | GPU Inference Time(ms) | CPU Inference Time(ms) | Model Size(M) |
-| --------------- | ------ | ---------------- | ---------------- | --------------- |
-| RT-DETR-H       | 56.3   | 100.65           | 8451.92          | 471             |
-| RT-DETR-L       | 53.0   | 27.89            | 841.00           | 125             |
-| PP-YOLOE_plus-L | 52.9   | 29.67            | 700.97           | 200             |
-| PP-YOLOE_plus-S | 43.7   | 8.11             | 137.23           | 31              |
-| PicoDet-L       | 42.6   | 10.09            | 129.32           | 23              |
-| PicoDet-S       | 29.1   | 3.17             | 13.36            | 5               |
-
+<table>
+<thead>
+<tr>
+<th>Model List</th>
+<th>mAP(%)</th>
+<th>GPU Inference Time(ms)</th>
+<th>CPU Inference Time(ms)</th>
+<th>Model Size(M)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RT-DETR-H</td>
+<td>56.3</td>
+<td>100.65</td>
+<td>8451.92</td>
+<td>471</td>
+</tr>
+<tr>
+<td>RT-DETR-L</td>
+<td>53.0</td>
+<td>27.89</td>
+<td>841.00</td>
+<td>125</td>
+</tr>
+<tr>
+<td>PP-YOLOE_plus-L</td>
+<td>52.9</td>
+<td>29.67</td>
+<td>700.97</td>
+<td>200</td>
+</tr>
+<tr>
+<td>PP-YOLOE_plus-S</td>
+<td>43.7</td>
+<td>8.11</td>
+<td>137.23</td>
+<td>31</td>
+</tr>
+<tr>
+<td>PicoDet-L</td>
+<td>42.6</td>
+<td>10.09</td>
+<td>129.32</td>
+<td>23</td>
+</tr>
+<tr>
+<td>PicoDet-S</td>
+<td>29.1</td>
+<td>3.17</td>
+<td>13.36</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
 > **Note: The above accuracy metrics are mAP(0.5:0.95) on the COCO2017 validation set. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.**
 
 In summary, models with faster inference speed are placed higher in the table, while models with higher accuracy are lower. This tutorial takes the PicoDet-L model as an example to complete a full model development process. You can judge and select an appropriate model for training based on your actual usage scenarios. After training, you can evaluate the suitable model weights within the pipeline and ultimately use them in practical scenarios.
@@ -195,23 +241,95 @@ It is recommended to follow the controlled variable method when debugging parame
 Learning Rate Exploration Results:
 <center>
 
-| Experiment | Epochs | Learning Rate | batch\_size | Training Environment | mAP@0.5 |
-|------------|--------|-------------|-------------|--------------------|---------|
-| Experiment 1 | 50     | 0.02        | 16          | 4 GPUs             | 0.428   |
-| Experiment 2 | 50     | 0.04        | 16          | 4 GPUs             |**0.471**|
-| Experiment 3 | 50     | 0.08        | 16          | 4 GPUs             | 0.440   |
-
+<table>
+<thead>
+<tr>
+<th>Experiment</th>
+<th>Epochs</th>
+<th>Learning Rate</th>
+<th>batch_size</th>
+<th>Training Environment</th>
+<th>mAP@0.5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Experiment 1</td>
+<td>50</td>
+<td>0.02</td>
+<td>16</td>
+<td>4 GPUs</td>
+<td>0.428</td>
+</tr>
+<tr>
+<td>Experiment 2</td>
+<td>50</td>
+<td>0.04</td>
+<td>16</td>
+<td>4 GPUs</td>
+<td><strong>0.471</strong></td>
+</tr>
+<tr>
+<td>Experiment 3</td>
+<td>50</td>
+<td>0.08</td>
+<td>16</td>
+<td>4 GPUs</td>
+<td>0.440</td>
+</tr>
+</tbody>
+</table>
 </center>
 
 Epoch Variation Results:
 <center>
 
-| Experiment                | Epochs | Learning Rate | batch\_size | Training Environment | mAP@0.5 |
-|---------------------------|--------|-------------|------------|--------------------|---------|
-| Experiment 2              | 50     | 0.04        | 16         | 4 GPUs             | 0.471   |
-| Reduced Epochs in Exp. 2  | 30     | 0.04        | 16         | 4 GPUs             | 0.425   |
-| Increased Epochs in Exp. 2 | 80     | 0.04        | 16         | 4 GPUs             |**0.491**|
-| Further Increased Epochs  | 100    | 0.04        | 16         | 4 GPUs             | 0.459   |
+<table>
+<thead>
+<tr>
+<th>Experiment</th>
+<th>Epochs</th>
+<th>Learning Rate</th>
+<th>batch_size</th>
+<th>Training Environment</th>
+<th>mAP@0.5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Experiment 2</td>
+<td>50</td>
+<td>0.04</td>
+<td>16</td>
+<td>4 GPUs</td>
+<td>0.471</td>
+</tr>
+<tr>
+<td>Reduced Epochs in Exp. 2</td>
+<td>30</td>
+<td>0.04</td>
+<td>16</td>
+<td>4 GPUs</td>
+<td>0.425</td>
+</tr>
+<tr>
+<td>Increased Epochs in Exp. 2</td>
+<td>80</td>
+<td>0.04</td>
+<td>16</td>
+<td>4 GPUs</td>
+<td><strong>0.491</strong></td>
+</tr>
+<tr>
+<td>Further Increased Epochs</td>
+<td>100</td>
+<td>0.04</td>
+<td>16</td>
+<td>4 GPUs</td>
+<td>0.459</td>
+</tr>
+</tbody>
+</table>
 </center>
 
 **Note: This tutorial is designed for a 4-GPU setup. If you have only 1 GPU, you can adjust the number of training GPUs to complete the experiments, but the final metrics may not align with the above figures, which is normal.**

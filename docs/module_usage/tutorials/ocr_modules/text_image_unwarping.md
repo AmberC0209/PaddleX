@@ -9,11 +9,24 @@
 
 
 
-|模型|MS-SSIM （%）|模型存储大小（M)|介绍|
-|-|-|-|-|
-|UVDoc|54.40|30.3 M|高精度文本图像矫正模型|
-
-
+<table>
+<thead>
+<tr>
+<th>模型</th>
+<th>MS-SSIM （%）</th>
+<th>模型存储大小（M)</th>
+<th>介绍</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UVDoc</td>
+<td>54.40</td>
+<td>30.3 M</td>
+<td>高精度文本图像矫正模型</td>
+</tr>
+</tbody>
+</table>
 **模型的精度指标测量自 [DocUNet benchmark](https://www3.cs.stonybrook.edu/~cvl/docunet.html)。**
 
 

@@ -33,11 +33,33 @@ After experiencing the pipeline, determine if it meets your expectations (includ
 
 PaddleX provides 18 end-to-end semantic segmentation models. For details, refer to the [Model List](../support_list/models_list.en.md). Some model benchmarks are as follows:
 
-| Model List          | mIoU (%) | GPU Inference Time (ms) | CPU Inference Time (ms) | Model Size (M) |
-| ---------------- | -------  | --------------- | -------------- | ------------- |
-| OCRNet_HRNet-W48 | 82.15    | 87.97           | 2180.76        | 270           |
-| PP-LiteSeg-T     | 77.04    | 5.98            | 140.02         | 31            |
-
+<table>
+<thead>
+<tr>
+<th>Model List</th>
+<th>mIoU (%)</th>
+<th>GPU Inference Time (ms)</th>
+<th>CPU Inference Time (ms)</th>
+<th>Model Size (M)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OCRNet_HRNet-W48</td>
+<td>82.15</td>
+<td>87.97</td>
+<td>2180.76</td>
+<td>270</td>
+</tr>
+<tr>
+<td>PP-LiteSeg-T</td>
+<td>77.04</td>
+<td>5.98</td>
+<td>140.02</td>
+<td>31</td>
+</tr>
+</tbody>
+</table>
 > **Note: The above accuracy metrics are measured on the [Cityscapes](https://www.cityscapes-dataset.com/) dataset. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.**
 
 In short, models listed from top to bottom have faster inference speeds, while those from bottom to top have higher accuracy. This tutorial uses the PP-LiteSeg-T model as an example to complete the full model development process. You can choose a suitable model for training based on your actual usage scenario, evaluate the appropriate model weights within the pipeline, and finally use them in practical scenarios.
@@ -194,24 +216,95 @@ It is recommended to follow the method of controlled variables when debugging pa
 Learning Rate Exploration Results:
 <center>
 
-| Experiment | Iterations | Learning Rate | batch\_size | Training Environment | mIoU |
-|-----------|------------|-------------|-----------|--------------------|------|
-| Experiment 1 | 5000       | 0.006       | 2         | 4 GPUs             | 0.623  |
-| Experiment 2 | 5000       | 0.008       | 2         | 4 GPUs             | **0.629** |
-| Experiment 3 | 5000       | 0.01        | 2         | 4 GPUs             | 0.619  |
-
+<table>
+<thead>
+<tr>
+<th>Experiment</th>
+<th>Iterations</th>
+<th>Learning Rate</th>
+<th>batch_size</th>
+<th>Training Environment</th>
+<th>mIoU</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Experiment 1</td>
+<td>5000</td>
+<td>0.006</td>
+<td>2</td>
+<td>4 GPUs</td>
+<td>0.623</td>
+</tr>
+<tr>
+<td>Experiment 2</td>
+<td>5000</td>
+<td>0.008</td>
+<td>2</td>
+<td>4 GPUs</td>
+<td><strong>0.629</strong></td>
+</tr>
+<tr>
+<td>Experiment 3</td>
+<td>5000</td>
+<td>0.01</td>
+<td>2</td>
+<td>4 GPUs</td>
+<td>0.619</td>
+</tr>
+</tbody>
+</table>
 </center>
 
 Changing Epoch Results:
 <center>
 
-| Experiment                   | Iterations | Learning Rate | batch\_size | Training Environment | mIoU |
-|--------------------------------------|------------|-------------|-----------|--------------------|------|
-| Experiment 2                 | 5000       | 0.008       | 2         | 4 GPUs             | 0.629  |
-| Experiment 2 with fewer epochs | 10000      | 0.008       | 2         | 4 GPUs             | 0.773  |
-| Experiment 2 with more epochs  | 40000      | 0.008       | 2         | 4 GPUs             | 0.855  |
-| Experiment 2 with more epochs  | 80000      | 0.008       | 2         | 4 GPUs             | **0.863**  |
-
+<table>
+<thead>
+<tr>
+<th>Experiment</th>
+<th>Iterations</th>
+<th>Learning Rate</th>
+<th>batch_size</th>
+<th>Training Environment</th>
+<th>mIoU</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Experiment 2</td>
+<td>5000</td>
+<td>0.008</td>
+<td>2</td>
+<td>4 GPUs</td>
+<td>0.629</td>
+</tr>
+<tr>
+<td>Experiment 2 with fewer epochs</td>
+<td>10000</td>
+<td>0.008</td>
+<td>2</td>
+<td>4 GPUs</td>
+<td>0.773</td>
+</tr>
+<tr>
+<td>Experiment 2 with more epochs</td>
+<td>40000</td>
+<td>0.008</td>
+<td>2</td>
+<td>4 GPUs</td>
+<td>0.855</td>
+</tr>
+<tr>
+<td>Experiment 2 with more epochs</td>
+<td>80000</td>
+<td>0.008</td>
+<td>2</td>
+<td>4 GPUs</td>
+<td><strong>0.863</strong></td>
+</tr>
+</tbody>
+</table>
 </center>
 
 **Note: This tutorial is designed for 4 GPUs. If you have only 1 GPU, you can adjust the number of training GPUs to complete the experiment, but the final metrics may not align with the above indicators, which is normal.**

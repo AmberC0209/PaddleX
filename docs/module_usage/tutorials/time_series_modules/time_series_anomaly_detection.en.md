@@ -7,14 +7,60 @@ Time series anomaly detection focuses on identifying abnormal points or periods 
 
 ## II. Supported Model List
 
-| Model Name | Precision | Recall | F1-Score | Model Size (M) | Description |
-|-|-|-|-|-|-|
-| AutoEncoder_ad_ad | 0.9898 | 0.9396 | 0.9641 | 72.8K | AutoEncoder_ad_ad is a simple, efficient, and easy-to-use time series anomaly detection model |
-| Nonstationary_ad | 0.9855 | 0.8895 | 0.9351 | 1.5MB | Based on the transformer structure, optimized for anomaly detection in non-stationary time series |
-| AutoEncoder_ad | 0.9936 | 0.8436 | 0.9125 | 32K | AutoEncoder_ad is a classic autoencoder-based, efficient, and easy-to-use time series anomaly detection model |
-| PatchTST_ad | 0.9878 | 0.9070 | 0.9457 | 164K | PatchTST is a high-precision time series anomaly detection model that balances local patterns and global dependencies |
-| TimesNet_ad | 0.9837 | 0.9480 | 0.9656 | 732K | Through multi-period analysis, TimesNet is an adaptive and high-precision time series anomaly detection model |
-
+<table>
+<thead>
+<tr>
+<th>Model Name</th>
+<th>Precision</th>
+<th>Recall</th>
+<th>F1-Score</th>
+<th>Model Size (M)</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AutoEncoder_ad_ad</td>
+<td>0.9898</td>
+<td>0.9396</td>
+<td>0.9641</td>
+<td>72.8K</td>
+<td>AutoEncoder_ad_ad is a simple, efficient, and easy-to-use time series anomaly detection model</td>
+</tr>
+<tr>
+<td>Nonstationary_ad</td>
+<td>0.9855</td>
+<td>0.8895</td>
+<td>0.9351</td>
+<td>1.5MB</td>
+<td>Based on the transformer structure, optimized for anomaly detection in non-stationary time series</td>
+</tr>
+<tr>
+<td>AutoEncoder_ad</td>
+<td>0.9936</td>
+<td>0.8436</td>
+<td>0.9125</td>
+<td>32K</td>
+<td>AutoEncoder_ad is a classic autoencoder-based, efficient, and easy-to-use time series anomaly detection model</td>
+</tr>
+<tr>
+<td>PatchTST_ad</td>
+<td>0.9878</td>
+<td>0.9070</td>
+<td>0.9457</td>
+<td>164K</td>
+<td>PatchTST is a high-precision time series anomaly detection model that balances local patterns and global dependencies</td>
+</tr>
+<tr>
+<td>TimesNet_ad</td>
+<td>0.9837</td>
+<td>0.9480</td>
+<td>0.9656</td>
+<td>732K</td>
+<td>Through multi-period analysis, TimesNet is an adaptive and high-precision time series anomaly detection model</td>
+</tr>
+</tbody>
+</table>
 **Note: The above accuracy metrics are measured on the PSM dataset with a time series length of 100.**
 
 ## III. Quick Integration

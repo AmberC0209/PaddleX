@@ -172,16 +172,44 @@ INFO:     Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)
 `--pipeline` 可指定为官方产线名称或本地产线配置文件路径。PaddleX 以此构建产线并部署为服务。如需调整配置（如模型路径、batch_size、部署设备等），请参考[通用OCR产线使用教程](../pipeline_usage/tutorials/ocr_pipelines/OCR.md)中的 **“模型应用”** 部分。
 与服务化部署相关的命令行选项如下：
 
-| 名称             | 说明                                                                                                                                                        |
-|------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `--pipeline`       | 产线名称或产线配置文件路径。                                                                                                                                |
-| `--device`         | 产线部署设备。默认为 `cpu`（如 GPU 不可用）或 `gpu`（如 GPU 可用）。                                                                                       |
-| `--host`           | 服务器绑定的主机名或 IP 地址。默认为0.0.0.0。                                                                                                               |
-| `--port`           | 服务器监听的端口号。默认为8080。                                                                                                                            |
-| `--use_hpip`       | 如果指定，则启用高性能推理插件。                                                                                                                            |
-| `--serial_number`  | 高性能推理插件使用的序列号。只在启用高性能推理插件时生效。 请注意，并非所有产线、模型都支持使用高性能推理插件，详细的支持情况请参考[PaddleX 高性能推理指南](./high_performance_inference.md)。 |
-| `--update_license` | 如果指定，则进行联网激活。只在启用高性能推理插件时生效。                                                                                                    |
-
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--pipeline</code></td>
+<td>产线名称或产线配置文件路径。</td>
+</tr>
+<tr>
+<td><code>--device</code></td>
+<td>产线部署设备。默认为 <code>cpu</code>（如 GPU 不可用）或 <code>gpu</code>（如 GPU 可用）。</td>
+</tr>
+<tr>
+<td><code>--host</code></td>
+<td>服务器绑定的主机名或 IP 地址。默认为0.0.0.0。</td>
+</tr>
+<tr>
+<td><code>--port</code></td>
+<td>服务器监听的端口号。默认为8080。</td>
+</tr>
+<tr>
+<td><code>--use_hpip</code></td>
+<td>如果指定，则启用高性能推理插件。</td>
+</tr>
+<tr>
+<td><code>--serial_number</code></td>
+<td>高性能推理插件使用的序列号。只在启用高性能推理插件时生效。 请注意，并非所有产线、模型都支持使用高性能推理插件，详细的支持情况请参考<a href="./high_performance_inference.md">PaddleX 高性能推理指南</a>。</td>
+</tr>
+<tr>
+<td><code>--update_license</code></td>
+<td>如果指定，则进行联网激活。只在启用高性能推理插件时生效。</td>
+</tr>
+</tbody>
+</table>
 ### 2.3 调用服务
 
 此处只展示 Python 调用示例，API参考和其他语言服务调用示例可参考 [PaddleX服务化部署指南](../pipeline_deploy/service_deploy.md) 的 **1.3 调用服务** 中各产线使用教程的 **“开发集成/部署”** 部分。

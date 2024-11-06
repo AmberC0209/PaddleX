@@ -48,41 +48,124 @@ INFO:     Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)
 
 Command-line options related to serving deployment are as follows:
 
-| Name             | Description                                                                                                                                                   |
-|------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `--pipeline`       | Pipeline name or pipeline configuration file path.                                                                                                             |
-| `--device`         | Deployment device for the pipeline. Defaults to `cpu` (If GPU is unavailable) or `gpu` (If GPU is available).                                |
-| `--host`           | Hostname or IP address bound to the server. Defaults to 0.0.0.0.                                                                                                |
-| `--port`           | Port number listened to by the server. Defaults to 8080.                                                                                                       |
-| `--use_hpip`       | Enables the high-performance inference plugin if specified.                                                                                                    |
-| `--serial_number`  | Serial number used by the high-performance inference plugin. Only valid when the high-performance inference plugin is enabled. Note that not all pipelines and models support the use of the high-performance inference plugin. For detailed support, please refer to the [PaddleX High-Performance Inference Guide](./high_performance_inference.en.md). |
-| `--update_license` | Activates the license online if specified. Only valid when the high-performance inference plugin is enabled.                                                      |
-
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--pipeline</code></td>
+<td>Pipeline name or pipeline configuration file path.</td>
+</tr>
+<tr>
+<td><code>--device</code></td>
+<td>Deployment device for the pipeline. Defaults to <code>cpu</code> (If GPU is unavailable) or <code>gpu</code> (If GPU is available).</td>
+</tr>
+<tr>
+<td><code>--host</code></td>
+<td>Hostname or IP address bound to the server. Defaults to 0.0.0.0.</td>
+</tr>
+<tr>
+<td><code>--port</code></td>
+<td>Port number listened to by the server. Defaults to 8080.</td>
+</tr>
+<tr>
+<td><code>--use_hpip</code></td>
+<td>Enables the high-performance inference plugin if specified.</td>
+</tr>
+<tr>
+<td><code>--serial_number</code></td>
+<td>Serial number used by the high-performance inference plugin. Only valid when the high-performance inference plugin is enabled. Note that not all pipelines and models support the use of the high-performance inference plugin. For detailed support, please refer to the <a href="./high_performance_inference.en.md">PaddleX High-Performance Inference Guide</a>.</td>
+</tr>
+<tr>
+<td><code>--update_license</code></td>
+<td>Activates the license online if specified. Only valid when the high-performance inference plugin is enabled.</td>
+</tr>
+</tbody>
+</table>
 </table>
 
 ### 1.3 Call the Service
 
 Please refer to the **"Development Integration/Deployment"** section in the usage tutorials for each pipeline.
 
-| Model Pipelines          | Usage Tutorials                                                  |
-|--------------------------|----------------------------------------------------------------|
-| General Image Classification Pipeline | [Tutorial for Using the General Image Classification Pipeline](../pipeline_usage/tutorials/cv_pipelines/image_classification.en.md) |
-| General Object Detection Pipeline | [Tutorial for Using the General Object Detection Pipeline](../pipeline_usage/tutorials/cv_pipelines/object_detection.en.md) |
-| General Semantic Segmentation Pipeline | [Tutorial for Using the General Semantic Segmentation Pipeline](../pipeline_usage/tutorials/cv_pipelines/semantic_segmentation.en.md) |
-| General Instance Segmentation Pipeline | [Tutorial for Using the General Instance Segmentation Pipeline](../pipeline_usage/tutorials/cv_pipelines/instance_segmentation.en.md) |
-| General Image Multi-Label Classification Pipeline | [Tutorial for Using the General Image Multi-Label Classification Pipeline](../pipeline_usage/tutorials/cv_pipelines/image_multi_label_classification.en.md) |
-| Small Object Detection Pipeline | [Tutorial for Using the Small Object Detection Pipeline](../pipeline_usage/tutorials/cv_pipelines/small_object_detection.en.md) |
-| Image Anomaly Detection Pipeline | [Tutorial for Using the Image Anomaly Detection Pipeline](../pipeline_usage/tutorials/cv_pipelines/image_anomaly_detection.en.md) |
-| General OCR Pipeline | [Tutorial for Using the General OCR Pipeline](../pipeline_usage/tutorials/ocr_pipelines/OCR.en.md) |
-| General Table Recognition Pipeline | [Tutorial for Using the General Table Recognition Pipeline](../pipeline_usage/tutorials/ocr_pipelines/table_recognition.en.md) |
-| General Layout Parsing Pipeline | [Tutorial for Using the Layout Parsing Recognition Pipeline](../pipeline_usage/tutorials/ocr_pipelines/layout_parsing.en.md) |
-| Formula Recognition Pipeline | [Tutorial for Using the Formula Recognition Pipeline](../pipeline_usage/tutorials/ocr_pipelines/formula_recognition.en.md) |
-| Seal Text Recognition Pipeline | [Tutorial for Using the Seal Text Recognition Pipeline](../pipeline_usage/tutorials/ocr_pipelines/seal_recognition.en.md) |
-| Time Series Forecasting Pipeline | [Tutorial for Using the Time Series Forecasting Pipeline](../pipeline_usage/tutorials/time_series_pipelines/time_series_forecasting.en.md) |
-| Time Series Anomaly Detection Pipeline | [Tutorial for Using the Time Series Anomaly Detection Pipeline](../pipeline_usage/tutorials/time_series_pipelines/time_series_anomaly_detection.en.md) |
-| Time Series Classification Pipeline | [Tutorial for Using the Time Series Classification Pipeline](../pipeline_usage/tutorials/time_series_pipelines/time_series_classification.en.md) |
-| Document Scene Information Extraction v3 Pipeline | [Tutorial for Using the Document Scene Information Extraction v3 Pipeline](../pipeline_usage/tutorials/information_extraction_pipelines/document_scene_information_extraction.en.md) |
-
+<table>
+<thead>
+<tr>
+<th>Model Pipelines</th>
+<th>Usage Tutorials</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>General Image Classification Pipeline</td>
+<td><a href="../pipeline_usage/tutorials/cv_pipelines/image_classification.en.md">Tutorial for Using the General Image Classification Pipeline</a></td>
+</tr>
+<tr>
+<td>General Object Detection Pipeline</td>
+<td><a href="../pipeline_usage/tutorials/cv_pipelines/object_detection.en.md">Tutorial for Using the General Object Detection Pipeline</a></td>
+</tr>
+<tr>
+<td>General Semantic Segmentation Pipeline</td>
+<td><a href="../pipeline_usage/tutorials/cv_pipelines/semantic_segmentation.en.md">Tutorial for Using the General Semantic Segmentation Pipeline</a></td>
+</tr>
+<tr>
+<td>General Instance Segmentation Pipeline</td>
+<td><a href="../pipeline_usage/tutorials/cv_pipelines/instance_segmentation.en.md">Tutorial for Using the General Instance Segmentation Pipeline</a></td>
+</tr>
+<tr>
+<td>General Image Multi-Label Classification Pipeline</td>
+<td><a href="../pipeline_usage/tutorials/cv_pipelines/image_multi_label_classification.en.md">Tutorial for Using the General Image Multi-Label Classification Pipeline</a></td>
+</tr>
+<tr>
+<td>Small Object Detection Pipeline</td>
+<td><a href="../pipeline_usage/tutorials/cv_pipelines/small_object_detection.en.md">Tutorial for Using the Small Object Detection Pipeline</a></td>
+</tr>
+<tr>
+<td>Image Anomaly Detection Pipeline</td>
+<td><a href="../pipeline_usage/tutorials/cv_pipelines/image_anomaly_detection.en.md">Tutorial for Using the Image Anomaly Detection Pipeline</a></td>
+</tr>
+<tr>
+<td>General OCR Pipeline</td>
+<td><a href="../pipeline_usage/tutorials/ocr_pipelines/OCR.en.md">Tutorial for Using the General OCR Pipeline</a></td>
+</tr>
+<tr>
+<td>General Table Recognition Pipeline</td>
+<td><a href="../pipeline_usage/tutorials/ocr_pipelines/table_recognition.en.md">Tutorial for Using the General Table Recognition Pipeline</a></td>
+</tr>
+<tr>
+<td>General Layout Parsing Pipeline</td>
+<td><a href="../pipeline_usage/tutorials/ocr_pipelines/layout_parsing.en.md">Tutorial for Using the Layout Parsing Recognition Pipeline</a></td>
+</tr>
+<tr>
+<td>Formula Recognition Pipeline</td>
+<td><a href="../pipeline_usage/tutorials/ocr_pipelines/formula_recognition.en.md">Tutorial for Using the Formula Recognition Pipeline</a></td>
+</tr>
+<tr>
+<td>Seal Text Recognition Pipeline</td>
+<td><a href="../pipeline_usage/tutorials/ocr_pipelines/seal_recognition.en.md">Tutorial for Using the Seal Text Recognition Pipeline</a></td>
+</tr>
+<tr>
+<td>Time Series Forecasting Pipeline</td>
+<td><a href="../pipeline_usage/tutorials/time_series_pipelines/time_series_forecasting.en.md">Tutorial for Using the Time Series Forecasting Pipeline</a></td>
+</tr>
+<tr>
+<td>Time Series Anomaly Detection Pipeline</td>
+<td><a href="../pipeline_usage/tutorials/time_series_pipelines/time_series_anomaly_detection.en.md">Tutorial for Using the Time Series Anomaly Detection Pipeline</a></td>
+</tr>
+<tr>
+<td>Time Series Classification Pipeline</td>
+<td><a href="../pipeline_usage/tutorials/time_series_pipelines/time_series_classification.en.md">Tutorial for Using the Time Series Classification Pipeline</a></td>
+</tr>
+<tr>
+<td>Document Scene Information Extraction v3 Pipeline</td>
+<td><a href="../pipeline_usage/tutorials/information_extraction_pipelines/document_scene_information_extraction.en.md">Tutorial for Using the Document Scene Information Extraction v3 Pipeline</a></td>
+</tr>
+</tbody>
+</table>
 ## 2. Deploy Services for Production
 
 When deploying services into production environments, the stability, efficiency, and security of the services are of paramount importance. Below are some recommendations for deploying services into production.

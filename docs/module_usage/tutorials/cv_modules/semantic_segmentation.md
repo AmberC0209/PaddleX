@@ -7,43 +7,193 @@
 
 ## 二、支持模型列表
 
-|模型名称|mloU（%）|GPU推理耗时（ms）|CPU推理耗时 (ms)|模型存储大小（M)|
-|-|-|-|-|-|
-|OCRNet_HRNet-W48|82.15|78.9976|2226.95|249.8 M|
-|PP-LiteSeg-T|73.10|7.6827|138.683|28.5 M|
-
+<table>
+<thead>
+<tr>
+<th>模型名称</th>
+<th>mloU（%）</th>
+<th>GPU推理耗时（ms）</th>
+<th>CPU推理耗时 (ms)</th>
+<th>模型存储大小（M)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OCRNet_HRNet-W48</td>
+<td>82.15</td>
+<td>78.9976</td>
+<td>2226.95</td>
+<td>249.8 M</td>
+</tr>
+<tr>
+<td>PP-LiteSeg-T</td>
+<td>73.10</td>
+<td>7.6827</td>
+<td>138.683</td>
+<td>28.5 M</td>
+</tr>
+</tbody>
+</table>
 > ❗ 以上列出的是语义分割模块重点支持的**2个核心模型**，该模块总共支持**18个模型**，完整的模型列表如下：
 
 <details>
    <summary> 👉模型列表详情</summary>
 
-|模型名称|mloU（%）|GPU推理耗时（ms）|CPU推理耗时 (ms)|模型存储大小（M)|
-|-|-|-|-|-|
-|Deeplabv3_Plus-R50 |80.36|61.0531|1513.58|94.9 M|
-|Deeplabv3_Plus-R101|81.10|100.026|2460.71|162.5 M|
-|Deeplabv3-R50|79.90|82.2631|1735.83|138.3 M|
-|Deeplabv3-R101|80.85|121.492|2685.51|205.9 M|
-|OCRNet_HRNet-W18|80.67|48.2335|906.385|43.1 M|
-|OCRNet_HRNet-W48|82.15|78.9976|2226.95|249.8 M|
-|PP-LiteSeg-T|73.10|7.6827|138.683|28.5 M|
-|PP-LiteSeg-B|75.25|-|-|47.0 M|
-|SegFormer-B0 (slice)|76.73|11.1946|268.929|13.2 M|
-|SegFormer-B1 (slice)|78.35|17.9998|403.393|48.5 M|
-|SegFormer-B2 (slice)|81.60|48.0371|1248.52|96.9 M|
-|SegFormer-B3 (slice)|82.47|64.341|1666.35|167.3 M|
-|SegFormer-B4 (slice)|82.38|82.4336|1995.42|226.7 M|
-|SegFormer-B5 (slice)|82.58|97.3717|2420.19|229.7 M|
-
+<table>
+<thead>
+<tr>
+<th>模型名称</th>
+<th>mloU（%）</th>
+<th>GPU推理耗时（ms）</th>
+<th>CPU推理耗时 (ms)</th>
+<th>模型存储大小（M)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Deeplabv3_Plus-R50</td>
+<td>80.36</td>
+<td>61.0531</td>
+<td>1513.58</td>
+<td>94.9 M</td>
+</tr>
+<tr>
+<td>Deeplabv3_Plus-R101</td>
+<td>81.10</td>
+<td>100.026</td>
+<td>2460.71</td>
+<td>162.5 M</td>
+</tr>
+<tr>
+<td>Deeplabv3-R50</td>
+<td>79.90</td>
+<td>82.2631</td>
+<td>1735.83</td>
+<td>138.3 M</td>
+</tr>
+<tr>
+<td>Deeplabv3-R101</td>
+<td>80.85</td>
+<td>121.492</td>
+<td>2685.51</td>
+<td>205.9 M</td>
+</tr>
+<tr>
+<td>OCRNet_HRNet-W18</td>
+<td>80.67</td>
+<td>48.2335</td>
+<td>906.385</td>
+<td>43.1 M</td>
+</tr>
+<tr>
+<td>OCRNet_HRNet-W48</td>
+<td>82.15</td>
+<td>78.9976</td>
+<td>2226.95</td>
+<td>249.8 M</td>
+</tr>
+<tr>
+<td>PP-LiteSeg-T</td>
+<td>73.10</td>
+<td>7.6827</td>
+<td>138.683</td>
+<td>28.5 M</td>
+</tr>
+<tr>
+<td>PP-LiteSeg-B</td>
+<td>75.25</td>
+<td>-</td>
+<td>-</td>
+<td>47.0 M</td>
+</tr>
+<tr>
+<td>SegFormer-B0 (slice)</td>
+<td>76.73</td>
+<td>11.1946</td>
+<td>268.929</td>
+<td>13.2 M</td>
+</tr>
+<tr>
+<td>SegFormer-B1 (slice)</td>
+<td>78.35</td>
+<td>17.9998</td>
+<td>403.393</td>
+<td>48.5 M</td>
+</tr>
+<tr>
+<td>SegFormer-B2 (slice)</td>
+<td>81.60</td>
+<td>48.0371</td>
+<td>1248.52</td>
+<td>96.9 M</td>
+</tr>
+<tr>
+<td>SegFormer-B3 (slice)</td>
+<td>82.47</td>
+<td>64.341</td>
+<td>1666.35</td>
+<td>167.3 M</td>
+</tr>
+<tr>
+<td>SegFormer-B4 (slice)</td>
+<td>82.38</td>
+<td>82.4336</td>
+<td>1995.42</td>
+<td>226.7 M</td>
+</tr>
+<tr>
+<td>SegFormer-B5 (slice)</td>
+<td>82.58</td>
+<td>97.3717</td>
+<td>2420.19</td>
+<td>229.7 M</td>
+</tr>
+</tbody>
+</table>
 **以上模型精度指标测量自[Cityscapes](https://www.cityscapes-dataset.com/)数据集。GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为 8，精度类型为 FP32。**
 
 
-|模型名称|mloU（%）|GPU推理耗时（ms）|CPU推理耗时|模型存储大小（M)|
-|-|-|-|-|-|
-|SeaFormer_base(slice)|40.92|24.4073|397.574|30.8 M|
-|SeaFormer_large (slice)|43.66|27.8123|550.464|49.8 M|
-|SeaFormer_small (slice)|38.73|19.2295|358.343|14.3 M|
-|SeaFormer_tiny (slice)|34.58|13.9496|330.132|6.1M |
-
+<table>
+<thead>
+<tr>
+<th>模型名称</th>
+<th>mloU（%）</th>
+<th>GPU推理耗时（ms）</th>
+<th>CPU推理耗时</th>
+<th>模型存储大小（M)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SeaFormer_base(slice)</td>
+<td>40.92</td>
+<td>24.4073</td>
+<td>397.574</td>
+<td>30.8 M</td>
+</tr>
+<tr>
+<td>SeaFormer_large (slice)</td>
+<td>43.66</td>
+<td>27.8123</td>
+<td>550.464</td>
+<td>49.8 M</td>
+</tr>
+<tr>
+<td>SeaFormer_small (slice)</td>
+<td>38.73</td>
+<td>19.2295</td>
+<td>358.343</td>
+<td>14.3 M</td>
+</tr>
+<tr>
+<td>SeaFormer_tiny (slice)</td>
+<td>34.58</td>
+<td>13.9496</td>
+<td>330.132</td>
+<td>6.1M</td>
+</tr>
+</tbody>
+</table>
 **SeaFormer系列模型的精度指标测量自[ADE20k](https://groups.csail.mit.edu/vision/datasets/ADE20K/)数据集。GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为 8，精度类型为 FP32。**
 
 </details>

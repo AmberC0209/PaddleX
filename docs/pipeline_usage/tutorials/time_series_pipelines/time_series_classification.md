@@ -13,10 +13,22 @@
 <details>
    <summary> 👉模型列表详情</summary>
 
-|模型名称|acc(%)|模型存储大小（M)|
-|-|-|-|
-|TimesNet_cls|87.5|792K|
-
+<table>
+<thead>
+<tr>
+<th>模型名称</th>
+<th>acc(%)</th>
+<th>模型存储大小（M)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TimesNet_cls</td>
+<td>87.5</td>
+<td>792K</td>
+</tr>
+</tbody>
+</table>
 **注：以上精度指标测量自 [UWaveGestureLibrary](https://paddlets.bj.bcebos.com/classification/UWaveGestureLibrary_TEST.csv) 数据集。以上所有模型 GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为8，精度类型为 FP32。**
 
 </details>
@@ -100,33 +112,102 @@ for res in output:
 
 （1）实例化 `create_pipeline` 实例化产线对象：具体参数说明如下：
 
-|参数|参数说明|参数类型|默认值|
-|-|-|-|-|
-|`pipeline`|产线名称或是产线配置文件路径。如为产线名称，则必须为 PaddleX 所支持的产线。|`str`|无|
-|`device`|产线模型推理设备。支持：“gpu”，“cpu”。|`str`|`gpu`|
-|`use_hpip`|是否启用高性能推理，仅当该产线支持高性能推理时可用。|`bool`|`False`|
-
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>参数说明</th>
+<th>参数类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pipeline</code></td>
+<td>产线名称或是产线配置文件路径。如为产线名称，则必须为 PaddleX 所支持的产线。</td>
+<td><code>str</code></td>
+<td>无</td>
+</tr>
+<tr>
+<td><code>device</code></td>
+<td>产线模型推理设备。支持：“gpu”，“cpu”。</td>
+<td><code>str</code></td>
+<td><code>gpu</code></td>
+</tr>
+<tr>
+<td><code>use_hpip</code></td>
+<td>是否启用高性能推理，仅当该产线支持高性能推理时可用。</td>
+<td><code>bool</code></td>
+<td><code>False</code></td>
+</tr>
+</tbody>
+</table>
 （2）调用产线对象的 `predict` 方法进行推理预测：`predict` 方法参数为`x`，用于输入待预测数据，支持多种输入方式，具体示例如下：
 
-| 参数类型      | 参数说明                                                                                                  |
-|---------------|-----------------------------------------------------------------------------------------------------------|
-| Python Var    | 支持直接传入Python变量，如numpy.ndarray表示的图像数据。                                               |
-| str         | 支持传入待预测数据文件路径，如图像文件的本地路径：`/root/data/img.jpg`。                                   |
-| str           | 支持传入待预测数据文件URL，如图像文件的网络URL：[示例](https://paddle-model-ecology.bj.bcebos.com/paddlex/ts/demo_ts/ts_cls.csv)。|
-| str           | 支持传入本地目录，该目录下需包含待预测数据文件，如本地路径：`/root/data/`。                               |
-| dict          | 支持传入字典类型，字典的key需与具体任务对应，如图像分类任务对应\"img\"，字典的val支持上述类型数据，例如：`{\"img\": \"/root/data1\"}`。|
-| list          | 支持传入列表，列表元素需为上述类型数据，如`[numpy.ndarray, numpy.ndarray]，[\"/root/data/img1.jpg\", \"/root/data/img2.jpg\"]`，`[\"/root/data1\", \"/root/data2\"]`，`[{\"img\": \"/root/data1\"}, {\"img\": \"/root/data2/img.jpg\"}]`。|
-
+<table>
+<thead>
+<tr>
+<th>参数类型</th>
+<th>参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Python Var</td>
+<td>支持直接传入Python变量，如numpy.ndarray表示的图像数据。</td>
+</tr>
+<tr>
+<td>str</td>
+<td>支持传入待预测数据文件路径，如图像文件的本地路径：<code>/root/data/img.jpg</code>。</td>
+</tr>
+<tr>
+<td>str</td>
+<td>支持传入待预测数据文件URL，如图像文件的网络URL：<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/ts/demo_ts/ts_cls.csv">示例</a>。</td>
+</tr>
+<tr>
+<td>str</td>
+<td>支持传入本地目录，该目录下需包含待预测数据文件，如本地路径：<code>/root/data/</code>。</td>
+</tr>
+<tr>
+<td>dict</td>
+<td>支持传入字典类型，字典的key需与具体任务对应，如图像分类任务对应\"img\"，字典的val支持上述类型数据，例如：<code>{\"img\": \"/root/data1\"}</code>。</td>
+</tr>
+<tr>
+<td>list</td>
+<td>支持传入列表，列表元素需为上述类型数据，如<code>[numpy.ndarray, numpy.ndarray]，[\"/root/data/img1.jpg\", \"/root/data/img2.jpg\"]</code>，<code>[\"/root/data1\", \"/root/data2\"]</code>，<code>[{\"img\": \"/root/data1\"}, {\"img\": \"/root/data2/img.jpg\"}]</code>。</td>
+</tr>
+</tbody>
+</table>
 （3）调用`predict`方法获取预测结果：`predict` 方法为`generator`，因此需要通过调用获得预测结果，`predict`方法以batch为单位对数据进行预测，因此预测结果为list形式表示的一组预测结果。
 
 （4）对预测结果进行处理：每个样本的预测结果均为`dict`类型，且支持打印，或保存为文件，支持保存的类型与具体产线相关，如：
 
-|方法|说明|方法参数|
-|-|-|-|
-|save_to_csv|将结果保存为csv格式的文件|`- save_path`：str类型，保存的文件路径，当为目录时，保存文件命名与输入文件类型命名一致；|
-|save_to_html|将结果保存为html格式的文件|`- save_path`：str类型，保存的文件路径，当为目录时，保存文件命名与输入文件类型命名一致；|
-|save_to_xlsx|将结果保存为表格格式的文件|`- save_path`：str类型，保存的文件路径，当为目录时，保存文件命名与输入文件类型命名一致；|
-
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+<th>方法参数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>save_to_csv</td>
+<td>将结果保存为csv格式的文件</td>
+<td><code>- save_path</code>：str类型，保存的文件路径，当为目录时，保存文件命名与输入文件类型命名一致；</td>
+</tr>
+<tr>
+<td>save_to_html</td>
+<td>将结果保存为html格式的文件</td>
+<td><code>- save_path</code>：str类型，保存的文件路径，当为目录时，保存文件命名与输入文件类型命名一致；</td>
+</tr>
+<tr>
+<td>save_to_xlsx</td>
+<td>将结果保存为表格格式的文件</td>
+<td><code>- save_path</code>：str类型，保存的文件路径，当为目录时，保存文件命名与输入文件类型命名一致；</td>
+</tr>
+</tbody>
+</table>
 若您获取了配置文件，即可对时序分类产线各项配置进行自定义，只需要修改 `create_pipeline` 方法中的 `pipeline` 参数值为产线配置文件路径即可。
 
 例如，若您的配置文件保存在 `./my_path/ts_cls.yaml` ，则只需执行：

@@ -33,18 +33,82 @@ After trying the pipeline, determine if it meets your expectations (including ac
 
 PaddleX provides 80 end-to-end image classification models, which can be referenced in the [Model List](../support_list/models_list.en.md). Some of the benchmarks for these models are as follows:
 
-| Model List          | Top-1 Accuracy (%) | GPU Inference Time (ms) | CPU Inference Time (ms) | Model Size (M) |
-| ------------------- | ------------------ | ----------------------- | ----------------------- | -------------- |
-| PP-HGNetV2_B6       | 86.30              | 10.46                   | 240.18                  | 288            |
-| CLIP_vit_base_patch16_224 | 85.39            | 12.03                 | 234.85                  | 331            |
-| PP-HGNetV2_B4       | 83.57              | 2.45                    | 38.10                   | 76             |
-| SwinTransformer_base_patch4_window7_224 | 83.37            | 12.35                 | -                     | 342            |
-| PP-HGNet_small      | 81.51              | 4.24                    | 108.21                  | 94             |
-| PP-HGNetV2_B0       | 77.77              | 0.68                    | 6.41                    | 23             |
-| ResNet50            | 76.50              | 3.12                    | 50.90                   | 98             |
-| PP-LCNet_x1_0       | 71.32              | 1.01                    | 3.39                    | 7              |
-| MobileNetV3_small_x1_0 | 68.24            | 1.09                  | 3.65                    | 12             |
-
+<table>
+<thead>
+<tr>
+<th>Model List</th>
+<th>Top-1 Accuracy (%)</th>
+<th>GPU Inference Time (ms)</th>
+<th>CPU Inference Time (ms)</th>
+<th>Model Size (M)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PP-HGNetV2_B6</td>
+<td>86.30</td>
+<td>10.46</td>
+<td>240.18</td>
+<td>288</td>
+</tr>
+<tr>
+<td>CLIP_vit_base_patch16_224</td>
+<td>85.39</td>
+<td>12.03</td>
+<td>234.85</td>
+<td>331</td>
+</tr>
+<tr>
+<td>PP-HGNetV2_B4</td>
+<td>83.57</td>
+<td>2.45</td>
+<td>38.10</td>
+<td>76</td>
+</tr>
+<tr>
+<td>SwinTransformer_base_patch4_window7_224</td>
+<td>83.37</td>
+<td>12.35</td>
+<td>-</td>
+<td>342</td>
+</tr>
+<tr>
+<td>PP-HGNet_small</td>
+<td>81.51</td>
+<td>4.24</td>
+<td>108.21</td>
+<td>94</td>
+</tr>
+<tr>
+<td>PP-HGNetV2_B0</td>
+<td>77.77</td>
+<td>0.68</td>
+<td>6.41</td>
+<td>23</td>
+</tr>
+<tr>
+<td>ResNet50</td>
+<td>76.50</td>
+<td>3.12</td>
+<td>50.90</td>
+<td>98</td>
+</tr>
+<tr>
+<td>PP-LCNet_x1_0</td>
+<td>71.32</td>
+<td>1.01</td>
+<td>3.39</td>
+<td>7</td>
+</tr>
+<tr>
+<td>MobileNetV3_small_x1_0</td>
+<td>68.24</td>
+<td>1.09</td>
+<td>3.65</td>
+<td>12</td>
+</tr>
+</tbody>
+</table>
 > **Note: The above accuracy metrics are Top-1 Accuracy on the ImageNet-1k validation set. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.**
 
 In short, the models listed from top to bottom have faster inference speeds, while those from bottom to top have higher accuracy. This tutorial will use the `PP-LCNet_x1_0` model as an example to complete the full model development process. You can select an appropriate model for training based on your actual usage scenarios. After training, you can evaluate the suitable model weights within your pipeline and ultimately use them in real-world scenarios.
@@ -200,22 +264,95 @@ It is recommended to follow the controlled variable method when debugging parame
 Learning Rate Exploration Results:
 <center>
 
-| Experiment | Epochs | Learning Rate | batch\_size | Training Environment | Top-1 Acc |
-|-----------|--------|-------------|-------------|--------------------|-----------|
-| Experiment 1 | 20     | 0.01        | 64          | 4 GPUs             | **73.83%**  |
-| Experiment 2 | 20     | 0.001       | 64          | 4 GPUs             | 30.64%    |
-| Experiment 3 | 20     | 0.1         | 64          | 4 GPUs             | 71.53%    |
+<table>
+<thead>
+<tr>
+<th>Experiment</th>
+<th>Epochs</th>
+<th>Learning Rate</th>
+<th>batch_size</th>
+<th>Training Environment</th>
+<th>Top-1 Acc</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Experiment 1</td>
+<td>20</td>
+<td>0.01</td>
+<td>64</td>
+<td>4 GPUs</td>
+<td><strong>73.83%</strong></td>
+</tr>
+<tr>
+<td>Experiment 2</td>
+<td>20</td>
+<td>0.001</td>
+<td>64</td>
+<td>4 GPUs</td>
+<td>30.64%</td>
+</tr>
+<tr>
+<td>Experiment 3</td>
+<td>20</td>
+<td>0.1</td>
+<td>64</td>
+<td>4 GPUs</td>
+<td>71.53%</td>
+</tr>
+</tbody>
+</table>
 </center>
 
 Changing Epochs Experiment Results:
 <center>
 
-| Experiment                | Epochs | Learning Rate | batch\_size | Training Environment | Top-1 Acc |
-|-------------------------|--------|-------------|-------------|--------------------|-----------|
-| Experiment 1              | 20     | 0.01        | 64          | 4 GPUs             | 73.83%    |
-| Experiment 1 (Increased Epochs) | 50     | 0.01        | 64          | 4 GPUs             | 77.32%    |
-| Experiment 1 (Increased Epochs) | 80     | 0.01        | 64          | 4 GPUs             | 77.60%    |
-| Experiment 1 (Increased Epochs) | 100    | 0.01        | 64          | 4 GPUs             | **77.80%**  |
+<table>
+<thead>
+<tr>
+<th>Experiment</th>
+<th>Epochs</th>
+<th>Learning Rate</th>
+<th>batch_size</th>
+<th>Training Environment</th>
+<th>Top-1 Acc</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Experiment 1</td>
+<td>20</td>
+<td>0.01</td>
+<td>64</td>
+<td>4 GPUs</td>
+<td>73.83%</td>
+</tr>
+<tr>
+<td>Experiment 1 (Increased Epochs)</td>
+<td>50</td>
+<td>0.01</td>
+<td>64</td>
+<td>4 GPUs</td>
+<td>77.32%</td>
+</tr>
+<tr>
+<td>Experiment 1 (Increased Epochs)</td>
+<td>80</td>
+<td>0.01</td>
+<td>64</td>
+<td>4 GPUs</td>
+<td>77.60%</td>
+</tr>
+<tr>
+<td>Experiment 1 (Increased Epochs)</td>
+<td>100</td>
+<td>0.01</td>
+<td>64</td>
+<td>4 GPUs</td>
+<td><strong>77.80%</strong></td>
+</tr>
+</tbody>
+</table>
 </center>
 
 > **Note: The above accuracy metrics are Top-1 Accuracy on the [ImageNet-1k](https://www.image-net.org/index.php) validation set. GPU inference time is based on an NVIDIA Tesla T4 machine, with FP32 precision. CPU inference speed is based on an Intel® Xeon® Gold 5117 CPU @ 2.00GHz, with 8 threads and FP32 precision.**

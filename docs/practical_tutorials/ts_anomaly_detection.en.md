@@ -25,13 +25,60 @@ Note: Due to the tight correlation between time series data and scenarios, the o
 ## 3. Choose a Model
 PaddleX provides five end-to-end time series anomaly detection models. For details, refer to the [Model List](../support_list/models_list.en.md). The benchmarks of these models are as follows:
 
-| Model Name | Precision | Recall | F1-Score | Model Size (M) | Description |
-|-|-|-|-|-|-|
-| DLinear_ad | 0.9898 | 0.9396 | 0.9641 | 72.8K | A simple, efficient, and easy-to-use time series anomaly detection model |
-| Nonstationary_ad | 0.9855 | 0.8895 | 0.9351 | 1.5MB | A transformer-based model optimized for anomaly detection in non-stationary time series |
-| AutoEncoder_ad | 0.9936 | 0.8436 | 0.9125 | 32K | A classic autoencoder-based model that is efficient and easy to use for time series anomaly detection |
-| PatchTST_ad | 0.9878 | 0.9070 | 0.9457 | 164K | A high-precision time series anomaly detection model that balances local patterns and global dependencies |
-| TimesNet_ad | 0.9837 | 0.9480 | 0.9656 | 732K | A highly adaptive and high-precision time series anomaly detection model through multi-period analysis |
+<table>
+<thead>
+<tr>
+<th>Model Name</th>
+<th>Precision</th>
+<th>Recall</th>
+<th>F1-Score</th>
+<th>Model Size (M)</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DLinear_ad</td>
+<td>0.9898</td>
+<td>0.9396</td>
+<td>0.9641</td>
+<td>72.8K</td>
+<td>A simple, efficient, and easy-to-use time series anomaly detection model</td>
+</tr>
+<tr>
+<td>Nonstationary_ad</td>
+<td>0.9855</td>
+<td>0.8895</td>
+<td>0.9351</td>
+<td>1.5MB</td>
+<td>A transformer-based model optimized for anomaly detection in non-stationary time series</td>
+</tr>
+<tr>
+<td>AutoEncoder_ad</td>
+<td>0.9936</td>
+<td>0.8436</td>
+<td>0.9125</td>
+<td>32K</td>
+<td>A classic autoencoder-based model that is efficient and easy to use for time series anomaly detection</td>
+</tr>
+<tr>
+<td>PatchTST_ad</td>
+<td>0.9878</td>
+<td>0.9070</td>
+<td>0.9457</td>
+<td>164K</td>
+<td>A high-precision time series anomaly detection model that balances local patterns and global dependencies</td>
+</tr>
+<tr>
+<td>TimesNet_ad</td>
+<td>0.9837</td>
+<td>0.9480</td>
+<td>0.9656</td>
+<td>732K</td>
+<td>A highly adaptive and high-precision time series anomaly detection model through multi-period analysis</td>
+</tr>
+</tbody>
+</table>
 > **Note: The above accuracy metrics are measured on the [PSM](https://paddle-model-ecology.bj.bcebos.com/paddlex/data/ts_anomaly_examples.tar) dataset with a time series length of 100.**
 
 ## 4. Data Preparation and Validation
@@ -190,19 +237,83 @@ It is recommended to follow the method of controlled variables when debugging pa
 
 Learning Rate Exploration Results:
 
-| Experiment | Epochs | Learning Rate | Batch Size | Input Length | Training Environment | Validation F1 Score (%) |
-|-|-|-|-|-|-|-|
-| Experiment 1 | 5 | 0.0001 | 16 | 96 | 1 GPU | 79.5 |
-| Experiment 2 | 5 | 0.0005 | 16 | 96 | 1 GPU | 80.1 |
-| Experiment 3 | 5 | 0.001 | 16 | 96 | 1 GPU | 80.9 |
-
+<table>
+<thead>
+<tr>
+<th>Experiment</th>
+<th>Epochs</th>
+<th>Learning Rate</th>
+<th>Batch Size</th>
+<th>Input Length</th>
+<th>Training Environment</th>
+<th>Validation F1 Score (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Experiment 1</td>
+<td>5</td>
+<td>0.0001</td>
+<td>16</td>
+<td>96</td>
+<td>1 GPU</td>
+<td>79.5</td>
+</tr>
+<tr>
+<td>Experiment 2</td>
+<td>5</td>
+<td>0.0005</td>
+<td>16</td>
+<td>96</td>
+<td>1 GPU</td>
+<td>80.1</td>
+</tr>
+<tr>
+<td>Experiment 3</td>
+<td>5</td>
+<td>0.001</td>
+<td>16</td>
+<td>96</td>
+<td>1 GPU</td>
+<td>80.9</td>
+</tr>
+</tbody>
+</table>
 Increasing Training Epochs Results:
 
-| Experiment | Epochs | Learning Rate | Batch Size | Input Length | Training Environment | Validation F1 Score (%) |
-|-|-|-|-|-|-|-|
-| Experiment 3 | 5 | 0.0005 | 16 | 96 | 1 GPU | 80.9 |
-| Experiment 4 | 20 | 0.0005 | 16 | 96 | 1 GPU | 80.9 |
-
+<table>
+<thead>
+<tr>
+<th>Experiment</th>
+<th>Epochs</th>
+<th>Learning Rate</th>
+<th>Batch Size</th>
+<th>Input Length</th>
+<th>Training Environment</th>
+<th>Validation F1 Score (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Experiment 3</td>
+<td>5</td>
+<td>0.0005</td>
+<td>16</td>
+<td>96</td>
+<td>1 GPU</td>
+<td>80.9</td>
+</tr>
+<tr>
+<td>Experiment 4</td>
+<td>20</td>
+<td>0.0005</td>
+<td>16</td>
+<td>96</td>
+<td>1 GPU</td>
+<td>80.9</td>
+</tr>
+</tbody>
+</table>
 ## 6. Production Line Testing
 Replace the model in the production line with the fine-tuned model for testing, using the [test file](https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/doc_images/practical_tutorial/timeseries_anomaly_detection/test.csv) for prediction:
 

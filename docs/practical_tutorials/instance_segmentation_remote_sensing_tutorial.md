@@ -34,13 +34,42 @@ PaddleX 提供了两种体验的方式，一种是可以直接通过 PaddleX whe
 
 PaddleX 提供了 15 个端到端的实例分割模型，具体可参考 [模型列表](../support_list/models_list.md)，其中部分模型的 benchmark 如下：
 
-| 模型列表        | mAP(%) | GPU 推理耗时(ms) |  模型存储大小(M) |
-| --------------- | ------ | ---------------- | --------------- |
-| Mask-RT-DETR-H       | 48.8   | 61.40           |486             |
-| Mask-RT-DETR-X       | 47.5   | 45.70             |257             |
-| Mask-RT-DETR-L       | 45.7   | 37.40             |123             |
-| Mask-RT-DETR-S       | 40.9   | 32.40             |57             |
-
+<table>
+<thead>
+<tr>
+<th>模型列表</th>
+<th>mAP(%)</th>
+<th>GPU 推理耗时(ms)</th>
+<th>模型存储大小(M)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mask-RT-DETR-H</td>
+<td>48.8</td>
+<td>61.40</td>
+<td>486</td>
+</tr>
+<tr>
+<td>Mask-RT-DETR-X</td>
+<td>47.5</td>
+<td>45.70</td>
+<td>257</td>
+</tr>
+<tr>
+<td>Mask-RT-DETR-L</td>
+<td>45.7</td>
+<td>37.40</td>
+<td>123</td>
+</tr>
+<tr>
+<td>Mask-RT-DETR-S</td>
+<td>40.9</td>
+<td>32.40</td>
+<td>57</td>
+</tr>
+</tbody>
+</table>
 > **注：以上精度指标为 [COCO2017](https://cocodataset.org/#home) 验证集 mAP(0.5:0.95)，GPU 推理耗时基于 NVIDIA  V100 机器，精度类型为 FP32。**
 
 简单来说，表格从上到下，模型推理速度更快，从下到上，模型精度更高。本教程以 `Mask-RT-DETR-H` 模型为例，完成一次模型全流程开发。你可以依据自己的实际使用场景，判断并选择一个合适的模型做训练，训练完成后可在产线内评估合适的模型权重，并最终用于实际使用场景中。
@@ -194,23 +223,95 @@ python main.py -c paddlex/configs/instance_segmentation/Mask-RT-DETR-H.yaml \
 学习率探寻实验结果：
 <center>
 
-| 实验  | 轮次 | 学习率   | batch\_size | 训练环境 | mAP@0\.5 |
-|-----|----|-------|-------------|------|----------|
-| 实验一 | 80 | 0\.0005 | 2          | 4卡   | 0\.695   |
-| 实验二 | 80 | 0\.0001 | 2          | 4卡   | **0\.825**  |
-| 实验三 | 80 | 0\.00005  | 2          | 4卡   | 0\.706   |
-
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>轮次</th>
+<th>学习率</th>
+<th>batch_size</th>
+<th>训练环境</th>
+<th>mAP@0.5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>实验一</td>
+<td>80</td>
+<td>0.0005</td>
+<td>2</td>
+<td>4卡</td>
+<td>0.695</td>
+</tr>
+<tr>
+<td>实验二</td>
+<td>80</td>
+<td>0.0001</td>
+<td>2</td>
+<td>4卡</td>
+<td><strong>0.825</strong></td>
+</tr>
+<tr>
+<td>实验三</td>
+<td>80</td>
+<td>0.00005</td>
+<td>2</td>
+<td>4卡</td>
+<td>0.706</td>
+</tr>
+</tbody>
+</table>
 </center>
 
 改变 epoch 实验结果：
 <center>
 
-| 实验        | 轮次  | 学习率   | batch\_size | 训练环境 | mAP@0\.5 |
-|-----------|-----|-------|-------------|------|----------|
-| 实验二       | 80  | 0\.0001 | 2          | 4卡   | 0\.825   |
-| 实验二减少训练轮次 | 30  | 0\.0001 | 2          | 4卡   | 0\.287   |
-| 实验二减少训练轮次 | 50  | 0\.0001 | 2          | 4卡   | 0\.545   |
-| 实验二增大训练轮次 | 100 | 0\.0001 | 2          | 4卡   | 0\.813  |
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>轮次</th>
+<th>学习率</th>
+<th>batch_size</th>
+<th>训练环境</th>
+<th>mAP@0.5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>实验二</td>
+<td>80</td>
+<td>0.0001</td>
+<td>2</td>
+<td>4卡</td>
+<td>0.825</td>
+</tr>
+<tr>
+<td>实验二减少训练轮次</td>
+<td>30</td>
+<td>0.0001</td>
+<td>2</td>
+<td>4卡</td>
+<td>0.287</td>
+</tr>
+<tr>
+<td>实验二减少训练轮次</td>
+<td>50</td>
+<td>0.0001</td>
+<td>2</td>
+<td>4卡</td>
+<td>0.545</td>
+</tr>
+<tr>
+<td>实验二增大训练轮次</td>
+<td>100</td>
+<td>0.0001</td>
+<td>2</td>
+<td>4卡</td>
+<td>0.813</td>
+</tr>
+</tbody>
+</table>
 </center>
 
 ** 注：本教程为 4 卡教程，如果您只有 1 张GPU，可通过调整训练卡数完成本次实验，但最终指标未必和上述指标对齐，属正常情况。**

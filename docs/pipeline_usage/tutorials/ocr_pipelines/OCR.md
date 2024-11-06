@@ -17,11 +17,36 @@ OCR（光学字符识别，Optical Character Recognition）是一种将图像中
 
 **文本检测模块：**
 
-|模型|检测Hmean（%）|GPU推理耗时（ms）|CPU推理耗时 (ms)|模型存储大小（M)|介绍|
-|-|-|-|-|-|-|
-|PP-OCRv4_server_det|82.69|83.3501|2434.01|109|PP-OCRv4 的服务端文本检测模型，精度更高，适合在性能较好的服务器上部署|
-|PP-OCRv4_mobile_det|77.79|10.6923|120.177|4.7|PP-OCRv4 的移动端文本检测模型，效率更高，适合在端侧设备部署|
-
+<table>
+<thead>
+<tr>
+<th>模型</th>
+<th>检测Hmean（%）</th>
+<th>GPU推理耗时（ms）</th>
+<th>CPU推理耗时 (ms)</th>
+<th>模型存储大小（M)</th>
+<th>介绍</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PP-OCRv4_server_det</td>
+<td>82.69</td>
+<td>83.3501</td>
+<td>2434.01</td>
+<td>109</td>
+<td>PP-OCRv4 的服务端文本检测模型，精度更高，适合在性能较好的服务器上部署</td>
+</tr>
+<tr>
+<td>PP-OCRv4_mobile_det</td>
+<td>77.79</td>
+<td>10.6923</td>
+<td>120.177</td>
+<td>4.7</td>
+<td>PP-OCRv4 的移动端文本检测模型，效率更高，适合在端侧设备部署</td>
+</tr>
+</tbody>
+</table>
 **文本识别模块：**
 <table >
     <tr>
@@ -179,33 +204,102 @@ for res in output:
 
 （1）实例化 `create_pipeline` 实例化 OCR 产线对象：具体参数说明如下：
 
-|参数|参数说明|参数类型|默认值|
-|-|-|-|-|
-|`pipeline`|产线名称或是产线配置文件路径。如为产线名称，则必须为 PaddleX 所支持的产线。|`str`|无|
-|`device`|产线模型推理设备。支持：“gpu”，“cpu”。|`str`|`gpu`|
-|`use_hpip`|是否启用高性能推理，仅当该产线支持高性能推理时可用。|`bool`|`False`|
-
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>参数说明</th>
+<th>参数类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pipeline</code></td>
+<td>产线名称或是产线配置文件路径。如为产线名称，则必须为 PaddleX 所支持的产线。</td>
+<td><code>str</code></td>
+<td>无</td>
+</tr>
+<tr>
+<td><code>device</code></td>
+<td>产线模型推理设备。支持：“gpu”，“cpu”。</td>
+<td><code>str</code></td>
+<td><code>gpu</code></td>
+</tr>
+<tr>
+<td><code>use_hpip</code></td>
+<td>是否启用高性能推理，仅当该产线支持高性能推理时可用。</td>
+<td><code>bool</code></td>
+<td><code>False</code></td>
+</tr>
+</tbody>
+</table>
 （2）调用OCR产线对象的 `predict` 方法进行推理预测：`predict` 方法参数为`x`，用于输入待预测数据，支持多种输入方式，具体示例如下：
 
-| 参数类型      | 参数说明                                                                                                  |
-|---------------|-----------------------------------------------------------------------------------------------------------|
-| Python Var    | 支持直接传入Python变量，如numpy.ndarray表示的图像数据。                                               |
-| str         | 支持传入待预测数据文件路径，如图像文件的本地路径：`/root/data/img.jpg`。                                   |
-| str           | 支持传入待预测数据文件URL，如图像文件的网络URL：[示例](https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/general_ocr_001.png)。|
-| str           | 支持传入本地目录，该目录下需包含待预测数据文件，如本地路径：`/root/data/`。                               |
-| dict          | 支持传入字典类型，字典的key需与具体任务对应，如图像分类任务对应\"img\"，字典的val支持上述类型数据，例如：`{\"img\": \"/root/data1\"}`。|
-| list          | 支持传入列表，列表元素需为上述类型数据，如`[numpy.ndarray, numpy.ndarray]，[\"/root/data/img1.jpg\", \"/root/data/img2.jpg\"]`，`[\"/root/data1\", \"/root/data2\"]`，`[{\"img\": \"/root/data1\"}, {\"img\": \"/root/data2/img.jpg\"}]`。|
-
+<table>
+<thead>
+<tr>
+<th>参数类型</th>
+<th>参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Python Var</td>
+<td>支持直接传入Python变量，如numpy.ndarray表示的图像数据。</td>
+</tr>
+<tr>
+<td>str</td>
+<td>支持传入待预测数据文件路径，如图像文件的本地路径：<code>/root/data/img.jpg</code>。</td>
+</tr>
+<tr>
+<td>str</td>
+<td>支持传入待预测数据文件URL，如图像文件的网络URL：<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/general_ocr_001.png">示例</a>。</td>
+</tr>
+<tr>
+<td>str</td>
+<td>支持传入本地目录，该目录下需包含待预测数据文件，如本地路径：<code>/root/data/</code>。</td>
+</tr>
+<tr>
+<td>dict</td>
+<td>支持传入字典类型，字典的key需与具体任务对应，如图像分类任务对应\"img\"，字典的val支持上述类型数据，例如：<code>{\"img\": \"/root/data1\"}</code>。</td>
+</tr>
+<tr>
+<td>list</td>
+<td>支持传入列表，列表元素需为上述类型数据，如<code>[numpy.ndarray, numpy.ndarray]，[\"/root/data/img1.jpg\", \"/root/data/img2.jpg\"]</code>，<code>[\"/root/data1\", \"/root/data2\"]</code>，<code>[{\"img\": \"/root/data1\"}, {\"img\": \"/root/data2/img.jpg\"}]</code>。</td>
+</tr>
+</tbody>
+</table>
 （3）调用`predict`方法获取预测结果：`predict` 方法为`generator`，因此需要通过调用获得预测结果，`predict`方法以batch为单位对数据进行预测，因此预测结果为list形式表示的一组预测结果。
 
 （4）对预测结果进行处理：每个样本的预测结果均为`dict`类型，且支持打印，或保存为文件，支持保存的类型与具体产线相关，如：
 
-| 方法         | 说明                        | 方法参数                                                                                               |
-|--------------|-----------------------------|--------------------------------------------------------------------------------------------------------|
-| print        | 打印结果到终端              | `- format_json`：bool类型，是否对输出内容进行使用json缩进格式化，默认为True；<br>`- indent`：int类型，json格式化设置，仅当format_json为True时有效，默认为4；<br>`- ensure_ascii`：bool类型，json格式化设置，仅当format_json为True时有效，默认为False； |
-| save_to_json | 将结果保存为json格式的文件   | `- save_path`：str类型，保存的文件路径，当为目录时，保存文件命名与输入文件类型命名一致；<br>`- indent`：int类型，json格式化设置，默认为4；<br>`- ensure_ascii`：bool类型，json格式化设置，默认为False； |
-| save_to_img  | 将结果保存为图像格式的文件  | `- save_path`：str类型，保存的文件路径，当为目录时，保存文件命名与输入文件类型命名一致； |
-
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+<th>方法参数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>print</td>
+<td>打印结果到终端</td>
+<td><code>- format_json</code>：bool类型，是否对输出内容进行使用json缩进格式化，默认为True；<br><code>- indent</code>：int类型，json格式化设置，仅当format_json为True时有效，默认为4；<br><code>- ensure_ascii</code>：bool类型，json格式化设置，仅当format_json为True时有效，默认为False；</td>
+</tr>
+<tr>
+<td>save_to_json</td>
+<td>将结果保存为json格式的文件</td>
+<td><code>- save_path</code>：str类型，保存的文件路径，当为目录时，保存文件命名与输入文件类型命名一致；<br><code>- indent</code>：int类型，json格式化设置，默认为4；<br><code>- ensure_ascii</code>：bool类型，json格式化设置，默认为False；</td>
+</tr>
+<tr>
+<td>save_to_img</td>
+<td>将结果保存为图像格式的文件</td>
+<td><code>- save_path</code>：str类型，保存的文件路径，当为目录时，保存文件命名与输入文件类型命名一致；</td>
+</tr>
+</tbody>
+</table>
 若您获取了配置文件，即可对OCR产线各项配置进行自定义，只需要修改 `create_pipeline` 方法中的 `pipeline` 参数值为产线配置文件路径即可。
 
 例如，若您的配置文件保存在 `./my_path/OCR.yaml` ，则只需执行：

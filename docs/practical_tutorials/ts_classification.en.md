@@ -26,10 +26,24 @@ Note: Due to the tight coupling between time series data and scenarios, the onli
 ## 3. Choose a Model
 PaddleX provides a time series classification model. Refer to the [Model List](../support_list/models_list.en.md) for details. The model benchmark is as follows:
 
-| Model Name | Acc (%) | Model Size (M) | Description |
-|-|-|-|-|
-| TimesNet_cls | 87.5 | 792K | TimesNet is an adaptive and high-precision time series classification model through multi-cycle analysis |
-
+<table>
+<thead>
+<tr>
+<th>Model Name</th>
+<th>Acc (%)</th>
+<th>Model Size (M)</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TimesNet_cls</td>
+<td>87.5</td>
+<td>792K</td>
+<td>TimesNet is an adaptive and high-precision time series classification model through multi-cycle analysis</td>
+</tr>
+</tbody>
+</table>
 **Note: The evaluation set for the above accuracy metrics is UWaveGestureLibrary.**
 
 ## 4. Data Preparation and Verification
@@ -192,19 +206,76 @@ It is recommended to follow the method of controlled variables when debugging pa
 
 Learning Rate Exploration Results:
 
-| Experiment | Epochs | Learning Rate | Batch Size | Training Environment | Validation Accuracy |
-|------------|--------|---------------|------------|--------------------|---------------------|
-| Experiment 1 | 5 | 0.00001 | 16 | 1 GPU | 72.20% |
-| Experiment 2 | 5 | 0.0001 | 16 | 1 GPU | 72.20% |
-| Experiment 3 | 5 | 0.001 | 16 | 1 GPU | 73.20% |
-
+<table>
+<thead>
+<tr>
+<th>Experiment</th>
+<th>Epochs</th>
+<th>Learning Rate</th>
+<th>Batch Size</th>
+<th>Training Environment</th>
+<th>Validation Accuracy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Experiment 1</td>
+<td>5</td>
+<td>0.00001</td>
+<td>16</td>
+<td>1 GPU</td>
+<td>72.20%</td>
+</tr>
+<tr>
+<td>Experiment 2</td>
+<td>5</td>
+<td>0.0001</td>
+<td>16</td>
+<td>1 GPU</td>
+<td>72.20%</td>
+</tr>
+<tr>
+<td>Experiment 3</td>
+<td>5</td>
+<td>0.001</td>
+<td>16</td>
+<td>1 GPU</td>
+<td>73.20%</td>
+</tr>
+</tbody>
+</table>
 Results of Increasing Training Epochs:
 
-| Experiment | Epochs | Learning Rate | Batch Size | Training Environment | Validation Accuracy |
-|------------|--------|---------------|------------|--------------------|---------------------|
-| Experiment 3 | 5 | 0.001 | 16 | 1 GPU | 73.20% |
-| Experiment 4 | 30 | 0.001 | 16 | 1 GPU | 75.10% |
-
+<table>
+<thead>
+<tr>
+<th>Experiment</th>
+<th>Epochs</th>
+<th>Learning Rate</th>
+<th>Batch Size</th>
+<th>Training Environment</th>
+<th>Validation Accuracy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Experiment 3</td>
+<td>5</td>
+<td>0.001</td>
+<td>16</td>
+<td>1 GPU</td>
+<td>73.20%</td>
+</tr>
+<tr>
+<td>Experiment 4</td>
+<td>30</td>
+<td>0.001</td>
+<td>16</td>
+<td>1 GPU</td>
+<td>75.10%</td>
+</tr>
+</tbody>
+</table>
 ## 6. Production Line Testing
 Set the model directory to the trained model for testing, using the [test file](https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/doc_images/practical_tutorial/timeseries_classification/test.csv) to perform predictions:
 

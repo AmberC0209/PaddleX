@@ -8,10 +8,28 @@
 ## 二、支持模型列表
 
 
-|模型|mAP（%）|GPU推理耗时（ms）|CPU推理耗时 (ms)|模型存储大小（M)|介绍|
-|-|-|-|-|-|-|
-|PicoDet_LCNet_x2_5_face|35.8|33.7|537.0|28.9|基于PicoDet_LCNet_x2_5的人脸检测模型|
-
+<table>
+<thead>
+<tr>
+<th>模型</th>
+<th>mAP（%）</th>
+<th>GPU推理耗时（ms）</th>
+<th>CPU推理耗时 (ms)</th>
+<th>模型存储大小（M)</th>
+<th>介绍</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PicoDet_LCNet_x2_5_face</td>
+<td>35.8</td>
+<td>33.7</td>
+<td>537.0</td>
+<td>28.9</td>
+<td>基于PicoDet_LCNet_x2_5的人脸检测模型</td>
+</tr>
+</tbody>
+</table>
 **注：以上精度指标为wider_face数据集 mAP(0.5:0.95)。所有模型 GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为8，精度类型为 FP32。**
 
 ## 三、快速集成

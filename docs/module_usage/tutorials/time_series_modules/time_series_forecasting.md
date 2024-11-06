@@ -8,14 +8,54 @@
 ## 二、支持模型列表
 
 
-|模型名称|mse|mae|模型存储大小（M)|介绍|
-|-|-|-|-|-|
-|DLinear|0.382|0.394|76k|DLinear结构简单，效率高且易用的时序预测模型|
-|Nonstationary|0.600|0.515|60.3M|基于transformer结构，针对性优化非平稳时间序列的长时序预测模型|
-|PatchTST|0.385|0.397|2.2M|PatchTST是兼顾局部模式和全局依赖关系的高精度长时序预测模型|
-|TiDE|0.405|0.412|34.9M|TiDE是适用于处理多变量、长期的时间序列预测问题的高精度模型|
-|TimesNet|0.417|0.431|5.2M|通过多周期分析，TimesNet是适应性强的高精度时间序列分析模型|
-
+<table>
+<thead>
+<tr>
+<th>模型名称</th>
+<th>mse</th>
+<th>mae</th>
+<th>模型存储大小（M)</th>
+<th>介绍</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DLinear</td>
+<td>0.382</td>
+<td>0.394</td>
+<td>76k</td>
+<td>DLinear结构简单，效率高且易用的时序预测模型</td>
+</tr>
+<tr>
+<td>Nonstationary</td>
+<td>0.600</td>
+<td>0.515</td>
+<td>60.3M</td>
+<td>基于transformer结构，针对性优化非平稳时间序列的长时序预测模型</td>
+</tr>
+<tr>
+<td>PatchTST</td>
+<td>0.385</td>
+<td>0.397</td>
+<td>2.2M</td>
+<td>PatchTST是兼顾局部模式和全局依赖关系的高精度长时序预测模型</td>
+</tr>
+<tr>
+<td>TiDE</td>
+<td>0.405</td>
+<td>0.412</td>
+<td>34.9M</td>
+<td>TiDE是适用于处理多变量、长期的时间序列预测问题的高精度模型</td>
+</tr>
+<tr>
+<td>TimesNet</td>
+<td>0.417</td>
+<td>0.431</td>
+<td>5.2M</td>
+<td>通过多周期分析，TimesNet是适应性强的高精度时间序列分析模型</td>
+</tr>
+</tbody>
+</table>
 **注：以上精度指标测量自**[ETTH1](https://paddle-model-ecology.bj.bcebos.com/paddlex/data/Etth1.tar)**测试数据集，输入序列长度为96，预测序列长度除 TiDE 外为96，TiDE为720 。**
 
 

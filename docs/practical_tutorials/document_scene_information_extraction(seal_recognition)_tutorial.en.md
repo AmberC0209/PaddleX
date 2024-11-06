@@ -81,12 +81,44 @@ You can experience the effectiveness of the Document Scene Information Extractio
 
 PaddleX provides 2 end-to-end seal text detection models, which can be referenced in the [Model List](../support_list/models_list.en.md). Some of the benchmarks for these models are as follows:
 
-| Model | mAP(0.5) (%) | GPU Inference Time (ms) | CPU Inference Time (ms) | Model Size (M) | Description |
-|-|-|-|-|-|-|
-|-|-|-|-|-|-|
-|PP-OCRv4_mobile_seal_det|96.47|10.5878|131.813|4.7M |[PP-OCRv4_mobile_seal_det.yaml](../../paddlex/configs/text_detection_seal/PP-OCRv4_mobile_seal_det.yaml)|
-|PP-OCRv4_server_seal_det|98.21|84.341|2425.06|108.3 M|[PP-OCRv4_server_seal_det.yaml](../../paddlex/configs/text_detection_seal/PP-OCRv4_server_seal_det.yaml)|
-
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>mAP(0.5) (%)</th>
+<th>GPU Inference Time (ms)</th>
+<th>CPU Inference Time (ms)</th>
+<th>Model Size (M)</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>PP-OCRv4_mobile_seal_det</td>
+<td>96.47</td>
+<td>10.5878</td>
+<td>131.813</td>
+<td>4.7M</td>
+<td><a href="../../paddlex/configs/text_detection_seal/PP-OCRv4_mobile_seal_det.yaml">PP-OCRv4_mobile_seal_det.yaml</a></td>
+</tr>
+<tr>
+<td>PP-OCRv4_server_seal_det</td>
+<td>98.21</td>
+<td>84.341</td>
+<td>2425.06</td>
+<td>108.3 M</td>
+<td><a href="../../paddlex/configs/text_detection_seal/PP-OCRv4_server_seal_det.yaml">PP-OCRv4_server_seal_det.yaml</a></td>
+</tr>
+</tbody>
+</table>
 **Note: The evaluation set for the above accuracy metrics is our self-built seal text detection dataset, containing 500 images of circle seal types. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.**
 
 
@@ -258,23 +290,59 @@ Learning Rate Exploration Results:
 
 <center>
 
-| Experiment ID           | Learning Rate|  Hmean(%) |
-| --------------- | ------------- | -------------------- |
-| **1** | **0.001**     | **97.35**       | 
-| 2 | 0.0001   | 93.32       |
-| 3 | 0.00001       | 87.63    |
-
+<table>
+<thead>
+<tr>
+<th>Experiment ID</th>
+<th>Learning Rate</th>
+<th>Hmean(%)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1</strong></td>
+<td><strong>0.001</strong></td>
+<td><strong>97.35</strong></td>
+</tr>
+<tr>
+<td>2</td>
+<td>0.0001</td>
+<td>93.32</td>
+</tr>
+<tr>
+<td>3</td>
+<td>0.00001</td>
+<td>87.63</td>
+</tr>
+</tbody>
+</table>
 </center>
 
 Next, we can increase the number of training epochs based on a learning rate set to 0.001. Comparing experiments [1, 4] below, it can be seen that as the number of training epochs increases, the model's accuracy further improves.
 
 <center>
 
-| Experiment ID           | Learning Rate|  Hmean(%) |
-| --------------- | ------------- | -------------------- |
-| 1 | 30    |97.35   |
-| 4 |100  | 98.13   |
-
+<table>
+<thead>
+<tr>
+<th>Experiment ID</th>
+<th>Learning Rate</th>
+<th>Hmean(%)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>30</td>
+<td>97.35</td>
+</tr>
+<tr>
+<td>4</td>
+<td>100</td>
+<td>98.13</td>
+</tr>
+</tbody>
+</table>
 </center>
 
 **Note:** This tutorial is designed for a 4-GPU setup. If you only have 1 GPU, you can complete the experiment by adjusting the number of training GPUs, but the final metrics may not align perfectly with the above indicators, which is normal.

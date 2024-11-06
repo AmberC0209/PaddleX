@@ -7,15 +7,54 @@ Time series forecasting aims to predict the possible values or states at a futur
 
 ## II. Supported Model List
 
-|Model Name| mse | mae |Model Size (M)| Introduce |
-|-|-|-|-|-|
-|DLinear|0.382|0.394|76k|Simple structure, high efficiency and easy-to-use time series prediction model|
-|Nonstationary|0.600|0.515|60.3M|Based on the transformer structure, targeted optimization of long-term time series prediction models for non-stationary time series|
-|PatchTST|0.385|0.397|2.2M|High-precision long-term time series prediction model that takes into account both local patterns and global dependencies |
-|TiDE|0.405|0.412|34.9M|High-precision model suitable for handling multivariate, long-term time series prediction problems|
-|TimesNet|0.417|0.431|5.2M|Through multi-period analysis, TimesNet is a highly adaptable high-precision time series analysis model|
-
-
+<table>
+<thead>
+<tr>
+<th>Model Name</th>
+<th>mse</th>
+<th>mae</th>
+<th>Model Size (M)</th>
+<th>Introduce</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DLinear</td>
+<td>0.382</td>
+<td>0.394</td>
+<td>76k</td>
+<td>Simple structure, high efficiency and easy-to-use time series prediction model</td>
+</tr>
+<tr>
+<td>Nonstationary</td>
+<td>0.600</td>
+<td>0.515</td>
+<td>60.3M</td>
+<td>Based on the transformer structure, targeted optimization of long-term time series prediction models for non-stationary time series</td>
+</tr>
+<tr>
+<td>PatchTST</td>
+<td>0.385</td>
+<td>0.397</td>
+<td>2.2M</td>
+<td>High-precision long-term time series prediction model that takes into account both local patterns and global dependencies</td>
+</tr>
+<tr>
+<td>TiDE</td>
+<td>0.405</td>
+<td>0.412</td>
+<td>34.9M</td>
+<td>High-precision model suitable for handling multivariate, long-term time series prediction problems</td>
+</tr>
+<tr>
+<td>TimesNet</td>
+<td>0.417</td>
+<td>0.431</td>
+<td>5.2M</td>
+<td>Through multi-period analysis, TimesNet is a highly adaptable high-precision time series analysis model</td>
+</tr>
+</tbody>
+</table>
 **Note: The above accuracy metrics are measured on the [ETTH1](https://paddle-model-ecology.bj.bcebos.com/paddlex/data/Etth1.tar) test dataset, with an input sequence length of 96, and a prediction sequence length of 96 for all models except TiDE, which has a prediction sequence length of 720.**
 
 

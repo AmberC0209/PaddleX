@@ -8,12 +8,36 @@ The seal text detection module typically outputs multi-point bounding boxes arou
 ## II. Supported Model List
 
 
-|Model Name| Hmean（%）|GPU Inference Time (ms)|CPU Inference Time (ms)|Model Size (M)| Description |
-|-|-|-|-|-|-|
-|PP-OCRv4_server_seal_det |98.21|84.341|2425.06|109 M|The server-side seal text detection model of PP-OCRv4 boasts higher accuracy and is suitable for deployment on better-equipped servers.|
-|PP-OCRv4_mobile_seal_det|96.47|10.5878|131.813|4.6 M| The mobile-side seal text detection model of PP-OCRv4, on the other hand, offers greater efficiency and is suitable for deployment on end devices.|
-
-
+<table>
+<thead>
+<tr>
+<th>Model Name</th>
+<th>Hmean（%）</th>
+<th>GPU Inference Time (ms)</th>
+<th>CPU Inference Time (ms)</th>
+<th>Model Size (M)</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PP-OCRv4_server_seal_det</td>
+<td>98.21</td>
+<td>84.341</td>
+<td>2425.06</td>
+<td>109 M</td>
+<td>The server-side seal text detection model of PP-OCRv4 boasts higher accuracy and is suitable for deployment on better-equipped servers.</td>
+</tr>
+<tr>
+<td>PP-OCRv4_mobile_seal_det</td>
+<td>96.47</td>
+<td>10.5878</td>
+<td>131.813</td>
+<td>4.6 M</td>
+<td>The mobile-side seal text detection model of PP-OCRv4, on the other hand, offers greater efficiency and is suitable for deployment on end devices.</td>
+</tr>
+</tbody>
+</table>
 **Note: The evaluation set for the above accuracy metrics is a self-built dataset containing 500 circular seal images. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.**
 
 

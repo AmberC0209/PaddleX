@@ -34,15 +34,61 @@ PaddleX 提供了两种体验的方式，一种是可以直接通过 PaddleX whe
 
 PaddleX 提供了 37 个端到端的目标检测模型，具体可参考 [模型列表](../support_list/models_list.md)，其中部分模型的benchmark如下：
 
-| 模型列表         | mAP(%) | GPU 推理耗时(ms) | CPU 推理耗时(ms) | 模型存储大小(M) |
-| --------------- | ------ | ---------------- | ---------------- | --------------- |
-| RT-DETR-H       | 56.3   | 100.65           | 8451.92          | 471             |
-| RT-DETR-L       | 53.0   | 27.89            | 841.00           | 125             |
-| PP-YOLOE_plus-L | 52.9   | 29.67            | 700.97           | 200             |
-| PP-YOLOE_plus-S | 43.7   | 8.11             | 137.23           | 31              |
-| PicoDet-L       | 42.6   | 10.09            | 129.32           | 23              |
-| PicoDet-S       | 29.1   | 3.17             | 13.36            | 5               |
-
+<table>
+<thead>
+<tr>
+<th>模型列表</th>
+<th>mAP(%)</th>
+<th>GPU 推理耗时(ms)</th>
+<th>CPU 推理耗时(ms)</th>
+<th>模型存储大小(M)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RT-DETR-H</td>
+<td>56.3</td>
+<td>100.65</td>
+<td>8451.92</td>
+<td>471</td>
+</tr>
+<tr>
+<td>RT-DETR-L</td>
+<td>53.0</td>
+<td>27.89</td>
+<td>841.00</td>
+<td>125</td>
+</tr>
+<tr>
+<td>PP-YOLOE_plus-L</td>
+<td>52.9</td>
+<td>29.67</td>
+<td>700.97</td>
+<td>200</td>
+</tr>
+<tr>
+<td>PP-YOLOE_plus-S</td>
+<td>43.7</td>
+<td>8.11</td>
+<td>137.23</td>
+<td>31</td>
+</tr>
+<tr>
+<td>PicoDet-L</td>
+<td>42.6</td>
+<td>10.09</td>
+<td>129.32</td>
+<td>23</td>
+</tr>
+<tr>
+<td>PicoDet-S</td>
+<td>29.1</td>
+<td>3.17</td>
+<td>13.36</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
 > **注：以上精度指标为 <a href="https://cocodataset.org/#home" target="_blank">COCO2017</a> 验证集 mAP(0.5:0.95)。GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为8，精度类型为 FP32。**
 
 简单来说，表格从上到下，模型推理速度更快，从下到上，模型精度更高。本教程以 PicoDet-L 模型为例，完成一次模型全流程开发。你可以依据自己的实际使用场景，判断并选择一个合适的模型做训练，训练完成后可在产线内评估合适的模型权重，并最终用于实际使用场景中。
@@ -196,23 +242,95 @@ python main.py -c paddlex/configs/object_detection/PicoDet-L.yaml \
 学习率探寻实验结果：
 <center>
 
-| 实验  | 轮次 | 学习率 | batch\_size | 训练环境 | mAP@0\.5 |
-|-------|----|-------|-------------|------|----------|
-| 实验一 | 50 | 0\.02 | 16          | 4卡   | 0\.428   |
-| 实验二 | 50 | 0\.04 | 16          | 4卡   |**0\.471**|
-| 实验三 | 50 | 0\.08 | 16          | 4卡   | 0\.440   |
-
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>轮次</th>
+<th>学习率</th>
+<th>batch_size</th>
+<th>训练环境</th>
+<th>mAP@0.5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>实验一</td>
+<td>50</td>
+<td>0.02</td>
+<td>16</td>
+<td>4卡</td>
+<td>0.428</td>
+</tr>
+<tr>
+<td>实验二</td>
+<td>50</td>
+<td>0.04</td>
+<td>16</td>
+<td>4卡</td>
+<td><strong>0.471</strong></td>
+</tr>
+<tr>
+<td>实验三</td>
+<td>50</td>
+<td>0.08</td>
+<td>16</td>
+<td>4卡</td>
+<td>0.440</td>
+</tr>
+</tbody>
+</table>
 </center>
 
 改变 epoch 实验结果：
 <center>
 
-| 实验            | 轮次 | 学习率 | batch\_size| 训练环境 | mAP@0\.5 |
-|-----------------|-----|-------|------------|------|----------|
-| 实验二           | 50  | 0\.04 | 16          | 4卡   | 0\.471   |
-| 实验二减少训练轮次 | 30  | 0\.04 | 16          | 4卡   | 0\.425   |
-| 实验二增大训练轮次 | 80  | 0\.04 | 16          | 4卡   |**0\.491**|
-| 实验二增大训练轮次 | 100 | 0\.04 | 16          | 4卡   | 0\.459   |
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>轮次</th>
+<th>学习率</th>
+<th>batch_size</th>
+<th>训练环境</th>
+<th>mAP@0.5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>实验二</td>
+<td>50</td>
+<td>0.04</td>
+<td>16</td>
+<td>4卡</td>
+<td>0.471</td>
+</tr>
+<tr>
+<td>实验二减少训练轮次</td>
+<td>30</td>
+<td>0.04</td>
+<td>16</td>
+<td>4卡</td>
+<td>0.425</td>
+</tr>
+<tr>
+<td>实验二增大训练轮次</td>
+<td>80</td>
+<td>0.04</td>
+<td>16</td>
+<td>4卡</td>
+<td><strong>0.491</strong></td>
+</tr>
+<tr>
+<td>实验二增大训练轮次</td>
+<td>100</td>
+<td>0.04</td>
+<td>16</td>
+<td>4卡</td>
+<td>0.459</td>
+</tr>
+</tbody>
+</table>
 </center>
 
 **注：本教程为4卡教程，如果您只有1张GPU，可通过调整训练卡数完成本次实验，但最终指标未必和上述指标对齐，属正常情况。**

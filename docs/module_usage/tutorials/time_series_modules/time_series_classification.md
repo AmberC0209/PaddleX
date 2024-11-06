@@ -8,10 +8,24 @@
 ## 二、支持模型列表
 
 
-|模型名称|acc(%)|模型存储大小（M)|介绍|
-|-|-|-|-|
-|TimesNet_cls|87.5|792K|通过多周期分析，TimesNet是适应性强的高精度时序分类模型|
-
+<table>
+<thead>
+<tr>
+<th>模型名称</th>
+<th>acc(%)</th>
+<th>模型存储大小（M)</th>
+<th>介绍</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TimesNet_cls</td>
+<td>87.5</td>
+<td>792K</td>
+<td>通过多周期分析，TimesNet是适应性强的高精度时序分类模型</td>
+</tr>
+</tbody>
+</table>
 **注：以上精度指标的评估集是 UWaveGestureLibrary。**
 
 

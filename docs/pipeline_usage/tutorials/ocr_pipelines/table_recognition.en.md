@@ -51,25 +51,107 @@ SLANet_plus is an enhanced version of SLANet, a table structure recognition mode
 
 **Layout Analysis Module Models**:
 
-| Model | mAP(0.5) (%) | GPU Inference Time (ms) | CPU Inference Time (ms) | Model Size (M) | Description |
-|-|-|-|-|-|-|
-| PicoDet_layout_1x | 86.8 | 13.0 | 91.3 | 7.4 | An efficient layout area localization model trained on the PubLayNet dataset based on PicoDet-1x can locate five types of areas, including text, titles, tables, images, and lists. |
-|PicoDet-S_layout_3cls|87.1|13.5 |45.8 |4.8|An high-efficient layout area localization model trained on a self-constructed dataset based on PicoDet-S for scenarios such as Chinese and English papers, magazines, and research reports includes three categories: tables, images, and seals. |
-|PicoDet-S_layout_17cls|70.3|13.6|46.2|4.8|A high-efficient layout area localization model trained on a self-constructed dataset based on PicoDet-S_layout_17cls for scenarios such as Chinese and English papers, magazines, and research reports includes 17 common layout categories, namely: paragraph titles, images, text, numbers, abstracts, content, chart titles, formulas, tables, table titles, references, document titles, footnotes, headers, algorithms, footers, and seals. |
-|PicoDet-L_layout_3cls|89.3|15.7|159.8|22.6|An efficient layout area localization model trained on a self-constructed dataset based on PicoDet-L for scenarios such as Chinese and English papers, magazines, and research reports includes three categories: tables, images, and seals. |
-|PicoDet-L_layout_17cls|79.9|17.2 |160.2|22.6|A efficient layout area localization model trained on a self-constructed dataset based on PicoDet-L_layout_17cls for scenarios such as Chinese and English papers, magazines, and research reports includes 17 common layout categories, namely: paragraph titles, images, text, numbers, abstracts, content, chart titles, formulas, tables, table titles, references, document titles, footnotes, headers, algorithms, footers, and seals. |
-| RT-DETR-H_layout_3cls | 95.9 | 114.6 | 3832.6 | 470.1 | A high-precision layout area localization model trained on a self-constructed dataset based on RT-DETR-H for scenarios such as Chinese and English papers, magazines, and research reports includes three categories: tables, images, and seals. |
-| RT-DETR-H_layout_17cls | 92.6 | 115.1 | 3827.2 | 470.2 | A high-precision layout area localization model trained on a self-constructed dataset based on RT-DETR-H for scenarios such as Chinese and English papers, magazines, and research reports includes 17 common layout categories, namely: paragraph titles, images, text, numbers, abstracts, content, chart titles, formulas, tables, table titles, references, document titles, footnotes, headers, algorithms, footers, and seals. |
-
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>mAP(0.5) (%)</th>
+<th>GPU Inference Time (ms)</th>
+<th>CPU Inference Time (ms)</th>
+<th>Model Size (M)</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PicoDet_layout_1x</td>
+<td>86.8</td>
+<td>13.0</td>
+<td>91.3</td>
+<td>7.4</td>
+<td>An efficient layout area localization model trained on the PubLayNet dataset based on PicoDet-1x can locate five types of areas, including text, titles, tables, images, and lists.</td>
+</tr>
+<tr>
+<td>PicoDet-S_layout_3cls</td>
+<td>87.1</td>
+<td>13.5</td>
+<td>45.8</td>
+<td>4.8</td>
+<td>An high-efficient layout area localization model trained on a self-constructed dataset based on PicoDet-S for scenarios such as Chinese and English papers, magazines, and research reports includes three categories: tables, images, and seals.</td>
+</tr>
+<tr>
+<td>PicoDet-S_layout_17cls</td>
+<td>70.3</td>
+<td>13.6</td>
+<td>46.2</td>
+<td>4.8</td>
+<td>A high-efficient layout area localization model trained on a self-constructed dataset based on PicoDet-S_layout_17cls for scenarios such as Chinese and English papers, magazines, and research reports includes 17 common layout categories, namely: paragraph titles, images, text, numbers, abstracts, content, chart titles, formulas, tables, table titles, references, document titles, footnotes, headers, algorithms, footers, and seals.</td>
+</tr>
+<tr>
+<td>PicoDet-L_layout_3cls</td>
+<td>89.3</td>
+<td>15.7</td>
+<td>159.8</td>
+<td>22.6</td>
+<td>An efficient layout area localization model trained on a self-constructed dataset based on PicoDet-L for scenarios such as Chinese and English papers, magazines, and research reports includes three categories: tables, images, and seals.</td>
+</tr>
+<tr>
+<td>PicoDet-L_layout_17cls</td>
+<td>79.9</td>
+<td>17.2</td>
+<td>160.2</td>
+<td>22.6</td>
+<td>A efficient layout area localization model trained on a self-constructed dataset based on PicoDet-L_layout_17cls for scenarios such as Chinese and English papers, magazines, and research reports includes 17 common layout categories, namely: paragraph titles, images, text, numbers, abstracts, content, chart titles, formulas, tables, table titles, references, document titles, footnotes, headers, algorithms, footers, and seals.</td>
+</tr>
+<tr>
+<td>RT-DETR-H_layout_3cls</td>
+<td>95.9</td>
+<td>114.6</td>
+<td>3832.6</td>
+<td>470.1</td>
+<td>A high-precision layout area localization model trained on a self-constructed dataset based on RT-DETR-H for scenarios such as Chinese and English papers, magazines, and research reports includes three categories: tables, images, and seals.</td>
+</tr>
+<tr>
+<td>RT-DETR-H_layout_17cls</td>
+<td>92.6</td>
+<td>115.1</td>
+<td>3827.2</td>
+<td>470.2</td>
+<td>A high-precision layout area localization model trained on a self-constructed dataset based on RT-DETR-H for scenarios such as Chinese and English papers, magazines, and research reports includes 17 common layout categories, namely: paragraph titles, images, text, numbers, abstracts, content, chart titles, formulas, tables, table titles, references, document titles, footnotes, headers, algorithms, footers, and seals.</td>
+</tr>
+</tbody>
+</table>
 **Note: The above accuracy metrics are evaluated on PaddleX's self-built layout analysis dataset containing 10,000 images. All GPU inference times are based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speeds are based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.**
 
 **Text Detection Module Models**:
 
-|Model Name|Detection Hmean (%)|GPU Inference Time (ms)|CPU Inference Time (ms)|Model Size (M)|
-|-|-|-|-|-|
-|PP-OCRv4_mobile_det|77.79|10.6923|120.177|4.2 M|
-|PP-OCRv4_server_det|82.69|83.3501|2434.01|100.1M|
-
+<table>
+<thead>
+<tr>
+<th>Model Name</th>
+<th>Detection Hmean (%)</th>
+<th>GPU Inference Time (ms)</th>
+<th>CPU Inference Time (ms)</th>
+<th>Model Size (M)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PP-OCRv4_mobile_det</td>
+<td>77.79</td>
+<td>10.6923</td>
+<td>120.177</td>
+<td>4.2 M</td>
+</tr>
+<tr>
+<td>PP-OCRv4_server_det</td>
+<td>82.69</td>
+<td>83.3501</td>
+<td>2434.01</td>
+<td>100.1M</td>
+</tr>
+</tbody>
+</table>
 </details>
 
 ## 2. Quick Start
@@ -153,33 +235,102 @@ In the above Python script, the following steps are executed:
 
 （1）Instantiate the  production line object using `create_pipeline`: Specific parameter descriptions are as follows:
 
-| Parameter | Description | Type | Default |
-|-|-|-|-|
-|`pipeline`| The name of the production line or the path to the production line configuration file. If it is the name of the production line, it must be supported by PaddleX. |`str`|None|
-|`device`| The device for production line model inference. Supports: "gpu", "cpu". |`str`|`gpu`|
-|`use_hpip`| Whether to enable high-performance inference, only available if the production line supports it. |`bool`|`False`|
-
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pipeline</code></td>
+<td>The name of the production line or the path to the production line configuration file. If it is the name of the production line, it must be supported by PaddleX.</td>
+<td><code>str</code></td>
+<td>None</td>
+</tr>
+<tr>
+<td><code>device</code></td>
+<td>The device for production line model inference. Supports: "gpu", "cpu".</td>
+<td><code>str</code></td>
+<td><code>gpu</code></td>
+</tr>
+<tr>
+<td><code>use_hpip</code></td>
+<td>Whether to enable high-performance inference, only available if the production line supports it.</td>
+<td><code>bool</code></td>
+<td><code>False</code></td>
+</tr>
+</tbody>
+</table>
 （2）Invoke the `predict` method of the  production line object for inference prediction: The `predict` method parameter is `x`, which is used to input data to be predicted, supporting multiple input methods, as shown in the following examples:
 
-| Parameter Type | Parameter Description |
-|---------------|-----------------------------------------------------------------------------------------------------------|
-| Python Var    | Supports directly passing in Python variables, such as numpy.ndarray representing image data. |
-| str         | Supports passing in the path of the file to be predicted, such as the local path of an image file: `/root/data/img.jpg`. |
-| str           | Supports passing in the URL of the file to be predicted, such as the network URL of an image file: [Example](https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/table_recognition.jpg). |
-| str           | Supports passing in a local directory, which should contain files to be predicted, such as the local path: `/root/data/`. |
-| dict          | Supports passing in a dictionary type, where the key needs to correspond to a specific task, such as "img" for image classification tasks. The value of the dictionary supports the above types of data, for example: `{"img": "/root/data1"}`. |
-| list          | Supports passing in a list, where the list elements need to be of the above types of data, such as `[numpy.ndarray, numpy.ndarray], ["/root/data/img1.jpg", "/root/data/img2.jpg"], ["/root/data1", "/root/data2"], [{"img": "/root/data1"}, {"img": "/root/data2/img.jpg"}]`. |
-
+<table>
+<thead>
+<tr>
+<th>Parameter Type</th>
+<th>Parameter Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Python Var</td>
+<td>Supports directly passing in Python variables, such as numpy.ndarray representing image data.</td>
+</tr>
+<tr>
+<td>str</td>
+<td>Supports passing in the path of the file to be predicted, such as the local path of an image file: <code>/root/data/img.jpg</code>.</td>
+</tr>
+<tr>
+<td>str</td>
+<td>Supports passing in the URL of the file to be predicted, such as the network URL of an image file: <a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/table_recognition.jpg">Example</a>.</td>
+</tr>
+<tr>
+<td>str</td>
+<td>Supports passing in a local directory, which should contain files to be predicted, such as the local path: <code>/root/data/</code>.</td>
+</tr>
+<tr>
+<td>dict</td>
+<td>Supports passing in a dictionary type, where the key needs to correspond to a specific task, such as "img" for image classification tasks. The value of the dictionary supports the above types of data, for example: <code>{"img": "/root/data1"}</code>.</td>
+</tr>
+<tr>
+<td>list</td>
+<td>Supports passing in a list, where the list elements need to be of the above types of data, such as <code>[numpy.ndarray, numpy.ndarray], ["/root/data/img1.jpg", "/root/data/img2.jpg"], ["/root/data1", "/root/data2"], [{"img": "/root/data1"}, {"img": "/root/data2/img.jpg"}]</code>.</td>
+</tr>
+</tbody>
+</table>
 （3）Obtain the prediction results by calling the `predict` method: The `predict` method is a `generator`, so prediction results need to be obtained through iteration. The `predict` method predicts data in batches, so the prediction results are in the form of a list.
 
 （4）Process the prediction results: The prediction result for each sample is of `dict` type and supports printing or saving to files, with the supported file types depending on the specific pipeline. For example:
 
-| Method | Description | Method Parameters |
-|--------|-------------|-------------------|
-| save_to_img | Save the results as an img format file | `- save_path`: str, the path to save the file. When it's a directory, the saved file name will be consistent with the input file type; |
-| save_to_html | Save the results as an html format file | `- save_path`: str, the path to save the file. When it's a directory, the saved file name will be consistent with the input file type; |
-| save_to_xlsx | Save the results as a spreadsheet format file | `- save_path`: str, the path to save the file. When it's a directory, the saved file name will be consistent with the input file type; |
-
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+<th>Method Parameters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>save_to_img</td>
+<td>Save the results as an img format file</td>
+<td><code>- save_path</code>: str, the path to save the file. When it's a directory, the saved file name will be consistent with the input file type;</td>
+</tr>
+<tr>
+<td>save_to_html</td>
+<td>Save the results as an html format file</td>
+<td><code>- save_path</code>: str, the path to save the file. When it's a directory, the saved file name will be consistent with the input file type;</td>
+</tr>
+<tr>
+<td>save_to_xlsx</td>
+<td>Save the results as a spreadsheet format file</td>
+<td><code>- save_path</code>: str, the path to save the file. When it's a directory, the saved file name will be consistent with the input file type;</td>
+</tr>
+</tbody>
+</table>
 Where `save_to_img` can save visualization results (including OCR result images, layout analysis result images, table structure recognition result images), `save_to_html` can directly save the table as an html file (including text and table formatting), and `save_to_xlsx` can save the table as an Excel format file (including text and formatting).
 
 If you have a configuration file, you can customize the configurations of the image anomaly detection pipeline by simply modifying the `pipeline` parameter in the `create_pipeline` method to the path of the pipeline configuration file.

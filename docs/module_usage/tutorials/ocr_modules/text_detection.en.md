@@ -6,11 +6,36 @@
 The text detection module is a crucial component in OCR (Optical Character Recognition) systems, responsible for locating and marking regions containing text within images. The performance of this module directly impacts the accuracy and efficiency of the entire OCR system. The text detection module typically outputs bounding boxes for text regions, which are then passed on to the text recognition module for further processing.
 
 ## II. Supported Models
-| Model | Detection Hmean (%) | GPU Inference Time (ms) | CPU Inference Time (ms) | Model Size (M) | Description |
-|-|-|-|-|-|-|
-| PP-OCRv4_server_det | 82.69 | 83.3501 | 2434.01 | 109 | The server-side text detection model of PP-OCRv4, featuring higher accuracy and suitable for deployment on high-performance servers |
-| PP-OCRv4_mobile_det | 77.79 | 10.6923 | 120.177 | 4.7 | The mobile text detection model of PP-OCRv4, optimized for efficiency and suitable for deployment on edge devices |
-
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Detection Hmean (%)</th>
+<th>GPU Inference Time (ms)</th>
+<th>CPU Inference Time (ms)</th>
+<th>Model Size (M)</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PP-OCRv4_server_det</td>
+<td>82.69</td>
+<td>83.3501</td>
+<td>2434.01</td>
+<td>109</td>
+<td>The server-side text detection model of PP-OCRv4, featuring higher accuracy and suitable for deployment on high-performance servers</td>
+</tr>
+<tr>
+<td>PP-OCRv4_mobile_det</td>
+<td>77.79</td>
+<td>10.6923</td>
+<td>120.177</td>
+<td>4.7</td>
+<td>The mobile text detection model of PP-OCRv4, optimized for efficiency and suitable for deployment on edge devices</td>
+</tr>
+</tbody>
+</table>
 ## III. Quick Integration
 > ❗ Before quick integration, please install the PaddleX wheel package. For detailed instructions, refer to the [PaddleX Local Installation Guide](../../../installation/installation.en.md).
 

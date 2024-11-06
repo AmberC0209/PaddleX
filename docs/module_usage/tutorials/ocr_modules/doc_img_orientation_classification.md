@@ -8,10 +8,28 @@
 ## 二、支持模型列表
 
 
-|模型|Top-1 Acc（%）|GPU推理耗时（ms）|CPU推理耗时 (ms)|模型存储大小（M)|介绍|
-|-|-|-|-|-|-|
-|PP-LCNet_x1_0_doc_ori|99.06|3.84845|9.23735|7|基于PP-LCNet_x1_0的文档图像分类模型，含有四个类别，即0度，90度，180度，270度|
-
+<table>
+<thead>
+<tr>
+<th>模型</th>
+<th>Top-1 Acc（%）</th>
+<th>GPU推理耗时（ms）</th>
+<th>CPU推理耗时 (ms)</th>
+<th>模型存储大小（M)</th>
+<th>介绍</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PP-LCNet_x1_0_doc_ori</td>
+<td>99.06</td>
+<td>3.84845</td>
+<td>9.23735</td>
+<td>7</td>
+<td>基于PP-LCNet_x1_0的文档图像分类模型，含有四个类别，即0度，90度，180度，270度</td>
+</tr>
+</tbody>
+</table>
 **注：以上精度指标的评估集是自建的数据集，覆盖证件和文档等多个场景，包含 1000 张图片。GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为 8，精度类型为 FP32。**
 
 ## 三、快速集成

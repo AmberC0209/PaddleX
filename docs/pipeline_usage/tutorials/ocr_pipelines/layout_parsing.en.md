@@ -45,25 +45,110 @@ The **General Layout Parsing Pipeline** includes modules for table structure rec
 
 **Layout Detection Module Models**:
 
-| Model | mAP(0.5) (%) | GPU Inference Time (ms) | CPU Inference Time (ms) | Model Size (M) | Description |
-|-|-|-|-|-|-|
-| PicoDet_layout_1x | 86.8 | 13.0 | 91.3 | 7.4 | An efficient layout area localization model trained on the PubLayNet dataset based on PicoDet-1x can locate five types of areas, including text, titles, tables, images, and lists. |
-|PicoDet-S_layout_3cls|87.1|13.5 |45.8 |4.8|An high-efficient layout area localization model trained on a self-constructed dataset based on PicoDet-S for scenarios such as Chinese and English papers, magazines, and research reports includes three categories: tables, images, and seals. |
-|PicoDet-S_layout_17cls|70.3|13.6|46.2|4.8|A high-efficient layout area localization model trained on a self-constructed dataset based on PicoDet-S_layout_17cls for scenarios such as Chinese and English papers, magazines, and research reports includes 17 common layout categories, namely: paragraph titles, images, text, numbers, abstracts, content, chart titles, formulas, tables, table titles, references, document titles, footnotes, headers, algorithms, footers, and seals. |
-|PicoDet-L_layout_3cls|89.3|15.7|159.8|22.6|An efficient layout area localization model trained on a self-constructed dataset based on PicoDet-L for scenarios such as Chinese and English papers, magazines, and research reports includes three categories: tables, images, and seals. |
-|PicoDet-L_layout_17cls|79.9|17.2 |160.2|22.6|A efficient layout area localization model trained on a self-constructed dataset based on PicoDet-L_layout_17cls for scenarios such as Chinese and English papers, magazines, and research reports includes 17 common layout categories, namely: paragraph titles, images, text, numbers, abstracts, content, chart titles, formulas, tables, table titles, references, document titles, footnotes, headers, algorithms, footers, and seals. |
-| RT-DETR-H_layout_3cls | 95.9 | 114.6 | 3832.6 | 470.1 | A high-precision layout area localization model trained on a self-constructed dataset based on RT-DETR-H for scenarios such as Chinese and English papers, magazines, and research reports includes three categories: tables, images, and seals. |
-| RT-DETR-H_layout_17cls | 92.6 | 115.1 | 3827.2 | 470.2 | A high-precision layout area localization model trained on a self-constructed dataset based on RT-DETR-H for scenarios such as Chinese and English papers, magazines, and research reports includes 17 common layout categories, namely: paragraph titles, images, text, numbers, abstracts, content, chart titles, formulas, tables, table titles, references, document titles, footnotes, headers, algorithms, footers, and seals. |
-
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>mAP(0.5) (%)</th>
+<th>GPU Inference Time (ms)</th>
+<th>CPU Inference Time (ms)</th>
+<th>Model Size (M)</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PicoDet_layout_1x</td>
+<td>86.8</td>
+<td>13.0</td>
+<td>91.3</td>
+<td>7.4</td>
+<td>An efficient layout area localization model trained on the PubLayNet dataset based on PicoDet-1x can locate five types of areas, including text, titles, tables, images, and lists.</td>
+</tr>
+<tr>
+<td>PicoDet-S_layout_3cls</td>
+<td>87.1</td>
+<td>13.5</td>
+<td>45.8</td>
+<td>4.8</td>
+<td>An high-efficient layout area localization model trained on a self-constructed dataset based on PicoDet-S for scenarios such as Chinese and English papers, magazines, and research reports includes three categories: tables, images, and seals.</td>
+</tr>
+<tr>
+<td>PicoDet-S_layout_17cls</td>
+<td>70.3</td>
+<td>13.6</td>
+<td>46.2</td>
+<td>4.8</td>
+<td>A high-efficient layout area localization model trained on a self-constructed dataset based on PicoDet-S_layout_17cls for scenarios such as Chinese and English papers, magazines, and research reports includes 17 common layout categories, namely: paragraph titles, images, text, numbers, abstracts, content, chart titles, formulas, tables, table titles, references, document titles, footnotes, headers, algorithms, footers, and seals.</td>
+</tr>
+<tr>
+<td>PicoDet-L_layout_3cls</td>
+<td>89.3</td>
+<td>15.7</td>
+<td>159.8</td>
+<td>22.6</td>
+<td>An efficient layout area localization model trained on a self-constructed dataset based on PicoDet-L for scenarios such as Chinese and English papers, magazines, and research reports includes three categories: tables, images, and seals.</td>
+</tr>
+<tr>
+<td>PicoDet-L_layout_17cls</td>
+<td>79.9</td>
+<td>17.2</td>
+<td>160.2</td>
+<td>22.6</td>
+<td>A efficient layout area localization model trained on a self-constructed dataset based on PicoDet-L_layout_17cls for scenarios such as Chinese and English papers, magazines, and research reports includes 17 common layout categories, namely: paragraph titles, images, text, numbers, abstracts, content, chart titles, formulas, tables, table titles, references, document titles, footnotes, headers, algorithms, footers, and seals.</td>
+</tr>
+<tr>
+<td>RT-DETR-H_layout_3cls</td>
+<td>95.9</td>
+<td>114.6</td>
+<td>3832.6</td>
+<td>470.1</td>
+<td>A high-precision layout area localization model trained on a self-constructed dataset based on RT-DETR-H for scenarios such as Chinese and English papers, magazines, and research reports includes three categories: tables, images, and seals.</td>
+</tr>
+<tr>
+<td>RT-DETR-H_layout_17cls</td>
+<td>92.6</td>
+<td>115.1</td>
+<td>3827.2</td>
+<td>470.2</td>
+<td>A high-precision layout area localization model trained on a self-constructed dataset based on RT-DETR-H for scenarios such as Chinese and English papers, magazines, and research reports includes 17 common layout categories, namely: paragraph titles, images, text, numbers, abstracts, content, chart titles, formulas, tables, table titles, references, document titles, footnotes, headers, algorithms, footers, and seals.</td>
+</tr>
+</tbody>
+</table>
 **Note: The evaluation set for the above accuracy metrics is PaddleOCR's self-built layout region analysis dataset, containing 10,000 images of common document types, including English and Chinese papers, magazines, research reports, etc. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.**
 
 **Text Detection Module Models**:
 
-| Model | Detection Hmean (%) | GPU Inference Time (ms) | CPU Inference Time (ms) | Model Size (M) | Description |
-|-------|---------------------|-------------------------|-------------------------|--------------|-------------|
-| PP-OCRv4_server_det | 82.69 | 83.3501 | 2434.01 | 109 | PP-OCRv4's server-side text detection model, featuring higher accuracy, suitable for deployment on high-performance servers |
-| PP-OCRv4_mobile_det | 77.79 | 10.6923 | 120.177 | 4.7 | PP-OCRv4's mobile text detection model, optimized for efficiency, suitable for deployment on edge devices |
-
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Detection Hmean (%)</th>
+<th>GPU Inference Time (ms)</th>
+<th>CPU Inference Time (ms)</th>
+<th>Model Size (M)</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PP-OCRv4_server_det</td>
+<td>82.69</td>
+<td>83.3501</td>
+<td>2434.01</td>
+<td>109</td>
+<td>PP-OCRv4's server-side text detection model, featuring higher accuracy, suitable for deployment on high-performance servers</td>
+</tr>
+<tr>
+<td>PP-OCRv4_mobile_det</td>
+<td>77.79</td>
+<td>10.6923</td>
+<td>120.177</td>
+<td>4.7</td>
+<td>PP-OCRv4's mobile text detection model, optimized for efficiency, suitable for deployment on edge devices</td>
+</tr>
+</tbody>
+</table>
 **Note: The evaluation set for the above accuracy metrics is PaddleOCR's self-built Chinese dataset, covering street scenes, web images, documents, and handwritten texts, with 500 images for detection. All GPU inference times are based on NVIDIA Tesla T4 machines with FP32 precision. CPU inference speeds are based on Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.**
 
 **Text Recognition Module Models**:
@@ -144,35 +229,112 @@ The **General Layout Parsing Pipeline** includes modules for table structure rec
 
 **Formula Recognition Module Models**:
 
-| Model Name | BLEU Score | Normed Edit Distance | ExpRate (%) | GPU Inference Time (ms) | CPU Inference Time (ms) | Model Size |
-|-|-|-|-|-|-|-|
-| LaTeX_OCR_rec | 0.8821 | 0.0823 | 40.01 | - | - | 89.7 M |
-
+<table>
+<thead>
+<tr>
+<th>Model Name</th>
+<th>BLEU Score</th>
+<th>Normed Edit Distance</th>
+<th>ExpRate (%)</th>
+<th>GPU Inference Time (ms)</th>
+<th>CPU Inference Time (ms)</th>
+<th>Model Size</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LaTeX_OCR_rec</td>
+<td>0.8821</td>
+<td>0.0823</td>
+<td>40.01</td>
+<td>-</td>
+<td>-</td>
+<td>89.7 M</td>
+</tr>
+</tbody>
+</table>
 **Note: The above accuracy metrics are measured on the [LaTeX-OCR Formula Recognition Test Set](https://drive.google.com/drive/folders/13CA4vAmOmD_I_dSbvLp-Lf0s6KiaNfuO). All GPU inference times are based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speeds are based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.**
 
 **Seal Text Detection Module Models**:
 
-| Model | Detection Hmean (%) | GPU Inference Time (ms) | CPU Inference Time (ms) | Model Size (M) | Description |
-|-------|---------------------|-------------------------|-------------------------|--------------|-------------|
-| PP-OCRv4_server_seal_det | 98.21 | 84.341 | 2425.06 | 109 | PP-OCRv4's server-side seal text detection model, featuring higher accuracy, suitable for deployment on better-equipped servers |
-| PP-OCRv4_mobile_seal_det | 96.47 | 10.5878 | 131.813 | 4.6 | PP-OCRv4's mobile seal text detection model, offering higher efficiency, suitable for deployment on edge devices |
-
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Detection Hmean (%)</th>
+<th>GPU Inference Time (ms)</th>
+<th>CPU Inference Time (ms)</th>
+<th>Model Size (M)</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PP-OCRv4_server_seal_det</td>
+<td>98.21</td>
+<td>84.341</td>
+<td>2425.06</td>
+<td>109</td>
+<td>PP-OCRv4's server-side seal text detection model, featuring higher accuracy, suitable for deployment on better-equipped servers</td>
+</tr>
+<tr>
+<td>PP-OCRv4_mobile_seal_det</td>
+<td>96.47</td>
+<td>10.5878</td>
+<td>131.813</td>
+<td>4.6</td>
+<td>PP-OCRv4's mobile seal text detection model, offering higher efficiency, suitable for deployment on edge devices</td>
+</tr>
+</tbody>
+</table>
 **Note: The above accuracy metrics are evaluated on a self-built dataset containing 500 circular seal images. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.**
 
 **Text Image Rectification Module Models**:
 
-| Model | MS-SSIM (%) | Model Size (M) | Description |
-|-------|-------------|--------------|-------------|
-| UVDoc | 54.40 | 30.3 M | High-precision text image rectification model |
-
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>MS-SSIM (%)</th>
+<th>Model Size (M)</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UVDoc</td>
+<td>54.40</td>
+<td>30.3 M</td>
+<td>High-precision text image rectification model</td>
+</tr>
+</tbody>
+</table>
 **The accuracy metrics of the models are measured from the [DocUNet benchmark](https://www3.cs.stonybrook.edu/~cvl/docunet.html).**
 
 **Document Image Orientation Classification Module Models**:
 
-| Model | Top-1 Acc (%) | GPU Inference Time (ms) | CPU Inference Time (ms) | Model Size (M) | Description |
-|-------|---------------|-------------------------|-------------------------|--------------|-------------|
-| PP-LCNet_x1_0_doc_ori | 99.06 | 3.84845 | 9.23735 | 7 | A document image classification model based on PP-LCNet_x1_0, with four categories: 0°, 90°, 180°, 270° |
-
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Top-1 Acc (%)</th>
+<th>GPU Inference Time (ms)</th>
+<th>CPU Inference Time (ms)</th>
+<th>Model Size (M)</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PP-LCNet_x1_0_doc_ori</td>
+<td>99.06</td>
+<td>3.84845</td>
+<td>9.23735</td>
+<td>7</td>
+<td>A document image classification model based on PP-LCNet_x1_0, with four categories: 0°, 90°, 180°, 270°</td>
+</tr>
+</tbody>
+</table>
 **Note: The above accuracy metrics are evaluated on a self-built dataset covering various scenarios such as certificates and documents, containing 1000 images. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.**
 
 </details>
@@ -271,31 +433,97 @@ In the above Python script, the following steps are executed:
 
 (1) Instantiate the `create_pipeline` to create a pipeline object: Specific parameter descriptions are as follows:
 
-| Parameter | Description | Type | Default |
-|-----------|-------------|------|---------|
-| `pipeline` | The name of the pipeline or the path to the pipeline configuration file. If it's a pipeline name, it must be supported by PaddleX. | `str` | None |
-| `device` | The device for pipeline model inference. Supports: "gpu", "cpu". | `str` | "gpu" |
-| `use_hpip` | Whether to enable high-performance inference, only available if the pipeline supports it. | `bool` | `False` |
-
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pipeline</code></td>
+<td>The name of the pipeline or the path to the pipeline configuration file. If it's a pipeline name, it must be supported by PaddleX.</td>
+<td><code>str</code></td>
+<td>None</td>
+</tr>
+<tr>
+<td><code>device</code></td>
+<td>The device for pipeline model inference. Supports: "gpu", "cpu".</td>
+<td><code>str</code></td>
+<td>"gpu"</td>
+</tr>
+<tr>
+<td><code>use_hpip</code></td>
+<td>Whether to enable high-performance inference, only available if the pipeline supports it.</td>
+<td><code>bool</code></td>
+<td><code>False</code></td>
+</tr>
+</tbody>
+</table>
 (2) Call the `predict` method of the pipeline object to perform inference: The `predict` method takes `x` as a parameter, which is used to input data to be predicted, supporting multiple input methods, as shown in the following examples:
 
-| Parameter Type | Description |
-|----------------|-------------|
-| Python Var | Supports directly passing Python variables, such as numpy.ndarray representing image data. |
-| `str` | Supports passing the path of the file to be predicted, such as the local path of an image file: `/root/data/img.jpg`. |
-| `str` | Supports passing the URL of the file to be predicted, such as the network URL of an image file: [Example](https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/demo_paper.png). |
-| `str` | Supports passing a local directory, which should contain files to be predicted, such as the local path: `/root/data/`. |
-| `dict` | Supports passing a dictionary type, where the key needs to correspond to the specific task, e.g., "img" for image classification tasks, and the value of the dictionary supports the above data types, e.g., `{"img": "/root/data1"}`. |
-| `list` | Supports passing a list, where the list elements need to be of the above data types, e.g., `[numpy.ndarray, numpy.ndarray]`, `["/root/data/img1.jpg", "/root/data/img2.jpg"]`, `["/root/data1", "/root/data2"]`, `[{"img": "/root/data1"}, {"img": "/root/data2/img.jpg"}]`. |
-
+<table>
+<thead>
+<tr>
+<th>Parameter Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Python Var</td>
+<td>Supports directly passing Python variables, such as numpy.ndarray representing image data.</td>
+</tr>
+<tr>
+<td><code>str</code></td>
+<td>Supports passing the path of the file to be predicted, such as the local path of an image file: <code>/root/data/img.jpg</code>.</td>
+</tr>
+<tr>
+<td><code>str</code></td>
+<td>Supports passing the URL of the file to be predicted, such as the network URL of an image file: <a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/demo_paper.png">Example</a>.</td>
+</tr>
+<tr>
+<td><code>str</code></td>
+<td>Supports passing a local directory, which should contain files to be predicted, such as the local path: <code>/root/data/</code>.</td>
+</tr>
+<tr>
+<td><code>dict</code></td>
+<td>Supports passing a dictionary type, where the key needs to correspond to the specific task, e.g., "img" for image classification tasks, and the value of the dictionary supports the above data types, e.g., <code>{"img": "/root/data1"}</code>.</td>
+</tr>
+<tr>
+<td><code>list</code></td>
+<td>Supports passing a list, where the list elements need to be of the above data types, e.g., <code>[numpy.ndarray, numpy.ndarray]</code>, <code>["/root/data/img1.jpg", "/root/data/img2.jpg"]</code>, <code>["/root/data1", "/root/data2"]</code>, <code>[{"img": "/root/data1"}, {"img": "/root/data2/img.jpg"}]</code>.</td>
+</tr>
+</tbody>
+</table>
 (3) Obtain the prediction results by calling the `predict` method: The `predict` method is a `generator`, so prediction results need to be obtained through iteration. The `predict` method predicts data in batches, so the prediction results are in the form of a list.
 
 (4) Process the prediction results: The prediction result for each sample is of `dict` type and supports printing or saving as files, with the supported file types depending on the specific pipeline, such as:
 
-| Method | Description | Method Parameters |
-|--------|-------------|-------------------|
-| `save_to_img` | Saves the result as an image file. | `- save_path`: `str` type, the path to save the file. When it's a directory, the saved file name is consistent with the input file name. |
-| `save_to_html` | Saves the result as an HTML file. | `- save_path`: `str` type, the path to save the file. When it's a directory, the saved file name is consistent with the input file name. |
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+<th>Method Parameters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>save_to_img</code></td>
+<td>Saves the result as an image file.</td>
+<td><code>- save_path</code>: <code>str</code> type, the path to save the file. When it's a directory, the saved file name is consistent with the input file name.</td>
+</tr>
+<tr>
+<td><code>save_to_html</code></td>
+<td>Saves the result as an HTML file.</td>
+<td><code>- save_path</code>: <code>str</code> type, the path to save the file. When it's a directory, the saved file name is consistent with the input file name.</td>
+</tr>
+</tbody>
+</table>
 | `save_to_xlsx` | Saves the result as an Excel file. | `- save_path`: `str` type, the path to save the file. When it's a directory, the saved file name is consistent with the input file name.
 
 Within this tutorial on Artificial Intelligence and Computer Vision, we will explore the capabilities of saving and exporting results from various processes, including OCR (Optical Character Recognition), layout analysis, and table structure recognition. Specifically, the `save_to_img` function enables saving visualization results, `save_to_html` converts tables directly into HTML files, and `save_to_xlsx` exports tables as Excel files.

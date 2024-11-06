@@ -33,15 +33,61 @@ After the trial, determine if the pipeline meets your expectations (including ac
 
 PaddleX provides 37 end-to-end object detection models. Refer to the [Model List](../support_list/models_list.en.md) for details. Here's a benchmark of some models:
 
-| Model List         | mAP(%) | GPU Inference Time(ms) | CPU Inference Time(ms) | Model Size(M) |
-| --------------- | ------ | ---------------- | ---------------- | --------------- |
-| RT-DETR-H       | 56.3   | 100.65           | 8451.92          | 471             |
-| RT-DETR-L       | 53.0   | 27.89            | 841.00           | 125             |
-| PP-YOLOE_plus-L | 52.9   | 29.67            | 700.97           | 200             |
-| PP-YOLOE_plus-S | 43.7   | 8.11             | 137.23           | 31              |
-| PicoDet-L       | 42.6   | 10.09            | 129.32           | 23              |
-| PicoDet-S       | 29.1   | 3.17             | 13.36            | 5               |
-
+<table>
+<thead>
+<tr>
+<th>Model List</th>
+<th>mAP(%)</th>
+<th>GPU Inference Time(ms)</th>
+<th>CPU Inference Time(ms)</th>
+<th>Model Size(M)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RT-DETR-H</td>
+<td>56.3</td>
+<td>100.65</td>
+<td>8451.92</td>
+<td>471</td>
+</tr>
+<tr>
+<td>RT-DETR-L</td>
+<td>53.0</td>
+<td>27.89</td>
+<td>841.00</td>
+<td>125</td>
+</tr>
+<tr>
+<td>PP-YOLOE_plus-L</td>
+<td>52.9</td>
+<td>29.67</td>
+<td>700.97</td>
+<td>200</td>
+</tr>
+<tr>
+<td>PP-YOLOE_plus-S</td>
+<td>43.7</td>
+<td>8.11</td>
+<td>137.23</td>
+<td>31</td>
+</tr>
+<tr>
+<td>PicoDet-L</td>
+<td>42.6</td>
+<td>10.09</td>
+<td>129.32</td>
+<td>23</td>
+</tr>
+<tr>
+<td>PicoDet-S</td>
+<td>29.1</td>
+<td>3.17</td>
+<td>13.36</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
 > **Note: The above accuracy metrics are based on the mAP(0.5:0.95) of the [COCO2017](https://cocodataset.org/#home) validation set. GPU inference time is measured on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.**
 
 In summary, models listed from top to bottom offer faster inference speeds, while those from bottom to top offer higher accuracy. This tutorial uses the PP-YOLOE_plus-S model as an example to complete the full model development process. Choose a suitable model based on your actual usage scenario, train it, evaluate the model weights within the pipeline, and finally deploy
@@ -197,23 +243,87 @@ It is recommended to follow the control variable method when debugging parameter
 Learning Rate Exploration Results:
 <center>
 
-| Experiment | Epochs | Learning Rate | batch\_size | Training Environment | mAP@0\.5 |
-|-----------|--------|-------------|-------------|--------------------|----------|
-| Experiment 1 | 10     | 0\.00002    | 8           | 4 GPUs             | 0\.880   |
-| Experiment 2 | 10     | 0\.0001     | 8           | 4 GPUs             |**0\.910**|
-| Experiment 3 | 10     | 0\.0005     | 8           | 4 GPUs             | 0\.888   |
-
+<table>
+<thead>
+<tr>
+<th>Experiment</th>
+<th>Epochs</th>
+<th>Learning Rate</th>
+<th>batch_size</th>
+<th>Training Environment</th>
+<th>mAP@0.5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Experiment 1</td>
+<td>10</td>
+<td>0.00002</td>
+<td>8</td>
+<td>4 GPUs</td>
+<td>0.880</td>
+</tr>
+<tr>
+<td>Experiment 2</td>
+<td>10</td>
+<td>0.0001</td>
+<td>8</td>
+<td>4 GPUs</td>
+<td><strong>0.910</strong></td>
+</tr>
+<tr>
+<td>Experiment 3</td>
+<td>10</td>
+<td>0.0005</td>
+<td>8</td>
+<td>4 GPUs</td>
+<td>0.888</td>
+</tr>
+</tbody>
+</table>
 </center>
 
 Changing Epochs Results:
 <center>
 
-| Experiment                | Epochs | Learning Rate | batch\_size | Training Environment | mAP@0\.5 |
-|-------------------------|--------|-------------|-------------|--------------------|----------|
-| Experiment 2              | 10     | 0\.0001     | 8           | 4 GPUs             | 0\.910   |
-| Experiment 2 (Increased Epochs) | 50     | 0\.0001     | 8           | 4 GPUs             | 0\.944   |
-| Experiment 2 (Increased Epochs) | 100    | 0\.0001     | 8           | 4 GPUs             | **0\.947**  |
-
+<table>
+<thead>
+<tr>
+<th>Experiment</th>
+<th>Epochs</th>
+<th>Learning Rate</th>
+<th>batch_size</th>
+<th>Training Environment</th>
+<th>mAP@0.5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Experiment 2</td>
+<td>10</td>
+<td>0.0001</td>
+<td>8</td>
+<td>4 GPUs</td>
+<td>0.910</td>
+</tr>
+<tr>
+<td>Experiment 2 (Increased Epochs)</td>
+<td>50</td>
+<td>0.0001</td>
+<td>8</td>
+<td>4 GPUs</td>
+<td>0.944</td>
+</tr>
+<tr>
+<td>Experiment 2 (Increased Epochs)</td>
+<td>100</td>
+<td>0.0001</td>
+<td>8</td>
+<td>4 GPUs</td>
+<td><strong>0.947</strong></td>
+</tr>
+</tbody>
+</table>
 </center>
 
 > **Note: The above accuracy metrics are based on the mAP(0.5:0.95) of the [COCO2017](https://cocodataset.org/#home) validation set. GPU inference time is measured on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.**

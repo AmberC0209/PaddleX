@@ -34,11 +34,36 @@ PaddleX 提供了两种体验的方式，一种是可以直接通过 PaddleX whe
 
 PaddleX 提供了 2 个端到端的文本检测模型，具体可参考 [模型列表](../support_list/models_list.md)，其中模型的 benchmark 如下：
 
-| 模型列表         | 检测Hmean(%) | 识别 Avg Accuracy(%) | GPU 推理耗时(ms) | CPU 推理耗时(ms) | 模型存储大小(M) |
-| --------------- | ----------- | ------------------- | --------------- | --------------- |---------------|
-| PP-OCRv4_server    | 82.69       | 79.20               |     22.20346        | 2662.158        |             198 |
-| PP-OCRv4_mobile    | 77.79       | 78.20                  | 2.719474          | 79.1097         |              15 |
-
+<table>
+<thead>
+<tr>
+<th>模型列表</th>
+<th>检测Hmean(%)</th>
+<th>识别 Avg Accuracy(%)</th>
+<th>GPU 推理耗时(ms)</th>
+<th>CPU 推理耗时(ms)</th>
+<th>模型存储大小(M)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PP-OCRv4_server</td>
+<td>82.69</td>
+<td>79.20</td>
+<td>22.20346</td>
+<td>2662.158</td>
+<td>198</td>
+</tr>
+<tr>
+<td>PP-OCRv4_mobile</td>
+<td>77.79</td>
+<td>78.20</td>
+<td>2.719474</td>
+<td>79.1097</td>
+<td>15</td>
+</tr>
+</tbody>
+</table>
 **注：以上精度指标为 PaddleOCR 自建中文数据集验证集 检测Hmean 和 识别 Avg Accuracy，GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为 8，精度类型为 FP32。**
 简单来说，表格从上到下，模型推理速度更快，从下到上，模型精度更高。本教程以 `PP-OCRv4_server` 模型为例，完成一次模型全流程开发。你可以依据自己的实际使用场景，判断并选择一个合适的模型做训练，训练完成后可在产线内评估合适的模型权重，并最终用于实际使用场景中。
 
@@ -201,21 +226,63 @@ python main.py -c paddlex/configs/text_detection/PP-OCRv4_server_det.yaml \
 学习率探寻实验结果：
 <center>
 
-| 实验ID | 学习率     | 检测Hmean(%)|
-|-----------|-----|-------|
-|1     | 0.00005 |     99.06|
-|2     | 0.0001 |     99.55|
-|3     | 0.0005     | 99.60|
-|4     | 0.001     | 99.70|
+<table>
+<thead>
+<tr>
+<th>实验ID</th>
+<th>学习率</th>
+<th>检测Hmean(%)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>0.00005</td>
+<td>99.06</td>
+</tr>
+<tr>
+<td>2</td>
+<td>0.0001</td>
+<td>99.55</td>
+</tr>
+<tr>
+<td>3</td>
+<td>0.0005</td>
+<td>99.60</td>
+</tr>
+<tr>
+<td>4</td>
+<td>0.001</td>
+<td>99.70</td>
+</tr>
+</tbody>
+</table>
 </center>
 
 接下来，我们可以在学习率设置为 0.001 的基础上，增加训练轮次，对比下面实验 [4，5] 可知，训练轮次增大，模型精度有了进一步的提升。
 <center>
 
-| 实验ID |     训练轮次     | 检测 Hmean(%) |
-|-----------|-----|-------|
-| 4     | 10 |     99.70   |
-| 5     | 20     | 99.80   |
+<table>
+<thead>
+<tr>
+<th>实验ID</th>
+<th>训练轮次</th>
+<th>检测 Hmean(%)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td>10</td>
+<td>99.70</td>
+</tr>
+<tr>
+<td>5</td>
+<td>20</td>
+<td>99.80</td>
+</tr>
+</tbody>
+</table>
 </center>
 
 **注：本教程为 4 卡教程，如果您只有 1 张 GPU，可通过调整训练卡数完成本次实验，但最终指标未必和上述指标对齐，属正常情况。**

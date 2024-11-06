@@ -34,18 +34,82 @@ PaddleX 提供了两种体验的方式，一种是可以直接通过 PaddleX whe
 
 PaddleX 提供了 80 个端到端的图像分类模型，具体可参考 [模型列表](../support_list/models_list.md)，其中部分模型的 benchmark 如下：
 
-| 模型列表        | Top1 Acc(%) | GPU 推理耗时(ms) | CPU 推理耗时(ms) | 模型存储大小(M) |
-| --------------- | ------ | ---------------- | ---------------- | --------------- |
-| PP-HGNetV2_B6   | 86.30  | 10.46            | 240.18           | 288             |
-| CLIP_vit_base_patch16_224 | 85.39 | 12.03   | 234.85           | 331             |
-| PP-HGNetV2_B4   | 83.57  | 2.45             | 38.10            | 76              |
-| SwinTransformer_base_patch4_window7_224  | 83.37 | 12.35 | -   | 342             |
-| PP-HGNet_small  | 81.51  | 4.24             | 108.21           | 94              |
-| PP-HGNetV2_B0   | 77.77  | 0.68             | 6.41             | 23              |
-| ResNet50        | 76.50  | 3.12             | 50.90            | 98              |
-| PP-LCNet_x1_0   | 71.32  | 1.01             | 3.39             | 7               |
-| MobileNetV3_small_x1_0 | 68.24  | 1.09      | 3.65             | 12              |
-
+<table>
+<thead>
+<tr>
+<th>模型列表</th>
+<th>Top1 Acc(%)</th>
+<th>GPU 推理耗时(ms)</th>
+<th>CPU 推理耗时(ms)</th>
+<th>模型存储大小(M)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PP-HGNetV2_B6</td>
+<td>86.30</td>
+<td>10.46</td>
+<td>240.18</td>
+<td>288</td>
+</tr>
+<tr>
+<td>CLIP_vit_base_patch16_224</td>
+<td>85.39</td>
+<td>12.03</td>
+<td>234.85</td>
+<td>331</td>
+</tr>
+<tr>
+<td>PP-HGNetV2_B4</td>
+<td>83.57</td>
+<td>2.45</td>
+<td>38.10</td>
+<td>76</td>
+</tr>
+<tr>
+<td>SwinTransformer_base_patch4_window7_224</td>
+<td>83.37</td>
+<td>12.35</td>
+<td>-</td>
+<td>342</td>
+</tr>
+<tr>
+<td>PP-HGNet_small</td>
+<td>81.51</td>
+<td>4.24</td>
+<td>108.21</td>
+<td>94</td>
+</tr>
+<tr>
+<td>PP-HGNetV2_B0</td>
+<td>77.77</td>
+<td>0.68</td>
+<td>6.41</td>
+<td>23</td>
+</tr>
+<tr>
+<td>ResNet50</td>
+<td>76.50</td>
+<td>3.12</td>
+<td>50.90</td>
+<td>98</td>
+</tr>
+<tr>
+<td>PP-LCNet_x1_0</td>
+<td>71.32</td>
+<td>1.01</td>
+<td>3.39</td>
+<td>7</td>
+</tr>
+<tr>
+<td>MobileNetV3_small_x1_0</td>
+<td>68.24</td>
+<td>1.09</td>
+<td>3.65</td>
+<td>12</td>
+</tr>
+</tbody>
+</table>
 > **注：以上精度指标为 <a href="https://www.image-net.org/index.php" target="_blank">ImageNet-1k</a> 验证集 Top1 Acc，GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为 8，精度类型为 FP32。**
 
 简单来说，表格从上到下，模型推理速度更快，从下到上，模型精度更高。本教程以 `PP-LCNet_x1_0` 模型为例，完成一次模型全流程开发。您可以依据自己的实际使用场景，判断并选择一个合适的模型做训练，训练完成后可在产线内评估合适的模型权重，并最终用于实际使用场景中。
@@ -197,22 +261,95 @@ python main.py -c paddlex/configs/image_classification/PP-LCNet_x1_0.yaml \
 学习率探寻实验结果：
 <center>
 
-| 实验  | 轮次 | 学习率   | batch\_size | 训练环境 | Top1 Acc |
-|-----|----|-------|-------------|------|----------|
-| 实验一 | 20 | 0\.01 | 64          | 4卡   | **73\.83%**  |
-| 实验二 | 20 | 0\.001 | 64          | 4卡   | 30\.64%   |
-| 实验三 | 20 | 0\.1  | 64          | 4卡   | 71\.53%  |
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>轮次</th>
+<th>学习率</th>
+<th>batch_size</th>
+<th>训练环境</th>
+<th>Top1 Acc</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>实验一</td>
+<td>20</td>
+<td>0.01</td>
+<td>64</td>
+<td>4卡</td>
+<td><strong>73.83%</strong></td>
+</tr>
+<tr>
+<td>实验二</td>
+<td>20</td>
+<td>0.001</td>
+<td>64</td>
+<td>4卡</td>
+<td>30.64%</td>
+</tr>
+<tr>
+<td>实验三</td>
+<td>20</td>
+<td>0.1</td>
+<td>64</td>
+<td>4卡</td>
+<td>71.53%</td>
+</tr>
+</tbody>
+</table>
 </center>
 
 改变 epoch 实验结果：
 <center>
 
-| 实验        | 轮次  | 学习率   | batch\_size | 训练环境 | Top1 Acc |
-|-----------|-----|-------|-------------|------|----------|
-| 实验一       | 20  | 0\.01 | 64          | 4卡   | 73\.83%   |
-| 实验一增大训练轮次 | 50  | 0\.01 | 64          | 4卡   | 77\.32%   |
-| 实验一增大训练轮次 | 80  | 0\.01 | 64          | 4卡   | 77\.60%   |
-| 实验一增大训练轮次 | 100 | 0\.01 | 64          | 4卡   | **77\.80%**   |
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>轮次</th>
+<th>学习率</th>
+<th>batch_size</th>
+<th>训练环境</th>
+<th>Top1 Acc</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>实验一</td>
+<td>20</td>
+<td>0.01</td>
+<td>64</td>
+<td>4卡</td>
+<td>73.83%</td>
+</tr>
+<tr>
+<td>实验一增大训练轮次</td>
+<td>50</td>
+<td>0.01</td>
+<td>64</td>
+<td>4卡</td>
+<td>77.32%</td>
+</tr>
+<tr>
+<td>实验一增大训练轮次</td>
+<td>80</td>
+<td>0.01</td>
+<td>64</td>
+<td>4卡</td>
+<td>77.60%</td>
+</tr>
+<tr>
+<td>实验一增大训练轮次</td>
+<td>100</td>
+<td>0.01</td>
+<td>64</td>
+<td>4卡</td>
+<td><strong>77.80%</strong></td>
+</tr>
+</tbody>
+</table>
 </center>
 
 ** 注：本教程为 4 卡教程，如果您只有 1 张 GPU，可通过调整训练卡数完成本次实验，但最终指标未必和上述指标对齐，属正常情况。**

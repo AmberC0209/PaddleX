@@ -85,11 +85,36 @@ The retrieved vectorstore is not for PaddleX and will return vectorstore directl
 
 PaddleX 提供了 2 个端到端的印章文本检测模型，具体可参考 [模型列表](../support_list/models_list.md)，其中印章文本检测模型的 benchmark 如下：
 
-|模型名称|检测Hmean（%）|GPU推理耗时（ms）|CPU推理耗时（ms）|模型存储大小|yaml 文件|
-|-|-|-|-|-|-|
-|PP-OCRv4_mobile_seal_det|96.47|10.5878|131.813|4.7M |[PP-OCRv4_mobile_seal_det.yaml](../../paddlex/configs/text_detection_seal/PP-OCRv4_mobile_seal_det.yaml)|
-|PP-OCRv4_server_seal_det|98.21|84.341|2425.06|108.3 M|[PP-OCRv4_server_seal_det.yaml](../../paddlex/configs/text_detection_seal/PP-OCRv4_server_seal_det.yaml)|
-
+<table>
+<thead>
+<tr>
+<th>模型名称</th>
+<th>检测Hmean（%）</th>
+<th>GPU推理耗时（ms）</th>
+<th>CPU推理耗时（ms）</th>
+<th>模型存储大小</th>
+<th>yaml 文件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PP-OCRv4_mobile_seal_det</td>
+<td>96.47</td>
+<td>10.5878</td>
+<td>131.813</td>
+<td>4.7M</td>
+<td><a href="../../paddlex/configs/text_detection_seal/PP-OCRv4_mobile_seal_det.yaml">PP-OCRv4_mobile_seal_det.yaml</a></td>
+</tr>
+<tr>
+<td>PP-OCRv4_server_seal_det</td>
+<td>98.21</td>
+<td>84.341</td>
+<td>2425.06</td>
+<td>108.3 M</td>
+<td><a href="../../paddlex/configs/text_detection_seal/PP-OCRv4_server_seal_det.yaml">PP-OCRv4_server_seal_det.yaml</a></td>
+</tr>
+</tbody>
+</table>
 **注：以上精度指标的评估集是 PaddleX 自建的印章数据集，包含500印章图像。**
 
 
@@ -258,13 +283,32 @@ python main.py -c paddlex/configs/text_detection_seal/PP-OCRv4_server_seal_det.y
 
 <center>
 
-| 实验ID           | 学习率 |  检测 Hmean(%) | 
-| --------------- | ------------- | -------------------- |
-| **1** | **0.001**     | **97.35**       | 
-| 2 | 0.0001   | 93.32       |
-| 3 | 0.00001       | 87.63    |
-
-
+<table>
+<thead>
+<tr>
+<th>实验ID</th>
+<th>学习率</th>
+<th>检测 Hmean(%)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1</strong></td>
+<td><strong>0.001</strong></td>
+<td><strong>97.35</strong></td>
+</tr>
+<tr>
+<td>2</td>
+<td>0.0001</td>
+<td>93.32</td>
+</tr>
+<tr>
+<td>3</td>
+<td>0.00001</td>
+<td>87.63</td>
+</tr>
+</tbody>
+</table>
 </center>
 
 接下来，我们可以在学习率设置为 0.001 的基础上，增加训练轮次，对比下面实验 [1，4] 可知，训练轮次增大，模型精度有了进一步的提升。
@@ -272,11 +316,27 @@ python main.py -c paddlex/configs/text_detection_seal/PP-OCRv4_server_seal_det.y
 <center>
 
 
-| 实验ID           | 训练轮次 |  检测 Hmean(%) | 
-| --------------- | ------------- | -------------------- |
-| 1 | 30    |97.35   |
-| 4 |100  | 98.13   |
-
+<table>
+<thead>
+<tr>
+<th>实验ID</th>
+<th>训练轮次</th>
+<th>检测 Hmean(%)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>30</td>
+<td>97.35</td>
+</tr>
+<tr>
+<td>4</td>
+<td>100</td>
+<td>98.13</td>
+</tr>
+</tbody>
+</table>
 </center>
 
 ** 注：本教程为 4 卡教程，如果您只有 1 张 GPU，可通过调整训练卡数完成本次实验，但最终指标未必和上述指标完全对齐，属正常情况。**

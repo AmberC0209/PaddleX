@@ -147,13 +147,32 @@ PaddleLabel will automatically open a webpage in your browser after startup. You
 * Adjust the directory to obtain the standard `coco` format dataset for helmet detection
   * Rename the three `json` files and the `image` directory according to the following correspondence:
 
-|Original File (Directory) Name|Renamed File (Directory) Name|
-|-|-|
-|`train.json`|`instance_train.json`|
-|`val.json`|`instance_val.json`|
-|`test.json`|`instance_test.json`|
-|`image`|`images`|
-
+<table>
+<thead>
+<tr>
+<th>Original File (Directory) Name</th>
+<th>Renamed File (Directory) Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>train.json</code></td>
+<td><code>instance_train.json</code></td>
+</tr>
+<tr>
+<td><code>val.json</code></td>
+<td><code>instance_val.json</code></td>
+</tr>
+<tr>
+<td><code>test.json</code></td>
+<td><code>instance_test.json</code></td>
+</tr>
+<tr>
+<td><code>image</code></td>
+<td><code>images</code></td>
+</tr>
+</tbody>
+</table>
   * Create an `annotations` directory in the root directory of the dataset and move all `json` files to the `annotations` directory. The final dataset directory structure will look like this:
   
   ![alt text](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/17.png)

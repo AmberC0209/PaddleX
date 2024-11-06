@@ -33,13 +33,42 @@ After experiencing the pipeline, determine if it meets your expectations (includ
 
 PaddleX provides 15 end-to-end instance segmentation models. Refer to the [Model List](../support_list/models_list.en.md) for details. Benchmarks for some models are as follows:
 
-| Model List        | mAP(%) | GPU Inference Time(ms) | Model Size(M) |
-| --------------- | ------ | ---------------- | --------------- |
-| Mask-RT-DETR-H       | 48.8   | 61.40           | 486             |
-| Mask-RT-DETR-X       | 47.5   | 45.70             | 257             |
-| Mask-RT-DETR-L       | 45.7   | 37.40             | 123             |
-| Mask-RT-DETR-S       | 40.9   | 32.40             | 57              |
-
+<table>
+<thead>
+<tr>
+<th>Model List</th>
+<th>mAP(%)</th>
+<th>GPU Inference Time(ms)</th>
+<th>Model Size(M)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mask-RT-DETR-H</td>
+<td>48.8</td>
+<td>61.40</td>
+<td>486</td>
+</tr>
+<tr>
+<td>Mask-RT-DETR-X</td>
+<td>47.5</td>
+<td>45.70</td>
+<td>257</td>
+</tr>
+<tr>
+<td>Mask-RT-DETR-L</td>
+<td>45.7</td>
+<td>37.40</td>
+<td>123</td>
+</tr>
+<tr>
+<td>Mask-RT-DETR-S</td>
+<td>40.9</td>
+<td>32.40</td>
+<td>57</td>
+</tr>
+</tbody>
+</table>
 > **Note: The above accuracy metrics are mAP(0.5:0.95) on the [COCO2017](https://cocodataset.org/#home) validation set. GPU inference time is based on an NVIDIA V100 machine with FP32 precision.**
 
 In summary, models listed from top to bottom offer faster inference speeds, while those from bottom to top offer higher accuracy. This tutorial uses the `Mask-RT-DETR-H` model as an example to complete the full model development process. Choose a suitable model based on your actual usage scenario, train it, evaluate the model weights within the pipeline, and finally apply them in real-world scenarios.
@@ -195,24 +224,95 @@ It is recommended to follow the controlled variable method when debugging parame
 Learning Rate Exploration Results:
 <center>
 
-| Experiment | Epochs | Learning Rate | batch\_size | Training Environment | mAP@0\.5 |
-|------------|--------|-------------|-------------|--------------------|----------|
-| Experiment 1 | 80 | 0\.0005    | 2           | 4 GPUs           | 0\.695   |
-| Experiment 2 | 80 | 0\.0001    | 2           | 4 GPUs           | **0\.825** |
-| Experiment 3 | 80 | 0\.00005   | 2           | 4 GPUs           | 0\.706   |
-
+<table>
+<thead>
+<tr>
+<th>Experiment</th>
+<th>Epochs</th>
+<th>Learning Rate</th>
+<th>batch_size</th>
+<th>Training Environment</th>
+<th>mAP@0.5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Experiment 1</td>
+<td>80</td>
+<td>0.0005</td>
+<td>2</td>
+<td>4 GPUs</td>
+<td>0.695</td>
+</tr>
+<tr>
+<td>Experiment 2</td>
+<td>80</td>
+<td>0.0001</td>
+<td>2</td>
+<td>4 GPUs</td>
+<td><strong>0.825</strong></td>
+</tr>
+<tr>
+<td>Experiment 3</td>
+<td>80</td>
+<td>0.00005</td>
+<td>2</td>
+<td>4 GPUs</td>
+<td>0.706</td>
+</tr>
+</tbody>
+</table>
 </center>
 
 Epoch Variation Results:
 <center>
 
-| Experiment                  | Epochs | Learning Rate | batch\_size | Training Environment | mAP@0\.5 |
-|---------------------------|--------|-------------|-------------|--------------------|----------|
-| Experiment 2               | 80   | 0\.0001    | 2           | 4 GPUs           | 0\.825   |
-| Reduced Epochs in Experiment 2 | 30   | 0\.0001    | 2           | 4 GPUs           | 0\.287   |
-| Reduced Epochs in Experiment 2 | 50   | 0\.0001    | 2           | 4 GPUs           | 0\.545   |
-| Increased Epochs in Experiment 2 | 100  | 0\.0001    | 2           | 4 GPUs           | 0\.813  |
-
+<table>
+<thead>
+<tr>
+<th>Experiment</th>
+<th>Epochs</th>
+<th>Learning Rate</th>
+<th>batch_size</th>
+<th>Training Environment</th>
+<th>mAP@0.5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Experiment 2</td>
+<td>80</td>
+<td>0.0001</td>
+<td>2</td>
+<td>4 GPUs</td>
+<td>0.825</td>
+</tr>
+<tr>
+<td>Reduced Epochs in Experiment 2</td>
+<td>30</td>
+<td>0.0001</td>
+<td>2</td>
+<td>4 GPUs</td>
+<td>0.287</td>
+</tr>
+<tr>
+<td>Reduced Epochs in Experiment 2</td>
+<td>50</td>
+<td>0.0001</td>
+<td>2</td>
+<td>4 GPUs</td>
+<td>0.545</td>
+</tr>
+<tr>
+<td>Increased Epochs in Experiment 2</td>
+<td>100</td>
+<td>0.0001</td>
+<td>2</td>
+<td>4 GPUs</td>
+<td>0.813</td>
+</tr>
+</tbody>
+</table>
 </center>
 
 **Note: This tutorial is designed for 4 GPUs. If you only have 1 GPU, you can adjust the number of training GPUs to complete the experiments, but the final metrics may not align with the above, which is normal.**

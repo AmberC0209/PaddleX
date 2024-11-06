@@ -33,11 +33,36 @@ After experiencing the pipeline, determine if it meets your expectations (includ
 
 PaddleX provides two end-to-end text detection models. For details, refer to the [Model List](../support_list/models_list.en.md). The benchmarks of the models are as follows:
 
-| Model List         | Detection Hmean(%) | Recognition Avg Accuracy(%) | GPU Inference Time(ms) | CPU Inference Time(ms) | Model Size(M) |
-| --------------- | ----------- | ------------------- | --------------- | --------------- |---------------|
-| PP-OCRv4_server    | 82.69       | 79.20               |     22.20346        | 2662.158        |             198 |
-| PP-OCRv4_mobile    | 77.79       | 78.20                  | 2.719474          | 79.1097         |              15 |
-
+<table>
+<thead>
+<tr>
+<th>Model List</th>
+<th>Detection Hmean(%)</th>
+<th>Recognition Avg Accuracy(%)</th>
+<th>GPU Inference Time(ms)</th>
+<th>CPU Inference Time(ms)</th>
+<th>Model Size(M)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PP-OCRv4_server</td>
+<td>82.69</td>
+<td>79.20</td>
+<td>22.20346</td>
+<td>2662.158</td>
+<td>198</td>
+</tr>
+<tr>
+<td>PP-OCRv4_mobile</td>
+<td>77.79</td>
+<td>78.20</td>
+<td>2.719474</td>
+<td>79.1097</td>
+<td>15</td>
+</tr>
+</tbody>
+</table>
 **Note: The above accuracy metrics are for the Detection Hmean and Recognition Avg Accuracy on PaddleOCR's self-built Chinese dataset validation set. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.**
 
 In short, the models listed from top to bottom have faster inference speeds, while from bottom to top, they have higher accuracy. This tutorial uses the `PP-OCRv4_server` model as an example to complete a full model development process. Depending on your actual usage scenario, choose a suitable model for training. After training, evaluate the appropriate model weights within the pipeline and use them in practical scenarios.
@@ -203,21 +228,63 @@ It is recommended to follow the controlled variable method when debugging parame
 Learning Rate Exploration Results:
 <center>
 
-| Experiment ID | Learning Rate | Detection Hmean (%) |
-|---------------|--------------|---------------------|
-| 1             | 0.00005      | 99.06               |
-| 2             | 0.0001       | 99.55               |
-| 3             | 0.0005       | 99.60               |
-| 4             | 0.001        | 99.70               |
+<table>
+<thead>
+<tr>
+<th>Experiment ID</th>
+<th>Learning Rate</th>
+<th>Detection Hmean (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>0.00005</td>
+<td>99.06</td>
+</tr>
+<tr>
+<td>2</td>
+<td>0.0001</td>
+<td>99.55</td>
+</tr>
+<tr>
+<td>3</td>
+<td>0.0005</td>
+<td>99.60</td>
+</tr>
+<tr>
+<td>4</td>
+<td>0.001</td>
+<td>99.70</td>
+</tr>
+</tbody>
+</table>
 </center>
 
 Next, based on a learning rate of 0.001, we can increase the number of training epochs. Comparing Experiments [4, 5] below, it can be seen that increasing the number of training epochs further improves the model accuracy.
 <center>
 
-| Experiment ID | Number of Training Epochs | Detection Hmean (%) |
-|---------------|---------------------------|---------------------|
-| 4             | 10                        | 99.70               |
-| 5             | 20                        | 99.80               |
+<table>
+<thead>
+<tr>
+<th>Experiment ID</th>
+<th>Number of Training Epochs</th>
+<th>Detection Hmean (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td>10</td>
+<td>99.70</td>
+</tr>
+<tr>
+<td>5</td>
+<td>20</td>
+<td>99.80</td>
+</tr>
+</tbody>
+</table>
 </center>
 
 **Note: This tutorial is designed for 4 GPUs. If you only have 1 GPU, you can complete the experiment by adjusting the number of training GPUs, but the final metrics may not align with the above indicators, which is normal.**

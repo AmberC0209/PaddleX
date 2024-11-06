@@ -7,10 +7,24 @@ Time series classification involves identifying and categorizing different patte
 
 ## II. Supported Model List
 
-|Model Name|Acc(%)|Model Size (M)|Description|
-|-|-|-|-|
-|TimesNet_cls|87.5|792K|TimesNet is an adaptive and high-accuracy time series classification model through multi-period analysis|
-
+<table>
+<thead>
+<tr>
+<th>Model Name</th>
+<th>Acc(%)</th>
+<th>Model Size (M)</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TimesNet_cls</td>
+<td>87.5</td>
+<td>792K</td>
+<td>TimesNet is an adaptive and high-accuracy time series classification model through multi-period analysis</td>
+</tr>
+</tbody>
+</table>
 **Note: The evaluation set for the above accuracy metrics is UWaveGestureLibrary.**
 
 ## III. Quick Integration

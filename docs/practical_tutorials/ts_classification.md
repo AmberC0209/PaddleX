@@ -25,10 +25,24 @@ for res in output:
 ## 3. 选择模型
 PaddleX 提供了1个端到端的时序分类模型，具体可参考 [模型列表](../support_list/models_list.md)，其中模型的benchmark如下：
 
-|模型名称|acc(%)|模型存储大小（M)|介绍|
-|-|-|-|-|
-|TimesNet_cls|87.5|792K|通过多周期分析，TimesNet是适应性强的高精度时序分类模型|
-
+<table>
+<thead>
+<tr>
+<th>模型名称</th>
+<th>acc(%)</th>
+<th>模型存储大小（M)</th>
+<th>介绍</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TimesNet_cls</td>
+<td>87.5</td>
+<td>792K</td>
+<td>通过多周期分析，TimesNet是适应性强的高精度时序分类模型</td>
+</tr>
+</tbody>
+</table>
 **注：以上精度指标的评估集是 **UWaveGestureLibrary**。**
 
 ## 4. 数据准备和校验
@@ -188,18 +202,76 @@ PaddleX 中每个模型都提供了模型开发的配置文件，用于设置相
 
 
 
-|实验|轮次|学习率|batch_size|训练环境|验证集准确率|
-|-|-|-|-|-|-|
-|实验一|5|0.00001|16|1卡|72.20%|
-|实验二|5|0.0001|16|1卡|72.20%|
-|实验三|5|0.001|16|1卡|73.20%|
-
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>轮次</th>
+<th>学习率</th>
+<th>batch_size</th>
+<th>训练环境</th>
+<th>验证集准确率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>实验一</td>
+<td>5</td>
+<td>0.00001</td>
+<td>16</td>
+<td>1卡</td>
+<td>72.20%</td>
+</tr>
+<tr>
+<td>实验二</td>
+<td>5</td>
+<td>0.0001</td>
+<td>16</td>
+<td>1卡</td>
+<td>72.20%</td>
+</tr>
+<tr>
+<td>实验三</td>
+<td>5</td>
+<td>0.001</td>
+<td>16</td>
+<td>1卡</td>
+<td>73.20%</td>
+</tr>
+</tbody>
+</table>
 增大训练轮次实验结果：
 
-|实验|轮次|学习率|batch_size|训练环境|验证集准确率|
-|-|-|-|-|-|-|
-|实验三|5|0.001|16|1卡|73.20%|
-|实验四|30|0.001|16|1卡|75.10%|
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>轮次</th>
+<th>学习率</th>
+<th>batch_size</th>
+<th>训练环境</th>
+<th>验证集准确率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>实验三</td>
+<td>5</td>
+<td>0.001</td>
+<td>16</td>
+<td>1卡</td>
+<td>73.20%</td>
+</tr>
+<tr>
+<td>实验四</td>
+<td>30</td>
+<td>0.001</td>
+<td>16</td>
+<td>1卡</td>
+<td>75.10%</td>
+</tr>
+</tbody>
+</table>
 ## 6. 产线测试
 将模型目录设置为训练完成的模型进行测试，使用[测试文件](https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/doc_images/practical_tutorial/timeseries_classification/test.csv)，进行预测：
 

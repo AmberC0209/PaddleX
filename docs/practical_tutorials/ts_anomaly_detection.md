@@ -25,13 +25,60 @@ for res in output:
 ## 3. 选择模型
 PaddleX 提供了5个端到端的时序异常检测模型，具体可参考 [模型列表](../support_list/models_list.md)，其中模型的benchmark如下：
 
-|模型名称|precison|recall|f1_score|模型存储大小（M)|介绍|
-|-|-|-|-|-|-|
-|DLinear_ad|0.9898|0.9396|0.9641|72.8K|DLinear_ad结构简单，效率高且易用的时序异常检测模型|
-|Nonstationary_ad|0.9855|0.8895|0.9351|1.5MB|基于transformer结构，针对性优化非平稳时间序列的异常检测模型|
-|AutoEncoder_ad|0.9936|0.8436|0.9125|32K|AutoEncoder_ad是经典的自编码结构的效率高且易用的时序异常检测模型|
-|PatchTST_ad|0.9878|0.9070|0.9457|164K|PatchTST是兼顾局部模式和全局依赖关系的高精度时序异常检测模型|
-|TimesNet_ad|0.9837|0.9480|0.9656|732K|通过多周期分析，TimesNet是适应性强的高精度时序异常检测模型|
+<table>
+<thead>
+<tr>
+<th>模型名称</th>
+<th>precison</th>
+<th>recall</th>
+<th>f1_score</th>
+<th>模型存储大小（M)</th>
+<th>介绍</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DLinear_ad</td>
+<td>0.9898</td>
+<td>0.9396</td>
+<td>0.9641</td>
+<td>72.8K</td>
+<td>DLinear_ad结构简单，效率高且易用的时序异常检测模型</td>
+</tr>
+<tr>
+<td>Nonstationary_ad</td>
+<td>0.9855</td>
+<td>0.8895</td>
+<td>0.9351</td>
+<td>1.5MB</td>
+<td>基于transformer结构，针对性优化非平稳时间序列的异常检测模型</td>
+</tr>
+<tr>
+<td>AutoEncoder_ad</td>
+<td>0.9936</td>
+<td>0.8436</td>
+<td>0.9125</td>
+<td>32K</td>
+<td>AutoEncoder_ad是经典的自编码结构的效率高且易用的时序异常检测模型</td>
+</tr>
+<tr>
+<td>PatchTST_ad</td>
+<td>0.9878</td>
+<td>0.9070</td>
+<td>0.9457</td>
+<td>164K</td>
+<td>PatchTST是兼顾局部模式和全局依赖关系的高精度时序异常检测模型</td>
+</tr>
+<tr>
+<td>TimesNet_ad</td>
+<td>0.9837</td>
+<td>0.9480</td>
+<td>0.9656</td>
+<td>732K</td>
+<td>通过多周期分析，TimesNet是适应性强的高精度时序异常检测模型</td>
+</tr>
+</tbody>
+</table>
 > **注：以上精度指标测量自**[PSM](https://paddle-model-ecology.bj.bcebos.com/paddlex/data/ts_anomaly_examples.tar)**数据集，时序长度为100。**
 ## 4. 数据准备和校验
 ### 4.1 数据准备
@@ -185,18 +232,83 @@ PaddleX 中每个模型都提供了模型开发的配置文件，用于设置相
 4. 可以发现实验四与实验三的精度一致，说明无需再增大训练轮次数。
 学习率探寻实验结果：
 
-|实验|轮次|学习率|batch_size|输入长度|训练环境|验证集F1 score (%)|
-|-|-|-|-|-|-|-|
-|实验一|5|0.0001|16|96|1卡|79.5|
-|实验二|5|0.0005|16|96|1卡|80.1|
-|实验三|5|0.001|16|96|1卡|80.9|
-
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>轮次</th>
+<th>学习率</th>
+<th>batch_size</th>
+<th>输入长度</th>
+<th>训练环境</th>
+<th>验证集F1 score (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>实验一</td>
+<td>5</td>
+<td>0.0001</td>
+<td>16</td>
+<td>96</td>
+<td>1卡</td>
+<td>79.5</td>
+</tr>
+<tr>
+<td>实验二</td>
+<td>5</td>
+<td>0.0005</td>
+<td>16</td>
+<td>96</td>
+<td>1卡</td>
+<td>80.1</td>
+</tr>
+<tr>
+<td>实验三</td>
+<td>5</td>
+<td>0.001</td>
+<td>16</td>
+<td>96</td>
+<td>1卡</td>
+<td>80.9</td>
+</tr>
+</tbody>
+</table>
 增大训练轮次实验结果：
 
-|实验|轮次|学习率|batch_size|输入长度|训练环境|验证集F1 score (%)|
-|-|-|-|-|-|-|-|
-|实验三|5|0.0005|16|96|1卡|80.9|
-|实验四|20|0.0005|16|96|1卡|80.9|
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>轮次</th>
+<th>学习率</th>
+<th>batch_size</th>
+<th>输入长度</th>
+<th>训练环境</th>
+<th>验证集F1 score (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>实验三</td>
+<td>5</td>
+<td>0.0005</td>
+<td>16</td>
+<td>96</td>
+<td>1卡</td>
+<td>80.9</td>
+</tr>
+<tr>
+<td>实验四</td>
+<td>20</td>
+<td>0.0005</td>
+<td>16</td>
+<td>96</td>
+<td>1卡</td>
+<td>80.9</td>
+</tr>
+</tbody>
+</table>
 ## 6. 产线测试
 将产线中的模型替换为微调后的模型进行测试，使用[测试文件](https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/doc_images/practical_tutorial/timeseries_anomaly_detection/test.csv)进行预测：
 

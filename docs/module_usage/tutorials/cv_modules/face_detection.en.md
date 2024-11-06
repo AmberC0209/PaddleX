@@ -8,10 +8,28 @@ Face detection is a fundamental task in object detection, aiming to automaticall
 ## II. Supported Model List
 
 
-| Model | mAP（%）| GPU Inference Time (ms) | CPU Inference Time (ms) | Model Size (M) | Description |
-|-|-|-|-|-|-|
-| PicoDet_LCNet_x2_5_face | 35.8 | 33.7 | 537.0 | 28.9 | Face detection model based on PicoDet_LCNet_x2_5 |
-
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>mAP（%）</th>
+<th>GPU Inference Time (ms)</th>
+<th>CPU Inference Time (ms)</th>
+<th>Model Size (M)</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PicoDet_LCNet_x2_5_face</td>
+<td>35.8</td>
+<td>33.7</td>
+<td>537.0</td>
+<td>28.9</td>
+<td>Face detection model based on PicoDet_LCNet_x2_5</td>
+</tr>
+</tbody>
+</table>
 **Note: The evaluation set for the above accuracy metrics is wider_face dataset mAP(0.5:0.95). GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.**
 
 ## III. Quick Integration  <a id="quick"> </a> 

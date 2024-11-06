@@ -161,13 +161,23 @@ pdlabel # Abbreviation, identical to paddlelabel
 
   * Rename the three `json` files and the `image` directory as follows:
 
-| Original File/Directory Name | Renamed File/Directory Name |
-|-|-|
-|`train.json`|`instance_train.json`|
+<table>
+<thead>
+<tr>
+<th>Original File/Directory Name</th>
+<th>Renamed File/Directory Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>train.json</code></td>
+<td><code>instance_train.json</code></td>
+</tr>
+</tbody>
+</table>
 |`val.json`|`instance_val.json`| <!-- Corrected the mistake from "instance_train.json" to "instance_val.json" -->
-|`test.json`|`instance_test.json`|
-|`image`|`images`|
-
+<p>|<code>test.json</code>|<code>instance_test.json</code>|
+|<code>image</code>|<code>images</code>|</p>
 * Create an `annotations` directory in the root of the dataset and move all `json` files into it. The final dataset structure should look like this:
 
 ![alt text](https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/data_prepare/obeject_detection/17.png)
