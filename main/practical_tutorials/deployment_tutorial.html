@@ -114,7 +114,7 @@ You're not viewing the latest version.
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../index.html" title="PaddleX 文档" class="md-header__button md-logo" aria-label="PaddleX 文档" data-md-component="logo">
+    <a href=".." title="PaddleX 文档" class="md-header__button md-logo" aria-label="PaddleX 文档" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
@@ -273,7 +273,7 @@ You're not viewing the latest version.
   
   
     <li class="md-tabs__item">
-      <a href="../index.html" class="md-tabs__link">
+      <a href="../index.md" class="md-tabs__link">
         
   
     
@@ -290,7 +290,7 @@ You're not viewing the latest version.
   
   
     <li class="md-tabs__item">
-      <a href="../quick_start.html" class="md-tabs__link">
+      <a href="../quick_start.md" class="md-tabs__link">
         
   
     
@@ -545,7 +545,7 @@ You're not viewing the latest version.
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../index.html" title="PaddleX 文档" class="md-nav__button md-logo" aria-label="PaddleX 文档" data-md-component="logo">
+    <a href=".." title="PaddleX 文档" class="md-nav__button md-logo" aria-label="PaddleX 文档" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
@@ -580,7 +580,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../index.html" class="md-nav__link">
+      <a href="../index.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -600,7 +600,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../quick_start.html" class="md-nav__link">
+      <a href="../quick_start.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4075,6 +4075,15 @@ You're not viewing the latest version.
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#15" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.5 更换产线或模型
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4121,6 +4130,15 @@ You're not viewing the latest version.
   <a href="#24" class="md-nav__link">
     <span class="md-ellipsis">
       2.4 部署步骤
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.5 更换产线或模型
     </span>
   </a>
   
@@ -4315,23 +4333,55 @@ You're not viewing the latest version.
 <p>运行结果：</p>
 <p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/practical_tutorials/deployment/01.png"  width="700" />
 <img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/practical_tutorials/deployment/02.png"  width="700" /></p>
+<h3 id="15">1.5 更换产线或模型<a class="headerlink" href="#15" title="Permanent link">&para;</a></h3>
+<ul>
+<li>更换产线：</li>
+</ul>
+<p>若想更换其他产线使用高性能推理插件，则替换 <code>--pipeline</code> 传入的值即可，以下以通用目标检测产线为例：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>paddlex<span class="w"> </span>--pipeline<span class="w"> </span>object_detection<span class="w"> </span>--input<span class="w"> </span>https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/general_object_detection_002.png<span class="w"> </span>--device<span class="w"> </span>gpu:0<span class="w"> </span>--use_hpip<span class="w"> </span>--serial_number<span class="w"> </span><span class="o">{</span>序列号<span class="o">}</span><span class="w"> </span>--update_license<span class="w"> </span>True<span class="w"> </span>--save_path<span class="w"> </span>./output
+</span></code></pre></div>
+<ul>
+<li>更换模型：</li>
+</ul>
+<p>OCR 产线默认使用 PP-OCRv4_mobile_det、PP-OCRv4_mobile_rec 模型，若想更换其他模型，如 PP-OCRv4_server_det、PP-OCRv4_server_rec 模型，可参考 <a href="../pipeline_usage/tutorials/ocr_pipelines/OCR.html">通用OCR产线使用教程</a>，具体操作如下：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># 1. 获取 OCR 产线配置文件并保存到 ./OCR.yaml</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>paddlex<span class="w"> </span>--get_pipeline_config<span class="w"> </span>OCR<span class="w"> </span>--save_path<span class="w"> </span>./OCR.yaml
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1"># 2. 修改 ./OCR.yaml 配置文件</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="c1">#    将 Pipeline.text_det_model 的值改为 PP-OCRv4_server_det 模型所在路径</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="c1">#    将 Pipeline.text_rec_model 的值改为 PP-OCRv4_server_rec 模型所在路径</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="c1"># 3. 执行推理时使用修改后的配置文件</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>paddlex<span class="w"> </span>--pipeline<span class="w"> </span>./OCR.yaml<span class="w"> </span>--input<span class="w"> </span>https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/general_ocr_002.png<span class="w"> </span>--device<span class="w"> </span>gpu:0<span class="w"> </span>--use_hpip<span class="w"> </span>--serial_number<span class="w"> </span><span class="o">{</span>序列号<span class="o">}</span><span class="w"> </span>--update_license<span class="w"> </span>True<span class="w"> </span>--save_path<span class="w"> </span>./output
+</span></code></pre></div>
+<p>通用目标检测产线默认使用 PicoDet-S 模型，若想更换其他模型，如 RT-DETR 模型，可参考 <a href="../pipeline_usage/tutorials/cv_pipelines/object_detection.html">通用目标检测产线使用教程</a>，具体操作如下：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># 1. 获取 OCR 产线配置文件并保存到 ./object_detection.yaml</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>paddlex<span class="w"> </span>--get_pipeline_config<span class="w"> </span>object_detection<span class="w"> </span>--save_path<span class="w"> </span>./object_detection.yaml
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1"># 2. 修改 ./object_detection.yaml 配置文件</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="c1">#    将 Pipeline.model 的值改为 RT-DETR 模型所在路径</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="c1"># 3. 执行推理时使用修改后的配置文件</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>paddlex<span class="w"> </span>--pipeline<span class="w"> </span>./object_detection.yaml<span class="w"> </span>--input<span class="w"> </span>https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/general_ocr_002.png<span class="w"> </span>--device<span class="w"> </span>gpu:0<span class="w"> </span>--use_hpip<span class="w"> </span>--serial_number<span class="w"> </span><span class="o">{</span>序列号<span class="o">}</span><span class="w"> </span>--update_license<span class="w"> </span>True<span class="w"> </span>--save_path<span class="w"> </span>./output
+</span></code></pre></div>
+<p>其他产线的操作与上述两条产线的操作类似，更多细节可参考产线使用教程。</p>
 <h2 id="2">2 服务化部署示例<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
 <h3 id="21">2.1 安装服务化部署插件<a class="headerlink" href="#21" title="Permanent link">&para;</a></h3>
 <p>执行如下指令，安装服务化部署插件：</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>paddlex --install serving
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>paddlex --install serving
 </span></code></pre></div>
 <h3 id="22">2.2 启动服务<a class="headerlink" href="#22" title="Permanent link">&para;</a></h3>
 <p>通过 PaddleX CLI 启动服务，指令格式为：</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>paddlex<span class="w"> </span>--serve<span class="w"> </span>--pipeline<span class="w"> </span><span class="o">{</span>产线名称或产线配置文件路径<span class="o">}</span><span class="w"> </span><span class="o">[{</span>其他命令行选项<span class="o">}]</span>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>paddlex<span class="w"> </span>--serve<span class="w"> </span>--pipeline<span class="w"> </span><span class="o">{</span>产线名称或产线配置文件路径<span class="o">}</span><span class="w"> </span><span class="o">[{</span>其他命令行选项<span class="o">}]</span>
 </span></code></pre></div>
 <p>以通用OCR产线为例：</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>paddlex<span class="w"> </span>--serve<span class="w"> </span>--pipeline<span class="w"> </span>OCR
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>paddlex<span class="w"> </span>--serve<span class="w"> </span>--pipeline<span class="w"> </span>OCR
 </span></code></pre></div>
 <p>服务启动成功后，可以看到类似如下展示的信息：</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>INFO:     Started server process [63108]
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>INFO:     Waiting for application startup.
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>INFO:     Application startup complete.
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>INFO:     Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>INFO:     Started server process [63108]
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>INFO:     Waiting for application startup.
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>INFO:     Application startup complete.
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>INFO:     Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)
 </span></code></pre></div>
 <p><code>--pipeline</code> 可指定为官方产线名称或本地产线配置文件路径。PaddleX 以此构建产线并部署为服务。如需调整配置（如模型路径、batch_size、部署设备等），请参考<a href="../pipeline_usage/tutorials/ocr_pipelines/OCR.html">通用OCR产线使用教程</a>中的 <b>“模型应用”</b> 部分。
 与服务化部署相关的命令行选项如下：</p>
@@ -4365,7 +4415,7 @@ You're not viewing the latest version.
 </tr>
 <tr>
 <td><code>--serial_number</code></td>
-<td>高性能推理插件使用的序列号。只在启用高性能推理插件时生效。 请注意，并非所有产线、模型都支持使用高性能推理插件，详细的支持情况请参考<a href="./high_performance_inference.md">PaddleX 高性能推理指南</a>。</td>
+<td>高性能推理插件使用的序列号。只在启用高性能推理插件时生效。 请注意，并非所有产线、模型都支持使用高性能推理插件，详细的支持情况请参考<a href="../pipeline_deploy/high_performance_inference.md">PaddleX 高性能推理指南</a>。</td>
 </tr>
 <tr>
 <td><code>--update_license</code></td>
@@ -4373,49 +4423,84 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-
 <h3 id="23">2.3 调用服务<a class="headerlink" href="#23" title="Permanent link">&para;</a></h3>
 <p>此处只展示 Python 调用示例，API参考和其他语言服务调用示例可参考 <a href="../pipeline_deploy/service_deploy.html">PaddleX服务化部署指南</a> 的 <b>1.3 调用服务</b> 中各产线使用教程的 <b>“开发集成/部署”</b> 部分。</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kn">import</span> <span class="nn">base64</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="kn">import</span> <span class="nn">requests</span>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="n">API_URL</span> <span class="o">=</span> <span class="s2">&quot;http://localhost:8080/ocr&quot;</span> <span class="c1"># 服务URL</span>
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="n">image_path</span> <span class="o">=</span> <span class="s2">&quot;./demo.jpg&quot;</span>
-</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="n">output_image_path</span> <span class="o">=</span> <span class="s2">&quot;./out.jpg&quot;</span>
-</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>
-</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="c1"># 对本地图像进行Base64编码</span>
-</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">image_path</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
-</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>    <span class="n">image_bytes</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>    <span class="n">image_data</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">image_bytes</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;ascii&quot;</span><span class="p">)</span>
-</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>
-</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="n">payload</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;image&quot;</span><span class="p">:</span> <span class="n">image_data</span><span class="p">}</span>  <span class="c1"># Base64编码的文件内容或者图像URL</span>
-</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>
-</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="c1"># 调用API</span>
-</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">API_URL</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
-</span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>
-</span><span id="__span-7-18"><a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="c1"># 处理接口返回数据</span>
-</span><span id="__span-7-19"><a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="k">assert</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span>
-</span><span id="__span-7-20"><a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a><span class="n">result</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s2">&quot;result&quot;</span><span class="p">]</span>
-</span><span id="__span-7-21"><a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">output_image_path</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
-</span><span id="__span-7-22"><a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a>    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">base64</span><span class="o">.</span><span class="n">b64decode</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;image&quot;</span><span class="p">]))</span>
-</span><span id="__span-7-23"><a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output image saved at </span><span class="si">{</span><span class="n">output_image_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</span><span id="__span-7-24"><a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Detected texts:&quot;</span><span class="p">)</span>
-</span><span id="__span-7-25"><a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;texts&quot;</span><span class="p">])</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kn">import</span> <span class="nn">base64</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="kn">import</span> <span class="nn">requests</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="n">API_URL</span> <span class="o">=</span> <span class="s2">&quot;http://localhost:8080/ocr&quot;</span> <span class="c1"># 服务URL</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="n">image_path</span> <span class="o">=</span> <span class="s2">&quot;./demo.jpg&quot;</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="n">output_image_path</span> <span class="o">=</span> <span class="s2">&quot;./out.jpg&quot;</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="c1"># 对本地图像进行Base64编码</span>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">image_path</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>    <span class="n">image_bytes</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>    <span class="n">image_data</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">image_bytes</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;ascii&quot;</span><span class="p">)</span>
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>
+</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="n">payload</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;image&quot;</span><span class="p">:</span> <span class="n">image_data</span><span class="p">}</span>  <span class="c1"># Base64编码的文件内容或者图像URL</span>
+</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>
+</span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a><span class="c1"># 调用API</span>
+</span><span id="__span-10-16"><a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">API_URL</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+</span><span id="__span-10-17"><a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a>
+</span><span id="__span-10-18"><a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a><span class="c1"># 处理接口返回数据</span>
+</span><span id="__span-10-19"><a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a><span class="k">assert</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span>
+</span><span id="__span-10-20"><a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a><span class="n">result</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s2">&quot;result&quot;</span><span class="p">]</span>
+</span><span id="__span-10-21"><a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">output_image_path</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+</span><span id="__span-10-22"><a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a>    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">base64</span><span class="o">.</span><span class="n">b64decode</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;image&quot;</span><span class="p">]))</span>
+</span><span id="__span-10-23"><a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output image saved at </span><span class="si">{</span><span class="n">output_image_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-10-24"><a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Detected texts:&quot;</span><span class="p">)</span>
+</span><span id="__span-10-25"><a id="__codelineno-10-25" name="__codelineno-10-25" href="#__codelineno-10-25"></a><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;texts&quot;</span><span class="p">])</span>
 </span></code></pre></div>
 <h3 id="24">2.4 部署步骤<a class="headerlink" href="#24" title="Permanent link">&para;</a></h3>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># 安装服务化部署插件</span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>paddlex<span class="w"> </span>--install<span class="w"> </span>serving
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="c1"># 启动服务</span>
-</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>paddlex<span class="w"> </span>--serve<span class="w"> </span>--pipeline<span class="w"> </span>OCR
-</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="c1"># 启动服务并使用高性能推理插件（可选）</span>
-</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="c1"># paddlex --serve --pipeline OCR --use_hpip --serial_number {序列号}</span>
-</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="c1"># 调用服务 | fast_test.py 内容为多语言调用服务示例中的 Python 调用示例</span>
-</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>wget<span class="w"> </span>https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/general_ocr_002.png<span class="w"> </span>-O<span class="w"> </span>demo.jpg
-</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>python<span class="w"> </span>fast_test.py
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># 安装服务化部署插件</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>paddlex<span class="w"> </span>--install<span class="w"> </span>serving
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="c1"># 启动服务</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>paddlex<span class="w"> </span>--serve<span class="w"> </span>--pipeline<span class="w"> </span>OCR
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="c1"># 调用服务 | fast_test.py 中代码为上一节的 Python 调用示例</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>wget<span class="w"> </span>https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/general_ocr_002.png<span class="w"> </span>-O<span class="w"> </span>demo.jpg
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>python<span class="w"> </span>fast_test.py
 </span></code></pre></div>
 <p>运行结果：</p>
 <p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/practical_tutorials/deployment/03.png"  width="700" />
 <img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/practical_tutorials/deployment/04.png"  width="700" /></p>
+<h3 id="25">2.5 更换产线或模型<a class="headerlink" href="#25" title="Permanent link">&para;</a></h3>
+<ul>
+<li>更换产线：</li>
+</ul>
+<p>若想更换其他产线进行服务化部署，则替换 <code>--pipeline</code> 传入的值即可，以下以通用目标检测产线为例：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>paddlex<span class="w"> </span>--serve<span class="w"> </span>--pipeline<span class="w"> </span>object_detection
+</span></code></pre></div>
+<ul>
+<li>更换模型：</li>
+</ul>
+<p>OCR 产线默认使用 PP-OCRv4_mobile_det、PP-OCRv4_mobile_rec 模型，若想更换其他模型，如 PP-OCRv4_server_det、PP-OCRv4_server_rec 模型，可参考 <a href="../pipeline_usage/tutorials/ocr_pipelines/OCR.html">通用OCR产线使用教程</a>，具体操作如下：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1"># 1. 获取 OCR 产线配置文件并保存到 ./OCR.yaml</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>paddlex<span class="w"> </span>--get_pipeline_config<span class="w"> </span>OCR<span class="w"> </span>--save_path<span class="w"> </span>./OCR.yaml
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="c1"># 2. 修改 ./OCR.yaml 配置文件</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="c1">#    将 Pipeline.text_det_model 的值改为 PP-OCRv4_server_det 模型所在路径</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="c1">#    将 Pipeline.text_rec_model 的值改为 PP-OCRv4_server_rec 模型所在路径</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="c1"># 3. 启动服务时使用修改后的配置文件</span>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>paddlex<span class="w"> </span>--serve<span class="w"> </span>--pipeline<span class="w"> </span>./OCR.yaml
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="c1"># 4. 调用服务</span>
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>wget<span class="w"> </span>https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/general_ocr_002.png<span class="w"> </span>-O<span class="w"> </span>demo.jpg
+</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>python<span class="w"> </span>fast_test.py
+</span></code></pre></div>
+<p>通用目标检测产线默认使用 PicoDet-S 模型，若想更换其他模型，如 RT-DETR 模型，可参考 <a href="../pipeline_usage/tutorials/cv_pipelines/object_detection.html">通用目标检测产线使用教程</a>，具体操作如下：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c1"># 1. 获取 OCR 产线配置文件并保存到 ./object_detection.yaml</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>paddlex<span class="w"> </span>--get_pipeline_config<span class="w"> </span>object_detection<span class="w"> </span>--save_path<span class="w"> </span>./object_detection.yaml
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="c1"># 2. 修改 ./object_detection.yaml 配置文件</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="c1">#    将 Pipeline.model 的值改为 RT-DETR 模型所在路径</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="c1"># 3. 启动服务时使用修改后的配置文件</span>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>paddlex<span class="w"> </span>--serve<span class="w"> </span>--pipeline<span class="w"> </span>./object_detection.yaml
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="c1"># 4. 调用服务 | fast_test.py 需要替换为通用目标检测产线使用教程中的 Python 调用示例</span>
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>wget<span class="w"> </span>https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/general_ocr_002.png<span class="w"> </span>-O<span class="w"> </span>demo.jpg
+</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>python<span class="w"> </span>fast_test.py
+</span></code></pre></div>
+<p>其他产线的操作与上述两条产线的操作类似，更多细节可参考产线使用教程。</p>
 <h2 id="3">3 端侧部署示例<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
 <h3 id="31">3.1 环境准备<a class="headerlink" href="#31" title="Permanent link">&para;</a></h3>
 <ol>
@@ -4434,24 +4519,24 @@ You're not viewing the latest version.
 <li>
 <p>电脑上安装 ADB 工具，用于调试。ADB 安装方式如下：</p>
 <p>3.1. Mac 电脑安装 ADB</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="w"> </span>brew<span class="w"> </span>cask<span class="w"> </span>install<span class="w"> </span>android-platform-tools
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="w"> </span>brew<span class="w"> </span>cask<span class="w"> </span>install<span class="w"> </span>android-platform-tools
 </span></code></pre></div>
 <p>3.2. Linux 安装 ADB</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="w"> </span><span class="c1"># debian系linux发行版的安装方式</span>
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>update
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>wget<span class="w"> </span>adb
-</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
-</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w"> </span><span class="c1"># redhat系linux发行版的安装方式</span>
-</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w"> </span>sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> </span>adb
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="w"> </span><span class="c1"># debian系linux发行版的安装方式</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>update
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>wget<span class="w"> </span>adb
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w"> </span><span class="c1"># redhat系linux发行版的安装方式</span>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="w"> </span>sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> </span>adb
 </span></code></pre></div>
 <p>3.3. Windows 安装 ADB</p>
 <p>win 上安装需要去谷歌的安卓平台下载 ADB 软件包进行安装：<a href="https://developer.android.com/studio">链接</a></p>
 <p>打开终端，手机连接电脑，在终端中输入</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="w"> </span>adb<span class="w"> </span>devices
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="w"> </span>adb<span class="w"> </span>devices
 </span></code></pre></div>
 <p>如果有 device 输出，则表示安装成功。</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="w"> </span>List<span class="w"> </span>of<span class="w"> </span>devices<span class="w"> </span>attached
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w"> </span>744be294<span class="w">    </span>device
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="w"> </span>List<span class="w"> </span>of<span class="w"> </span>devices<span class="w"> </span>attached
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="w"> </span>744be294<span class="w">    </span>device
 </span></code></pre></div>
 </li>
 </ol>
@@ -4459,16 +4544,16 @@ You're not viewing the latest version.
 <ol>
 <li>
 <p>克隆 <code>Paddle-Lite-Demo</code> 仓库的 <code>feature/paddle-x</code> 分支到 <code>PaddleX-Lite-Deploy</code> 目录。</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span>feature/paddle-x<span class="w"> </span>https://github.com/PaddlePaddle/Paddle-Lite-Demo.git<span class="w"> </span>PaddleX-Lite-Deploy
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span>feature/paddle-x<span class="w"> </span>https://github.com/PaddlePaddle/Paddle-Lite-Demo.git<span class="w"> </span>PaddleX-Lite-Deploy
 </span></code></pre></div>
 </li>
 <li>
-<p>填写 <a href="https://paddle.wjx.cn/vm/eaaBo0H.aspx#">ocr（文字识别）问卷</a> 下载压缩包，将压缩包放到指定解压目录，切换到指定解压目录后执行解压命令。
-      <div class="language-shell highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c1"># 1. 切换到指定解压目录</span>
-</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="nb">cd</span><span class="w"> </span>PaddleX-Lite-Deploy/ocr/android/shell/ppocr_demo
-</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>
-</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="c1"># 2. 执行解压命令</span>
-</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>unzip<span class="w"> </span>ocr.zip
+<p>填写 <a href="https://paddle.wjx.cn/vm/eaaBo0H.aspx#">问卷</a> 下载压缩包，将压缩包放到指定解压目录，切换到指定解压目录后执行解压命令。
+      <div class="language-shell highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="c1"># 1. 切换到指定解压目录</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="nb">cd</span><span class="w"> </span>PaddleX-Lite-Deploy/ocr/android/shell/ppocr_demo
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="c1"># 2. 执行解压命令</span>
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>unzip<span class="w"> </span>ocr.zip
 </span></code></pre></div></p>
 </li>
 </ol>
@@ -4497,41 +4582,41 @@ You're not viewing the latest version.
     - <code>PP-OCRv3_mobile</code>
     - <code>PP-OCRv4_mobile</code></p>
 <p>以下为实际操作时的示例：
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="w"> </span><span class="c1"># 1. 下载需要的 Paddle Lite 预测库</span>
-</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>PaddleX-Lite-Deploy/libs
-</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w"> </span>sh<span class="w"> </span>download.sh
-</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>
-</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w"> </span><span class="c1"># 2. 下载 paddle_lite_opt 工具优化后的模型文件</span>
-</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>../ocr/assets
-</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="w"> </span>sh<span class="w"> </span>download.sh<span class="w"> </span>PP-OCRv4_mobile
-</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>
-</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="w"> </span><span class="c1"># 3. 完成可执行文件的编译</span>
-</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>../android/shell/ppocr_demo
-</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="w"> </span>sh<span class="w"> </span>build.sh
-</span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>
-</span><span id="__span-15-13"><a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a><span class="c1"># 4. 预测</span>
-</span><span id="__span-15-14"><a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a><span class="w"> </span>sh<span class="w"> </span>run.sh<span class="w"> </span>PP-OCRv4_mobile
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="w"> </span><span class="c1"># 1. 下载需要的 Paddle Lite 预测库</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>PaddleX-Lite-Deploy/libs
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="w"> </span>sh<span class="w"> </span>download.sh
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="w"> </span><span class="c1"># 2. 下载 paddle_lite_opt 工具优化后的模型文件</span>
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>../ocr/assets
+</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="w"> </span>sh<span class="w"> </span>download.sh<span class="w"> </span>PP-OCRv4_mobile
+</span><span id="__span-21-8"><a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a>
+</span><span id="__span-21-9"><a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a><span class="w"> </span><span class="c1"># 3. 完成可执行文件的编译</span>
+</span><span id="__span-21-10"><a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>../android/shell/ppocr_demo
+</span><span id="__span-21-11"><a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a><span class="w"> </span>sh<span class="w"> </span>build.sh
+</span><span id="__span-21-12"><a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a>
+</span><span id="__span-21-13"><a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a><span class="c1"># 4. 预测</span>
+</span><span id="__span-21-14"><a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a><span class="w"> </span>sh<span class="w"> </span>run.sh<span class="w"> </span>PP-OCRv4_mobile
 </span></code></pre></div></p>
 <p>检测结果：</p>
 <p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/practical_tutorials/deployment/05.png"  width="500" /></p>
 <p>识别结果：</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>The detection visualized image saved in ./test_img_result.jpg
-</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>0       纯臻营养护发素  0.993706
-</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>1       产品信息/参数   0.991224
-</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>2       （45元/每公斤，100公斤起订）    0.938893
-</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>3       每瓶22元，1000瓶起订）  0.988353
-</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>4       【品牌】：代加工方式/OEMODM     0.97557
-</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>5       【品名】：纯臻营养护发素        0.986914
-</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>6       ODMOEM  0.929891
-</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>7       【产品编号】：YM-X-3011 0.964156
-</span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>8       【净含量】：220ml       0.976404
-</span><span id="__span-16-11"><a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a>9       【适用人群】：适合所有肤质      0.987942
-</span><span id="__span-16-12"><a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a>10      【主要成分】：鲸蜡硬脂醇、燕麦β-葡聚    0.968315
-</span><span id="__span-16-13"><a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a>11      糖、椰油酰胺丙基甜菜碱、泛醒    0.941537
-</span><span id="__span-16-14"><a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a>12      （成品包材）    0.974796
-</span><span id="__span-16-15"><a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a>13      【主要功能】：可紧致头发磷层，从而达到  0.988799
-</span><span id="__span-16-16"><a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a>14      即时持久改善头发光泽的效果，给干燥的头  0.989547
-</span><span id="__span-16-17"><a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a>15      发足够的滋养    0.998413
+<div class="language-text highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>The detection visualized image saved in ./test_img_result.jpg
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>0       纯臻营养护发素  0.993706
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>1       产品信息/参数   0.991224
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>2       （45元/每公斤，100公斤起订）    0.938893
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>3       每瓶22元，1000瓶起订）  0.988353
+</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>4       【品牌】：代加工方式/OEMODM     0.97557
+</span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a>5       【品名】：纯臻营养护发素        0.986914
+</span><span id="__span-22-8"><a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a>6       ODMOEM  0.929891
+</span><span id="__span-22-9"><a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a>7       【产品编号】：YM-X-3011 0.964156
+</span><span id="__span-22-10"><a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a>8       【净含量】：220ml       0.976404
+</span><span id="__span-22-11"><a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a>9       【适用人群】：适合所有肤质      0.987942
+</span><span id="__span-22-12"><a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a>10      【主要成分】：鲸蜡硬脂醇、燕麦β-葡聚    0.968315
+</span><span id="__span-22-13"><a id="__codelineno-22-13" name="__codelineno-22-13" href="#__codelineno-22-13"></a>11      糖、椰油酰胺丙基甜菜碱、泛醒    0.941537
+</span><span id="__span-22-14"><a id="__codelineno-22-14" name="__codelineno-22-14" href="#__codelineno-22-14"></a>12      （成品包材）    0.974796
+</span><span id="__span-22-15"><a id="__codelineno-22-15" name="__codelineno-22-15" href="#__codelineno-22-15"></a>13      【主要功能】：可紧致头发磷层，从而达到  0.988799
+</span><span id="__span-22-16"><a id="__codelineno-22-16" name="__codelineno-22-16" href="#__codelineno-22-16"></a>14      即时持久改善头发光泽的效果，给干燥的头  0.989547
+</span><span id="__span-22-17"><a id="__codelineno-22-17" name="__codelineno-22-17" href="#__codelineno-22-17"></a>15      发足够的滋养    0.998413
 </span></code></pre></div>
 
 

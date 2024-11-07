@@ -118,7 +118,7 @@ You're not viewing the latest version.
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../index.html" title="PaddleX Documentation" class="md-header__button md-logo" aria-label="PaddleX Documentation" data-md-component="logo">
+    <a href="../.." title="PaddleX Documentation" class="md-header__button md-logo" aria-label="PaddleX Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
@@ -277,7 +277,7 @@ You're not viewing the latest version.
   
   
     <li class="md-tabs__item">
-      <a href="../index.html" class="md-tabs__link">
+      <a href="../../index.md" class="md-tabs__link">
         
   
     
@@ -294,7 +294,7 @@ You're not viewing the latest version.
   
   
     <li class="md-tabs__item">
-      <a href="../quick_start.html" class="md-tabs__link">
+      <a href="../../quick_start.md" class="md-tabs__link">
         
   
     
@@ -551,7 +551,7 @@ You're not viewing the latest version.
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../index.html" title="PaddleX Documentation" class="md-nav__button md-logo" aria-label="PaddleX Documentation" data-md-component="logo">
+    <a href="../.." title="PaddleX Documentation" class="md-nav__button md-logo" aria-label="PaddleX Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
@@ -586,7 +586,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../index.html" class="md-nav__link">
+      <a href="../../index.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -606,7 +606,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../quick_start.html" class="md-nav__link">
+      <a href="../../quick_start.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4405,14 +4405,14 @@ You're not viewing the latest version.
 <p>Using the PaddleX official Docker image, create a container called 'paddlex' and map the current working directory to the '/paddle' directory inside the container by following the command.</p>
 <p>If your Docker version &gt;= 19.03, please use:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># For CPU</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>paddlex<span class="w"> </span>-v<span class="w"> </span><span class="nv">$PWD</span>:/paddle<span class="w"> </span>--shm-size<span class="o">=</span>8g<span class="w"> </span>--network<span class="o">=</span>host<span class="w"> </span>-it<span class="w"> </span>registry.baidubce.com/paddlex/paddlex:paddlex3.0.0b1-paddlepaddle3.0.0b1-cpu<span class="w"> </span>/bin/bash
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>paddlex<span class="w"> </span>-v<span class="w"> </span><span class="nv">$PWD</span>:/paddle<span class="w"> </span>--shm-size<span class="o">=</span>8g<span class="w"> </span>--network<span class="o">=</span>host<span class="w"> </span>-it<span class="w"> </span>registry.baidubce.com/paddlex/paddlex:paddlex3.0.0b2-paddlepaddle3.0.0b2-cpu<span class="w"> </span>/bin/bash
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1"># For GPU</span>
 </span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="c1"># For CUDA11.8</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>docker<span class="w"> </span>run<span class="w"> </span>--gpus<span class="w"> </span>all<span class="w"> </span>--name<span class="w"> </span>paddlex<span class="w"> </span>-v<span class="w"> </span><span class="nv">$PWD</span>:/paddle<span class="w"> </span>--shm-size<span class="o">=</span>8g<span class="w"> </span>--network<span class="o">=</span>host<span class="w"> </span>-it<span class="w"> </span>registry.baidubce.com/paddlex/paddlex:paddlex3.0.0b1-paddlepaddle3.0.0b1-gpu-cuda11.8-cudnn8.6-trt8.5<span class="w"> </span>/bin/bash
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>docker<span class="w"> </span>run<span class="w"> </span>--gpus<span class="w"> </span>all<span class="w"> </span>--name<span class="w"> </span>paddlex<span class="w"> </span>-v<span class="w"> </span><span class="nv">$PWD</span>:/paddle<span class="w"> </span>--shm-size<span class="o">=</span>8g<span class="w"> </span>--network<span class="o">=</span>host<span class="w"> </span>-it<span class="w"> </span>registry.baidubce.com/paddlex/paddlex:paddlex3.0.0b2-paddlepaddle3.0.0b2-gpu-cuda11.8-cudnn8.6-trt8.5<span class="w"> </span>/bin/bash
 </span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
 </span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="c1"># For CUDA12.3</span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>docker<span class="w"> </span>run<span class="w"> </span>--gpus<span class="w"> </span>all<span class="w"> </span>--name<span class="w"> </span>paddlex<span class="w"> </span>-v<span class="w"> </span><span class="nv">$PWD</span>:/paddle<span class="w"> </span>--shm-size<span class="o">=</span>8g<span class="w"> </span>--network<span class="o">=</span>host<span class="w"> </span>-it<span class="w"> </span>registry.baidubce.com/paddlex/paddlex:paddlex3.0.0b1-paddlepaddle3.0.0b1-gpu-cuda12.3-cudnn9.0-trt8.6<span class="w"> </span>/bin/bash
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>docker<span class="w"> </span>run<span class="w"> </span>--gpus<span class="w"> </span>all<span class="w"> </span>--name<span class="w"> </span>paddlex<span class="w"> </span>-v<span class="w"> </span><span class="nv">$PWD</span>:/paddle<span class="w"> </span>--shm-size<span class="o">=</span>8g<span class="w"> </span>--network<span class="o">=</span>host<span class="w"> </span>-it<span class="w"> </span>registry.baidubce.com/paddlex/paddlex:paddlex3.0.0b2-paddlepaddle3.0.0b2-gpu-cuda12.3-cudnn9.0-trt8.6<span class="w"> </span>/bin/bash
 </span></code></pre></div>
 <ul>
 <li>If your Docker version &lt;= 19.03 and &gt;= 17.06, please use:</li>
@@ -4420,14 +4420,14 @@ You're not viewing the latest version.
 <details><summary> Click Here</summary>
 
 <pre><code class="language-bash"># For CPU
-docker run --name paddlex -v $PWD:/paddle --shm-size=8g --network=host -it registry.baidubce.com/paddlex/paddlex:paddlex3.0.0b1-paddlepaddle3.0.0b1-cpu /bin/bash
+docker run --name paddlex -v $PWD:/paddle --shm-size=8g --network=host -it registry.baidubce.com/paddlex/paddlex:paddlex3.0.0b2-paddlepaddle3.0.0b2-cpu /bin/bash
 
 # For GPU
 # For CUDA11.8
-nvidia-docker run --name paddlex -v $PWD:/paddle --shm-size=8g --network=host -it registry.baidubce.com/paddlex/paddlex:paddlex3.0.0b1-paddlepaddle3.0.0b1-gpu-cuda11.8-cudnn8.6-trt8.5 /bin/bash
+nvidia-docker run --name paddlex -v $PWD:/paddle --shm-size=8g --network=host -it registry.baidubce.com/paddlex/paddlex:paddlex3.0.0b2-paddlepaddle3.0.0b2-gpu-cuda11.8-cudnn8.6-trt8.5 /bin/bash
 
 # For CUDA12.3
-nvidia-docker run --name paddlex -v $PWD:/paddle --shm-size=8g --network=host -it registry.baidubce.com/paddlex/paddlex:paddlex3.0.0b1-paddlepaddle3.0.0b1-gpu-cuda12.3-cudnn9.0-trt8.6 /bin/bash
+nvidia-docker run --name paddlex -v $PWD:/paddle --shm-size=8g --network=host -it registry.baidubce.com/paddlex/paddlex:paddlex3.0.0b2-paddlepaddle3.0.0b2-gpu-cuda12.3-cudnn9.0-trt8.6 /bin/bash
 </code></pre></details>
 
 <ul>

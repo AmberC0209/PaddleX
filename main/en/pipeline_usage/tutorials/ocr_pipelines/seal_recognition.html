@@ -118,7 +118,7 @@ You're not viewing the latest version.
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../../index.html" title="PaddleX Documentation" class="md-header__button md-logo" aria-label="PaddleX Documentation" data-md-component="logo">
+    <a href="../../../.." title="PaddleX Documentation" class="md-header__button md-logo" aria-label="PaddleX Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
@@ -277,7 +277,7 @@ You're not viewing the latest version.
   
   
     <li class="md-tabs__item">
-      <a href="../../../index.html" class="md-tabs__link">
+      <a href="../../../../index.md" class="md-tabs__link">
         
   
     
@@ -294,7 +294,7 @@ You're not viewing the latest version.
   
   
     <li class="md-tabs__item">
-      <a href="../../../quick_start.html" class="md-tabs__link">
+      <a href="../../../../quick_start.md" class="md-tabs__link">
         
   
     
@@ -551,7 +551,7 @@ You're not viewing the latest version.
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../index.html" title="PaddleX Documentation" class="md-nav__button md-logo" aria-label="PaddleX Documentation" data-md-component="logo">
+    <a href="../../../.." title="PaddleX Documentation" class="md-nav__button md-logo" aria-label="PaddleX Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
@@ -586,7 +586,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../index.html" class="md-nav__link">
+      <a href="../../../../index.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -606,7 +606,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../quick_start.html" class="md-nav__link">
+      <a href="../../../../quick_start.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4389,7 +4389,6 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-
 <p><b>Note: The evaluation set for the above accuracy metrics is PaddleOCR's self-built layout region analysis dataset, containing 10,000 images of common document types, including English and Chinese papers, magazines, research reports, etc. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b></p>
 <p><b>Seal Detection Module Models</b>:</p>
 <table>
@@ -4422,7 +4421,6 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-
 <p><b>Note: The above accuracy metrics are evaluated on a self-built dataset containing 500 circular seal images. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b></p>
 <p><b>Text Recognition Module Models</b>:</p>
 <table>
@@ -4452,7 +4450,6 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-
 <p><b>Note: The evaluation set for the above accuracy indicators is a self-built Chinese dataset from PaddleOCR, covering various scenarios such as street scenes, web images, documents, and handwriting. The text recognition subset includes 11,000 images. The GPU inference time for all models above is based on an NVIDIA Tesla T4 machine with a precision type of FP32. The CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads, and the precision type is also FP32.</b></p></details>
 
 <h2 id="2-quick-start">2.  Quick Start<a class="headerlink" href="#2-quick-start" title="Permanent link">&para;</a></h2>
@@ -4638,7 +4635,6 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-
 <p>（2）Invoke the <code>predict</code> method of the  production line object for inference prediction: The <code>predict</code> method parameter is <code>x</code>, which is used to input data to be predicted, supporting multiple input methods, as shown in the following examples:</p>
 <table>
 <thead>
@@ -4674,7 +4670,6 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-
 <p>（3）Obtain the prediction results by calling the <code>predict</code> method: The <code>predict</code> method is a <code>generator</code>, so prediction results need to be obtained through iteration. The <code>predict</code> method predicts data in batches, so the prediction results are in the form of a list.</p>
 <p>（4）Process the prediction results: The prediction result for each sample is of <code>dict</code> type and supports printing or saving to files, with the supported file types depending on the specific pipeline. For example:</p>
 <table>
@@ -4693,7 +4688,6 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-
 <p>Where <code>save_to_img</code> can save visualization results (including OCR result images, layout analysis result images).</p>
 <p>If you have a configuration file, you can customize the configurations of the seal recognition  pipeline by simply modifying the <code>pipeline</code> parameter in the <code>create_pipeline</code> method to the path of the pipeline configuration file.</p>
 <p>For example, if your configuration file is saved in <code>/ my_path/seal_recognition.yaml</code> ， Then only need to execute:</p>
@@ -4739,7 +4733,6 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-
 <p>The response body may also have a <code>result</code> property of type <code>object</code>, which stores the operation result information.</p>
 <ul>
 <li>When the request is not processed successfully, the response body properties are as follows:</li>
@@ -4765,7 +4758,6 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-
 <p>Operations provided by the service:</p>
 <ul>
 <li><b><code>infer</code></b></li>
@@ -4799,7 +4791,6 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-
 <p>Properties of <code>inferenceParams</code>:</p>
 <table>
 <thead>
@@ -4819,7 +4810,6 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-
 <ul>
 <li>When the request is processed successfully, the <code>result</code> of the response body has the following properties:</li>
 </ul>
@@ -4844,7 +4834,6 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-
 <p>Each element in <code>sealImpressions</code> is an <code>object</code> with the following properties:</p>
 <table>
 <thead>

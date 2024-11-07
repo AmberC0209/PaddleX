@@ -1,13 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
     <url>
-        <loc>Noneindex.html</loc>
-        <lastmod>2024-11-07</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="Noneindex.html"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneen/index.html"/>
-    </url>
-    <url>
         <loc>NoneCHANGLOG.html</loc>
         <lastmod>2024-11-07</lastmod>
         <changefreq>daily</changefreq>
@@ -20,20 +13,6 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="NoneFAQ.html"/>
         <xhtml:link rel="alternate" hreflang="en" href="Noneen/FAQ.html"/>
-    </url>
-    <url>
-        <loc>Noneonline_experience.html</loc>
-        <lastmod>2024-11-07</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="Noneonline_experience.html"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneen/online_experience.html"/>
-    </url>
-    <url>
-        <loc>Nonequick_start.html</loc>
-        <lastmod>2024-11-07</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="Nonequick_start.html"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneen/quick_start.html"/>
     </url>
     <url>
         <loc>Nonedata_annotations/cv_modules/image_classification.html</loc>
@@ -127,6 +106,13 @@
         <xhtml:link rel="alternate" hreflang="en" href="Noneen/installation/paddlepaddle_install.html"/>
     </url>
     <url>
+        <loc>Nonemodule_usage/instructions/benchmark.html</loc>
+        <lastmod>2024-11-07</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="Nonemodule_usage/instructions/benchmark.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/module_usage/instructions/benchmark.html"/>
+    </url>
+    <url>
         <loc>Nonemodule_usage/instructions/config_parameters_common.html</loc>
         <lastmod>2024-11-07</lastmod>
         <changefreq>daily</changefreq>
@@ -160,6 +146,13 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="Nonemodule_usage/tutorials/cv_modules/face_detection.html"/>
         <xhtml:link rel="alternate" hreflang="en" href="Noneen/module_usage/tutorials/cv_modules/face_detection.html"/>
+    </url>
+    <url>
+        <loc>Nonemodule_usage/tutorials/cv_modules/face_feature.html</loc>
+        <lastmod>2024-11-07</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="Nonemodule_usage/tutorials/cv_modules/face_feature.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/module_usage/tutorials/cv_modules/face_feature.html"/>
     </url>
     <url>
         <loc>Nonemodule_usage/tutorials/cv_modules/human_detection.html</loc>
@@ -400,6 +393,20 @@
         <xhtml:link rel="alternate" hreflang="en" href="Noneen/pipeline_usage/instructions/pipeline_python_API.html"/>
     </url>
     <url>
+        <loc>Nonepipeline_usage/tutorials/cv_pipelines/face_recognition.html</loc>
+        <lastmod>2024-11-07</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="Nonepipeline_usage/tutorials/cv_pipelines/face_recognition.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/pipeline_usage/tutorials/cv_pipelines/face_recognition.html"/>
+    </url>
+    <url>
+        <loc>Nonepipeline_usage/tutorials/cv_pipelines/general_image_recognition.html</loc>
+        <lastmod>2024-11-07</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="Nonepipeline_usage/tutorials/cv_pipelines/general_image_recognition.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/pipeline_usage/tutorials/cv_pipelines/general_image_recognition.html"/>
+    </url>
+    <url>
         <loc>Nonepipeline_usage/tutorials/cv_pipelines/image_anomaly_detection.html</loc>
         <lastmod>2024-11-07</lastmod>
         <changefreq>daily</changefreq>
@@ -435,6 +442,13 @@
         <xhtml:link rel="alternate" hreflang="en" href="Noneen/pipeline_usage/tutorials/cv_pipelines/object_detection.html"/>
     </url>
     <url>
+        <loc>Nonepipeline_usage/tutorials/cv_pipelines/pedestrian_attribute_recognition.html</loc>
+        <lastmod>2024-11-07</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="Nonepipeline_usage/tutorials/cv_pipelines/pedestrian_attribute_recognition.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/pipeline_usage/tutorials/cv_pipelines/pedestrian_attribute_recognition.html"/>
+    </url>
+    <url>
         <loc>Nonepipeline_usage/tutorials/cv_pipelines/semantic_segmentation.html</loc>
         <lastmod>2024-11-07</lastmod>
         <changefreq>daily</changefreq>
@@ -447,6 +461,13 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="Nonepipeline_usage/tutorials/cv_pipelines/small_object_detection.html"/>
         <xhtml:link rel="alternate" hreflang="en" href="Noneen/pipeline_usage/tutorials/cv_pipelines/small_object_detection.html"/>
+    </url>
+    <url>
+        <loc>Nonepipeline_usage/tutorials/cv_pipelines/vehicle_attribute_recognition.html</loc>
+        <lastmod>2024-11-07</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="Nonepipeline_usage/tutorials/cv_pipelines/vehicle_attribute_recognition.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/pipeline_usage/tutorials/cv_pipelines/vehicle_attribute_recognition.html"/>
     </url>
     <url>
         <loc>Nonepipeline_usage/tutorials/information_extraction_pipelines/document_scene_information_extraction.html</loc>
@@ -680,13 +701,6 @@
         <xhtml:link rel="alternate" hreflang="en" href="Noneen/blog/index.html"/>
     </url>
     <url>
-        <loc>Noneen/index.html</loc>
-        <lastmod>2024-11-07</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneen/index.html"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="Noneindex.html"/>
-    </url>
-    <url>
         <loc>Noneen/CHANGLOG.html</loc>
         <lastmod>2024-11-07</lastmod>
         <changefreq>daily</changefreq>
@@ -699,20 +713,6 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="Noneen/FAQ.html"/>
         <xhtml:link rel="alternate" hreflang="zh" href="NoneFAQ.html"/>
-    </url>
-    <url>
-        <loc>Noneen/online_experience.html</loc>
-        <lastmod>2024-11-07</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneen/online_experience.html"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="Noneonline_experience.html"/>
-    </url>
-    <url>
-        <loc>Noneen/quick_start.html</loc>
-        <lastmod>2024-11-07</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneen/quick_start.html"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="Nonequick_start.html"/>
     </url>
     <url>
         <loc>Noneen/blog/index.html</loc>
@@ -813,6 +813,13 @@
         <xhtml:link rel="alternate" hreflang="zh" href="Noneinstallation/paddlepaddle_install.html"/>
     </url>
     <url>
+        <loc>Noneen/module_usage/instructions/benchmark.html</loc>
+        <lastmod>2024-11-07</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/module_usage/instructions/benchmark.html"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="Nonemodule_usage/instructions/benchmark.html"/>
+    </url>
+    <url>
         <loc>Noneen/module_usage/instructions/config_parameters_common.html</loc>
         <lastmod>2024-11-07</lastmod>
         <changefreq>daily</changefreq>
@@ -846,6 +853,13 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="Noneen/module_usage/tutorials/cv_modules/face_detection.html"/>
         <xhtml:link rel="alternate" hreflang="zh" href="Nonemodule_usage/tutorials/cv_modules/face_detection.html"/>
+    </url>
+    <url>
+        <loc>Noneen/module_usage/tutorials/cv_modules/face_feature.html</loc>
+        <lastmod>2024-11-07</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/module_usage/tutorials/cv_modules/face_feature.html"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="Nonemodule_usage/tutorials/cv_modules/face_feature.html"/>
     </url>
     <url>
         <loc>Noneen/module_usage/tutorials/cv_modules/human_detection.html</loc>
@@ -1086,6 +1100,20 @@
         <xhtml:link rel="alternate" hreflang="zh" href="Nonepipeline_usage/instructions/pipeline_python_API.html"/>
     </url>
     <url>
+        <loc>Noneen/pipeline_usage/tutorials/cv_pipelines/face_recognition.html</loc>
+        <lastmod>2024-11-07</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/pipeline_usage/tutorials/cv_pipelines/face_recognition.html"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="Nonepipeline_usage/tutorials/cv_pipelines/face_recognition.html"/>
+    </url>
+    <url>
+        <loc>Noneen/pipeline_usage/tutorials/cv_pipelines/general_image_recognition.html</loc>
+        <lastmod>2024-11-07</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/pipeline_usage/tutorials/cv_pipelines/general_image_recognition.html"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="Nonepipeline_usage/tutorials/cv_pipelines/general_image_recognition.html"/>
+    </url>
+    <url>
         <loc>Noneen/pipeline_usage/tutorials/cv_pipelines/image_anomaly_detection.html</loc>
         <lastmod>2024-11-07</lastmod>
         <changefreq>daily</changefreq>
@@ -1121,6 +1149,13 @@
         <xhtml:link rel="alternate" hreflang="zh" href="Nonepipeline_usage/tutorials/cv_pipelines/object_detection.html"/>
     </url>
     <url>
+        <loc>Noneen/pipeline_usage/tutorials/cv_pipelines/pedestrian_attribute_recognition.html</loc>
+        <lastmod>2024-11-07</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/pipeline_usage/tutorials/cv_pipelines/pedestrian_attribute_recognition.html"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="Nonepipeline_usage/tutorials/cv_pipelines/pedestrian_attribute_recognition.html"/>
+    </url>
+    <url>
         <loc>Noneen/pipeline_usage/tutorials/cv_pipelines/semantic_segmentation.html</loc>
         <lastmod>2024-11-07</lastmod>
         <changefreq>daily</changefreq>
@@ -1133,6 +1168,13 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="Noneen/pipeline_usage/tutorials/cv_pipelines/small_object_detection.html"/>
         <xhtml:link rel="alternate" hreflang="zh" href="Nonepipeline_usage/tutorials/cv_pipelines/small_object_detection.html"/>
+    </url>
+    <url>
+        <loc>Noneen/pipeline_usage/tutorials/cv_pipelines/vehicle_attribute_recognition.html</loc>
+        <lastmod>2024-11-07</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/pipeline_usage/tutorials/cv_pipelines/vehicle_attribute_recognition.html"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="Nonepipeline_usage/tutorials/cv_pipelines/vehicle_attribute_recognition.html"/>
     </url>
     <url>
         <loc>Noneen/pipeline_usage/tutorials/information_extraction_pipelines/document_scene_information_extraction.html</loc>

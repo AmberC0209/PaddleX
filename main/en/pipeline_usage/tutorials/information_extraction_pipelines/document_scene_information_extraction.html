@@ -118,7 +118,7 @@ You're not viewing the latest version.
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../../index.html" title="PaddleX Documentation" class="md-header__button md-logo" aria-label="PaddleX Documentation" data-md-component="logo">
+    <a href="../../../.." title="PaddleX Documentation" class="md-header__button md-logo" aria-label="PaddleX Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
@@ -277,7 +277,7 @@ You're not viewing the latest version.
   
   
     <li class="md-tabs__item">
-      <a href="../../../index.html" class="md-tabs__link">
+      <a href="../../../../index.md" class="md-tabs__link">
         
   
     
@@ -294,7 +294,7 @@ You're not viewing the latest version.
   
   
     <li class="md-tabs__item">
-      <a href="../../../quick_start.html" class="md-tabs__link">
+      <a href="../../../../quick_start.md" class="md-tabs__link">
         
   
     
@@ -551,7 +551,7 @@ You're not viewing the latest version.
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../index.html" title="PaddleX Documentation" class="md-nav__button md-logo" aria-label="PaddleX Documentation" data-md-component="logo">
+    <a href="../../../.." title="PaddleX Documentation" class="md-nav__button md-logo" aria-label="PaddleX Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
@@ -586,7 +586,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../index.html" class="md-nav__link">
+      <a href="../../../../index.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -606,7 +606,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../quick_start.html" class="md-nav__link">
+      <a href="../../../../quick_start.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4418,7 +4418,6 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-
 <p><b>Note: The evaluation set for the above accuracy metrics is PaddleOCR's self-built layout region analysis dataset, containing 10,000 images of common document types, including English and Chinese papers, magazines, research reports, etc. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b></p>
 <p><b>Text Detection Module Models</b>:</p>
 <table>
@@ -4451,7 +4450,6 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-
 <p><b>Note: The evaluation set for the above accuracy metrics is PaddleOCR's self-built Chinese dataset, covering street scenes, web images, documents, and handwritten texts, with 500 images for detection. All GPU inference times are based on NVIDIA Tesla T4 machines with FP32 precision. CPU inference speeds are based on Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b></p>
 <p><b>Text Recognition Module Models</b>:</p>
 <table>
@@ -4556,7 +4554,6 @@ The RepSVTR text recognition model is a mobile-oriented text recognition model b
 </tr>
 </tbody>
 </table>
-
 <p><b>Note: The above accuracy metrics are evaluated on a self-built dataset containing 500 circular seal images. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b></p>
 <p><b>Text Image Rectification Module Models</b>:</p>
 <table>
@@ -4577,7 +4574,6 @@ The RepSVTR text recognition model is a mobile-oriented text recognition model b
 </tr>
 </tbody>
 </table>
-
 <p><b>The accuracy metrics of the models are measured from the <a href="https://www3.cs.stonybrook.edu/~cvl/docunet.html">DocUNet benchmark</a>.</b></p>
 <p><b>Document Image Orientation Classification Module Models</b>:</p>
 <table>
@@ -4602,7 +4598,6 @@ The RepSVTR text recognition model is a mobile-oriented text recognition model b
 </tr>
 </tbody>
 </table>
-
 <p><b>Note: The above accuracy metrics are evaluated on a self-built dataset covering various scenarios such as certificates and documents, containing 1000 images. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b></p></details>
 
 <h2 id="2-quick-start">2. Quick Start<a class="headerlink" href="#2-quick-start" title="Permanent link">&para;</a></h2>
@@ -4677,11 +4672,10 @@ The RepSVTR text recognition model is a mobile-oriented text recognition model b
 <td><code>device(kwargs)</code></td>
 <td>str/<code>None</code></td>
 <td><code>None</code></td>
-<td>Running device (<code>None</code> meaning automatic selection);</td>
+<td>Running device, support <code>cpu</code>, <code>gpu</code>, <code>gpu:0</code>, etc. <code>None</code> meaning automatic selection;</td>
 </tr>
 </tbody>
 </table>
-
 <p>(2) Call the <code>visual_predict</code> of the PP-ChatOCRv3-doc pipeline object to visual predict, related parameters descriptions are as follows:</p>
 <table>
 <thead>
@@ -4749,7 +4743,6 @@ The RepSVTR text recognition model is a mobile-oriented text recognition model b
 </tr>
 </tbody>
 </table>
-
 <p>(3) Call the relevant functions of prediction object to save the prediction results. The related functions are as follows:</p>
 <table>
 <thead>
@@ -4777,7 +4770,6 @@ The RepSVTR text recognition model is a mobile-oriented text recognition model b
 </tr>
 </tbody>
 </table>
-
 <p>(4) Call the <code>chat</code> of PP-ChatOCRv3-doc pipeline object to query information with LLM, related parameters are described as follows:</p>
 <table>
 <thead>
@@ -4803,7 +4795,6 @@ The RepSVTR text recognition model is a mobile-oriented text recognition model b
 </tr>
 </tbody>
 </table>
-
 <p>(3) Obtain prediction results by calling the <code>predict</code> method: The <code>predict</code> method is a <code>generator</code>, so prediction results need to be obtained through calls. The <code>predict</code> method predicts data in batches, so the prediction results are represented as a list of prediction results.</p>
 <p>(4) Interact with the large model by calling the <code>predict.chat</code> method, which takes as input keywords (multiple keywords are supported) for information extraction. The prediction results are represented as a list of information extraction results.</p>
 <p>(5) Process the prediction results: The prediction result for each sample is in the form of a dict, which supports printing or saving to a file. The supported file types depend on the specific pipeline, such as:</p>
@@ -4833,7 +4824,6 @@ The RepSVTR text recognition model is a mobile-oriented text recognition model b
 </tr>
 </tbody>
 </table>
-
 <p>When executing the above command, the default Pipeline configuration file is loaded. If you need to customize the configuration file, you can use the following command to obtain it:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>paddlex<span class="w"> </span>--get_pipeline_config<span class="w"> </span>PP-ChatOCRv3-doc
 </span></code></pre></div>
@@ -4918,7 +4908,6 @@ After obtaining the configuration file, you can customize the various configurat
 </tr>
 </tbody>
 </table>
-
 <p>The response body may also have a <code>result</code> property of type <code>object</code>, which stores the operation result information.</p>
 <ul>
 <li>When the request is not processed successfully, the response body properties are as follows:</li>
@@ -4944,7 +4933,6 @@ After obtaining the configuration file, you can customize the various configurat
 </tr>
 </tbody>
 </table>
-
 <p>Operations provided by the service are as follows:</p>
 <ul>
 <li><b><code>analyzeImage</code></b></li>
@@ -5002,7 +4990,6 @@ After obtaining the configuration file, you can customize the various configurat
 </tr>
 </tbody>
 </table>
-
 <p>Properties of <code>inferenceParams</code>:</p>
 <table>
 <thead>
@@ -5022,7 +5009,6 @@ After obtaining the configuration file, you can customize the various configurat
 </tr>
 </tbody>
 </table>
-
 <ul>
 <li>When the request is processed successfully, the <code>result</code> in the response body has the following properties:</li>
 </ul>
@@ -5047,7 +5033,6 @@ After obtaining the configuration file, you can customize the various configurat
 </tr>
 </tbody>
 </table>
-
 <p>Each element in <code>visionResults</code> is an <code>object</code> with the following properties:</p>
 <table>
 <thead>
@@ -5085,7 +5070,6 @@ After obtaining the configuration file, you can customize the various configurat
 </tr>
 </tbody>
 </table>
-
 <p>Each element in <code>texts</code> is an <code>object</code> with the following properties:</p>
 <table>
 <thead>
@@ -5113,7 +5097,6 @@ After obtaining the configuration file, you can customize the various configurat
 </tr>
 </tbody>
 </table>
-
 <p>Each element in <code>tables</code> is an <code>object</code> with the following properties:</p>
 <table>
 <thead>
@@ -5136,7 +5119,6 @@ After obtaining the configuration file, you can customize the various configurat
 </tr>
 </tbody>
 </table>
-
 <ul>
 <li><b><code>buildVectorStore</code></b></li>
 </ul>
@@ -5187,7 +5169,6 @@ After obtaining the configuration file, you can customize the various configurat
 </tr>
 </tbody>
 </table>
-
 <p>Currently, <code>llmParams</code> can take the following form:</p>
 <pre><code class="language-json">{
 &quot;apiType&quot;: &quot;qianfan&quot;,
@@ -5214,7 +5195,6 @@ After obtaining the configuration file, you can customize the various configurat
 </tr>
 </tbody>
 </table>
-
 <ul>
 <li><b><code>retrieveKnowledge</code></b></li>
 </ul>
@@ -5259,7 +5239,6 @@ After obtaining the configuration file, you can customize the various configurat
 </tr>
 </tbody>
 </table>
-
 <p>Currently, <code>llmParams</code> can take the following form:</p>
 <pre><code class="language-json">{
 &quot;apiType&quot;: &quot;qianfan&quot;,
@@ -5286,7 +5265,6 @@ After obtaining the configuration file, you can customize the various configurat
 </tr>
 </tbody>
 </table>
-
 <ul>
 <li><b><code>chat</code></b></li>
 </ul>
@@ -5367,7 +5345,6 @@ After obtaining the configuration file, you can customize the various configurat
 </tr>
 </tbody>
 </table>
-
 <p>Currently, <code>llmParams</code> can take the following form:</p>
 <pre><code class="language-json">{
 &quot;apiType&quot;: &quot;qianfan&quot;,
@@ -5399,7 +5376,6 @@ After obtaining the configuration file, you can customize the various configurat
 </tr>
 </tbody>
 </table>
-
 <p>Properties of <code>prompts</code>:</p>
 <table>
 <thead>

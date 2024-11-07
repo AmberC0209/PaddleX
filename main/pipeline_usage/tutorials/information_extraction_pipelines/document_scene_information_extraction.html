@@ -118,7 +118,7 @@ You're not viewing the latest version.
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../../../index.html" title="PaddleX 文档" class="md-header__button md-logo" aria-label="PaddleX 文档" data-md-component="logo">
+    <a href="../../.." title="PaddleX 文档" class="md-header__button md-logo" aria-label="PaddleX 文档" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
@@ -277,7 +277,7 @@ You're not viewing the latest version.
   
   
     <li class="md-tabs__item">
-      <a href="../../../index.html" class="md-tabs__link">
+      <a href="../../../index.md" class="md-tabs__link">
         
   
     
@@ -294,7 +294,7 @@ You're not viewing the latest version.
   
   
     <li class="md-tabs__item">
-      <a href="../../../quick_start.html" class="md-tabs__link">
+      <a href="../../../quick_start.md" class="md-tabs__link">
         
   
     
@@ -551,7 +551,7 @@ You're not viewing the latest version.
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../index.html" title="PaddleX 文档" class="md-nav__button md-logo" aria-label="PaddleX 文档" data-md-component="logo">
+    <a href="../../.." title="PaddleX 文档" class="md-nav__button md-logo" aria-label="PaddleX 文档" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
@@ -586,7 +586,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../index.html" class="md-nav__link">
+      <a href="../../../index.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -606,7 +606,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../quick_start.html" class="md-nav__link">
+      <a href="../../../quick_start.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4418,7 +4418,6 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-
 <p><b>注：以上精度指标的评估集是 PaddleOCR 自建的版面区域分析数据集，包含中英文论文、杂志和研报等常见的 1w 张文档类型图片。GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为 8，精度类型为 FP32。</b></p>
 <p><b>文本检测模块模型：</b></p>
 <table>
@@ -4451,7 +4450,6 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-
 <p><b>注：以上精度指标的评估集是 PaddleOCR 自建的中文数据集，覆盖街景、网图、文档、手写多个场景，其中检测包含 500 张图片。以上所有模型 GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为8，精度类型为 FP32。</b></p>
 <p><b>文本识别模块模型：</b></p>
 <table >
@@ -4554,7 +4552,6 @@ SVTRv2 是一种由复旦大学视觉与学习实验室（FVL）的OpenOCR团队
 </tr>
 </tbody>
 </table>
-
 <p><b>注：以上精度指标的评估集是自建的数据集，包含500张圆形印章图像。GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为 8，精度类型为 FP32。</b></p>
 <p><b>文本图像矫正模块模型：</b></p>
 <table>
@@ -4575,7 +4572,6 @@ SVTRv2 是一种由复旦大学视觉与学习实验室（FVL）的OpenOCR团队
 </tr>
 </tbody>
 </table>
-
 <p><b>模型的精度指标测量自 <a href="https://www3.cs.stonybrook.edu/~cvl/docunet.html">DocUNet benchmark</a>。</b></p>
 <p><b>文档图像方向分类模块模型：</b></p>
 <table>
@@ -4600,9 +4596,9 @@ SVTRv2 是一种由复旦大学视觉与学习实验室（FVL）的OpenOCR团队
 </tr>
 </tbody>
 </table>
-
 <p><b>注：以上精度指标的评估集是自建的数据集，覆盖证件和文档等多个场景，包含 1000 张图片。GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为 8，精度类型为 FP32。</b></p></details>
 
+<p><b></b></p>
 <h2 id="2">2. 快速开始<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
 <p>PaddleX 所提供的预训练的模型产线均可以快速体验效果，你可以在线体验文档场景信息抽取v3产线的效果，也可以在本地使用  Python 体验文档场景信息抽取v3产线的效果。</p>
 <h3 id="21">2.1 在线体验<a class="headerlink" href="#21" title="Permanent link">&para;</a></h3>
@@ -4675,11 +4671,10 @@ SVTRv2 是一种由复旦大学视觉与学习实验室（FVL）的OpenOCR团队
 <td><code>device</code></td>
 <td>str、None</td>
 <td><code>None</code></td>
-<td>运行设备（<code>None</code>为自动适配）；</td>
+<td>运行设备（<code>None</code>为自动适配）,支持传入'cpu'，'gpu'或'gpu:0'等；</td>
 </tr>
 </tbody>
 </table>
-
 <p>（2）调用文档场景信息抽取v3产线对象的 <code>visual_predict</code> 方法进行视觉推理预测，相关参数说明如下：</p>
 <table>
 <thead>
@@ -4747,7 +4742,6 @@ SVTRv2 是一种由复旦大学视觉与学习实验室（FVL）的OpenOCR团队
 </tr>
 </tbody>
 </table>
-
 <p>（3）调用视觉推理预测结果对象的相关方法对视觉推理预测结果进行保存，具体方法如下：</p>
 <table>
 <thead>
@@ -4775,7 +4769,6 @@ SVTRv2 是一种由复旦大学视觉与学习实验室（FVL）的OpenOCR团队
 </tr>
 </tbody>
 </table>
-
 <p>（4）调用文档场景信息抽取v3产线对象的 <code>chat</code> 方法与大模型进行交互，相关参数说明如下：</p>
 <table>
 <thead>
@@ -4801,7 +4794,6 @@ SVTRv2 是一种由复旦大学视觉与学习实验室（FVL）的OpenOCR团队
 </tr>
 </tbody>
 </table>
-
 <p>在执行上述 Python 脚本时，加载的是默认的文档场景信息抽取v3产线配置文件，若您需要自定义配置文件，可执行如下命令获取：</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>paddlex --get_pipeline_config PP-ChatOCRv3-doc
 </span></code></pre></div>
@@ -4886,7 +4878,6 @@ SVTRv2 是一种由复旦大学视觉与学习实验室（FVL）的OpenOCR团队
 </tr>
 </tbody>
 </table>
-
 <p>响应体还可能有<code>result</code>属性，类型为<code>object</code>，其中存储操作结果信息。</p>
 <ul>
 <li>当请求处理未成功时，响应体的属性如下：</li>
@@ -4912,7 +4903,6 @@ SVTRv2 是一种由复旦大学视觉与学习实验室（FVL）的OpenOCR团队
 </tr>
 </tbody>
 </table>
-
 <p>服务提供的操作如下：</p>
 <ul>
 <li><b><code>analyzeImage</code></b></li>
@@ -4970,7 +4960,6 @@ SVTRv2 是一种由复旦大学视觉与学习实验室（FVL）的OpenOCR团队
 </tr>
 </tbody>
 </table>
-
 <p><code>inferenceParams</code>的属性如下：</p>
 <table>
 <thead>
@@ -4990,7 +4979,6 @@ SVTRv2 是一种由复旦大学视觉与学习实验室（FVL）的OpenOCR团队
 </tr>
 </tbody>
 </table>
-
 <ul>
 <li>请求处理成功时，响应体的<code>result</code>具有如下属性：</li>
 </ul>
@@ -5015,7 +5003,6 @@ SVTRv2 是一种由复旦大学视觉与学习实验室（FVL）的OpenOCR团队
 </tr>
 </tbody>
 </table>
-
 <p><code>visionResults</code>中的每个元素为一个<code>object</code>，具有如下属性：</p>
 <table>
 <thead>
@@ -5053,7 +5040,6 @@ SVTRv2 是一种由复旦大学视觉与学习实验室（FVL）的OpenOCR团队
 </tr>
 </tbody>
 </table>
-
 <p><code>texts</code>中的每个元素为一个<code>object</code>，具有如下属性：</p>
 <table>
 <thead>
@@ -5081,7 +5067,6 @@ SVTRv2 是一种由复旦大学视觉与学习实验室（FVL）的OpenOCR团队
 </tr>
 </tbody>
 </table>
-
 <p><code>tables</code>中的每个元素为一个<code>object</code>，具有如下属性：</p>
 <table>
 <thead>
@@ -5104,7 +5089,6 @@ SVTRv2 是一种由复旦大学视觉与学习实验室（FVL）的OpenOCR团队
 </tr>
 </tbody>
 </table>
-
 <ul>
 <li><b><code>buildVectorStore</code></b></li>
 </ul>
@@ -5155,7 +5139,6 @@ SVTRv2 是一种由复旦大学视觉与学习实验室（FVL）的OpenOCR团队
 </tr>
 </tbody>
 </table>
-
 <p>当前，<code>llmParams</code> 可以采用如下形式：</p>
 <pre><code class="language-json">{
 &quot;apiType&quot;: &quot;qianfan&quot;,
@@ -5182,7 +5165,6 @@ SVTRv2 是一种由复旦大学视觉与学习实验室（FVL）的OpenOCR团队
 </tr>
 </tbody>
 </table>
-
 <ul>
 <li><b><code>retrieveKnowledge</code></b></li>
 </ul>
@@ -5227,7 +5209,6 @@ SVTRv2 是一种由复旦大学视觉与学习实验室（FVL）的OpenOCR团队
 </tr>
 </tbody>
 </table>
-
 <p>当前，<code>llmParams</code> 可以采用如下形式：</p>
 <pre><code class="language-json">{
 &quot;apiType&quot;: &quot;qianfan&quot;,
@@ -5254,7 +5235,6 @@ SVTRv2 是一种由复旦大学视觉与学习实验室（FVL）的OpenOCR团队
 </tr>
 </tbody>
 </table>
-
 <ul>
 <li><b><code>chat</code></b></li>
 </ul>
@@ -5335,7 +5315,6 @@ SVTRv2 是一种由复旦大学视觉与学习实验室（FVL）的OpenOCR团队
 </tr>
 </tbody>
 </table>
-
 <p>当前，<code>llmParams</code> 可以采用如下形式：</p>
 <pre><code class="language-json">{
 &quot;apiType&quot;: &quot;qianfan&quot;,
@@ -5367,7 +5346,6 @@ SVTRv2 是一种由复旦大学视觉与学习实验室（FVL）的OpenOCR团队
 </tr>
 </tbody>
 </table>
-
 <p><code>prompts</code>的属性如下：</p>
 <table>
 <thead>

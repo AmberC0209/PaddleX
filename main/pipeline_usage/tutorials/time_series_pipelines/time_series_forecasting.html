@@ -118,7 +118,7 @@ You're not viewing the latest version.
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../../../index.html" title="PaddleX 文档" class="md-header__button md-logo" aria-label="PaddleX 文档" data-md-component="logo">
+    <a href="../../.." title="PaddleX 文档" class="md-header__button md-logo" aria-label="PaddleX 文档" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
@@ -277,7 +277,7 @@ You're not viewing the latest version.
   
   
     <li class="md-tabs__item">
-      <a href="../../../index.html" class="md-tabs__link">
+      <a href="../../../index.md" class="md-tabs__link">
         
   
     
@@ -294,7 +294,7 @@ You're not viewing the latest version.
   
   
     <li class="md-tabs__item">
-      <a href="../../../quick_start.html" class="md-tabs__link">
+      <a href="../../../quick_start.md" class="md-tabs__link">
         
   
     
@@ -551,7 +551,7 @@ You're not viewing the latest version.
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../index.html" title="PaddleX 文档" class="md-nav__button md-logo" aria-label="PaddleX 文档" data-md-component="logo">
+    <a href="../../.." title="PaddleX 文档" class="md-nav__button md-logo" aria-label="PaddleX 文档" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
@@ -586,7 +586,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../index.html" class="md-nav__link">
+      <a href="../../../index.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -606,7 +606,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../quick_start.html" class="md-nav__link">
+      <a href="../../../quick_start.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4419,7 +4419,6 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-
 <p><b>注：以上精度指标测量自 <a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/data/Etth1.tar">ETTH1</a>。以上所有模型 GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为8，精度类型为 FP32。</b></p></details>
 
 <h2 id="2">2. 快速开始<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
@@ -4514,7 +4513,6 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-
 <p>（2）调用产线对象的 <code>predict</code> 方法进行推理预测：<code>predict</code> 方法参数为<code>x</code>，用于输入待预测数据，支持多种输入方式，具体示例如下：</p>
 <table>
 <thead>
@@ -4550,7 +4548,6 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-
 <p>（3）调用<code>predict</code>方法获取预测结果：<code>predict</code> 方法为<code>generator</code>，因此需要通过调用获得预测结果，<code>predict</code>方法以batch为单位对数据进行预测，因此预测结果为list形式表示的一组预测结果。</p>
 <p>（4）对预测结果进行处理：每个样本的预测结果均为<code>dict</code>类型，且支持打印，或保存为文件，支持保存的类型与具体产线相关，如：</p>
 <table>
@@ -4579,7 +4576,6 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-
 <p>若您获取了配置文件，即可对时序预测产线各项配置进行自定义，只需要修改 <code>create_pipeline</code> 方法中的 <code>pipeline</code> 参数值为产线配置文件路径即可。</p>
 <p>例如，若您的配置文件保存在 <code>./my_path/ts_fc.yaml</code> ，则只需执行：</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">from</span> <span class="nn">paddlex</span> <span class="kn">import</span> <span class="n">create_pipeline</span>
@@ -4624,7 +4620,6 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-
 <p>响应体还可能有<code>result</code>属性，类型为<code>object</code>，其中存储操作结果信息。</p>
 <ul>
 <li>当请求处理未成功时，响应体的属性如下：</li>
@@ -4650,7 +4645,6 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-
 <p>服务提供的操作如下：</p>
 <ul>
 <li><b><code>infer</code></b></li>
@@ -4678,7 +4672,6 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-
 <ul>
 <li>请求处理成功时，响应体的<code>result</code>具有如下属性：</li>
 </ul>
@@ -4698,7 +4691,6 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-
 <p><code>result</code>示例如下：</p>
 <pre><code class="language-json">{
 &quot;csv&quot;: &quot;xxxxxx&quot;

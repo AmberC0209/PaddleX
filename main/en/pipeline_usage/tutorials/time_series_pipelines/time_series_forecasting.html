@@ -118,7 +118,7 @@ You're not viewing the latest version.
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../../index.html" title="PaddleX Documentation" class="md-header__button md-logo" aria-label="PaddleX Documentation" data-md-component="logo">
+    <a href="../../../.." title="PaddleX Documentation" class="md-header__button md-logo" aria-label="PaddleX Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
@@ -277,7 +277,7 @@ You're not viewing the latest version.
   
   
     <li class="md-tabs__item">
-      <a href="../../../index.html" class="md-tabs__link">
+      <a href="../../../../index.md" class="md-tabs__link">
         
   
     
@@ -294,7 +294,7 @@ You're not viewing the latest version.
   
   
     <li class="md-tabs__item">
-      <a href="../../../quick_start.html" class="md-tabs__link">
+      <a href="../../../../quick_start.md" class="md-tabs__link">
         
   
     
@@ -551,7 +551,7 @@ You're not viewing the latest version.
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../index.html" title="PaddleX Documentation" class="md-nav__button md-logo" aria-label="PaddleX Documentation" data-md-component="logo">
+    <a href="../../../.." title="PaddleX Documentation" class="md-nav__button md-logo" aria-label="PaddleX Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
@@ -586,7 +586,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../index.html" class="md-nav__link">
+      <a href="../../../../index.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -606,7 +606,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../quick_start.html" class="md-nav__link">
+      <a href="../../../../quick_start.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4419,7 +4419,6 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-
 <p><b>Note: The above accuracy metrics are measured on <a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/data/Etth1.tar">ETTH1</a>. All model GPU inference times are based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speeds are based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b></p></details>
 
 <h2 id="2-quick-start">2. Quick Start<a class="headerlink" href="#2-quick-start" title="Permanent link">&para;</a></h2>
@@ -4512,7 +4511,6 @@ The result obtained is the same as that of the command line method.</p>
 </tr>
 </tbody>
 </table>
-
 <p>（2）Invoke the <code>predict</code> method of the  production line object for inference prediction: The <code>predict</code> method parameter is <code>x</code>, which is used to input data to be predicted, supporting multiple input methods, as shown in the following examples:</p>
 <table>
 <thead>
@@ -4548,7 +4546,6 @@ The result obtained is the same as that of the command line method.</p>
 </tr>
 </tbody>
 </table>
-
 <p>（3）Obtain the prediction results by calling the <code>predict</code> method: The <code>predict</code> method is a <code>generator</code>, so prediction results need to be obtained through iteration. The <code>predict</code> method predicts data in batches, so the prediction results are in the form of a list.</p>
 <p>（4）Process the prediction results: The prediction result for each sample is of <code>dict</code> type and supports printing or saving to files, with the supported file types depending on the specific pipeline. For example:</p>
 <table>
@@ -4577,7 +4574,6 @@ The result obtained is the same as that of the command line method.</p>
 </tr>
 </tbody>
 </table>
-
 <p>If you have a configuration file, you can customize the configurations of the image anomaly detection pipeline by simply modifying the <code>pipeline</code> parameter in the <code>create_pipeline</code> method to the path of the pipeline configuration file.</p>
 <p>For example, if your configuration file is saved at <code>./my_path/ts_fc.yaml</code>, you only need to execute:</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">from</span> <span class="nn">paddlex</span> <span class="kn">import</span> <span class="n">create_pipeline</span>
@@ -4622,7 +4618,6 @@ The result obtained is the same as that of the command line method.</p>
 </tr>
 </tbody>
 </table>
-
 <p>The response body may also have a <code>result</code> property of type <code>object</code>, which stores the operation result information.</p>
 <ul>
 <li>When the request is not processed successfully, the response body properties are as follows:</li>
@@ -4648,7 +4643,6 @@ The result obtained is the same as that of the command line method.</p>
 </tr>
 </tbody>
 </table>
-
 <p>Operations provided by the service are as follows:</p>
 <ul>
 <li><b><code>infer</code></b></li>
@@ -4676,7 +4670,6 @@ The result obtained is the same as that of the command line method.</p>
 </tr>
 </tbody>
 </table>
-
 <ul>
 <li>When the request is processed successfully, the <code>result</code> of the response body has the following properties:</li>
 </ul>
@@ -4696,7 +4689,6 @@ The result obtained is the same as that of the command line method.</p>
 </tr>
 </tbody>
 </table>
-
 <p>An example of <code>result</code> is as follows:</p>
 <pre><code class="language-json">{
 &quot;csv&quot;: &quot;xxxxxx&quot;
@@ -5030,7 +5022,7 @@ Choose the appropriate deployment method for your model pipeline based on your n
 <h2 id="4-custom-development">4. Custom Development<a class="headerlink" href="#4-custom-development" title="Permanent link">&para;</a></h2>
 <p>If the default model weights provided by the General Time Series Forecasting Pipeline do not meet your requirements in terms of accuracy or speed in your specific scenario, you can try to further fine-tune the existing model using <b>your own domain-specific or application-specific data</b> to improve the recognition performance of the pipeline in your scenario.</p>
 <h4 id="41-model-fine-tuning">4.1 Model Fine-tuning<a class="headerlink" href="#41-model-fine-tuning" title="Permanent link">&para;</a></h4>
-<p>Since the General Time Series Forecasting Pipeline includes a time series forecasting module, if the performance of the pipeline does not meet expectations, you need to refer to the <a href="../../../module_usage/tutorials/time_series_modules/time_series_forecast.en.md#iv-custom-development">Customization</a> section in the <a href="../../../module_usage/tutorials/time_series_modules/time_series_forecasting.html">Time Series Forecasting Module Development Tutorial</a> and use your private dataset to fine-tune the time series forecasting model.</p>
+<p>Since the General Time Series Forecasting Pipeline includes a time series forecasting module, if the performance of the pipeline does not meet expectations, you need to refer to the <a href="../../../module_usage/tutorials/time_series_modules/time_series_forecasting.html#iv-custom-development">Customization</a> section in the <a href="../../../module_usage/tutorials/time_series_modules/time_series_forecasting.html">Time Series Forecasting Module Development Tutorial</a> and use your private dataset to fine-tune the time series forecasting model.</p>
 <h4 id="42-model-application">4.2 Model Application<a class="headerlink" href="#42-model-application" title="Permanent link">&para;</a></h4>
 <p>After fine-tuning with your private dataset, you will obtain local model weight files.</p>
 <p>To use the fine-tuned model weights, simply modify the pipeline configuration file by replacing the local path of the fine-tuned model weights to the corresponding location in the pipeline configuration file:</p>

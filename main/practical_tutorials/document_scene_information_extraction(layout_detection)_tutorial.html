@@ -118,7 +118,7 @@ You're not viewing the latest version.
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../index.html" title="PaddleX 文档" class="md-header__button md-logo" aria-label="PaddleX 文档" data-md-component="logo">
+    <a href=".." title="PaddleX 文档" class="md-header__button md-logo" aria-label="PaddleX 文档" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
@@ -277,7 +277,7 @@ You're not viewing the latest version.
   
   
     <li class="md-tabs__item">
-      <a href="../index.html" class="md-tabs__link">
+      <a href="../index.md" class="md-tabs__link">
         
   
     
@@ -294,7 +294,7 @@ You're not viewing the latest version.
   
   
     <li class="md-tabs__item">
-      <a href="../quick_start.html" class="md-tabs__link">
+      <a href="../quick_start.md" class="md-tabs__link">
         
   
     
@@ -551,7 +551,7 @@ You're not viewing the latest version.
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../index.html" title="PaddleX 文档" class="md-nav__button md-logo" aria-label="PaddleX 文档" data-md-component="logo">
+    <a href=".." title="PaddleX 文档" class="md-nav__button md-logo" aria-label="PaddleX 文档" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
@@ -586,7 +586,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../index.html" class="md-nav__link">
+      <a href="../index.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -606,7 +606,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../quick_start.html" class="md-nav__link">
+      <a href="../quick_start.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4558,7 +4558,6 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-
 <p><b>注：以上精度指标的评估集是 PaddleOCR 自建的版面区域分析数据集，包含中英文论文、杂志和研报等常见的 1w 张文档类型图片。GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为 8，精度类型为 FP32。</b></p>
 <h2 id="4">4. 数据准备和校验<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
 <h3 id="41">4.1 数据准备<a class="headerlink" href="#41" title="Permanent link">&para;</a></h3>
@@ -4725,7 +4724,6 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-
 <p></center></p>
 <p>接下来，我们可以在学习率设置为 0.001 的基础上，增加训练轮次，对比下面实验 [2，4，5] 可知，训练轮次增大，模型精度有了进一步的提升。</p>
 <p><center></p>
@@ -4755,7 +4753,6 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-
 <p></center></p>
 <p><b> 注：本教程为 4 卡教程，如果您只有 1 张 GPU，可通过调整训练卡数完成本次实验，但最终指标未必和上述指标完全对齐，属正常情况。</b></p>
 <p>在选择训练环境时，要考虑训练卡数和总 batch_size，以及学习率的关系。首先训练卡数乘以单卡 batch_size 等于总 batch_size。其次，总 batch_size 和学习率是相关的，学习率应与总 batch_size 保持同步调整。 目前默认学习率对应基于 4 卡训练的总 batch_size，若您打算在单卡环境下进行训练，则设置学习率时需相应除以 4。若您打算在 8 卡环境下进行训练，则设置学习率时需相应乘以 2。</p>

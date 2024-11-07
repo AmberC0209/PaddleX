@@ -114,7 +114,7 @@ You're not viewing the latest version.
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../index.html" title="PaddleX Documentation" class="md-header__button md-logo" aria-label="PaddleX Documentation" data-md-component="logo">
+    <a href="../.." title="PaddleX Documentation" class="md-header__button md-logo" aria-label="PaddleX Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
@@ -273,7 +273,7 @@ You're not viewing the latest version.
   
   
     <li class="md-tabs__item">
-      <a href="../index.html" class="md-tabs__link">
+      <a href="../../index.md" class="md-tabs__link">
         
   
     
@@ -290,7 +290,7 @@ You're not viewing the latest version.
   
   
     <li class="md-tabs__item">
-      <a href="../quick_start.html" class="md-tabs__link">
+      <a href="../../quick_start.md" class="md-tabs__link">
         
   
     
@@ -545,7 +545,7 @@ You're not viewing the latest version.
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../index.html" title="PaddleX Documentation" class="md-nav__button md-logo" aria-label="PaddleX Documentation" data-md-component="logo">
+    <a href="../.." title="PaddleX Documentation" class="md-nav__button md-logo" aria-label="PaddleX Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
@@ -580,7 +580,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../index.html" class="md-nav__link">
+      <a href="../../index.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -600,7 +600,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../quick_start.html" class="md-nav__link">
+      <a href="../../quick_start.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4311,7 +4311,6 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-
 <p><b>Note: The evaluation set for the above accuracy metrics is our self-built seal text detection dataset, containing 500 images of circle seal types. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b></p>
 <h2 id="4-data-preparation-and-verification">4. Data Preparation and Verification<a class="headerlink" href="#4-data-preparation-and-verification" title="Permanent link">&para;</a></h2>
 <h3 id="41-data-preparation">4.1 Data Preparation<a class="headerlink" href="#41-data-preparation" title="Permanent link">&para;</a></h3>
@@ -4401,9 +4400,9 @@ You're not viewing the latest version.
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>python<span class="w"> </span>main.py<span class="w"> </span>-c<span class="w"> </span>paddlex/configs/text_detection_seal/PP-OCRv4_server_seal_det.yaml<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span>-o<span class="w"> </span>Global.mode<span class="o">=</span>train<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span>-o<span class="w"> </span>Global.dataset_dir<span class="o">=</span>./dataset/practical_seal<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span>-o<span class="w"> </span>Global.epochs_iters<span class="o">=</span><span class="m">30</span><span class="w"> </span><span class="se">\</span>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span>-o<span class="w"> </span>Global.batch_size<span class="o">=</span><span class="m">4</span><span class="w"> </span><span class="se">\</span>
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span>-o<span class="w"> </span>Global.learning_rate<span class="o">=</span><span class="m">0</span>.0001
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span>-o<span class="w"> </span>Train.epochs_iters<span class="o">=</span><span class="m">30</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span>-o<span class="w"> </span>Train.batch_size<span class="o">=</span><span class="m">4</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span>-o<span class="w"> </span>Train.learning_rate<span class="o">=</span><span class="m">0</span>.0001
 </span></code></pre></div>
 <p>PaddleX supports modifying training hyperparameters, single/multi-GPU training, etc., by modifying the configuration file or appending command line arguments.</p>
 <p>Each model in PaddleX provides a configuration file for model development to set relevant parameters. Model training-related parameters can be set by modifying the <code>Train</code> fields in the configuration file. Some example explanations of parameters in the configuration file are as follows:</p>
@@ -4476,7 +4475,6 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-
 <p></center></p>
 <p>Next, we can increase the number of training epochs based on a learning rate set to 0.001. Comparing experiments [1, 4] below, it can be seen that as the number of training epochs increases, the model's accuracy further improves.</p>
 <p><center></p>
@@ -4501,7 +4499,6 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-
 <p></center></p>
 <p><b>Note:</b> This tutorial is designed for a 4-GPU setup. If you only have 1 GPU, you can complete the experiment by adjusting the number of training GPUs, but the final metrics may not align perfectly with the above indicators, which is normal.</p>
 <p>When selecting a training environment, it is important to consider the relationship between the number of training GPUs, the total batch_size, and the learning rate. Firstly, the total batch_size is equal to the number of training GPUs multiplied by the batch_size per GPU. Secondly, the total batch_size and the learning rate are related, and the learning rate should be adjusted in synchronization with the total batch_size. The default learning rate corresponds to a total batch_size based on 4 GPUs. If you plan to train in a single-GPU environment, you need to divide the learning rate by 4 accordingly. If you plan to train in an 8-GPU environment, you need to multiply the learning rate by 2 accordingly.</p>

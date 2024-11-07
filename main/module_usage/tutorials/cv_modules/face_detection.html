@@ -118,7 +118,7 @@ You're not viewing the latest version.
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../../../index.html" title="PaddleX 文档" class="md-header__button md-logo" aria-label="PaddleX 文档" data-md-component="logo">
+    <a href="../../.." title="PaddleX 文档" class="md-header__button md-logo" aria-label="PaddleX 文档" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
@@ -277,7 +277,7 @@ You're not viewing the latest version.
   
   
     <li class="md-tabs__item">
-      <a href="../../../index.html" class="md-tabs__link">
+      <a href="../../../index.md" class="md-tabs__link">
         
   
     
@@ -294,7 +294,7 @@ You're not viewing the latest version.
   
   
     <li class="md-tabs__item">
-      <a href="../../../quick_start.html" class="md-tabs__link">
+      <a href="../../../quick_start.md" class="md-tabs__link">
         
   
     
@@ -553,7 +553,7 @@ You're not viewing the latest version.
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../index.html" title="PaddleX 文档" class="md-nav__button md-logo" aria-label="PaddleX 文档" data-md-component="logo">
+    <a href="../../.." title="PaddleX 文档" class="md-nav__button md-logo" aria-label="PaddleX 文档" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
@@ -588,7 +588,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../index.html" class="md-nav__link">
+      <a href="../../../index.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -608,7 +608,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../quick_start.html" class="md-nav__link">
+      <a href="../../../quick_start.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4422,26 +4422,50 @@ You're not viewing the latest version.
 <thead>
 <tr>
 <th>模型</th>
-<th>mAP（%）</th>
-<th>GPU推理耗时（ms）</th>
-<th>CPU推理耗时 (ms)</th>
-<th>模型存储大小（M)</th>
+<th style="text-align: center;">AP (%)<br>Easy/Medium/Hard</th>
+<th>GPU推理耗时 (ms)</th>
+<th>CPU推理耗时</th>
+<th>模型存储大小 (M)</th>
 <th>介绍</th>
 </tr>
 </thead>
 <tbody>
 <tr>
+<td>BlazeFace</td>
+<td style="text-align: center;">77.7/73.4/49.5</td>
+<td></td>
+<td></td>
+<td>0.447</td>
+<td>轻量高效的人脸检测模型</td>
+</tr>
+<tr>
+<td>BlazeFace-FPN-SSH</td>
+<td style="text-align: center;">83.2/80.5/60.5</td>
+<td></td>
+<td></td>
+<td>0.606</td>
+<td>BlazeFace的改进模型，增加FPN和SSH结构</td>
+</tr>
+<tr>
 <td>PicoDet_LCNet_x2_5_face</td>
-<td>35.8</td>
-<td>33.7</td>
-<td>537.0</td>
+<td style="text-align: center;">93.7/90.7/68.1</td>
+<td></td>
+<td></td>
 <td>28.9</td>
 <td>基于PicoDet_LCNet_x2_5的人脸检测模型</td>
 </tr>
+<tr>
+<td>PP-YOLOE_plus-S_face</td>
+<td style="text-align: center;">93.9/91.8/79.8</td>
+<td></td>
+<td></td>
+<td>26.5</td>
+<td>基于PP-YOLOE_plus-S的人脸检测模型</td>
+</tr>
 </tbody>
 </table>
-
-<p><b>注：以上精度指标为wider_face数据集 mAP(0.5:0.95)。所有模型 GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为8，精度类型为 FP32。</b></p>
+<p>注：以上精度指标是在WIDER-FACE验证集上，以640*640作为输入尺寸评估得到的。所有模型 GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为8，精度类型为 FP32。</p>
+</details>
 <h2 id="_4">三、快速集成<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>❗ 在快速集成前，请先安装 PaddleX 的 wheel 包，详细请参考 <a href="../../../installation/installation.html">PaddleX本地安装教程</a></p>
@@ -4627,7 +4651,7 @@ CheckDataset:
 <h4 id="442">4.4.2 模型集成<a class="headerlink" href="#442" title="Permanent link">&para;</a></h4>
 <p>模型可以直接集成到 PaddleX 产线中，也可以直接集成到您自己的项目中。</p>
 <p>1.<b>产线集成</b></p>
-<p>人脸目标检测模块可以集成的PaddleX产线有<b>人脸识别</b>（comming soon），只需要替换模型路径即可完成相关产线的人脸检测模块的模型更新。在产线集成中，你可以使用高性能部署和服务化部署来部署你得到的模型。</p>
+<p>人脸检测模块可以集成的PaddleX产线有<a href="../../../pipeline_usage/tutorials/cv_pipelines/face_recognition.html"><b>人脸识别</b></a>，只需要替换模型路径即可完成相关产线的人脸检测模块的模型更新。在产线集成中，你可以使用高性能部署和服务化部署来部署你得到的模型。</p>
 <p>2.<b>模块集成</b></p>
 <p>您产出的权重可以直接集成到人脸检测模块中，可以参考<a href="#三快速集成">快速集成</a>的 Python 示例代码，只需要将模型替换为你训练的到的模型路径即可。</p>
 

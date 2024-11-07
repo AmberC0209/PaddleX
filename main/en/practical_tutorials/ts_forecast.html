@@ -118,7 +118,7 @@ You're not viewing the latest version.
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../index.html" title="PaddleX Documentation" class="md-header__button md-logo" aria-label="PaddleX Documentation" data-md-component="logo">
+    <a href="../.." title="PaddleX Documentation" class="md-header__button md-logo" aria-label="PaddleX Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
@@ -277,7 +277,7 @@ You're not viewing the latest version.
   
   
     <li class="md-tabs__item">
-      <a href="../index.html" class="md-tabs__link">
+      <a href="../../index.md" class="md-tabs__link">
         
   
     
@@ -294,7 +294,7 @@ You're not viewing the latest version.
   
   
     <li class="md-tabs__item">
-      <a href="../quick_start.html" class="md-tabs__link">
+      <a href="../../quick_start.md" class="md-tabs__link">
         
   
     
@@ -551,7 +551,7 @@ You're not viewing the latest version.
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../index.html" title="PaddleX Documentation" class="md-nav__button md-logo" aria-label="PaddleX Documentation" data-md-component="logo">
+    <a href="../.." title="PaddleX Documentation" class="md-nav__button md-logo" aria-label="PaddleX Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
@@ -586,7 +586,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../index.html" class="md-nav__link">
+      <a href="../../index.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -606,7 +606,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../quick_start.html" class="md-nav__link">
+      <a href="../../quick_start.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4439,7 +4439,6 @@ Note: Due to the tight correlation between time series data and scenarios, the o
 </tr>
 </tbody>
 </table>
-
 <p><b>Note: The above accuracy metrics are measured on the ETTH1 test dataset with an input sequence length of 96 and a prediction sequence length of 96 for all models except TiDE, which is 720.</b></p>
 <p>Based on your actual usage scenario, select an appropriate model for training. After training, evaluate the model weights within the pipeline and use them in practical scenarios.</p>
 <h2 id="4-data-preparation-and-validation">4. Data Preparation and Validation<a class="headerlink" href="#4-data-preparation-and-validation" title="Permanent link">&para;</a></h2>
@@ -4708,7 +4707,6 @@ For more hyperparameter introductions, refer to <a href="../module_usage/instruc
 </tr>
 </tbody>
 </table>
-
 <p><b>Increasing Training Epochs Results</b>:</p>
 <table>
 <thead>
@@ -4746,7 +4744,6 @@ For more hyperparameter introductions, refer to <a href="../module_usage/instruc
 </tr>
 </tbody>
 </table>
-
 <p><b>Increasing Input Length Results</b>:</p>
 <table>
 <thead>
@@ -4784,7 +4781,6 @@ For more hyperparameter introductions, refer to <a href="../module_usage/instruc
 </tr>
 </tbody>
 </table>
-
 <h2 id="6-production-line-testing">6. Production Line Testing<a class="headerlink" href="#6-production-line-testing" title="Permanent link">&para;</a></h2>
 <p>Replace the model in the production line with the fine-tuned model and test using <a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/doc_images/practical_tutorial/timeseries_forecast/test.csv">this power test data</a> for prediction:</p>
 <p><div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>python<span class="w"> </span>main.py<span class="w"> </span>-c<span class="w"> </span>paddlex/configs/ts_forecast/DLinear.yaml<span class="w"> </span><span class="se">\</span>

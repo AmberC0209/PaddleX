@@ -118,7 +118,7 @@ You're not viewing the latest version.
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../../index.html" title="PaddleX Documentation" class="md-header__button md-logo" aria-label="PaddleX Documentation" data-md-component="logo">
+    <a href="../../../.." title="PaddleX Documentation" class="md-header__button md-logo" aria-label="PaddleX Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
@@ -277,7 +277,7 @@ You're not viewing the latest version.
   
   
     <li class="md-tabs__item">
-      <a href="../../../index.html" class="md-tabs__link">
+      <a href="../../../../index.md" class="md-tabs__link">
         
   
     
@@ -294,7 +294,7 @@ You're not viewing the latest version.
   
   
     <li class="md-tabs__item">
-      <a href="../../../quick_start.html" class="md-tabs__link">
+      <a href="../../../../quick_start.md" class="md-tabs__link">
         
   
     
@@ -551,7 +551,7 @@ You're not viewing the latest version.
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../index.html" title="PaddleX Documentation" class="md-nav__button md-logo" aria-label="PaddleX Documentation" data-md-component="logo">
+    <a href="../../../.." title="PaddleX Documentation" class="md-nav__button md-logo" aria-label="PaddleX Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
@@ -586,7 +586,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../index.html" class="md-nav__link">
+      <a href="../../../../index.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -606,7 +606,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../quick_start.html" class="md-nav__link">
+      <a href="../../../../quick_start.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5042,7 +5042,6 @@ The results obtained are the same as those obtained through the command line met
 </tr>
 </tbody>
 </table>
-
 <p>(2) Call the <code>predict</code> method of the image classification pipeline object for inference prediction: The <code>predict</code> method parameter is <code>x</code>, which is used to input data to be predicted, supporting multiple input methods, as shown in the following examples:</p>
 <table>
 <thead>
@@ -5078,7 +5077,6 @@ The results obtained are the same as those obtained through the command line met
 </tr>
 </tbody>
 </table>
-
 <p>3）Obtain prediction results by calling the <code>predict</code> method: The <code>predict</code> method is a <code>generator</code>, so prediction results need to be obtained through iteration. The <code>predict</code> method predicts data in batches, so the prediction results are in the form of a list.</p>
 <p>（4）Process the prediction results: The prediction result for each sample is of <code>dict</code> type and supports printing or saving to files, with the supported file types depending on the specific pipeline. For example:</p>
 <table>
@@ -5107,7 +5105,6 @@ The results obtained are the same as those obtained through the command line met
 </tr>
 </tbody>
 </table>
-
 <p>If you have a configuration file, you can customize the configurations of the image anomaly detection pipeline by simply modifying the <code>pipeline</code> parameter in the <code>create_pipeline</code> method to the path of the pipeline configuration file.</p>
 <p>For example, if your configuration file is saved at <code>./my_path/image_classification.yaml</code>, you only need to execute:</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">from</span> <span class="nn">paddlex</span> <span class="kn">import</span> <span class="n">create_pipeline</span>
@@ -5153,7 +5150,6 @@ The results obtained are the same as those obtained through the command line met
 </tr>
 </tbody>
 </table>
-
 <p>The response body may also have a <code>result</code> property of type <code>object</code>, which stores the operation result information.</p>
 <ul>
 <li>When the request is not processed successfully, the response body properties are as follows:</li>
@@ -5179,7 +5175,6 @@ The results obtained are the same as those obtained through the command line met
 </tr>
 </tbody>
 </table>
-
 <p>Operations provided by the service are as follows:</p>
 <ul>
 <li><b><code>infer</code></b></li>
@@ -5213,7 +5208,6 @@ The results obtained are the same as those obtained through the command line met
 </tr>
 </tbody>
 </table>
-
 <p>The properties of <code>inferenceParams</code> are as follows:</p>
 <table>
 <thead>
@@ -5233,7 +5227,6 @@ The results obtained are the same as those obtained through the command line met
 </tr>
 </tbody>
 </table>
-
 <ul>
 <li>When the request is processed successfully, the <code>result</code> of the response body has the following properties:</li>
 </ul>
@@ -5258,7 +5251,6 @@ The results obtained are the same as those obtained through the command line met
 </tr>
 </tbody>
 </table>
-
 <p>Each element in <code>categories</code> is an <code>object</code> with the following properties:</p>
 <table>
 <thead>
@@ -5286,7 +5278,6 @@ The results obtained are the same as those obtained through the command line met
 </tr>
 </tbody>
 </table>
-
 <p>An example of <code>result</code> is as follows:</p>
 <pre><code class="language-json">{
 &quot;categories&quot;: [

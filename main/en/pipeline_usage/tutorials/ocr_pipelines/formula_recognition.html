@@ -118,7 +118,7 @@ You're not viewing the latest version.
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../../index.html" title="PaddleX Documentation" class="md-header__button md-logo" aria-label="PaddleX Documentation" data-md-component="logo">
+    <a href="../../../.." title="PaddleX Documentation" class="md-header__button md-logo" aria-label="PaddleX Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
@@ -277,7 +277,7 @@ You're not viewing the latest version.
   
   
     <li class="md-tabs__item">
-      <a href="../../../index.html" class="md-tabs__link">
+      <a href="../../../../index.md" class="md-tabs__link">
         
   
     
@@ -294,7 +294,7 @@ You're not viewing the latest version.
   
   
     <li class="md-tabs__item">
-      <a href="../../../quick_start.html" class="md-tabs__link">
+      <a href="../../../../quick_start.md" class="md-tabs__link">
         
   
     
@@ -551,7 +551,7 @@ You're not viewing the latest version.
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../index.html" title="PaddleX Documentation" class="md-nav__button md-logo" aria-label="PaddleX Documentation" data-md-component="logo">
+    <a href="../../../.." title="PaddleX Documentation" class="md-nav__button md-logo" aria-label="PaddleX Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
@@ -586,7 +586,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../index.html" class="md-nav__link">
+      <a href="../../../../index.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -606,7 +606,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../quick_start.html" class="md-nav__link">
+      <a href="../../../../quick_start.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4369,7 +4369,6 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-
 <p><b>Note: The above accuracy metrics are evaluated on PaddleX's self-built layout detection dataset, containing 10,000 images. All GPU inference times are based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speeds are based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b></p>
 <p><b>Formula Recognition Module Models</b>:</p>
 <table>
@@ -4396,7 +4395,6 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-
 <p><b>Note: The above accuracy metrics are measured on the <a href="https://drive.google.com/drive/folders/13CA4vAmOmD_I_dSbvLp-Lf0s6KiaNfuO">LaTeX-OCR Formula Recognition Test Set</a>. All GPU inference times are based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speeds are based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b></p></details>
 
 <h2 id="2-quick-start">2. Quick Start<a class="headerlink" href="#2-quick-start" title="Permanent link">&para;</a></h2>
@@ -4496,7 +4494,6 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-
 <p>（2）Invoke the <code>predict</code> method of the formula recognition pipeline object for inference prediction: The <code>predict</code> method parameter is <code>x</code>, which is used to input data to be predicted, supporting multiple input methods, as shown in the following examples:</p>
 <table>
 <thead>
@@ -4532,7 +4529,6 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-
 <p>（3）Obtain the prediction results by calling the <code>predict</code> method: The <code>predict</code> method is a <code>generator</code>, so prediction results need to be obtained through iteration. The <code>predict</code> method predicts data in batches, so the prediction results are in the form of a list.</p>
 <p>（4）Process the prediction results: The prediction result for each sample is of <code>dict</code> type and supports printing or saving to files, with the supported file types depending on the specific pipeline. For example:</p>
 <table>
@@ -4561,7 +4557,6 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-
 <p>If you have a configuration file, you can customize the configurations of the formula recognition pipeline by simply modifying the <code>pipeline</code> parameter in the <code>create_pipeline</code> method to the path of the pipeline configuration file.</p>
 <p>For example, if your configuration file is saved at <code>./my_path/formula_recognition.yaml</code>, you only need to execute:</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">from</span> <span class="nn">paddlex</span> <span class="kn">import</span> <span class="n">create_pipeline</span>
@@ -4624,7 +4619,6 @@ After that, use the <code>save_to_img</code> method to save the visualization im
 </tr>
 </tbody>
 </table>
-
 <p>The response body may also have a <code>result</code> property of type <code>object</code>, which stores the operation result information.</p>
 <ul>
 <li>When the request is not processed successfully, the response body properties are as follows:</li>
@@ -4650,7 +4644,6 @@ After that, use the <code>save_to_img</code> method to save the visualization im
 </tr>
 </tbody>
 </table>
-
 <p>Operations provided by the service:</p>
 <ul>
 <li><b><code>infer</code></b></li>
@@ -4684,7 +4677,6 @@ After that, use the <code>save_to_img</code> method to save the visualization im
 </tr>
 </tbody>
 </table>
-
 <p>Properties of <code>inferenceParams</code>:</p>
 <table>
 <thead>
@@ -4704,7 +4696,6 @@ After that, use the <code>save_to_img</code> method to save the visualization im
 </tr>
 </tbody>
 </table>
-
 <ul>
 <li>When the request is processed successfully, the <code>result</code> in the response body has the following properties:</li>
 </ul>
@@ -4729,7 +4720,6 @@ After that, use the <code>save_to_img</code> method to save the visualization im
 </tr>
 </tbody>
 </table>
-
 <p>Each element in <code>formulas</code> is an <code>object</code> with the following properties:</p>
 <table>
 <thead>
@@ -4752,7 +4742,6 @@ After that, use the <code>save_to_img</code> method to save the visualization im
 </tr>
 </tbody>
 </table>
-
 <p>Example of <code>result</code>:</p>
 <pre><code class="language-json">{
 &quot;formulas&quot;: [
