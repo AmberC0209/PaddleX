@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
     <url>
+        <loc>Noneindex.html</loc>
+        <lastmod>2024-11-07</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="Noneindex.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/index.html"/>
+    </url>
+    <url>
         <loc>NoneCHANGLOG.html</loc>
         <lastmod>2024-11-07</lastmod>
         <changefreq>daily</changefreq>
@@ -13,6 +20,13 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="NoneFAQ.html"/>
         <xhtml:link rel="alternate" hreflang="en" href="Noneen/FAQ.html"/>
+    </url>
+    <url>
+        <loc>Nonequick_start.html</loc>
+        <lastmod>2024-11-07</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="Nonequick_start.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/quick_start.html"/>
     </url>
     <url>
         <loc>Nonedata_annotations/cv_modules/image_classification.html</loc>
@@ -701,6 +715,13 @@
         <xhtml:link rel="alternate" hreflang="en" href="Noneen/blog/index.html"/>
     </url>
     <url>
+        <loc>Noneen/index.html</loc>
+        <lastmod>2024-11-07</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/index.html"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="Noneindex.html"/>
+    </url>
+    <url>
         <loc>Noneen/CHANGLOG.html</loc>
         <lastmod>2024-11-07</lastmod>
         <changefreq>daily</changefreq>
@@ -713,6 +734,13 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="Noneen/FAQ.html"/>
         <xhtml:link rel="alternate" hreflang="zh" href="NoneFAQ.html"/>
+    </url>
+    <url>
+        <loc>Noneen/quick_start.html</loc>
+        <lastmod>2024-11-07</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/quick_start.html"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="Nonequick_start.html"/>
     </url>
     <url>
         <loc>Noneen/blog/index.html</loc>
