@@ -1,4 +1,4 @@
-site_name: PaddleX 文档
+site_name: PaddleX 文档 #站点名称
 docs_dir: docs # 文档路径
 
 repo_url: https://github.com/AmberC0209/PaddleX #仓库地址
@@ -6,13 +6,13 @@ repo_url: https://github.com/AmberC0209/PaddleX #仓库地址
 edit_uri: edit/site_create/docs/ #修改文件的路径
 theme:
   name: material
-  # logo: ./static/images/logo.jpg
+  # logo: ./static/images/logo.jpg #设置左上角logo
   # favicon: ./static/images/logo.jpg
-  custom_dir: overrides
+  custom_dir: overrides #用于自定义站点效果
   features:
     - announce.dismiss
-    - content.action.edit
-    - content.action.view
+    - content.action.edit #可以编辑页面源码
+    - content.action.view #可以查看页面源码
     - content.code.annotate
     - content.code.copy
     # - content.code.select
@@ -39,7 +39,7 @@ theme:
     - search.suggest
     - toc.follow
     # - toc.integrate
-  palette:
+  palette: #设置切换light和dark模式
     - media: "(prefers-color-scheme: light)"
       scheme: default
       primary: indigo
@@ -73,7 +73,7 @@ plugins:
   - blog
   - search:
       separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
-  - i18n:
+  - i18n: #设置中英文转换
       docs_structure: suffix
       fallback_to_default: true
       reconfigure_material: true

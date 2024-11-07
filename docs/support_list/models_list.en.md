@@ -25,7 +25,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>13.1957</td>
 <td>285.493</td>
 <td>306.5 M</td>
-<td><a href="../../paddlex/configs/image_classification/CLIP_vit_base_patch16_224.yaml">CLIP_vit_base_patch16_224.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/image_classification/CLIP_vit_base_patch16_224.yaml">CLIP_vit_base_patch16_224.yaml</a></td>
 </tr>
 <tr>
 <td>CLIP_vit_large_patch14_224</td>
@@ -33,7 +33,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>51.1284</td>
 <td>1131.28</td>
 <td>1.04 G</td>
-<td><a href="../../paddlex/configs/image_classification/CLIP_vit_large_patch14_224.yaml">CLIP_vit_large_patch14_224.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/image_classification/CLIP_vit_large_patch14_224.yaml">CLIP_vit_large_patch14_224.yaml</a></td>
 </tr>
 <tr>
 <td>ConvNeXt_base_224</td>
@@ -41,7 +41,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>12.8473</td>
 <td>1513.87</td>
 <td>313.9 M</td>
-<td><a href="../../paddlex/configs/image_classification/ConvNeXt_base_224.yaml">ConvNeXt_base_224.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/image_classification/ConvNeXt_base_224.yaml">ConvNeXt_base_224.yaml</a></td>
 </tr>
 <tr>
 <td>ConvNeXt_base_384</td>
@@ -49,7 +49,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>31.7607</td>
 <td>3967.05</td>
 <td>313.9 M</td>
-<td><a href="../../paddlex/configs/image_classification/ConvNeXt_base_384.yaml">ConvNeXt_base_384.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/image_classification/ConvNeXt_base_384.yaml">ConvNeXt_base_384.yaml</a></td>
 </tr>
 <tr>
 <td>ConvNeXt_large_224</td>
@@ -57,7 +57,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>26.8103</td>
 <td>2463.56</td>
 <td>700.7 M</td>
-<td><a href="../../paddlex/configs/image_classification/ConvNeXt_large_224.yaml">ConvNeXt_large_224.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/image_classification/ConvNeXt_large_224.yaml">ConvNeXt_large_224.yaml</a></td>
 </tr>
 <tr>
 <td>ConvNeXt_large_384</td>
@@ -65,7 +65,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>66.4058</td>
 <td>6598.92</td>
 <td>700.7 M</td>
-<td><a href="../../paddlex/configs/image_classification/ConvNeXt_large_384.yaml">ConvNeXt_large_384.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/image_classification/ConvNeXt_large_384.yaml">ConvNeXt_large_384.yaml</a></td>
 </tr>
 <tr>
 <td>ConvNeXt_small</td>
@@ -73,7 +73,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>9.74075</td>
 <td>1127.6</td>
 <td>178.0 M</td>
-<td><a href="../../paddlex/configs/image_classification/ConvNeXt_small.yaml">ConvNeXt_small.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/image_classification/ConvNeXt_small.yaml">ConvNeXt_small.yaml</a></td>
 </tr>
 <tr>
 <td>ConvNeXt_tiny</td>
@@ -81,7 +81,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>5.48923</td>
 <td>672.559</td>
 <td>101.4 M</td>
-<td><a href="../../paddlex/configs/image_classification/ConvNeXt_tiny.yaml">ConvNeXt_tiny.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/image_classification/ConvNeXt_tiny.yaml">ConvNeXt_tiny.yaml</a></td>
 </tr>
 <tr>
 <td>FasterNet-L</td>
@@ -137,7 +137,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>1.86754</td>
 <td>7.48297</td>
 <td>4.8 M</td>
-<td><a href="../../paddlex/configs/image_classification/MobileNetV1_x0_5.yaml">MobileNetV1_x0_5.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/image_classification/MobileNetV1_x0_5.yaml">MobileNetV1_x0_5.yaml</a></td>
 </tr>
 <tr>
 <td>MobileNetV1_x0_25</td>
@@ -145,7 +145,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>1.83478</td>
 <td>4.83674</td>
 <td>1.8 M</td>
-<td><a href="../../paddlex/configs/image_classification/MobileNetV1_x0_25.yaml">MobileNetV1_x0_25.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/image_classification/MobileNetV1_x0_25.yaml">MobileNetV1_x0_25.yaml</a></td>
 </tr>
 <tr>
 <td>MobileNetV1_x0_75</td>
@@ -153,7 +153,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>2.57903</td>
 <td>10.6343</td>
 <td>9.3 M</td>
-<td><a href="../../paddlex/configs/image_classification/MobileNetV1_x0_75.yaml">MobileNetV1_x0_75.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/image_classification/MobileNetV1_x0_75.yaml">MobileNetV1_x0_75.yaml</a></td>
 </tr>
 <tr>
 <td>MobileNetV1_x1_0</td>
@@ -161,7 +161,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>2.78781</td>
 <td>13.98</td>
 <td>15.2 M</td>
-<td><a href="../../paddlex/configs/image_classification/MobileNetV1_x1_0.yaml">MobileNetV1_x1_0.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/image_classification/MobileNetV1_x1_0.yaml">MobileNetV1_x1_0.yaml</a></td>
 </tr>
 <tr>
 <td>MobileNetV2_x0_5</td>
@@ -169,7 +169,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>4.94234</td>
 <td>11.1629</td>
 <td>7.1 M</td>
-<td><a href="../../paddlex/configs/image_classification/MobileNetV2_x0_5.yaml">MobileNetV2_x0_5.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/image_classification/MobileNetV2_x0_5.yaml">MobileNetV2_x0_5.yaml</a></td>
 </tr>
 <tr>
 <td>MobileNetV2_x0_25</td>
@@ -177,7 +177,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>4.50856</td>
 <td>9.40991</td>
 <td>5.5 M</td>
-<td><a href="../../paddlex/configs/image_classification/MobileNetV2_x0_25.yaml">MobileNetV2_x0_25.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/image_classification/MobileNetV2_x0_25.yaml">MobileNetV2_x0_25.yaml</a></td>
 </tr>
 <tr>
 <td>MobileNetV2_x1_0</td>
@@ -185,7 +185,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>6.12159</td>
 <td>16.0442</td>
 <td>12.6 M</td>
-<td><a href="../../paddlex/configs/image_classification/MobileNetV2_x1_0.yaml">MobileNetV2_x1_0.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/image_classification/MobileNetV2_x1_0.yaml">MobileNetV2_x1_0.yaml</a></td>
 </tr>
 <tr>
 <td>MobileNetV2_x1_5</td>
@@ -193,7 +193,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>6.28385</td>
 <td>22.5129</td>
 <td>25.0 M</td>
-<td><a href="../../paddlex/configs/image_classification/MobileNetV2_x1_5.yaml">MobileNetV2_x1_5.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/image_classification/MobileNetV2_x1_5.yaml">MobileNetV2_x1_5.yaml</a></td>
 </tr>
 <tr>
 <td>MobileNetV2_x2_0</td>
@@ -201,7 +201,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>6.12888</td>
 <td>30.8612</td>
 <td>41.2 M</td>
-<td><a href="../../paddlex/configs/image_classification/MobileNetV2_x2_0.yaml">MobileNetV2_x2_0.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/image_classification/MobileNetV2_x2_0.yaml">MobileNetV2_x2_0.yaml</a></td>
 </tr>
 <tr>
 <td>MobileNetV3_large_x0_5</td>
@@ -209,7 +209,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>6.31302</td>
 <td>14.5588</td>
 <td>9.6 M</td>
-<td><a href="../../paddlex/configs/image_classification/MobileNetV3_large_x0_5.yaml">MobileNetV3_large_x0_5.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/image_classification/MobileNetV3_large_x0_5.yaml">MobileNetV3_large_x0_5.yaml</a></td>
 </tr>
 <tr>
 <td>MobileNetV3_large_x0_35</td>
@@ -217,7 +217,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>5.76207</td>
 <td>13.9041</td>
 <td>7.5 M</td>
-<td><a href="../../paddlex/configs/image_classification/MobileNetV3_large_x0_35.yaml">MobileNetV3_large_x0_35.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/image_classification/MobileNetV3_large_x0_35.yaml">MobileNetV3_large_x0_35.yaml</a></td>
 </tr>
 <tr>
 <td>MobileNetV3_large_x0_75</td>
@@ -225,7 +225,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>8.41737</td>
 <td>16.9506</td>
 <td>14.0 M</td>
-<td><a href="../../paddlex/configs/image_classification/MobileNetV3_large_x0_75.yaml">MobileNetV3_large_x0_75.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/image_classification/MobileNetV3_large_x0_75.yaml">MobileNetV3_large_x0_75.yaml</a></td>
 </tr>
 <tr>
 <td>MobileNetV3_large_x1_0</td>
@@ -233,7 +233,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>8.64112</td>
 <td>19.1614</td>
 <td>19.5 M</td>
-<td><a href="../../paddlex/configs/image_classification/MobileNetV3_large_x1_0.yaml">MobileNetV3_large_x1_0.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/image_classification/MobileNetV3_large_x1_0.yaml">MobileNetV3_large_x1_0.yaml</a></td>
 </tr>
 <tr>
 <td>MobileNetV3_large_x1_25</td>
@@ -241,7 +241,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>8.73358</td>
 <td>22.1296</td>
 <td>26.5 M</td>
-<td><a href="../../paddlex/configs/image_classification/MobileNetV3_large_x1_25.yaml">MobileNetV3_large_x1_25.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/image_classification/MobileNetV3_large_x1_25.yaml">MobileNetV3_large_x1_25.yaml</a></td>
 </tr>
 <tr>
 <td>MobileNetV3_small_x0_5</td>
@@ -249,7 +249,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>5.16721</td>
 <td>11.2688</td>
 <td>6.8 M</td>
-<td><a href="../../paddlex/configs/image_classification/MobileNetV3_small_x0_5.yaml">MobileNetV3_small_x0_5.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/image_classification/MobileNetV3_small_x0_5.yaml">MobileNetV3_small_x0_5.yaml</a></td>
 </tr>
 <tr>
 <td>MobileNetV3_small_x0_35</td>
@@ -257,7 +257,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>5.22053</td>
 <td>11.0055</td>
 <td>6.0 M</td>
-<td><a href="../../paddlex/configs/image_classification/MobileNetV3_small_x0_35.yaml">MobileNetV3_small_x0_35.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/image_classification/MobileNetV3_small_x0_35.yaml">MobileNetV3_small_x0_35.yaml</a></td>
 </tr>
 <tr>
 <td>MobileNetV3_small_x0_75</td>
@@ -265,7 +265,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>5.39831</td>
 <td>12.8313</td>
 <td>8.5 M</td>
-<td><a href="../../paddlex/configs/image_classification/MobileNetV3_small_x0_75.yaml">MobileNetV3_small_x0_75.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/image_classification/MobileNetV3_small_x0_75.yaml">MobileNetV3_small_x0_75.yaml</a></td>
 </tr>
 <tr>
 <td>MobileNetV3_small_x1_0</td>
@@ -273,7 +273,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>6.00993</td>
 <td>12.9598</td>
 <td>10.5 M</td>
-<td><a href="../../paddlex/configs/image_classification/MobileNetV3_small_x1_0.yaml">MobileNetV3_small_x1_0.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/image_classification/MobileNetV3_small_x1_0.yaml">MobileNetV3_small_x1_0.yaml</a></td>
 </tr>
 <tr>
 <td>MobileNetV3_small_x1_25</td>
@@ -281,7 +281,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>6.9589</td>
 <td>14.3995</td>
 <td>13.0 M</td>
-<td><a href="../../paddlex/configs/image_classification/MobileNetV3_small_x1_25.yaml">MobileNetV3_small_x1_25.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/image_classification/MobileNetV3_small_x1_25.yaml">MobileNetV3_small_x1_25.yaml</a></td>
 </tr>
 <tr>
 <td>MobileNetV4_conv_large</td>
@@ -289,7 +289,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>12.5485</td>
 <td>51.6453</td>
 <td>125.2 M</td>
-<td><a href="../../paddlex/configs/image_classification/MobileNetV4_conv_large.yaml">MobileNetV4_conv_large.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/image_classification/MobileNetV4_conv_large.yaml">MobileNetV4_conv_large.yaml</a></td>
 </tr>
 <tr>
 <td>MobileNetV4_conv_medium</td>
@@ -297,7 +297,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>9.65509</td>
 <td>26.6157</td>
 <td>37.6 M</td>
-<td><a href="../../paddlex/configs/image_classification/MobileNetV4_conv_medium.yaml">MobileNetV4_conv_medium.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/image_classification/MobileNetV4_conv_medium.yaml">MobileNetV4_conv_medium.yaml</a></td>
 </tr>
 <tr>
 <td>MobileNetV4_conv_small</td>
@@ -305,7 +305,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>5.24172</td>
 <td>11.0893</td>
 <td>14.7 M</td>
-<td><a href="../../paddlex/configs/image_classification/MobileNetV4_conv_small.yaml">MobileNetV4_conv_small.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/image_classification/MobileNetV4_conv_small.yaml">MobileNetV4_conv_small.yaml</a></td>
 </tr>
 <tr>
 <td>MobileNetV4_hybrid_large</td>
@@ -313,7 +313,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>20.0726</td>
 <td>213.769</td>
 <td>145.1 M</td>
-<td><a href="../../paddlex/configs/image_classification/MobileNetV4_hybrid_large.yaml">MobileNetV4_hybrid_large.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/image_classification/MobileNetV4_hybrid_large.yaml">MobileNetV4_hybrid_large.yaml</a></td>
 </tr>
 <tr>
 <td>MobileNetV4_hybrid_medium</td>
@@ -321,7 +321,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>19.7543</td>
 <td>62.2624</td>
 <td>42.9 M</td>
-<td><a href="../../paddlex/configs/image_classification/MobileNetV4_hybrid_medium.yaml">MobileNetV4_hybrid_medium.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/image_classification/MobileNetV4_hybrid_medium.yaml">MobileNetV4_hybrid_medium.yaml</a></td>
 </tr>
 <tr>
 <td>PP-HGNet_base</td>
@@ -497,7 +497,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>3.53048</td>
 <td>31.3014</td>
 <td>41.5 M</td>
-<td><a href="../../paddlex/configs/image_classification/ResNet18_vd.yaml">ResNet18_vd.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/image_classification/ResNet18_vd.yaml">ResNet18_vd.yaml</a></td>
 </tr>
 <tr>
 <td>ResNet18</td>
@@ -505,7 +505,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>2.4868</td>
 <td>27.4601</td>
 <td>41.5 M</td>
-<td><a href="../../paddlex/configs/image_classification/ResNet18.yaml">ResNet18.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/image_classification/ResNet18.yaml">ResNet18.yaml</a></td>
 </tr>
 <tr>
 <td>ResNet34_vd</td>
@@ -513,7 +513,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>5.60675</td>
 <td>56.0653</td>
 <td>77.3 M</td>
-<td><a href="../../paddlex/configs/image_classification/ResNet34_vd.yaml">ResNet34_vd.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/image_classification/ResNet34_vd.yaml">ResNet34_vd.yaml</a></td>
 </tr>
 <tr>
 <td>ResNet34</td>
@@ -521,7 +521,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>4.16902</td>
 <td>51.925</td>
 <td>77.3 M</td>
-<td><a href="../../paddlex/configs/image_classification/ResNet34.yaml">ResNet34.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/image_classification/ResNet34.yaml">ResNet34.yaml</a></td>
 </tr>
 <tr>
 <td>ResNet50_vd</td>
@@ -529,7 +529,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>10.1885</td>
 <td>68.446</td>
 <td>90.8 M</td>
-<td><a href="../../paddlex/configs/image_classification/ResNet50_vd.yaml">ResNet50_vd.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/image_classification/ResNet50_vd.yaml">ResNet50_vd.yaml</a></td>
 </tr>
 <tr>
 <td>ResNet50</td>
@@ -537,7 +537,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>9.62383</td>
 <td>64.8135</td>
 <td>90.8 M</td>
-<td><a href="../../paddlex/configs/image_classification/ResNet50.yaml">ResNet50.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/image_classification/ResNet50.yaml">ResNet50.yaml</a></td>
 </tr>
 <tr>
 <td>ResNet101_vd</td>
@@ -545,7 +545,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>20.0563</td>
 <td>124.85</td>
 <td>158.4 M</td>
-<td><a href="../../paddlex/configs/image_classification/ResNet101_vd.yaml">ResNet101_vd.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/image_classification/ResNet101_vd.yaml">ResNet101_vd.yaml</a></td>
 </tr>
 <tr>
 <td>ResNet101</td>
@@ -553,7 +553,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>19.2297</td>
 <td>121.006</td>
 <td>158.7 M</td>
-<td><a href="../../paddlex/configs/image_classification/ResNet101.yaml">ResNet101.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/image_classification/ResNet101.yaml">ResNet101.yaml</a></td>
 </tr>
 <tr>
 <td>ResNet152_vd</td>
@@ -561,7 +561,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>29.6439</td>
 <td>181.678</td>
 <td>214.3 M</td>
-<td><a href="../../paddlex/configs/image_classification/ResNet152_vd.yaml">ResNet152_vd.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/image_classification/ResNet152_vd.yaml">ResNet152_vd.yaml</a></td>
 </tr>
 <tr>
 <td>ResNet152</td>
@@ -569,7 +569,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>30.0461</td>
 <td>177.707</td>
 <td>214.2 M</td>
-<td><a href="../../paddlex/configs/image_classification/ResNet152.yaml">ResNet152.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/image_classification/ResNet152.yaml">ResNet152.yaml</a></td>
 </tr>
 <tr>
 <td>ResNet200_vd</td>
@@ -577,7 +577,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>39.1628</td>
 <td>235.185</td>
 <td>266.0 M</td>
-<td><a href="../../paddlex/configs/image_classification/ResNet200_vd.yaml">ResNet200_vd.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/image_classification/ResNet200_vd.yaml">ResNet200_vd.yaml</a></td>
 </tr>
 <tr>
 <td>StarNet-S1</td>
@@ -617,7 +617,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>16.9848</td>
 <td>383.83</td>
 <td>310.5 M</td>
-<td><a href="../../paddlex/configs/image_classification/SwinTransformer_base_patch4_window7_224.yaml">SwinTransformer_base_patch4_window7_224.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/image_classification/SwinTransformer_base_patch4_window7_224.yaml">SwinTransformer_base_patch4_window7_224.yaml</a></td>
 </tr>
 <tr>
 <td>SwinTransformer_base_patch4_window12_384</td>
@@ -625,7 +625,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>37.2855</td>
 <td>1178.63</td>
 <td>311.4 M</td>
-<td><a href="../../paddlex/configs/image_classification/SwinTransformer_base_patch4_window12_384.yaml">SwinTransformer_base_patch4_window12_384.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/image_classification/SwinTransformer_base_patch4_window12_384.yaml">SwinTransformer_base_patch4_window12_384.yaml</a></td>
 </tr>
 <tr>
 <td>SwinTransformer_large_patch4_window7_224</td>
@@ -633,7 +633,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>27.5498</td>
 <td>689.729</td>
 <td>694.8 M</td>
-<td><a href="../../paddlex/configs/image_classification/SwinTransformer_large_patch4_window7_224.yaml">SwinTransformer_large_patch4_window7_224.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/image_classification/SwinTransformer_large_patch4_window7_224.yaml">SwinTransformer_large_patch4_window7_224.yaml</a></td>
 </tr>
 <tr>
 <td>SwinTransformer_large_patch4_window12_384</td>
@@ -641,7 +641,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>74.1768</td>
 <td>2105.22</td>
 <td>696.1 M</td>
-<td><a href="../../paddlex/configs/image_classification/SwinTransformer_large_patch4_window12_384.yaml">SwinTransformer_large_patch4_window12_384.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/image_classification/SwinTransformer_large_patch4_window12_384.yaml">SwinTransformer_large_patch4_window12_384.yaml</a></td>
 </tr>
 <tr>
 <td>SwinTransformer_small_patch4_window7_224</td>
@@ -649,7 +649,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>16.3982</td>
 <td>285.56</td>
 <td>175.6 M</td>
-<td><a href="../../paddlex/configs/image_classification/SwinTransformer_small_patch4_window7_224.yaml">SwinTransformer_small_patch4_window7_224.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/image_classification/SwinTransformer_small_patch4_window7_224.yaml">SwinTransformer_small_patch4_window7_224.yaml</a></td>
 </tr>
 <tr>
 <td>SwinTransformer_tiny_patch4_window7_224</td>
@@ -657,7 +657,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>8.54846</td>
 <td>156.306</td>
 <td>100.1 M</td>
-<td><a href="../../paddlex/configs/image_classification/SwinTransformer_tiny_patch4_window7_224.yaml">SwinTransformer_tiny_patch4_window7_224.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/image_classification/SwinTransformer_tiny_patch4_window7_224.yaml">SwinTransformer_tiny_patch4_window7_224.yaml</a></td>
 </tr>
 </tbody>
 </table>
@@ -683,7 +683,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>-</td>
 <td>-</td>
 <td>325.6 M</td>
-<td><a href="../../paddlex/configs/multilabel_classification/CLIP_vit_base_patch16_448_ML.yaml">CLIP_vit_base_patch16_448_ML.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/multilabel_classification/CLIP_vit_base_patch16_448_ML.yaml">CLIP_vit_base_patch16_448_ML.yaml</a></td>
 </tr>
 <tr>
 <td>PP-HGNetV2-B0_ML</td>
@@ -723,7 +723,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>-</td>
 <td>-</td>
 <td>108.9 M</td>
-<td><a href="../../paddlex/configs/multilabel_classification/ResNet50_ML.yaml">ResNet50_ML.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/multilabel_classification/ResNet50_ML.yaml">ResNet50_ML.yaml</a></td>
 </tr>
 </tbody>
 </table>
@@ -1321,7 +1321,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>33.7426</td>
 <td>537.003</td>
 <td>27.7 M</td>
-<td><a href="../../paddlex/configs/face_detection/PicoDet_LCNet_x2_5_face.yaml">PicoDet_LCNet_x2_5_face.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/face_detection/PicoDet_LCNet_x2_5_face.yaml">PicoDet_LCNet_x2_5_face.yaml</a></td>
 </tr>
 </tbody>
 </table>
@@ -1348,7 +1348,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>-</td>
 <td>-</td>
 <td>21.5 M</td>
-<td><a href="../../paddlex/configs/anomaly_detection/STFPM.yaml">STFPM.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/anomaly_detection/STFPM.yaml">STFPM.yaml</a></td>
 </tr>
 </tbody>
 </table>
@@ -1503,7 +1503,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>24.4073</td>
 <td>397.574</td>
 <td>30.8 M</td>
-<td><a href="../../paddlex/configs/semantic_segmentation/SeaFormer_base.yaml">SeaFormer_base.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/semantic_segmentation/SeaFormer_base.yaml">SeaFormer_base.yaml</a></td>
 </tr>
 <tr>
 <td>SeaFormer_large (slice)</td>
@@ -1511,7 +1511,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>27.8123</td>
 <td>550.464</td>
 <td>49.8 M</td>
-<td><a href="../../paddlex/configs/semantic_segmentation/SeaFormer_large.yaml">SeaFormer_large.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/semantic_segmentation/SeaFormer_large.yaml">SeaFormer_large.yaml</a></td>
 </tr>
 <tr>
 <td>SeaFormer_small (slice)</td>
@@ -1519,7 +1519,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>19.2295</td>
 <td>358.343</td>
 <td>14.3 M</td>
-<td><a href="../../paddlex/configs/semantic_segmentation/SeaFormer_small.yaml">SeaFormer_small.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/semantic_segmentation/SeaFormer_small.yaml">SeaFormer_small.yaml</a></td>
 </tr>
 <tr>
 <td>SeaFormer_tiny (slice)</td>
@@ -1527,7 +1527,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>13.9496</td>
 <td>330.132</td>
 <td>6.1 M</td>
-<td><a href="../../paddlex/configs/semantic_segmentation/SeaFormer_tiny.yaml">SeaFormer_tiny.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/semantic_segmentation/SeaFormer_tiny.yaml">SeaFormer_tiny.yaml</a></td>
 </tr>
 </tbody>
 </table>
@@ -1662,7 +1662,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 </tbody>
 </table>
 
-|SOLOv2| 35.5|-|-|179.1 M|[SOLOv2.yaml](../../paddlex/configs/instance_segmentation/SOLOv2.yaml)
+|SOLOv2| 35.5|-|-|179.1 M|[SOLOv2.yaml](https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/instance_segmentation/SOLOv2.yaml)
 
 <b>Note: The above accuracy metrics are evaluated on the </b>[COCO2017](https://cocodataset.org/#home)<b> validation set using Mask AP(0.5:0.95).</b>
 
@@ -1786,7 +1786,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>8.36801</td>
 <td>165.706</td>
 <td>73.9 M</td>
-<td><a href="../../paddlex/configs/text_recognition/ch_SVTRv2_rec.yaml">ch_SVTRv2_rec.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/text_recognition/ch_SVTRv2_rec.yaml">ch_SVTRv2_rec.yaml</a></td>
 </tr>
 </tbody>
 </table>
@@ -1811,7 +1811,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>10.5047</td>
 <td>51.5647</td>
 <td>22.1 M</td>
-<td><a href="../../paddlex/configs/text_recognition/ch_RepSVTR_rec.yaml">ch_RepSVTR_rec.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/text_recognition/ch_RepSVTR_rec.yaml">ch_RepSVTR_rec.yaml</a></td>
 </tr>
 </tbody>
 </table>
@@ -1841,7 +1841,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>-</td>
 <td>-</td>
 <td>89.7 M</td>
-<td><a href="../../paddlex/configs/formula_recognition/LaTeX_OCR_rec.yaml">LaTeX_OCR_rec.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/formula_recognition/LaTeX_OCR_rec.yaml">LaTeX_OCR_rec.yaml</a></td>
 </tr>
 </tbody>
 </table>
@@ -1867,7 +1867,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>522.536</td>
 <td>1845.37</td>
 <td>6.9 M</td>
-<td><a href="../../paddlex/configs/table_recognition/SLANet.yaml">SLANet.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/table_recognition/SLANet.yaml">SLANet.yaml</a></td>
 </tr>
 <tr>
 <td>SLANet_plus</td>
@@ -1875,7 +1875,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>522.536</td>
 <td>1845.37</td>
 <td>6.9 M</td>
-<td><a href="../../paddlex/configs/table_recognition/SLANet_plus.yaml">SLANet_plus.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/table_recognition/SLANet_plus.yaml">SLANet_plus.yaml</a></td>
 </tr>
 </tbody>
 </table>
@@ -1901,7 +1901,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>-</td>
 <td>-</td>
 <td>30.3 M</td>
-<td><a href="../../paddlex/configs/image_unwarping/UVDoc.yaml">UVDoc.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/image_unwarping/UVDoc.yaml">UVDoc.yaml</a></td>
 </tr>
 </tbody>
 </table>
@@ -1927,7 +1927,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>13.036</td>
 <td>91.2634</td>
 <td>7.4 M</td>
-<td><a href="../../paddlex/configs/structure_analysis/PicoDet_layout_1x.yaml">PicoDet_layout_1x.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/structure_analysis/PicoDet_layout_1x.yaml">PicoDet_layout_1x.yaml</a></td>
 </tr>
 <tr>
 <td>PicoDet-S_layout_3cls</td>
@@ -2000,49 +2000,49 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>0.382</td>
 <td>0.394</td>
 <td>72 K</td>
-<td><a href="../../paddlex/configs/ts_forecast/DLinear.yaml">DLinear.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/ts_forecast/DLinear.yaml">DLinear.yaml</a></td>
 </tr>
 <tr>
 <td>NLinear</td>
 <td>0.386</td>
 <td>0.392</td>
 <td>40 K</td>
-<td><a href="../../paddlex/configs/ts_forecast/NLinear.yaml">NLinear.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/ts_forecast/NLinear.yaml">NLinear.yaml</a></td>
 </tr>
 <tr>
 <td>Nonstationary</td>
 <td>0.600</td>
 <td>0.515</td>
 <td>55.5 M</td>
-<td><a href="../../paddlex/configs/ts_forecast/Nonstationary.yaml">Nonstationary.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/ts_forecast/Nonstationary.yaml">Nonstationary.yaml</a></td>
 </tr>
 <tr>
 <td>PatchTST</td>
 <td>0.385</td>
 <td>0.397</td>
 <td>2.0 M</td>
-<td><a href="../../paddlex/configs/ts_forecast/PatchTST.yaml">PatchTST.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/ts_forecast/PatchTST.yaml">PatchTST.yaml</a></td>
 </tr>
 <tr>
 <td>RLinear</td>
 <td>0.384</td>
 <td>0.392</td>
 <td>40 K</td>
-<td><a href="../../paddlex/configs/ts_forecast/RLinear.yaml">RLinear.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/ts_forecast/RLinear.yaml">RLinear.yaml</a></td>
 </tr>
 <tr>
 <td>TiDE</td>
 <td>0.405</td>
 <td>0.412</td>
 <td>31.7 M</td>
-<td><a href="../../paddlex/configs/ts_forecast/TiDE.yaml">TiDE.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/ts_forecast/TiDE.yaml">TiDE.yaml</a></td>
 </tr>
 <tr>
 <td>TimesNet</td>
 <td>0.417</td>
 <td>0.431</td>
 <td>4.9 M</td>
-<td><a href="../../paddlex/configs/ts_forecast/TimesNet.yaml">TimesNet.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/ts_forecast/TimesNet.yaml">TimesNet.yaml</a></td>
 </tr>
 </tbody>
 </table>
@@ -2068,7 +2068,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>84.36</td>
 <td>91.25</td>
 <td>52 K</td>
-<td><a href="../../paddlex/configs/ts_anomaly_detection/AutoEncoder_ad.yaml">AutoEncoder_ad.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/ts_anomaly_detection/AutoEncoder_ad.yaml">AutoEncoder_ad.yaml</a></td>
 </tr>
 <tr>
 <td>DLinear_ad</td>
@@ -2076,7 +2076,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>93.96</td>
 <td>96.41</td>
 <td>112 K</td>
-<td><a href="../../paddlex/configs/ts_anomaly_detection/DLinear_ad.yaml">DLinear_ad.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/ts_anomaly_detection/DLinear_ad.yaml">DLinear_ad.yaml</a></td>
 </tr>
 <tr>
 <td>Nonstationary_ad</td>
@@ -2084,7 +2084,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>88.95</td>
 <td>93.51</td>
 <td>1.8 M</td>
-<td><a href="../../paddlex/configs/ts_anomaly_detection/Nonstationary_ad.yaml">Nonstationary_ad.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/ts_anomaly_detection/Nonstationary_ad.yaml">Nonstationary_ad.yaml</a></td>
 </tr>
 <tr>
 <td>PatchTST_ad</td>
@@ -2092,7 +2092,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>90.70</td>
 <td>94.57</td>
 <td>320 K</td>
-<td><a href="../../paddlex/configs/ts_anomaly_detection/PatchTST_ad.yaml">PatchTST_ad.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/ts_anomaly_detection/PatchTST_ad.yaml">PatchTST_ad.yaml</a></td>
 </tr>
 <tr>
 <td>TimesNet_ad</td>
@@ -2100,7 +2100,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>94.80</td>
 <td>96.56</td>
 <td>1.3 M</td>
-<td><a href="../../paddlex/configs/ts_anomaly_detection/TimesNet_ad.yaml">TimesNet_ad.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/ts_anomaly_detection/TimesNet_ad.yaml">TimesNet_ad.yaml</a></td>
 </tr>
 </tbody>
 </table>
@@ -2122,7 +2122,7 @@ PaddleX incorporates multiple pipelines, each containing several modules, and ea
 <td>TimesNet_cls</td>
 <td>87.5</td>
 <td>792 K</td>
-<td><a href="../../paddlex/configs/ts_classification/TimesNet_cls.yaml">TimesNet_cls.yaml</a></td>
+<td><a href="https://github.com/PaddlePaddle/PaddleX/blob/develop/paddlex/configs/ts_classification/TimesNet_cls.yaml">TimesNet_cls.yaml</a></td>
 </tr>
 </tbody>
 </table>

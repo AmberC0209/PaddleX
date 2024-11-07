@@ -1,7 +1,7 @@
 name: Develop Docs
 on:
   push:
-    branches:
+    branches: #设置更新哪个分支会更新站点
       - 'release/**'
       - develop
       - site_create
