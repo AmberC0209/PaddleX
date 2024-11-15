@@ -525,6 +525,23 @@ You're not viewing the latest version.
   
 
       
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="CHANGLOG.html" class="md-tabs__link">
+        
+  
+    
+  
+  Recently Update
+
+      </a>
+    </li>
+  
+
+      
     </ul>
   </div>
 </nav>
@@ -2007,7 +2024,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="module_usage/tutorials/cv_modules/ml_classification.html" class="md-nav__link">
+      <a href="module_usage/tutorials/cv_modules/image_multilabel_classification.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4191,6 +4208,26 @@ You're not viewing the latest version.
   
 
     
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="CHANGLOG.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Recently Update
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -4285,13 +4322,13 @@ You're not viewing the latest version.
 <li><b>Installing PaddlePaddle</b></li>
 </ul>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># cpu</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="nv">paddlepaddle</span><span class="o">==</span><span class="m">3</span>.0.0b1<span class="w"> </span>-i<span class="w"> </span>https://www.paddlepaddle.org.cn/packages/stable/cpu/
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="nv">paddlepaddle</span><span class="o">==</span><span class="m">3</span>.0.0b2<span class="w"> </span>-i<span class="w"> </span>https://www.paddlepaddle.org.cn/packages/stable/cpu/
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># gpu，该命令仅适用于 CUDA 版本为 11.8 的机器环境</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>paddlepaddle-gpu<span class="o">==</span><span class="m">3</span>.0.0b1<span class="w"> </span>-i<span class="w"> </span>https://www.paddlepaddle.org.cn/packages/stable/cu118/
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>paddlepaddle-gpu<span class="o">==</span><span class="m">3</span>.0.0b2<span class="w"> </span>-i<span class="w"> </span>https://www.paddlepaddle.org.cn/packages/stable/cu118/
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
 </span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1"># gpu，该命令仅适用于 CUDA 版本为 12.3 的机器环境</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>paddlepaddle-gpu<span class="o">==</span><span class="m">3</span>.0.0b1<span class="w"> </span>-i<span class="w"> </span>https://www.paddlepaddle.org.cn/packages/stable/cu123/
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>paddlepaddle-gpu<span class="o">==</span><span class="m">3</span>.0.0b2<span class="w"> </span>-i<span class="w"> </span>https://www.paddlepaddle.org.cn/packages/stable/cu123/
 </span></code></pre></div>
 <blockquote>
 <p>❗For more PaddlePaddle versions, please refer to the <a href="https://www.paddlepaddle.org.cn/install/quick?docurl=/documentation./docs/zh/install/pip/linux-pip.html">PaddlePaddle official website</a>.</p>
@@ -4299,10 +4336,10 @@ You're not viewing the latest version.
 <ul>
 <li><b>Installing PaddleX</b></li>
 </ul>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>pip<span class="w"> </span>install<span class="w"> </span>https://paddle-model-ecology.bj.bcebos.com/paddlex/whl/paddlex-3.0.0b1-py3-none-any.whl
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>pip<span class="w"> </span>install<span class="w"> </span>https://paddle-model-ecology.bj.bcebos.com/paddlex/whl/paddlex-3.0.0b2-py3-none-any.whl
 </span></code></pre></div>
 <blockquote>
-<p>❗For more installation methods, refer to the <a href="./docs/installation/installation_en.html">PaddleX Installation Guide</a>.</p>
+<p>❗For more installation methods, refer to the <a href="https://paddlepaddle.github.io/PaddleX/latest/en/installation/installation.html">PaddleX Installation Guide</a>.</p>
 </blockquote>
 <h3 id="cli-usage">💻 CLI Usage<a class="headerlink" href="#cli-usage" title="Permanent link">&para;</a></h3>
 <p>One command can quickly experience the pipeline effect, the unified CLI format is:</p>
@@ -4315,8 +4352,6 @@ You're not viewing the latest version.
 <p>For example, using the  OCR pipeline:
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>paddlex<span class="w"> </span>--pipeline<span class="w"> </span>OCR<span class="w"> </span>--input<span class="w"> </span>https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/general_ocr_002.png<span class="w">  </span>--device<span class="w"> </span>gpu:0
 </span></code></pre></div></p>
-<details><summary><b>👉 Click to view the running result</b></summary>
-
 <pre><code class="language-bash">{
 'input_path': '/root/.paddlex/predict_input/general_ocr_002.png',
 'dt_polys': [array([[161,  27],
@@ -4338,11 +4373,9 @@ You're not viewing the latest version.
 'rec_score': [0.9985831379890442, 0.999696917533874512, 0.9985735416412354, 0.9842517971992493, 0.9383274912834167, 0.9943678975105286, 0.9419361352920532, 0.9221674799919128, 0.9555020928382874, 0.9870321154594421, 0.9664073586463928, 0.9988052248954773, 0.9979352355003357, 0.9985110759735107, 0.9943482875823975, 0.9991195797920227, 0.9936401844024658, 0.9974591135978699, 0.9743705987930298, 0.9980487823486328, 0.9874696135520935, 0.9900962710380554, 0.9952947497367859, 0.9950481653213501, 0.989926815032959, 0.9915552139282227, 0.9938777685165405, 0.997239887714386, 0.9963340759277344, 0.9936134815216064, 0.97223961353302]}
 </code></pre>
 <p>The visualization result is as follows:</p>
-<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/boardingpass.png"></p></details>
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/boardingpass.png"></p>
 
 <p>To use the command line for other pipelines, simply adjust the <code>pipeline</code> parameter to the name of the corresponding pipeline. Below are the commands for each pipeline:</p>
-<details><summary><b>👉 More CLI usage for pipelines</b></summary>
-
 <table>
 <thead>
 <tr>
@@ -4412,7 +4445,7 @@ You're not viewing the latest version.
 <td><code>paddlex --pipeline ts_cls --input https://paddle-model-ecology.bj.bcebos.com/paddlex/ts/demo_ts/ts_cls.csv --device gpu:0</code></td>
 </tr>
 </tbody>
-</table></details>
+</table>
 
 <h3 id="python-script-usage">📝 Python Script Usage<a class="headerlink" href="#python-script-usage" title="Permanent link">&para;</a></h3>
 <p>With just a few lines of code, you can quickly perform inference on a production line. The unified Python script format is as follows:
@@ -4432,8 +4465,6 @@ The following steps are executed:</p>
 <li>The prediction results are processed.</li>
 </ul>
 <p>For other production lines using the Python script, you only need to adjust the <code>pipeline</code> parameter of the <code>create_pipeline()</code> method to the corresponding production line name. Below is a list of each production line's corresponding parameter name and detailed usage explanation:</p>
-<details><summary><b>👉 More Python Script Usage for Production Lines</b></summary>
-
 <table>
 <thead>
 <tr>
@@ -4446,85 +4477,85 @@ The following steps are executed:</p>
 <tr>
 <td>Document Scene Information Extraction v3</td>
 <td><code>PP-ChatOCRv3-doc</code></td>
-<td><a href="https://amberc0209.github.io/PaddleX/latest/en/pipeline_deploy/tutorials/information_extraction_pipelines/document_scene_information_extraction.html#22-本地体验">Document Scene Information Extraction v3 Python Script Instructions</a></td>
+<td><a href="https://paddlepaddle.github.io/PaddleX/latest/en/pipeline_deploy/tutorials/information_extraction_pipelines/document_scene_information_extraction.html">Document Scene Information Extraction v3 Python Script Instructions</a></td>
 </tr>
 <tr>
 <td>General Image Classification</td>
 <td><code>image_classification</code></td>
-<td><a href="https://amberc0209.github.io/PaddleX/latest/en/pipeline_deploy/tutorials/cv_pipelines/image_classification.html">General Image Classification Python Script Instructions</a></td>
+<td><a href="https://paddlepaddle.github.io/PaddleX/latest/en/pipeline_deploy/tutorials/cv_pipelines/image_classification.html">General Image Classification Python Script Instructions</a></td>
 </tr>
 <tr>
 <td>General Object Detection</td>
 <td><code>object_detection</code></td>
-<td><a href="https://amberc0209.github.io/PaddleX/latest/en/pipeline_deploy/tutorials/cv_pipelines/object_detection.html">General Object Detection Python Script Instructions</a></td>
+<td><a href="https://paddlepaddle.github.io/PaddleX/latest/en/pipeline_deploy/tutorials/cv_pipelines/object_detection.html">General Object Detection Python Script Instructions</a></td>
 </tr>
 <tr>
 <td>General Instance Segmentation</td>
 <td><code>instance_segmentation</code></td>
-<td><a href="https://amberc0209.github.io/PaddleX/latest/en/pipeline_deploy/tutorials/cv_pipelines/instance_segmentation.html">General Instance Segmentation Python Script Instructions</a></td>
+<td><a href="https://paddlepaddle.github.io/PaddleX/latest/en/pipeline_deploy/tutorials/cv_pipelines/instance_segmentation.html">General Instance Segmentation Python Script Instructions</a></td>
 </tr>
 <tr>
 <td>General Semantic Segmentation</td>
 <td><code>semantic_segmentation</code></td>
-<td><a href="https://amberc0209.github.io/PaddleX/latest/en/pipeline_deploy/tutorials/cv_pipelines/semantic_segmentation.html">General Semantic Segmentation Python Script Instructions</a></td>
+<td><a href="https://paddlepaddle.github.io/PaddleX/latest/en/pipeline_deploy/tutorials/cv_pipelines/semantic_segmentation.html">General Semantic Segmentation Python Script Instructions</a></td>
 </tr>
 <tr>
 <td>Image Multi-label Classification</td>
 <td><code>multi_label_image_classification</code></td>
-<td><a href="https://amberc0209.github.io/PaddleX/latest/en/pipeline_deploy/tutorials/cv_pipelines/image_multi_label_classification.html#22-python脚本方式集成">Image Multi-label Classification Python Script Instructions</a></td>
+<td><a href="https://paddlepaddle.github.io/PaddleX/latest/en/pipeline_deploy/tutorials/cv_pipelines/image_multi_label_classification.html">Image Multi-label Classification Python Script Instructions</a></td>
 </tr>
 <tr>
 <td>Small Object Detection</td>
 <td><code>small_object_detection</code></td>
-<td><a href="https://amberc0209.github.io/PaddleX/latest/en/pipeline_deploy/tutorials/cv_pipelines/small_object_detection.html#22-python脚本方式集成">Small Object Detection Python Script Instructions</a></td>
+<td><a href="https://paddlepaddle.github.io/PaddleX/latest/en/pipeline_deploy/tutorials/cv_pipelines/small_object_detection.html">Small Object Detection Python Script Instructions</a></td>
 </tr>
 <tr>
 <td>Image Anomaly Detection</td>
 <td><code>anomaly_detection</code></td>
-<td><a href="https://amberc0209.github.io/PaddleX/latest/en/pipeline_deploy/tutorials/cv_pipelines/image_anomaly_detection.html#22-python脚本方式集成">Image Anomaly Detection Python Script Instructions</a></td>
+<td><a href="https://paddlepaddle.github.io/PaddleX/latest/en/pipeline_deploy/tutorials/cv_pipelines/image_anomaly_detection.html">Image Anomaly Detection Python Script Instructions</a></td>
 </tr>
 <tr>
 <td>General OCR</td>
 <td><code>OCR</code></td>
-<td><a href="https://amberc0209.github.io/PaddleX/latest/en/pipeline_deploy/tutorials/ocr_pipelines/OCR.html">General OCR Python Script Instructions</a></td>
+<td><a href="https://paddlepaddle.github.io/PaddleX/latest/en/pipeline_deploy/tutorials/ocr_pipelines/OCR.html">General OCR Python Script Instructions</a></td>
 </tr>
 <tr>
 <td>General Table Recognition</td>
 <td><code>table_recognition</code></td>
-<td><a href="https://amberc0209.github.io/PaddleX/latest/en/pipeline_deploy/tutorials/ocr_pipelines/table_recognition.html#22-python脚本方式集成">General Table Recognition Python Script Instructions</a></td>
+<td><a href="https://paddlepaddle.github.io/PaddleX/latest/en/pipeline_deploy/tutorials/ocr_pipelines/table_recognition.html">General Table Recognition Python Script Instructions</a></td>
 </tr>
 <tr>
 <td>General Layout Parsing</td>
 <td><code>layout_parsing</code></td>
-<td><a href="https://amberc0209.github.io/PaddleX/latest/en/pipeline_deploy/tutorials/ocr_pipelines/layout_parsing.html#22-python脚本方式集成">General Layout Parsing Python Script Instructions</a></td>
+<td><a href="https://paddlepaddle.github.io/PaddleX/latest/en/pipeline_deploy/tutorials/ocr_pipelines/layout_parsing.html">General Layout Parsing Python Script Instructions</a></td>
 </tr>
 <tr>
 <td>Formula Recognition</td>
 <td><code>formula_recognition</code></td>
-<td><a href="https://amberc0209.github.io/PaddleX/latest/en/pipeline_deploy/tutorials/ocr_pipelines/formula_recognition.html#22-python脚本方式集成">Formula Recognition Python Script Instructions</a></td>
+<td><a href="https://paddlepaddle.github.io/PaddleX/latest/en/pipeline_deploy/tutorials/ocr_pipelines/formula_recognition.html">Formula Recognition Python Script Instructions</a></td>
 </tr>
 <tr>
 <td>Seal Text Recognition</td>
 <td><code>seal_recognition</code></td>
-<td><a href="https://amberc0209.github.io/PaddleX/latest/en/pipeline_deploy/tutorials/ocr_pipelines/seal_recognition.html#22-python脚本方式集成">Seal Text Recognition Python Script Instructions</a></td>
+<td><a href="https://paddlepaddle.github.io/PaddleX/latest/en/pipeline_deploy/tutorials/ocr_pipelines/seal_recognition.html">Seal Text Recognition Python Script Instructions</a></td>
 </tr>
 <tr>
 <td>Time Series Forecasting</td>
 <td><code>ts_fc</code></td>
-<td><a href="https://amberc0209.github.io/PaddleX/latest/en/pipeline_deploy/tutorials/time_series_pipelines/time_series_forecasting.html">Time Series Forecasting Python Script Instructions</a></td>
+<td><a href="https://paddlepaddle.github.io/PaddleX/latest/en/pipeline_deploy/tutorials/time_series_pipelines/time_series_forecasting.html">Time Series Forecasting Python Script Instructions</a></td>
 </tr>
 <tr>
 <td>Time Series Anomaly Detection</td>
 <td><code>ts_ad</code></td>
-<td><a href="https://amberc0209.github.io/PaddleX/latest/en/pipeline_deploy/tutorials/time_series_pipelines/time_series_anomaly_detection.html">Time Series Anomaly Detection Python Script Instructions</a></td>
+<td><a href="https://paddlepaddle.github.io/PaddleX/latest/en/pipeline_deploy/tutorials/time_series_pipelines/time_series_anomaly_detection.html">Time Series Anomaly Detection Python Script Instructions</a></td>
 </tr>
 <tr>
 <td>Time Series Classification</td>
 <td><code>ts_cls</code></td>
-<td><a href="https://amberc0209.github.io/PaddleX/latest/en/pipeline_deploy/tutorials/time_series_pipelines/time_series_classification.html">Time Series Classification Python Script Instructions</a></td>
+<td><a href="https://paddlepaddle.github.io/PaddleX/latest/en/pipeline_deploy/tutorials/time_series_pipelines/time_series_classification.html">Time Series Classification Python Script Instructions</a></td>
 </tr>
 </tbody>
-</table></details>
+</table>
 
 
 
@@ -4547,7 +4578,7 @@ The following steps are executed:</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 8, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 15, 2024</span>
   </span>
 
     
@@ -4557,7 +4588,7 @@ The following steps are executed:</p>
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 8, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 15, 2024</span>
   </span>
 
     
@@ -4572,7 +4603,7 @@ The following steps are executed:</p>
     </span>
     <nav>
       
-        <a href="mailto:1316695365@qq.com">AmberC0209</a>
+        <a href="mailto:55582609+amberc0209@users.noreply.github.com">AmberC0209</a>
     </nav>
   </span>
 

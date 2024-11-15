@@ -527,6 +527,23 @@ You're not viewing the latest version.
   
 
       
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../CHANGLOG.html" class="md-tabs__link">
+        
+  
+    
+  
+  Recently Update
+
+      </a>
+    </li>
+  
+
+      
     </ul>
   </div>
 </nav>
@@ -1953,7 +1970,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="ml_classification.html" class="md-nav__link">
+      <a href="image_multilabel_classification.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4327,6 +4344,26 @@ You're not viewing the latest version.
   
 
     
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CHANGLOG.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Recently Update
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -4524,41 +4561,40 @@ You're not viewing the latest version.
 <p>Small object detection typically refers to accurately detecting and locating small-sized target objects in images or videos. These objects often have a small pixel size in images, typically less than 32x32 pixels (as defined by datasets like MS COCO), and may be obscured by the background or other objects, making them difficult to observe directly by the human eye. Small object detection is an important research direction in computer vision, aiming to precisely detect small objects with minimal visual features in images.</p>
 <h2 id="ii-supported-model-list">II. Supported Model List<a class="headerlink" href="#ii-supported-model-list" title="Permanent link">&para;</a></h2>
 <table>
-  <tr>
-    <th>Model</th>
-    <th>mAP(0.5:0.95)</th>
-    <th>mAP(0.5)</th>
-    <th>GPU Inference Time (ms)</th>
-    <th>CPU Inference Time (ms)</th>
-    <th>Model Size (M)</th>
-    <th>Description (VisDrone)</th>
-  </tr>
-  <tr>
-    <td>PP-YOLOE_plus_SOD-L</td>
-    <td>31.9</td>
-    <td>52.1</td>
-    <td>57.1</td>
-    <td>1007.0</td>
-    <td>324.93</td>
-    <td rowspan="3">PP-YOLOE_plus small object detection model trained on VisDrone. VisDrone is a benchmark dataset specifically for unmanned aerial vehicle (UAV) visual data, which is used for small object detection due to the small size of the targets and the inherent challenges they pose.</td>
-
-  </tr>
-  <tr>
-    <td>PP-YOLOE_plus_SOD-S</td>
-    <td>25.1</td>
-    <td>42.8</td>
-    <td>65.5</td>
-    <td>324.4</td>
-    <td>77.29</td>
-  </tr>
-  <tr>
-    <td>PP-YOLOE_plus_SOD-largesize-L</td>
-    <td>42.7</td>
-    <td>65.9</td>
-    <td>458.5</td>
-    <td>11172.7</td>
-    <td>340.42</td>
-  </tr>
+<tr>
+<th>Model</th><th>Model Download Link</th>
+<th>mAP(0.5:0.95)</th>
+<th>mAP(0.5)</th>
+<th>GPU Inference Time (ms)</th>
+<th>CPU Inference Time (ms)</th>
+<th>Model Size (M)</th>
+<th>Description (VisDrone)</th>
+</tr>
+<tr>
+<td>PP-YOLOE_plus_SOD-L</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0b2/PP-YOLOE_plus_SOD-L_infer.tar">Inference Model</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/PP-YOLOE_plus_SOD-L_pretrained.pdparams">Trained Model</a></td>
+<td>31.9</td>
+<td>52.1</td>
+<td>57.1</td>
+<td>1007.0</td>
+<td>324.93</td>
+<td rowspan="3">PP-YOLOE_plus small object detection model trained on VisDrone. VisDrone is a benchmark dataset specifically for unmanned aerial vehicle (UAV) visual data, which is used for small object detection due to the small size of the targets and the inherent challenges they pose.</td>
+</tr>
+<tr>
+<td>PP-YOLOE_plus_SOD-S</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0b2/PP-YOLOE_plus_SOD-S_infer.tar">Inference Model</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/PP-YOLOE_plus_SOD-S_pretrained.pdparams">Trained Model</a></td>
+<td>25.1</td>
+<td>42.8</td>
+<td>65.5</td>
+<td>324.4</td>
+<td>77.29</td>
+</tr>
+<tr>
+<td>PP-YOLOE_plus_SOD-largesize-L</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0b2/PP-YOLOE_plus_SOD-largesize-L_infer.tar">Inference Model</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/PP-YOLOE_plus_SOD-largesize-L_pretrained.pdparams">Trained Model</a></td>
+<td>42.7</td>
+<td>65.9</td>
+<td>458.5</td>
+<td>11172.7</td>
+<td>340.42</td>
+</tr>
 </table>
 
 <p><b>Note: The evaluation set for the above accuracy metrics is VisDrone-DET dataset mAP(0.5:0.95). GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b></p>
@@ -4805,7 +4841,7 @@ Other related parameters can be set by modifying the <code>Global</code> and <co
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 8, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 15, 2024</span>
   </span>
 
     
@@ -4815,7 +4851,7 @@ Other related parameters can be set by modifying the <code>Global</code> and <co
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 8, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 15, 2024</span>
   </span>
 
     
@@ -4830,7 +4866,7 @@ Other related parameters can be set by modifying the <code>Global</code> and <co
     </span>
     <nav>
       
-        <a href="mailto:1316695365@qq.com">AmberC0209</a>
+        <a href="mailto:55582609+amberc0209@users.noreply.github.com">AmberC0209</a>
     </nav>
   </span>
 
