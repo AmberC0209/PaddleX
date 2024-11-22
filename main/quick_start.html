@@ -678,16 +678,6 @@ You're not viewing the latest version.
 </li>
       
         <li class="md-nav__item">
-  <a href="#gpu-cuda-118" class="md-nav__link">
-    <span class="md-ellipsis">
-      gpu，该命令仅适用于 CUDA 版本为 11.8 的机器环境
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="gpu，该命令仅适用于 CUDA 版本为 11.8 的机器环境">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       💻 命令行使用
@@ -695,18 +685,13 @@ You're not viewing the latest version.
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#python" class="md-nav__link">
     <span class="md-ellipsis">
       📝 Python 脚本使用
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -4279,16 +4264,6 @@ You're not viewing the latest version.
 </li>
       
         <li class="md-nav__item">
-  <a href="#gpu-cuda-118" class="md-nav__link">
-    <span class="md-ellipsis">
-      gpu，该命令仅适用于 CUDA 版本为 11.8 的机器环境
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="gpu，该命令仅适用于 CUDA 版本为 11.8 的机器环境">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       💻 命令行使用
@@ -4296,18 +4271,13 @@ You're not viewing the latest version.
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#python" class="md-nav__link">
     <span class="md-ellipsis">
       📝 Python 脚本使用
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -4342,36 +4312,32 @@ You're not viewing the latest version.
   
 
 
+  <h1>快速开始</h1>
+
 <h3 id="_1">🛠️ 安装<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
 <p>安装 PaddleX 前请先确保您有基础的 <b>Python 运行环境</b>（注：当前支持Python 3.8 ～ Python 3.10下运行，更多Python版本适配中）。</p>
+</div>
 <ul>
 <li><b>安装 PaddlePaddle</b></li>
 </ul>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="_1-cpu" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="_1-cpu">cpu</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="_1-cpu" name="__tabbed_1" type="radio" /><input id="_1-cuda-118" name="__tabbed_1" type="radio" /><input id="_1-cuda-123" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="_1-cpu">cpu</label><label for="_1-cuda-118">CUDA 11.8</label><label for="_1-cuda-123">CUDA 12.3</label></div>
 <div class="tabbed-content">
-<div class="tabbed-block"></div>
-</div>
-</div>
+<div class="tabbed-block">
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="nv">paddlepaddle</span><span class="o">==</span><span class="m">3</span>.0.0b2<span class="w"> </span>-i<span class="w"> </span>https://www.paddlepaddle.org.cn/packages/stable/cpu/
 </span></code></pre></div>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="_1-cuda-118" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="_1-cuda-118">CUDA 11.8</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block"></div>
 </div>
-</div>
+<div class="tabbed-block">
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>paddlepaddle-gpu<span class="o">==</span><span class="m">3</span>.0.0b2<span class="w"> </span>-i<span class="w"> </span>https://www.paddlepaddle.org.cn/packages/stable/cu118/
 </span></code></pre></div>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked="checked" id="_1-cuda-123" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="_1-cuda-123">CUDA 12.3</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block"></div>
 </div>
-</div>
-<h1 id="gpu-cuda-118">gpu，该命令仅适用于 CUDA 版本为 11.8 的机器环境<a class="headerlink" href="#gpu-cuda-118" title="Permanent link">&para;</a></h1>
+<div class="tabbed-block">
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>paddlepaddle-gpu<span class="o">==</span><span class="m">3</span>.0.0b2<span class="w"> </span>-i<span class="w"> </span>https://www.paddlepaddle.org.cn/packages/stable/cu123/
 </span></code></pre></div>
+</div>
+</div>
+</div>
 <blockquote>
 <p>❗ 更多飞桨 Wheel 版本请参考<a href="https://www.paddlepaddle.org.cn/install/quick?docurl=/documentation./docs/zh/install/pip/linux-pip.html">飞桨官网</a>。</p>
 </blockquote>
@@ -4393,22 +4359,29 @@ You're not viewing the latest version.
 <li><code>input</code>：待处理的输入文件（如图片）的本地路径或 URL</li>
 <li><code>device</code>: 使用的 GPU 序号（例如<code>gpu:0</code>表示使用第 0 块 GPU），也可选择使用 CPU（<code>cpu</code>）</li>
 </ul>
-<p>下面列出了每个产线对应的命令：</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="4:14"><input checked="checked" id="_2-通用图像分类" name="__tabbed_4" type="radio" /><input id="_2-通用实例分割" name="__tabbed_4" type="radio" /><input id="_2-通用语义分割" name="__tabbed_4" type="radio" /><input id="_2-图像多标签分类" name="__tabbed_4" type="radio" /><input id="_2-小目标检测" name="__tabbed_4" type="radio" /><input id="_2-图像异常检测" name="__tabbed_4" type="radio" /><input id="_2-通用ocr" name="__tabbed_4" type="radio" /><input id="_2-通用表格识别" name="__tabbed_4" type="radio" /><input id="_2-通用版面解析" name="__tabbed_4" type="radio" /><input id="_2-公式识别" name="__tabbed_4" type="radio" /><input id="_2-印章文本识别" name="__tabbed_4" type="radio" /><input id="_2-时序预测" name="__tabbed_4" type="radio" /><input id="_2-时序异常检测" name="__tabbed_4" type="radio" /><input id="_2-时序分类" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="_2-通用图像分类">通用图像分类</label><label for="_2-通用实例分割">通用实例分割</label><label for="_2-通用语义分割">通用语义分割</label><label for="_2-图像多标签分类">图像多标签分类</label><label for="_2-小目标检测">小目标检测</label><label for="_2-图像异常检测">图像异常检测</label><label for="_2-通用ocr">通用OCR</label><label for="_2-通用表格识别">通用表格识别</label><label for="_2-通用版面解析">通用版面解析</label><label for="_2-公式识别">公式识别</label><label for="_2-印章文本识别">印章文本识别</label><label for="_2-时序预测">时序预测</label><label for="_2-时序异常检测">时序异常检测</label><label for="_2-时序分类">时序分类</label></div>
+<div class="admonition example">
+<p class="admonition-title">命令行使用</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:15"><input checked="checked" id="_2-通用图像分类" name="__tabbed_2" type="radio" /><input id="_2-通用目标检测" name="__tabbed_2" type="radio" /><input id="_2-通用实例分割" name="__tabbed_2" type="radio" /><input id="_2-通用语义分割" name="__tabbed_2" type="radio" /><input id="_2-图像多标签分类" name="__tabbed_2" type="radio" /><input id="_2-小目标检测" name="__tabbed_2" type="radio" /><input id="_2-图像异常检测" name="__tabbed_2" type="radio" /><input id="_2-通用ocr" name="__tabbed_2" type="radio" /><input id="_2-通用表格识别" name="__tabbed_2" type="radio" /><input id="_2-通用版面解析" name="__tabbed_2" type="radio" /><input id="_2-公式识别" name="__tabbed_2" type="radio" /><input id="_2-印章文本识别" name="__tabbed_2" type="radio" /><input id="_2-时序预测" name="__tabbed_2" type="radio" /><input id="_2-时序异常检测" name="__tabbed_2" type="radio" /><input id="_2-时序分类" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="_2-通用图像分类">通用图像分类</label><label for="_2-通用目标检测">通用目标检测</label><label for="_2-通用实例分割">通用实例分割</label><label for="_2-通用语义分割">通用语义分割</label><label for="_2-图像多标签分类">图像多标签分类</label><label for="_2-小目标检测">小目标检测</label><label for="_2-图像异常检测">图像异常检测</label><label for="_2-通用ocr">通用OCR</label><label for="_2-通用表格识别">通用表格识别</label><label for="_2-通用版面解析">通用版面解析</label><label for="_2-公式识别">公式识别</label><label for="_2-印章文本识别">印章文本识别</label><label for="_2-时序预测">时序预测</label><label for="_2-时序异常检测">时序异常检测</label><label for="_2-时序分类">时序分类</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>paddlex<span class="w"> </span>--pipeline<span class="w"> </span>image_classification<span class="w"> </span>--input<span class="w"> </span>https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/general_image_classification_001.jpg<span class="w"> </span>--device<span class="w"> </span>gpu:0
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>paddlex<span class="w"> </span>--pipeline<span class="w"> </span>image_classification<span class="w"> </span>--input<span class="w"> </span>https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/general_image_classification_001.jpg<span class="w"> </span>--device<span class="w"> </span>gpu:0
 </span></code></pre></div>
-运行结果如下：</p>
+<details class="question">
+<summary>查看运行结果</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="_2-输出结果" name="__tabbed_3" type="radio" /><input id="_2-可视化图片" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="_2-输出结果">输出结果</label><label for="_2-可视化图片">可视化图片</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="o">{</span><span class="s1">&#39;input_path&#39;</span>:<span class="w"> </span><span class="s1">&#39;general_image_classification_001.jpg&#39;</span>,<span class="w"> </span><span class="s1">&#39;class_ids&#39;</span>:<span class="w"> </span><span class="o">[</span><span class="m">296</span>,<span class="w"> </span><span class="m">170</span>,<span class="w"> </span><span class="m">356</span>,<span class="w"> </span><span class="m">258</span>,<span class="w"> </span><span class="m">248</span><span class="o">]</span>,<span class="w"> </span><span class="s1">&#39;scores&#39;</span>:<span class="w"> </span><span class="o">[</span><span class="m">0</span>.62736,<span class="w"> </span><span class="m">0</span>.03752,<span class="w"> </span><span class="m">0</span>.03256,<span class="w"> </span><span class="m">0</span>.0323,<span class="w"> </span><span class="m">0</span>.03194<span class="o">]</span>,<span class="w"> </span><span class="s1">&#39;label_names&#39;</span>:<span class="w"> </span><span class="o">[</span><span class="s1">&#39;ice bear, polar bear, Ursus Maritimus, Thalarctos maritimus&#39;</span>,<span class="w"> </span><span class="s1">&#39;Irish wolfhound&#39;</span>,<span class="w"> </span><span class="s1">&#39;weasel&#39;</span>,<span class="w"> </span><span class="s1">&#39;Samoyed, Samoyede&#39;</span>,<span class="w"> </span><span class="s1">&#39;Eskimo dog, husky&#39;</span><span class="o">]}</span>
 </span></code></pre></div>
-<p>可视化结果如下：</p>
+</div>
+<div class="tabbed-block">
 <p><p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/image_classification/03.png"></p></p>
-<div class="tabbed-set tabbed-alternate" data-tabs="5:1"><input checked="checked" id="_2-通用目标检测" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="_2-通用目标检测">通用目标检测</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block"></div>
 </div>
 </div>
+</div>
+</details>
+</div>
+<div class="tabbed-block">
 <p><div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>paddlex<span class="w"> </span>--pipeline<span class="w"> </span>object_detection<span class="w"> </span>--input<span class="w"> </span>https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/general_object_detection_002.png<span class="w"> </span>--device<span class="w"> </span>gpu:0
 </span></code></pre></div>
 运行结果如下：</p>
@@ -4773,6 +4746,7 @@ You're not viewing the latest version.
 </div>
 </div>
 </div>
+</div>
 <h3 id="python">📝 Python 脚本使用<a class="headerlink" href="#python" title="Permanent link">&para;</a></h3>
 <p>几行代码即可完成产线的快速推理，统一的 Python 脚本格式如下：</p>
 <p><div class="language-python highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="kn">from</span> <span class="nn">paddlex</span> <span class="kn">import</span> <span class="n">create_pipeline</span>
@@ -4790,8 +4764,9 @@ You're not viewing the latest version.
 <li>传入图片并调用产线对象的 <code>predict</code> 方法进行推理预测</li>
 <li>对预测结果进行处理</li>
 </ul>
-<p>下面列出了每个产线对应的 Python 脚本：</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="6:15"><input checked="checked" id="python-通用图像分类" name="__tabbed_6" type="radio" /><input id="python-通用目标检测" name="__tabbed_6" type="radio" /><input id="python-通用实例分割" name="__tabbed_6" type="radio" /><input id="python-通用语义分割" name="__tabbed_6" type="radio" /><input id="python-图像多标签分类" name="__tabbed_6" type="radio" /><input id="python-小目标检测" name="__tabbed_6" type="radio" /><input id="python-图像异常检测" name="__tabbed_6" type="radio" /><input id="python-通用ocr" name="__tabbed_6" type="radio" /><input id="python-通用表格识别" name="__tabbed_6" type="radio" /><input id="python-通用版面解析" name="__tabbed_6" type="radio" /><input id="python-公式识别" name="__tabbed_6" type="radio" /><input id="python-印章文本识别" name="__tabbed_6" type="radio" /><input id="python-时序预测" name="__tabbed_6" type="radio" /><input id="python-时序异常检测" name="__tabbed_6" type="radio" /><input id="python-时序分类" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="python-通用图像分类">通用图像分类</label><label for="python-通用目标检测">通用目标检测</label><label for="python-通用实例分割">通用实例分割</label><label for="python-通用语义分割">通用语义分割</label><label for="python-图像多标签分类">图像多标签分类</label><label for="python-小目标检测">小目标检测</label><label for="python-图像异常检测">图像异常检测</label><label for="python-通用ocr">通用OCR</label><label for="python-通用表格识别">通用表格识别</label><label for="python-通用版面解析">通用版面解析</label><label for="python-公式识别">公式识别</label><label for="python-印章文本识别">印章文本识别</label><label for="python-时序预测">时序预测</label><label for="python-时序异常检测">时序异常检测</label><label for="python-时序分类">时序分类</label></div>
+<div class="admonition example">
+<p class="admonition-title">Python脚本使用</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:15"><input checked="checked" id="python-通用图像分类" name="__tabbed_4" type="radio" /><input id="python-通用目标检测" name="__tabbed_4" type="radio" /><input id="python-通用实例分割" name="__tabbed_4" type="radio" /><input id="python-通用语义分割" name="__tabbed_4" type="radio" /><input id="python-图像多标签分类" name="__tabbed_4" type="radio" /><input id="python-小目标检测" name="__tabbed_4" type="radio" /><input id="python-图像异常检测" name="__tabbed_4" type="radio" /><input id="python-通用ocr" name="__tabbed_4" type="radio" /><input id="python-通用表格识别" name="__tabbed_4" type="radio" /><input id="python-通用版面解析" name="__tabbed_4" type="radio" /><input id="python-公式识别" name="__tabbed_4" type="radio" /><input id="python-印章文本识别" name="__tabbed_4" type="radio" /><input id="python-时序预测" name="__tabbed_4" type="radio" /><input id="python-时序异常检测" name="__tabbed_4" type="radio" /><input id="python-时序分类" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="python-通用图像分类">通用图像分类</label><label for="python-通用目标检测">通用目标检测</label><label for="python-通用实例分割">通用实例分割</label><label for="python-通用语义分割">通用语义分割</label><label for="python-图像多标签分类">图像多标签分类</label><label for="python-小目标检测">小目标检测</label><label for="python-图像异常检测">图像异常检测</label><label for="python-通用ocr">通用OCR</label><label for="python-通用表格识别">通用表格识别</label><label for="python-通用版面解析">通用版面解析</label><label for="python-公式识别">公式识别</label><label for="python-印章文本识别">印章文本识别</label><label for="python-时序预测">时序预测</label><label for="python-时序异常检测">时序异常检测</label><label for="python-时序分类">时序分类</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-python highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="kn">from</span> <span class="nn">paddlex</span> <span class="kn">import</span> <span class="n">create_pipeline</span>
@@ -4965,6 +4940,7 @@ You're not viewing the latest version.
 </span><span id="__span-50-7"><a id="__codelineno-50-7" name="__codelineno-50-7" href="#__codelineno-50-7"></a>    <span class="n">res</span><span class="o">.</span><span class="n">print</span><span class="p">()</span> <span class="c1">## 打印预测的结构化输出</span>
 </span><span id="__span-50-8"><a id="__codelineno-50-8" name="__codelineno-50-8" href="#__codelineno-50-8"></a>    <span class="n">res</span><span class="o">.</span><span class="n">save_to_csv</span><span class="p">(</span><span class="s2">&quot;./output/&quot;</span><span class="p">)</span> <span class="c1">## 保存csv格式结果</span>
 </span></code></pre></div>
+</div>
 </div>
 </div>
 </div>
