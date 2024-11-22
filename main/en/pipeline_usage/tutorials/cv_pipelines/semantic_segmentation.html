@@ -8,6 +8,8 @@
       
       
       
+        <link rel="canonical" href="https://amberc0209.github.io/PaddleX/main/en/pipeline_usage/tutorials/cv_pipelines/semantic_segmentation.html">
+      
       
         <link rel="prev" href="instance_segmentation.html">
       
@@ -16,7 +18,7 @@
       
       
       <link rel="icon" href="../../../../assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.45">
     
     
       
@@ -4514,8 +4516,37 @@ You're not viewing the latest version.
 <h2 id="1-introduction-to-the-general-semantic-segmentation-pipeline">1. Introduction to the General Semantic Segmentation Pipeline<a class="headerlink" href="#1-introduction-to-the-general-semantic-segmentation-pipeline" title="Permanent link">&para;</a></h2>
 <p>Semantic segmentation is a computer vision technique that aims to assign each pixel in an image to a specific category, enabling a detailed understanding of the image content. Semantic segmentation not only identifies the types of objects in an image but also classifies each pixel, allowing regions of the same category to be fully labeled. For example, in a street scene image, semantic segmentation can distinguish pedestrians, cars, the sky, and roads pixel by pixel, forming a detailed label map. This technology is widely used in autonomous driving, medical image analysis, and human-computer interaction, often relying on deep learning models (such as SegFormer, etc.) to extract features by CNN or Transformer, and achieve high-precision pixel-level classification, providing a foundation for further intelligent analysis.</p>
 <p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/semantic_segmentation/01.png"></p>
-<details><summary> 👉 Model List Details</summary>
-
+<table>
+<thead>
+<tr>
+<th>Model Name</th><th>Model Download Link</th>
+<th>mIoU (%)</th>
+<th>GPU Inference Time (ms)</th>
+<th>CPU Inference Time (ms)</th>
+<th>Model Size (M)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OCRNet_HRNet-W48</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0b2/OCRNet_HRNet-W48_infer.tar">Inference Model</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/OCRNet_HRNet-W48_pretrained.pdparams">Trained Model</a></td>
+<td>82.15</td>
+<td>78.9976</td>
+<td>2226.95</td>
+<td>249.8 M</td>
+</tr>
+<tr>
+<td>PP-LiteSeg-T</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0b2/PP-LiteSeg-T_infer.tar">Inference Model</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/PP-LiteSeg-T_pretrained.pdparams">Trained Model</a></td>
+<td>73.10</td>
+<td>7.6827</td>
+<td>138.683</td>
+<td>28.5 M</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>❗ The above list features the <b>2 core models</b> that the image classification module primarily supports. In total, this module supports <b>18 models</b>. The complete list of models is as follows:</p>
+</blockquote>
+<details><summary> 👉Model List Details</summary>
 <table>
 <thead>
 <tr>
@@ -4634,7 +4665,7 @@ You're not viewing the latest version.
 <th>Model Name</th><th>Model Download Link</th>
 <th>mIoU (%)</th>
 <th>GPU Inference Time (ms)</th>
-<th>CPU Inference Time (ms)</th>
+<th>CPU Inference Time</th>
 <th>Model Size (M)</th>
 </tr>
 </thead>
@@ -4833,9 +4864,10 @@ The results obtained are the same as those from the command line method.</p>
 <p>Below are the API references and multi-language service invocation examples:</p>
 <details><summary>API Reference</summary>
 
-<p>For all operations provided by the service:</p>
+<p>For main operations provided by the service:</p>
 <ul>
-<li>Both the response body and the request body for POST requests are JSON data (JSON objects).</li>
+<li>The HTTP request method is POST.</li>
+<li>The request body and the response body are both JSON data (JSON objects).</li>
 <li>When the request is processed successfully, the response status code is <code>200</code>, and the response body properties are as follows:</li>
 </ul>
 <table>
@@ -4884,7 +4916,7 @@ The results obtained are the same as those from the command line method.</p>
 </tr>
 </tbody>
 </table>
-<p>Operations provided by the service are as follows:</p>
+<p>Main operations provided by the service are as follows:</p>
 <ul>
 <li><b><code>infer</code></b></li>
 </ul>
@@ -5266,6 +5298,7 @@ $payload = array(&quot;image&quot; =&gt; $image_data);
 $ch = curl_init($API_URL);
 curl_setopt($ch, CURLOPT_POST, true);
 curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($payload));
+curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $response = curl_exec($ch);
 curl_close($ch);
@@ -5328,7 +5361,7 @@ If you want to use the General Semantic Segmentation Pipeline on a wider range o
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 15, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 22, 2024</span>
   </span>
 
     
@@ -5338,7 +5371,7 @@ If you want to use the General Semantic Segmentation Pipeline on a wider range o
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 15, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 22, 2024</span>
   </span>
 
     
@@ -5353,7 +5386,7 @@ If you want to use the General Semantic Segmentation Pipeline on a wider range o
     </span>
     <nav>
       
-        <a href="mailto:55582609+amberc0209@users.noreply.github.com">AmberC0209</a>
+        <a href="mailto:1316695365@qq.com">AmberC0209</a>
     </nav>
   </span>
 

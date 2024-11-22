@@ -8,6 +8,8 @@
       
       
       
+        <link rel="canonical" href="https://amberc0209.github.io/PaddleX/main/pipeline_usage/tutorials/cv_pipelines/image_classification.html">
+      
       
         <link rel="prev" href="../ocr_pipelines/seal_recognition.html">
       
@@ -16,7 +18,7 @@
       
       
       <link rel="icon" href="../../../assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.45">
     
     
       
@@ -4515,14 +4517,89 @@ You're not viewing the latest version.
 <p>图像分类是一种将图像分配到预定义类别的技术。它广泛应用于物体识别、场景理解和自动标注等领域。图像分类可以识别各种物体，如动物、植物、交通标志等，并根据其特征将其归类。通过使用深度学习模型，图像分类能够自动提取图像特征并进行准确分类。</p>
 <p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/image_classification/01.png"></p>
 <p><b>通用图像分类产线中包含了图像分类模块，如您更考虑模型精度，请选择精度较高的模型，如您更考虑模型推理速度，请选择推理速度较快的模型，如您更考虑模型存储大小，请选择存储大小较小的模型</b>。</p>
-<details><summary> 👉模型列表详情</summary>
-
 <table>
 <tr>
 <th>模型</th><th>模型下载链接</th>
 <th>Top1 Acc(%)</th>
 <th>GPU推理耗时 (ms)</th>
-<th>CPU推理耗时（ms）</th>
+<th>CPU推理耗时 (ms)</th>
+<th>模型存储大小 (M)</th>
+</tr>
+<tr>
+<td>CLIP_vit_base_patch16_224</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0b2/CLIP_vit_base_patch16_224_infer.tar">推理模型</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/CLIP_vit_base_patch16_224_pretrained.pdparams">训练模型</a></td>
+<td>85.36</td>
+<td>13.1957</td>
+<td>285.493</td>
+<td>306.5 M</td>
+</tr>
+<tr>
+<td>MobileNetV3_small_x1_0</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0b2/MobileNetV3_small_x1_0_infer.tar">推理模型</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/MobileNetV3_small_x1_0_pretrained.pdparams">训练模型</a></td>
+<td>68.2</td>
+<td>6.00993</td>
+<td>12.9598</td>
+<td>10.5 M</td>
+</tr>
+<tr>
+<td>PP-HGNet_small</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0b2/PP-HGNet_small_infer.tar">推理模型</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/PP-HGNet_small_pretrained.pdparams">训练模型</a></td>
+<td>81.51</td>
+<td>5.50661</td>
+<td>119.041</td>
+<td>86.5 M</td>
+</tr>
+<tr>
+<td>PP-HGNetV2-B0</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0b2/PP-HGNetV2-B0_infer.tar">推理模型</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/PP-HGNetV2-B0_pretrained.pdparams">训练模型</a></td>
+<td>77.77</td>
+<td>6.53694</td>
+<td>23.352</td>
+<td>21.4 M</td>
+</tr>
+<tr>
+<td>PP-HGNetV2-B4</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0b2/PP-HGNetV2-B4_infer.tar">推理模型</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/PP-HGNetV2-B4_pretrained.pdparams">训练模型</a></td>
+<td>83.57</td>
+<td>9.66407</td>
+<td>54.2462</td>
+<td>70.4 M</td>
+</tr>
+<tr>
+<td>PP-HGNetV2-B6</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0b2/PP-HGNetV2-B6_infer.tar">推理模型</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/PP-HGNetV2-B6_pretrained.pdparams">训练模型</a></td>
+<td>86.30</td>
+<td>21.226</td>
+<td>255.279</td>
+<td>268.4 M</td>
+</tr>
+<tr>
+<td>PP-LCNet_x1_0</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0b2/PP-LCNet_x1_0_infer.tar">推理模型</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/PP-LCNet_x1_0_pretrained.pdparams">训练模型</a></td>
+<td>71.32</td>
+<td>3.84845</td>
+<td>9.23735</td>
+<td>10.5 M</td>
+</tr>
+<tr>
+<td>ResNet50</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0b2/ResNet50_infer.tar">推理模型</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/ResNet50_pretrained.pdparams">训练模型</a></td>
+<td>76.5</td>
+<td>9.62383</td>
+<td>64.8135</td>
+<td>90.8 M</td>
+</tr>
+<tr>
+<td>SwinTransformer_tiny_patch4_window7_224</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0b2/SwinTransformer_tiny_patch4_window7_224_infer.tar">推理模型</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/SwinTransformer_tiny_patch4_window7_224_pretrained.pdparams">训练模型</a></td>
+<td>81.10</td>
+<td>8.54846</td>
+<td>156.306</td>
+<td>100.1 M</td>
+</tr>
+</table>
+
+<blockquote>
+<p>❗ 以上列出的是图像分类模块重点支持的<b>9个核心模型</b>，该模块总共支持<b>80个模型</b>，完整的模型列表如下：</p>
+</blockquote>
+<details><summary> 👉模型列表详情</summary>
+<table>
+<tr>
+<th>模型</th><th>模型下载链接</th>
+<th>Top1 Acc(%)</th>
+<th>GPU推理耗时 (ms)</th>
+<th>CPU推理耗时 (ms)</th>
 <th>模型存储大小 (M)</th>
 <th>介绍</th>
 </tr>
@@ -4932,7 +5009,6 @@ You're not viewing the latest version.
 <td>32.1 M</td>
 </tr>
 <tr>
-<tr>
 <td>PP-LCNetV2_base</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0b2/PP-LCNetV2_base_infer.tar">推理模型</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/PP-LCNetV2_base_pretrained.pdparams">训练模型</a></td>
 <td>77.05</td>
 <td>5.23428</td>
@@ -4954,7 +5030,6 @@ You're not viewing the latest version.
 <td>13.0273</td>
 <td>14.6 M</td>
 </tr>
-<tr>
 <tr>
 <td>ResNet18_vd</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0b2/ResNet18_vd_infer.tar">推理模型</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/ResNet18_vd_pretrained.pdparams">训练模型</a></td>
 <td>72.3</td>
@@ -5034,7 +5109,6 @@ You're not viewing the latest version.
 <td>266.0 M</td>
 </tr>
 <tr>
-<tr>
 <td>StarNet-S1</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0b2/StarNet-S1_infer.tar">推理模型</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/StarNet-S1_pretrained.pdparams">训练模型</a></td>
 <td>73.6</td>
 <td>9.895</td>
@@ -5063,7 +5137,6 @@ You're not viewing the latest version.
 <td>43.2497</td>
 <td>28.9 M</td>
 </tr>
-<tr>
 <tr>
 <td>SwinTransformer_base_patch4_window7_224</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0b2/SwinTransformer_base_patch4_window7_224_infer.tar">推理模型</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/SwinTransformer_base_patch4_window7_224_pretrained.pdparams">训练模型</a></td>
 <td>83.37</td>
@@ -5107,8 +5180,7 @@ You're not viewing the latest version.
 <td>156.306</td>
 <td>100.1 M</td>
 </tr>
-<tr>
-</tr></tr></tr></tr></tr></table>
+</table>
 
 <p><b>注：以上精度指标为 <a href="https://www.image-net.org/index.php">ImageNet-1k</a> 验证集 Top1 Acc。所有模型 GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为8，精度类型为 FP32。</b></p></details>
 
@@ -5274,9 +5346,10 @@ You're not viewing the latest version.
 <p>下面是API参考和多语言服务调用示例：</p>
 <details><summary>API参考</summary>
 
-<p>对于服务提供的所有操作：</p>
+<p>对于服务提供的主要操作：</p>
 <ul>
-<li>响应体以及POST请求的请求体均为JSON数据（JSON对象）。</li>
+<li>HTTP请求方法为POST。</li>
+<li>请求体和响应体均为JSON数据（JSON对象）。</li>
 <li>当请求处理成功时，响应状态码为<code>200</code>，响应体的属性如下：</li>
 </ul>
 <table>
@@ -5325,7 +5398,7 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-<p>服务提供的操作如下：</p>
+<p>服务提供的主要操作如下：</p>
 <ul>
 <li><b><code>infer</code></b></li>
 </ul>
@@ -5786,6 +5859,7 @@ $payload = array(&quot;image&quot; =&gt; $image_data); // Base64编码的文件�
 $ch = curl_init($API_URL);
 curl_setopt($ch, CURLOPT_POST, true);
 curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($payload));
+curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $response = curl_exec($ch);
 curl_close($ch);
@@ -5848,7 +5922,7 @@ print_r($result[&quot;categories&quot;]);
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年11月15日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年11月22日</span>
   </span>
 
     
@@ -5858,7 +5932,7 @@ print_r($result[&quot;categories&quot;]);
     <span class="md-icon" title="创建日期">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年11月15日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年11月22日</span>
   </span>
 
     
@@ -5873,7 +5947,7 @@ print_r($result[&quot;categories&quot;]);
     </span>
     <nav>
       
-        <a href="mailto:55582609+amberc0209@users.noreply.github.com">AmberC0209</a>
+        <a href="mailto:1316695365@qq.com">AmberC0209</a>
     </nav>
   </span>
 
