@@ -8,15 +8,17 @@
       
       
       
+        <link rel="canonical" href="https://amberc0209.github.io/PaddleX/3.0-beta2/module_usage/tutorials/ocr_modules/table_structure_recognition.html">
+      
       
         <link rel="prev" href="layout_detection.html">
       
       
-        <link rel="next" href="doc_img_orientation_classification.html">
+        <link rel="next" href="table_cells_detection.html">
       
       
       <link rel="icon" href="../../../assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.48">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.2">
     
     
       
@@ -24,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.6f8fc17f.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.d7758b05.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
@@ -106,7 +108,7 @@ You're not viewing the latest version.
 </a>
 
             </div>
-            <script>var el=document.querySelector("[data-md-component=outdated]"),outdated=__md_get("__outdated",sessionStorage);!0===outdated&&el&&(el.hidden=!1)</script>
+            <script>var el=document.querySelector("[data-md-component=outdated]"),base=new URL("../../.."),outdated=__md_get("__outdated",sessionStorage,base);!0===outdated&&el&&(el.hidden=!1)</script>
           </aside>
         
       </div>
@@ -256,7 +258,7 @@ You're not viewing the latest version.
         <a href="https://github.com/AmberC0209/PaddleX" title="前往仓库" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -571,7 +573,7 @@ You're not viewing the latest version.
       <a href="https://github.com/AmberC0209/PaddleX" title="前往仓库" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -593,6 +595,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Home
+    
   </span>
   
 
@@ -636,6 +639,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     安装
+    
   </span>
   
 
@@ -661,6 +665,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     安装PaddlePaddle
+    
   </span>
   
 
@@ -682,6 +687,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     安装PaddleX
+    
   </span>
   
 
@@ -719,6 +725,10 @@ You're not viewing the latest version.
       
         
       
+        
+      
+        
+      
     
     
       
@@ -741,6 +751,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     产线使用教程
+    
   </span>
   
 
@@ -766,6 +777,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     概述
+    
   </span>
   
 
@@ -808,6 +820,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     文本图像智能分析
+    
   </span>
   
 
@@ -833,6 +846,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     文档场景信息抽取v3产线
+    
   </span>
   
 
@@ -858,6 +872,12 @@ You're not viewing the latest version.
   
     
     
+      
+        
+      
+        
+      
+        
       
         
       
@@ -891,6 +911,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     OCR
+    
   </span>
   
 
@@ -916,6 +937,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     通用OCR产线
+    
   </span>
   
 
@@ -937,6 +959,51 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     通用表格识别产线
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pipeline_usage/tutorials/ocr_pipelines/table_recognition_v2.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    通用表格识别v2产线
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pipeline_usage/tutorials/ocr_pipelines/layout_parsing_v2.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    通用版面解析产线
+    
   </span>
   
 
@@ -957,7 +1024,8 @@ You're not viewing the latest version.
         
   
   <span class="md-ellipsis">
-    通用版面解析产线
+    通用版面解析v2产线
+    
   </span>
   
 
@@ -979,6 +1047,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     公式识别产线
+    
   </span>
   
 
@@ -1000,6 +1069,29 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     印章文本识别产线
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pipeline_usage/tutorials/ocr_pipelines/doc_preprocessor.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    文档图像预处理产线
+    
   </span>
   
 
@@ -1025,6 +1117,16 @@ You're not viewing the latest version.
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
       
         
       
@@ -1070,6 +1172,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     计算机视觉
+    
   </span>
   
 
@@ -1095,6 +1198,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     通用图像分类
+    
   </span>
   
 
@@ -1116,6 +1220,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     通用目标检测
+    
   </span>
   
 
@@ -1137,6 +1242,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     通用实例分割
+    
   </span>
   
 
@@ -1158,6 +1264,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     通用语义分割
+    
   </span>
   
 
@@ -1179,6 +1286,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     图像多标签分类
+    
   </span>
   
 
@@ -1200,6 +1308,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     小目标检测
+    
   </span>
   
 
@@ -1221,6 +1330,117 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     图像异常检测
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pipeline_usage/tutorials/cv_pipelines/3d_bev_detection.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3D多模态融合检测
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pipeline_usage/tutorials/cv_pipelines/human_keypoint_detection.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    人体关键点检测
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pipeline_usage/tutorials/cv_pipelines/open_vocabulary_detection.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    开放词汇检测
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pipeline_usage/tutorials/cv_pipelines/open_vocabulary_segmentation.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    开放词汇分割
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pipeline_usage/tutorials/cv_pipelines/rotated_object_detection.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    旋转目标检测
+    
   </span>
   
 
@@ -1242,6 +1462,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     通用图像识别
+    
   </span>
   
 
@@ -1263,6 +1484,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     行人属性识别
+    
   </span>
   
 
@@ -1284,6 +1506,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     车辆属性识别
+    
   </span>
   
 
@@ -1305,6 +1528,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     人脸识别
+    
   </span>
   
 
@@ -1359,6 +1583,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     时序分析
+    
   </span>
   
 
@@ -1384,6 +1609,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     时序预测产线
+    
   </span>
   
 
@@ -1405,6 +1631,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     时序异常检测产线
+    
   </span>
   
 
@@ -1426,6 +1653,84 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     时序分类产线
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    语音处理
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            语音处理
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pipeline_usage/tutorials/speech_pipelines/multilingual_speech_recognition.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    多语种语音识别
+    
   </span>
   
 
@@ -1470,22 +1775,124 @@ You're not viewing the latest version.
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_6" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_7" >
         
           
-          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
             
   
   <span class="md-ellipsis">
-    说明文件
+    视频分析
+    
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_6">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            视频分析
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pipeline_usage/tutorials/video_pipelines/video_classification.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    通用视频分类
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pipeline_usage/tutorials/video_pipelines/video_detection.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    通用视频检测
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    说明文件
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_8">
             <span class="md-nav__icon md-icon"></span>
             说明文件
           </label>
@@ -1503,6 +1910,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX产线命令行使用说明
+    
   </span>
   
 
@@ -1524,6 +1932,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX产线Python脚本使用说明
+    
   </span>
   
 
@@ -1558,6 +1967,10 @@ You're not viewing the latest version.
   
     
     
+      
+        
+      
+        
       
         
       
@@ -1596,6 +2009,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     单功能模块使用教程
+    
   </span>
   
 
@@ -1636,6 +2050,12 @@ You're not viewing the latest version.
       
         
       
+        
+      
+        
+      
+        
+      
     
     
       
@@ -1659,6 +2079,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     OCR
+    
   </span>
   
 
@@ -1684,6 +2105,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     文本检测模块
+    
   </span>
   
 
@@ -1705,6 +2127,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     印章文本检测模块
+    
   </span>
   
 
@@ -1726,6 +2149,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     文本识别模块
+    
   </span>
   
 
@@ -1747,6 +2171,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     版面区域检测模块
+    
   </span>
   
 
@@ -1777,6 +2202,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     表格结构识别模块
+    
   </span>
   
 
@@ -1788,6 +2214,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     表格结构识别模块
+    
   </span>
   
 
@@ -1959,11 +2386,56 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
+      <a href="table_cells_detection.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    表格单元格检测模块
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="table_classification.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    表格分类模块
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="doc_img_orientation_classification.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     文档图像方向分类
+    
   </span>
   
 
@@ -1985,6 +2457,29 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     文本图像矫正模块
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="textline_orientation_classification.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    文本行方向分类
+    
   </span>
   
 
@@ -2006,6 +2501,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     公式识别模块
+    
   </span>
   
 
@@ -2065,6 +2561,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     图像分类
+    
   </span>
   
 
@@ -2090,6 +2587,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     图像分类模块
+    
   </span>
   
 
@@ -2111,6 +2609,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     图像多标签分类模块
+    
   </span>
   
 
@@ -2132,6 +2631,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     行人属性识别模块
+    
   </span>
   
 
@@ -2153,6 +2653,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     车辆属性识别模块
+    
   </span>
   
 
@@ -2208,6 +2709,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     图像特征
+    
   </span>
   
 
@@ -2233,6 +2735,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     图像特征模块
+    
   </span>
   
 
@@ -2254,6 +2757,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     人脸特征模块
+    
   </span>
   
 
@@ -2279,6 +2783,10 @@ You're not viewing the latest version.
   
     
     
+      
+        
+      
+        
       
         
       
@@ -2317,6 +2825,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     目标检测
+    
   </span>
   
 
@@ -2342,6 +2851,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     目标检测模块
+    
   </span>
   
 
@@ -2363,6 +2873,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     小目标检测模块
+    
   </span>
   
 
@@ -2384,6 +2895,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     人脸检测模块
+    
   </span>
   
 
@@ -2405,6 +2917,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     主体检测模块
+    
   </span>
   
 
@@ -2426,6 +2939,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     行人检测模块
+    
   </span>
   
 
@@ -2447,6 +2961,51 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     车辆检测模块
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cv_modules/human_keypoint_detection.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    人体关键点检测模块
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cv_modules/open_vocabulary_detection.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    开放词汇目标检测模块
+    
   </span>
   
 
@@ -2479,6 +3038,8 @@ You're not viewing the latest version.
       
         
       
+        
+      
     
     
       
@@ -2504,6 +3065,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     图像分割
+    
   </span>
   
 
@@ -2529,6 +3091,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     语义分割模块
+    
   </span>
   
 
@@ -2550,6 +3113,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     实例分割模块
+    
   </span>
   
 
@@ -2571,6 +3135,29 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     图像异常检测模块
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cv_modules/open_vocabulary_segmentation.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    开放词汇目标分割模块
+    
   </span>
   
 
@@ -2628,6 +3215,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     时序分析
+    
   </span>
   
 
@@ -2653,6 +3241,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     时序预测模块
+    
   </span>
   
 
@@ -2674,6 +3263,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     时序异常检测模块
+    
   </span>
   
 
@@ -2695,6 +3285,167 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     时序分类模块
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    语音识别
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            语音识别
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../speech_modules/multilingual_speech_recognition.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    多语种语音识别模块
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    3D检测
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_8">
+            <span class="md-nav__icon md-icon"></span>
+            3D检测
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cv_modules/3d_bev_detection.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BEV融合3D检测模块
+    
   </span>
   
 
@@ -2744,22 +3495,23 @@ You're not viewing the latest version.
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_7" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_9" >
         
           
-          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="">
+          <label class="md-nav__link" for="__nav_4_9" id="__nav_4_9_label" tabindex="">
             
   
   <span class="md-ellipsis">
     说明文件
+    
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_7">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_9">
             <span class="md-nav__icon md-icon"></span>
             说明文件
           </label>
@@ -2777,6 +3529,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX单模型Python脚本使用说明
+    
   </span>
   
 
@@ -2798,6 +3551,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX通用模型配置文件参数说明
+    
   </span>
   
 
@@ -2819,6 +3573,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX时序任务模型配置文件参数说明
+    
   </span>
   
 
@@ -2880,6 +3635,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     模型产线部署
+    
   </span>
   
 
@@ -2905,6 +3661,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     高性能推理
+    
   </span>
   
 
@@ -2921,11 +3678,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../pipeline_deploy/service_deploy.html" class="md-nav__link">
+      <a href="../../../pipeline_deploy/serving.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     服务化部署
+    
   </span>
   
 
@@ -2947,6 +3705,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     端侧部署
+    
   </span>
   
 
@@ -2998,6 +3757,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     多硬件使用
+    
   </span>
   
 
@@ -3023,6 +3783,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     多硬件使用指南
+    
   </span>
   
 
@@ -3040,6 +3801,8 @@ You're not viewing the latest version.
   
     
     
+      
+        
       
         
       
@@ -3071,6 +3834,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     飞桨多硬件安装
+    
   </span>
   
 
@@ -3096,6 +3860,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     海光 DCU 飞桨安装教程
+    
   </span>
   
 
@@ -3117,6 +3882,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     寒武纪 MLU 飞桨安装教程
+    
   </span>
   
 
@@ -3138,6 +3904,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     昇腾 NPU 飞桨安装教程
+    
   </span>
   
 
@@ -3159,6 +3926,29 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     昆仑 XPU 飞桨安装教程
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../other_devices_support/paddlepaddle_install_GCU.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    燧原 GCU 飞桨安装教程
+    
   </span>
   
 
@@ -3220,6 +4010,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     数据标注教程
+    
   </span>
   
 
@@ -3276,6 +4067,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     计算机视觉
+    
   </span>
   
 
@@ -3301,6 +4093,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     图像分类任务模块
+    
   </span>
   
 
@@ -3322,6 +4115,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     图像特征任务模块
+    
   </span>
   
 
@@ -3343,6 +4137,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     实例分割任务模块
+    
   </span>
   
 
@@ -3364,6 +4159,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     图像多标签分类
+    
   </span>
   
 
@@ -3385,6 +4181,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     目标检测任务模块
+    
   </span>
   
 
@@ -3406,6 +4203,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     语义分割任务模块
+    
   </span>
   
 
@@ -3458,6 +4256,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     OCR
+    
   </span>
   
 
@@ -3483,6 +4282,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     表格识别任务模块
+    
   </span>
   
 
@@ -3504,6 +4304,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     文本检测/识别任务模块
+    
   </span>
   
 
@@ -3558,6 +4359,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     时序分析
+    
   </span>
   
 
@@ -3583,6 +4385,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     时序异常检测任务模块
+    
   </span>
   
 
@@ -3604,6 +4407,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     时序分类任务模块
+    
   </span>
   
 
@@ -3625,6 +4429,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     时序预测任务模块
+    
   </span>
   
 
@@ -3690,6 +4495,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     产线列表
+    
   </span>
   
 
@@ -3715,6 +4521,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX产线列表(CPU/GPU)
+    
   </span>
   
 
@@ -3736,6 +4543,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX产线列表(DCU)
+    
   </span>
   
 
@@ -3757,6 +4565,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX产线列表(MLU)
+    
   </span>
   
 
@@ -3778,6 +4587,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX产线列表(NPU)
+    
   </span>
   
 
@@ -3799,6 +4609,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX产线列表(XPU)
+    
   </span>
   
 
@@ -3834,6 +4645,8 @@ You're not viewing the latest version.
       
         
       
+        
+      
     
     
       
@@ -3856,6 +4669,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     模型列表
+    
   </span>
   
 
@@ -3881,6 +4695,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX模型列表(CPU/GPU)
+    
   </span>
   
 
@@ -3902,6 +4717,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX模型列表(DCU)
+    
   </span>
   
 
@@ -3923,6 +4739,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX模型列表(MLU)
+    
   </span>
   
 
@@ -3944,6 +4761,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX模型列表(NPU)
+    
   </span>
   
 
@@ -3965,6 +4783,29 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX模型列表(XPU)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../support_list/model_list_gcu.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PaddleX模型列表(GCU)
+    
   </span>
   
 
@@ -4034,6 +4875,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     产业实践教程&范例
+    
   </span>
   
 
@@ -4059,6 +4901,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     论文文献信息抽取教程
+    
   </span>
   
 
@@ -4080,6 +4923,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     垃圾分类教程
+    
   </span>
   
 
@@ -4101,6 +4945,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     遥感图像实例分割教程
+    
   </span>
   
 
@@ -4122,6 +4967,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     行人跌倒检测教程
+    
   </span>
   
 
@@ -4143,6 +4989,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     服装时尚元素检测教程
+    
   </span>
   
 
@@ -4164,6 +5011,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     车牌识别教程
+    
   </span>
   
 
@@ -4185,6 +5033,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     手写中文识别教程
+    
   </span>
   
 
@@ -4206,6 +5055,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     车道线分割教程
+    
   </span>
   
 
@@ -4227,6 +5077,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     设备异常检测应用教程
+    
   </span>
   
 
@@ -4248,6 +5099,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     心跳监测时序数据分类应用教程
+    
   </span>
   
 
@@ -4269,6 +5121,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     用电量长期预测应用教程
+    
   </span>
   
 
@@ -4297,6 +5150,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     FAQ
+    
   </span>
   
 
@@ -4317,6 +5171,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     近期更新
+    
   </span>
   
 
@@ -4500,6 +5355,7 @@ You're not viewing the latest version.
                 
                   
 
+
   
     <a href="https://github.com/AmberC0209/PaddleX/edit/develop/docs/module_usage/tutorials/ocr_modules/table_structure_recognition.md" title="编辑此页" class="md-content__button md-icon">
       
@@ -4531,95 +5387,265 @@ You're not viewing the latest version.
 <th>介绍</th>
 </tr>
 <tr>
-<td>SLANet</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0b2/SLANet_infer.tar">推理模型</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/SLANet_pretrained.pdparams">训练模型</a></td>
+<td>SLANet</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0rc0/SLANet_infer.tar">推理模型</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/SLANet_pretrained.pdparams">训练模型</a></td>
 <td>59.52</td>
 <td>522.536</td>
 <td>1845.37</td>
 <td>6.9 M</td>
-<td rowspan="1">SLANet 是百度飞桨视觉团队自研的表格结构识别模型。该模型通过采用CPU 友好型轻量级骨干网络PP-LCNet、高低层特征融合模块CSP-PAN、结构与位置信息对齐的特征解码模块SLA Head，大幅提升了表格结构识别的精度和推理速度。</td>
+<td rowspan="1">SLANet 是百度飞桨视觉团队自研的表格结构识别模型。该模型通过采用 CPU 友好型轻量级骨干网络 PP-LCNet、高低层特征融合模块 CSP-PAN、结构与位置信息对齐的特征解码模块 SLA Head，大幅提升了表格结构识别的精度和推理速度。</td>
 </tr>
 <tr>
-<td>SLANet_plus</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0b2/SLANet_plus_infer.tar">推理模型</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/SLANet_plus_pretrained.pdparams">训练模型</a></td>
+<td>SLANet_plus</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0rc0/SLANet_plus_infer.tar">推理模型</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/SLANet_plus_pretrained.pdparams">训练模型</a></td>
 <td>63.69</td>
 <td>522.536</td>
 <td>1845.37</td>
 <td>6.9 M</td>
-<td rowspan="1">SLANet_plus 是百度飞桨视觉团队自研的表格结构识别模型SLANet的增强版。相较于SLANet，SLANet_plus 对无线表、复杂表格的识别能力得到了大幅提升，并降低了模型对表格定位准确性的敏感度，即使表格定位出现偏移，也能够较准确地进行识别。
- </td>
+<td rowspan="1">SLANet_plus 是百度飞桨视觉团队自研的表格结构识别模型 SLANet 的增强版。相较于 SLANet，SLANet_plus 对无线表、复杂表格的识别能力得到了大幅提升，并降低了模型对表格定位准确性的敏感度，即使表格定位出现偏移，也能够较准确地进行识别。
+</td>
+</tr>
+<tr>
+<td>SLANeXt_wired</td>
+<td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0rc0/SLANeXt_wired_infer.tar">推理模型</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/SLANeXt_wired_pretrained.pdparams">训练模型</a></td>
+<td rowspan="2">69.65</td>
+<td rowspan="2">--</td>
+<td rowspan="2">--</td>
+<td rowspan="2">--</td>
+<td rowspan="2">SLANeXt 系列是百度飞桨视觉团队自研的新一代表格结构识别模型。相较于 SLANet 和 SLANet_plus，SLANeXt 专注于对表格结构进行识别，并且对有线表格(wired)和无线表格(wireless)的识别分别训练了专用的权重，对各类型表格的识别能力都得到了明显提高，特别是对有线表格的识别能力得到了大幅提升。</td>
+</tr>
+<tr>
+<td>SLANeXt_wireless</td>
+<td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0rc0/SLANeXt_wireless_infer.tar">推理模型</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/SLANeXt_wireless_pretrained.pdparams">训练模型</a></td>
 </tr>
 </table>
 
-<p><b>注：以上精度指标测量自PaddleX 内部自建英文表格识别数据集。所有模型 GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为8，精度类型为 FP32。</b></p>
+<p><b>注：以上精度指标测量自 PaddleX 内部自建高难度中文表格识别数据集。所有模型 GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为8，精度类型为 FP32。</b></p>
 <h2 id="_4">三、快速集成<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <blockquote>
-<p>❗ 在快速集成前，请先安装 PaddleX 的 wheel 包，详细请参考 <a href="../../../installation/installation.html">PaddleX本地安装教程</a></p>
+<p>❗ 在快速集成前，请先安装 PaddleX 的 wheel 包，详细请参考 <a href="../../../installation/installation.html">PaddleX本地安装教程</a>。完成 wheel 包的安装后，几行代码即可完成表格结构识别模块的推理，可以任意切换该模块下的模型，您也可以将表格结构识别的模块中的模型推理集成到您的项目中。运行以下代码前，请您下载<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/table_recognition.jpg">示例图片</a>到本地。</p>
 </blockquote>
-<p>完成 wheel 包的安装后，几行代码即可完成表格结构识别模块的推理，可以任意切换该模块下的模型，您也可以将表格结构识别的模块中的模型推理集成到您的项目中。运行以下代码前，请您下载<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/table_recognition.jpg">示例图片</a>到本地。</p>
-<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>from<span class="w"> </span>paddlex<span class="w"> </span>import<span class="w"> </span>create_model
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nv">model</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>create_model<span class="o">(</span><span class="s2">&quot;SLANet&quot;</span><span class="o">)</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nv">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>model.predict<span class="o">(</span><span class="s2">&quot;table_recognition.jpg&quot;</span>,<span class="w"> </span><span class="nv">batch_size</span><span class="o">=</span><span class="m">1</span><span class="o">)</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="k">for</span><span class="w"> </span>res<span class="w"> </span><span class="k">in</span><span class="w"> </span>output:
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span>res.print<span class="o">(</span><span class="nv">json_format</span><span class="o">=</span>False<span class="o">)</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span>res.save_to_img<span class="o">(</span><span class="s2">&quot;./output/&quot;</span><span class="o">)</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span>res.save_to_json<span class="o">(</span><span class="s2">&quot;./output/res.json&quot;</span><span class="o">)</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">paddlex</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_model</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">model</span> <span class="o">=</span> <span class="n">create_model</span><span class="p">(</span><span class="n">model_name</span><span class="o">=</span><span class="s2">&quot;SLANet&quot;</span><span class="p">)</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">output</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="nb">input</span><span class="o">=</span><span class="s2">&quot;table_recognition.jpg&quot;</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">output</span><span class="p">:</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="n">res</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="n">json_format</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="n">res</span><span class="o">.</span><span class="n">save_to_json</span><span class="p">(</span><span class="s2">&quot;./output/res.json&quot;</span><span class="p">)</span>
 </span></code></pre></div>
-关于更多 PaddleX 的单模型推理的 API 的使用方法，可以参考的使用方法，可以参考<a href="../../instructions/model_python_API.html">PaddleX单模型Python脚本使用说明</a>。</p>
+<details><summary>👉 <b>运行后，得到的结果为：（点击展开）</b></summary>
+
+<div class="language-json highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span><span class="err">&#39;res&#39;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">&#39;i</span><span class="kc">n</span><span class="err">pu</span><span class="kc">t</span><span class="err">_pa</span><span class="kc">t</span><span class="err">h&#39;</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;</span><span class="kc">ta</span><span class="err">ble_recog</span><span class="kc">n</span><span class="err">i</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span><span class="err">.jpg&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;bbox&#39;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">array(</span><span class="p">[</span><span class="w"> </span><span class="mi">42</span><span class="p">,</span><span class="w">   </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">390</span><span class="p">,</span><span class="w">   </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">388</span><span class="p">,</span><span class="w">  </span><span class="mi">27</span><span class="p">,</span><span class="w">  </span><span class="mi">40</span><span class="p">,</span><span class="w">  </span><span class="mi">26</span><span class="p">]</span><span class="err">)</span><span class="p">,</span><span class="w"> </span><span class="err">array(</span><span class="p">[</span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="mi">35</span><span class="p">,</span><span class="w"> </span><span class="mi">89</span><span class="p">,</span><span class="w"> </span><span class="mi">35</span><span class="p">,</span><span class="w"> </span><span class="mi">87</span><span class="p">,</span><span class="w"> </span><span class="mi">63</span><span class="p">,</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="mi">63</span><span class="p">]</span><span class="err">)</span><span class="p">,</span><span class="w"> </span><span class="err">array(</span><span class="p">[</span><span class="mi">113</span><span class="p">,</span><span class="w">  </span><span class="mi">34</span><span class="p">,</span><span class="w"> </span><span class="mi">192</span><span class="p">,</span><span class="w">  </span><span class="mi">34</span><span class="p">,</span><span class="w"> </span><span class="mi">186</span><span class="p">,</span><span class="w">  </span><span class="mi">64</span><span class="p">,</span><span class="w"> </span><span class="mi">109</span><span class="p">,</span><span class="w">  </span><span class="mi">64</span><span class="p">]</span><span class="err">)</span><span class="p">,</span><span class="w"> </span><span class="err">array(</span><span class="p">[</span><span class="mi">219</span><span class="p">,</span><span class="w">  </span><span class="mi">33</span><span class="p">,</span><span class="w"> </span><span class="mi">399</span><span class="p">,</span><span class="w">  </span><span class="mi">33</span><span class="p">,</span><span class="w"> </span><span class="mi">393</span><span class="p">,</span><span class="w">  </span><span class="mi">62</span><span class="p">,</span><span class="w"> </span><span class="mi">212</span><span class="p">,</span><span class="w">  </span><span class="mi">62</span><span class="p">]</span><span class="err">)</span><span class="p">,</span><span class="w"> </span><span class="err">array(</span><span class="p">[</span><span class="mi">413</span><span class="p">,</span><span class="w">  </span><span class="mi">33</span><span class="p">,</span><span class="w"> </span><span class="mi">544</span><span class="p">,</span><span class="w">  </span><span class="mi">33</span><span class="p">,</span><span class="w"> </span><span class="mi">544</span><span class="p">,</span><span class="w">  </span><span class="mi">64</span><span class="p">,</span><span class="w"> </span><span class="mi">407</span><span class="p">,</span><span class="w">  </span><span class="mi">64</span><span class="p">]</span><span class="err">)</span><span class="p">,</span><span class="w"> </span><span class="err">array(</span><span class="p">[</span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="mi">67</span><span class="p">,</span><span class="w"> </span><span class="mi">98</span><span class="p">,</span><span class="w"> </span><span class="mi">68</span><span class="p">,</span><span class="w"> </span><span class="mi">96</span><span class="p">,</span><span class="w"> </span><span class="mi">93</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="mi">93</span><span class="p">]</span><span class="err">)</span><span class="p">,</span><span class="w"> </span><span class="err">array(</span><span class="p">[</span><span class="mi">115</span><span class="p">,</span><span class="w">  </span><span class="mi">66</span><span class="p">,</span><span class="w"> </span><span class="mi">205</span><span class="p">,</span><span class="w">  </span><span class="mi">66</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">  </span><span class="mi">91</span><span class="p">,</span><span class="w"> </span><span class="mi">111</span><span class="p">,</span><span class="w">  </span><span class="mi">91</span><span class="p">]</span><span class="err">)</span><span class="p">,</span><span class="w"> </span><span class="err">array(</span><span class="p">[</span><span class="mi">234</span><span class="p">,</span><span class="w">  </span><span class="mi">65</span><span class="p">,</span><span class="w"> </span><span class="mi">390</span><span class="p">,</span><span class="w">  </span><span class="mi">65</span><span class="p">,</span><span class="w"> </span><span class="mi">385</span><span class="p">,</span><span class="w">  </span><span class="mi">92</span><span class="p">,</span><span class="w"> </span><span class="mi">227</span><span class="p">,</span><span class="w">  </span><span class="mi">92</span><span class="p">]</span><span class="err">)</span><span class="p">,</span><span class="w"> </span><span class="err">array(</span><span class="p">[</span><span class="mi">414</span><span class="p">,</span><span class="w">  </span><span class="mi">66</span><span class="p">,</span><span class="w"> </span><span class="mi">537</span><span class="p">,</span><span class="w">  </span><span class="mi">67</span><span class="p">,</span><span class="w"> </span><span class="mi">537</span><span class="p">,</span><span class="w">  </span><span class="mi">95</span><span class="p">,</span><span class="w"> </span><span class="mi">409</span><span class="p">,</span><span class="w">  </span><span class="mi">95</span><span class="p">]</span><span class="err">)</span><span class="p">,</span><span class="w"> </span><span class="err">array(</span><span class="p">[</span><span class="w">  </span><span class="mi">7</span><span class="p">,</span><span class="w">  </span><span class="mi">97</span><span class="p">,</span><span class="w"> </span><span class="mi">106</span><span class="p">,</span><span class="w">  </span><span class="mi">97</span><span class="p">,</span><span class="w"> </span><span class="mi">104</span><span class="p">,</span><span class="w"> </span><span class="mi">128</span><span class="p">,</span><span class="w">   </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">128</span><span class="p">]</span><span class="err">)</span><span class="p">,</span><span class="w"> </span><span class="err">array(</span><span class="p">[</span><span class="mi">113</span><span class="p">,</span><span class="w">  </span><span class="mi">96</span><span class="p">,</span><span class="w"> </span><span class="mi">206</span><span class="p">,</span><span class="w">  </span><span class="mi">95</span><span class="p">,</span><span class="w"> </span><span class="mi">201</span><span class="p">,</span><span class="w"> </span><span class="mi">127</span><span class="p">,</span><span class="w"> </span><span class="mi">109</span><span class="p">,</span><span class="w"> </span><span class="mi">127</span><span class="p">]</span><span class="err">)</span><span class="p">,</span><span class="w"> </span><span class="err">array(</span><span class="p">[</span><span class="mi">236</span><span class="p">,</span><span class="w">  </span><span class="mi">96</span><span class="p">,</span><span class="w"> </span><span class="mi">386</span><span class="p">,</span><span class="w">  </span><span class="mi">96</span><span class="p">,</span><span class="w"> </span><span class="mi">381</span><span class="p">,</span><span class="w"> </span><span class="mi">128</span><span class="p">,</span><span class="w"> </span><span class="mi">230</span><span class="p">,</span><span class="w"> </span><span class="mi">128</span><span class="p">]</span><span class="err">)</span><span class="p">,</span><span class="w"> </span><span class="err">array(</span><span class="p">[</span><span class="mi">413</span><span class="p">,</span><span class="w">  </span><span class="mi">96</span><span class="p">,</span><span class="w"> </span><span class="mi">534</span><span class="p">,</span><span class="w">  </span><span class="mi">95</span><span class="p">,</span><span class="w"> </span><span class="mi">533</span><span class="p">,</span><span class="w"> </span><span class="mi">127</span><span class="p">,</span><span class="w"> </span><span class="mi">408</span><span class="p">,</span><span class="w"> </span><span class="mi">127</span><span class="p">]</span><span class="err">)</span><span class="p">],</span><span class="w"> </span><span class="err">&#39;s</span><span class="kc">tru</span><span class="err">c</span><span class="kc">ture</span><span class="err">&#39;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">&#39;&lt;h</span><span class="kc">t</span><span class="err">ml&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;&lt;body&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;&lt;</span><span class="kc">ta</span><span class="err">ble&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;&lt;</span><span class="kc">tr</span><span class="err">&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;&lt;</span><span class="kc">t</span><span class="err">d&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;</span><span class="w"> </span><span class="err">colspa</span><span class="kc">n</span><span class="err">=</span><span class="s2">&quot;4&quot;</span><span class="err">&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;&lt;/</span><span class="kc">t</span><span class="err">d&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;&lt;/</span><span class="kc">tr</span><span class="err">&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;&lt;</span><span class="kc">tr</span><span class="err">&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;&lt;</span><span class="kc">t</span><span class="err">d&gt;&lt;/</span><span class="kc">t</span><span class="err">d&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;&lt;</span><span class="kc">t</span><span class="err">d&gt;&lt;/</span><span class="kc">t</span><span class="err">d&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;&lt;</span><span class="kc">t</span><span class="err">d&gt;&lt;/</span><span class="kc">t</span><span class="err">d&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;&lt;</span><span class="kc">t</span><span class="err">d&gt;&lt;/</span><span class="kc">t</span><span class="err">d&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;&lt;/</span><span class="kc">tr</span><span class="err">&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;&lt;</span><span class="kc">tr</span><span class="err">&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;&lt;</span><span class="kc">t</span><span class="err">d&gt;&lt;/</span><span class="kc">t</span><span class="err">d&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;&lt;</span><span class="kc">t</span><span class="err">d&gt;&lt;/</span><span class="kc">t</span><span class="err">d&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;&lt;</span><span class="kc">t</span><span class="err">d&gt;&lt;/</span><span class="kc">t</span><span class="err">d&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;&lt;</span><span class="kc">t</span><span class="err">d&gt;&lt;/</span><span class="kc">t</span><span class="err">d&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;&lt;/</span><span class="kc">tr</span><span class="err">&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;&lt;</span><span class="kc">tr</span><span class="err">&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;&lt;</span><span class="kc">t</span><span class="err">d&gt;&lt;/</span><span class="kc">t</span><span class="err">d&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;&lt;</span><span class="kc">t</span><span class="err">d&gt;&lt;/</span><span class="kc">t</span><span class="err">d&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;&lt;</span><span class="kc">t</span><span class="err">d&gt;&lt;/</span><span class="kc">t</span><span class="err">d&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;&lt;</span><span class="kc">t</span><span class="err">d&gt;&lt;/</span><span class="kc">t</span><span class="err">d&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;&lt;/</span><span class="kc">tr</span><span class="err">&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;&lt;/</span><span class="kc">ta</span><span class="err">ble&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;&lt;/body&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;&lt;/h</span><span class="kc">t</span><span class="err">ml&gt;&#39;</span><span class="p">],</span><span class="w"> </span><span class="err">&#39;s</span><span class="kc">tru</span><span class="err">c</span><span class="kc">ture</span><span class="err">_score&#39;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.99948007</span><span class="p">}}</span>
+</span></code></pre></div>
+
+参数含义如下：
+- `input_path`：输入的待预测图像的路径
+- `boxes`：预测的表格单元格信息，一个列表，由预测的若干表格单元格坐标组成。特别地， SLANeXt 系列模型预测的表格单元格无效
+- `structure`：预测的表格结构Html表达式，一个列表，由预测的若干Html关键字按顺序组成
+- `structure_score`：预测表格结构的置信度
+
+</details>
+
+<p>相关方法、参数等说明如下：</p>
+<ul>
+<li><code>create_model</code>实例化表格结构识别模型（此处以<code>SLANet</code>为例），具体说明如下：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>参数说明</th>
+<th>参数类型</th>
+<th>可选项</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tr>
+<td><code>model_name</code></td>
+<td>模型名称</td>
+<td><code>str</code></td>
+<td>所有PaddleX支持的模型名称</td>
+<td>无</td>
+</tr>
+<tr>
+<td><code>model_dir</code></td>
+<td>模型存储路径</td>
+<td><code>str</code></td>
+<td>无</td>
+<td>无</td>
+</tr>
+</table>
+
+<ul>
+<li>
+<p>其中，<code>model_name</code> 必须指定，指定 <code>model_name</code> 后，默认使用 PaddleX 内置的模型参数，在此基础上，指定 <code>model_dir</code> 时，使用用户自定义的模型。</p>
+</li>
+<li>
+<p>调用表格结构识别模型的 <code>predict()</code> 方法进行推理预测，<code>predict()</code> 方法参数有 <code>input</code> 和 <code>batch_size</code>，具体说明如下：</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>参数说明</th>
+<th>参数类型</th>
+<th>可选项</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tr>
+<td><code>input</code></td>
+<td>待预测数据，支持多种输入类型</td>
+<td><code>Python Var</code>/<code>str</code>/<code>dict</code>/<code>list</code></td>
+<td>
+<ul>
+  <li><b>Python变量</b>，如<code>numpy.ndarray</code>表示的图像数据</li>
+  <li><b>文件路径</b>，如图像文件的本地路径：<code>/root/data/img.jpg</code></li>
+  <li><b>URL链接</b>，如图像文件的网络URL：<a href = "https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/table_recognition.jpg">示例</a></li>
+  <li><b>本地目录</b>，该目录下需包含待预测数据文件，如本地路径：<code>/root/data/</code></li>
+  <li><b>字典</b>，字典的<code>key</code>需与具体任务对应，如图像分类任务对应<code>\"img\"</code>，字典的<code>val</code>支持上述类型数据，例如：<code>{\"img\": \"/root/data1\"}</code></li>
+  <li><b>列表</b>，列表元素需为上述类型数据，如<code>[numpy.ndarray, numpy.ndarray]</code>，<code>[\"/root/data/img1.jpg\", \"/root/data/img2.jpg\"]</code>，<code>[\"/root/data1\", \"/root/data2\"]</code>，<code>[{\"img\": \"/root/data1\"}, {\"img\": \"/root/data2/img.jpg\"}]</code></li>
+</ul>
+</td>
+<td>无</td>
+</tr>
+<tr>
+<td><code>batch_size</code></td>
+<td>批大小</td>
+<td><code>int</code></td>
+<td>任意整数</td>
+<td>1</td>
+</tr>
+</table>
+
+<ul>
+<li>对预测结果进行处理，每个样本的预测结果均为对应的Result对象，且支持打印、保存为<code>json</code>文件的操作:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>方法说明</th>
+<th>参数</th>
+<th>参数类型</th>
+<th>参数说明</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tr>
+<td rowspan = "3"><code>print()</code></td>
+<td rowspan = "3">打印结果到终端</td>
+<td><code>format_json</code></td>
+<td><code>bool</code></td>
+<td>是否对输出内容进行使用 <code>JSON</code> 缩进格式化</td>
+<td><code>True</code></td>
+</tr>
+<tr>
+<td><code>indent</code></td>
+<td><code>int</code></td>
+<td>指定缩进级别，以美化输出的 <code>JSON</code> 数据，使其更具可读性，仅当 <code>format_json</code> 为 <code>True</code> 时有效</td>
+<td>4</td>
+</tr>
+<tr>
+<td><code>ensure_ascii</code></td>
+<td><code>bool</code></td>
+<td>控制是否将非 <code>ASCII</code> 字符转义为 <code>Unicode</code>。设置为 <code>True</code> 时，所有非 <code>ASCII</code> 字符将被转义；<code>False</code> 则保留原始字符，仅当<code>format_json</code>为<code>True</code>时有效</td>
+<td><code>False</code></td>
+</tr>
+<tr>
+<td rowspan = "3"><code>save_to_json()</code></td>
+<td rowspan = "3">将结果保存为json格式的文件</td>
+<td><code>save_path</code></td>
+<td><code>str</code></td>
+<td>保存的文件路径，当为目录时，保存文件命名与输入文件类型命名一致</td>
+<td>无</td>
+</tr>
+<tr>
+<td><code>indent</code></td>
+<td><code>int</code></td>
+<td>指定缩进级别，以美化输出的 <code>JSON</code> 数据，使其更具可读性，仅当 <code>format_json</code> 为 <code>True</code> 时有效</td>
+<td>4</td>
+</tr>
+<tr>
+<td><code>ensure_ascii</code></td>
+<td><code>bool</code></td>
+<td>控制是否将非 <code>ASCII</code> 字符转义为 <code>Unicode</code>。设置为 <code>True</code> 时，所有非 <code>ASCII</code> 字符将被转义；<code>False</code> 则保留原始字符，仅当<code>format_json</code>为<code>True</code>时有效</td>
+<td><code>False</code></td>
+</tr>
+
+</table>
+
+<ul>
+<li>此外，也支持通过属性获取带结果的可视化图像，具体如下：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>属性说明</th>
+</tr>
+</thead>
+<tr>
+<td rowspan = "1"><code>json</code></td>
+<td rowspan = "1">获取预测的<code>json</code>格式的结果</td>
+</tr>
+</table>
+
+<p>关于更多 PaddleX 的单模型推理的 API 的使用方法，可以参考<a href="../../instructions/model_python_API.html">PaddleX单模型Python脚本使用说明</a>。</p>
 <h2 id="_5">四、二次开发<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>如果你追求更高精度的现有模型，可以使用 PaddleX 的二次开发能力，开发更好的表格结构识别模型。在使用 PaddleX 开发表格结构识别模型之前，请务必安装 PaddleX 的 PaddleOCR插件，安装过程可以参考 <a href="../../../installation/installation.html">PaddleX本地安装教程</a></p>
 <h3 id="41">4.1 数据准备<a class="headerlink" href="#41" title="Permanent link">&para;</a></h3>
 <p>在进行模型训练前，需要准备相应任务模块的数据集。PaddleX 针对每一个模块提供了数据校验功能，<b>只有通过数据校验的数据才可以进行模型训练</b>。此外，PaddleX 为每一个模块都提供了 Demo 数据集，您可以基于官方提供的 Demo 数据完成后续的开发。若您希望用私有数据集进行后续的模型训练，可以参考<a href="../../../data_annotations/ocr_modules/table_recognition.html">PaddleX表格结构识别任务模块数据标注教程</a></p>
 <h4 id="411-demo">4.1.1 Demo 数据下载<a class="headerlink" href="#411-demo" title="Permanent link">&para;</a></h4>
 <p>您可以参考下面的命令将 Demo 数据集下载到指定文件夹：</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>wget<span class="w"> </span>https://paddle-model-ecology.bj.bcebos.com/paddlex/data/table_rec_dataset_examples.tar<span class="w"> </span>-P<span class="w"> </span>./dataset
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>tar<span class="w"> </span>-xf<span class="w"> </span>./dataset/table_rec_dataset_examples.tar<span class="w"> </span>-C<span class="w"> </span>./dataset/
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>wget<span class="w"> </span>https://paddle-model-ecology.bj.bcebos.com/paddlex/data/table_rec_dataset_examples.tar<span class="w"> </span>-P<span class="w"> </span>./dataset
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>tar<span class="w"> </span>-xf<span class="w"> </span>./dataset/table_rec_dataset_examples.tar<span class="w"> </span>-C<span class="w"> </span>./dataset/
 </span></code></pre></div>
 <h4 id="412">4.1.2 数据校验<a class="headerlink" href="#412" title="Permanent link">&para;</a></h4>
 <p>一行命令即可完成数据校验：</p>
-<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>python<span class="w"> </span>main.py<span class="w"> </span>-c<span class="w"> </span>paddlex/configs/table_recognition/SLANet.yaml<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span>-o<span class="w"> </span>Global.mode<span class="o">=</span>check_dataset<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span>-o<span class="w"> </span>Global.dataset_dir<span class="o">=</span>./dataset/table_rec_dataset_examples
+<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>python<span class="w"> </span>main.py<span class="w"> </span>-c<span class="w"> </span>paddlex/configs/modules/table_structure_recognitionSLANet.yaml<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span>-o<span class="w"> </span>Global.mode<span class="o">=</span>check_dataset<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span>-o<span class="w"> </span>Global.dataset_dir<span class="o">=</span>./dataset/table_rec_dataset_examples
 </span></code></pre></div>
 执行上述命令后，PaddleX 会对数据集进行校验，并统计数据集的基本信息，命令运行成功后会在 log 中打印出<code>Check dataset passed !</code>信息。校验结果文件保存在<code>./output/check_dataset_result.json</code>，同时相关产出会保存在当前目录的<code>./output/check_dataset</code>目录下，产出目录中包括可视化的示例样本图片和样本分布直方图。</p>
 <details><summary>👉 <b>校验结果详情（点击展开）</b></summary>
 
 <p>校验结果文件具体内容为：</p>
-<pre><code class="language-bash">{
-  &quot;done_flag&quot;: true,
-  &quot;check_pass&quot;: true,
-  &quot;attributes&quot;: {
-    &quot;train_samples&quot;: 2000,
-    &quot;train_sample_paths&quot;: [
-      &quot;../dataset/table_rec_dataset_examples/images/border_right_7384_X9UFEPKVMLALY7DDB11A.jpg&quot;,
-      &quot;../dataset/table_rec_dataset_examples/images/border_top_13708_VE2DGBD4DCQU2ITLBTEA.jpg&quot;,
-      &quot;../dataset/table_rec_dataset_examples/images/border_top_6490_14Z6ZN6G52GG4XA0K4XU.jpg&quot;,
-      &quot;../dataset/table_rec_dataset_examples/images/border_top_14236_DG96EX0EDKIIDK8P6ENG.jpg&quot;,
-      &quot;../dataset/table_rec_dataset_examples/images/border_19648_SV8B7X34RTYRAT2T5CPI.jpg&quot;,
-      &quot;../dataset/table_rec_dataset_examples/images/border_bottom_7186_HODBC25HISMCSVKY0HJ9.jpg&quot;,
-      &quot;../dataset/table_rec_dataset_examples/images/head_border_bottom_5773_4K4H9OVK9X9YVHE4Y1BQ.jpg&quot;,
-      &quot;../dataset/table_rec_dataset_examples/images/border_7760_8C62CCH5T57QUGE0NTHZ.jpg&quot;,
-      &quot;../dataset/table_rec_dataset_examples/images/border_bottom_15707_B1YVOU3X4NHHB6TL269O.jpg&quot;,
-      &quot;../dataset/table_rec_dataset_examples/images/no_border_5223_HLG406UK35UD5EUYC2AV.jpg&quot;
-    ],
-    &quot;val_samples&quot;: 100,
-    &quot;val_sample_paths&quot;: [
-      &quot;../dataset/table_rec_dataset_examples/images/border_2945_L7MSRHBZRW6Y347G39O6.jpg&quot;,
-      &quot;../dataset/table_rec_dataset_examples/images/head_border_bottom_4825_LH9WI6X104CP3VFXPSON.jpg&quot;,
-      &quot;../dataset/table_rec_dataset_examples/images/head_border_bottom_16837_79KHWU9WDM9ZQHNBGQAL.jpg&quot;,
-      &quot;../dataset/table_rec_dataset_examples/images/border_bottom_10107_9ENLLC29SQ6XI8WZY53E.jpg&quot;,
-      &quot;../dataset/table_rec_dataset_examples/images/border_top_16668_JIS0YFDZKTKETZIEKCKX.jpg&quot;,
-      &quot;../dataset/table_rec_dataset_examples/images/border_18653_J9SSKHLFTRJD4J8W17OW.jpg&quot;,
-      &quot;../dataset/table_rec_dataset_examples/images/border_bottom_8396_VJ3QJ3I0DP63P4JR77FE.jpg&quot;,
-      &quot;../dataset/table_rec_dataset_examples/images/border_9017_K2V7QBWSU2BA4R3AJSO7.jpg&quot;,
-      &quot;../dataset/table_rec_dataset_examples/images/border_top_19494_SDFMWP92NOB2OT7109FI.jpg&quot;,
-      &quot;../dataset/table_rec_dataset_examples/images/no_border_288_6LK683JUCMOQ38V5BV29.jpg&quot;
-    ]
-  },
-  &quot;analysis&quot;: {},
-  &quot;dataset_path&quot;: &quot;./dataset/table_rec_dataset_examples&quot;,
-  &quot;show_type&quot;: &quot;image&quot;,
-  &quot;dataset_type&quot;: &quot;PubTabTableRecDataset&quot;
-}
-</code></pre>
+
+<div class="language-json highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">&quot;done_flag&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nt">&quot;check_pass&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="nt">&quot;attributes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="nt">&quot;train_samples&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2000</span><span class="p">,</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="nt">&quot;train_sample_paths&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">      </span><span class="s2">&quot;check_dataset\/demo_img\/border_right_7384_X9UFEPKVMLALY7DDB11A.jpg&quot;</span><span class="p">,</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">      </span><span class="s2">&quot;check_dataset\/demo_img\/border_top_13708_VE2DGBD4DCQU2ITLBTEA.jpg&quot;</span><span class="p">,</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">      </span><span class="s2">&quot;check_dataset\/demo_img\/border_top_6490_14Z6ZN6G52GG4XA0K4XU.jpg&quot;</span><span class="p">,</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">      </span><span class="s2">&quot;check_dataset\/demo_img\/border_top_14236_DG96EX0EDKIIDK8P6ENG.jpg&quot;</span><span class="p">,</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">      </span><span class="s2">&quot;check_dataset\/demo_img\/border_19648_SV8B7X34RTYRAT2T5CPI.jpg&quot;</span><span class="p">,</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">      </span><span class="s2">&quot;check_dataset\/demo_img\/border_bottom_7186_HODBC25HISMCSVKY0HJ9.jpg&quot;</span><span class="p">,</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">      </span><span class="s2">&quot;check_dataset\/demo_img\/head_border_bottom_5773_4K4H9OVK9X9YVHE4Y1BQ.jpg&quot;</span><span class="p">,</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">      </span><span class="s2">&quot;check_dataset\/demo_img\/border_7760_8C62CCH5T57QUGE0NTHZ.jpg&quot;</span><span class="p">,</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">      </span><span class="s2">&quot;check_dataset\/demo_img\/border_bottom_15707_B1YVOU3X4NHHB6TL269O.jpg&quot;</span><span class="p">,</span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">      </span><span class="s2">&quot;check_dataset\/demo_img\/no_border_5223_HLG406UK35UD5EUYC2AV.jpg&quot;</span>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">    </span><span class="p">],</span>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w">    </span><span class="nt">&quot;val_samples&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span>
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w">    </span><span class="nt">&quot;val_sample_paths&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="w">      </span><span class="s2">&quot;check_dataset\/demo_img\/border_2945_L7MSRHBZRW6Y347G39O6.jpg&quot;</span><span class="p">,</span>
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="w">      </span><span class="s2">&quot;check_dataset\/demo_img\/head_border_bottom_4825_LH9WI6X104CP3VFXPSON.jpg&quot;</span><span class="p">,</span>
+</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="w">      </span><span class="s2">&quot;check_dataset\/demo_img\/head_border_bottom_16837_79KHWU9WDM9ZQHNBGQAL.jpg&quot;</span><span class="p">,</span>
+</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="w">      </span><span class="s2">&quot;check_dataset\/demo_img\/border_bottom_10107_9ENLLC29SQ6XI8WZY53E.jpg&quot;</span><span class="p">,</span>
+</span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="w">      </span><span class="s2">&quot;check_dataset\/demo_img\/border_top_16668_JIS0YFDZKTKETZIEKCKX.jpg&quot;</span><span class="p">,</span>
+</span><span id="__span-4-24"><a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a><span class="w">      </span><span class="s2">&quot;check_dataset\/demo_img\/border_18653_J9SSKHLFTRJD4J8W17OW.jpg&quot;</span><span class="p">,</span>
+</span><span id="__span-4-25"><a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a><span class="w">      </span><span class="s2">&quot;check_dataset\/demo_img\/border_bottom_8396_VJ3QJ3I0DP63P4JR77FE.jpg&quot;</span><span class="p">,</span>
+</span><span id="__span-4-26"><a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a><span class="w">      </span><span class="s2">&quot;check_dataset\/demo_img\/border_9017_K2V7QBWSU2BA4R3AJSO7.jpg&quot;</span><span class="p">,</span>
+</span><span id="__span-4-27"><a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a><span class="w">      </span><span class="s2">&quot;check_dataset\/demo_img\/border_top_19494_SDFMWP92NOB2OT7109FI.jpg&quot;</span><span class="p">,</span>
+</span><span id="__span-4-28"><a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a><span class="w">      </span><span class="s2">&quot;check_dataset\/demo_img\/no_border_288_6LK683JUCMOQ38V5BV29.jpg&quot;</span>
+</span><span id="__span-4-29"><a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-4-30"><a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a><span class="w">  </span><span class="p">},</span>
+</span><span id="__span-4-31"><a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a><span class="w">  </span><span class="nt">&quot;analysis&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
+</span><span id="__span-4-32"><a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a><span class="w">  </span><span class="nt">&quot;dataset_path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;table_rec_dataset_examples&quot;</span><span class="p">,</span>
+</span><span id="__span-4-33"><a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a><span class="w">  </span><span class="nt">&quot;show_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;image&quot;</span><span class="p">,</span>
+</span><span id="__span-4-34"><a id="__codelineno-4-34" name="__codelineno-4-34" href="#__codelineno-4-34"></a><span class="w">  </span><span class="nt">&quot;dataset_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PubTabTableRecDataset&quot;</span>
+</span></code></pre></div>
+
 <p>上述校验结果中，check_pass 为 True 表示数据集格式符合要求，其他部分指标的说明如下：</p>
 <ul>
 <li><code>attributes.train_samples</code>：该数据集训练集样本数量为 2000；</li>
@@ -4653,13 +5679,13 @@ CheckDataset:
   ......
 </code></pre>
 <p>随后执行命令：</p>
-<pre><code class="language-bash">python main.py -c paddlex/configs/table_recognition/SLANet.yaml \
+<pre><code class="language-bash">python main.py -c paddlex/configs/modules/table_structure_recognitionSLANet.yaml \
     -o Global.mode=check_dataset \
     -o Global.dataset_dir=./dataset/table_rec_dataset_examples
 </code></pre>
 <p>数据划分执行之后，原有标注文件会被在原路径下重命名为 <code>xxx.bak</code>。</p>
 <p>以上参数同样支持通过追加命令行参数的方式进行设置：</p>
-<pre><code class="language-bash">python main.py -c paddlex/configs/table_recognition/SLANet.yaml \
+<pre><code class="language-bash">python main.py -c paddlex/configs/modules/table_structure_recognitionSLANet.yaml \
     -o Global.mode=check_dataset \
     -o Global.dataset_dir=./dataset/table_rec_dataset_examples \
     -o CheckDataset.split.enable=True \
@@ -4669,9 +5695,9 @@ CheckDataset:
 
 <h3 id="42">4.2 模型训练<a class="headerlink" href="#42" title="Permanent link">&para;</a></h3>
 <p>一条命令即可完成模型的训练，以此处表格结构识别模型 SLANet 的训练为例：</p>
-<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>python<span class="w"> </span>main.py<span class="w"> </span>-c<span class="w"> </span>paddlex/configs/table_recognition/SLANet.yaml<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span>-o<span class="w"> </span>Global.mode<span class="o">=</span>train<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span>-o<span class="w"> </span>Global.dataset_dir<span class="o">=</span>./dataset/table_rec_dataset_examples
+<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>python<span class="w"> </span>main.py<span class="w"> </span>-c<span class="w"> </span>paddlex/configs/modules/table_structure_recognitionSLANet.yaml<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span>-o<span class="w"> </span>Global.mode<span class="o">=</span>train<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span>-o<span class="w"> </span>Global.dataset_dir<span class="o">=</span>./dataset/table_rec_dataset_examples
 </span></code></pre></div>
 需要如下几步：</p>
 <ul>
@@ -4694,13 +5720,14 @@ CheckDataset:
 <li><code>train.log</code>：训练日志文件，记录了训练过程中的模型指标变化、loss 变化等；</li>
 <li><code>config.yaml</code>：训练配置文件，记录了本次训练的超参数的配置；</li>
 <li><code>.pdparams</code>、<code>.pdema</code>、<code>.pdopt.pdstate</code>、<code>.pdiparams</code>、<code>.pdmodel</code>：模型权重相关文件，包括网络参数、优化器、EMA、静态图网络参数、静态图网络结构等；</li>
+<li>特别地，SLANeXt 系列模型默认仅对表格结构识别进行训练，并不会同时对单元格定位进行训练。</li>
 </ul></details>
 
 <h3 id="43"><b>4.3 模型评估</b><a class="headerlink" href="#43" title="Permanent link">&para;</a></h3>
 <p>在完成模型训练后，可以对指定的模型权重文件在验证集上进行评估，验证模型精度。使用 PaddleX 进行模型评估，一条命令即可完成模型的评估：</p>
-<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>python<span class="w"> </span>main.py<span class="w"> </span>-c<span class="w"> </span>paddlex/configs/table_recognition/SLANet.yaml<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span>-o<span class="w"> </span>Global.mode<span class="o">=</span>evaluate<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span>-o<span class="w"> </span>Global.dataset_dir<span class="o">=</span>./dataset/table_rec_dataset_examples
+<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>python<span class="w"> </span>main.py<span class="w"> </span>-c<span class="w"> </span>paddlex/configs/modules/table_structure_recognitionSLANet.yaml<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span>-o<span class="w"> </span>Global.mode<span class="o">=</span>evaluate<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span>-o<span class="w"> </span>Global.dataset_dir<span class="o">=</span>./dataset/table_rec_dataset_examples
 </span></code></pre></div>
 与模型训练类似，需要如下几步：</p>
 <ul>
@@ -4720,10 +5747,10 @@ CheckDataset:
 <ul>
 <li>
 <p>通过命令行的方式进行推理预测，只需如下一条命令。运行以下代码前，请您下载<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/table_recognition.jpg">示例图片</a>到本地。
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>python<span class="w"> </span>main.py<span class="w"> </span>-c<span class="w"> </span>paddlex/configs/table_recognition/SLANet.yaml<span class="w">  </span><span class="se">\</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span>-o<span class="w"> </span>Global.mode<span class="o">=</span>predict<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span>-o<span class="w"> </span>Predict.model_dir<span class="o">=</span><span class="s2">&quot;./output/best_accuracy/inference&quot;</span><span class="w"> </span><span class="se">\</span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span>-o<span class="w"> </span>Predict.input<span class="o">=</span><span class="s2">&quot;table_recognition.jpg&quot;</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>python<span class="w"> </span>main.py<span class="w"> </span>-c<span class="w"> </span>paddlex/configs/modules/table_structure_recognitionSLANet.yaml<span class="w">  </span><span class="se">\</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span>-o<span class="w"> </span>Global.mode<span class="o">=</span>predict<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span>-o<span class="w"> </span>Predict.model_dir<span class="o">=</span><span class="s2">&quot;./output/best_accuracy/inference&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span>-o<span class="w"> </span>Predict.input<span class="o">=</span><span class="s2">&quot;table_recognition.jpg&quot;</span>
 </span></code></pre></div>
 与模型训练和评估类似，需要如下几步：</p>
 </li>
@@ -4739,13 +5766,9 @@ CheckDataset:
 <h4 id="442">4.4.2 模型集成<a class="headerlink" href="#442" title="Permanent link">&para;</a></h4>
 <p>模型可以直接集成到 PaddleX 产线中，也可以直接集成到您自己的项目中。</p>
 <p>1.<b>产线集成</b></p>
-<p>表格结构识别模块可以集成的PaddleX产线有<a href="../../../pipeline_usage/tutorials/ocr_pipelines/table_recognition.html">通用表格识别产线</a>、<a href="../../../pipeline_usage/tutorials/information_extraction_pipelines/document_scene_information_extraction.html">文档场景信息抽取v3产线（PP-ChatOCRv3）</a>，只需要替换模型路径即可完成相关产线的表格结构识别模块的模型更新。在产线集成中，你可以使用高性能部署和服务化部署来部署你得到的模型。</p>
+<p>表格结构识别模块可以集成的PaddleX产线有<a href="../../../pipeline_usage/tutorials/ocr_pipelines/table_recognition.html">通用表格识别产线</a>、<a href="../../../pipeline_usage/tutorials/information_extraction_pipelines/document_scene_information_extraction.html">文档场景信息抽取v3产线（PP-ChatOCRv3）</a>，只需要替换模型路径即可完成相关产线的表格结构识别模块的模型更新，具体对应关系详见产线文档。在产线集成中，你可以使用高性能部署和服务化部署来部署你得到的模型。</p>
 <p>2.<b>模块集成</b></p>
 <p>您产出的权重可以直接集成到表格结构识别模块中，可以参考<a href="#三快速集成">快速集成</a>的 Python 示例代码，只需要将模型替换为你训练的到的模型路径即可。</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>关于我们项目的一些常见问题解答，请参考<a href="../../../FAQ.html">FAQ</a>。如果您的问题没有得到解答，请随时在 <a href="https://github.com/PaddlePaddle/PaddleX/issues">Issues</a> 中提出。</p>
-</div>
 
 
 
@@ -4768,7 +5791,7 @@ CheckDataset:
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年12月13日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2025年2月6日</span>
   </span>
 
     
@@ -4778,7 +5801,7 @@ CheckDataset:
     <span class="md-icon" title="创建日期">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年12月13日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2025年2月6日</span>
   </span>
 
     
@@ -4901,13 +5924,13 @@ CheckDataset:
         
         
           
-          <a href="doc_img_orientation_classification.html" class="md-footer__link md-footer__link--next" aria-label="下一页: 文档图像方向分类">
+          <a href="table_cells_detection.html" class="md-footer__link md-footer__link--next" aria-label="下一页: 表格单元格检测模块">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                文档图像方向分类
+                表格单元格检测模块
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -4941,7 +5964,7 @@ CheckDataset:
       
     
     <a href="https://github.com/PaddlePaddle/PaddleX" target="_blank" rel="noopener" title="github.com" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
     </a>
   
 </div>
@@ -4956,10 +5979,10 @@ CheckDataset:
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "navigation.expand", "navigation.path", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": {"provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "navigation.expand", "navigation.path", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.f13b1293.min.js"></script>
       
         <script src="../../../javascripts/katex.min.js"></script>
       

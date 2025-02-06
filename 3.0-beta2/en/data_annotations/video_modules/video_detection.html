@@ -8,26 +8,24 @@
       
       
       
-      
-        <link rel="prev" href="high_performance_inference.html">
-      
-      
-        <link rel="next" href="edge_deploy.html">
+        <link rel="canonical" href="https://amberc0209.github.io/PaddleX/3.0-beta2/en/data_annotations/video_modules/video_detection.html">
       
       
-      <link rel="icon" href="../../assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.48">
+      
+      
+      <link rel="icon" href="../../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.2">
     
     
       
-        <title>Service Deploy - PaddleX Documentation</title>
+        <title>PaddleX Video Detection Task Module Data Annotation Tutorial - PaddleX Documentation</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.6f8fc17f.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.d7758b05.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -50,7 +48,7 @@
     
       <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -86,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#paddlex-serving-deployment-guide" class="md-skip">
+        <a href="#paddlex-video-detection-task-module-data-annotation-tutorial" class="md-skip">
           Skip to content
         </a>
       
@@ -101,12 +99,12 @@
             <div class="md-banner__inner md-grid md-typeset">
               
 You're not viewing the latest version.
-<a href="../../..">
+<a href="../../../..">
     <strong>Click here to go to latest.</strong>
 </a>
 
             </div>
-            <script>var el=document.querySelector("[data-md-component=outdated]"),outdated=__md_get("__outdated",sessionStorage);!0===outdated&&el&&(el.hidden=!1)</script>
+            <script>var el=document.querySelector("[data-md-component=outdated]"),base=new URL("../../.."),outdated=__md_get("__outdated",sessionStorage,base);!0===outdated&&el&&(el.hidden=!1)</script>
           </aside>
         
       </div>
@@ -118,7 +116,7 @@ You're not viewing the latest version.
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../index.html" title="PaddleX Documentation" class="md-header__button md-logo" aria-label="PaddleX Documentation" data-md-component="logo">
+    <a href="../../index.html" title="PaddleX Documentation" class="md-header__button md-logo" aria-label="PaddleX Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
@@ -143,7 +141,7 @@ You're not viewing the latest version.
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Service Deploy
+              PaddleX Video Detection Task Module Data Annotation Tutorial
             
           </span>
         </div>
@@ -190,13 +188,13 @@ You're not viewing the latest version.
       <ul class="md-select__list">
         
           <li class="md-select__item">
-            <a href="../../pipeline_deploy/service_deploy.html" hreflang="zh" class="md-select__link">
+            <a href="../../../data_annotations/video_modules/video_detection.html" hreflang="zh" class="md-select__link">
               简体中文
             </a>
           </li>
         
           <li class="md-select__item">
-            <a href="service_deploy.html" hreflang="en" class="md-select__link">
+            <a href="video_detection.html" hreflang="en" class="md-select__link">
               English
             </a>
           </li>
@@ -256,7 +254,7 @@ You're not viewing the latest version.
         <a href="https://github.com/AmberC0209/PaddleX" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -277,7 +275,7 @@ You're not viewing the latest version.
   
   
     <li class="md-tabs__item">
-      <a href="../index.html" class="md-tabs__link">
+      <a href="../../index.html" class="md-tabs__link">
         
   
     
@@ -296,7 +294,7 @@ You're not viewing the latest version.
     
     
       <li class="md-tabs__item">
-        <a href="../installation/paddlepaddle_install.html" class="md-tabs__link">
+        <a href="../../installation/paddlepaddle_install.html" class="md-tabs__link">
           
   
     
@@ -316,7 +314,7 @@ You're not viewing the latest version.
     
     
       <li class="md-tabs__item">
-        <a href="../pipeline_usage/pipeline_develop_guide.html" class="md-tabs__link">
+        <a href="../../pipeline_usage/pipeline_develop_guide.html" class="md-tabs__link">
           
   
     
@@ -342,7 +340,7 @@ You're not viewing the latest version.
     
     
       <li class="md-tabs__item">
-        <a href="../module_usage/tutorials/ocr_modules/text_detection.html" class="md-tabs__link">
+        <a href="../../module_usage/tutorials/ocr_modules/text_detection.html" class="md-tabs__link">
           
   
     
@@ -361,13 +359,11 @@ You're not viewing the latest version.
         
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="high_performance_inference.html" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../pipeline_deploy/high_performance_inference.html" class="md-tabs__link">
           
   
     
@@ -387,7 +383,7 @@ You're not viewing the latest version.
     
     
       <li class="md-tabs__item">
-        <a href="../other_devices_support/multi_devices_use_guide.html" class="md-tabs__link">
+        <a href="../../other_devices_support/multi_devices_use_guide.html" class="md-tabs__link">
           
   
     
@@ -413,7 +409,7 @@ You're not viewing the latest version.
     
     
       <li class="md-tabs__item">
-        <a href="../data_annotations/cv_modules/image_classification.html" class="md-tabs__link">
+        <a href="../cv_modules/image_classification.html" class="md-tabs__link">
           
   
     
@@ -436,7 +432,7 @@ You're not viewing the latest version.
     
     
       <li class="md-tabs__item">
-        <a href="../support_list/pipelines_list.html" class="md-tabs__link">
+        <a href="../../support_list/pipelines_list.html" class="md-tabs__link">
           
   
     
@@ -456,7 +452,7 @@ You're not viewing the latest version.
     
     
       <li class="md-tabs__item">
-        <a href="../support_list/models_list.html" class="md-tabs__link">
+        <a href="../../support_list/models_list.html" class="md-tabs__link">
           
   
     
@@ -476,7 +472,7 @@ You're not viewing the latest version.
     
     
       <li class="md-tabs__item">
-        <a href="../practical_tutorials/document_scene_information_extraction%28layout_detection%29_tutorial.html" class="md-tabs__link">
+        <a href="../../practical_tutorials/document_scene_information_extraction%28layout_detection%29_tutorial.html" class="md-tabs__link">
           
   
     
@@ -494,7 +490,7 @@ You're not viewing the latest version.
   
   
     <li class="md-tabs__item">
-      <a href="../FAQ.html" class="md-tabs__link">
+      <a href="../../FAQ.html" class="md-tabs__link">
         
   
     
@@ -511,7 +507,7 @@ You're not viewing the latest version.
   
   
     <li class="md-tabs__item">
-      <a href="../CHANGLOG.html" class="md-tabs__link">
+      <a href="../../CHANGLOG.html" class="md-tabs__link">
         
   
     
@@ -551,7 +547,7 @@ You're not viewing the latest version.
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../index.html" title="PaddleX Documentation" class="md-nav__button md-logo" aria-label="PaddleX Documentation" data-md-component="logo">
+    <a href="../../index.html" title="PaddleX Documentation" class="md-nav__button md-logo" aria-label="PaddleX Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
@@ -569,7 +565,7 @@ You're not viewing the latest version.
       <a href="https://github.com/AmberC0209/PaddleX" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -586,11 +582,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../index.html" class="md-nav__link">
+      <a href="../../index.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Home
+    
   </span>
   
 
@@ -634,6 +631,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Installation
+    
   </span>
   
 
@@ -654,11 +652,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../installation/paddlepaddle_install.html" class="md-nav__link">
+      <a href="../../installation/paddlepaddle_install.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     PaddlePaddle Install
+    
   </span>
   
 
@@ -675,11 +674,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../installation/installation.html" class="md-nav__link">
+      <a href="../../installation/installation.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     PaddleX Install
+    
   </span>
   
 
@@ -717,6 +717,10 @@ You're not viewing the latest version.
       
         
       
+        
+      
+        
+      
     
     
       
@@ -739,6 +743,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Pipeline Tutorials
+    
   </span>
   
 
@@ -759,11 +764,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../pipeline_usage/pipeline_develop_guide.html" class="md-nav__link">
+      <a href="../../pipeline_usage/pipeline_develop_guide.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Overview
+    
   </span>
   
 
@@ -806,6 +812,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Informatio Extraction
+    
   </span>
   
 
@@ -826,11 +833,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../pipeline_usage/tutorials/information_extraction_pipelines/document_scene_information_extraction.html" class="md-nav__link">
+      <a href="../../pipeline_usage/tutorials/information_extraction_pipelines/document_scene_information_extraction.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     PP-ChatOCRv3-doc
+    
   </span>
   
 
@@ -856,6 +864,12 @@ You're not viewing the latest version.
   
     
     
+      
+        
+      
+        
+      
+        
       
         
       
@@ -889,6 +903,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     OCR
+    
   </span>
   
 
@@ -909,11 +924,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../pipeline_usage/tutorials/ocr_pipelines/OCR.html" class="md-nav__link">
+      <a href="../../pipeline_usage/tutorials/ocr_pipelines/OCR.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     OCR
+    
   </span>
   
 
@@ -930,11 +946,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../pipeline_usage/tutorials/ocr_pipelines/table_recognition.html" class="md-nav__link">
+      <a href="../../pipeline_usage/tutorials/ocr_pipelines/table_recognition.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    General Table Recognition
+    通用表格识别产线
+    
   </span>
   
 
@@ -951,11 +968,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../pipeline_usage/tutorials/ocr_pipelines/layout_parsing.html" class="md-nav__link">
+      <a href="../../pipeline_usage/tutorials/ocr_pipelines/table_recognition_v2.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    General Layout Parsing
+    通用表格识别v2产线
+    
   </span>
   
 
@@ -972,11 +990,56 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../pipeline_usage/tutorials/ocr_pipelines/formula_recognition.html" class="md-nav__link">
+      <a href="../../pipeline_usage/tutorials/ocr_pipelines/layout_parsing_v2.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    通用版面解析产线
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pipeline_usage/tutorials/ocr_pipelines/layout_parsing.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    通用版面解析v2产线
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pipeline_usage/tutorials/ocr_pipelines/formula_recognition.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Formula Recognition
+    
   </span>
   
 
@@ -993,11 +1056,34 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../pipeline_usage/tutorials/ocr_pipelines/seal_recognition.html" class="md-nav__link">
+      <a href="../../pipeline_usage/tutorials/ocr_pipelines/seal_recognition.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Seal Recognition
+    印章文本识别产线
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pipeline_usage/tutorials/ocr_pipelines/doc_preprocessor.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    文档图像预处理产线
+    
   </span>
   
 
@@ -1023,6 +1109,16 @@ You're not viewing the latest version.
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
       
         
       
@@ -1068,6 +1164,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Computer Vision
+    
   </span>
   
 
@@ -1088,11 +1185,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../pipeline_usage/tutorials/cv_pipelines/image_classification.html" class="md-nav__link">
+      <a href="../../pipeline_usage/tutorials/cv_pipelines/image_classification.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     General Image Classification
+    
   </span>
   
 
@@ -1109,11 +1207,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../pipeline_usage/tutorials/cv_pipelines/object_detection.html" class="md-nav__link">
+      <a href="../../pipeline_usage/tutorials/cv_pipelines/object_detection.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     General Object Detection
+    
   </span>
   
 
@@ -1130,11 +1229,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../pipeline_usage/tutorials/cv_pipelines/instance_segmentation.html" class="md-nav__link">
+      <a href="../../pipeline_usage/tutorials/cv_pipelines/instance_segmentation.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     General Instance Segmentation
+    
   </span>
   
 
@@ -1151,11 +1251,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../pipeline_usage/tutorials/cv_pipelines/semantic_segmentation.html" class="md-nav__link">
+      <a href="../../pipeline_usage/tutorials/cv_pipelines/semantic_segmentation.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     General Semantic Segmentation
+    
   </span>
   
 
@@ -1172,11 +1273,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../pipeline_usage/tutorials/cv_pipelines/image_multi_label_classification.html" class="md-nav__link">
+      <a href="../../pipeline_usage/tutorials/cv_pipelines/image_multi_label_classification.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Image Multi-label Classification
+    
   </span>
   
 
@@ -1193,11 +1295,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../pipeline_usage/tutorials/cv_pipelines/small_object_detection.html" class="md-nav__link">
+      <a href="../../pipeline_usage/tutorials/cv_pipelines/small_object_detection.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Small Object Detection
+    
   </span>
   
 
@@ -1214,11 +1317,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../pipeline_usage/tutorials/cv_pipelines/image_anomaly_detection.html" class="md-nav__link">
+      <a href="../../pipeline_usage/tutorials/cv_pipelines/image_anomaly_detection.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Image Anomaly Detection
+    
   </span>
   
 
@@ -1235,11 +1339,122 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../pipeline_usage/tutorials/cv_pipelines/general_image_recognition.html" class="md-nav__link">
+      <a href="../../pipeline_usage/tutorials/cv_pipelines/3d_bev_detection.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3D Multi-modal Fusion Detection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pipeline_usage/tutorials/cv_pipelines/human_keypoint_detection.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Human Keypoint Detection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pipeline_usage/tutorials/cv_pipelines/open_vocabulary_detection.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Open Vocabulary Detection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pipeline_usage/tutorials/cv_pipelines/open_vocabulary_segmentation.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Open Vocabulary Segmentation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pipeline_usage/tutorials/cv_pipelines/rotated_object_detection.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rotated Object Detection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pipeline_usage/tutorials/cv_pipelines/general_image_recognition.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Image Feature
+    
   </span>
   
 
@@ -1256,11 +1471,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../pipeline_usage/tutorials/cv_pipelines/pedestrian_attribute_recognition.html" class="md-nav__link">
+      <a href="../../pipeline_usage/tutorials/cv_pipelines/pedestrian_attribute_recognition.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Pedestrian Attribute Recognition
+    
   </span>
   
 
@@ -1277,11 +1493,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../pipeline_usage/tutorials/cv_pipelines/vehicle_attribute_recognition.html" class="md-nav__link">
+      <a href="../../pipeline_usage/tutorials/cv_pipelines/vehicle_attribute_recognition.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Vehicle Attribute Recognition
+    
   </span>
   
 
@@ -1298,11 +1515,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../pipeline_usage/tutorials/cv_pipelines/face_recognition.html" class="md-nav__link">
+      <a href="../../pipeline_usage/tutorials/cv_pipelines/face_recognition.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Face Feature
+    
   </span>
   
 
@@ -1357,6 +1575,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Time Series Analysis
+    
   </span>
   
 
@@ -1377,11 +1596,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../pipeline_usage/tutorials/time_series_pipelines/time_series_forecasting.html" class="md-nav__link">
+      <a href="../../pipeline_usage/tutorials/time_series_pipelines/time_series_forecasting.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Time Series Forecasting
+    
   </span>
   
 
@@ -1398,11 +1618,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../pipeline_usage/tutorials/time_series_pipelines/time_series_anomaly_detection.html" class="md-nav__link">
+      <a href="../../pipeline_usage/tutorials/time_series_pipelines/time_series_anomaly_detection.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Time Series Anomaly Detection
+    
   </span>
   
 
@@ -1419,11 +1640,89 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../pipeline_usage/tutorials/time_series_pipelines/time_series_classification.html" class="md-nav__link">
+      <a href="../../pipeline_usage/tutorials/time_series_pipelines/time_series_classification.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Time Series Classification
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Speech
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            Speech
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pipeline_usage/tutorials/speech_pipelines/multilingual_speech_recognition.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Multilingual Speech Recognition
+    
   </span>
   
 
@@ -1468,22 +1767,124 @@ You're not viewing the latest version.
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_6" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_7" >
         
           
-          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
             
   
   <span class="md-ellipsis">
-    Instructions
+    Video
+    
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_6">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            Video
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pipeline_usage/tutorials/video_pipelines/video_classification.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    General Video Classification
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pipeline_usage/tutorials/video_pipelines/video_detection.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    General Video Detection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Instructions
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_8">
             <span class="md-nav__icon md-icon"></span>
             Instructions
           </label>
@@ -1496,11 +1897,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../pipeline_usage/instructions/pipeline_CLI_usage.html" class="md-nav__link">
+      <a href="../../pipeline_usage/instructions/pipeline_CLI_usage.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     PaddleX Pipeline CLI Usage
+    
   </span>
   
 
@@ -1517,11 +1919,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../pipeline_usage/instructions/pipeline_python_API.html" class="md-nav__link">
+      <a href="../../pipeline_usage/instructions/pipeline_python_API.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     PaddleX Pipeline Python API Usage
+    
   </span>
   
 
@@ -1554,6 +1957,10 @@ You're not viewing the latest version.
   
     
     
+      
+        
+      
+        
       
         
       
@@ -1591,6 +1998,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Module Tutorials
+    
   </span>
   
 
@@ -1612,6 +2020,12 @@ You're not viewing the latest version.
   
     
     
+      
+        
+      
+        
+      
+        
       
         
       
@@ -1651,6 +2065,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     OCR
+    
   </span>
   
 
@@ -1671,11 +2086,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../module_usage/tutorials/ocr_modules/text_detection.html" class="md-nav__link">
+      <a href="../../module_usage/tutorials/ocr_modules/text_detection.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Text Detection
+    
   </span>
   
 
@@ -1692,11 +2108,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../module_usage/tutorials/ocr_modules/seal_text_detection.html" class="md-nav__link">
+      <a href="../../module_usage/tutorials/ocr_modules/seal_text_detection.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Seal Detection
+    
   </span>
   
 
@@ -1713,11 +2130,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../module_usage/tutorials/ocr_modules/text_recognition.html" class="md-nav__link">
+      <a href="../../module_usage/tutorials/ocr_modules/text_recognition.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Text Recognition
+    
   </span>
   
 
@@ -1734,11 +2152,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../module_usage/tutorials/ocr_modules/layout_detection.html" class="md-nav__link">
+      <a href="../../module_usage/tutorials/ocr_modules/layout_detection.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Layout Parsing
+    
   </span>
   
 
@@ -1755,11 +2174,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../module_usage/tutorials/ocr_modules/table_structure_recognition.html" class="md-nav__link">
+      <a href="../../module_usage/tutorials/ocr_modules/table_structure_recognition.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Table Structure Recognition
+    
   </span>
   
 
@@ -1776,11 +2196,56 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../module_usage/tutorials/ocr_modules/doc_img_orientation_classification.html" class="md-nav__link">
+      <a href="../../module_usage/tutorials/ocr_modules/table_cells_detection.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Table Cell Detection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module_usage/tutorials/ocr_modules/table_classification.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Table Classification
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module_usage/tutorials/ocr_modules/doc_img_orientation_classification.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Document Image Orientation Classification
+    
   </span>
   
 
@@ -1797,11 +2262,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../module_usage/tutorials/ocr_modules/text_image_unwarping.html" class="md-nav__link">
+      <a href="../../module_usage/tutorials/ocr_modules/text_image_unwarping.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Text Image Unwarping
+    
   </span>
   
 
@@ -1818,11 +2284,34 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../module_usage/tutorials/ocr_modules/formula_recognition.html" class="md-nav__link">
+      <a href="../../module_usage/tutorials/ocr_modules/textline_orientation_classification.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Text Line Orientation Classification
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module_usage/tutorials/ocr_modules/formula_recognition.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Formula Recognition
+    
   </span>
   
 
@@ -1879,6 +2368,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Image Classification
+    
   </span>
   
 
@@ -1899,11 +2389,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../module_usage/tutorials/cv_modules/image_classification.html" class="md-nav__link">
+      <a href="../../module_usage/tutorials/cv_modules/image_classification.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Image Classification
+    
   </span>
   
 
@@ -1920,11 +2411,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../module_usage/tutorials/cv_modules/image_multilabel_classification.html" class="md-nav__link">
+      <a href="../../module_usage/tutorials/cv_modules/image_multilabel_classification.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Image Multi-label Classification
+    
   </span>
   
 
@@ -1941,11 +2433,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../module_usage/tutorials/cv_modules/pedestrian_attribute_recognition.html" class="md-nav__link">
+      <a href="../../module_usage/tutorials/cv_modules/pedestrian_attribute_recognition.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Pedestrian Attribute Recognition
+    
   </span>
   
 
@@ -1962,11 +2455,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../module_usage/tutorials/cv_modules/vehicle_attribute_recognition.html" class="md-nav__link">
+      <a href="../../module_usage/tutorials/cv_modules/vehicle_attribute_recognition.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Vehicle Attribute Recognition
+    
   </span>
   
 
@@ -2019,6 +2513,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Image Features
+    
   </span>
   
 
@@ -2039,11 +2534,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../module_usage/tutorials/cv_modules/image_feature.html" class="md-nav__link">
+      <a href="../../module_usage/tutorials/cv_modules/image_feature.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Image Feature
+    
   </span>
   
 
@@ -2060,11 +2556,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../module_usage/tutorials/cv_modules/face_feature.html" class="md-nav__link">
+      <a href="../../module_usage/tutorials/cv_modules/face_feature.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     人脸特征模块
+    
   </span>
   
 
@@ -2090,6 +2587,10 @@ You're not viewing the latest version.
   
     
     
+      
+        
+      
+        
       
         
       
@@ -2125,6 +2626,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Object Detection
+    
   </span>
   
 
@@ -2145,11 +2647,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../module_usage/tutorials/cv_modules/object_detection.html" class="md-nav__link">
+      <a href="../../module_usage/tutorials/cv_modules/object_detection.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Object Detection
+    
   </span>
   
 
@@ -2166,11 +2669,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../module_usage/tutorials/cv_modules/small_object_detection.html" class="md-nav__link">
+      <a href="../../module_usage/tutorials/cv_modules/small_object_detection.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Small Object Detection
+    
   </span>
   
 
@@ -2187,11 +2691,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../module_usage/tutorials/cv_modules/face_detection.html" class="md-nav__link">
+      <a href="../../module_usage/tutorials/cv_modules/face_detection.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Face Detection
+    
   </span>
   
 
@@ -2208,11 +2713,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../module_usage/tutorials/cv_modules/mainbody_detection.html" class="md-nav__link">
+      <a href="../../module_usage/tutorials/cv_modules/mainbody_detection.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Main Body Detection
+    
   </span>
   
 
@@ -2229,11 +2735,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../module_usage/tutorials/cv_modules/human_detection.html" class="md-nav__link">
+      <a href="../../module_usage/tutorials/cv_modules/human_detection.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Human Detection
+    
   </span>
   
 
@@ -2250,11 +2757,56 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../module_usage/tutorials/cv_modules/vehicle_detection.html" class="md-nav__link">
+      <a href="../../module_usage/tutorials/cv_modules/vehicle_detection.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Vehicle Detection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module_usage/tutorials/cv_modules/human_keypoint_detection.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Human Keypoint Detection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module_usage/tutorials/cv_modules/open_vocabulary_detection.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Open-Vocabulary Object Detection
+    
   </span>
   
 
@@ -2287,6 +2839,8 @@ You're not viewing the latest version.
       
         
       
+        
+      
     
     
       
@@ -2309,6 +2863,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Image Segmentation
+    
   </span>
   
 
@@ -2329,11 +2884,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../module_usage/tutorials/cv_modules/semantic_segmentation.html" class="md-nav__link">
+      <a href="../../module_usage/tutorials/cv_modules/semantic_segmentation.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Semantic Segmentation
+    
   </span>
   
 
@@ -2350,11 +2906,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../module_usage/tutorials/cv_modules/instance_segmentation.html" class="md-nav__link">
+      <a href="../../module_usage/tutorials/cv_modules/instance_segmentation.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Instance Segmentation
+    
   </span>
   
 
@@ -2371,11 +2928,34 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../module_usage/tutorials/cv_modules/anomaly_detection.html" class="md-nav__link">
+      <a href="../../module_usage/tutorials/cv_modules/anomaly_detection.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Image Anomaly Detection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module_usage/tutorials/cv_modules/open_vocabulary_segmentation.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Open-Vocabulary Segmentation
+    
   </span>
   
 
@@ -2430,6 +3010,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Time Series Analysis
+    
   </span>
   
 
@@ -2450,11 +3031,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../module_usage/tutorials/time_series_modules/time_series_forecasting.html" class="md-nav__link">
+      <a href="../../module_usage/tutorials/time_series_modules/time_series_forecasting.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Time Series Forecasting
+    
   </span>
   
 
@@ -2471,11 +3053,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../module_usage/tutorials/time_series_modules/time_series_anomaly_detection.html" class="md-nav__link">
+      <a href="../../module_usage/tutorials/time_series_modules/time_series_anomaly_detection.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Time Series Anomaly Detection
+    
   </span>
   
 
@@ -2492,11 +3075,166 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../module_usage/tutorials/time_series_modules/time_series_classification.html" class="md-nav__link">
+      <a href="../../module_usage/tutorials/time_series_modules/time_series_classification.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Time Series Classification
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    语音识别
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            语音识别
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module_usage/tutorials/speech_modules/multilingual_speech_recognition.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Multilingual Speech Recognition Task
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    3D检测
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_8">
+            <span class="md-nav__icon md-icon"></span>
+            3D检测
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module_usage/tutorials/cv_modules/3d_bev_detection.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3D Multimodal Fusion Detection
+    
   </span>
   
 
@@ -2543,22 +3281,23 @@ You're not viewing the latest version.
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_7" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_9" >
         
           
-          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_9" id="__nav_4_9_label" tabindex="0">
             
   
   <span class="md-ellipsis">
     Instructions
+    
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_7">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_9">
             <span class="md-nav__icon md-icon"></span>
             Instructions
           </label>
@@ -2571,11 +3310,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../module_usage/instructions/model_python_API.html" class="md-nav__link">
+      <a href="../../module_usage/instructions/model_python_API.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     PaddleX Module Python API Usage
+    
   </span>
   
 
@@ -2592,11 +3332,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../module_usage/instructions/config_parameters_common.html" class="md-nav__link">
+      <a href="../../module_usage/instructions/config_parameters_common.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     PaddleX Common Module Config Parameters
+    
   </span>
   
 
@@ -2613,11 +3354,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../module_usage/instructions/config_parameters_time_series.html" class="md-nav__link">
+      <a href="../../module_usage/instructions/config_parameters_time_series.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     PaddleX Time Series Module Config Parameters
+    
   </span>
   
 
@@ -2646,10 +3388,8 @@ You're not viewing the latest version.
       
   
   
-    
   
   
-  
     
     
       
@@ -2662,33 +3402,33 @@ You're not viewing the latest version.
     
     
       
-        
-        
-      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
             
   
   <span class="md-ellipsis">
     Pipeline Deploy
+    
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Pipeline Deploy
@@ -2702,151 +3442,16 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="high_performance_inference.html" class="md-nav__link">
+      <a href="../../pipeline_deploy/high_performance_inference.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     High Performance Inference
+    
   </span>
   
 
       </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Service Deploy
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="service_deploy.html" class="md-nav__link md-nav__link--active">
-        
-  
-  <span class="md-ellipsis">
-    Service Deploy
-  </span>
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-basic-process" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Basic Process
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1. Basic Process">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#11-install-the-serving-deployment-plugin" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.1 Install the Serving Deployment Plugin
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#12-start-the-service" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.2 Start the Service
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#13-call-the-service" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.3 Call the Service
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-deploy-services-for-production" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Deploy Services for Production
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2. Deploy Services for Production">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#21-utilize-paddlex-high-performance-inference-plugin" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.1 Utilize PaddleX high-performance inference Plugin
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#22-consider-security" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.2 Consider Security
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2859,11 +3464,34 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="edge_deploy.html" class="md-nav__link">
+      <a href="../../pipeline_deploy/serving.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Edge Deploy
+    Serving
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pipeline_deploy/edge_deploy.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Edge Deployment
+    
   </span>
   
 
@@ -2915,6 +3543,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Multi-Device Usage
+    
   </span>
   
 
@@ -2935,11 +3564,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../other_devices_support/multi_devices_use_guide.html" class="md-nav__link">
+      <a href="../../other_devices_support/multi_devices_use_guide.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Multi-Device Usage Guide
+    
   </span>
   
 
@@ -2957,6 +3587,8 @@ You're not viewing the latest version.
   
     
     
+      
+        
       
         
       
@@ -2988,6 +3620,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddlePaddle Installation on Multiple Devices
+    
   </span>
   
 
@@ -3008,11 +3641,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../other_devices_support/paddlepaddle_install_DCU.html" class="md-nav__link">
+      <a href="../../other_devices_support/paddlepaddle_install_DCU.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Haiguang DCU PaddlePaddle Installation Guide
+    
   </span>
   
 
@@ -3029,11 +3663,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../other_devices_support/paddlepaddle_install_MLU.html" class="md-nav__link">
+      <a href="../../other_devices_support/paddlepaddle_install_MLU.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Cambricon MLU PaddlePaddle Installation Guide
+    
   </span>
   
 
@@ -3050,11 +3685,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../other_devices_support/paddlepaddle_install_NPU.html" class="md-nav__link">
+      <a href="../../other_devices_support/paddlepaddle_install_NPU.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Ascend NPU PaddlePaddle Installation Guide
+    
   </span>
   
 
@@ -3071,11 +3707,34 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../other_devices_support/paddlepaddle_install_XPU.html" class="md-nav__link">
+      <a href="../../other_devices_support/paddlepaddle_install_XPU.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Kunlun XPU PaddlePaddle Installation Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../other_devices_support/paddlepaddle_install_GCU.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enflame GCU PaddlePaddle Installation Guide
+    
   </span>
   
 
@@ -3137,6 +3796,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Data Annotation Tutorials
+    
   </span>
   
 
@@ -3193,6 +3853,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Computer Vision
+    
   </span>
   
 
@@ -3213,11 +3874,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../data_annotations/cv_modules/image_classification.html" class="md-nav__link">
+      <a href="../cv_modules/image_classification.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Image Classification Task
+    
   </span>
   
 
@@ -3234,11 +3896,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../data_annotations/cv_modules/image_feature.html" class="md-nav__link">
+      <a href="../cv_modules/image_feature.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Image Feature Task
+    
   </span>
   
 
@@ -3255,11 +3918,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../data_annotations/cv_modules/instance_segmentation.html" class="md-nav__link">
+      <a href="../cv_modules/instance_segmentation.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Instance Segmentation Task
+    
   </span>
   
 
@@ -3276,11 +3940,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../data_annotations/cv_modules/ml_classification.html" class="md-nav__link">
+      <a href="../cv_modules/ml_classification.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Image Multi-label Classification
+    
   </span>
   
 
@@ -3297,11 +3962,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../data_annotations/cv_modules/object_detection.html" class="md-nav__link">
+      <a href="../cv_modules/object_detection.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Object Detection Task
+    
   </span>
   
 
@@ -3318,11 +3984,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../data_annotations/cv_modules/semantic_segmentation.html" class="md-nav__link">
+      <a href="../cv_modules/semantic_segmentation.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Semantic Segmentation Task
+    
   </span>
   
 
@@ -3375,6 +4042,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     OCR
+    
   </span>
   
 
@@ -3395,11 +4063,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../data_annotations/ocr_modules/table_recognition.html" class="md-nav__link">
+      <a href="../ocr_modules/table_recognition.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Table Recognition Task
+    
   </span>
   
 
@@ -3416,11 +4085,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../data_annotations/ocr_modules/text_detection_recognition.html" class="md-nav__link">
+      <a href="../ocr_modules/text_detection_recognition.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Text Detection/Recognition Task
+    
   </span>
   
 
@@ -3475,6 +4145,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Time Series Analysis
+    
   </span>
   
 
@@ -3495,11 +4166,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../data_annotations/time_series_modules/time_series_anomaly_detection.html" class="md-nav__link">
+      <a href="../time_series_modules/time_series_anomaly_detection.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Time Series Anomaly Detection Task
+    
   </span>
   
 
@@ -3516,11 +4188,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../data_annotations/time_series_modules/time_series_classification.html" class="md-nav__link">
+      <a href="../time_series_modules/time_series_classification.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Time Series Classification Task
+    
   </span>
   
 
@@ -3537,11 +4210,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../data_annotations/time_series_modules/time_series_forecasting.html" class="md-nav__link">
+      <a href="../time_series_modules/time_series_forecasting.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Time Series Forecasting Task
+    
   </span>
   
 
@@ -3607,6 +4281,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Pipeline List
+    
   </span>
   
 
@@ -3627,11 +4302,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../support_list/pipelines_list.html" class="md-nav__link">
+      <a href="../../support_list/pipelines_list.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     PaddleX Pipeline List (CPU/GPU)
+    
   </span>
   
 
@@ -3648,11 +4324,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../support_list/pipelines_list_dcu.html" class="md-nav__link">
+      <a href="../../support_list/pipelines_list_dcu.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     PaddleX Pipeline List (DCU)
+    
   </span>
   
 
@@ -3669,11 +4346,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../support_list/pipelines_list_mlu.html" class="md-nav__link">
+      <a href="../../support_list/pipelines_list_mlu.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     PaddleX Pipeline List (MLU)
+    
   </span>
   
 
@@ -3690,11 +4368,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../support_list/pipelines_list_npu.html" class="md-nav__link">
+      <a href="../../support_list/pipelines_list_npu.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     PaddleX Pipeline List (NPU)
+    
   </span>
   
 
@@ -3711,11 +4390,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../support_list/pipelines_list_xpu.html" class="md-nav__link">
+      <a href="../../support_list/pipelines_list_xpu.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     PaddleX Pipeline List (XPU)
+    
   </span>
   
 
@@ -3751,6 +4431,8 @@ You're not viewing the latest version.
       
         
       
+        
+      
     
     
       
@@ -3773,6 +4455,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Model List
+    
   </span>
   
 
@@ -3793,11 +4476,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../support_list/models_list.html" class="md-nav__link">
+      <a href="../../support_list/models_list.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     PaddleX Model List (CPU/GPU)
+    
   </span>
   
 
@@ -3814,11 +4498,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../support_list/model_list_dcu.html" class="md-nav__link">
+      <a href="../../support_list/model_list_dcu.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     PaddleX Model List (DCU)
+    
   </span>
   
 
@@ -3835,11 +4520,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../support_list/model_list_mlu.html" class="md-nav__link">
+      <a href="../../support_list/model_list_mlu.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     PaddleX Model List (MLU)
+    
   </span>
   
 
@@ -3856,11 +4542,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../support_list/model_list_npu.html" class="md-nav__link">
+      <a href="../../support_list/model_list_npu.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     PaddleX Model List (NPU)
+    
   </span>
   
 
@@ -3877,11 +4564,34 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../support_list/model_list_xpu.html" class="md-nav__link">
+      <a href="../../support_list/model_list_xpu.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     PaddleX Model List (XPU)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../support_list/model_list_gcu.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PaddleX Model List (GCU)
+    
   </span>
   
 
@@ -3951,6 +4661,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Practical Tutorials & Examples
+    
   </span>
   
 
@@ -3971,11 +4682,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../practical_tutorials/document_scene_information_extraction%28layout_detection%29_tutorial.html" class="md-nav__link">
+      <a href="../../practical_tutorials/document_scene_information_extraction%28layout_detection%29_tutorial.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Document Scene Information Extraction Tutorial
+    
   </span>
   
 
@@ -3992,11 +4704,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../practical_tutorials/image_classification_garbage_tutorial.html" class="md-nav__link">
+      <a href="../../practical_tutorials/image_classification_garbage_tutorial.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Garbage Classification Tutorial
+    
   </span>
   
 
@@ -4013,11 +4726,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../practical_tutorials/instance_segmentation_remote_sensing_tutorial.html" class="md-nav__link">
+      <a href="../../practical_tutorials/instance_segmentation_remote_sensing_tutorial.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Remote Sensing Image Instance Segmentation Tutorial
+    
   </span>
   
 
@@ -4034,11 +4748,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../practical_tutorials/object_detection_fall_tutorial.html" class="md-nav__link">
+      <a href="../../practical_tutorials/object_detection_fall_tutorial.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Pedestrian Fall Detection Tutorial
+    
   </span>
   
 
@@ -4055,11 +4770,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../practical_tutorials/object_detection_fashion_pedia_tutorial.html" class="md-nav__link">
+      <a href="../../practical_tutorials/object_detection_fashion_pedia_tutorial.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Fashion Element Detection Tutorial
+    
   </span>
   
 
@@ -4076,11 +4792,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../practical_tutorials/ocr_det_license_tutorial.html" class="md-nav__link">
+      <a href="../../practical_tutorials/ocr_det_license_tutorial.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     License Plate Recognition Tutorial
+    
   </span>
   
 
@@ -4097,11 +4814,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../practical_tutorials/ocr_rec_chinese_tutorial.html" class="md-nav__link">
+      <a href="../../practical_tutorials/ocr_rec_chinese_tutorial.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Handwritten Chinese Recognition Tutorial
+    
   </span>
   
 
@@ -4118,11 +4836,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../practical_tutorials/semantic_segmentation_road_tutorial.html" class="md-nav__link">
+      <a href="../../practical_tutorials/semantic_segmentation_road_tutorial.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Lane Line Segmentation Tutorial
+    
   </span>
   
 
@@ -4139,11 +4858,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../practical_tutorials/ts_anomaly_detection.html" class="md-nav__link">
+      <a href="../../practical_tutorials/ts_anomaly_detection.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Equipment Anomaly Detection Application Tutorial
+    
   </span>
   
 
@@ -4160,11 +4880,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../practical_tutorials/ts_classification.html" class="md-nav__link">
+      <a href="../../practical_tutorials/ts_classification.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Heartbeat Monitoring Time Series Data Classification Application Tutorial
+    
   </span>
   
 
@@ -4181,11 +4902,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../practical_tutorials/ts_forecast.html" class="md-nav__link">
+      <a href="../../practical_tutorials/ts_forecast.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Long-term Electricity Consumption Forecasting Application Tutorial
+    
   </span>
   
 
@@ -4209,11 +4931,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../FAQ.html" class="md-nav__link">
+      <a href="../../FAQ.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     FAQ
+    
   </span>
   
 
@@ -4229,11 +4952,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../CHANGLOG.html" class="md-nav__link">
+      <a href="../../CHANGLOG.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Recently Update
+    
   </span>
   
 
@@ -4269,39 +4993,54 @@ You're not viewing the latest version.
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-basic-process" class="md-nav__link">
+  <a href="#1-annotation" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Basic Process
+      1. Annotation
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="1. Basic Process">
+    <nav class="md-nav" aria-label="1. Annotation">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#11-install-the-serving-deployment-plugin" class="md-nav__link">
+  <a href="#11-data-preparation" class="md-nav__link">
     <span class="md-ellipsis">
-      1.1 Install the Serving Deployment Plugin
+      1.1 Data Preparation
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#12-start-the-service" class="md-nav__link">
+  <a href="#12-video-data-conversion" class="md-nav__link">
     <span class="md-ellipsis">
-      1.2 Start the Service
+      1.2 Video Data Conversion
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#13-call-the-service" class="md-nav__link">
+  <a href="#13-image-frame-data-annotation" class="md-nav__link">
     <span class="md-ellipsis">
-      1.3 Call the Service
+      1.3 Image Frame Data Annotation
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="1.3 Image Frame Data Annotation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#annotation-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      Annotation Process
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -4311,35 +5050,11 @@ You're not viewing the latest version.
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-deploy-services-for-production" class="md-nav__link">
+  <a href="#2-data-format" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Deploy Services for Production
+      2. Data Format
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="2. Deploy Services for Production">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#21-utilize-paddlex-high-performance-inference-plugin" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.1 Utilize PaddleX high-performance inference Plugin
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#22-consider-security" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.2 Consider Security
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -4357,8 +5072,9 @@ You're not viewing the latest version.
                 
                   
 
+
   
-    <a href="https://github.com/AmberC0209/PaddleX/edit/develop/docs/pipeline_deploy/service_deploy.en.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/AmberC0209/PaddleX/edit/develop/docs/data_annotations/video_modules/video_detection.en.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
     </a>
@@ -4367,93 +5083,68 @@ You're not viewing the latest version.
     
       
     
-    <a href="https://github.com/AmberC0209/PaddleX/raw/develop/docs/pipeline_deploy/service_deploy.en.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/AmberC0209/PaddleX/raw/develop/docs/data_annotations/video_modules/video_detection.en.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5"/></svg>
     </a>
   
 
 
-<h1 id="paddlex-serving-deployment-guide">PaddleX Serving Deployment Guide<a class="headerlink" href="#paddlex-serving-deployment-guide" title="Permanent link">&para;</a></h1>
-<p>Serving deployment is a common form of deployment in real-world production environments. By encapsulating inference capabilities as services, clients can access these services through network requests to obtain inference results. PaddleX enables users to achieve low-cost serving deployment for production lines. This document will first introduce the basic process of serving deployment using PaddleX, followed by considerations and potential operations when using the service in a production environment.</p>
-<p><b>Note</b>
-- <b>Serving deployment provides services for model pipelines, not specific to individual pipeline modules.</b></p>
-<p>Serving Deployment Example Diagram:</p>
-<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipeline_deploy/serving_en.png"  width="300" /></p>
-<h2 id="1-basic-process">1. Basic Process<a class="headerlink" href="#1-basic-process" title="Permanent link">&para;</a></h2>
-<h3 id="11-install-the-serving-deployment-plugin">1.1 Install the Serving Deployment Plugin<a class="headerlink" href="#11-install-the-serving-deployment-plugin" title="Permanent link">&para;</a></h3>
-<p>Execute the following command to install the serving deployment plugin:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>paddlex<span class="w"> </span>--install<span class="w"> </span>serving
+<h1 id="paddlex-video-detection-task-module-data-annotation-tutorial">PaddleX Video Detection Task Module Data Annotation Tutorial<a class="headerlink" href="#paddlex-video-detection-task-module-data-annotation-tutorial" title="Permanent link">&para;</a></h1>
+<p>This document will guide you through the process of annotating data for video detection tasks.</p>
+<h2 id="1-annotation">1. Annotation<a class="headerlink" href="#1-annotation" title="Permanent link">&para;</a></h2>
+<h3 id="11-data-preparation">1.1 Data Preparation<a class="headerlink" href="#11-data-preparation" title="Permanent link">&para;</a></h3>
+<p>Collect the raw video data and organize each video into different folders based on their categories. Supported video formats include '.mp4', '.avi', '.mov', '.mkv'. For example:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>dataset_dir<span class="w">  </span><span class="c1"># Root directory of the dataset; the directory name can be changed</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├──<span class="w"> </span>class1<span class="w">    </span><span class="c1"># Directory for storing videos of each category; the directory name can be changed, containing multiple video files</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├──<span class="w"> </span>class2
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>├──<span class="w"> </span>...
 </span></code></pre></div>
-<h3 id="12-start-the-service">1.2 Start the Service<a class="headerlink" href="#12-start-the-service" title="Permanent link">&para;</a></h3>
-<p>Start the service through the PaddleX CLI with the following command format:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>paddlex<span class="w"> </span>--serve<span class="w"> </span>--pipeline<span class="w"> </span><span class="o">{</span>pipeline_name_or_path<span class="o">}</span><span class="w"> </span><span class="o">[{</span>other_command_line_options<span class="o">}]</span>
+<h3 id="12-video-data-conversion">1.2 Video Data Conversion<a class="headerlink" href="#12-video-data-conversion" title="Permanent link">&para;</a></h3>
+<p>The raw video data needs to be converted into image frames. You can use the <a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/doc_images/applications/video_det_dataset_prepare/convert_video_to_images.py">convert_video_to_images.py</a> script and run the following command:</p>
+<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>python<span class="w"> </span>convert_video_to_images.py<span class="w"> </span>dataset_dir<span class="w"> </span>dataset_dir/rgb-images
 </span></code></pre></div>
-<p>Taking the General Image Classification Pipeline as an example:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>paddlex<span class="w"> </span>--serve<span class="w"> </span>--pipeline<span class="w"> </span>image_classification
+Here, <code>dataset_dir</code> is the directory with videos to be annotated from section 1.1. <code>rgb-images</code> is the directory where the converted image frames will be saved, with each video's images stored in a separate subdirectory.</p>
+<h3 id="13-image-frame-data-annotation">1.3 Image Frame Data Annotation<a class="headerlink" href="#13-image-frame-data-annotation" title="Permanent link">&para;</a></h3>
+<h4 id="annotation-process">Annotation Process<a class="headerlink" href="#annotation-process" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>For annotation, you can refer to the <a href="../cv_modules/object_detection.html">Object Detection Annotation Documentation</a>. Use <code>Labelme</code> or <code>PaddleLabel</code> to annotate the bounding boxes for each image, and save them in the coco.json format.</p>
+</li>
+<li>
+<p>After completing the annotation, you need to organize the annotation files into the format required in section 2. Data Format. Use the <a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/doc_images/applications/video_det_dataset_prepare/convert_coco_to_txt.py">convert_coco_to_txt.py</a> script to convert the coco.json annotation files into txt format. Place these files in the <code>labels</code> directory, with each annotation file corresponding to the image frames of a single video.</p>
+</li>
+</ul>
+<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>python<span class="w"> </span>convert_coco_to_txt.py<span class="w"> </span>coco.json<span class="w"> </span>dataset_dir
 </span></code></pre></div>
-<p>After the service starts successfully, you will see information similar to the following:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>INFO:     Started server process [63108]
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>INFO:     Waiting for application startup.
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>INFO:     Application startup complete.
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>INFO:     Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)
+ <code>dataset_dir</code> is the directory where you want to save the txt files.
+ <code>coco.json</code> is the annotation file in coco format.</p>
+<h2 id="2-data-format">2. Data Format<a class="headerlink" href="#2-data-format" title="Permanent link">&para;</a></h2>
+<ul>
+<li>The directory structure for the final dataset should be as follows:</li>
+</ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="w"> </span>dataset_dir<span class="w">    </span><span class="c1"># Root directory of the dataset; the directory name can be changed</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>├──<span class="w"> </span>rgb-images<span class="w">     </span><span class="c1"># Directory for saving video images; the directory name cannot be changed</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>│<span class="w">   </span>├──<span class="w"> </span>class1<span class="w">    </span><span class="c1"># Directory for storing videos of each category; the directory name can be changed</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>video1_images<span class="w">  </span><span class="c1"># Directory for storing images from each video in the category; the directory name can be changed</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>│<span class="w">   </span>│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span><span class="m">00001</span>.jpg<span class="w">  </span><span class="c1"># Image naming rule: frame number.jpg, e.g., 00001.jpg</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>│<span class="w">   </span>│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span><span class="m">00002</span>.jpg
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>video2_images
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>│<span class="w">   </span>├──<span class="w"> </span>class2
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>│<span class="w">   </span>├──<span class="w"> </span>...
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>├──<span class="w"> </span>labels<span class="w">       </span><span class="c1"># Directory for saving labels of the video images; the directory name cannot be changed and corresponds to the subdirectory names in rgb-images</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>│<span class="w">   </span>├──<span class="w"> </span>class1<span class="w">    </span><span class="c1"># Directory for storing video labels of each category; the directory name can be changed</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>video1_images<span class="w">  </span><span class="c1"># Directory for storing image labels from each video in the category; the directory name can be changed</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>│<span class="w">   </span>│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span><span class="m">00001</span>.txt<span class="w">  </span><span class="c1"># Each txt file corresponds to the label of an image, with each line formatted as: classid x1 y1 x2 y2</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>│<span class="w">   </span>│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span><span class="m">00002</span>.txt
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>video2_images
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>│<span class="w">   </span>├──<span class="w"> </span>class2
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>│<span class="w">   </span>├──<span class="w"> </span>...
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>├──<span class="w"> </span>label_map.txt<span class="w"> </span><span class="c1"># File mapping label ids to category names; the file name cannot be changed. Each line provides a category id and name, e.g., 1 Basketball</span>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>├──<span class="w"> </span>train.txt<span class="w">     </span><span class="c1"># Training set annotation file, with each line providing the path to a video image label, e.g., labels/Biking/v_Biking_g02_c01/00228.txt</span>
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>└──<span class="w"> </span>val.txt<span class="w">       </span><span class="c1"># Validation set annotation file, with each line providing the path to a video image label</span>
 </span></code></pre></div>
-<p><code>--pipeline</code> can be specified as an official pipeline name or the path to a local pipeline configuration file. PaddleX uses this to build the pipeline and deploy it as a service. To adjust configurations (such as model path, batch_size, deployment device), please refer to the <b>"Model Application"</b> section in the <a href="../pipeline_usage/tutorials/cv_pipelines/image_classification.html">General Image Classification Pipeline Tutorial</a>.</p>
-<p>Command-line options related to serving deployment are as follows:</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>--pipeline</code></td>
-<td>Pipeline name or pipeline configuration file path.</td>
-</tr>
-<tr>
-<td><code>--device</code></td>
-<td>Deployment device for the pipeline. Defaults to <code>cpu</code> (If GPU is unavailable) or <code>gpu</code> (If GPU is available).</td>
-</tr>
-<tr>
-<td><code>--host</code></td>
-<td>Hostname or IP address bound to the server. Defaults to 0.0.0.0.</td>
-</tr>
-<tr>
-<td><code>--port</code></td>
-<td>Port number listened to by the server. Defaults to 8080.</td>
-</tr>
-<tr>
-<td><code>--use_hpip</code></td>
-<td>Enables the high-performance inference plugin if specified.</td>
-</tr>
-<tr>
-<td><code>--serial_number</code></td>
-<td>Serial number used by the high-performance inference plugin. Only valid when the high-performance inference plugin is enabled. Note that not all pipelines and models support the use of the high-performance inference plugin. For detailed support, please refer to the <a href="./high_performance_inference.en.md">PaddleX High-Performance Inference Guide</a>.</td>
-</tr>
-<tr>
-<td><code>--update_license</code></td>
-<td>Activates the license online if specified. Only valid when the high-performance inference plugin is enabled.</td>
-</tr>
-</tbody>
-</table>
-</table>
-<h3 id="13-call-the-service">1.3 Call the Service<a class="headerlink" href="#13-call-the-service" title="Permanent link">&para;</a></h3>
-<p>Please refer to the <b>"Development Integration/Deployment"</b> section in the usage tutorials for each pipeline. You can find the pipeline tutorials <a href="../pipeline_usage/pipeline_develop_guide.html">here</a>.</p>
-<h2 id="2-deploy-services-for-production">2. Deploy Services for Production<a class="headerlink" href="#2-deploy-services-for-production" title="Permanent link">&para;</a></h2>
-<p>When deploying services into production environments, the stability, efficiency, and security of the services are of paramount importance. Below are some recommendations for deploying services into production.</p>
-<h3 id="21-utilize-paddlex-high-performance-inference-plugin">2.1 Utilize PaddleX high-performance inference Plugin<a class="headerlink" href="#21-utilize-paddlex-high-performance-inference-plugin" title="Permanent link">&para;</a></h3>
-<p>In scenarios where strict response time requirements are imposed on applications, the PaddleX high-performance inference Plugin can be used to accelerate model inference and pre/post-processing, thereby reducing response time and increasing throughput.</p>
-<p>To use the PaddleX high-performance inference Plugin, please refer to the <a href="high_performance_inference.html">PaddleX High-Performance Inference Guide</a> for installing the high-performance inference plugin, obtaining serial numbers, and activating the plugin. Additionally, not all pipelines, models, and environments support the use of the high-performance inference plugin. For detailed support information, please refer to the section on pipelines and models that support the high-performance inference plugin.</p>
-<p>When starting the PaddleX pipeline service, you can specify <code>--use_hpip</code> along with the serial number to use the high-performance inference plugin. If you wish to perform online activation, you should also specify <code>--update_license</code>. Example usage:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>paddlex<span class="w"> </span>--serve<span class="w"> </span>--pipeline<span class="w"> </span>image_classification<span class="w"> </span>--use_hpip<span class="w"> </span>--serial_number<span class="w"> </span><span class="o">{</span>serial_number<span class="o">}</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1"># If you wish to perform online activation</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>paddlex<span class="w"> </span>--serve<span class="w"> </span>--pipeline<span class="w"> </span>image_classification<span class="w"> </span>--use_hpip<span class="w"> </span>--serial_number<span class="w"> </span><span class="o">{</span>serial_number<span class="o">}</span><span class="w"> </span>--update_license
-</span></code></pre></div>
-<h3 id="22-consider-security">2.2 Consider Security<a class="headerlink" href="#22-consider-security" title="Permanent link">&para;</a></h3>
-<p>A typical scenario involves an application accepting inputs from the network, with the PaddleX pipeline service acting as a module within the application, interacting with other modules through APIs. In this case, the position of the PaddleX pipeline service within the application is crucial. The service-oriented deployment solution provided by PaddleX focuses on efficiency and ease of use but does not perform sufficient security checks on request bodies. Malicious requests from the network, such as excessively large images or carefully crafted data, can lead to severe consequences like service crashes. Therefore, it is recommended to place the PaddleX pipeline service within the application's internal network, avoiding direct processing of external inputs, and ensuring it only processes trustworthy requests. Appropriate protective measures, such as input validation and authentication, should be added at the application's outer layer.</p>
+<p>The annotation files use an image format. Please refer to the above specifications to prepare your data. Additionally, you can refer to the <a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/data/video_det_examples.tar">example dataset</a> for guidance.</p>
 
 
 
@@ -4476,7 +5167,7 @@ You're not viewing the latest version.
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 13, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 6, 2025</span>
   </span>
 
     
@@ -4486,7 +5177,7 @@ You're not viewing the latest version.
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 13, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 6, 2025</span>
   </span>
 
     
@@ -4515,60 +5206,6 @@ You're not viewing the latest version.
 
 
 
-<h2 id="__comments">Comments</h2>
-<!-- Insert generated snippet here -->
-
-<script src="https://giscus.app/client.js"
-        data-repo="PaddlePaddle/PaddleX"
-        data-repo-id="MDEwOlJlcG9zaXRvcnkyNDY1MDkwNzM="
-        data-category="General"
-        data-category-id="DIC_kwDODrFuEc4ChKVF"
-        data-mapping="pathname"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="top"
-        data-theme="preferred_color_scheme"
-        data-lang="zh-CN"
-        crossorigin="anonymous"
-        async>
-</script>
-<!-- Synchronize Giscus theme with palette -->
-<script>
-    var giscus = document.querySelector("script[src*=giscus]")
-
-    // Set palette on initial load
-    var palette = __md_get("__palette")
-    if (palette && typeof palette.color === "object") {
-        var theme = palette.color.scheme === "slate"
-            ? "transparent_dark"
-            : "light"
-
-        // Instruct Giscus to set theme
-        giscus.setAttribute("data-theme", theme)
-    }
-
-    // Register event handlers after documented loaded
-    document.addEventListener("DOMContentLoaded", function () {
-        var ref = document.querySelector("[data-md-component=palette]")
-        ref.addEventListener("change", function () {
-            var palette = __md_get("__palette")
-            if (palette && typeof palette.color === "object") {
-                var theme = palette.color.scheme === "slate"
-                    ? "transparent_dark"
-                    : "light"
-
-                // Instruct Giscus to change theme
-                var frame = document.querySelector(".giscus-frame")
-                frame.contentWindow.postMessage(
-                    { giscus: { setConfig: { theme } } },
-                    "https://giscus.app"
-                )
-            }
-        })
-    })
-</script>
-
                 
               </article>
             </div>
@@ -4587,44 +5224,6 @@ You're not viewing the latest version.
       
         <footer class="md-footer">
   
-    
-      
-      <nav class="md-footer__inner md-grid" aria-label="Footer" >
-        
-          
-          <a href="high_performance_inference.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: High Performance Inference">
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-            </div>
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              <div class="md-ellipsis">
-                High Performance Inference
-              </div>
-            </div>
-          </a>
-        
-        
-          
-          <a href="edge_deploy.html" class="md-footer__link md-footer__link--next" aria-label="Next: Edge Deploy">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                Edge Deploy
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
     
   
   <div class="md-footer-meta md-typeset">
@@ -4649,7 +5248,7 @@ You're not viewing the latest version.
       
     
     <a href="https://github.com/PaddlePaddle/PaddleX" target="_blank" rel="noopener" title="github.com" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
     </a>
   
 </div>
@@ -4664,12 +5263,12 @@ You're not viewing the latest version.
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "navigation.expand", "navigation.path", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "navigation.expand", "navigation.path", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.f13b1293.min.js"></script>
       
-        <script src="../../javascripts/katex.min.js"></script>
+        <script src="../../../javascripts/katex.min.js"></script>
       
         <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
       

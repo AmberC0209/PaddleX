@@ -8,6 +8,8 @@
       
       
       
+        <link rel="canonical" href="https://amberc0209.github.io/PaddleX/3.0-beta2/en/pipeline_usage/tutorials/time_series_pipelines/time_series_anomaly_detection.html">
+      
       
         <link rel="prev" href="time_series_forecasting.html">
       
@@ -16,7 +18,7 @@
       
       
       <link rel="icon" href="../../../../assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.48">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.2">
     
     
       
@@ -24,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.6f8fc17f.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.d7758b05.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
@@ -106,7 +108,7 @@ You're not viewing the latest version.
 </a>
 
             </div>
-            <script>var el=document.querySelector("[data-md-component=outdated]"),outdated=__md_get("__outdated",sessionStorage);!0===outdated&&el&&(el.hidden=!1)</script>
+            <script>var el=document.querySelector("[data-md-component=outdated]"),base=new URL("../../../.."),outdated=__md_get("__outdated",sessionStorage,base);!0===outdated&&el&&(el.hidden=!1)</script>
           </aside>
         
       </div>
@@ -256,7 +258,7 @@ You're not viewing the latest version.
         <a href="https://github.com/AmberC0209/PaddleX" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -569,7 +571,7 @@ You're not viewing the latest version.
       <a href="https://github.com/AmberC0209/PaddleX" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -591,6 +593,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Home
+    
   </span>
   
 
@@ -634,6 +637,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Installation
+    
   </span>
   
 
@@ -659,6 +663,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddlePaddle Install
+    
   </span>
   
 
@@ -680,6 +685,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX Install
+    
   </span>
   
 
@@ -719,6 +725,10 @@ You're not viewing the latest version.
       
         
       
+        
+      
+        
+      
     
     
       
@@ -742,6 +752,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Pipeline Tutorials
+    
   </span>
   
 
@@ -767,6 +778,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Overview
+    
   </span>
   
 
@@ -812,6 +824,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Informatio Extraction
+    
   </span>
   
 
@@ -837,6 +850,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PP-ChatOCRv3-doc
+    
   </span>
   
 
@@ -862,6 +876,12 @@ You're not viewing the latest version.
   
     
     
+      
+        
+      
+        
+      
+        
       
         
       
@@ -898,6 +918,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     OCR
+    
   </span>
   
 
@@ -923,6 +944,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     OCR
+    
   </span>
   
 
@@ -943,7 +965,52 @@ You're not viewing the latest version.
         
   
   <span class="md-ellipsis">
-    General Table Recognition
+    通用表格识别产线
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ocr_pipelines/table_recognition_v2.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    通用表格识别v2产线
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ocr_pipelines/layout_parsing_v2.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    通用版面解析产线
+    
   </span>
   
 
@@ -964,7 +1031,8 @@ You're not viewing the latest version.
         
   
   <span class="md-ellipsis">
-    General Layout Parsing
+    通用版面解析v2产线
+    
   </span>
   
 
@@ -986,6 +1054,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Formula Recognition
+    
   </span>
   
 
@@ -1006,7 +1075,30 @@ You're not viewing the latest version.
         
   
   <span class="md-ellipsis">
-    Seal Recognition
+    印章文本识别产线
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ocr_pipelines/doc_preprocessor.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    文档图像预处理产线
+    
   </span>
   
 
@@ -1032,6 +1124,16 @@ You're not viewing the latest version.
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
       
         
       
@@ -1080,6 +1182,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Computer Vision
+    
   </span>
   
 
@@ -1105,6 +1208,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     General Image Classification
+    
   </span>
   
 
@@ -1126,6 +1230,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     General Object Detection
+    
   </span>
   
 
@@ -1147,6 +1252,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     General Instance Segmentation
+    
   </span>
   
 
@@ -1168,6 +1274,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     General Semantic Segmentation
+    
   </span>
   
 
@@ -1189,6 +1296,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Image Multi-label Classification
+    
   </span>
   
 
@@ -1210,6 +1318,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Small Object Detection
+    
   </span>
   
 
@@ -1231,6 +1340,117 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Image Anomaly Detection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cv_pipelines/3d_bev_detection.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3D Multi-modal Fusion Detection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cv_pipelines/human_keypoint_detection.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Human Keypoint Detection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cv_pipelines/open_vocabulary_detection.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Open Vocabulary Detection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cv_pipelines/open_vocabulary_segmentation.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Open Vocabulary Segmentation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cv_pipelines/rotated_object_detection.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rotated Object Detection
+    
   </span>
   
 
@@ -1252,6 +1472,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Image Feature
+    
   </span>
   
 
@@ -1273,6 +1494,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Pedestrian Attribute Recognition
+    
   </span>
   
 
@@ -1294,6 +1516,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Vehicle Attribute Recognition
+    
   </span>
   
 
@@ -1315,6 +1538,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Face Feature
+    
   </span>
   
 
@@ -1372,6 +1596,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Time Series Analysis
+    
   </span>
   
 
@@ -1397,6 +1622,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Time Series Forecasting
+    
   </span>
   
 
@@ -1427,6 +1653,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Time Series Anomaly Detection
+    
   </span>
   
 
@@ -1438,6 +1665,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Time Series Anomaly Detection
+    
   </span>
   
 
@@ -1506,9 +1734,9 @@ You're not viewing the latest version.
 </li>
         
           <li class="md-nav__item">
-  <a href="#222-python-script-integration" class="md-nav__link">
+  <a href="#222-integration-via-python-script" class="md-nav__link">
     <span class="md-ellipsis">
-      2.2.2 Python Script Integration
+      2.2.2 Integration via Python Script
     </span>
   </a>
   
@@ -1534,19 +1762,19 @@ You're not viewing the latest version.
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-custom-development" class="md-nav__link">
+  <a href="#4-secondary-development" class="md-nav__link">
     <span class="md-ellipsis">
-      4. Custom Development
+      4. Secondary Development
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="4. Custom Development">
+    <nav class="md-nav" aria-label="4. Secondary Development">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#41-model-fine-tuning" class="md-nav__link">
     <span class="md-ellipsis">
-      4.1 Model Fine-tuning
+      4.1 Model Fine-Tuning
     </span>
   </a>
   
@@ -1569,7 +1797,7 @@ You're not viewing the latest version.
         <li class="md-nav__item">
   <a href="#5-multi-hardware-support" class="md-nav__link">
     <span class="md-ellipsis">
-      5. Multi-hardware Support
+      5. Multi-Hardware Support
     </span>
   </a>
   
@@ -1596,6 +1824,87 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Time Series Classification
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Speech
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            Speech
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../speech_pipelines/multilingual_speech_recognition.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Multilingual Speech Recognition
+    
   </span>
   
 
@@ -1643,22 +1952,127 @@ You're not viewing the latest version.
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_6" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_7" >
         
           
-          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="">
+          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="">
             
   
   <span class="md-ellipsis">
-    Instructions
+    Video
+    
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_6">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            Video
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../video_pipelines/video_classification.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    General Video Classification
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../video_pipelines/video_detection.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    General Video Detection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Instructions
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_8">
             <span class="md-nav__icon md-icon"></span>
             Instructions
           </label>
@@ -1676,6 +2090,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX Pipeline CLI Usage
+    
   </span>
   
 
@@ -1697,6 +2112,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX Pipeline Python API Usage
+    
   </span>
   
 
@@ -1729,6 +2145,10 @@ You're not viewing the latest version.
   
     
     
+      
+        
+      
+        
       
         
       
@@ -1766,6 +2186,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Module Tutorials
+    
   </span>
   
 
@@ -1787,6 +2208,12 @@ You're not viewing the latest version.
   
     
     
+      
+        
+      
+        
+      
+        
       
         
       
@@ -1826,6 +2253,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     OCR
+    
   </span>
   
 
@@ -1851,6 +2279,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Text Detection
+    
   </span>
   
 
@@ -1872,6 +2301,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Seal Detection
+    
   </span>
   
 
@@ -1893,6 +2323,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Text Recognition
+    
   </span>
   
 
@@ -1914,6 +2345,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Layout Parsing
+    
   </span>
   
 
@@ -1935,6 +2367,51 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Table Structure Recognition
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../module_usage/tutorials/ocr_modules/table_cells_detection.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Table Cell Detection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../module_usage/tutorials/ocr_modules/table_classification.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Table Classification
+    
   </span>
   
 
@@ -1956,6 +2433,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Document Image Orientation Classification
+    
   </span>
   
 
@@ -1977,6 +2455,29 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Text Image Unwarping
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../module_usage/tutorials/ocr_modules/textline_orientation_classification.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Text Line Orientation Classification
+    
   </span>
   
 
@@ -1998,6 +2499,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Formula Recognition
+    
   </span>
   
 
@@ -2054,6 +2556,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Image Classification
+    
   </span>
   
 
@@ -2079,6 +2582,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Image Classification
+    
   </span>
   
 
@@ -2100,6 +2604,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Image Multi-label Classification
+    
   </span>
   
 
@@ -2121,6 +2626,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Pedestrian Attribute Recognition
+    
   </span>
   
 
@@ -2142,6 +2648,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Vehicle Attribute Recognition
+    
   </span>
   
 
@@ -2194,6 +2701,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Image Features
+    
   </span>
   
 
@@ -2219,6 +2727,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Image Feature
+    
   </span>
   
 
@@ -2240,6 +2749,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     人脸特征模块
+    
   </span>
   
 
@@ -2265,6 +2775,10 @@ You're not viewing the latest version.
   
     
     
+      
+        
+      
+        
       
         
       
@@ -2300,6 +2814,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Object Detection
+    
   </span>
   
 
@@ -2325,6 +2840,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Object Detection
+    
   </span>
   
 
@@ -2346,6 +2862,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Small Object Detection
+    
   </span>
   
 
@@ -2367,6 +2884,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Face Detection
+    
   </span>
   
 
@@ -2388,6 +2906,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Main Body Detection
+    
   </span>
   
 
@@ -2409,6 +2928,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Human Detection
+    
   </span>
   
 
@@ -2430,6 +2950,51 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Vehicle Detection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../module_usage/tutorials/cv_modules/human_keypoint_detection.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Human Keypoint Detection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../module_usage/tutorials/cv_modules/open_vocabulary_detection.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Open-Vocabulary Object Detection
+    
   </span>
   
 
@@ -2462,6 +3027,8 @@ You're not viewing the latest version.
       
         
       
+        
+      
     
     
       
@@ -2484,6 +3051,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Image Segmentation
+    
   </span>
   
 
@@ -2509,6 +3077,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Semantic Segmentation
+    
   </span>
   
 
@@ -2530,6 +3099,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Instance Segmentation
+    
   </span>
   
 
@@ -2551,6 +3121,29 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Image Anomaly Detection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../module_usage/tutorials/cv_modules/open_vocabulary_segmentation.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Open-Vocabulary Segmentation
+    
   </span>
   
 
@@ -2605,6 +3198,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Time Series Analysis
+    
   </span>
   
 
@@ -2630,6 +3224,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Time Series Forecasting
+    
   </span>
   
 
@@ -2651,6 +3246,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Time Series Anomaly Detection
+    
   </span>
   
 
@@ -2672,6 +3268,161 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Time Series Classification
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    语音识别
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            语音识别
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../module_usage/tutorials/speech_modules/multilingual_speech_recognition.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Multilingual Speech Recognition Task
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    3D检测
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_8">
+            <span class="md-nav__icon md-icon"></span>
+            3D检测
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../module_usage/tutorials/cv_modules/3d_bev_detection.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3D Multimodal Fusion Detection
+    
   </span>
   
 
@@ -2718,22 +3469,23 @@ You're not viewing the latest version.
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_7" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_9" >
         
           
-          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_9" id="__nav_4_9_label" tabindex="0">
             
   
   <span class="md-ellipsis">
     Instructions
+    
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_7">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_9">
             <span class="md-nav__icon md-icon"></span>
             Instructions
           </label>
@@ -2751,6 +3503,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX Module Python API Usage
+    
   </span>
   
 
@@ -2772,6 +3525,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX Common Module Config Parameters
+    
   </span>
   
 
@@ -2793,6 +3547,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX Time Series Module Config Parameters
+    
   </span>
   
 
@@ -2854,6 +3609,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Pipeline Deploy
+    
   </span>
   
 
@@ -2879,6 +3635,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     High Performance Inference
+    
   </span>
   
 
@@ -2895,11 +3652,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../pipeline_deploy/service_deploy.html" class="md-nav__link">
+      <a href="../../../pipeline_deploy/serving.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Service Deploy
+    Serving
+    
   </span>
   
 
@@ -2920,7 +3678,8 @@ You're not viewing the latest version.
         
   
   <span class="md-ellipsis">
-    Edge Deploy
+    Edge Deployment
+    
   </span>
   
 
@@ -2972,6 +3731,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Multi-Device Usage
+    
   </span>
   
 
@@ -2997,6 +3757,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Multi-Device Usage Guide
+    
   </span>
   
 
@@ -3014,6 +3775,8 @@ You're not viewing the latest version.
   
     
     
+      
+        
       
         
       
@@ -3045,6 +3808,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddlePaddle Installation on Multiple Devices
+    
   </span>
   
 
@@ -3070,6 +3834,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Haiguang DCU PaddlePaddle Installation Guide
+    
   </span>
   
 
@@ -3091,6 +3856,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Cambricon MLU PaddlePaddle Installation Guide
+    
   </span>
   
 
@@ -3112,6 +3878,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Ascend NPU PaddlePaddle Installation Guide
+    
   </span>
   
 
@@ -3133,6 +3900,29 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Kunlun XPU PaddlePaddle Installation Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../other_devices_support/paddlepaddle_install_GCU.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enflame GCU PaddlePaddle Installation Guide
+    
   </span>
   
 
@@ -3194,6 +3984,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Data Annotation Tutorials
+    
   </span>
   
 
@@ -3250,6 +4041,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Computer Vision
+    
   </span>
   
 
@@ -3275,6 +4067,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Image Classification Task
+    
   </span>
   
 
@@ -3296,6 +4089,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Image Feature Task
+    
   </span>
   
 
@@ -3317,6 +4111,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Instance Segmentation Task
+    
   </span>
   
 
@@ -3338,6 +4133,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Image Multi-label Classification
+    
   </span>
   
 
@@ -3359,6 +4155,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Object Detection Task
+    
   </span>
   
 
@@ -3380,6 +4177,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Semantic Segmentation Task
+    
   </span>
   
 
@@ -3432,6 +4230,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     OCR
+    
   </span>
   
 
@@ -3457,6 +4256,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Table Recognition Task
+    
   </span>
   
 
@@ -3478,6 +4278,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Text Detection/Recognition Task
+    
   </span>
   
 
@@ -3532,6 +4333,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Time Series Analysis
+    
   </span>
   
 
@@ -3557,6 +4359,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Time Series Anomaly Detection Task
+    
   </span>
   
 
@@ -3578,6 +4381,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Time Series Classification Task
+    
   </span>
   
 
@@ -3599,6 +4403,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Time Series Forecasting Task
+    
   </span>
   
 
@@ -3664,6 +4469,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Pipeline List
+    
   </span>
   
 
@@ -3689,6 +4495,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX Pipeline List (CPU/GPU)
+    
   </span>
   
 
@@ -3710,6 +4517,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX Pipeline List (DCU)
+    
   </span>
   
 
@@ -3731,6 +4539,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX Pipeline List (MLU)
+    
   </span>
   
 
@@ -3752,6 +4561,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX Pipeline List (NPU)
+    
   </span>
   
 
@@ -3773,6 +4583,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX Pipeline List (XPU)
+    
   </span>
   
 
@@ -3808,6 +4619,8 @@ You're not viewing the latest version.
       
         
       
+        
+      
     
     
       
@@ -3830,6 +4643,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Model List
+    
   </span>
   
 
@@ -3855,6 +4669,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX Model List (CPU/GPU)
+    
   </span>
   
 
@@ -3876,6 +4691,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX Model List (DCU)
+    
   </span>
   
 
@@ -3897,6 +4713,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX Model List (MLU)
+    
   </span>
   
 
@@ -3918,6 +4735,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX Model List (NPU)
+    
   </span>
   
 
@@ -3939,6 +4757,29 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX Model List (XPU)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../support_list/model_list_gcu.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PaddleX Model List (GCU)
+    
   </span>
   
 
@@ -4008,6 +4849,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Practical Tutorials & Examples
+    
   </span>
   
 
@@ -4033,6 +4875,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Document Scene Information Extraction Tutorial
+    
   </span>
   
 
@@ -4054,6 +4897,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Garbage Classification Tutorial
+    
   </span>
   
 
@@ -4075,6 +4919,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Remote Sensing Image Instance Segmentation Tutorial
+    
   </span>
   
 
@@ -4096,6 +4941,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Pedestrian Fall Detection Tutorial
+    
   </span>
   
 
@@ -4117,6 +4963,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Fashion Element Detection Tutorial
+    
   </span>
   
 
@@ -4138,6 +4985,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     License Plate Recognition Tutorial
+    
   </span>
   
 
@@ -4159,6 +5007,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Handwritten Chinese Recognition Tutorial
+    
   </span>
   
 
@@ -4180,6 +5029,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Lane Line Segmentation Tutorial
+    
   </span>
   
 
@@ -4201,6 +5051,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Equipment Anomaly Detection Application Tutorial
+    
   </span>
   
 
@@ -4222,6 +5073,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Heartbeat Monitoring Time Series Data Classification Application Tutorial
+    
   </span>
   
 
@@ -4243,6 +5095,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Long-term Electricity Consumption Forecasting Application Tutorial
+    
   </span>
   
 
@@ -4271,6 +5124,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     FAQ
+    
   </span>
   
 
@@ -4291,6 +5145,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Recently Update
+    
   </span>
   
 
@@ -4373,9 +5228,9 @@ You're not viewing the latest version.
 </li>
         
           <li class="md-nav__item">
-  <a href="#222-python-script-integration" class="md-nav__link">
+  <a href="#222-integration-via-python-script" class="md-nav__link">
     <span class="md-ellipsis">
-      2.2.2 Python Script Integration
+      2.2.2 Integration via Python Script
     </span>
   </a>
   
@@ -4401,19 +5256,19 @@ You're not viewing the latest version.
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-custom-development" class="md-nav__link">
+  <a href="#4-secondary-development" class="md-nav__link">
     <span class="md-ellipsis">
-      4. Custom Development
+      4. Secondary Development
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="4. Custom Development">
+    <nav class="md-nav" aria-label="4. Secondary Development">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#41-model-fine-tuning" class="md-nav__link">
     <span class="md-ellipsis">
-      4.1 Model Fine-tuning
+      4.1 Model Fine-Tuning
     </span>
   </a>
   
@@ -4436,7 +5291,7 @@ You're not viewing the latest version.
         <li class="md-nav__item">
   <a href="#5-multi-hardware-support" class="md-nav__link">
     <span class="md-ellipsis">
-      5. Multi-hardware Support
+      5. Multi-Hardware Support
     </span>
   </a>
   
@@ -4455,6 +5310,7 @@ You're not viewing the latest version.
               <article class="md-content__inner md-typeset">
                 
                   
+
 
   
     <a href="https://github.com/AmberC0209/PaddleX/edit/develop/docs/pipeline_usage/tutorials/time_series_pipelines/time_series_anomaly_detection.en.md" title="Edit this page" class="md-content__button md-icon">
@@ -4490,35 +5346,35 @@ You're not viewing the latest version.
 </thead>
 <tbody>
 <tr>
-<td>AutoEncoder_ad</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0b2/AutoEncoder_ad_infer.tar">Inference Model</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/AutoEncoder_ad_pretrained.pdparams">Trained Model</a></td>
+<td>AutoEncoder_ad</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0rc0/AutoEncoder_ad_infer.tar">Inference Model</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/AutoEncoder_ad_pretrained.pdparams">Trained Model</a></td>
 <td>99.36</td>
 <td>84.36</td>
 <td>91.25</td>
 <td>52K</td>
 </tr>
 <tr>
-<td>DLinear_ad</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0b2/DLinear_ad_infer.tar">Inference Model</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/DLinear_ad_pretrained.pdparams">Trained Model</a></td>
+<td>DLinear_ad</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0rc0/DLinear_ad_infer.tar">Inference Model</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/DLinear_ad_pretrained.pdparams">Trained Model</a></td>
 <td>98.98</td>
 <td>93.96</td>
 <td>96.41</td>
 <td>112K</td>
 </tr>
 <tr>
-<td>Nonstationary_ad</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0b2/Nonstationary_ad_infer.tar">Inference Model</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/Nonstationary_ad_pretrained.pdparams">Trained Model</a></td>
+<td>Nonstationary_ad</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0rc0/Nonstationary_ad_infer.tar">Inference Model</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/Nonstationary_ad_pretrained.pdparams">Trained Model</a></td>
 <td>98.55</td>
 <td>88.95</td>
 <td>93.51</td>
 <td>1.8M</td>
 </tr>
 <tr>
-<td>PatchTST_ad</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0b2/PatchTST_ad_infer.tar">Inference Model</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/PatchTST_ad_pretrained.pdparams">Trained Model</a></td>
+<td>PatchTST_ad</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0rc0/PatchTST_ad_infer.tar">Inference Model</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/PatchTST_ad_pretrained.pdparams">Trained Model</a></td>
 <td>98.78</td>
 <td>90.70</td>
 <td>94.57</td>
 <td>320K</td>
 </tr>
 <tr>
-<td>TimesNet_ad</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0b2/TimesNet_ad_infer.tar">Inference Model</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/TimesNet_ad_pretrained.pdparams">Trained Model</a></td>
+<td>TimesNet_ad</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0rc0/TimesNet_ad_infer.tar">Inference Model</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/TimesNet_ad_pretrained.pdparams">Trained Model</a></td>
 <td>98.37</td>
 <td>94.80</td>
 <td>96.56</td>
@@ -4536,179 +5392,185 @@ You're not viewing the latest version.
 <p>If you are satisfied with the pipeline's performance, you can directly integrate and deploy it. If not, you can also use your private data to <b>fine-tune the model within the pipeline online</b>.</p>
 <p><b>Note</b>: Due to the close relationship between time series data and scenarios, the official built-in models for online experience of time series tasks are only model solutions for a specific scenario and are not universal. They are not applicable to other scenarios. Therefore, the experience mode does not support using arbitrary files to experience the effects of the official model solutions. However, after training a model for your own scenario data, you can select your trained model solution and use data from the corresponding scenario for online experience.</p>
 <h3 id="22-local-experience">2.2 Local Experience<a class="headerlink" href="#22-local-experience" title="Permanent link">&para;</a></h3>
-<p>Before using the General Time Series Anomaly Detection Pipeline locally, ensure you have installed the PaddleX wheel package following the <a href="../../../installation/installation.html">PaddleX Local Installation Tutorial</a>.</p>
+<p>Before using the general time-series anomaly detection production line locally, please ensure that you have completed the installation of the PaddleX wheel package according to the <a href="../../../installation/installation.html">PaddleX Local Installation Guide</a>.</p>
 <h4 id="221-command-line-experience">2.2.1 Command Line Experience<a class="headerlink" href="#221-command-line-experience" title="Permanent link">&para;</a></h4>
-<p>A single command is all you need to quickly experience the effects of the time series anomaly detection pipeline:</p>
-<p>Experience the image anomaly detection pipeline with a single command，Use the <a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/ts/demo_ts/ts_ad.csv">test file</a>, and replace <code>--input</code> with the local path to perform prediction.</p>
-<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>paddlex<span class="w"> </span>--pipeline<span class="w"> </span>ts_ad<span class="w"> </span>--input<span class="w"> </span>ts_ad.csv<span class="w"> </span>--device<span class="w"> </span>gpu:0
+<p>You can quickly experience the time-series anomaly detection production line with a single command. Use the <a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/ts/demo_ts/ts_ad.csv">test file</a> and replace <code>--input</code> with the local path for prediction.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>paddlex<span class="w"> </span>--pipeline<span class="w"> </span>ts_anomaly_detection<span class="w"> </span>--input<span class="w"> </span>ts_ad.csv<span class="w"> </span>--device<span class="w"> </span>gpu:0<span class="w"> </span>--save_path<span class="w"> </span>./output
 </span></code></pre></div>
-Parameter Explanation:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>--pipeline: The name of the pipeline, here it&#39;s the image anomaly detection pipeline.
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>--input: The local path or URL of the input image to be processed.
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>--device: The GPU index to use (e.g., gpu:0 for the first GPU, gpu:1,2 for the second and third GPUs). CPU can also be selected (--device cpu).
+<p>For the explanation of the parameters, you can refer to the parameter description in <a href="#222-integration-via-python-script">Section 2.2.2 Integration via Python Script</a>.</p>
+<p>After running the command, the results will be printed to the terminal as follows:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>{&#39;input_path&#39;: &#39;ts_ad.csv&#39;, &#39;anomaly&#39;:            label
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>timestamp
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>220226         0
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>220227         0
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>220228         0
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>220229         0
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>220230         0
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>...          ...
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>220317         1
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>220318         1
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>220319         1
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>220320         1
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>220321         0
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>[96 rows x 1 columns]}
 </span></code></pre></div>
-<p>When executing the above command, the default image anomaly detection pipeline configuration file is loaded. If you need to customize the configuration file, you can run the following command to obtain it:</p>
-<details><summary> 👉Click to expand</summary>
-
-<pre><code class="language-bash">paddlex --get_pipeline_config ts_ad --save_path ./my_path
-</code></pre>
-<p>After obtaining the pipeline configuration file, you can replace <code>--pipeline</code> with the configuration file save path to make the configuration file take effect. For example, if the configuration file save path is <code>./ts_ad.yaml</code>, simply execute:</p>
-<pre><code class="language-bash">paddlex --pipeline ./ts_ad.yaml --input ts_ad.csv --device gpu:0
-</code></pre>
-<p>Here, parameters such as <code>--model</code> and <code>--device</code> do not need to be specified, as they will use the parameters in the configuration file. If parameters are still specified, the specified parameters will take precedence.</p></details>
-
-<p>After running, the result obtained is:</p>
-<div class="language-json highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span><span class="err">&#39;i</span><span class="kc">n</span><span class="err">pu</span><span class="kc">t</span><span class="err">_pa</span><span class="kc">t</span><span class="err">h&#39;</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;</span><span class="kc">ts</span><span class="err">_ad.csv&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;a</span><span class="kc">n</span><span class="err">omaly&#39;</span><span class="p">:</span><span class="w">            </span><span class="err">label</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kc">t</span><span class="err">imes</span><span class="kc">ta</span><span class="err">mp</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="mi">220226</span><span class="w">         </span><span class="mi">0</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="mi">220227</span><span class="w">         </span><span class="mi">0</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="mi">220228</span><span class="w">         </span><span class="mi">0</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="mi">220229</span><span class="w">         </span><span class="mi">0</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="mi">220230</span><span class="w">         </span><span class="mi">0</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="err">...</span><span class="w">          </span><span class="err">...</span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="mi">220317</span><span class="w">         </span><span class="mi">1</span>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="mi">220318</span><span class="w">         </span><span class="mi">1</span>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="mi">220319</span><span class="w">         </span><span class="mi">1</span>
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="mi">220320</span><span class="w">         </span><span class="mi">1</span>
-</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="mi">220321</span><span class="w">         </span><span class="mi">0</span>
-</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
-</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="p">[</span><span class="mi">96</span><span class="w"> </span><span class="err">rows</span><span class="w"> </span><span class="err">x</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="err">colum</span><span class="kc">ns</span><span class="p">]}</span>
+<p>The result of the time series file is saved under <code>save_path</code>.</p>
+<h4 id="222-integration-via-python-script">2.2.2 Integration via Python Script<a class="headerlink" href="#222-integration-via-python-script" title="Permanent link">&para;</a></h4>
+<p>The above command line is for a quick experience to view the results. Generally, in a project, it is often necessary to integrate through code. You can complete the fast inference of the production line with just a few lines of code. The inference code is as follows:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">paddlex</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_pipeline</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">pipeline</span> <span class="o">=</span> <span class="n">create_pipeline</span><span class="p">(</span><span class="n">pipeline</span><span class="o">=</span><span class="s2">&quot;ts_anomaly_detection&quot;</span><span class="p">)</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="n">output</span> <span class="o">=</span> <span class="n">pipeline</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="s2">&quot;ts_ad.csv&quot;</span><span class="p">)</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">output</span><span class="p">:</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    <span class="n">res</span><span class="o">.</span><span class="n">print</span><span class="p">()</span> <span class="c1">## 打印预测的结构化输出</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    <span class="n">res</span><span class="o">.</span><span class="n">save_to_csv</span><span class="p">(</span><span class="n">save_path</span><span class="o">=</span><span class="s2">&quot;./output/&quot;</span><span class="p">)</span> <span class="c1">## 保存csv格式结果</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    <span class="n">res</span><span class="o">.</span><span class="n">save_to_json</span><span class="p">(</span><span class="n">save_path</span><span class="o">=</span><span class="s2">&quot;./output/&quot;</span><span class="p">)</span> <span class="c1">## 保存json格式结果</span>
 </span></code></pre></div>
-<h4 id="222-python-script-integration">2.2.2 Python Script Integration<a class="headerlink" href="#222-python-script-integration" title="Permanent link">&para;</a></h4>
-<p>A few lines of code can complete the rapid inference of the pipeline. Taking the general time series anomaly detection pipeline as an example:</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">from</span> <span class="nn">paddlex</span> <span class="kn">import</span> <span class="n">create_pipeline</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">pipeline</span> <span class="o">=</span> <span class="n">create_pipeline</span><span class="p">(</span><span class="n">pipeline</span><span class="o">=</span><span class="s2">&quot;ts_ad&quot;</span><span class="p">)</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="n">output</span> <span class="o">=</span> <span class="n">pipeline</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="s2">&quot;ts_ad.csv&quot;</span><span class="p">)</span>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">output</span><span class="p">:</span>
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    <span class="n">res</span><span class="o">.</span><span class="n">print</span><span class="p">()</span>  <span class="c1"># Print the structured output of the prediction</span>
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    <span class="n">res</span><span class="o">.</span><span class="n">save_to_csv</span><span class="p">(</span><span class="s2">&quot;./output/&quot;</span><span class="p">)</span>  <span class="c1"># Save the result in CSV format</span>
-</span></code></pre></div>
-<p>The result obtained is the same as that of the command line method.</p>
-<p>In the above Python script, the following steps are executed:</p>
-<p>（1）Instantiate the  production line object using <code>create_pipeline</code>: Specific parameter descriptions are as follows:</p>
+<p>In the above Python script, the following steps are performed:</p>
+<p>(1) Instantiate the production line object through <code>create_pipeline()</code>: The specific parameter descriptions are as follows:</p>
 <table>
 <thead>
 <tr>
 <th>Parameter</th>
 <th>Description</th>
 <th>Type</th>
-<th>Default</th>
+<th>Default Value</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>pipeline</code></td>
-<td>The name of the production line or the path to the production line configuration file. If it is the name of the production line, it must be supported by PaddleX.</td>
+<td>The name of the production line or the path to the production line configuration file. If it is the name of the production line, it must be a production line supported by PaddleX.</td>
 <td><code>str</code></td>
-<td>None</td>
+<td><code>None</code></td>
 </tr>
 <tr>
 <td><code>device</code></td>
-<td>The device for production line model inference. Supports: "gpu", "cpu".</td>
+<td>The inference device for the production line. It supports specifying the specific card number of the hardware, such as "gpu:0" for GPU, "npu:0" for NPU, or "cpu" for CPU.</td>
 <td><code>str</code></td>
-<td><code>gpu</code></td>
+<td><code>gpu:0</code></td>
 </tr>
 <tr>
 <td><code>use_hpip</code></td>
-<td>Whether to enable high-performance inference, only available if the production line supports it.</td>
+<td>Whether to enable high-performance inference. This is only available if the production line supports high-performance inference.</td>
 <td><code>bool</code></td>
 <td><code>False</code></td>
 </tr>
 </tbody>
 </table>
-<p>（2）Invoke the <code>predict</code> method of the  production line object for inference prediction: The <code>predict</code> method parameter is <code>x</code>, which is used to input data to be predicted, supporting multiple input methods, as shown in the following examples:</p>
+
+<p>(2) Call the <code>predict()</code> method of the <code>ts_anomaly_detection</code> production line object for inference prediction. This method returns a <code>generator</code>. The parameters and their descriptions for the <code>predict()</code> method are as follows:</p>
 <table>
 <thead>
 <tr>
-<th>Parameter Type</th>
-<th>Parameter Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Python Var</td>
-<td>Supports directly passing in Python variables, such as numpy.ndarray representing image data.</td>
-</tr>
-<tr>
-<td>str</td>
-<td>Supports passing in the path of the file to be predicted, such as the local path of an image file: <code>/root/data/img.jpg</code>.</td>
-</tr>
-<tr>
-<td>str</td>
-<td>Supports passing in the URL of the file to be predicted, such as the network URL of an image file: <a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/ts/demo_ts/ts_ad.csv">Example</a>.</td>
-</tr>
-<tr>
-<td>str</td>
-<td>Supports passing in a local directory, which should contain files to be predicted, such as the local path: <code>/root/data/</code>.</td>
-</tr>
-<tr>
-<td>dict</td>
-<td>Supports passing in a dictionary type, where the key needs to correspond to a specific task, such as "img" for image classification tasks. The value of the dictionary supports the above types of data, for example: <code>{"img": "/root/data1"}</code>.</td>
-</tr>
-<tr>
-<td>list</td>
-<td>Supports passing in a list, where the list elements need to be of the above types of data, such as <code>[numpy.ndarray, numpy.ndarray], ["/root/data/img1.jpg", "/root/data/img2.jpg"], ["/root/data1", "/root/data2"], [{"img": "/root/data1"}, {"img": "/root/data2/img.jpg"}]</code>.</td>
-</tr>
-</tbody>
-</table>
-<p>（3）Obtain the prediction results by calling the <code>predict</code> method: The <code>predict</code> method is a <code>generator</code>, so prediction results need to be obtained through iteration. The <code>predict</code> method predicts data in batches, so the prediction results are in the form of a list.</p>
-<p>（4）Process the prediction results: The prediction result for each sample is of <code>dict</code> type and supports printing or saving to files, with the supported file types depending on the specific pipeline. For example:</p>
-<table>
-<thead>
-<tr>
-<th>Method</th>
+<th>Parameter</th>
 <th>Description</th>
-<th>Method Parameters</th>
+<th>Type</th>
+<th>Options</th>
+<th>Default Value</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>save_to_csv</td>
-<td>Saves results as a csv file</td>
-<td><code>- save_path</code>: str, the path to save the file, when it's a directory, the saved file name is consistent with the input file type;<br/><code>- indent</code>: int, json formatting setting, default is 4;<br/><code>- ensure_ascii</code>: bool, json formatting setting, default is False;</td>
+<td><code>input</code></td>
+<td>The data to be predicted. It supports multiple input types and is required.</td>
+<td><code>Python Var|str|list</code></td>
+<td>
+<ul>
+  <li><b>Python Var</b>: Time series data represented by <code>pandas.DataFrame</code>.</li>
+  <li><b>str</b>: Local path of the time series file, such as <code>/root/data/ts.csv</code>; <b>URL link</b>, such as the network URL of the time series file: <a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/ts/demo_ts/ts_ad.csv">Example</a>; <b>Local directory</b>, which must contain the time series to be predicted, such as the local path: <code>/root/data/</code>.</li>
+  <li><b>List</b>: The elements of the list must be of the above types, such as <code>[pandas.DataFrame, pandas.DataFrame]</code>, <code>["/root/data/ts1.csv", "/root/data/ts2.csv"]</code>, <code>["/root/data1", "/root/data2"]</code>.</li>
+</ul>
+</td>
+<td><code>None</code></td>
 </tr>
 <tr>
-<td>save_to_xlsx</td>
-<td>Saves results as table file</td>
-<td><code>- save_path</code>: str, the path to save the file, when it's a directory, the saved file name is consistent with the input file type;</td>
+<td><code>device</code></td>
+<td>The inference device for the production line.</td>
+<td><code>str|None</code></td>
+<td>
+<ul>
+  <li><b>CPU</b>: <code>cpu</code> indicates using the CPU for inference;</li>
+  <li><b>GPU</b>: <code>gpu:0</code> indicates using the first GPU for inference;</li>
+  <li><b>NPU</b>: <code>npu:0</code> indicates using the first NPU for inference;</li>
+  <li><b>XPU</b>: <code>xpu:0</code> indicates using the first XPU for inference;</li>
+  <li><b>MLU</b>: <code>mlu:0</code> indicates using the first MLU for inference;</li>
+  <li><b>DCU</b>: <code>dcu:0</code> indicates using the first DCU for inference;</li>
+  <li><b>None</b>: If set to <code>None</code>, the value initialized for the production line will be used by default. During initialization, the local GPU device 0 will be prioritized. If not available, the CPU device will be used.</li>
+</ul>
+</td>
+<td><code>None</code></td>
 </tr>
 </tbody>
 </table>
-<p>If you have a configuration file, you can customize the configurations of the image anomaly detection pipeline by simply modifying the <code>pipeline</code> parameter in the <code>create_pipeline</code> method to the path of the pipeline configuration file.</p>
-<p>For example, if your configuration file is saved at <code>./my_path/ts_ad.yaml</code>, you only need to execute:</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">from</span> <span class="nn">paddlex</span> <span class="kn">import</span> <span class="n">create_pipeline</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">pipeline</span> <span class="o">=</span> <span class="n">create_pipeline</span><span class="p">(</span><span class="n">pipeline</span><span class="o">=</span><span class="s2">&quot;./my_path/ts_ad.yaml&quot;</span><span class="p">)</span>
+
+<ul>
+<li>In addition, it also supports obtaining prediction results in different formats through attributes, as follows:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Attribute Description</th>
+</tr>
+</thead>
+<tr>
+<td rowspan = "1"><code>json</code></td>
+<td rowspan = "1">Obtain the prediction result in <code>json</code> format</td>
+</tr>
+<tr>
+<td rowspan = "2"><code>csv</code></td>
+<td rowspan = "2">Obtain the prediction result in <code>csv</code> format</td>
+</tr>
+</table>
+
+<ul>
+<li>The prediction result obtained through the <code>json</code> attribute is of dict type, and its content is consistent with the content saved by calling the <code>save_to_json()</code> method.</li>
+<li>The <code>csv</code> attribute returns a <code>Pandas.DataFrame</code> type data, which contains the time series anomaly detection results.</li>
+</ul>
+<p>In addition, you can obtain the configuration file of the ts_anomaly_detection production line and load the configuration file for prediction. You can execute the following command to save the result in <code>my_path</code>:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>paddlex --get_pipeline_config ts_anomaly_detection --save_path ./my_path
+</span></code></pre></div>
+<p>If you have obtained the configuration file, you can customize the settings for the time series anomaly detection pipeline by simply modifying the <code>pipeline</code> parameter value in the <code>create_pipeline</code> method to the path of the pipeline configuration file.</p>
+<p>For example, if your configuration file is saved at <code>./my_path/ts_anomaly_detection.yaml</code>, you just need to execute:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">paddlex</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_pipeline</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">pipeline</span> <span class="o">=</span> <span class="n">create_pipeline</span><span class="p">(</span><span class="n">pipeline</span><span class="o">=</span><span class="s2">&quot;./my_path/ts_anomaly_detection.yaml&quot;</span><span class="p">)</span>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">output</span> <span class="o">=</span> <span class="n">pipeline</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="s2">&quot;ts_ad.csv&quot;</span><span class="p">)</span>
 </span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">output</span><span class="p">:</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    <span class="n">res</span><span class="o">.</span><span class="n">print</span><span class="p">()</span>  <span class="c1"># Print the structured output of prediction</span>
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    <span class="n">res</span><span class="o">.</span><span class="n">save_to_csv</span><span class="p">(</span><span class="s2">&quot;./output/&quot;</span><span class="p">)</span>  <span class="c1"># Save results in CSV format</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    <span class="n">res</span><span class="o">.</span><span class="n">print</span><span class="p">()</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    <span class="n">res</span><span class="o">.</span><span class="n">save_to_csv</span><span class="p">(</span><span class="s2">&quot;./output/&quot;</span><span class="p">)</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>    <span class="n">res</span><span class="o">.</span><span class="n">save_to_json</span><span class="p">(</span><span class="s2">&quot;./output/&quot;</span><span class="p">)</span>
 </span></code></pre></div>
 <h2 id="3-development-integrationdeployment">3. Development Integration/Deployment<a class="headerlink" href="#3-development-integrationdeployment" title="Permanent link">&para;</a></h2>
-<p>If the pipeline meets your requirements for inference speed and accuracy in production, you can proceed with development integration/deployment.</p>
-<p>If you need to directly apply the pipeline in your Python project, refer to the example code in <a href="#222-python-script-integration">2.2.2 Python Script Integration</a>.</p>
-<p>Additionally, PaddleX provides three other deployment methods, detailed as follows:</p>
-<p>🚀 <b>High-Performance Inference</b>: In actual production environments, many applications have stringent standards for the performance metrics of deployment strategies (especially response speed) to ensure efficient system operation and smooth user experience. To this end, PaddleX provides high-performance inference plugins aimed at deeply optimizing model inference and pre/post-processing for significant end-to-end speedups. For detailed high-performance inference procedures, refer to the <a href="../../../pipeline_deploy/high_performance_inference.html">PaddleX High-Performance Inference Guide</a>.</p>
-<p>☁️ <b>Service-Oriented Deployment</b>: Service-oriented deployment is a common deployment form in actual production environments. By encapsulating inference functions as services, clients can access these services through network requests to obtain inference results. PaddleX enables users to achieve low-cost service-oriented deployment of pipelines. For detailed service-oriented deployment procedures, refer to the <a href="../../../pipeline_deploy/service_deploy.html">PaddleX Service-Oriented Deployment Guide</a>.</p>
-<p>Below are the API references and multi-language service invocation examples:</p>
+<p>If the production line meets your requirements for inference speed and accuracy, you can proceed directly with development integration/deployment.</p>
+<p>If you need to apply the production line directly in your Python project, you can refer to the example code in <a href="#222-python脚本方式集成">2.2.2 Python Script Method</a>.</p>
+<p>In addition, PaddleX also provides three other deployment methods, which are detailed as follows:</p>
+<p>🚀 <b>High-Performance Inference</b>: In actual production environments, many applications have strict performance requirements for deployment strategies, especially in terms of response speed, to ensure efficient system operation and smooth user experience. To this end, PaddleX provides a high-performance inference plugin, which aims to deeply optimize the performance of model inference and pre/post-processing to significantly speed up the end-to-end process. For details on high-performance inference, please refer to the <a href="../../../pipeline_deploy/high_performance_inference.html">PaddleX High-Performance Inference Guide</a>.</p>
+<p>☁️ <b>Service-based Deployment</b>: Service-based deployment is a common form of deployment in actual production environments. By encapsulating the inference function as a service, clients can access these services through network requests to obtain inference results. PaddleX supports various service-based deployment solutions for production lines. For details on service-based deployment, please refer to the <a href="../../../pipeline_deploy/serving.html">PaddleX Service-based Deployment Guide</a>.</p>
+<p>Below are the API references for basic service-based deployment and examples of multi-language service calls:</p>
 <details><summary>API Reference</summary>
 
-<p>For main operations provided by the service:</p>
+<p>For the main operations provided by the service:</p>
 <ul>
 <li>The HTTP request method is POST.</li>
-<li>The request body and the response body are both JSON data (JSON objects).</li>
-<li>When the request is processed successfully, the response status code is <code>200</code>, and the properties of the response body are as follows:</li>
+<li>Both the request body and response body are JSON data (JSON objects).</li>
+<li>When the request is processed successfully, the response status code is <code>200</code>, and the attributes of the response body are as follows:</li>
 </ul>
 <table>
 <thead>
 <tr>
 <th>Name</th>
 <th>Type</th>
-<th>Description</th>
+<th>Meaning</th>
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><code>logId</code></td>
+<td><code>string</code></td>
+<td>The UUID of the request.</td>
+</tr>
 <tr>
 <td><code>errorCode</code></td>
 <td><code>integer</code></td>
@@ -4717,23 +5579,32 @@ Parameter Explanation:</p>
 <tr>
 <td><code>errorMsg</code></td>
 <td><code>string</code></td>
-<td>Error description. Fixed as <code>"Success"</code>.</td>
+<td>Error message. Fixed as <code>"Success"</code>.</td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>The result of the operation.</td>
 </tr>
 </tbody>
 </table>
-<p>The response body may also have a <code>result</code> property of type <code>object</code>, which stores the operation result information.</p>
 <ul>
-<li>When the request is not processed successfully, the properties of the response body are as follows:</li>
+<li>When the request is not processed successfully, the attributes of the response body are as follows:</li>
 </ul>
 <table>
 <thead>
 <tr>
 <th>Name</th>
 <th>Type</th>
-<th>Description</th>
+<th>Meaning</th>
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><code>logId</code></td>
+<td><code>string</code></td>
+<td>The UUID of the request.</td>
+</tr>
 <tr>
 <td><code>errorCode</code></td>
 <td><code>integer</code></td>
@@ -4742,25 +5613,25 @@ Parameter Explanation:</p>
 <tr>
 <td><code>errorMsg</code></td>
 <td><code>string</code></td>
-<td>Error description.</td>
+<td>Error message.</td>
 </tr>
 </tbody>
 </table>
-<p>Main operations provided by the service:</p>
+<p>The main operations provided by the service are as follows:</p>
 <ul>
 <li><b><code>infer</code></b></li>
 </ul>
-<p>Performs time-series anomaly detection.</p>
+<p>Perform time-series anomaly detection.</p>
 <p><code>POST /time-series-anomaly-detection</code></p>
 <ul>
-<li>Attributes of the request body:</li>
+<li>The attributes of the request body are as follows:</li>
 </ul>
 <table>
 <thead>
 <tr>
 <th>Name</th>
 <th>Type</th>
-<th>Description</th>
+<th>Meaning</th>
 <th>Required</th>
 </tr>
 </thead>
@@ -4768,27 +5639,27 @@ Parameter Explanation:</p>
 <tr>
 <td><code>csv</code></td>
 <td><code>string</code></td>
-<td>The URL of a CSV file accessible by the service or the Base64 encoded result of the CSV file content. The CSV file must be encoded in UTF-8.</td>
+<td>The URL of a CSV file accessible by the server or the Base64-encoded content of a CSV file. The CSV file must be encoded in UTF-8.</td>
 <td>Yes</td>
 </tr>
 </tbody>
 </table>
 <ul>
-<li>When the request is processed successfully, the <code>result</code> of the response body has the following properties:</li>
+<li>When the request is processed successfully, the <code>result</code> of the response body has the following attributes:</li>
 </ul>
 <table>
 <thead>
 <tr>
 <th>Name</th>
 <th>Type</th>
-<th>Description</th>
+<th>Meaning</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>csv</code></td>
 <td><code>string</code></td>
-<td>Time-series anomaly detection results in CSV format. Encoded in UTF-8+Base64.</td>
+<td>The result of time-series anomaly detection in CSV format. Encoded in UTF-8+Base64.</td>
 </tr>
 </tbody>
 </table>
@@ -4798,40 +5669,104 @@ Parameter Explanation:</p>
 }
 </code></pre></details>
 
-<details><summary>Multi-Language Service Invocation Examples</summary>
+<details><summary>Multi-language Service Invocation Example</summary>
 
 <details>
 <summary>Python</summary>
 
-
 <pre><code class="language-python">import base64
 import requests
 
-API_URL = &quot;http://localhost:8080/time-series-anomaly-detection&quot;
-csv_path = &quot;./test.csv&quot;
-output_csv_path = &quot;./out.csv&quot;
+API_URL = "http://localhost:8080/time-series-anomaly-detection"  # Service URL
+csv_path = "./test.csv"
+output_csv_path = "./out.csv"
 
-with open(csv_path, &quot;rb&quot;) as file:
+# Encode the local CSV file using Base64
+with open(csv_path, "rb") as file:
     csv_bytes = file.read()
-    csv_data = base64.b64encode(csv_bytes).decode(&quot;ascii&quot;)
+    csv_data = base64.b64encode(csv_bytes).decode("ascii")
 
-payload = {&quot;csv&quot;: csv_data}
+payload = {"csv": csv_data}
 
+# Call the API
 response = requests.post(API_URL, json=payload)
 
+# Process the response data
 assert response.status_code == 200
-result = response.json()[&quot;result&quot;]
-with open(output_csv_path, &quot;wb&quot;) as f:
-    f.write(base64.b64decode(result[&quot;csv&quot;]))
-print(f&quot;Output time-series data saved at  {output_csv_path}&quot;)
+result = response.json()["result"]
+with open(output_csv_path, "wb") as f:
+    f.write(base64.b64decode(result["csv"]))
+print(f"Output time-series data saved at {output_csv_path}")
+</code></pre></details>
+
+<details><summary>C++</summary>
+
+<pre><code class="language-cpp">#include <iostream>
+#include "cpp-httplib/httplib.h" // https://github.com/Huiyicc/cpp-httplib
+#include "nlohmann/json.hpp" // https://github.com/nlohmann/json
+#include "base64.hpp" // https://github.com/tobiaslocker/base64
+
+int main() {
+    httplib::Client client("localhost:8080");
+    const std::string csvPath = "./test.csv";
+    const std::string outputCsvPath = "./out.csv";
+
+    httplib::Headers headers = {
+        {"Content-Type", "application/json"}
+    };
+
+    // Perform Base64 encoding
+    std::ifstream file(csvPath, std::ios::binary | std::ios::ate);
+    std::streamsize size = file.tellg();
+    file.seekg(0, std::ios::beg);
+
+    std::vector<char> buffer(size);
+    if (!file.read(buffer.data(), size)) {
+        std::cerr << "Error reading file." << std::endl;
+        return 1;
+    }
+    std::string bufferStr(reinterpret_cast<const char*>(buffer.data()), buffer.size());
+    std::string encodedCsv = base64::to_base64(bufferStr);
+
+    nlohmann::json jsonObj;
+    jsonObj["csv"] = encodedCsv;
+    std::string body = jsonObj.dump();
+
+    // Call the API
+    auto response = client.Post("/time-series-anomaly-detection", headers, body, "application/json");
+    // Process the response data
+    if (response && response->status == 200) {
+        nlohmann::json jsonResponse = nlohmann::json::parse(response->body);
+        auto result = jsonResponse["result"];
+
+        // Save the data
+        encodedCsv = result["csv"];
+        std::string decodedString = base64::from_base64(encodedCsv);
+        std::vector<unsigned char> decodedCsv(decodedString.begin(), decodedString.end());
+        std::ofstream outputCsv(outputCsvPath, std::ios::binary | std::ios::out);
+        if (outputCsv.is_open()) {
+            outputCsv.write(reinterpret_cast<char*>(decodedCsv.data()), decodedCsv.size());
+            outputCsv.close();
+            std::cout << "Output time-series data saved at " << outputCsvPath << std::endl;
+        } else {
+            std::cerr << "Unable to open file for writing: " << outputCsvPath << std::endl;
+        }
+    } else {
+        std::cout << "Failed to send HTTP request." << std::endl;
+        std::cout << response->body << std::endl;
+        return 1;
+    }
+
+    return 0;
+}
 </code></pre></details>
 
 <details><summary>C++</summary>
 
 <pre><code class="language-cpp">#include &lt;iostream&gt;
-#include &quot;cpp-httplib/httplib.h&quot; // https://github.com/Huiyicc/cpp-httplib
-#include &quot;nlohmann/json.hpp&quot; // https://github.com/nlohmann/json
-#include &quot;base64.hpp&quot; // https://github.com/tobiaslocker/base64
+#include &quot;cpp-httplib/httplib.h&quot; // <url id="cu9m7enftaebd5d06u9g" type="url" status="parsed" title="GitHub - Huiyicc/cpp-httplib: A C++ header-only HTTP/HTTPS server and client library" wc="15064">https://github.com/Huiyicc/cpp-httplib</url>
+#include &quot;nlohmann/json.hpp&quot; // <url id="cu9m7enftaebd5d06ua0" type="url" status="parsed" title="GitHub - nlohmann/json: JSON for Modern C++" wc="80311">https://github.com/nlohmann/json</url>
+#include &quot;base64.hpp&quot; // <url id="cu9m7enftaebd5d06uag" type="url" status="parsed" title="GitHub - tobiaslocker/base64: A modern C++ base64 encoder / decoder" wc="2293">https://github.com/tobiaslocker/base64</url>
 
 int main() {
     httplib::Client client(&quot;localhost:8080&quot;);
@@ -4842,6 +5777,7 @@ int main() {
         {&quot;Content-Type&quot;, &quot;application/json&quot;}
     };
 
+    // Perform Base64 encoding
     std::ifstream file(csvPath, std::ios::binary | std::ios::ate);
     std::streamsize size = file.tellg();
     file.seekg(0, std::ios::beg);
@@ -4858,13 +5794,16 @@ int main() {
     jsonObj[&quot;csv&quot;] = encodedCsv;
     std::string body = jsonObj.dump();
 
+    // Call the API
     auto response = client.Post(&quot;/time-series-anomaly-detection&quot;, headers, body, &quot;application/json&quot;);
+    // Process the response data
     if (response &amp;&amp; response-&gt;status == 200) {
         nlohmann::json jsonResponse = nlohmann::json::parse(response-&gt;body);
         auto result = jsonResponse[&quot;result&quot;];
 
+        // Save the data
         encodedCsv = result[&quot;csv&quot;];
-        decodedString = base64::from_base64(encodedCsv);
+        std::string decodedString = base64::from_base64(encodedCsv);
         std::vector&lt;unsigned char&gt; decodedCsv(decodedString.begin(), decodedString.end());
         std::ofstream outputCsv(outputCsvPath, std::ios::binary | std::ios::out);
         if (outputCsv.is_open()) {
@@ -4902,6 +5841,7 @@ public class Main {
         String csvPath = &quot;./test.csv&quot;;
         String outputCsvPath = &quot;./out.csv&quot;;
 
+        // Base64 encode the local CSV file
         File file = new File(csvPath);
         byte[] fileContent = java.nio.file.Files.readAllBytes(file.toPath());
         String csvData = Base64.getEncoder().encodeToString(fileContent);
@@ -4910,6 +5850,7 @@ public class Main {
         ObjectNode params = objectMapper.createObjectNode();
         params.put(&quot;csv&quot;, csvData);
 
+        // Create an instance of OkHttpClient
         OkHttpClient client = new OkHttpClient();
         MediaType JSON = MediaType.Companion.get(&quot;application/json; charset=utf-8&quot;);
         RequestBody body = RequestBody.Companion.create(params.toString(), JSON);
@@ -4918,12 +5859,14 @@ public class Main {
                 .post(body)
                 .build();
 
+        // Call the API and handle the response data
         try (Response response = client.newCall(request).execute()) {
             if (response.isSuccessful()) {
                 String responseBody = response.body().string();
                 JsonNode resultNode = objectMapper.readTree(responseBody);
                 JsonNode result = resultNode.get(&quot;result&quot;);
 
+                // Save the returned data
                 String base64Csv = result.get(&quot;csv&quot;).asText();
                 byte[] csvBytes = Base64.getDecoder().decode(base64Csv);
                 try (FileOutputStream fos = new FileOutputStream(outputCsvPath)) {
@@ -4956,20 +5899,22 @@ func main() {
     csvPath := &quot;./test.csv&quot;;
     outputCsvPath := &quot;./out.csv&quot;;
 
+    // Read the CSV file and encode it with Base64
     csvBytes, err := ioutil.ReadFile(csvPath)
     if err != nil {
-        fmt.Println(&quot;Error reading csv file:&quot;, err)
+        fmt.Println(&quot;Error reading CSV file:&quot;, err)
         return
     }
     csvData := base64.StdEncoding.EncodeToString(csvBytes)
 
-    payload := map[string]string{&quot;csv&quot;: csvData}
+    payload := map[string]string{&quot;csv&quot;: csvData} // Base64-encoded file content
     payloadBytes, err := json.Marshal(payload)
     if err != nil {
         fmt.Println(&quot;Error marshaling payload:&quot;, err)
         return
     }
 
+    // Call the API
     client := &amp;http.Client{}
     req, err := http.NewRequest(&quot;POST&quot;, API_URL, bytes.NewBuffer(payloadBytes))
     if err != nil {
@@ -4984,6 +5929,7 @@ func main() {
     }
     defer res.Body.Close()
 
+    // Process the response data
     body, err := ioutil.ReadAll(res.Body)
     if err != nil {
         fmt.Println(&quot;Error reading response body:&quot;, err)
@@ -5001,14 +5947,15 @@ func main() {
         return
     }
 
+    // Decode the Base64-encoded CSV data and save it as a file
     outputCsvData, err := base64.StdEncoding.DecodeString(respData.Result.Csv)
     if err != nil {
-        fmt.Println(&quot;Error decoding base64 csv data:&quot;, err)
+        fmt.Println(&quot;Error decoding Base64 CSV data:&quot;, err)
         return
     }
     err = ioutil.WriteFile(outputCsvPath, outputCsvData, 0644)
     if err != nil {
-        fmt.Println(&quot;Error writing csv to file:&quot;, err)
+        fmt.Println(&quot;Error writing CSV to file:&quot;, err)
         return
     }
     fmt.Printf(&quot;Output time-series data saved at %s.csv&quot;, outputCsvPath)
@@ -5027,30 +5974,34 @@ using Newtonsoft.Json.Linq;
 
 class Program
 {
-    static readonly string API_URL = &quot;http://localhost:8080/time-series-anomaly-detection&quot;;
-    static readonly string csvPath = &quot;./test.csv&quot;;
-    static readonly string outputCsvPath = &quot;./out.csv&quot;;
+    static readonly string API_URL = "http://localhost:8080/time-series-anomaly-detection";
+    static readonly string csvPath = "./test.csv";
+    static readonly string outputCsvPath = "./out.csv";
 
     static async Task Main(string[] args)
     {
         var httpClient = new HttpClient();
 
+        // Encode the local CSV file using Base64
         byte[] csvBytes = File.ReadAllBytes(csvPath);
         string csvData = Convert.ToBase64String(csvBytes);
 
-        var payload = new JObject{ { &quot;csv&quot;, csvData } };
-        var content = new StringContent(payload.ToString(), Encoding.UTF8, &quot;application/json&quot;);
+        var payload = new JObject{ { "csv", csvData } }; // Base64 encoded file content
+        var content = new StringContent(payload.ToString(), Encoding.UTF8, "application/json");
 
+        // Call the API
         HttpResponseMessage response = await httpClient.PostAsync(API_URL, content);
         response.EnsureSuccessStatusCode();
 
+        // Process the response data
         string responseBody = await response.Content.ReadAsStringAsync();
         JObject jsonResponse = JObject.Parse(responseBody);
 
-        string base64Csv = jsonResponse[&quot;result&quot;][&quot;csv&quot;].ToString();
+        // Save the CSV file
+        string base64Csv = jsonResponse["result"]["csv"].ToString();
         byte[] outputCsvBytes = Convert.FromBase64String(base64Csv);
         File.WriteAllBytes(outputCsvPath, outputCsvBytes);
-        Console.WriteLine($&quot;Output time-series data saved at {outputCsvPath}&quot;);
+        Console.WriteLine($"Output time-series data saved at {outputCsvPath}");
     }
 }
 </code></pre></details>
@@ -5060,7 +6011,7 @@ class Program
 <pre><code class="language-js">const axios = require('axios');
 const fs = require('fs');
 
-const API_URL = 'http://localhost:8080/time-series-anomaly-detection'
+const API_URL = 'http://localhost:8080/time-series-anomaly-detection';
 const csvPath = &quot;./test.csv&quot;;
 const outputCsvPath = &quot;./out.csv&quot;;
 
@@ -5069,10 +6020,11 @@ let config = {
    maxBodyLength: Infinity,
    url: API_URL,
    data: JSON.stringify({
-    'csv': encodeFileToBase64(csvPath)
+    'csv': encodeFileToBase64(csvPath)  // Base64 encoded file content
   })
 };
 
+// Read the csv file and convert it to Base64
 function encodeFileToBase64(filePath) {
   const bitmap = fs.readFileSync(filePath);
   return Buffer.from(bitmap).toString('base64');
@@ -5082,6 +6034,7 @@ axios.request(config)
 .then((response) =&gt; {
     const result = response.data[&quot;result&quot;];
 
+    // Save the csv file
     const csvBuffer = Buffer.from(result[&quot;csv&quot;], 'base64');
     fs.writeFile(outputCsvPath, csvBuffer, (err) =&gt; {
       if (err) throw err;
@@ -5097,13 +6050,15 @@ axios.request(config)
 
 <pre><code class="language-php">&lt;?php
 
-$API_URL = &quot;http://localhost:8080/time-series-anomaly-detection&quot;;
+$API_URL = &quot;http://localhost:8080/time-series-anomaly-detection&quot;; // Service URL
 $csv_path = &quot;./test.csv&quot;;
 $output_csv_path = &quot;./out.csv&quot;;
 
+// Base64 encode the local CSV file
 $csv_data = base64_encode(file_get_contents($csv_path));
-$payload = array(&quot;csv&quot; =&gt; $csv_data);
+$payload = array(&quot;csv&quot; =&gt; $csv_data); // Base64 encoded file content
 
+// Call the API
 $ch = curl_init($API_URL);
 curl_setopt($ch, CURLOPT_POST, true);
 curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($payload));
@@ -5112,6 +6067,7 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $response = curl_exec($ch);
 curl_close($ch);
 
+// Handle the response data
 $result = json_decode($response, true)[&quot;result&quot;];
 
 file_put_contents($output_csv_path, base64_decode($result[&quot;csv&quot;]));
@@ -5121,38 +6077,31 @@ echo &quot;Output time-series data saved at &quot; . $output_csv_path . &quot;\n
 </code></pre></details>
 </details>
 <p><br/></p>
-<p>📱 <b>Edge Deployment</b>: Edge deployment is a method that places computing and data processing capabilities on user devices themselves, allowing devices to process data directly without relying on remote servers. PaddleX supports deploying models on edge devices such as Android. For detailed edge deployment procedures, refer to the <a href="../../../pipeline_deploy/edge_deploy.html">PaddleX Edge Deployment Guide</a>.
-Choose the appropriate deployment method for your model pipeline based on your needs, and proceed with subsequent AI application integration.</p>
-<h2 id="4-custom-development">4. Custom Development<a class="headerlink" href="#4-custom-development" title="Permanent link">&para;</a></h2>
-<p>If the default model weights provided by the General Time Series Anomaly Detection Pipeline do not meet your requirements for accuracy or speed in your specific scenario, you can try to further fine-tune the existing model using <b>your own domain-specific or application-specific data</b> to improve the recognition performance of the pipeline in your scenario.</p>
-<h3 id="41-model-fine-tuning">4.1 Model Fine-tuning<a class="headerlink" href="#41-model-fine-tuning" title="Permanent link">&para;</a></h3>
-<p>Since the General Time Series Anomaly Detection Pipeline includes a time series anomaly detection module, if the performance of the pipeline does not meet expectations, you need to refer to the <a href="../../../module_usage/tutorials/time_series_modules/time_series_anomaly_detection.html#iv-custom-development">Customization</a> section in the <a href="../../../module_usage/tutorials/time_series_modules/time_series_anomaly_detection.html">Time Series Modules Development Tutorial</a> to fine-tune the time series anomaly detection model using your private dataset.</p>
+<p>📱 <b>Edge Deployment</b>: Edge deployment is a method of placing computing and data processing capabilities on the user's device itself, allowing the device to process data directly without relying on remote servers. PaddleX supports deploying models on edge devices such as Android. For detailed edge deployment procedures, please refer to the <a href="../../../pipeline_deploy/edge_deploy.html">PaddleX Edge Deployment Guide</a>.
+You can choose the appropriate method to deploy the model production line according to your needs, and then proceed with subsequent AI application integration.</p>
+<h2 id="4-secondary-development">4. Secondary Development<a class="headerlink" href="#4-secondary-development" title="Permanent link">&para;</a></h2>
+<p>If the default model weights provided by the general time-series anomaly detection production line do not meet your accuracy or speed requirements in your scenario, you can try to further <b>fine-tune</b> the existing model using <b>your own specific domain or application scenario data</b> to improve the recognition effect of the general time-series anomaly detection production line in your scenario.</p>
+<h3 id="41-model-fine-tuning">4.1 Model Fine-Tuning<a class="headerlink" href="#41-model-fine-tuning" title="Permanent link">&para;</a></h3>
+<p>Since the general time-series anomaly detection production line includes a time-series anomaly detection module, if the effect of the model production line is not as expected, you need to refer to the <a href="../../../module_usage/tutorials/time_series_modules/time_series_anomaly_detection.html#四二次开发">Secondary Development</a> section in the <a href="../../../module_usage/tutorials/time_series_modules/time_series_anomaly_detection.html">Time-Series Prediction Module Development Tutorial</a> to fine-tune the time-series anomaly detection model using your private dataset.</p>
 <h3 id="42-model-application">4.2 Model Application<a class="headerlink" href="#42-model-application" title="Permanent link">&para;</a></h3>
-<p>After fine-tuning with your private dataset, you will obtain local model weights files.</p>
-<p>To use the fine-tuned model weights, simply modify the pipeline configuration file by replacing the local path of the fine-tuned model weights to the corresponding location in the pipeline configuration file:</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="o">......</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">Pipeline</span><span class="p">:</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>  <span class="n">model</span><span class="p">:</span> <span class="n">DLinear_ad</span>  <span class="c1"># Can be modified to the local path of the fine-tuned model</span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>  <span class="n">batch_size</span><span class="p">:</span> <span class="mi">1</span>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>  <span class="n">device</span><span class="p">:</span> <span class="s2">&quot;gpu:0&quot;</span>
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="o">......</span>
+<p>After you complete the fine-tuning training with your private dataset, you can obtain the local model weight file.</p>
+<p>If you need to use the fine-tuned model weights, simply modify the production line configuration file by filling in the local path of the fine-tuned model weights in the <code>model_dir</code> of the production line configuration file:</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">pipeline_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ts_anomaly_detection</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nt">SubModules</span><span class="p">:</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span><span class="nt">TSAnomalyDetection</span><span class="p">:</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="nt">module_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ts_anomaly_detection</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="nt">model_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DLinear_ad</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span><span class="nt">model_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w">  </span><span class="c1"># 此处替换为您训练后得到的模型权重本地路径</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">    </span><span class="nt">batch_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
 </span></code></pre></div>
-<p>Then, refer to the command line method or Python script method in the local experience section to load the modified pipeline configuration file.</p>
-<h2 id="5-multi-hardware-support">5. Multi-hardware Support<a class="headerlink" href="#5-multi-hardware-support" title="Permanent link">&para;</a></h2>
-<p>PaddleX supports various mainstream hardware devices such as NVIDIA GPUs, Kunlun XPU, Ascend NPU, and Cambricon MLU. <b>Simply modify the <code>--device</code> parameter</b> to seamlessly switch between different hardware.</p>
-<p>For example, if you use an NVIDIA GPU for inference of the time series anomaly detection pipeline, the Python command is:</p>
-<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>paddlex<span class="w"> </span>--pipeline<span class="w"> </span>ts_ad<span class="w"> </span>--input<span class="w"> </span>ts_ad.csv<span class="w"> </span>--device<span class="w"> </span>gpu:0
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="sb">``````</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>At<span class="w"> </span>this<span class="w"> </span>point,<span class="w"> </span><span class="k">if</span><span class="w"> </span>you<span class="w"> </span>wish<span class="w"> </span>to<span class="w"> </span>switch<span class="w"> </span>the<span class="w"> </span>hardware<span class="w"> </span>to<span class="w"> </span>Ascend<span class="w"> </span>NPU,<span class="w"> </span>simply<span class="w"> </span>modify<span class="w"> </span>the<span class="w"> </span><span class="sb">`</span>--device<span class="sb">`</span><span class="w"> </span><span class="k">in</span><span class="w"> </span>the<span class="w"> </span>Python<span class="w"> </span><span class="nb">command</span><span class="w"> </span>to<span class="w"> </span><span class="sb">`</span>npu:0<span class="sb">`</span>:
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="sb">```</span>bash
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>paddlex<span class="w"> </span>--pipeline<span class="w"> </span>ts_ad<span class="w"> </span>--input<span class="w"> </span>ts_ad.csv<span class="w"> </span>--device<span class="w"> </span>npu:0
+<p>Then, you can load the modified pipeline configuration file by referring to the command-line method or the Python script method in the local experience.</p>
+<h2 id="5-multi-hardware-support">5. Multi-Hardware Support<a class="headerlink" href="#5-multi-hardware-support" title="Permanent link">&para;</a></h2>
+<p>PaddleX supports a variety of mainstream hardware devices, including NVIDIA GPU, Kunlunxin XPU, Ascend NPU, and Cambricon MLU. You can seamlessly switch between different hardware devices by simply modifying the <code>--device</code> parameter.</p>
+<p>For example, if you are using Ascend NPU for inference in the time-series anomaly detection pipeline, the Python command you would use is:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>paddlex<span class="w"> </span>--pipeline<span class="w"> </span>ts_anomaly_detection<span class="w"> </span>--input<span class="w"> </span>ts_ad.csv<span class="w"> </span>--device<span class="w"> </span>npu:0
 </span></code></pre></div>
-If you want to use the General Time-Series Anomaly Detection Pipeline on more diverse hardware, please refer to the <a href="../../../other_devices_support/multi_devices_use_guide.html">PaddleX Multi-Device Usage Guide</a>.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>For some frequently asked questions about our project, please refer to <a href="../../../FAQ.html">FAQ</a>. If your question has not been answered, feel free to raise it in <a href="https://github.com/PaddlePaddle/PaddleX/issues">Issues</a>.</p>
-</div>
+<p>If you want to use the universal time-series anomaly detection pipeline on more types of hardware, please refer to the <a href="../../../other_devices_support/multi_devices_use_guide.html">PaddleX Multi-Hardware Usage Guide</a>.</p>
 
 
 
@@ -5175,7 +6124,7 @@ If you want to use the General Time-Series Anomaly Detection Pipeline on more di
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 13, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 6, 2025</span>
   </span>
 
     
@@ -5185,7 +6134,7 @@ If you want to use the General Time-Series Anomaly Detection Pipeline on more di
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 13, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 6, 2025</span>
   </span>
 
     
@@ -5348,7 +6297,7 @@ If you want to use the General Time-Series Anomaly Detection Pipeline on more di
       
     
     <a href="https://github.com/PaddlePaddle/PaddleX" target="_blank" rel="noopener" title="github.com" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
     </a>
   
 </div>
@@ -5363,10 +6312,10 @@ If you want to use the General Time-Series Anomaly Detection Pipeline on more di
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "navigation.expand", "navigation.path", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "navigation.expand", "navigation.path", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.f13b1293.min.js"></script>
       
         <script src="../../../../javascripts/katex.min.js"></script>
       

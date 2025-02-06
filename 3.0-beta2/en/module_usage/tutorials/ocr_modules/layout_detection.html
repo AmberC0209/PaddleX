@@ -8,6 +8,8 @@
       
       
       
+        <link rel="canonical" href="https://amberc0209.github.io/PaddleX/3.0-beta2/en/module_usage/tutorials/ocr_modules/layout_detection.html">
+      
       
         <link rel="prev" href="text_recognition.html">
       
@@ -16,7 +18,7 @@
       
       
       <link rel="icon" href="../../../../assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.48">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.2">
     
     
       
@@ -24,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.6f8fc17f.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.d7758b05.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
@@ -106,7 +108,7 @@ You're not viewing the latest version.
 </a>
 
             </div>
-            <script>var el=document.querySelector("[data-md-component=outdated]"),outdated=__md_get("__outdated",sessionStorage);!0===outdated&&el&&(el.hidden=!1)</script>
+            <script>var el=document.querySelector("[data-md-component=outdated]"),base=new URL("../../../.."),outdated=__md_get("__outdated",sessionStorage,base);!0===outdated&&el&&(el.hidden=!1)</script>
           </aside>
         
       </div>
@@ -256,7 +258,7 @@ You're not viewing the latest version.
         <a href="https://github.com/AmberC0209/PaddleX" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -571,7 +573,7 @@ You're not viewing the latest version.
       <a href="https://github.com/AmberC0209/PaddleX" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -593,6 +595,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Home
+    
   </span>
   
 
@@ -636,6 +639,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Installation
+    
   </span>
   
 
@@ -661,6 +665,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddlePaddle Install
+    
   </span>
   
 
@@ -682,6 +687,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX Install
+    
   </span>
   
 
@@ -719,6 +725,10 @@ You're not viewing the latest version.
       
         
       
+        
+      
+        
+      
     
     
       
@@ -741,6 +751,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Pipeline Tutorials
+    
   </span>
   
 
@@ -766,6 +777,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Overview
+    
   </span>
   
 
@@ -808,6 +820,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Informatio Extraction
+    
   </span>
   
 
@@ -833,6 +846,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PP-ChatOCRv3-doc
+    
   </span>
   
 
@@ -858,6 +872,12 @@ You're not viewing the latest version.
   
     
     
+      
+        
+      
+        
+      
+        
       
         
       
@@ -891,6 +911,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     OCR
+    
   </span>
   
 
@@ -916,6 +937,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     OCR
+    
   </span>
   
 
@@ -936,7 +958,52 @@ You're not viewing the latest version.
         
   
   <span class="md-ellipsis">
-    General Table Recognition
+    通用表格识别产线
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pipeline_usage/tutorials/ocr_pipelines/table_recognition_v2.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    通用表格识别v2产线
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pipeline_usage/tutorials/ocr_pipelines/layout_parsing_v2.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    通用版面解析产线
+    
   </span>
   
 
@@ -957,7 +1024,8 @@ You're not viewing the latest version.
         
   
   <span class="md-ellipsis">
-    General Layout Parsing
+    通用版面解析v2产线
+    
   </span>
   
 
@@ -979,6 +1047,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Formula Recognition
+    
   </span>
   
 
@@ -999,7 +1068,30 @@ You're not viewing the latest version.
         
   
   <span class="md-ellipsis">
-    Seal Recognition
+    印章文本识别产线
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pipeline_usage/tutorials/ocr_pipelines/doc_preprocessor.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    文档图像预处理产线
+    
   </span>
   
 
@@ -1025,6 +1117,16 @@ You're not viewing the latest version.
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
       
         
       
@@ -1070,6 +1172,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Computer Vision
+    
   </span>
   
 
@@ -1095,6 +1198,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     General Image Classification
+    
   </span>
   
 
@@ -1116,6 +1220,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     General Object Detection
+    
   </span>
   
 
@@ -1137,6 +1242,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     General Instance Segmentation
+    
   </span>
   
 
@@ -1158,6 +1264,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     General Semantic Segmentation
+    
   </span>
   
 
@@ -1179,6 +1286,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Image Multi-label Classification
+    
   </span>
   
 
@@ -1200,6 +1308,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Small Object Detection
+    
   </span>
   
 
@@ -1221,6 +1330,117 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Image Anomaly Detection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pipeline_usage/tutorials/cv_pipelines/3d_bev_detection.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3D Multi-modal Fusion Detection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pipeline_usage/tutorials/cv_pipelines/human_keypoint_detection.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Human Keypoint Detection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pipeline_usage/tutorials/cv_pipelines/open_vocabulary_detection.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Open Vocabulary Detection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pipeline_usage/tutorials/cv_pipelines/open_vocabulary_segmentation.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Open Vocabulary Segmentation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pipeline_usage/tutorials/cv_pipelines/rotated_object_detection.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rotated Object Detection
+    
   </span>
   
 
@@ -1242,6 +1462,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Image Feature
+    
   </span>
   
 
@@ -1263,6 +1484,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Pedestrian Attribute Recognition
+    
   </span>
   
 
@@ -1284,6 +1506,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Vehicle Attribute Recognition
+    
   </span>
   
 
@@ -1305,6 +1528,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Face Feature
+    
   </span>
   
 
@@ -1359,6 +1583,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Time Series Analysis
+    
   </span>
   
 
@@ -1384,6 +1609,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Time Series Forecasting
+    
   </span>
   
 
@@ -1405,6 +1631,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Time Series Anomaly Detection
+    
   </span>
   
 
@@ -1426,6 +1653,84 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Time Series Classification
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Speech
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            Speech
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pipeline_usage/tutorials/speech_pipelines/multilingual_speech_recognition.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Multilingual Speech Recognition
+    
   </span>
   
 
@@ -1470,22 +1775,124 @@ You're not viewing the latest version.
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_6" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_7" >
         
           
-          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
             
   
   <span class="md-ellipsis">
-    Instructions
+    Video
+    
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_6">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            Video
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pipeline_usage/tutorials/video_pipelines/video_classification.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    General Video Classification
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pipeline_usage/tutorials/video_pipelines/video_detection.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    General Video Detection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Instructions
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_8">
             <span class="md-nav__icon md-icon"></span>
             Instructions
           </label>
@@ -1503,6 +1910,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX Pipeline CLI Usage
+    
   </span>
   
 
@@ -1524,6 +1932,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX Pipeline Python API Usage
+    
   </span>
   
 
@@ -1558,6 +1967,10 @@ You're not viewing the latest version.
   
     
     
+      
+        
+      
+        
       
         
       
@@ -1596,6 +2009,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Module Tutorials
+    
   </span>
   
 
@@ -1636,6 +2050,12 @@ You're not viewing the latest version.
       
         
       
+        
+      
+        
+      
+        
+      
     
     
       
@@ -1659,6 +2079,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     OCR
+    
   </span>
   
 
@@ -1684,6 +2105,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Text Detection
+    
   </span>
   
 
@@ -1705,6 +2127,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Seal Detection
+    
   </span>
   
 
@@ -1726,6 +2149,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Text Recognition
+    
   </span>
   
 
@@ -1756,6 +2180,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Layout Parsing
+    
   </span>
   
 
@@ -1767,6 +2192,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Layout Parsing
+    
   </span>
   
 
@@ -1943,6 +2369,51 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Table Structure Recognition
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="table_cells_detection.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Table Cell Detection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="table_classification.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Table Classification
+    
   </span>
   
 
@@ -1964,6 +2435,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Document Image Orientation Classification
+    
   </span>
   
 
@@ -1985,6 +2457,29 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Text Image Unwarping
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="textline_orientation_classification.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Text Line Orientation Classification
+    
   </span>
   
 
@@ -2006,6 +2501,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Formula Recognition
+    
   </span>
   
 
@@ -2065,6 +2561,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Image Classification
+    
   </span>
   
 
@@ -2090,6 +2587,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Image Classification
+    
   </span>
   
 
@@ -2111,6 +2609,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Image Multi-label Classification
+    
   </span>
   
 
@@ -2132,6 +2631,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Pedestrian Attribute Recognition
+    
   </span>
   
 
@@ -2153,6 +2653,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Vehicle Attribute Recognition
+    
   </span>
   
 
@@ -2208,6 +2709,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Image Features
+    
   </span>
   
 
@@ -2233,6 +2735,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Image Feature
+    
   </span>
   
 
@@ -2254,6 +2757,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     人脸特征模块
+    
   </span>
   
 
@@ -2279,6 +2783,10 @@ You're not viewing the latest version.
   
     
     
+      
+        
+      
+        
       
         
       
@@ -2317,6 +2825,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Object Detection
+    
   </span>
   
 
@@ -2342,6 +2851,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Object Detection
+    
   </span>
   
 
@@ -2363,6 +2873,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Small Object Detection
+    
   </span>
   
 
@@ -2384,6 +2895,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Face Detection
+    
   </span>
   
 
@@ -2405,6 +2917,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Main Body Detection
+    
   </span>
   
 
@@ -2426,6 +2939,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Human Detection
+    
   </span>
   
 
@@ -2447,6 +2961,51 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Vehicle Detection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cv_modules/human_keypoint_detection.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Human Keypoint Detection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cv_modules/open_vocabulary_detection.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Open-Vocabulary Object Detection
+    
   </span>
   
 
@@ -2479,6 +3038,8 @@ You're not viewing the latest version.
       
         
       
+        
+      
     
     
       
@@ -2504,6 +3065,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Image Segmentation
+    
   </span>
   
 
@@ -2529,6 +3091,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Semantic Segmentation
+    
   </span>
   
 
@@ -2550,6 +3113,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Instance Segmentation
+    
   </span>
   
 
@@ -2571,6 +3135,29 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Image Anomaly Detection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cv_modules/open_vocabulary_segmentation.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Open-Vocabulary Segmentation
+    
   </span>
   
 
@@ -2628,6 +3215,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Time Series Analysis
+    
   </span>
   
 
@@ -2653,6 +3241,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Time Series Forecasting
+    
   </span>
   
 
@@ -2674,6 +3263,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Time Series Anomaly Detection
+    
   </span>
   
 
@@ -2695,6 +3285,167 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Time Series Classification
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    语音识别
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            语音识别
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../speech_modules/multilingual_speech_recognition.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Multilingual Speech Recognition Task
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    3D检测
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_8">
+            <span class="md-nav__icon md-icon"></span>
+            3D检测
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cv_modules/3d_bev_detection.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3D Multimodal Fusion Detection
+    
   </span>
   
 
@@ -2744,22 +3495,23 @@ You're not viewing the latest version.
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_7" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_9" >
         
           
-          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="">
+          <label class="md-nav__link" for="__nav_4_9" id="__nav_4_9_label" tabindex="">
             
   
   <span class="md-ellipsis">
     Instructions
+    
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_7">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_9">
             <span class="md-nav__icon md-icon"></span>
             Instructions
           </label>
@@ -2777,6 +3529,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX Module Python API Usage
+    
   </span>
   
 
@@ -2798,6 +3551,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX Common Module Config Parameters
+    
   </span>
   
 
@@ -2819,6 +3573,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX Time Series Module Config Parameters
+    
   </span>
   
 
@@ -2880,6 +3635,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Pipeline Deploy
+    
   </span>
   
 
@@ -2905,6 +3661,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     High Performance Inference
+    
   </span>
   
 
@@ -2921,11 +3678,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../pipeline_deploy/service_deploy.html" class="md-nav__link">
+      <a href="../../../pipeline_deploy/serving.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Service Deploy
+    Serving
+    
   </span>
   
 
@@ -2946,7 +3704,8 @@ You're not viewing the latest version.
         
   
   <span class="md-ellipsis">
-    Edge Deploy
+    Edge Deployment
+    
   </span>
   
 
@@ -2998,6 +3757,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Multi-Device Usage
+    
   </span>
   
 
@@ -3023,6 +3783,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Multi-Device Usage Guide
+    
   </span>
   
 
@@ -3040,6 +3801,8 @@ You're not viewing the latest version.
   
     
     
+      
+        
       
         
       
@@ -3071,6 +3834,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddlePaddle Installation on Multiple Devices
+    
   </span>
   
 
@@ -3096,6 +3860,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Haiguang DCU PaddlePaddle Installation Guide
+    
   </span>
   
 
@@ -3117,6 +3882,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Cambricon MLU PaddlePaddle Installation Guide
+    
   </span>
   
 
@@ -3138,6 +3904,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Ascend NPU PaddlePaddle Installation Guide
+    
   </span>
   
 
@@ -3159,6 +3926,29 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Kunlun XPU PaddlePaddle Installation Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../other_devices_support/paddlepaddle_install_GCU.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enflame GCU PaddlePaddle Installation Guide
+    
   </span>
   
 
@@ -3220,6 +4010,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Data Annotation Tutorials
+    
   </span>
   
 
@@ -3276,6 +4067,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Computer Vision
+    
   </span>
   
 
@@ -3301,6 +4093,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Image Classification Task
+    
   </span>
   
 
@@ -3322,6 +4115,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Image Feature Task
+    
   </span>
   
 
@@ -3343,6 +4137,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Instance Segmentation Task
+    
   </span>
   
 
@@ -3364,6 +4159,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Image Multi-label Classification
+    
   </span>
   
 
@@ -3385,6 +4181,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Object Detection Task
+    
   </span>
   
 
@@ -3406,6 +4203,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Semantic Segmentation Task
+    
   </span>
   
 
@@ -3458,6 +4256,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     OCR
+    
   </span>
   
 
@@ -3483,6 +4282,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Table Recognition Task
+    
   </span>
   
 
@@ -3504,6 +4304,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Text Detection/Recognition Task
+    
   </span>
   
 
@@ -3558,6 +4359,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Time Series Analysis
+    
   </span>
   
 
@@ -3583,6 +4385,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Time Series Anomaly Detection Task
+    
   </span>
   
 
@@ -3604,6 +4407,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Time Series Classification Task
+    
   </span>
   
 
@@ -3625,6 +4429,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Time Series Forecasting Task
+    
   </span>
   
 
@@ -3690,6 +4495,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Pipeline List
+    
   </span>
   
 
@@ -3715,6 +4521,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX Pipeline List (CPU/GPU)
+    
   </span>
   
 
@@ -3736,6 +4543,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX Pipeline List (DCU)
+    
   </span>
   
 
@@ -3757,6 +4565,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX Pipeline List (MLU)
+    
   </span>
   
 
@@ -3778,6 +4587,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX Pipeline List (NPU)
+    
   </span>
   
 
@@ -3799,6 +4609,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX Pipeline List (XPU)
+    
   </span>
   
 
@@ -3834,6 +4645,8 @@ You're not viewing the latest version.
       
         
       
+        
+      
     
     
       
@@ -3856,6 +4669,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Model List
+    
   </span>
   
 
@@ -3881,6 +4695,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX Model List (CPU/GPU)
+    
   </span>
   
 
@@ -3902,6 +4717,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX Model List (DCU)
+    
   </span>
   
 
@@ -3923,6 +4739,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX Model List (MLU)
+    
   </span>
   
 
@@ -3944,6 +4761,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX Model List (NPU)
+    
   </span>
   
 
@@ -3965,6 +4783,29 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX Model List (XPU)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../support_list/model_list_gcu.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PaddleX Model List (GCU)
+    
   </span>
   
 
@@ -4034,6 +4875,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Practical Tutorials & Examples
+    
   </span>
   
 
@@ -4059,6 +4901,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Document Scene Information Extraction Tutorial
+    
   </span>
   
 
@@ -4080,6 +4923,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Garbage Classification Tutorial
+    
   </span>
   
 
@@ -4101,6 +4945,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Remote Sensing Image Instance Segmentation Tutorial
+    
   </span>
   
 
@@ -4122,6 +4967,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Pedestrian Fall Detection Tutorial
+    
   </span>
   
 
@@ -4143,6 +4989,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Fashion Element Detection Tutorial
+    
   </span>
   
 
@@ -4164,6 +5011,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     License Plate Recognition Tutorial
+    
   </span>
   
 
@@ -4185,6 +5033,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Handwritten Chinese Recognition Tutorial
+    
   </span>
   
 
@@ -4206,6 +5055,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Lane Line Segmentation Tutorial
+    
   </span>
   
 
@@ -4227,6 +5077,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Equipment Anomaly Detection Application Tutorial
+    
   </span>
   
 
@@ -4248,6 +5099,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Heartbeat Monitoring Time Series Data Classification Application Tutorial
+    
   </span>
   
 
@@ -4269,6 +5121,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Long-term Electricity Consumption Forecasting Application Tutorial
+    
   </span>
   
 
@@ -4297,6 +5150,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     FAQ
+    
   </span>
   
 
@@ -4317,6 +5171,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Recently Update
+    
   </span>
   
 
@@ -4500,6 +5355,7 @@ You're not viewing the latest version.
                 
                   
 
+
   
     <a href="https://github.com/AmberC0209/PaddleX/edit/develop/docs/module_usage/tutorials/ocr_modules/layout_detection.en.md" title="Edit this page" class="md-content__button md-icon">
       
@@ -4521,6 +5377,9 @@ You're not viewing the latest version.
 <h2 id="i-overview">I. Overview<a class="headerlink" href="#i-overview" title="Permanent link">&para;</a></h2>
 <p>The core task of structure analysis is to parse and segment the content of input document images. By identifying different elements in the image (such as text, charts, images, etc.), they are classified into predefined categories (e.g., pure text area, title area, table area, image area, list area, etc.), and the position and size of these regions in the document are determined.</p>
 <h2 id="ii-supported-model-list">II. Supported Model List<a class="headerlink" href="#ii-supported-model-list" title="Permanent link">&para;</a></h2>
+<ul>
+<li><b>The layout detection model includes 23 common categories: document title, paragraph title, text, page number, abstract, table of contents, references, footnotes, header, footer, algorithm, formula, formula number, image, figure caption, table, table caption, seal, figure title, figure, header image, footer image, and sidebar text</b></li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -4528,95 +5387,422 @@ You're not viewing the latest version.
 <th>mAP(0.5) (%)</th>
 <th>GPU Inference Time (ms)</th>
 <th>CPU Inference Time (ms)</th>
-<th>Model Size (M)</th>
-<th>Description</th>
+<th>Model Storage Size (M)</th>
+<th>Introduction</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>PicoDet_layout_1x</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0b2/PicoDet_layout_1x_infer.tar">Inference Model</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/PicoDet_layout_1x_pretrained.pdparams">Trained Model</a></td>
-<td>86.8</td>
-<td>13.0</td>
-<td>91.3</td>
-<td>7.4</td>
-<td>An efficient layout area localization model trained on the PubLayNet dataset based on PicoDet-1x can locate five types of areas, including text, titles, tables, images, and lists.</td>
+<td>PP-DocLayout-L</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0rc0/PP-DocLayout-L_infer.tar">Inference Model</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/PP-DocLayout-L_pretrained.pdparams">Training Model</a></td>
+<td>90.4</td>
+<td>34.5252</td>
+<td>1454.27</td>
+<td>123.76 M</td>
+<td>A high-precision layout area localization model trained on a self-built dataset containing Chinese and English papers, magazines, contracts, books, exams, and research reports using RT-DETR-L.</td>
 </tr>
 <tr>
-<td>PicoDet_layout_1x_table</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0b2/PicoDet_layout_1x_table_infer.tar">Inference Model</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/PicoDet_layout_1x_table_pretrained.pdparams">Trained Model</a></td>
-<td>95.7</td>
-<td>12.623</td>
-<td>90.8934</td>
-<td>7.4 M</td>
-<td>An efficient layout area localization model trained on the PubLayNet dataset based on PicoDet-1x can locate one type of tables.</td>
+<td>PP-DocLayout-M</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0rc0/PP-DocLayout-M_infer.tar">Inference Model</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/PP-DocLayout-M_pretrained.pdparams">Training Model</a></td>
+<td>75.2</td>
+<td>15.9</td>
+<td>160.1</td>
+<td>22.578</td>
+<td>A layout area localization model with balanced precision and efficiency, trained on a self-built dataset containing Chinese and English papers, magazines, contracts, books, exams, and research reports using PicoDet-L.</td>
 </tr>
 <tr>
-<td>PicoDet-S_layout_3cls</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0b2/PicoDet-S_layout_3cls_infer.tar">Inference Model</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/PicoDet-S_layout_3cls_pretrained.pdparams">Trained Model</a></td>
-<td>87.1</td>
-<td>13.5</td>
-<td>45.8</td>
-<td>4.8</td>
-<td>An high-efficient layout area localization model trained on a self-constructed dataset based on PicoDet-S for scenarios such as Chinese and English papers, magazines, and research reports includes three categories: tables, images, and seals.</td>
-</tr>
-<tr>
-<td>PicoDet-S_layout_17cls</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0b2/PicoDet-S_layout_17cls_infer.tar">Inference Model</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/PicoDet-S_layout_17cls_pretrained.pdparams">Trained Model</a></td>
-<td>70.3</td>
-<td>13.6</td>
-<td>46.2</td>
-<td>4.8</td>
-<td>A high-efficient layout area localization model trained on a self-constructed dataset based on PicoDet-S_layout_17cls for scenarios such as Chinese and English papers, magazines, and research reports includes 17 common layout categories, namely: paragraph titles, images, text, numbers, abstracts, content, chart titles, formulas, tables, table titles, references, document titles, footnotes, headers, algorithms, footers, and seals.</td>
-</tr>
-<tr>
-<td>PicoDet-L_layout_3cls</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0b2/PicoDet-L_layout_3cls_infer.tar">Inference Model</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/PicoDet-L_layout_3cls_pretrained.pdparams">Trained Model</a></td>
-<td>89.3</td>
-<td>15.7</td>
-<td>159.8</td>
-<td>22.6</td>
-<td>An efficient layout area localization model trained on a self-constructed dataset based on PicoDet-L for scenarios such as Chinese and English papers, magazines, and research reports includes three categories: tables, images, and seals.</td>
-</tr>
-<tr>
-<td>PicoDet-L_layout_17cls</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0b2/PicoDet-L_layout_17cls_infer.tar">Inference Model</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/PicoDet-L_layout_17cls_pretrained.pdparams">Trained Model</a></td>
-<td>79.9</td>
-<td>17.2</td>
-<td>160.2</td>
-<td>22.6</td>
-<td>A efficient layout area localization model trained on a self-constructed dataset based on PicoDet-L_layout_17cls for scenarios such as Chinese and English papers, magazines, and research reports includes 17 common layout categories, namely: paragraph titles, images, text, numbers, abstracts, content, chart titles, formulas, tables, table titles, references, document titles, footnotes, headers, algorithms, footers, and seals.</td>
-</tr>
-<tr>
-<td>RT-DETR-H_layout_3cls</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0b2/RT-DETR-H_layout_3cls_infer.tar">Inference Model</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/RT-DETR-H_layout_3cls_pretrained.pdparams">Trained Model</a></td>
-<td>95.9</td>
-<td>114.6</td>
-<td>3832.6</td>
-<td>470.1</td>
-<td>A high-precision layout area localization model trained on a self-constructed dataset based on RT-DETR-H for scenarios such as Chinese and English papers, magazines, and research reports includes three categories: tables, images, and seals.</td>
-</tr>
-<tr>
-<td>RT-DETR-H_layout_17cls</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0b2/RT-DETR-H_layout_17cls_infer.tar">Inference Model</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/RT-DETR-H_layout_17cls_pretrained.pdparams">Trained Model</a></td>
-<td>92.6</td>
-<td>115.1</td>
-<td>3827.2</td>
-<td>470.2</td>
-<td>A high-precision layout area localization model trained on a self-constructed dataset based on RT-DETR-H for scenarios such as Chinese and English papers, magazines, and research reports includes 17 common layout categories, namely: paragraph titles, images, text, numbers, abstracts, content, chart titles, formulas, tables, table titles, references, document titles, footnotes, headers, algorithms, footers, and seals.</td>
+<td>PP-DocLayout-S</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0rc0/PP-DocLayout-S_infer.tar">Inference Model</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/PP-DocLayout-S_pretrained.pdparams">Training Model</a></td>
+<td>70.9</td>
+<td>13.8</td>
+<td>46.7</td>
+<td>4.834</td>
+<td>A high-efficiency layout area localization model trained on a self-built dataset containing Chinese and English papers, magazines, contracts, books, exams, and research reports using PicoDet-S.</td>
 </tr>
 </tbody>
 </table>
-<p><b>Note: The evaluation set for the above accuracy metrics is PaddleOCR's self-built layout region analysis dataset, containing 10,000 images of common document types, including English and Chinese papers, magazines, research reports, etc. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b></p>
+
+<p><b>Note: The evaluation dataset for the above precision metrics is a self-built layout area detection dataset by PaddleOCR, containing 500 common document-type images of Chinese and English papers, magazines, contracts, books, exams, and research reports. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b></p>
+<blockquote>
+<p>❗ The above list includes the <b>3 core models</b> that are key supported by the text recognition module. The module actually supports a total of <b>11 full models</b>, including several predefined models with different categories. The complete model list is as follows:</p>
+</blockquote>
+<details><summary> 👉 Details of Model List</summary>
+
+* <b>Table Layout Detection Model</b>
+
+<table>
+<thead>
+<tr>
+<th>Model</th><th>Model Download Link</th>
+<th>mAP(0.5) (%)</th>
+<th>GPU Inference Time (ms)</th>
+<th>CPU Inference Time (ms)</th>
+<th>Model Storage Size (M)</th>
+<th>Introduction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PicoDet_layout_1x_table</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0rc0/PicoDet_layout_1x_table_infer.tar">Inference Model</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/PicoDet_layout_1x_table_pretrained.pdparams">Training Model</a></td>
+<td>97.5</td>
+<td>12.623</td>
+<td>90.8934</td>
+<td>7.4 M</td>
+<td>A high-efficiency layout area localization model trained on a self-built dataset using PicoDet-1x, capable of detecting table regions.</td>
+</tr>
+</table>
+
+<b>Note: The evaluation dataset for the above precision metrics is a self-built layout table area detection dataset by PaddleOCR, containing 7835 Chinese and English document images with tables. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
+
+* <b>3-Class Layout Detection Model, including Table, Image, and Stamp</b>
+
+<table>
+<thead>
+<tr>
+<th>Model</th><th>Model Download Link</th>
+<th>mAP(0.5) (%)</th>
+<th>GPU Inference Time (ms)</th>
+<th>CPU Inference Time (ms)</th>
+<th>Model Storage Size (M)</th>
+<th>Introduction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PicoDet-S_layout_3cls</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0rc0/PicoDet-S_layout_3cls_infer.tar">Inference Model</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/PicoDet-S_layout_3cls_pretrained.pdparams">Training Model</a></td>
+<td>88.2</td>
+<td>13.5</td>
+<td>45.8</td>
+<td>4.8</td>
+<td>A high-efficiency layout area localization model trained on a self-built dataset of Chinese and English papers, magazines, and research reports using PicoDet-S.</td>
+</tr>
+<tr>
+<td>PicoDet-L_layout_3cls</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0rc0/PicoDet-L_layout_3cls_infer.tar">Inference Model</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/PicoDet-L_layout_3cls_pretrained.pdparams">Training Model</a></td>
+<td>89.0</td>
+<td>15.7</td>
+<td>159.8</td>
+<td>22.6</td>
+<td>A balanced efficiency and precision layout area localization model trained on a self-built dataset of Chinese and English papers, magazines, and research reports using PicoDet-L.</td>
+</tr>
+<tr>
+<td>RT-DETR-H_layout_3cls</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0rc0/RT-DETR-H_layout_3cls_infer.tar">Inference Model</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/RT-DETR-H_layout_3cls_pretrained.pdparams">Training Model</a></td>
+<td>95.8</td>
+<td>114.6</td>
+<td>3832.6</td>
+<td>470.1</td>
+<td>A high-precision layout area localization model trained on a self-built dataset of Chinese and English papers, magazines, and research reports using RT-DETR-H.</td>
+</tr>
+</table>
+
+<b>Note: The evaluation dataset for the above precision metrics is a self-built layout area detection dataset by PaddleOCR, containing 1154 common document images of Chinese and English papers, magazines, and research reports. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
+
+* <b>5-Class English Document Area Detection Model, including Text, Title, Table, Image, and List</b>
+
+<table>
+<thead>
+<tr>
+<th>Model</th><th>Model Download Link</th>
+<th>mAP(0.5) (%)</th>
+<th>GPU Inference Time (ms)</th>
+<th>CPU Inference Time (ms)</th>
+<th>Model Storage Size (M)</th>
+<th>Introduction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PicoDet_layout_1x</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0rc0/PicoDet_layout_1x_infer.tar">Inference Model</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/PicoDet_layout_1x_pretrained.pdparams">Training Model</a></td>
+<td>97.8</td>
+<td>13.0</td>
+<td>91.3</td>
+<td>7.4</td>
+<td>A high-efficiency English document layout area localization model trained on the PubLayNet dataset using PicoDet-1x.</td>
+</tr>
+</table>
+
+<b>Note: The evaluation dataset for the above precision metrics is the [PubLayNet](https://developer.ibm.com/exchanges/data/all/publaynet/) dataset, containing 11245 English document images. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
+
+* <b>17-Class Area Detection Model, including 17 common layout categories: Paragraph Title, Image, Text, Number, Abstract, Content, Figure Caption, Formula, Table, Table Caption, References, Document Title, Footnote, Header, Algorithm, Footer, and Stamp</b>
+
+<table>
+<thead>
+<tr>
+<th>Model</th><th>Model Download Link</th>
+<th>mAP(0.5) (%)</th>
+<th>GPU Inference Time (ms)</th>
+<th>CPU Inference Time (ms)</th>
+<th>Model Storage Size (M)</th>
+<th>Introduction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PicoDet-S_layout_17cls</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0rc0/PicoDet-S_layout_17cls_infer.tar">Inference Model</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/PicoDet-S_layout_17cls_pretrained.pdparams">Training Model</a></td>
+<td>87.4</td>
+<td>13.6</td>
+<td>46.2</td>
+<td>4.8</td>
+<td>A high-efficiency layout area localization model trained on a self-built dataset of Chinese and English papers, magazines, and research reports using PicoDet-S.</td>
+</tr>
+
+<tr>
+<td>PicoDet-L_layout_17cls</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0rc0/PicoDet-L_layout_17cls_infer.tar">Inference Model</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/PicoDet-L_layout_17cls_pretrained.pdparams">Training Model</a></td>
+<td>89.0</td>
+<td>17.2</td>
+<td>160.2</td>
+<td>22.6</td>
+<td>A balanced efficiency and precision layout area localization model trained on a self-built dataset of Chinese and English papers, magazines, and research reports using PicoDet-L.</td>
+</tr>
+
+<tr>
+<td>RT-DETR-H_layout_17cls</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0rc0/RT-DETR-H_layout_17cls_infer.tar">Inference Model</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/RT-DETR-H_layout_17cls_pretrained.pdparams">Training Model</a></td>
+<td>98.3</td>
+<td>115.1</td>
+<td>3827.2</td>
+<td>470.2</td>
+<td>A high-precision layout area localization model trained on a self-built dataset of Chinese and English papers, magazines, and research reports using RT-DETR-H.</td>
+</tr>
+</tbody>
+</table>
+
+<b>Note: The evaluation dataset for the above precision metrics is a self-built layout area detection dataset by PaddleOCR, containing 892 common document images of Chinese and English papers, magazines, and research reports. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b>
+</details>
+
 <h2 id="iii-quick-integration">III. Quick Integration  <a id="quick"> </a><a class="headerlink" href="#iii-quick-integration" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>❗ Before quick integration, please install the PaddleX wheel package. For detailed instructions, refer to <a href="../../../installation/installation.html">PaddleX Local Installation Tutorial</a></p>
 </blockquote>
 <p>After installing the wheel package, a few lines of code can complete the inference of the structure analysis module. You can switch models under this module freely, and you can also integrate the model inference of the structure analysis module into your project. Before running the following code, please download the <a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/layout.jpg">demo image</a> to your local machine.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span> <span class="nn">paddlex</span> <span class="kn">import</span> <span class="n">create_model</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">paddlex</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_model</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">model_name</span> <span class="o">=</span> <span class="s2">&quot;PicoDet-L_layout_3cls&quot;</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">model</span> <span class="o">=</span> <span class="n">create_model</span><span class="p">(</span><span class="n">model_name</span><span class="p">)</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">output</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="s2">&quot;layout.jpg&quot;</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">output</span><span class="p">:</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    <span class="n">res</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="n">json_format</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    <span class="n">res</span><span class="o">.</span><span class="n">save_to_img</span><span class="p">(</span><span class="s2">&quot;./output/&quot;</span><span class="p">)</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    <span class="n">res</span><span class="o">.</span><span class="n">save_to_json</span><span class="p">(</span><span class="s2">&quot;./output/res.json&quot;</span><span class="p">)</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">model_name</span> <span class="o">=</span> <span class="s2">&quot;PP-DocLayout-L&quot;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">model</span> <span class="o">=</span> <span class="n">create_model</span><span class="p">(</span><span class="n">model_name</span><span class="o">=</span><span class="n">model_name</span><span class="p">)</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">output</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="s2">&quot;layout.jpg&quot;</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">layout_nms</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">output</span><span class="p">:</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="n">res</span><span class="o">.</span><span class="n">print</span><span class="p">()</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    <span class="n">res</span><span class="o">.</span><span class="n">save_to_img</span><span class="p">(</span><span class="n">save_path</span><span class="o">=</span><span class="s2">&quot;./output/&quot;</span><span class="p">)</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    <span class="n">res</span><span class="o">.</span><span class="n">save_to_json</span><span class="p">(</span><span class="n">save_path</span><span class="o">=</span><span class="s2">&quot;./output/res.json&quot;</span><span class="p">)</span>
 </span></code></pre></div>
+<details><summary>👉 <b>After running, the result is: (Click to expand)</b></summary>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="o">{</span><span class="s1">&#39;res&#39;</span>:<span class="w"> </span><span class="o">{</span><span class="s1">&#39;input_path&#39;</span>:<span class="w"> </span><span class="s1">&#39;layout.jpg&#39;</span>,<span class="w"> </span><span class="s1">&#39;boxes&#39;</span>:<span class="w"> </span><span class="o">[{</span><span class="s1">&#39;cls_id&#39;</span>:<span class="w"> </span><span class="m">8</span>,<span class="w"> </span><span class="s1">&#39;label&#39;</span>:<span class="w"> </span><span class="s1">&#39;table&#39;</span>,<span class="w"> </span><span class="s1">&#39;score&#39;</span>:<span class="w"> </span><span class="m">0</span>.9866330623626709,<span class="w"> </span><span class="s1">&#39;coordinate&#39;</span>:<span class="w"> </span><span class="o">[</span><span class="m">74</span>.30874633789062,<span class="w"> </span><span class="m">105</span>.7123031616211,<span class="w"> </span><span class="m">321</span>.9883728027344,<span class="w"> </span><span class="m">299</span>.10858154296875<span class="o">]}</span>,<span class="w"> </span><span class="o">{</span><span class="s1">&#39;cls_id&#39;</span>:<span class="w"> </span><span class="m">2</span>,<span class="w"> </span><span class="s1">&#39;label&#39;</span>:<span class="w"> </span><span class="s1">&#39;text&#39;</span>,<span class="w"> </span><span class="s1">&#39;score&#39;</span>:<span class="w"> </span><span class="m">0</span>.9859815835952759,<span class="w"> </span><span class="s1">&#39;coordinate&#39;</span>:<span class="w"> </span><span class="o">[</span><span class="m">34</span>.65811538696289,<span class="w"> </span><span class="m">349</span>.9101867675781,<span class="w"> </span><span class="m">358</span>.3383483886719,<span class="w"> </span><span class="m">611</span>.3431396484375<span class="o">]}</span>,<span class="w"> </span><span class="o">{</span><span class="s1">&#39;cls_id&#39;</span>:<span class="w"> </span><span class="m">2</span>,<span class="w"> </span><span class="s1">&#39;label&#39;</span>:<span class="w"> </span><span class="s1">&#39;text&#39;</span>,<span class="w"> </span><span class="s1">&#39;score&#39;</span>:<span class="w"> </span><span class="m">0</span>.9850621223449707,<span class="w"> </span><span class="s1">&#39;coordinate&#39;</span>:<span class="w"> </span><span class="o">[</span><span class="m">34</span>.94462203979492,<span class="w"> </span><span class="m">647</span>.3794555664062,<span class="w"> </span><span class="m">358</span>.3255920410156,<span class="w"> </span><span class="m">849</span>.2332763671875<span class="o">]}</span>,<span class="w"> </span><span class="o">{</span><span class="s1">&#39;cls_id&#39;</span>:<span class="w"> </span><span class="m">8</span>,<span class="w"> </span><span class="s1">&#39;label&#39;</span>:<span class="w"> </span><span class="s1">&#39;table&#39;</span>,<span class="w"> </span><span class="s1">&#39;score&#39;</span>:<span class="w"> </span><span class="m">0</span>.9850116968154907,<span class="w"> </span><span class="s1">&#39;coordinate&#39;</span>:<span class="w"> </span><span class="o">[</span><span class="m">438</span>.06829833984375,<span class="w"> </span><span class="m">105</span>.3771743774414,<span class="w"> </span><span class="m">662</span>.88720703125,<span class="w"> </span><span class="m">313</span>.8873291015625<span class="o">]}</span>,<span class="w"> </span><span class="o">{</span><span class="s1">&#39;cls_id&#39;</span>:<span class="w"> </span><span class="m">2</span>,<span class="w"> </span><span class="s1">&#39;label&#39;</span>:<span class="w"> </span><span class="s1">&#39;text&#39;</span>,<span class="w"> </span><span class="s1">&#39;score&#39;</span>:<span class="w"> </span><span class="m">0</span>.9847850799560547,<span class="w"> </span><span class="s1">&#39;coordinate&#39;</span>:<span class="w"> </span><span class="o">[</span><span class="m">385</span>.97052001953125,<span class="w"> </span><span class="m">497</span>.03924560546875,<span class="w"> </span><span class="m">710</span>.9548950195312,<span class="w"> </span><span class="m">697</span>.6804809570312<span class="o">]}</span>,<span class="w"> </span><span class="o">{</span><span class="s1">&#39;cls_id&#39;</span>:<span class="w"> </span><span class="m">2</span>,<span class="w"> </span><span class="s1">&#39;label&#39;</span>:<span class="w"> </span><span class="s1">&#39;text&#39;</span>,<span class="w"> </span><span class="s1">&#39;score&#39;</span>:<span class="w"> </span><span class="m">0</span>.9805687665939331,<span class="w"> </span><span class="s1">&#39;coordinate&#39;</span>:<span class="w"> </span><span class="o">[</span><span class="m">385</span>.7969665527344,<span class="w"> </span><span class="m">345</span>.9375305175781,<span class="w"> </span><span class="m">710</span>.0733642578125,<span class="w"> </span><span class="m">459</span>.14373779296875<span class="o">]}</span>,<span class="w"> </span><span class="o">{</span><span class="s1">&#39;cls_id&#39;</span>:<span class="w"> </span><span class="m">2</span>,<span class="w"> </span><span class="s1">&#39;label&#39;</span>:<span class="w"> </span><span class="s1">&#39;text&#39;</span>,<span class="w"> </span><span class="s1">&#39;score&#39;</span>:<span class="w"> </span><span class="m">0</span>.9799897074699402,<span class="w"> </span><span class="s1">&#39;coordinate&#39;</span>:<span class="w"> </span><span class="o">[</span><span class="m">386</span>.07574462890625,<span class="w"> </span><span class="m">735</span>.3798217773438,<span class="w"> </span><span class="m">710</span>.6078491210938,<span class="w"> </span><span class="m">850</span>.2001953125<span class="o">]}</span>,<span class="w"> </span><span class="o">{</span><span class="s1">&#39;cls_id&#39;</span>:<span class="w"> </span><span class="m">9</span>,<span class="w"> </span><span class="s1">&#39;label&#39;</span>:<span class="w"> </span><span class="s1">&#39;table_title&#39;</span>,<span class="w"> </span><span class="s1">&#39;score&#39;</span>:<span class="w"> </span><span class="m">0</span>.9375936388969421,<span class="w"> </span><span class="s1">&#39;coordinate&#39;</span>:<span class="w"> </span><span class="o">[</span><span class="m">35</span>.273826599121094,<span class="w"> </span><span class="m">19</span>.851961135864258,<span class="w"> </span><span class="m">358</span>.9250793457031,<span class="w"> </span><span class="m">77</span>.81258392333984<span class="o">]}</span>,<span class="w"> </span><span class="o">{</span><span class="s1">&#39;cls_id&#39;</span>:<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="s1">&#39;label&#39;</span>:<span class="w"> </span><span class="s1">&#39;paragraph_title&#39;</span>,<span class="w"> </span><span class="s1">&#39;score&#39;</span>:<span class="w"> </span><span class="m">0</span>.8755733966827393,<span class="w"> </span><span class="s1">&#39;coordinate&#39;</span>:<span class="w"> </span><span class="o">[</span><span class="m">386</span>.6318359375,<span class="w"> </span><span class="m">476</span>.6071472167969,<span class="w"> </span><span class="m">699</span>.783447265625,<span class="w"> </span><span class="m">490</span>.11639404296875<span class="o">]}</span>,<span class="w"> </span><span class="o">{</span><span class="s1">&#39;cls_id&#39;</span>:<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="s1">&#39;label&#39;</span>:<span class="w"> </span><span class="s1">&#39;paragraph_title&#39;</span>,<span class="w"> </span><span class="s1">&#39;score&#39;</span>:<span class="w"> </span><span class="m">0</span>.8617452383041382,<span class="w"> </span><span class="s1">&#39;coordinate&#39;</span>:<span class="w"> </span><span class="o">[</span><span class="m">387</span>.27447509765625,<span class="w"> </span><span class="m">715</span>.9579467773438,<span class="w"> </span><span class="m">524</span>.3836669921875,<span class="w"> </span><span class="m">729</span>.2079467773438<span class="o">]}</span>,<span class="w"> </span><span class="o">{</span><span class="s1">&#39;cls_id&#39;</span>:<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="s1">&#39;label&#39;</span>:<span class="w"> </span><span class="s1">&#39;paragraph_title&#39;</span>,<span class="w"> </span><span class="s1">&#39;score&#39;</span>:<span class="w"> </span><span class="m">0</span>.8607752919197083,<span class="w"> </span><span class="s1">&#39;coordinate&#39;</span>:<span class="w"> </span><span class="o">[</span><span class="m">35</span>.45162582397461,<span class="w"> </span><span class="m">627</span>.4959716796875,<span class="w"> </span><span class="m">185</span>.63442993164062,<span class="w"> </span><span class="m">640</span>.4028930664062<span class="o">]}</span>,<span class="w"> </span><span class="o">{</span><span class="s1">&#39;cls_id&#39;</span>:<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="s1">&#39;label&#39;</span>:<span class="w"> </span><span class="s1">&#39;paragraph_title&#39;</span>,<span class="w"> </span><span class="s1">&#39;score&#39;</span>:<span class="w"> </span><span class="m">0</span>.8575425148010254,<span class="w"> </span><span class="s1">&#39;coordinate&#39;</span>:<span class="w"> </span><span class="o">[</span><span class="m">35</span>.33491134643555,<span class="w"> </span><span class="m">330</span>.8046875,<span class="w"> </span><span class="m">141</span>.46853637695312,<span class="w"> </span><span class="m">344</span>.40728759765625<span class="o">]}</span>,<span class="w"> </span><span class="o">{</span><span class="s1">&#39;cls_id&#39;</span>:<span class="w"> </span><span class="m">9</span>,<span class="w"> </span><span class="s1">&#39;label&#39;</span>:<span class="w"> </span><span class="s1">&#39;table_title&#39;</span>,<span class="w"> </span><span class="s1">&#39;score&#39;</span>:<span class="w"> </span><span class="m">0</span>.7957680225372314,<span class="w"> </span><span class="s1">&#39;coordinate&#39;</span>:<span class="w"> </span><span class="o">[</span><span class="m">385</span>.9385986328125,<span class="w"> </span><span class="m">19</span>.754547119140625,<span class="w"> </span><span class="m">711</span>.5118408203125,<span class="w"> </span><span class="m">75</span>.00630950927734<span class="o">]}]}}</span>
+</span></code></pre></div>
+The meanings of the parameters are as follows:
+- `input_path`: The path to the input image for prediction.
+- `boxes`: Information about the predicted bounding boxes, a list of dictionaries. Each dictionary represents a detected object and contains the following information:
+  - `cls_id`: Class ID, an integer.
+  - `label`: Class label, a string.
+  - `score`: Confidence score of the bounding box, a float.
+  - `coordinate`: Coordinates of the bounding box, a list of floats in the format <code>[xmin, ymin, xmax, ymax]</code>.
+
+</details>
+
+<p>The visualized image is as follows:
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/refs/heads/main/images/modules/layout_det/layout_res.jpg"></p>
+<p><strong>Note</strong>: Due to network issues, the above URL may not be successfully parsed. If you need the content of this webpage, please check the validity of the link and try again. If the issue persists, it might be related to the link itself or the network connection.</p>
+<p>Relevant methods, parameters, and explanations are as follows:</p>
+<ul>
+<li><code>create_model</code> instantiates a target detection model (here, <code>PP-DocLayout-L</code> is used as an example). The detailed explanation is as follows:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Type</th>
+<th>Options</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tr>
+<td><code>model_name</code></td>
+<td>Name of the model</td>
+<td><code>str</code></td>
+<td>None</td>
+<td>None</td>
+</tr>
+<tr>
+<td><code>model_dir</code></td>
+<td>Path to store the model</td>
+<td><code>str</code></td>
+<td>None</td>
+<td>None</td>
+</tr>
+<tr>
+<td><code>img_size</code></td>
+<td>Size of the input image; if not specified, the default PaddleX official model configuration will be used</td>
+<td><code>int/list/None</code></td>
+<td>
+<ul>
+  <li><b>int</b>, e.g., 640, means resizing the input image to 640x640</li>
+  <li><b>List</b>, e.g., [640, 512], means resizing the input image to a width of 640 and a height of 512</li>
+  <li><b>None</b>, not specified, will use the default PaddleX official model configuration</li>
+</ul>
+</td>
+<td>None</td>
+</tr>
+<tr>
+<td><code>threshold</code></td>
+<td>Threshold for filtering low-confidence prediction results; if not specified, the default PaddleX official model configuration will be used</td>
+<td><code>float/dict/None</code></td>
+<td>
+<ul>
+  <li><b>float</b>, e.g., 0.2, means filtering out all bounding boxes with a confidence score less than 0.2</li>
+  <li><b>Dictionary</b>, with keys as <b>int</b> representing <code>cls_id</code> and values as <b>float</b> thresholds. For example, <code>{0: 0.45, 2: 0.48, 7: 0.4}</code> means applying a threshold of 0.45 for cls_id 0, 0.48 for cls_id 2, and 0.4 for cls_id 7</li>
+  <li><b>None</b>, not specified, will use the default PaddleX official model configuration</li>
+</ul>
+</td>
+<td>None</td>
+</tr>
+<tr>
+<td><code>layout_nms</code></td>
+<td>Whether to use NMS post-processing to filter overlapping boxes; if not specified, the default PaddleX official model configuration will be used</td>
+<td><code>bool/None</code></td>
+<td>
+<ul>
+  <li><b>bool</b>, True/False, indicates whether to use NMS for post-processing to filter overlapping boxes</li>
+  <li><b>None</b>, not specified, will use the default PaddleX official model configuration</li>
+</ul>
+</td>
+<td>None</td>
+</tr>
+<tr>
+<td><code>layout_unclip_ratio</code></td>
+<td>Scaling factor for the side length of the detection box; if not specified, the default PaddleX official model configuration will be used</td>
+<td><code>float/list/None</code></td>
+<td>
+<ul>
+  <li><b>float</b>, a positive float number, e.g., 1.1, means expanding the width and height of the detection box by 1.1 times while keeping the center unchanged</li>
+  <li><b>List</b>, e.g., [1.2, 1.5], means expanding the width by 1.2 times and the height by 1.5 times while keeping the center unchanged</li>
+  <li><b>None</b>, not specified, will use the default PaddleX official model configuration</li>
+</ul>
+</td>
+<tr>
+<td><code>layout_merge_bboxes_mode</code></td>
+<td>Merging mode for the detection boxes output by the model; if not specified, the default PaddleX official model configuration will be used</td>
+<td><code>string/None</code></td>
+<td>
+<ul>
+  <li><b>large</b>, when set to large, only the largest external box will be retained for overlapping detection boxes, and the internal overlapping boxes will be deleted</li>
+  <li><b>small</b>, when set to small, only the smallest internal box will be retained for overlapping detection boxes, and the external overlapping boxes will be deleted</li>
+  <li><b>union</b>, no filtering of boxes will be performed, and both internal and external boxes will be retained</li>
+  <li><b>None</b>, not specified, will use the default PaddleX official model configuration</li>
+</ul>
+</td>
+<td>None</td>
+</tr>
+</table>
+
+<ul>
+<li>
+<p>Note that <code>model_name</code> must be specified. After specifying <code>model_name</code>, the default PaddleX built-in model parameters will be used. If <code>model_dir</code> is specified, the user-defined model will be used.</p>
+</li>
+<li>
+<p>The <code>predict()</code> method of the target detection model is called for inference prediction. The parameters of the <code>predict()</code> method are <code>input</code>, <code>batch_size</code>, and <code>threshold</code>, which are explained as follows:</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Type</th>
+<th>Options</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tr>
+<td><code>input</code></td>
+<td>Data for prediction, supporting multiple input types</td>
+<td><code>Python Var</code>/<code>str</code>/<code>dict</code>/<code>list</code></td>
+<td>
+<ul>
+  <li><b>Python Variable</b>, such as image data represented by <code>numpy.ndarray</code></li>
+  <li><b>File Path</b>, such as the local path of an image file: <code>/root/data/img.jpg</code></li>
+  <li><b>URL Link</b>, such as the network URL of an image file: <a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/general_ocr_rec_001.png">Example</a></li>
+  <li><b>Local Directory</b>, the directory should contain data files for prediction, such as the local path: <code>/root/data/</code></li>
+  <li><b>Dictionary</b>, the <code>key</code> of the dictionary must correspond to the specific task, such as <code>"img"</code> for image classification tasks. The <code>value</code> supports the above types of data, for example: <code>{"img": "/root/data1"}</code></li>
+  <li><b>List</b>, elements of the list must be of the above types of data, such as <code>[numpy.ndarray, numpy.ndarray]</code>, <code>["/root/data/img1.jpg", "/root/data/img2.jpg"]</code>, <code>["/root/data1", "/root/data2"]</code>, <code>[{"img": "/root/data1"}, {"img": "/root/data2/img.jpg"}]</code></li>
+</ul>
+</td>
+<td>None</td>
+</tr>
+<tr>
+<td><code>batch_size</code></td>
+<td>Batch size</td>
+<td><code>int</code></td>
+<td>Any integer greater than 0</td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>threshold</code></td>
+<td>Threshold for filtering low-confidence prediction results</td>
+<td><code>float/dict/None</code></td>
+<td>
+<ul>
+  <li><b>float</b>, e.g., 0.2, means filtering out all bounding boxes with a confidence score less than 0.2</li>
+  <li><b>Dictionary</b>, with keys as <b>int</b> representing <code>cls_id</code> and values as <b>float</b> thresholds. For example, <code>{0: 0.45, 2: 0.48, 7: 0.4}</code> means applying a threshold of 0.45 for cls_id 0, 0.48 for cls_id 2, and 0.4 for cls_id 7</li>
+  <li><b>None</b>, not specified, will use the <code>threshold</code> parameter specified in <code>create_model</code>. If not specified in <code>create_model</code>, the default PaddleX official model configuration will be used</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><code>layout_nms</code></td>
+<td>Whether to use NMS post-processing to filter overlapping boxes; if not specified, the default PaddleX official model configuration will be used</td>
+<td><code>bool/None</code></td>
+<td>
+<ul>
+  <li><b>bool</b>, True/False, indicates whether to use NMS for post-processing to filter overlapping boxes</li>
+  <li><b>None</b>, not specified, will use the <code>layout_nms</code> parameter specified in <code>create_model</code>. If not specified in <code>create_model</code>, the default PaddleX official model configuration will be used</li>
+</ul>
+</td>
+<td>None</td>
+</tr>
+<tr>
+<td><code>layout_unclip_ratio</code></td>
+<td>Scaling factor for the side length of the detection box; if not specified, the default PaddleX official model configuration will be used</td>
+<td><code>float/list/None</code></td>
+<td>
+<ul>
+  <li><b>float</b>, a positive float number, e.g., 1.1, means expanding the width and height of the detection box by 1.1 times while keeping the center unchanged</li>
+  <li><b>List</b>, e.g., [1.2, 1.5], means expanding the width by 1.2 times and the height by 1.5 times while keeping the center unchanged</li>
+  <li><b>None</b>, not specified, will use the <code>layout_unclip_ratio</code> parameter specified in <code>create_model</code>. If not specified in <code>create_model</code>, the default PaddleX official model configuration will be used</li>
+</ul>
+</td>
+<tr>
+<td><code>layout_merge_bboxes_mode</code></td>
+<td>Merging mode for the detection boxes output by the model; if not specified, the default PaddleX official model configuration will be used</td>
+<td><code>string/None</code></td>
+<td>
+<ul>
+  <li><b>large</b>, when set to large, only the largest external box will be retained for overlapping detection boxes, and the internal overlapping boxes will be deleted</li>
+  <li><b>small</b>, when set to small, only the smallest internal box will be retained for overlapping detection boxes, and the external overlapping boxes will be deleted</li>
+  <li><b>union</b>, no filtering of boxes will be performed, and both internal and external boxes will be retained</li>
+  <li><b>None</b>, not specified, will use the <code>layout_merge_bboxes_mode</code> parameter specified in <code>create_model</code>. If not specified in <code>create_model</code>, the default PaddleX official model configuration will be used</li>
+</ul>
+</td>
+<td>None</td>
+</tr>
+</table>
+
+<ul>
+<li>Additionally, it also supports obtaining the visualized image with results and the prediction results via attributes, as follows:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+</tr>
+</thead>
+<tr>
+<td rowspan="1"><code>json</code></td>
+<td rowspan="1">Get the prediction result in <code>json</code> format</td>
+</tr>
+<tr>
+<td rowspan="1"><code>img</code></td>
+<td rowspan="1">Get the visualized image in <code>dict</code> format</td>
+</tr>
+</table>
+
 <p>For more information on using PaddleX's single-model inference API, refer to <a href="../../instructions/model_python_API.html">PaddleX Single Model Python Script Usage Instructions</a>.</p>
 <h2 id="iv-custom-development">IV. Custom Development<a class="headerlink" href="#iv-custom-development" title="Permanent link">&para;</a></h2>
 <p>If you seek higher accuracy from existing models, you can use PaddleX's custom development capabilities to develop better structure analysis models. Before developing a structure analysis model with PaddleX, ensure you have installed PaddleX's Detection-related model training capabilities. The installation process can be found in <a href="../../../installation/installation.html">PaddleX Local Installation Tutorial</a>.</p>
@@ -4624,15 +5810,15 @@ You're not viewing the latest version.
 <p>Before model training, you need to prepare the corresponding dataset for the task module. PaddleX provides a data validation function for each module, and <b>only data that passes the validation can be used for model training</b>. Additionally, PaddleX provides demo datasets for each module, which you can use to complete subsequent development based on the official demos. If you wish to use private datasets for subsequent model training, refer to the <a href="../../../data_annotations/cv_modules/object_detection.html">PaddleX Object Detection Task Module Data Annotation Tutorial</a>.</p>
 <h4 id="411-demo-data-download">4.1.1 Demo Data Download<a class="headerlink" href="#411-demo-data-download" title="Permanent link">&para;</a></h4>
 <p>You can use the following commands to download the demo dataset to a specified folder:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">cd</span><span class="w"> </span>/path/to/paddlex
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>wget<span class="w"> </span>https://paddle-model-ecology.bj.bcebos.com/paddlex/data/det_layout_examples.tar<span class="w"> </span>-P<span class="w"> </span>./dataset
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>tar<span class="w"> </span>-xf<span class="w"> </span>./dataset/det_layout_examples.tar<span class="w"> </span>-C<span class="w"> </span>./dataset/
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">cd</span><span class="w"> </span>/path/to/paddlex
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>wget<span class="w"> </span>https://paddle-model-ecology.bj.bcebos.com/paddlex/data/det_layout_examples.tar<span class="w"> </span>-P<span class="w"> </span>./dataset
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>tar<span class="w"> </span>-xf<span class="w"> </span>./dataset/det_layout_examples.tar<span class="w"> </span>-C<span class="w"> </span>./dataset/
 </span></code></pre></div>
 <h4 id="412-data-validation">4.1.2 Data Validation<a class="headerlink" href="#412-data-validation" title="Permanent link">&para;</a></h4>
 <p>A single command can complete data validation:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>python<span class="w"> </span>main.py<span class="w"> </span>-c<span class="w"> </span>paddlex/configs/structure_analysis/PicoDet-L_layout_3cls.yaml<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span>-o<span class="w"> </span>Global.mode<span class="o">=</span>check_dataset<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span>-o<span class="w"> </span>Global.dataset_dir<span class="o">=</span>./dataset/det_layout_examples
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>python<span class="w"> </span>main.py<span class="w"> </span>-c<span class="w"> </span>paddlex/configs/modules/layout_detection/PicoDet-L_layout_3cls.yaml<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span>-o<span class="w"> </span>Global.mode<span class="o">=</span>check_dataset<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span>-o<span class="w"> </span>Global.dataset_dir<span class="o">=</span>./dataset/det_layout_examples
 </span></code></pre></div>
 <p>After executing the above command, PaddleX will validate the dataset and collect its basic information. Upon successful execution, the log will print the message <code>Check dataset passed !</code>. The validation result file will be saved in <code>./output/check_dataset_result.json</code>, and related outputs will be saved in the <code>./output/check_dataset</code> directory of the current directory. The output directory includes visualized example images and histograms of sample distributions.</p>
 <details><summary>👉 <b>Validation Result Details (Click to Expand)</b></summary>
@@ -4700,13 +5886,13 @@ CheckDataset:
   ......
 </code></pre>
 <p>Then execute the command:</p>
-<pre><code class="language-bash">python main.py -c paddlex/configs/structure_analysis/PicoDet-L_layout_3cls.yaml \
+<pre><code class="language-bash">python main.py -c paddlex/configs/modules/layout_detection/PicoDet-L_layout_3cls.yaml \
     -o Global.mode=check_dataset \
     -o Global.dataset_dir=./dataset/det_layout_examples
 </code></pre>
 <p>After dataset splitting, the original annotation files will be renamed to <code>xxx.bak</code> in the original path.</p>
 <p>The above parameters can also be set by appending command-line arguments:</p>
-<pre><code class="language-bash">python main.py -c paddlex/configs/structure_analysis/PicoDet-L_layout_3cls.yaml  \
+<pre><code class="language-bash">python main.py -c paddlex/configs/modules/layout_detection/PicoDet-L_layout_3cls.yaml  \
     -o Global.mode=check_dataset \
     -o Global.dataset_dir=./dataset/det_layout_examples \
     -o CheckDataset.split.enable=True \
@@ -4716,9 +5902,9 @@ CheckDataset:
 
 <h3 id="42-model-training">4.2 Model Training<a class="headerlink" href="#42-model-training" title="Permanent link">&para;</a></h3>
 <p>A single command is sufficient to complete model training, taking the training of PicoDet-L_layout_3cls as an example:</p>
-<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>python<span class="w"> </span>main.py<span class="w"> </span>-c<span class="w"> </span>paddlex/configs/structure_analysis/PicoDet-L_layout_3cls.yaml<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span>-o<span class="w"> </span>Global.mode<span class="o">=</span>train<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span>-o<span class="w"> </span>Global.dataset_dir<span class="o">=</span>./dataset/det_layout_examples
+<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>python<span class="w"> </span>main.py<span class="w"> </span>-c<span class="w"> </span>paddlex/configs/modules/layout_detection/PicoDet-L_layout_3cls.yaml<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span>-o<span class="w"> </span>Global.mode<span class="o">=</span>train<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span>-o<span class="w"> </span>Global.dataset_dir<span class="o">=</span>./dataset/det_layout_examples
 </span></code></pre></div>
 The steps required are:</p>
 <ul>
@@ -4745,9 +5931,9 @@ The steps required are:</p>
 
 <h3 id="43-model-evaluation"><b>4.3 Model Evaluation</b><a class="headerlink" href="#43-model-evaluation" title="Permanent link">&para;</a></h3>
 <p>After completing model training, you can evaluate the specified model weight file on the validation set to verify the model's accuracy. Using PaddleX for model evaluation, you can complete the evaluation with a single command:</p>
-<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>python<span class="w"> </span>main.py<span class="w"> </span>-c<span class="w"> </span>paddlex/configs/structure_analysis/PicoDet-L_layout_3cls.yaml<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span>-o<span class="w"> </span>Global.mode<span class="o">=</span>evaluate<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span>-o<span class="w"> </span>Global.dataset_dir<span class="o">=</span>./dataset/det_layout_examples
+<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>python<span class="w"> </span>main.py<span class="w"> </span>-c<span class="w"> </span>paddlex/configs/modules/layout_detection/PicoDet-L_layout_3cls.yaml<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span>-o<span class="w"> </span>Global.mode<span class="o">=</span>evaluate<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span>-o<span class="w"> </span>Global.dataset_dir<span class="o">=</span>./dataset/det_layout_examples
 </span></code></pre></div>
 Similar to model training, the process involves the following steps:</p>
 <ul>
@@ -4767,10 +5953,10 @@ Other related parameters can be configured by modifying the fields under <code>G
 <ul>
 <li>
 <p>To perform inference predictions through the command line, simply use the following command. Before running the following code, please download the <a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/layout.jpg">demo image</a> to your local machine.
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>python<span class="w"> </span>main.py<span class="w"> </span>-c<span class="w"> </span>paddlex/configs/structure_analysis/PicoDet-L_layout_3cls.yaml<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span>-o<span class="w"> </span>Global.mode<span class="o">=</span>predict<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span>-o<span class="w"> </span>Predict.model_dir<span class="o">=</span><span class="s2">&quot;./output/best_model/inference&quot;</span><span class="w"> </span><span class="se">\</span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span>-o<span class="w"> </span>Predict.input<span class="o">=</span><span class="s2">&quot;layout.jpg&quot;</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>python<span class="w"> </span>main.py<span class="w"> </span>-c<span class="w"> </span>paddlex/configs/modules/layout_detection/PicoDet-L_layout_3cls.yaml<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span>-o<span class="w"> </span>Global.mode<span class="o">=</span>predict<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span>-o<span class="w"> </span>Predict.model_dir<span class="o">=</span><span class="s2">&quot;./output/best_model/inference&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span>-o<span class="w"> </span>Predict.input<span class="o">=</span><span class="s2">&quot;layout.jpg&quot;</span>
 </span></code></pre></div>
 Similar to model training and evaluation, the following steps are required:</p>
 </li>
@@ -4799,10 +5985,6 @@ The structure analysis module can be integrated into PaddleX pipelines such as t
 The weights you produce can be directly integrated into the layout area localization module. You can refer to the Python example code in the <a href="#quick">Quick Integration</a> section, simply replacing the model with the path to your trained model.</p>
 </li>
 </ol>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>For some frequently asked questions about our project, please refer to <a href="../../../FAQ.html">FAQ</a>. If your question has not been answered, feel free to raise it in <a href="https://github.com/PaddlePaddle/PaddleX/issues">Issues</a>.</p>
-</div>
 
 
 
@@ -4825,7 +6007,7 @@ The weights you produce can be directly integrated into the layout area localiza
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 13, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 6, 2025</span>
   </span>
 
     
@@ -4835,7 +6017,7 @@ The weights you produce can be directly integrated into the layout area localiza
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 13, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 6, 2025</span>
   </span>
 
     
@@ -4998,7 +6180,7 @@ The weights you produce can be directly integrated into the layout area localiza
       
     
     <a href="https://github.com/PaddlePaddle/PaddleX" target="_blank" rel="noopener" title="github.com" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
     </a>
   
 </div>
@@ -5013,10 +6195,10 @@ The weights you produce can be directly integrated into the layout area localiza
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "navigation.expand", "navigation.path", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "navigation.expand", "navigation.path", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.f13b1293.min.js"></script>
       
         <script src="../../../../javascripts/katex.min.js"></script>
       

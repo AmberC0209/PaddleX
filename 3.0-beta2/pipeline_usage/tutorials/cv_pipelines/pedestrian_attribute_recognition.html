@@ -8,6 +8,8 @@
       
       
       
+        <link rel="canonical" href="https://amberc0209.github.io/PaddleX/3.0-beta2/pipeline_usage/tutorials/cv_pipelines/pedestrian_attribute_recognition.html">
+      
       
         <link rel="prev" href="general_image_recognition.html">
       
@@ -16,7 +18,7 @@
       
       
       <link rel="icon" href="../../../assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.48">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.2">
     
     
       
@@ -24,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.6f8fc17f.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.d7758b05.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
@@ -106,7 +108,7 @@ You're not viewing the latest version.
 </a>
 
             </div>
-            <script>var el=document.querySelector("[data-md-component=outdated]"),outdated=__md_get("__outdated",sessionStorage);!0===outdated&&el&&(el.hidden=!1)</script>
+            <script>var el=document.querySelector("[data-md-component=outdated]"),base=new URL("../../.."),outdated=__md_get("__outdated",sessionStorage,base);!0===outdated&&el&&(el.hidden=!1)</script>
           </aside>
         
       </div>
@@ -256,7 +258,7 @@ You're not viewing the latest version.
         <a href="https://github.com/AmberC0209/PaddleX" title="前往仓库" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -569,7 +571,7 @@ You're not viewing the latest version.
       <a href="https://github.com/AmberC0209/PaddleX" title="前往仓库" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -591,6 +593,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Home
+    
   </span>
   
 
@@ -634,6 +637,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     安装
+    
   </span>
   
 
@@ -659,6 +663,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     安装PaddlePaddle
+    
   </span>
   
 
@@ -680,6 +685,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     安装PaddleX
+    
   </span>
   
 
@@ -719,6 +725,10 @@ You're not viewing the latest version.
       
         
       
+        
+      
+        
+      
     
     
       
@@ -742,6 +752,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     产线使用教程
+    
   </span>
   
 
@@ -767,6 +778,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     概述
+    
   </span>
   
 
@@ -812,6 +824,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     文本图像智能分析
+    
   </span>
   
 
@@ -837,6 +850,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     文档场景信息抽取v3产线
+    
   </span>
   
 
@@ -862,6 +876,12 @@ You're not viewing the latest version.
   
     
     
+      
+        
+      
+        
+      
+        
       
         
       
@@ -898,6 +918,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     OCR
+    
   </span>
   
 
@@ -923,6 +944,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     通用OCR产线
+    
   </span>
   
 
@@ -944,6 +966,51 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     通用表格识别产线
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ocr_pipelines/table_recognition_v2.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    通用表格识别v2产线
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ocr_pipelines/layout_parsing_v2.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    通用版面解析产线
+    
   </span>
   
 
@@ -964,7 +1031,8 @@ You're not viewing the latest version.
         
   
   <span class="md-ellipsis">
-    通用版面解析产线
+    通用版面解析v2产线
+    
   </span>
   
 
@@ -986,6 +1054,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     公式识别产线
+    
   </span>
   
 
@@ -1007,6 +1076,29 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     印章文本识别产线
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ocr_pipelines/doc_preprocessor.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    文档图像预处理产线
+    
   </span>
   
 
@@ -1034,6 +1126,16 @@ You're not viewing the latest version.
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
       
         
       
@@ -1080,6 +1182,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     计算机视觉
+    
   </span>
   
 
@@ -1105,6 +1208,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     通用图像分类
+    
   </span>
   
 
@@ -1126,6 +1230,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     通用目标检测
+    
   </span>
   
 
@@ -1147,6 +1252,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     通用实例分割
+    
   </span>
   
 
@@ -1168,6 +1274,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     通用语义分割
+    
   </span>
   
 
@@ -1189,6 +1296,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     图像多标签分类
+    
   </span>
   
 
@@ -1210,6 +1318,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     小目标检测
+    
   </span>
   
 
@@ -1231,6 +1340,117 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     图像异常检测
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="3d_bev_detection.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3D多模态融合检测
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="human_keypoint_detection.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    人体关键点检测
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="open_vocabulary_detection.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    开放词汇检测
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="open_vocabulary_segmentation.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    开放词汇分割
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="rotated_object_detection.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    旋转目标检测
+    
   </span>
   
 
@@ -1252,6 +1472,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     通用图像识别
+    
   </span>
   
 
@@ -1282,6 +1503,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     行人属性识别
+    
   </span>
   
 
@@ -1293,6 +1515,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     行人属性识别
+    
   </span>
   
 
@@ -1451,6 +1674,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     车辆属性识别
+    
   </span>
   
 
@@ -1472,6 +1696,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     人脸识别
+    
   </span>
   
 
@@ -1529,6 +1754,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     时序分析
+    
   </span>
   
 
@@ -1554,6 +1780,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     时序预测产线
+    
   </span>
   
 
@@ -1575,6 +1802,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     时序异常检测产线
+    
   </span>
   
 
@@ -1596,6 +1824,87 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     时序分类产线
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    语音处理
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            语音处理
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../speech_pipelines/multilingual_speech_recognition.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    多语种语音识别
+    
   </span>
   
 
@@ -1643,22 +1952,127 @@ You're not viewing the latest version.
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_6" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_7" >
         
           
-          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="">
+          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="">
             
   
   <span class="md-ellipsis">
-    说明文件
+    视频分析
+    
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_6">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            视频分析
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../video_pipelines/video_classification.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    通用视频分类
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../video_pipelines/video_detection.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    通用视频检测
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    说明文件
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_8">
             <span class="md-nav__icon md-icon"></span>
             说明文件
           </label>
@@ -1676,6 +2090,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX产线命令行使用说明
+    
   </span>
   
 
@@ -1697,6 +2112,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX产线Python脚本使用说明
+    
   </span>
   
 
@@ -1729,6 +2145,10 @@ You're not viewing the latest version.
   
     
     
+      
+        
+      
+        
       
         
       
@@ -1766,6 +2186,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     单功能模块使用教程
+    
   </span>
   
 
@@ -1787,6 +2208,12 @@ You're not viewing the latest version.
   
     
     
+      
+        
+      
+        
+      
+        
       
         
       
@@ -1826,6 +2253,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     OCR
+    
   </span>
   
 
@@ -1851,6 +2279,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     文本检测模块
+    
   </span>
   
 
@@ -1872,6 +2301,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     印章文本检测模块
+    
   </span>
   
 
@@ -1893,6 +2323,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     文本识别模块
+    
   </span>
   
 
@@ -1914,6 +2345,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     版面区域检测模块
+    
   </span>
   
 
@@ -1935,6 +2367,51 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     表格结构识别模块
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../module_usage/tutorials/ocr_modules/table_cells_detection.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    表格单元格检测模块
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../module_usage/tutorials/ocr_modules/table_classification.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    表格分类模块
+    
   </span>
   
 
@@ -1956,6 +2433,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     文档图像方向分类
+    
   </span>
   
 
@@ -1977,6 +2455,29 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     文本图像矫正模块
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../module_usage/tutorials/ocr_modules/textline_orientation_classification.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    文本行方向分类
+    
   </span>
   
 
@@ -1998,6 +2499,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     公式识别模块
+    
   </span>
   
 
@@ -2054,6 +2556,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     图像分类
+    
   </span>
   
 
@@ -2079,6 +2582,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     图像分类模块
+    
   </span>
   
 
@@ -2100,6 +2604,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     图像多标签分类模块
+    
   </span>
   
 
@@ -2121,6 +2626,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     行人属性识别模块
+    
   </span>
   
 
@@ -2142,6 +2648,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     车辆属性识别模块
+    
   </span>
   
 
@@ -2194,6 +2701,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     图像特征
+    
   </span>
   
 
@@ -2219,6 +2727,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     图像特征模块
+    
   </span>
   
 
@@ -2240,6 +2749,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     人脸特征模块
+    
   </span>
   
 
@@ -2265,6 +2775,10 @@ You're not viewing the latest version.
   
     
     
+      
+        
+      
+        
       
         
       
@@ -2300,6 +2814,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     目标检测
+    
   </span>
   
 
@@ -2325,6 +2840,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     目标检测模块
+    
   </span>
   
 
@@ -2346,6 +2862,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     小目标检测模块
+    
   </span>
   
 
@@ -2367,6 +2884,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     人脸检测模块
+    
   </span>
   
 
@@ -2388,6 +2906,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     主体检测模块
+    
   </span>
   
 
@@ -2409,6 +2928,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     行人检测模块
+    
   </span>
   
 
@@ -2430,6 +2950,51 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     车辆检测模块
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../module_usage/tutorials/cv_modules/human_keypoint_detection.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    人体关键点检测模块
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../module_usage/tutorials/cv_modules/open_vocabulary_detection.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    开放词汇目标检测模块
+    
   </span>
   
 
@@ -2462,6 +3027,8 @@ You're not viewing the latest version.
       
         
       
+        
+      
     
     
       
@@ -2484,6 +3051,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     图像分割
+    
   </span>
   
 
@@ -2509,6 +3077,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     语义分割模块
+    
   </span>
   
 
@@ -2530,6 +3099,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     实例分割模块
+    
   </span>
   
 
@@ -2551,6 +3121,29 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     图像异常检测模块
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../module_usage/tutorials/cv_modules/open_vocabulary_segmentation.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    开放词汇目标分割模块
+    
   </span>
   
 
@@ -2605,6 +3198,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     时序分析
+    
   </span>
   
 
@@ -2630,6 +3224,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     时序预测模块
+    
   </span>
   
 
@@ -2651,6 +3246,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     时序异常检测模块
+    
   </span>
   
 
@@ -2672,6 +3268,161 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     时序分类模块
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    语音识别
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            语音识别
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../module_usage/tutorials/speech_modules/multilingual_speech_recognition.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    多语种语音识别模块
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    3D检测
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_8">
+            <span class="md-nav__icon md-icon"></span>
+            3D检测
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../module_usage/tutorials/cv_modules/3d_bev_detection.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BEV融合3D检测模块
+    
   </span>
   
 
@@ -2718,22 +3469,23 @@ You're not viewing the latest version.
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_7" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_9" >
         
           
-          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_9" id="__nav_4_9_label" tabindex="0">
             
   
   <span class="md-ellipsis">
     说明文件
+    
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_7">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_9">
             <span class="md-nav__icon md-icon"></span>
             说明文件
           </label>
@@ -2751,6 +3503,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX单模型Python脚本使用说明
+    
   </span>
   
 
@@ -2772,6 +3525,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX通用模型配置文件参数说明
+    
   </span>
   
 
@@ -2793,6 +3547,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX时序任务模型配置文件参数说明
+    
   </span>
   
 
@@ -2854,6 +3609,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     模型产线部署
+    
   </span>
   
 
@@ -2879,6 +3635,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     高性能推理
+    
   </span>
   
 
@@ -2895,11 +3652,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../pipeline_deploy/service_deploy.html" class="md-nav__link">
+      <a href="../../../pipeline_deploy/serving.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     服务化部署
+    
   </span>
   
 
@@ -2921,6 +3679,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     端侧部署
+    
   </span>
   
 
@@ -2972,6 +3731,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     多硬件使用
+    
   </span>
   
 
@@ -2997,6 +3757,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     多硬件使用指南
+    
   </span>
   
 
@@ -3014,6 +3775,8 @@ You're not viewing the latest version.
   
     
     
+      
+        
       
         
       
@@ -3045,6 +3808,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     飞桨多硬件安装
+    
   </span>
   
 
@@ -3070,6 +3834,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     海光 DCU 飞桨安装教程
+    
   </span>
   
 
@@ -3091,6 +3856,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     寒武纪 MLU 飞桨安装教程
+    
   </span>
   
 
@@ -3112,6 +3878,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     昇腾 NPU 飞桨安装教程
+    
   </span>
   
 
@@ -3133,6 +3900,29 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     昆仑 XPU 飞桨安装教程
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../other_devices_support/paddlepaddle_install_GCU.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    燧原 GCU 飞桨安装教程
+    
   </span>
   
 
@@ -3194,6 +3984,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     数据标注教程
+    
   </span>
   
 
@@ -3250,6 +4041,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     计算机视觉
+    
   </span>
   
 
@@ -3275,6 +4067,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     图像分类任务模块
+    
   </span>
   
 
@@ -3296,6 +4089,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     图像特征任务模块
+    
   </span>
   
 
@@ -3317,6 +4111,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     实例分割任务模块
+    
   </span>
   
 
@@ -3338,6 +4133,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     图像多标签分类
+    
   </span>
   
 
@@ -3359,6 +4155,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     目标检测任务模块
+    
   </span>
   
 
@@ -3380,6 +4177,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     语义分割任务模块
+    
   </span>
   
 
@@ -3432,6 +4230,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     OCR
+    
   </span>
   
 
@@ -3457,6 +4256,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     表格识别任务模块
+    
   </span>
   
 
@@ -3478,6 +4278,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     文本检测/识别任务模块
+    
   </span>
   
 
@@ -3532,6 +4333,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     时序分析
+    
   </span>
   
 
@@ -3557,6 +4359,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     时序异常检测任务模块
+    
   </span>
   
 
@@ -3578,6 +4381,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     时序分类任务模块
+    
   </span>
   
 
@@ -3599,6 +4403,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     时序预测任务模块
+    
   </span>
   
 
@@ -3664,6 +4469,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     产线列表
+    
   </span>
   
 
@@ -3689,6 +4495,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX产线列表(CPU/GPU)
+    
   </span>
   
 
@@ -3710,6 +4517,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX产线列表(DCU)
+    
   </span>
   
 
@@ -3731,6 +4539,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX产线列表(MLU)
+    
   </span>
   
 
@@ -3752,6 +4561,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX产线列表(NPU)
+    
   </span>
   
 
@@ -3773,6 +4583,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX产线列表(XPU)
+    
   </span>
   
 
@@ -3808,6 +4619,8 @@ You're not viewing the latest version.
       
         
       
+        
+      
     
     
       
@@ -3830,6 +4643,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     模型列表
+    
   </span>
   
 
@@ -3855,6 +4669,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX模型列表(CPU/GPU)
+    
   </span>
   
 
@@ -3876,6 +4691,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX模型列表(DCU)
+    
   </span>
   
 
@@ -3897,6 +4713,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX模型列表(MLU)
+    
   </span>
   
 
@@ -3918,6 +4735,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX模型列表(NPU)
+    
   </span>
   
 
@@ -3939,6 +4757,29 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX模型列表(XPU)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../support_list/model_list_gcu.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PaddleX模型列表(GCU)
+    
   </span>
   
 
@@ -4008,6 +4849,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     产业实践教程&范例
+    
   </span>
   
 
@@ -4033,6 +4875,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     论文文献信息抽取教程
+    
   </span>
   
 
@@ -4054,6 +4897,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     垃圾分类教程
+    
   </span>
   
 
@@ -4075,6 +4919,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     遥感图像实例分割教程
+    
   </span>
   
 
@@ -4096,6 +4941,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     行人跌倒检测教程
+    
   </span>
   
 
@@ -4117,6 +4963,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     服装时尚元素检测教程
+    
   </span>
   
 
@@ -4138,6 +4985,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     车牌识别教程
+    
   </span>
   
 
@@ -4159,6 +5007,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     手写中文识别教程
+    
   </span>
   
 
@@ -4180,6 +5029,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     车道线分割教程
+    
   </span>
   
 
@@ -4201,6 +5051,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     设备异常检测应用教程
+    
   </span>
   
 
@@ -4222,6 +5073,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     心跳监测时序数据分类应用教程
+    
   </span>
   
 
@@ -4243,6 +5095,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     用电量长期预测应用教程
+    
   </span>
   
 
@@ -4271,6 +5124,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     FAQ
+    
   </span>
   
 
@@ -4291,6 +5145,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     近期更新
+    
   </span>
   
 
@@ -4456,6 +5311,7 @@ You're not viewing the latest version.
                 
                   
 
+
   
     <a href="https://github.com/AmberC0209/PaddleX/edit/develop/docs/pipeline_usage/tutorials/cv_pipelines/pedestrian_attribute_recognition.md" title="编辑此页" class="md-content__button md-icon">
       
@@ -4476,7 +5332,7 @@ You're not viewing the latest version.
 <h1 id="_1">行人属性识别产线使用教程<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <h2 id="1">1. 行人属性识别产线介绍<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
 <p>行人属性识别是计算机视觉系统中的关键功能，用于在图像或视频中定位并标记行人的特定特征，如性别、年龄、衣物颜色和款式等。该任务不仅要求准确检测出行人，还需识别每个行人的详细属性信息。行人属性识别产线是定位并识别行人属性的端到端串联系统，广泛应用于智慧城市和安防监控等领域，可显著提升系统的智能化水平和管理效率。</p>
-<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/refs/heads/main/images/pipelines/pedestrian_attribute_recognition/01.jpg"></p>
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/refs/heads/main/images/pipelines/pedestrian_attribute_recognition/pedestrian_attribute.png"></p>
 <p><b>行人属性识别产线中包含了行人检测模块和行人属性识别模块</b>，每个模块中包含了若干模型，具体使用哪些模型，您可以根据下边的 benchmark 数据来选择。<b>如您更考虑模型精度，请选择精度较高的模型，如您更考虑模型推理速度，请选择推理速度较快的模型，如您更考虑模型存储大小，请选择存储大小较小的模型</b>。</p>
 <p><b>行人检测模块：</b></p>
 <table>
@@ -4490,7 +5346,7 @@ You're not viewing the latest version.
 <th>介绍</th>
 </tr>
 <tr>
-<td>PP-YOLOE-L_human</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0b2/PP-YOLOE-L_human_infer.tar">推理模型</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/PP-YOLOE-L_human_pretrained.pdparams">训练模型</a></td>
+<td>PP-YOLOE-L_human</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0rc0/PP-YOLOE-L_human_infer.tar">推理模型</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/PP-YOLOE-L_human_pretrained.pdparams">训练模型</a></td>
 <td>48.0</td>
 <td>81.9</td>
 <td>32.8</td>
@@ -4499,7 +5355,7 @@ You're not viewing the latest version.
 <td rowspan="2">基于PP-YOLOE的行人检测模型</td>
 </tr>
 <tr>
-<td>PP-YOLOE-S_human</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0b2/PP-YOLOE-S_human_infer.tar">推理模型</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/PP-YOLOE-S_human_pretrained.pdparams">训练模型</a></td>
+<td>PP-YOLOE-S_human</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0rc0/PP-YOLOE-S_human_infer.tar">推理模型</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/PP-YOLOE-S_human_pretrained.pdparams">训练模型</a></td>
 <td>42.5</td>
 <td>77.9</td>
 <td>15.0</td>
@@ -4514,7 +5370,7 @@ You're not viewing the latest version.
 <thead>
 <tr>
 <th>模型</th><th>模型下载链接</th>
-<th>mA（%）</th>
+<th>mAP（%）</th>
 <th>GPU推理耗时（ms）</th>
 <th>CPU推理耗时 (ms)</th>
 <th>模型存储大小（M)</th>
@@ -4523,7 +5379,7 @@ You're not viewing the latest version.
 </thead>
 <tbody>
 <tr>
-<td>PP-LCNet_x1_0_pedestrian_attribute</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0b2/PP-LCNet_x1_0_pedestrian_attribute_infer.tar">推理模型</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/PP-LCNet_x1_0_pedestrian_attribute_pretrained.pdparams">训练模型</a></td>
+<td>PP-LCNet_x1_0_pedestrian_attribute</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0rc0/PP-LCNet_x1_0_pedestrian_attribute_infer.tar">推理模型</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/PP-LCNet_x1_0_pedestrian_attribute_pretrained.pdparams">训练模型</a></td>
 <td>92.2</td>
 <td>3.84845</td>
 <td>9.23735</td>
@@ -4535,7 +5391,7 @@ You're not viewing the latest version.
 <p><b>注：以上精度指标为 PaddleX 内部自建数据集 mA。GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为 8，精度类型为 FP32。</b></p>
 
 <h2 id="2">2. 快速开始<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
-<p>PaddleX 所提供的预训练的模型产线均可以快速体验效果，你可以在线体验行人属性识别产线的效果，也可以在本地使用命令行或 Python 体验行人属性识别产线的效果。</p>
+<p>PaddleX 所提供的模型产线可以在本地使用命令行或 Python 体验行人属性识别产线的效果。</p>
 <h3 id="21">2.1 在线体验<a class="headerlink" href="#21" title="Permanent link">&para;</a></h3>
 <p>暂不支持在线体验</p>
 <h3 id="22">2.2 本地体验<a class="headerlink" href="#22" title="Permanent link">&para;</a></h3>
@@ -4544,27 +5400,18 @@ You're not viewing the latest version.
 <p>一行命令即可快速体验行人属性识别产线效果，使用 <a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/pedestrian_attribute_002.jpg">测试文件</a>，并将 <code>--input</code> 替换为本地路径，进行预测</p>
 <p><div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>paddlex<span class="w"> </span>--pipeline<span class="w"> </span>pedestrian_attribute_recognition<span class="w"> </span>--input<span class="w"> </span>pedestrian_attribute_002.jpg<span class="w"> </span>--device<span class="w"> </span>gpu:0
 </span></code></pre></div>
-参数说明：</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>--pipeline：产线名称，此处为行人属性识别产线
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>--input：待处理的输入图片的本地路径或URL
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>--device 使用的GPU序号（例如gpu:0表示使用第0块GPU，gpu:1,2表示使用第1、2块GPU），也可选择使用CPU（--device cpu）
+相关的参数说明可以参考<a href="#222-python脚本方式集成">2.2.2 Python脚本方式集成</a>中的参数说明。</p>
+<p>运行后，会将结果打印到终端上，结果如下：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="o">{</span><span class="s1">&#39;res&#39;</span>:<span class="w"> </span><span class="o">{</span><span class="s1">&#39;input_path&#39;</span>:<span class="w"> </span><span class="s1">&#39;pedestrian_attribute_002.jpg&#39;</span>,<span class="w"> </span><span class="s1">&#39;boxes&#39;</span>:<span class="w"> </span><span class="o">[{</span><span class="s1">&#39;labels&#39;</span>:<span class="w"> </span><span class="o">[</span><span class="s1">&#39;Trousers(长裤)&#39;</span>,<span class="w"> </span><span class="s1">&#39;Age18-60(年龄在18-60岁之间)&#39;</span>,<span class="w"> </span><span class="s1">&#39;LongCoat(长外套)&#39;</span>,<span class="w"> </span><span class="s1">&#39;Side(侧面)&#39;</span><span class="o">]</span>,<span class="w"> </span><span class="s1">&#39;cls_scores&#39;</span>:<span class="w"> </span>array<span class="o">([</span><span class="m">0</span>.99965,<span class="w"> </span><span class="m">0</span>.99963,<span class="w"> </span><span class="m">0</span>.98866,<span class="w"> </span><span class="m">0</span>.9624<span class="w"> </span><span class="o">])</span>,<span class="w"> </span><span class="s1">&#39;det_score&#39;</span>:<span class="w"> </span><span class="m">0</span>.9795178771018982,<span class="w"> </span><span class="s1">&#39;coordinate&#39;</span>:<span class="w"> </span><span class="o">[</span><span class="m">87</span>.24581,<span class="w"> </span><span class="m">322</span>.5872,<span class="w"> </span><span class="m">546</span>.2697,<span class="w"> </span><span class="m">1039</span>.9852<span class="o">]}</span>,<span class="w"> </span><span class="o">{</span><span class="s1">&#39;labels&#39;</span>:<span class="w"> </span><span class="o">[</span><span class="s1">&#39;Trousers(长裤)&#39;</span>,<span class="w"> </span><span class="s1">&#39;LongCoat(长外套)&#39;</span>,<span class="w"> </span><span class="s1">&#39;Front(面朝前)&#39;</span>,<span class="w"> </span><span class="s1">&#39;Age18-60(年龄在18-60岁之间)&#39;</span><span class="o">]</span>,<span class="w"> </span><span class="s1">&#39;cls_scores&#39;</span>:<span class="w"> </span>array<span class="o">([</span><span class="m">0</span>.99996,<span class="w"> </span><span class="m">0</span>.99872,<span class="w"> </span><span class="m">0</span>.93379,<span class="w"> </span><span class="m">0</span>.71614<span class="o">])</span>,<span class="w"> </span><span class="s1">&#39;det_score&#39;</span>:<span class="w"> </span><span class="m">0</span>.967143177986145,<span class="w"> </span><span class="s1">&#39;coordinate&#39;</span>:<span class="w"> </span><span class="o">[</span><span class="m">737</span>.91626,<span class="w"> </span><span class="m">306</span>.287,<span class="w"> </span><span class="m">1150</span>.5961,<span class="w"> </span><span class="m">1034</span>.2979<span class="o">]}</span>,<span class="w"> </span><span class="o">{</span><span class="s1">&#39;labels&#39;</span>:<span class="w"> </span><span class="o">[</span><span class="s1">&#39;Trousers(长裤)&#39;</span>,<span class="w"> </span><span class="s1">&#39;LongCoat(长外套)&#39;</span>,<span class="w"> </span><span class="s1">&#39;Age18-60(年龄在18-60岁之间)&#39;</span>,<span class="w"> </span><span class="s1">&#39;Side(侧面)&#39;</span><span class="o">]</span>,<span class="w"> </span><span class="s1">&#39;cls_scores&#39;</span>:<span class="w"> </span>array<span class="o">([</span><span class="m">0</span>.99996,<span class="w"> </span><span class="m">0</span>.99514,<span class="w"> </span><span class="m">0</span>.98726,<span class="w"> </span><span class="m">0</span>.96224<span class="o">])</span>,<span class="w"> </span><span class="s1">&#39;det_score&#39;</span>:<span class="w"> </span><span class="m">0</span>.9645745754241943,<span class="w"> </span><span class="s1">&#39;coordinate&#39;</span>:<span class="w"> </span><span class="o">[</span><span class="m">399</span>.45944,<span class="w"> </span><span class="m">281</span>.9107,<span class="w"> </span><span class="m">869</span>.5312,<span class="w"> </span><span class="m">1038</span>.9962<span class="o">]}]}}</span>
 </span></code></pre></div>
-<p>在执行上述 Python 脚本时，加载的是默认的行人属性识别产线配置文件，若您需要自定义配置文件，可执行如下命令获取：</p>
-<details><summary> 👉点击展开</summary>
-
-<pre><code>paddlex --get_pipeline_config pedestrian_attribute_recognition
-</code></pre>
-<p>执行后，行人属性识别产线配置文件将被保存在当前路径。若您希望自定义保存位置，可执行如下命令（假设自定义保存位置为 <code>./my_path</code> ）：</p>
-<pre><code>paddlex --get_pipeline_config pedestrian_attribute_recognition --save_path ./my_path
-</code></pre>
-<p>获取产线配置文件后，可将 <code>--pipeline</code> 替换为配置文件保存路径，即可使配置文件生效。例如，若配置文件保存路径为 <code>./pedestrian_attribute_recognition.yaml</code>，只需执行：</p>
-<pre><code class="language-bash">paddlex --pipeline ./pedestrian_attribute_recognition.yaml --input pedestrian_attribute_002.jpg --device gpu:0
-</code></pre>
-<p>其中，<code>--model</code>、<code>--device</code> 等参数无需指定，将使用配置文件中的参数。若依然指定了参数，将以指定的参数为准。</p></details>
-
+<p>运行结果参数说明可以参考<a href="#222-python脚本方式集成">2.2.2 Python脚本方式集成</a>中的结果解释。</p>
+<p>可视化结果保存在<code>save_path</code>下，可视化结果如下：</p>
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/refs/heads/main/images/pipelines/pedestrian_attribute_recognition/01.jpg"></p>
 <h4 id="222-python">2.2.2 Python脚本方式集成<a class="headerlink" href="#222-python" title="Permanent link">&para;</a></h4>
-<p>几行代码即可完成产线的快速推理，以行人属性识别产线为例：</p>
-<p><div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">from</span> <span class="nn">paddlex</span> <span class="kn">import</span> <span class="n">create_pipeline</span>
+<ul>
+<li>上述命令行是为了快速体验查看效果，一般来说，在项目中，往往需要通过代码集成，您可以通过几行代码即可完成产线的快速推理，推理代码如下：</li>
+</ul>
+<p><div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">paddlex</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_pipeline</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">pipeline</span> <span class="o">=</span> <span class="n">create_pipeline</span><span class="p">(</span><span class="n">pipeline</span><span class="o">=</span><span class="s2">&quot;pedestrian_attribute_recognition&quot;</span><span class="p">)</span>
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
@@ -4576,7 +5423,7 @@ You're not viewing the latest version.
 </span></code></pre></div>
 得到的结果与命令行方式相同。</p>
 <p>在上述 Python 脚本中，执行了如下几个步骤：</p>
-<p>（1）实例化 <code>create_pipeline</code> 实例化产线对象：具体参数说明如下：</p>
+<p>（1）通过 <code>create_pipeline()</code> 实例化行人属性识别产线对象，具体参数说明如下：</p>
 <table>
 <thead>
 <tr>
@@ -4591,13 +5438,13 @@ You're not viewing the latest version.
 <td><code>pipeline</code></td>
 <td>产线名称或是产线配置文件路径。如为产线名称，则必须为 PaddleX 所支持的产线。</td>
 <td><code>str</code></td>
-<td>无</td>
+<td>None</td>
 </tr>
 <tr>
 <td><code>device</code></td>
-<td>产线模型推理设备。支持：“gpu”，“cpu”。</td>
+<td>产线推理设备。支持指定GPU具体卡号，如“gpu:0”，其他硬件具体卡号，如“npu:0”，CPU如“cpu”。</td>
 <td><code>str</code></td>
-<td><code>gpu</code></td>
+<td><code>gpu:0</code></td>
 </tr>
 <tr>
 <td><code>use_hpip</code></td>
@@ -4607,86 +5454,202 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-<p>（2）调用行人属性识别产线对象的 <code>predict</code> 方法进行推理预测：<code>predict</code> 方法参数为<code>x</code>，用于输入待预测数据，支持多种输入方式，具体示例如下：</p>
+<p>（2）调用行人属性识别产线对象的 <code>predict()</code> 方法进行推理预测。该方法将返回一个 <code>generator</code>。以下是 <code>predict()</code> 方法的参数及其说明：</p>
 <table>
 <thead>
 <tr>
-<th>参数类型</th>
+<th>参数</th>
 <th>参数说明</th>
+<th>参数类型</th>
+<th>可选项</th>
+<th>默认值</th>
 </tr>
 </thead>
-<tbody>
 <tr>
-<td>Python Var</td>
-<td>支持直接传入Python变量，如numpy.ndarray表示的图像数据。</td>
+<td><code>input</code></td>
+<td>待预测数据，支持多种输入类型，必填</td>
+<td><code>Python Var|str|list</code></td>
+<td>
+<ul>
+  <li><b>Python Var</b>：如 <code>numpy.ndarray</code> 表示的图像数据</li>
+  <li><b>str</b>：如图像文件的本地路径：<code>/root/data/img.jpg</code>；<b>如URL链接</b>，如图像文件网络URL：<a href = "https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/pedestrian_attribute_002.jpg">示例</a>；<b>如本地目录</b>，该目录下需包含待预测图像，如本地路径：<code>/root/data/</code></li>
+  <li><b>List</b>：列表元素需为上述类型数据，如<code>[numpy.ndarray, numpy.ndarray]</code>，<code>[\"/root/data/img1.jpg\", \"/root/data/img2.jpg\"]</code>，<code>[\"/root/data1\", \"/root/data2\"]</code></li>
+</ul>
+</td>
+<td><code>None</code></td>
 </tr>
 <tr>
-<td>str</td>
-<td>支持传入待预测数据文件路径，如图像文件的本地路径：<code>/root/data/img.jpg</code>。</td>
+<td><code>device</code></td>
+<td>产线推理设备</td>
+<td><code>str|None</code></td>
+<td>
+<ul>
+  <li><b>CPU</b>：如 <code>cpu</code> 表示使用 CPU 进行推理；</li>
+  <li><b>GPU</b>：如 <code>gpu:0</code> 表示使用第 1 块 GPU 进行推理；</li>
+  <li><b>NPU</b>：如 <code>npu:0</code> 表示使用第 1 块 NPU 进行推理；</li>
+  <li><b>XPU</b>：如 <code>xpu:0</code> 表示使用第 1 块 XPU 进行推理；</li>
+  <li><b>MLU</b>：如 <code>mlu:0</code> 表示使用第 1 块 MLU 进行推理；</li>
+  <li><b>DCU</b>：如 <code>dcu:0</code> 表示使用第 1 块 DCU 进行推理；</li>
+  <li><b>None</b>：如果设置为 <code>None</code>, 将默认使用产线初始化的该参数值，初始化时，会优先使用本地的 GPU 0号设备，如果没有，则使用 CPU 设备；</li>
+</ul>
+</td>
+<td><code>None</code></td>
 </tr>
 <tr>
-<td>str</td>
-<td>支持传入待预测数据文件URL，如图像文件的网络URL：<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/pedestrian_attribute_002.jpg">示例</a>。</td>
+<td><code>det_threshold</code></td>
+<td>行人检测可视化阈值</td>
+<td><code>float | None</code></td>
+<td>
+<ul>
+  <li><b>float</b>：如<code>0.5</code>， 表示过滤掉所有阈值小于<code>0.5</code>的目标框；</li>
+  <li><b>None</b>：如果设置为<code>None</code>, 将默认使用产线初始化的该参数值，初始化为<code>0.5</code>；</li>
+</ul>
+</td>
+<td><code>0.5</code></td>
 </tr>
 <tr>
-<td>str</td>
-<td>支持传入本地目录，该目录下需包含待预测数据文件，如本地路径：<code>/root/data/</code>。</td>
+<td><code>cls_threshold</code></td>
+<td>行人属性预测阈值</td>
+<td><code>float | dict | list｜ None</code></td>
+<td>
+<ul>
+  <li><b>float</b>：表示属性识别的统一阈值；</li>
+  <li><b>list</b>：如<code>[0.5, 0.45, 0.48, 0.4]</code>，表示按照<code>label list</code>顺序的不同类别阈值；</code>；</li>
+  <li><b>dict</b>：字典的key 为 <code>default</code> 和 <code>int</code> 类型，val 为 <code>float</code> 类型阈值，如<code>{"default": 0.5, 0: 0.45, 2: 0.48, 7: 0.4}</code>，<code>default</code> 表示多标签分类的统一阈值，其他 <code>int</code> 类型表示对 cls_id 为0的类别应用阈值 0.45、cls_id 为 1 的类别应用阈值 0.48、cls_id 为 7 的类别应用阈值 0.4；</li>
+  <li><b>None</b>：如果设置为<code>None</code>, 将默认使用产线初始化的该参数值，初始化为<code>0.7</code>；</li>
+</ul>
+</td>
+<td><code>0.7</code></td>
 </tr>
-<tr>
-<td>dict</td>
-<td>支持传入字典类型，字典的key需与具体任务对应，如行人属性识别任务对应\"img\"，字典的val支持上述类型数据，例如：<code>{\"img\": \"/root/data1\"}</code>。</td>
-</tr>
-<tr>
-<td>list</td>
-<td>支持传入列表，列表元素需为上述类型数据，如<code>[numpy.ndarray, numpy.ndarray]，[\"/root/data/img1.jpg\", \"/root/data/img2.jpg\"]</code>，<code>[\"/root/data1\", \"/root/data2\"]</code>，<code>[{\"img\": \"/root/data1\"}, {\"img\": \"/root/data2/img.jpg\"}]</code>。</td>
-</tr>
-</tbody>
 </table>
-<p>（3）调用<code>predict</code>方法获取预测结果：<code>predict</code> 方法为<code>generator</code>，因此需要通过调用获得预测结果，<code>predict</code>方法以batch为单位对数据进行预测，因此预测结果为list形式表示的一组预测结果。</p>
-<p>（4）对预测结果进行处理：每个样本的预测结果均为<code>dict</code>类型，且支持打印，或保存为文件，支持保存的类型与具体产线相关，如：</p>
+<p>3）对预测结果进行处理，每个样本的预测结果均为对应的Result对象，且支持打印、保存为图片、保存为<code>json</code>文件的操作:</p>
 <table>
 <thead>
 <tr>
 <th>方法</th>
-<th>说明</th>
-<th>方法参数</th>
+<th>方法说明</th>
+<th>参数</th>
+<th>参数类型</th>
+<th>参数说明</th>
+<th>默认值</th>
 </tr>
 </thead>
-<tbody>
 <tr>
-<td>print</td>
-<td>打印结果到终端</td>
-<td><code>- format_json</code>：bool类型，是否对输出内容进行使用json缩进格式化，默认为True；<br/><code>- indent</code>：int类型，json格式化设置，仅当format_json为True时有效，默认为4；<br/><code>- ensure_ascii</code>：bool类型，json格式化设置，仅当format_json为True时有效，默认为False；</td>
+<td rowspan = "3"><code>print()</code></td>
+<td rowspan = "3">打印结果到终端</td>
+<td><code>format_json</code></td>
+<td><code>bool</code></td>
+<td>是否对输出内容进行使用 <code>JSON</code> 缩进格式化</td>
+<td><code>True</code></td>
 </tr>
 <tr>
-<td>save_to_json</td>
-<td>将结果保存为json格式的文件</td>
-<td><code>- save_path</code>：str类型，保存的文件路径，当为目录时，保存文件命名与输入文件类型命名一致；<br/><code>- indent</code>：int类型，json格式化设置，默认为4；<br/><code>- ensure_ascii</code>：bool类型，json格式化设置，默认为False；</td>
+<td><code>indent</code></td>
+<td><code>int</code></td>
+<td>指定缩进级别，以美化输出的 <code>JSON</code> 数据，使其更具可读性，仅当 <code>format_json</code> 为 <code>True</code> 时有效</td>
+<td>4</td>
 </tr>
 <tr>
-<td>save_to_img</td>
+<td><code>ensure_ascii</code></td>
+<td><code>bool</code></td>
+<td>控制是否将非 <code>ASCII</code> 字符转义为 <code>Unicode</code>。设置为 <code>True</code> 时，所有非 <code>ASCII</code> 字符将被转义；<code>False</code> 则保留原始字符，仅当<code>format_json</code>为<code>True</code>时有效</td>
+<td><code>False</code></td>
+</tr>
+<tr>
+<td rowspan = "3"><code>save_to_json()</code></td>
+<td rowspan = "3">将结果保存为json格式的文件</td>
+<td><code>save_path</code></td>
+<td><code>str</code></td>
+<td>保存的文件路径，当为目录时，保存文件命名与输入文件类型命名一致</td>
+<td>无</td>
+</tr>
+<tr>
+<td><code>indent</code></td>
+<td><code>int</code></td>
+<td>指定缩进级别，以美化输出的 <code>JSON</code> 数据，使其更具可读性，仅当 <code>format_json</code> 为 <code>True</code> 时有效</td>
+<td>4</td>
+</tr>
+<tr>
+<td><code>ensure_ascii</code></td>
+<td><code>bool</code></td>
+<td>控制是否将非 <code>ASCII</code> 字符转义为 <code>Unicode</code>。设置为 <code>True</code> 时，所有非 <code>ASCII</code> 字符将被转义；<code>False</code> 则保留原始字符，仅当<code>format_json</code>为<code>True</code>时有效</td>
+<td><code>False</code></td>
+</tr>
+<tr>
+<td><code>save_to_img()</code></td>
 <td>将结果保存为图像格式的文件</td>
-<td><code>- save_path</code>：str类型，保存的文件路径，当为目录时，保存文件命名与输入文件类型命名一致；</td>
+<td><code>save_path</code></td>
+<td><code>str</code></td>
+<td>保存的文件路径，支持目录或文件路径</td>
+<td>无</td>
 </tr>
-</tbody>
 </table>
-<p>若您获取了配置文件，即可对行人属性识别产线各项配置进行自定义，只需要修改 <code>create_pipeline</code> 方法中的 <code>pipeline</code> 参数值为产线配置文件路径即可。</p>
-<p>例如，若您的配置文件保存在 <code>./my_path/pedestrian_attribute_recognition*.yaml</code> ，则只需执行：</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">from</span> <span class="nn">paddlex</span> <span class="kn">import</span> <span class="n">create_pipeline</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">pipeline</span> <span class="o">=</span> <span class="n">create_pipeline</span><span class="p">(</span><span class="n">pipeline</span><span class="o">=</span><span class="s2">&quot;./my_path/pedestrian_attribute_recognition.yaml&quot;</span><span class="p">)</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">output</span> <span class="o">=</span> <span class="n">pipeline</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="s2">&quot;pedestrian_attribute_002.jpg&quot;</span><span class="p">)</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">output</span><span class="p">:</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    <span class="n">res</span><span class="o">.</span><span class="n">print</span><span class="p">()</span> <span class="c1">## 打印预测的结构化输出</span>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    <span class="n">res</span><span class="o">.</span><span class="n">save_to_img</span><span class="p">(</span><span class="s2">&quot;./output/&quot;</span><span class="p">)</span> <span class="c1">## 保存结果可视化图像</span>
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    <span class="n">res</span><span class="o">.</span><span class="n">save_to_json</span><span class="p">(</span><span class="s2">&quot;./output/&quot;</span><span class="p">)</span> <span class="c1">## 保存预测的结构化输出</span>
+
+<ul>
+<li>
+<p>调用<code>print()</code> 方法会将结果打印到终端，打印到终端的内容解释如下：</p>
+<ul>
+<li><code>input_path</code>: <code>(str)</code> 待预测图像的输入路径。</li>
+<li><code>boxes</code>: <code>(List[Dict])</code> 表示预测结果的类别id。</li>
+<li><code>labels</code>: <code>(List[str])</code> 表示预测结果的类别名称。</li>
+<li><code>cls_scores</code>: <code>(List[numpy.ndarray])</code> 表示属性预测结果的置信度。</li>
+<li><code>det_scores</code>: <code>(float)</code> 表示行人检测框的置信度。</li>
+</ul>
+</li>
+<li>
+<p>调用<code>save_to_json()</code> 方法会将上述内容保存到指定的<code>save_path</code>中，如果指定为目录，则保存的路径为<code>save_path/{your_img_basename}.json</code>，如果指定为文件，则直接保存到该文件中。由于json文件不支持保存numpy数组，因此会将其中的<code>numpy.array</code>类型转换为列表形式。</p>
+</li>
+<li>
+<p>调用<code>save_to_img()</code> 方法会将可视化结果保存到指定的<code>save_path</code>中，如果指定为目录，则保存的路径为<code>save_path/{your_img_basename}_res.{your_img_extension}</code>，如果指定为文件，则直接保存到该文件中。(产线通常包含较多结果图片，不建议直接指定为具体的文件路径，否则多张图会被覆盖，仅保留最后一张图)</p>
+</li>
+<li>
+<p>此外，也支持通过属性获取带结果的可视化图像和预测结果，具体如下：</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>属性说明</th>
+</tr>
+</thead>
+<tr>
+<td rowspan = "1"><code>json</code></td>
+<td rowspan = "1">获取预测的 <code>json</code> 格式的结果</td>
+</tr>
+<tr>
+<td rowspan = "2"><code>img</code></td>
+<td rowspan = "2">获取格式为 <code>dict</code> 的可视化图像</td>
+</tr>
+</table>
+
+<ul>
+<li><code>json</code> 属性获取的预测结果为dict类型的数据，相关内容与调用 <code>save_to_json()</code> 方法保存的内容一致。</li>
+<li><code>img</code> 属性返回的预测结果是一个字典类型的数据。其中，键为 <code>res</code> 对应的值是<code>Image.Image</code> 对象：一个用于显示属性识别结果的可视化图像。</li>
+</ul>
+<p>此外，您可以获取行人属性识别产线配置文件，并加载配置文件进行预测。可执行如下命令将结果保存在 <code>my_path</code> 中：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>paddlex --get_pipeline_config pedestrian_attribute_recognition --save_path ./my_path
 </span></code></pre></div>
+<p>若您获取了配置文件，即可对OCR产线各项配置进行自定义，只需要修改 <code>create_pipeline</code> 方法中的 <code>pipeline</code> 参数值为产线配置文件路径即可。示例如下：</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">paddlex</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_pipeline</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">pipeline</span> <span class="o">=</span> <span class="n">create_pipeline</span><span class="p">(</span><span class="n">pipeline</span><span class="o">=</span><span class="s2">&quot;./my_path/pedestrian_attribute_recognition.yaml&quot;</span><span class="p">)</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">output</span> <span class="o">=</span> <span class="n">pipeline</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    <span class="nb">input</span><span class="o">=</span><span class="s2">&quot;./pedestrian_attribute_002.jpg&quot;</span><span class="p">,</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="p">)</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">output</span><span class="p">:</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>    <span class="n">res</span><span class="o">.</span><span class="n">print</span><span class="p">()</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>    <span class="n">res</span><span class="o">.</span><span class="n">save_to_img</span><span class="p">(</span><span class="s2">&quot;./output/&quot;</span><span class="p">)</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>    <span class="n">res</span><span class="o">.</span><span class="n">save_to_json</span><span class="p">(</span><span class="s2">&quot;./output/&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<p><b>注：</b> 配置文件中的参数为产线初始化参数，如果希望更改行人属性识别产线初始化参数，可以直接修改配置文件中的参数，并加载配置文件进行预测。同时，CLI 预测也支持传入配置文件，<code>--pipeline</code> 指定配置文件的路径即可。</p>
 <h2 id="3">3. 开发集成/部署<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
 <p>如果产线可以达到您对产线推理速度和精度的要求，您可以直接进行开发集成/部署。</p>
 <p>若您需要将产线直接应用在您的Python项目中，可以参考 <a href="#222-python脚本方式集成">2.2.2 Python脚本方式</a>中的示例代码。</p>
 <p>此外，PaddleX 也提供了其他三种部署方式，详细说明如下：</p>
 <p>🚀 <b>高性能推理</b>：在实际生产环境中，许多应用对部署策略的性能指标（尤其是响应速度）有着较严苛的标准，以确保系统的高效运行与用户体验的流畅性。为此，PaddleX 提供高性能推理插件，旨在对模型推理及前后处理进行深度性能优化，实现端到端流程的显著提速，详细的高性能推理流程请参考<a href="../../../pipeline_deploy/high_performance_inference.html">PaddleX高性能推理指南</a>。</p>
-<p>☁️ <b>服务化部署</b>：服务化部署是实际生产环境中常见的一种部署形式。通过将推理功能封装为服务，客户端可以通过网络请求来访问这些服务，以获取推理结果。PaddleX 支持用户以低成本实现产线的服务化部署，详细的服务化部署流程请参考<a href="../../../pipeline_deploy/service_deploy.html">PaddleX服务化部署指南</a>。</p>
-<p>下面是API参考和多语言服务调用示例：</p>
+<p>☁️ <b>服务化部署</b>：服务化部署是实际生产环境中常见的一种部署形式。通过将推理功能封装为服务，客户端可以通过网络请求来访问这些服务，以获取推理结果。PaddleX 支持多种产线服务化部署方案，详细的产线服务化部署流程请参考<a href="../../../pipeline_deploy/serving.html">PaddleX服务化部署指南</a>。</p>
+<p>以下是基础服务化部署的API参考与多语言服务调用示例：</p>
 <details><summary>API参考</summary>
 
 <p>对于服务提供的主要操作：</p>
@@ -4705,6 +5668,11 @@ You're not viewing the latest version.
 </thead>
 <tbody>
 <tr>
+<td><code>logId</code></td>
+<td><code>string</code></td>
+<td>请求的UUID。</td>
+</tr>
+<tr>
 <td><code>errorCode</code></td>
 <td><code>integer</code></td>
 <td>错误码。固定为<code>0</code>。</td>
@@ -4714,9 +5682,13 @@ You're not viewing the latest version.
 <td><code>string</code></td>
 <td>错误说明。固定为<code>"Success"</code>。</td>
 </tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>操作结果。</td>
+</tr>
 </tbody>
 </table>
-<p>响应体还可能有<code>result</code>属性，类型为<code>object</code>，其中存储操作结果信息。</p>
 <ul>
 <li>当请求处理未成功时，响应体的属性如下：</li>
 </ul>
@@ -4729,6 +5701,11 @@ You're not viewing the latest version.
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><code>logId</code></td>
+<td><code>string</code></td>
+<td>请求的UUID。</td>
+</tr>
 <tr>
 <td><code>errorCode</code></td>
 <td><code>integer</code></td>
@@ -4763,7 +5740,7 @@ You're not viewing the latest version.
 <tr>
 <td><code>image</code></td>
 <td><code>string</code></td>
-<td>服务可访问的图像文件的URL或图像文件内容的Base64编码结果。</td>
+<td>服务器可访问的图像文件的URL或图像文件内容的Base64编码结果。</td>
 <td>是</td>
 </tr>
 </tbody>
@@ -4882,33 +5859,58 @@ print(result[&quot;pedestrians&quot;])
 <h2 id="4">4. 二次开发<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
 <p>如果行人属性识别产线提供的默认模型权重在您的场景中，精度或速度不满意，您可以尝试利用<b>您自己拥有的特定领域或应用场景的数据</b>对现有模型进行进一步的<b>微调</b>，以提升行人属性识别产线的在您的场景中的识别效果。</p>
 <h3 id="41">4.1 模型微调<a class="headerlink" href="#41" title="Permanent link">&para;</a></h3>
-<p>由于行人属性识别产线包含行人属性识别模块和行人检测模块，如果模型产线的效果不及预期可能来自于其中任何一个模块。
-您可以对识别效果差的图片进行分析，如果在分析过程中发现有较多的主体目标未被检测出来，那么可能是行人检测模型存在不足那么您需要参考<a href="../../../module_usage/tutorials/cv_modules/human_detection.html">行人检测模块开发教程</a>中的<a href="../../../module_usage/tutorials/cv_modules/human_detection.html#四二次开发">二次开发</a>章节，使用您的私有数据集对行人检测模型进行微调；如果检测出来的主体属性识别错误，那么您需要参考<a href="../../../module_usage/tutorials/cv_modules/pedestrian_attribute_recognition.html">行人属性识别模块开发教程</a>中的<a href="../../../module_usage/tutorials/cv_modules/pedestrian_attribute_recognition.html#四二次开发">二次开发</a>章节，使用您的私有数据集对行人属性识别模型进行微调。</p>
+<p>由于行人属性识别产线包含行人属性识别模块和行人检测模块，如果模型产线的效果不及预期，可能来自于其中任何一个模块。您可以对识别效果差的图片进行分析，进而确定是哪个模块存在问题，并参考以下表格中对应的微调教程链接进行模型微调。</p>
+<table>
+  <thead>
+    <tr>
+      <th>情形</th>
+      <th>微调模块</th>
+      <th>微调参考链接</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>行人检测不准</td>
+      <td>行人检测模块</td>
+      <td><a href="../../../module_usage/tutorials/cv_modules/human_detection.md">链接</a></td>
+    </tr>
+    <tr>
+      <td>属性识别不准</td>
+      <td>行人属性识别模块</td>
+      <td><a href="../../../module_usage/tutorials/cv_modules/pedestrian_attribute_recognition.md">链接</a></td>
+    </tr>
+  </tbody>
+</table>
+
 <h3 id="42">4.2 模型应用<a class="headerlink" href="#42" title="Permanent link">&para;</a></h3>
 <p>当您使用私有数据集完成微调训练后，可获得本地模型权重文件。</p>
 <p>若您需要使用微调后的模型权重，只需对产线配置文件做修改，将微调后模型权重的本地路径替换至产线配置文件中的对应位置即可：</p>
-<p><div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>......
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>Pipeline:
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>  det_model: PP-YOLOE-L_human
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>  cls_model: PP-LCNet_x1_0_pedestrian_attribute  #可修改为微调后模型的本地路径
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>  device: &quot;gpu&quot;
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>  batch_size: 1
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>......
+<p><div class="language-yaml highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">pipeline_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pedestrian_attribute_recognition</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nt">SubModules</span><span class="p">:</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span><span class="nt">Detection</span><span class="p">:</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="nt">module_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">object_detection</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="nt">model_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PP-YOLOE-L_human</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span><span class="nt">model_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">    </span><span class="nt">batch_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">    </span><span class="nt">threshold</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.5</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">  </span><span class="nt">Classification</span><span class="p">:</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">    </span><span class="nt">module_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">multilabel_classification</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">    </span><span class="nt">model_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PP-LCNet_x1_0_pedestrian_attribute</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">    </span><span class="nt">model_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">    </span><span class="nt">batch_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">    </span><span class="nt">threshold</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.7</span>
 </span></code></pre></div>
 随后， 参考本地体验中的命令行方式或 Python 脚本方式，加载修改后的产线配置文件即可。</p>
 <h2 id="5">5. 多硬件支持<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
-<p>PaddleX 支持英伟达 GPU、昆仑芯 XPU、昇腾 NPU和寒武纪 MLU 等多种主流硬件设备，<b>仅需修改 <code>--device</code> 参数</b>即可完成不同硬件之间的无缝切换。</p>
-<p>例如，您使用英伟达 GPU 进行行人属性识别产线的推理，使用的命令为：</p>
-<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>paddlex<span class="w"> </span>--pipeline<span class="w"> </span>pedestrian_attribute_recognition<span class="w"> </span>--input<span class="w"> </span>pedestrian_attribute_002.jpg<span class="w"> </span>--device<span class="w"> </span>gpu:0
+<p>PaddleX 支持英伟达 GPU、昆仑芯 XPU、昇腾 NPU和寒武纪 MLU 等多种主流硬件设备，<b>仅需修改 <code>--device</code>参数</b>即可完成不同硬件之间的无缝切换。</p>
+<p>例如，您使用昇腾 NPU 进行行人属性识别产线的推理，使用的 CLI 命令为：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>paddlex<span class="w"> </span>--pipeline<span class="w"> </span>pedestrian_attribute_recognition<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">        </span>--input<span class="w"> </span>pedestrian_attribute_002.jpg<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">        </span>--device<span class="w"> </span>npu:0
 </span></code></pre></div>
-此时，若您想将硬件切换为昇腾 NPU，仅需将 <code>--device</code> 修改为 npu:0 即可：</p>
-<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>paddlex<span class="w"> </span>--pipeline<span class="w"> </span>pedestrian_attribute_recognition<span class="w"> </span>--input<span class="w"> </span>pedestrian_attribute_002.jpg<span class="w"> </span>--device<span class="w"> </span>npu:0
-</span></code></pre></div>
-若您想在更多种类的硬件上使用行人属性识别产线，请参考<a href="../../../other_devices_support/multi_devices_use_guide.html">PaddleX多硬件使用指南</a>。</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>关于我们项目的一些常见问题解答，请参考<a href="../../../FAQ.html">FAQ</a>。如果您的问题没有得到解答，请随时在 <a href="https://github.com/PaddlePaddle/PaddleX/issues">Issues</a> 中提出。</p>
-</div>
+<p>当然，您也可以在 Python 脚本中 <code>create_pipeline()</code> 时或者 <code>predict()</code> 时指定硬件设备。</p>
+<p>若您想在更多种类的硬件上使用通用OCR产线，请参考<a href="../../../other_devices_support/multi_devices_use_guide.html">PaddleX多硬件使用指南</a>。</p>
 
 
 
@@ -4931,7 +5933,7 @@ print(result[&quot;pedestrians&quot;])
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年12月13日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2025年2月6日</span>
   </span>
 
     
@@ -4941,7 +5943,7 @@ print(result[&quot;pedestrians&quot;])
     <span class="md-icon" title="创建日期">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年12月13日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2025年2月6日</span>
   </span>
 
     
@@ -5104,7 +6106,7 @@ print(result[&quot;pedestrians&quot;])
       
     
     <a href="https://github.com/PaddlePaddle/PaddleX" target="_blank" rel="noopener" title="github.com" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
     </a>
   
 </div>
@@ -5119,10 +6121,10 @@ print(result[&quot;pedestrians&quot;])
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "navigation.expand", "navigation.path", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": {"provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "navigation.expand", "navigation.path", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.f13b1293.min.js"></script>
       
         <script src="../../../javascripts/katex.min.js"></script>
       

@@ -8,6 +8,8 @@
       
       
       
+        <link rel="canonical" href="https://amberc0209.github.io/PaddleX/3.0-beta2/en/pipeline_usage/tutorials/ocr_pipelines/formula_recognition.html">
+      
       
         <link rel="prev" href="layout_parsing.html">
       
@@ -16,7 +18,7 @@
       
       
       <link rel="icon" href="../../../../assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.48">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.2">
     
     
       
@@ -24,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.6f8fc17f.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.d7758b05.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
@@ -86,7 +88,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#formula-recognition-pipeline-tutorial" class="md-skip">
+        <a href="#formula-recognition-pipeline-user-guide" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +108,7 @@ You're not viewing the latest version.
 </a>
 
             </div>
-            <script>var el=document.querySelector("[data-md-component=outdated]"),outdated=__md_get("__outdated",sessionStorage);!0===outdated&&el&&(el.hidden=!1)</script>
+            <script>var el=document.querySelector("[data-md-component=outdated]"),base=new URL("../../../.."),outdated=__md_get("__outdated",sessionStorage,base);!0===outdated&&el&&(el.hidden=!1)</script>
           </aside>
         
       </div>
@@ -256,7 +258,7 @@ You're not viewing the latest version.
         <a href="https://github.com/AmberC0209/PaddleX" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -569,7 +571,7 @@ You're not viewing the latest version.
       <a href="https://github.com/AmberC0209/PaddleX" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -591,6 +593,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Home
+    
   </span>
   
 
@@ -634,6 +637,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Installation
+    
   </span>
   
 
@@ -659,6 +663,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddlePaddle Install
+    
   </span>
   
 
@@ -680,6 +685,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX Install
+    
   </span>
   
 
@@ -719,6 +725,10 @@ You're not viewing the latest version.
       
         
       
+        
+      
+        
+      
     
     
       
@@ -742,6 +752,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Pipeline Tutorials
+    
   </span>
   
 
@@ -767,6 +778,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Overview
+    
   </span>
   
 
@@ -812,6 +824,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Informatio Extraction
+    
   </span>
   
 
@@ -837,6 +850,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PP-ChatOCRv3-doc
+    
   </span>
   
 
@@ -875,6 +889,12 @@ You're not viewing the latest version.
       
         
       
+        
+      
+        
+      
+        
+      
     
     
       
@@ -898,6 +918,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     OCR
+    
   </span>
   
 
@@ -923,6 +944,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     OCR
+    
   </span>
   
 
@@ -943,7 +965,52 @@ You're not viewing the latest version.
         
   
   <span class="md-ellipsis">
-    General Table Recognition
+    通用表格识别产线
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="table_recognition_v2.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    通用表格识别v2产线
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="layout_parsing_v2.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    通用版面解析产线
+    
   </span>
   
 
@@ -964,7 +1031,8 @@ You're not viewing the latest version.
         
   
   <span class="md-ellipsis">
-    General Layout Parsing
+    通用版面解析v2产线
+    
   </span>
   
 
@@ -995,6 +1063,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Formula Recognition
+    
   </span>
   
 
@@ -1006,6 +1075,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Formula Recognition
+    
   </span>
   
 
@@ -1027,9 +1097,9 @@ You're not viewing the latest version.
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-introduction-to-the-formula-recognition-pipeline" class="md-nav__link">
+  <a href="#1-introduction-to-formula-recognition-pipeline" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Introduction to the Formula Recognition Pipeline
+      1. Introduction to Formula Recognition Pipeline
     </span>
   </a>
   
@@ -1046,33 +1116,18 @@ You're not viewing the latest version.
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#21-experience-via-command-line" class="md-nav__link">
+  <a href="#21-command-line-experience" class="md-nav__link">
     <span class="md-ellipsis">
-      2.1 Experience via Command Line
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2.1 Experience via Command Line">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#22-python-script-integration" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.2 Python Script Integration
+      2.1 Command Line Experience
     </span>
   </a>
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-        
           <li class="md-nav__item">
-  <a href="#23-formula-recognition-pipeline-visualization" class="md-nav__link">
+  <a href="#22-integration-via-python-script" class="md-nav__link">
     <span class="md-ellipsis">
-      2.3 Formula Recognition Pipeline Visualization
+      2.2 Integration via Python Script
     </span>
   </a>
   
@@ -1093,19 +1148,19 @@ You're not viewing the latest version.
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-custom-development" class="md-nav__link">
+  <a href="#4-secondary-development" class="md-nav__link">
     <span class="md-ellipsis">
-      4. Custom Development
+      4. Secondary Development
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="4. Custom Development">
+    <nav class="md-nav" aria-label="4. Secondary Development">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#41-model-fine-tuning" class="md-nav__link">
     <span class="md-ellipsis">
-      4.1 Model Fine-tuning
+      4.1 Model Fine-Tuning
     </span>
   </a>
   
@@ -1154,7 +1209,30 @@ You're not viewing the latest version.
         
   
   <span class="md-ellipsis">
-    Seal Recognition
+    印章文本识别产线
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="doc_preprocessor.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    文档图像预处理产线
+    
   </span>
   
 
@@ -1203,6 +1281,16 @@ You're not viewing the latest version.
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
       
@@ -1228,6 +1316,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Computer Vision
+    
   </span>
   
 
@@ -1253,6 +1342,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     General Image Classification
+    
   </span>
   
 
@@ -1274,6 +1364,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     General Object Detection
+    
   </span>
   
 
@@ -1295,6 +1386,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     General Instance Segmentation
+    
   </span>
   
 
@@ -1316,6 +1408,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     General Semantic Segmentation
+    
   </span>
   
 
@@ -1337,6 +1430,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Image Multi-label Classification
+    
   </span>
   
 
@@ -1358,6 +1452,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Small Object Detection
+    
   </span>
   
 
@@ -1379,6 +1474,117 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Image Anomaly Detection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cv_pipelines/3d_bev_detection.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3D Multi-modal Fusion Detection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cv_pipelines/human_keypoint_detection.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Human Keypoint Detection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cv_pipelines/open_vocabulary_detection.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Open Vocabulary Detection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cv_pipelines/open_vocabulary_segmentation.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Open Vocabulary Segmentation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cv_pipelines/rotated_object_detection.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rotated Object Detection
+    
   </span>
   
 
@@ -1400,6 +1606,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Image Feature
+    
   </span>
   
 
@@ -1421,6 +1628,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Pedestrian Attribute Recognition
+    
   </span>
   
 
@@ -1442,6 +1650,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Vehicle Attribute Recognition
+    
   </span>
   
 
@@ -1463,6 +1672,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Face Feature
+    
   </span>
   
 
@@ -1520,6 +1730,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Time Series Analysis
+    
   </span>
   
 
@@ -1545,6 +1756,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Time Series Forecasting
+    
   </span>
   
 
@@ -1566,6 +1778,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Time Series Anomaly Detection
+    
   </span>
   
 
@@ -1587,6 +1800,87 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Time Series Classification
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Speech
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            Speech
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../speech_pipelines/multilingual_speech_recognition.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Multilingual Speech Recognition
+    
   </span>
   
 
@@ -1634,22 +1928,127 @@ You're not viewing the latest version.
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_6" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_7" >
         
           
-          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="">
+          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="">
             
   
   <span class="md-ellipsis">
-    Instructions
+    Video
+    
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_6">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            Video
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../video_pipelines/video_classification.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    General Video Classification
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../video_pipelines/video_detection.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    General Video Detection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Instructions
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_8">
             <span class="md-nav__icon md-icon"></span>
             Instructions
           </label>
@@ -1667,6 +2066,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX Pipeline CLI Usage
+    
   </span>
   
 
@@ -1688,6 +2088,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX Pipeline Python API Usage
+    
   </span>
   
 
@@ -1720,6 +2121,10 @@ You're not viewing the latest version.
   
     
     
+      
+        
+      
+        
       
         
       
@@ -1757,6 +2162,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Module Tutorials
+    
   </span>
   
 
@@ -1778,6 +2184,12 @@ You're not viewing the latest version.
   
     
     
+      
+        
+      
+        
+      
+        
       
         
       
@@ -1817,6 +2229,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     OCR
+    
   </span>
   
 
@@ -1842,6 +2255,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Text Detection
+    
   </span>
   
 
@@ -1863,6 +2277,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Seal Detection
+    
   </span>
   
 
@@ -1884,6 +2299,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Text Recognition
+    
   </span>
   
 
@@ -1905,6 +2321,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Layout Parsing
+    
   </span>
   
 
@@ -1926,6 +2343,51 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Table Structure Recognition
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../module_usage/tutorials/ocr_modules/table_cells_detection.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Table Cell Detection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../module_usage/tutorials/ocr_modules/table_classification.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Table Classification
+    
   </span>
   
 
@@ -1947,6 +2409,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Document Image Orientation Classification
+    
   </span>
   
 
@@ -1968,6 +2431,29 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Text Image Unwarping
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../module_usage/tutorials/ocr_modules/textline_orientation_classification.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Text Line Orientation Classification
+    
   </span>
   
 
@@ -1989,6 +2475,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Formula Recognition
+    
   </span>
   
 
@@ -2045,6 +2532,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Image Classification
+    
   </span>
   
 
@@ -2070,6 +2558,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Image Classification
+    
   </span>
   
 
@@ -2091,6 +2580,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Image Multi-label Classification
+    
   </span>
   
 
@@ -2112,6 +2602,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Pedestrian Attribute Recognition
+    
   </span>
   
 
@@ -2133,6 +2624,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Vehicle Attribute Recognition
+    
   </span>
   
 
@@ -2185,6 +2677,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Image Features
+    
   </span>
   
 
@@ -2210,6 +2703,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Image Feature
+    
   </span>
   
 
@@ -2231,6 +2725,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     人脸特征模块
+    
   </span>
   
 
@@ -2256,6 +2751,10 @@ You're not viewing the latest version.
   
     
     
+      
+        
+      
+        
       
         
       
@@ -2291,6 +2790,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Object Detection
+    
   </span>
   
 
@@ -2316,6 +2816,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Object Detection
+    
   </span>
   
 
@@ -2337,6 +2838,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Small Object Detection
+    
   </span>
   
 
@@ -2358,6 +2860,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Face Detection
+    
   </span>
   
 
@@ -2379,6 +2882,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Main Body Detection
+    
   </span>
   
 
@@ -2400,6 +2904,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Human Detection
+    
   </span>
   
 
@@ -2421,6 +2926,51 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Vehicle Detection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../module_usage/tutorials/cv_modules/human_keypoint_detection.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Human Keypoint Detection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../module_usage/tutorials/cv_modules/open_vocabulary_detection.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Open-Vocabulary Object Detection
+    
   </span>
   
 
@@ -2453,6 +3003,8 @@ You're not viewing the latest version.
       
         
       
+        
+      
     
     
       
@@ -2475,6 +3027,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Image Segmentation
+    
   </span>
   
 
@@ -2500,6 +3053,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Semantic Segmentation
+    
   </span>
   
 
@@ -2521,6 +3075,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Instance Segmentation
+    
   </span>
   
 
@@ -2542,6 +3097,29 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Image Anomaly Detection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../module_usage/tutorials/cv_modules/open_vocabulary_segmentation.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Open-Vocabulary Segmentation
+    
   </span>
   
 
@@ -2596,6 +3174,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Time Series Analysis
+    
   </span>
   
 
@@ -2621,6 +3200,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Time Series Forecasting
+    
   </span>
   
 
@@ -2642,6 +3222,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Time Series Anomaly Detection
+    
   </span>
   
 
@@ -2663,6 +3244,161 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Time Series Classification
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    语音识别
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            语音识别
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../module_usage/tutorials/speech_modules/multilingual_speech_recognition.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Multilingual Speech Recognition Task
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    3D检测
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_8">
+            <span class="md-nav__icon md-icon"></span>
+            3D检测
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../module_usage/tutorials/cv_modules/3d_bev_detection.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3D Multimodal Fusion Detection
+    
   </span>
   
 
@@ -2709,22 +3445,23 @@ You're not viewing the latest version.
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_7" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_9" >
         
           
-          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_9" id="__nav_4_9_label" tabindex="0">
             
   
   <span class="md-ellipsis">
     Instructions
+    
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_7">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_9">
             <span class="md-nav__icon md-icon"></span>
             Instructions
           </label>
@@ -2742,6 +3479,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX Module Python API Usage
+    
   </span>
   
 
@@ -2763,6 +3501,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX Common Module Config Parameters
+    
   </span>
   
 
@@ -2784,6 +3523,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX Time Series Module Config Parameters
+    
   </span>
   
 
@@ -2845,6 +3585,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Pipeline Deploy
+    
   </span>
   
 
@@ -2870,6 +3611,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     High Performance Inference
+    
   </span>
   
 
@@ -2886,11 +3628,12 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../pipeline_deploy/service_deploy.html" class="md-nav__link">
+      <a href="../../../pipeline_deploy/serving.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Service Deploy
+    Serving
+    
   </span>
   
 
@@ -2911,7 +3654,8 @@ You're not viewing the latest version.
         
   
   <span class="md-ellipsis">
-    Edge Deploy
+    Edge Deployment
+    
   </span>
   
 
@@ -2963,6 +3707,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Multi-Device Usage
+    
   </span>
   
 
@@ -2988,6 +3733,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Multi-Device Usage Guide
+    
   </span>
   
 
@@ -3005,6 +3751,8 @@ You're not viewing the latest version.
   
     
     
+      
+        
       
         
       
@@ -3036,6 +3784,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddlePaddle Installation on Multiple Devices
+    
   </span>
   
 
@@ -3061,6 +3810,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Haiguang DCU PaddlePaddle Installation Guide
+    
   </span>
   
 
@@ -3082,6 +3832,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Cambricon MLU PaddlePaddle Installation Guide
+    
   </span>
   
 
@@ -3103,6 +3854,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Ascend NPU PaddlePaddle Installation Guide
+    
   </span>
   
 
@@ -3124,6 +3876,29 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Kunlun XPU PaddlePaddle Installation Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../other_devices_support/paddlepaddle_install_GCU.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enflame GCU PaddlePaddle Installation Guide
+    
   </span>
   
 
@@ -3185,6 +3960,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Data Annotation Tutorials
+    
   </span>
   
 
@@ -3241,6 +4017,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Computer Vision
+    
   </span>
   
 
@@ -3266,6 +4043,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Image Classification Task
+    
   </span>
   
 
@@ -3287,6 +4065,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Image Feature Task
+    
   </span>
   
 
@@ -3308,6 +4087,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Instance Segmentation Task
+    
   </span>
   
 
@@ -3329,6 +4109,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Image Multi-label Classification
+    
   </span>
   
 
@@ -3350,6 +4131,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Object Detection Task
+    
   </span>
   
 
@@ -3371,6 +4153,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Semantic Segmentation Task
+    
   </span>
   
 
@@ -3423,6 +4206,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     OCR
+    
   </span>
   
 
@@ -3448,6 +4232,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Table Recognition Task
+    
   </span>
   
 
@@ -3469,6 +4254,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Text Detection/Recognition Task
+    
   </span>
   
 
@@ -3523,6 +4309,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Time Series Analysis
+    
   </span>
   
 
@@ -3548,6 +4335,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Time Series Anomaly Detection Task
+    
   </span>
   
 
@@ -3569,6 +4357,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Time Series Classification Task
+    
   </span>
   
 
@@ -3590,6 +4379,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Time Series Forecasting Task
+    
   </span>
   
 
@@ -3655,6 +4445,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Pipeline List
+    
   </span>
   
 
@@ -3680,6 +4471,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX Pipeline List (CPU/GPU)
+    
   </span>
   
 
@@ -3701,6 +4493,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX Pipeline List (DCU)
+    
   </span>
   
 
@@ -3722,6 +4515,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX Pipeline List (MLU)
+    
   </span>
   
 
@@ -3743,6 +4537,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX Pipeline List (NPU)
+    
   </span>
   
 
@@ -3764,6 +4559,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX Pipeline List (XPU)
+    
   </span>
   
 
@@ -3799,6 +4595,8 @@ You're not viewing the latest version.
       
         
       
+        
+      
     
     
       
@@ -3821,6 +4619,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Model List
+    
   </span>
   
 
@@ -3846,6 +4645,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX Model List (CPU/GPU)
+    
   </span>
   
 
@@ -3867,6 +4667,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX Model List (DCU)
+    
   </span>
   
 
@@ -3888,6 +4689,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX Model List (MLU)
+    
   </span>
   
 
@@ -3909,6 +4711,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX Model List (NPU)
+    
   </span>
   
 
@@ -3930,6 +4733,29 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     PaddleX Model List (XPU)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../support_list/model_list_gcu.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PaddleX Model List (GCU)
+    
   </span>
   
 
@@ -3999,6 +4825,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Practical Tutorials & Examples
+    
   </span>
   
 
@@ -4024,6 +4851,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Document Scene Information Extraction Tutorial
+    
   </span>
   
 
@@ -4045,6 +4873,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Garbage Classification Tutorial
+    
   </span>
   
 
@@ -4066,6 +4895,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Remote Sensing Image Instance Segmentation Tutorial
+    
   </span>
   
 
@@ -4087,6 +4917,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Pedestrian Fall Detection Tutorial
+    
   </span>
   
 
@@ -4108,6 +4939,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Fashion Element Detection Tutorial
+    
   </span>
   
 
@@ -4129,6 +4961,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     License Plate Recognition Tutorial
+    
   </span>
   
 
@@ -4150,6 +4983,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Handwritten Chinese Recognition Tutorial
+    
   </span>
   
 
@@ -4171,6 +5005,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Lane Line Segmentation Tutorial
+    
   </span>
   
 
@@ -4192,6 +5027,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Equipment Anomaly Detection Application Tutorial
+    
   </span>
   
 
@@ -4213,6 +5049,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Heartbeat Monitoring Time Series Data Classification Application Tutorial
+    
   </span>
   
 
@@ -4234,6 +5071,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Long-term Electricity Consumption Forecasting Application Tutorial
+    
   </span>
   
 
@@ -4262,6 +5100,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     FAQ
+    
   </span>
   
 
@@ -4282,6 +5121,7 @@ You're not viewing the latest version.
   
   <span class="md-ellipsis">
     Recently Update
+    
   </span>
   
 
@@ -4317,9 +5157,9 @@ You're not viewing the latest version.
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-introduction-to-the-formula-recognition-pipeline" class="md-nav__link">
+  <a href="#1-introduction-to-formula-recognition-pipeline" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Introduction to the Formula Recognition Pipeline
+      1. Introduction to Formula Recognition Pipeline
     </span>
   </a>
   
@@ -4336,33 +5176,18 @@ You're not viewing the latest version.
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#21-experience-via-command-line" class="md-nav__link">
+  <a href="#21-command-line-experience" class="md-nav__link">
     <span class="md-ellipsis">
-      2.1 Experience via Command Line
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2.1 Experience via Command Line">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#22-python-script-integration" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.2 Python Script Integration
+      2.1 Command Line Experience
     </span>
   </a>
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-        
           <li class="md-nav__item">
-  <a href="#23-formula-recognition-pipeline-visualization" class="md-nav__link">
+  <a href="#22-integration-via-python-script" class="md-nav__link">
     <span class="md-ellipsis">
-      2.3 Formula Recognition Pipeline Visualization
+      2.2 Integration via Python Script
     </span>
   </a>
   
@@ -4383,19 +5208,19 @@ You're not viewing the latest version.
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-custom-development" class="md-nav__link">
+  <a href="#4-secondary-development" class="md-nav__link">
     <span class="md-ellipsis">
-      4. Custom Development
+      4. Secondary Development
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="4. Custom Development">
+    <nav class="md-nav" aria-label="4. Secondary Development">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#41-model-fine-tuning" class="md-nav__link">
     <span class="md-ellipsis">
-      4.1 Model Fine-tuning
+      4.1 Model Fine-Tuning
     </span>
   </a>
   
@@ -4438,6 +5263,7 @@ You're not viewing the latest version.
                 
                   
 
+
   
     <a href="https://github.com/AmberC0209/PaddleX/edit/develop/docs/pipeline_usage/tutorials/ocr_pipelines/formula_recognition.en.md" title="Edit this page" class="md-content__button md-icon">
       
@@ -4455,26 +5281,29 @@ You're not viewing the latest version.
   
 
 
-<h1 id="formula-recognition-pipeline-tutorial">Formula Recognition Pipeline Tutorial<a class="headerlink" href="#formula-recognition-pipeline-tutorial" title="Permanent link">&para;</a></h1>
-<h2 id="1-introduction-to-the-formula-recognition-pipeline">1. Introduction to the Formula Recognition Pipeline<a class="headerlink" href="#1-introduction-to-the-formula-recognition-pipeline" title="Permanent link">&para;</a></h2>
-<p>Formula recognition is a technology that automatically identifies and extracts LaTeX formula content and its structure from documents or images. It is widely used in document editing and data analysis in fields such as mathematics, physics, and computer science. Leveraging computer vision and machine learning algorithms, formula recognition converts complex mathematical formula information into editable LaTeX format, facilitating further data processing and analysis for users.</p>
-<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/formula_recognition/01.jpg"></p>
-<p><b>The Formula Recognition Pipeline comprises a layout detection module and a formula recognition module.</b></p>
-<p><b>If you prioritize model accuracy, choose a model with higher accuracy. If you prioritize inference speed, select a model with faster inference. If you prioritize model size, choose a model with a smaller storage footprint.</b></p>
-<p><b>Layout Detection Module Models</b>:</p>
+<h1 id="formula-recognition-pipeline-user-guide">Formula Recognition Pipeline User Guide<a class="headerlink" href="#formula-recognition-pipeline-user-guide" title="Permanent link">&para;</a></h1>
+<h2 id="1-introduction-to-formula-recognition-pipeline">1. Introduction to Formula Recognition Pipeline<a class="headerlink" href="#1-introduction-to-formula-recognition-pipeline" title="Permanent link">&para;</a></h2>
+<p>Formula recognition is a technology that automatically identifies and extracts LaTeX formula content and structure from documents or images. It is widely used in fields such as mathematics, physics, and computer science for document editing and data analysis. By using computer vision and machine learning algorithms, formula recognition can convert complex mathematical formula information into editable LaTeX format, facilitating further processing and analysis of data.</p>
+<p>The formula recognition pipeline is designed to solve formula recognition tasks by extracting formula information from images and outputting it in LaTeX source code format. This pipeline integrates the advanced formula recognition model PP-FormulaNet developed by the PaddlePaddle Vision Team and the well-known formula recognition model UniMERNet. It is an end-to-end formula recognition system that supports the recognition of simple printed formulas, complex printed formulas, and handwritten formulas. Additionally, it includes functions for image orientation correction and distortion correction. Based on this pipeline, precise formula content prediction can be achieved, covering various application scenarios in education, research, finance, manufacturing, and other fields. The pipeline also provides flexible deployment options, supporting multiple hardware devices and programming languages. Moreover, it offers the capability for secondary development. You can train and optimize the pipeline on your own dataset, and the trained model can be seamlessly integrated.</p>
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/formula_recognition/03.png" style="width: 70%"></p>
+<p><b>The formula recognition pipeline includes a mandatory formula recognition module,</b> as well as optional layout detection, document image orientation classification, and text image unwarping modules. The document image orientation classification module and the text image unwarping module are integrated into the formula recognition pipeline as a document preprocessing sub-pipeline. Each module contains multiple models, and you can choose the model based on the benchmark test data below.</p>
+<p><b>If you prioritize model accuracy, choose a model with higher precision; if you care more about inference speed, choose a faster model; if you are concerned about model storage size, choose a smaller model.</b></p>
+<p><b>Document Image Orientation Classification Module (Optional):</b></p>
+
 <table>
 <thead>
 <tr>
-<th>Model Name</th><th>Model Download Link</th>
-<th>mAP (%)</th>
+<th>Model</th><th>Model Download Link</th>
+<th>Top-1 Acc (%)</th>
 <th>GPU Inference Time (ms)</th>
 <th>CPU Inference Time (ms)</th>
-<th>Model Size (M)</th>
+<th>Model Storage Size (M)</th>
+<th>Introduction</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>RT-DETR-H_layout_17cls</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0b2/RT-DETR-H_layout_17cls_infer.tar">Inference Model</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/RT-DETR-H_layout_17cls_pretrained.pdparams">Trained Model</a></td>
+<td>RT-DETR-H_layout_17cls</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0rc0/RT-DETR-H_layout_17cls_infer.tar">Inference Model</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/RT-DETR-H_layout_17cls_pretrained.pdparams">Trained Model</a></td>
 <td>92.6</td>
 <td>115.126</td>
 <td>3827.25</td>
@@ -4482,101 +5311,84 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-<p><b>Note: The above accuracy metrics are evaluated on PaddleX's self-built layout detection dataset, containing 10,000 images. All GPU inference times are based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speeds are based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b></p>
-<p><b>Formula Recognition Module Models</b>:</p>
+<p><b>Note: The accuracy metrics are evaluated on a self-built dataset covering ID cards and documents, with 1000 images. GPU inference time is based on an NVIDIA Tesla T4 machine, with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz, with 8 threads and FP32 precision.</b></p>
+<p><b>Text Image Unwarping Module (Optional):</b></p>
+
 <table>
 <thead>
 <tr>
-<th>Model Name</th><th>Model Download Link</th>
-<th>BLEU Score</th>
-<th>Normed Edit Distance</th>
-<th>ExpRate (%)</th>
-<th>GPU Inference Time (ms)</th>
-<th>CPU Inference Time (ms)</th>
-<th>Model Size</th>
+<th>Model</th><th>Model Download Link</th>
+<th>CER</th>
+<th>Model Storage Size (M)</th>
+<th>Introduction</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>LaTeX_OCR_rec</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0b2/LaTeX_OCR_rec_infer.tar">Inference Model</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/LaTeX_OCR_rec_pretrained.pdparams">Trained Model</a></td>
+<td>LaTeX_OCR_rec</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0rc0/LaTeX_OCR_rec_infer.tar">Inference Model</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/LaTeX_OCR_rec_pretrained.pdparams">Trained Model</a></td>
 <td>0.8821</td>
 <td>0.0823</td>
 <td>40.01</td>
 <td>-</td>
 <td>-</td>
 <td>89.7 M</td>
+<td>LaTeX-OCR is a formula recognition algorithm based on a large autoregressive model. By using Hybrid ViT as the backbone network and transformer as the decoder, it significantly improves the accuracy of formula recognition.</td>
 </tr>
-</tbody>
 </table>
-<p><b>Note: The above accuracy metrics are measured on the <a href="https://drive.google.com/drive/folders/13CA4vAmOmD_I_dSbvLp-Lf0s6KiaNfuO">LaTeX-OCR Formula Recognition Test Set</a>. All GPU inference times are based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speeds are based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b></p>
 
+<p><b>Note: The above accuracy metrics are measured from the internally built formula recognition test set of PaddleX. The BLEU score of LaTeX_OCR_rec on the LaTeX-OCR formula recognition test set is 0.8821. All model GPU inference times are based on Tesla V100 GPUs, with precision type FP32.</b></p>
 <h2 id="2-quick-start">2. Quick Start<a class="headerlink" href="#2-quick-start" title="Permanent link">&para;</a></h2>
-<p>PaddleX supports experiencing the effects of the formula recognition pipeline through command line or Python locally.</p>
-<p>Before using the formula recognition pipeline locally, ensure you have installed the PaddleX wheel package following the <a href="../../../installation/installation.html">PaddleX Local Installation Guide</a>.</p>
-<h3 id="21-experience-via-command-line">2.1 Experience via Command Line<a class="headerlink" href="#21-experience-via-command-line" title="Permanent link">&para;</a></h3>
-<p>Experience the formula recognition pipeline with a single command, using the <a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/demo_image/general_formula_recognition.png">test file</a>, and replace <code>--input</code> with your local path for prediction:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>paddlex<span class="w"> </span>--pipeline<span class="w"> </span>formula_recognition<span class="w"> </span>--input<span class="w"> </span>general_formula_recognition.png<span class="w"> </span>--device<span class="w"> </span>gpu:0
+<p>PaddleX supports experiencing the formula recognition pipeline locally using the command line or Python.</p>
+<p>Before using the formula recognition pipeline locally, please ensure that you have completed the installation of the PaddleX wheel package according to the <a href="../../../installation/installation.html">PaddleX Local Installation Tutorial</a>.</p>
+<h3 id="21-command-line-experience">2.1 Command Line Experience<a class="headerlink" href="#21-command-line-experience" title="Permanent link">&para;</a></h3>
+<p>You can quickly experience the effect of the formula recognition pipeline with one command. Use the <a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/demo_image/pipelines/general_formula_recognition_001.png">test file</a>, and replace <code>--input</code> with the local path for prediction.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>paddlex<span class="w"> </span>--pipeline<span class="w"> </span>formula_recognition<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">        </span>--input<span class="w"> </span>general_formula_recognition_001.png<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">        </span>--use_layout_detection<span class="w"> </span>True<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">        </span>--use_doc_orientation_classify<span class="w"> </span>False<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">        </span>--use_doc_unwarping<span class="w"> </span>False<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">        </span>--layout_threshold<span class="w"> </span><span class="m">0</span>.5<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">        </span>--layout_nms<span class="w"> </span>True<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">        </span>--layout_unclip_ratio<span class="w">  </span><span class="m">1</span>.0<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">        </span>--layout_merge_bboxes_mode<span class="w"> </span>large<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">        </span>--save_path<span class="w"> </span>./output<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">        </span>--device<span class="w"> </span>gpu:0
 </span></code></pre></div>
-<p>Parameter Explanation:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>--pipeline: The pipeline name, which is formula_recognition for this case.
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>--input: The local path or URL of the input image to be processed.
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>--device: The GPU index to use (e.g., gpu:0 for the first GPU, gpu:1,2 for the second and third GPUs). Alternatively, use CPU (--device cpu).
+<p>The relevant parameter descriptions can be referenced from <a href="#222-python-script-integration">2.2.2 Python Script Integration</a>.</p>
+<p>After running, the results will be printed to the terminal, as shown below:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="o">{</span><span class="s1">&#39;res&#39;</span>:<span class="w"> </span><span class="o">{</span><span class="s1">&#39;input_path&#39;</span>:<span class="w"> </span><span class="s1">&#39;general_formula_recognition.png&#39;</span>,<span class="w"> </span><span class="s1">&#39;model_settings&#39;</span>:<span class="w"> </span><span class="o">{</span><span class="s1">&#39;use_doc_preprocessor&#39;</span>:<span class="w"> </span>False,<span class="s1">&#39;use_layout_detection&#39;</span>:<span class="w"> </span>True<span class="o">}</span>,<span class="w"> </span><span class="s1">&#39;layout_det_res&#39;</span>:<span class="w"> </span><span class="o">{</span><span class="s1">&#39;input_path&#39;</span>:<span class="w"> </span>None,<span class="w"> </span><span class="s1">&#39;boxes&#39;</span>:<span class="w"> </span><span class="o">[{</span><span class="s1">&#39;cls_id&#39;</span>:<span class="w"> </span><span class="m">2</span>,<span class="w"> </span><span class="s1">&#39;label&#39;</span>:<span class="w"> </span><span class="s1">&#39;text&#39;</span>,<span class="w"> </span><span class="s1">&#39;score&#39;</span>:<span class="w"> </span><span class="m">0</span>.9778407216072083,<span class="w"> </span><span class="s1">&#39;coordinate&#39;</span>:<span class="w"> </span><span class="o">[</span><span class="m">271</span>.257,<span class="w"> </span><span class="m">648</span>.50824,<span class="w"> </span><span class="m">1040</span>.2291,<span class="w"> </span><span class="m">774</span>.8482<span class="o">]}</span>,<span class="w"> </span>...<span class="o">]}</span>,<span class="w"> </span><span class="s1">&#39;formula_res_list&#39;</span>:<span class="w"> </span><span class="o">[{</span><span class="s1">&#39;rec_formula&#39;</span>:<span class="w"> </span><span class="s1">&#39;\\small\\begin{aligned}{p(\\mathbf{x})=c(\\mathbf{u})\\prod_{i}p(x_{i}).}\\\\ \\end{aligned}&#39;</span>,<span class="w"> </span><span class="s1">&#39;formula_region_id&#39;</span>:<span class="w"> </span><span class="m">1</span>,<span class="w"> </span><span class="s1">&#39;dt_polys&#39;</span>:<span class="w"> </span><span class="o">([</span><span class="m">553</span>.0718,<span class="w"> </span><span class="m">802</span>.0996,<span class="w"> </span><span class="m">758</span>.75635,<span class="w"> </span><span class="m">853</span>.093<span class="o">]</span>,<span class="o">)}</span>,<span class="w"> </span>...<span class="o">]}}</span>
 </span></code></pre></div>
-<p>When executing the above command, the default formula recognition pipeline configuration file is loaded. If you need to customize the configuration file, you can run the following command to obtain it:</p>
-<details><summary> 👉Click to Expand</summary>
-
-<pre><code class="language-bash">paddlex --get_pipeline_config formula_recognition
-</code></pre>
-<p>After execution, the formula recognition pipeline configuration file will be saved in the current directory. If you wish to customize the save location, you can run the following command (assuming the custom save location is <code>./my_path</code>):</p>
-<pre><code class="language-bash">paddlex --get_pipeline_config formula_recognition --save_path ./my_path
-</code></pre>
-<p>After obtaining the Pipeline configuration file, replace <code>--pipeline</code> with the configuration file's save path to make the configuration file effective. For example, if the configuration file is saved as  <code>./formula_recognition.yaml</code>, simply execute:</p>
-<pre><code class="language-bash">paddlex --pipeline ./formula_recognition.yaml --input general_formula_recognition.png --device gpu:0
-</code></pre>
-<p>Here, parameters such as <code>--model</code> and <code>--device</code> do not need to be specified, as they will use the parameters in the configuration file. If parameters are still specified, the specified parameters will take precedence.</p></details>
-
-<p>After execution, the result is:</p>
-<details><summary> 👉Click to Expand</summary>
-
-<pre><code>{'input_path': 'general_formula_recognition.png', 'layout_result': {'input_path': 'general_formula_recognition.png', 'boxes': [{'cls_id': 3, 'label': 'number', 'score': 0.7580855488777161, 'coordinate': [1028.3635, 205.46213, 1038.953, 222.99033]}, {'cls_id': 0, 'label': 'paragraph_title', 'score': 0.8882032632827759, 'coordinate': [272.75305, 204.50894, 433.7473, 226.17996]}, {'cls_id': 2, 'label': 'text', 'score': 0.9685840606689453, 'coordinate': [272.75928, 282.17773, 1041.9316, 374.44687]}, {'cls_id': 2, 'label': 'text', 'score': 0.9559416770935059, 'coordinate': [272.39056, 385.54114, 1044.1521, 443.8598]}, {'cls_id': 2, 'label': 'text', 'score': 0.9610629081726074, 'coordinate': [272.40817, 467.2738, 1045.1033, 563.4855]}, {'cls_id': 7, 'label': 'formula', 'score': 0.8916195034980774, 'coordinate': [503.45743, 594.6236, 1040.6804, 619.73895]}, {'cls_id': 2, 'label': 'text', 'score': 0.973675549030304, 'coordinate': [272.32007, 648.8599, 1040.8702, 775.15686]}, {'cls_id': 7, 'label': 'formula', 'score': 0.9038916230201721, 'coordinate': [554.2307, 803.5825, 1040.4657, 855.3159]}, {'cls_id': 2, 'label': 'text', 'score': 0.9025381803512573, 'coordinate': [272.535, 875.1402, 573.1086, 898.3587]}, {'cls_id': 2, 'label': 'text', 'score': 0.8336610794067383, 'coordinate': [317.48013, 909.60864, 966.8498, 933.7868]}, {'cls_id': 2, 'label': 'text', 'score': 0.8779091238975525, 'coordinate': [19.704018, 653.322, 72.433235, 1215.1992]}, {'cls_id': 2, 'label': 'text', 'score': 0.8832409977912903, 'coordinate': [272.13028, 958.50806, 1039.7928, 1019.476]}, {'cls_id': 7, 'label': 'formula', 'score': 0.9088466167449951, 'coordinate': [517.1226, 1042.3978, 1040.2208, 1095.7457]}, {'cls_id': 2, 'label': 'text', 'score': 0.9587949514389038, 'coordinate': [272.03336, 1112.9269, 1041.0201, 1206.8417]}, {'cls_id': 2, 'label': 'text', 'score': 0.8885666131973267, 'coordinate': [271.7495, 1231.8752, 710.44495, 1255.7981]}, {'cls_id': 7, 'label': 'formula', 'score': 0.8907185196876526, 'coordinate': [581.2295, 1287.4525, 1039.8014, 1312.772]}, {'cls_id': 2, 'label': 'text', 'score': 0.9559596180915833, 'coordinate': [273.1827, 1341.421, 1041.0299, 1401.7255]}, {'cls_id': 2, 'label': 'text', 'score': 0.875311553478241, 'coordinate': [272.8338, 1427.3711, 789.7108, 1451.1359]}, {'cls_id': 7, 'label': 'formula', 'score': 0.9152213931083679, 'coordinate': [524.9582, 1474.8136, 1041.6333, 1530.7142]}, {'cls_id': 2, 'label': 'text', 'score': 0.9584835767745972, 'coordinate': [272.81665, 1549.524, 1042.9962, 1608.7157]}]}, 'ocr_result': {}, 'table_result': [], 'dt_polys': [array([[ 503.45743,  594.6236 ],
-       [1040.6804 ,  594.6236 ],
-       [1040.6804 ,  619.73895],
-       [ 503.45743,  619.73895]], dtype=float32), array([[ 554.2307,  803.5825],
-       [1040.4657,  803.5825],
-       [1040.4657,  855.3159],
-       [ 554.2307,  855.3159]], dtype=float32), array([[ 517.1226, 1042.3978],
-       [1040.2208, 1042.3978],
-       [1040.2208, 1095.7457],
-       [ 517.1226, 1095.7457]], dtype=float32), array([[ 581.2295, 1287.4525],
-       [1039.8014, 1287.4525],
-       [1039.8014, 1312.772 ],
-       [ 581.2295, 1312.772 ]], dtype=float32), array([[ 524.9582, 1474.8136],
-       [1041.6333, 1474.8136],
-       [1041.6333, 1530.7142],
-       [ 524.9582, 1530.7142]], dtype=float32)], 'rec_formula': ['F({\bf x})=C(F_{1}(x_{1}),\cdot\cdot\cdot,F_{N}(x_{N})).\qquad\qquad\qquad(1)', 'p(\mathbf{x})=c(\mathbf{u})\prod_{i}p(x_{i}).\qquad\qquad\qquad\qquad\qquad\quad\quad~~\quad~~~~~~~~~~~~~~~(2)', 'H_{c}({\bf x})=-\int_{{\bf{u}}}c({\bf{u}})\log c({\bf{u}})d{\bf{u}}.~~~~~~~~~~~~~~~~~~~~~(3)', 'I({\bf x})=-H_{c}({\bf x}).\qquad\qquad\qquad\qquad(4)', 'H({\bf x})=\sum_{i}H(x_{i})+H_{c}({\bf x}).\eqno\qquad\qquad\qquad(5)']}
-</code></pre>
-<p>Where <code>dt_polys</code> represents the coordinates of the detected formula area, and <code>rec_formula</code> is the detected formula.</p></details>
-
-<p>The visualization result is as follows:
-<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/formula_recognition/02.jpg"></p>
-<p>The visualized image not saved by default. You can customize the save path through <code>--save_path</code>, and then all results will be saved in the specified path. Formula recognition visualization requires a separate environment configuration. Please refer to <a href="#23-formula-recognition-pipeline-visualization">2.3 Formula Recognition Pipeline Visualization</a> to install the LaTeX rendering engine.</p>
-<h4 id="22-python-script-integration">2.2 Python Script Integration<a class="headerlink" href="#22-python-script-integration" title="Permanent link">&para;</a></h4>
-<ul>
-<li>Quickly perform inference on the pipeline with just a few lines of code, taking the formula recognition pipeline as an example:</li>
-</ul>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">from</span> <span class="nn">paddlex</span> <span class="kn">import</span> <span class="n">create_pipeline</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">pipeline</span> <span class="o">=</span> <span class="n">create_pipeline</span><span class="p">(</span><span class="n">pipeline</span><span class="o">=</span><span class="s2">&quot;formula_recognition&quot;</span><span class="p">)</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="n">output</span> <span class="o">=</span> <span class="n">pipeline</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="s2">&quot;general_formula_recognition.png&quot;</span><span class="p">)</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">output</span><span class="p">:</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    <span class="n">res</span><span class="o">.</span><span class="n">print</span><span class="p">()</span>
+<p>The explanation of the running result parameters can refer to the result interpretation in <a href="#222-python脚本方式集成">2.2.2 Integration via Python Script</a>.</p>
+<p>The visualization results are saved under <code>save_path</code>, where the visualization result of formula recognition is as follows:</p>
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/formula_recognition/04.png" style="width: 70%"></p>
+<p><b>If you need to visualize the formula recognition pipeline, you need to run the following command to install the LaTeX rendering environment. Currently, visualization of the formula recognition pipeline only supports the Ubuntu environment, and other environments are not supported. For complex formulas, the LaTeX result may contain some advanced representations that may not be successfully displayed in environments such as Markdown:</b></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>update
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>texlive<span class="w"> </span>texlive-latex-base<span class="w"> </span>texlive-latex-extra<span class="w"> </span>-y
 </span></code></pre></div>
-<blockquote>
-<p>❗ The results obtained from running the Python script are the same as those from the command line.</p>
-</blockquote>
-<p>The Python script above executes the following steps:</p>
-<p>（1）Instantiate the formula recognition pipeline object using <code>create_pipeline</code>: Specific parameter descriptions are as follows:</p>
+<p><b>Note</b>: Due to the need to render each formula image during the formula recognition visualization process, the process takes a long time. Please be patient.</p>
+<h3 id="22-integration-via-python-script">2.2 Integration via Python Script<a class="headerlink" href="#22-integration-via-python-script" title="Permanent link">&para;</a></h3>
+<p>A few lines of code can quickly complete the production line inference. Taking the formula recognition production line as an example:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">paddlex</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_pipeline</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">pipeline</span> <span class="o">=</span> <span class="n">create_pipeline</span><span class="p">(</span><span class="n">pipeline</span><span class="o">=</span><span class="s2">&quot;formula_recognition&quot;</span><span class="p">)</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="n">output</span> <span class="o">=</span> <span class="n">pipeline</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    <span class="nb">input</span><span class="o">=</span><span class="s2">&quot;./general_formula_recognition_001.png&quot;</span><span class="p">,</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    <span class="n">use_layout_detection</span><span class="o">=</span><span class="kc">True</span> <span class="p">,</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    <span class="n">use_doc_orientation_classify</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    <span class="n">use_doc_unwarping</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>    <span class="n">layout_threshold</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>    <span class="n">layout_nms</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>    <span class="n">layout_unclip_ratio</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>    <span class="n">layout_merge_bboxes_mode</span><span class="o">=</span><span class="s2">&quot;large&quot;</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="p">)</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">output</span><span class="p">:</span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>    <span class="n">res</span><span class="o">.</span><span class="n">print</span><span class="p">()</span>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>    <span class="n">res</span><span class="o">.</span><span class="n">save_to_img</span><span class="p">(</span><span class="n">save_path</span><span class="o">=</span><span class="s2">&quot;./output/&quot;</span><span class="p">)</span>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>    <span class="n">res</span><span class="o">.</span><span class="n">save_to_json</span><span class="p">(</span><span class="n">save_path</span><span class="o">=</span><span class="s2">&quot;./output/&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<p>In the above Python script, the following steps are executed:</p>
+<p>(1) Instantiate the formula recognition pipeline object through <code>create_pipeline()</code>, with specific parameters as follows:</p>
 <table>
 <thead>
 <tr>
@@ -4589,138 +5401,355 @@ You're not viewing the latest version.
 <tbody>
 <tr>
 <td><code>pipeline</code></td>
-<td>The name of the pipeline or the path to the pipeline configuration file. If it is the name of the pipeline, it must be supported by PaddleX.</td>
+<td>Pipeline name or path to pipeline config file, if it's set as a pipeline name, it must be a pipeline supported by PaddleX.</td>
 <td><code>str</code></td>
-<td>None</td>
+<td><code>None</code></td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>Specific configuration information for the pipeline (if set simultaneously with the <code>pipeline</code>, it takes precedence over the <code>pipeline</code>, and the pipeline name must match the <code>pipeline</code>).
+</td>
+<td><code>dict[str, Any]</code></td>
+<td><code>None</code></td>
 </tr>
 <tr>
 <td><code>device</code></td>
-<td>The device for pipeline model inference. Supports: "gpu", "cpu".</td>
+<td>Pipeline inference device. Supports specifying the specific GPU card number, such as "gpu:0", other hardware specific card numbers, such as "npu:0", CPU such as "cpu".</td>
 <td><code>str</code></td>
-<td><code>gpu</code></td>
+<td><code>None</code></td>
 </tr>
 <tr>
 <td><code>use_hpip</code></td>
-<td>Whether to enable high-performance inference, only available if the pipeline supports it.</td>
+<td>Whether to enable high-performance inference, only available when the pipeline supports high-performance inference.</td>
 <td><code>bool</code></td>
 <td><code>False</code></td>
 </tr>
 </tbody>
 </table>
-<p>（2）Invoke the <code>predict</code> method of the formula recognition pipeline object for inference prediction: The <code>predict</code> method parameter is <code>x</code>, which is used to input data to be predicted, supporting multiple input methods, as shown in the following examples:</p>
+
+<p>(2) Call the <code>predict()</code> method of the formula recognition production line object for inference prediction. This method will return a <code>generator</code>. Below are the parameters of the <code>predict()</code> method and their descriptions:</p>
 <table>
 <thead>
 <tr>
-<th>Parameter Type</th>
-<th>Parameter Description</th>
+<th>Parameter</th>
+<th>Description</th>
+<th>Type</th>
+<th>Options</th>
+<th>Default Value</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Python Var</td>
-<td>Supports directly passing in Python variables, such as numpy.ndarray representing image data.</td>
+<td><code>input</code></td>
+<td>Data to be predicted, supporting multiple input types, required</td>
+<td><code>Python Var|str|list</code></td>
+<td>
+<ul>
+  <li><b>Python Var</b>: Image data represented by <code>numpy.ndarray</code></li>
+  <li><b>str</b>: Local path of image or PDF file, e.g., <code>/root/data/img.jpg</code>; <b>URL link</b>, e.g., network URL of image or PDF file: <a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/general_ocr_002.png">Example</a>; <b>Local directory</b>, the directory should contain images to be predicted, e.g., local path: <code>/root/data/</code> (currently does not support prediction of PDF files in directories; PDF files must be specified with a specific file path)</li>
+  <li><b>List</b>: Elements of the list must be of the above types, e.g., <code>[numpy.ndarray, numpy.ndarray]</code>, <code>[\"/root/data/img1.jpg\", \"/root/data/img2.jpg\"]</code>, <code>[\"/root/data1\", \"/root/data2\"]</code></li>
+</ul>
+</td>
+<td><code>None</code></td>
 </tr>
 <tr>
-<td>str</td>
-<td>Supports passing in the path of the file to be predicted, such as the local path of an image file: <code>/root/data/img.jpg</code>.</td>
+<td><code>device</code></td>
+<td>Production line inference device</td>
+<td><code>str|None</code></td>
+<td>
+<ul>
+  <li><b>CPU</b>: e.g., <code>cpu</code> indicates using CPU for inference;</li>
+  <li><b>GPU</b>: e.g., <code>gpu:0</code> indicates using the 1st GPU for inference;</li>
+  <li><b>NPU</b>: e.g., <code>npu:0</code> indicates using the 1st NPU for inference;</li>
+  <li><b>XPU</b>: e.g., <code>xpu:0</code> indicates using the 1st XPU for inference;</li>
+  <li><b>MLU</b>: e.g., <code>mlu:0</code> indicates using the 1st MLU for inference;</li>
+  <li><b>DCU</b>: e.g., <code>dcu:0</code> indicates using the 1st DCU for inference;</li>
+  <li><b>None</b>: If set to <code>None</code>, the default value initialized by the production line will be used. During initialization, the local GPU 0 will be prioritized; if unavailable, the CPU will be used.</li>
+</ul>
+</td>
+<td><code>None</code></td>
 </tr>
 <tr>
-<td>str</td>
-<td>Supports passing in the URL of the file to be predicted, such as the network URL of an image file: <a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/demo_image/general_formula_recognition.png">Example</a>.</td>
+<td><code>use_layout_detection</code></td>
+<td>Whether to use the document layout detection module</td>
+<td><code>bool|None</code></td>
+<td>
+<ul>
+  <li><b>bool</b>: <code>True</code> or <code>False</code>;</li>
+  <li><b>None</b>: If set to <code>None</code>, the default value initialized by the production line will be used, initialized as <code>True</code>.</li>
+</ul>
+</td>
+<td><code>None</code></td>
 </tr>
 <tr>
-<td>str</td>
-<td>Supports passing in a local directory, which should contain files to be predicted, such as the local path: <code>/root/data/</code>.</td>
+<td><code>use_doc_orientation_classify</code></td>
+<td>Whether to use the document orientation classification module</td>
+<td><code>bool|None</code></td>
+<td>
+<ul>
+  <li><b>bool</b>: <code>True</code> or <code>False</code>;</li>
+  <li><b>None</b>: If set to <code>None</code>, the default value initialized by the production line will be used, initialized as <code>True</code>.</li>
+</ul>
+</td>
+<td><code>None</code></td>
 </tr>
 <tr>
-<td>dict</td>
-<td>Supports passing in a dictionary type, where the key needs to correspond to a specific task, such as "img" for image classification tasks. The value of the dictionary supports the above types of data, for example: <code>{"img": "/root/data1"}</code>.</td>
+<td><code>use_doc_unwarping</code></td>
+<td>Whether to use the document unwarping module</td>
+<td><code>bool|None</code></td>
+<td>
+<ul>
+  <li><b>bool</b>: <code>True</code> or <code>False</code>;</li>
+  <li><b>None</b>: If set to <code>None</code>, the default value initialized by the production line will be used, initialized as <code>True</code>.</li>
+</ul>
+</td>
+<td><code>None</code></td>
 </tr>
 <tr>
-<td>list</td>
-<td>Supports passing in a list, where the list elements need to be of the above types of data, such as <code>[numpy.ndarray, numpy.ndarray], ["/root/data/img1.jpg", "/root/data/img2.jpg"], ["/root/data1", "/root/data2"], [{"img": "/root/data1"}, {"img": "/root/data2/img.jpg"}]</code>.</td>
+<td><code>layout_threshold</code></td>
+<td>Threshold for filtering low-confidence prediction results; if not specified, the default PaddleX official model configuration will be used</td>
+<td><code>float/dict/None</code></td>
+<td>
+<ul>
+  <li><b>float</b>, e.g., 0.2, indicating filtering out all bounding boxes with confidence scores below 0.2</li>
+  <li><b>Dictionary</b>, with <b>int</b> keys representing <code>cls_id</code> and <b>float</b> values as thresholds. For example, <code>{0: 0.45, 2: 0.48, 7: 0.4}</code> indicates applying a threshold of 0.45 for class ID 0, 0.48 for class ID 2, and 0.4 for class ID 7</li>
+  <li><b>None</b>: If not specified, the default PaddleX official model configuration will be used</li>
+</ul>
+</td>
+<td><code>None</code></td>
+</tr>
+<tr>
+<td><code>layout_nms</code></td>
+<td>Whether to use NMS post-processing to filter overlapping bounding boxes; if not specified, the default PaddleX official model configuration will be used</td>
+<td><code>bool/None</code></td>
+<td>
+<ul>
+  <li><b>bool</b>: <code>True</code> or <code>False</code>, indicating whether to use NMS for post-processing to filter overlapping bounding boxes</li>
+  <li><b>None</b>: If not specified, the default PaddleX official model configuration will be used</li>
+</ul>
+</td>
+<td><code>None</code></td>
+</tr>
+<tr>
+<td><code>layout_unclip_ratio</code></td>
+<td>Scaling factor for the side length of bounding boxes; if not specified, the default PaddleX official model configuration will be used</td>
+<td><code>float/list/None</code></td>
+<td>
+<ul>
+  <li><b>float</b>: A positive float number, e.g., 1.1, indicating that the center of the bounding box remains unchanged while the width and height are both scaled up by a factor of 1.1</li>
+  <li><b>List</b>: e.g., [1.2, 1.5], indicating that the center of the bounding box remains unchanged while the width is scaled up by a factor of 1.2 and the height by a factor of 1.5</li>
+  <li><b>None</b>: If not specified, the default PaddleX official model configuration will be used</li>
+</ul>
+</td>
+<td><code>None</code></td>
+<tr>
+<td><code>layout_merge_bboxes_mode</code></td>
+<td>Merging mode for the bounding boxes output by the model; if not specified, the default PaddleX official model configuration will be used</td>
+<td><code>string/None</code></td>
+<td>
+<ul>
+  <li><b>large</b>: When set to "large", only the largest outer bounding box will be retained for overlapping bounding boxes, and the inner overlapping boxes will be removed.</li>
+  <li><b>small</b>: When set to "small", only the smallest inner bounding boxes will be retained for overlapping bounding boxes, and the outer overlapping boxes will be removed.</li>
+  <li><b>union</b>: No filtering of bounding boxes will be performed, and both inner and outer boxes will be retained.</li>
+  <li><b>None</b>: If not specified, the default PaddleX official model configuration will be used</li>
+</ul>
+</td>
+<td><code>None</code></td>
 </tr>
 </tbody>
 </table>
-<p>（3）Obtain the prediction results by calling the <code>predict</code> method: The <code>predict</code> method is a <code>generator</code>, so prediction results need to be obtained through iteration. The <code>predict</code> method predicts data in batches, so the prediction results are in the form of a list.</p>
-<p>（4）Process the prediction results: The prediction result for each sample is of <code>dict</code> type and supports printing or saving to files, with the supported file types depending on the specific pipeline. For example:</p>
+
+<p>(3) Process the prediction results. The prediction result of each sample is of <code>dict</code> type, and supports operations such as printing, saving as an image, and saving as a <code>json</code> file:</p>
 <table>
 <thead>
 <tr>
 <th>Method</th>
 <th>Description</th>
-<th>Method Parameters</th>
+<th>Parameter</th>
+<th>Parameter Type</th>
+<th>Parameter Description</th>
+<th>Default Value</th>
 </tr>
 </thead>
-<tbody>
 <tr>
-<td>print</td>
-<td>Prints results to the terminal</td>
-<td><code>- format_json</code>: bool, whether to format the output content with json indentation, default is True;<br/><code>- indent</code>: int, json formatting setting, only valid when format_json is True, default is 4;<br/><code>- ensure_ascii</code>: bool, json formatting setting, only valid when format_json is True, default is False;</td>
+<td rowspan = "3"><code>print()</code></td>
+<td rowspan = "3">Print results to terminal</td>
+<td><code>format_json</code></td>
+<td><code>bool</code></td>
+<td>Whether to format the output content using <code>JSON</code> indentation</td>
+<td><code>True</code></td>
 </tr>
 <tr>
-<td>save_to_json</td>
-<td>Saves results as a json file</td>
-<td><code>- save_path</code>: str, the path to save the file, when it's a directory, the saved file name is consistent with the input file type;<br/><code>- indent</code>: int, json formatting setting, default is 4;<br/><code>- ensure_ascii</code>: bool, json formatting setting, default is False;</td>
+<td><code>indent</code></td>
+<td><code>int</code></td>
+<td>Specify the indentation level to beautify the output <code>JSON</code> data, making it more readable. Effective only when <code>format_json</code> is <code>True</code></td>
+<td>4</td>
 </tr>
 <tr>
-<td>save_to_img</td>
-<td>Saves results as an image file</td>
-<td><code>- save_path</code>: str, the path to save the file, when it's a directory, the saved file name is consistent with the input file type;</td>
+<td><code>ensure_ascii</code></td>
+<td><code>bool</code></td>
+<td>Control whether to escape non-<code>ASCII</code> characters to <code>Unicode</code>. When set to <code>True</code>, all non-<code>ASCII</code> characters will be escaped; <code>False</code> retains the original characters. Effective only when <code>format_json</code> is <code>True</code></td>
+<td><code>False</code></td>
 </tr>
-</tbody>
+<tr>
+<td rowspan = "3"><code>save_to_json()</code></td>
+<td rowspan = "3">Save results as a JSON file</td>
+<td><code>save_path</code></td>
+<td><code>str</code></td>
+<td>Path to save the file. If it is a directory, the saved file will be named the same as the input file type</td>
+<td>None</td>
+</tr>
+<tr>
+<td><code>indent</code></td>
+<td><code>int</code></td>
+<td>Specify the indentation level to beautify the output <code>JSON</code> data, making it more readable. Effective only when <code>format_json</code> is <code>True</code></td>
+<td>4</td>
+</tr>
+<tr>
+<td><code>ensure_ascii</code></td>
+<td><code>bool</code></td>
+<td>Control whether to escape non-<code>ASCII</code> characters to <code>Unicode</code>. When set to <code>True</code>, all non-<code>ASCII</code> characters will be escaped; <code>False</code> retains the original characters. Effective only when <code>format_json</code> is <code>True</code></td>
+<td><code>False</code></td>
+</tr>
+<tr>
+<td><code>save_to_img()</code></td>
+<td>Save results as an image file</td>
+<td><code>save_path</code></td>
+<td><code>str</code></td>
+<td>Path to save the file, supports directory or file path</td>
+<td>None</td>
+</tr>
 </table>
-<p>If you have a configuration file, you can customize the configurations of the formula recognition pipeline by simply modifying the <code>pipeline</code> parameter in the <code>create_pipeline</code> method to the path of the pipeline configuration file.</p>
-<p>For example, if your configuration file is saved at <code>./my_path/formula_recognition.yaml</code>, you only need to execute:</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">from</span> <span class="nn">paddlex</span> <span class="kn">import</span> <span class="n">create_pipeline</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">pipeline</span> <span class="o">=</span> <span class="n">create_pipeline</span><span class="p">(</span><span class="n">pipeline</span><span class="o">=</span><span class="s2">&quot;./my_path/formula_recognition.yaml&quot;</span><span class="p">)</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">output</span> <span class="o">=</span> <span class="n">pipeline</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="s2">&quot;general_formula_recognition.png&quot;</span><span class="p">)</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">output</span><span class="p">:</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    <span class="n">res</span><span class="o">.</span><span class="n">print</span><span class="p">()</span>
+
+<ul>
+<li>
+<p>Calling the <code>print()</code> method will print the results to the terminal. The content printed to the terminal is explained as follows:</p>
+<ul>
+<li>
+<p><code>input_path</code>: <code>(str)</code> The input path of the image to be predicted.</p>
+</li>
+<li>
+<p><code>model_settings</code>: <code>(Dict[str, bool])</code> The model parameters required for the production line configuration.</p>
+<ul>
+<li><code>use_doc_preprocessor</code>: <code>(bool)</code> Controls whether to enable the document preprocessing sub-production line.</li>
+<li><code>use_layout_detection</code>: <code>(bool)</code> Controls whether to enable the layout area detection module.</li>
+</ul>
+</li>
+<li>
+<p><code>doc_preprocessor_res</code>: <code>(Dict[str, Union[str, Dict[str, bool], int]])</code> The output result of the document preprocessing sub-production line. It exists only when <code>use_doc_preprocessor=True</code>.</p>
+<ul>
+<li><code>input_path</code>: <code>(Union[str, None])</code> The image path accepted by the image preprocessing sub-production line. When the input is a <code>numpy.ndarray</code>, it is saved as <code>None</code>.</li>
+<li><code>model_settings</code>: <code>(Dict)</code> The model configuration parameters of the preprocessing sub-production line.<ul>
+<li><code>use_doc_orientation_classify</code>: <code>(bool)</code> Controls whether to enable document orientation classification.</li>
+<li><code>use_doc_unwarping</code>: <code>(bool)</code> Controls whether to enable document distortion correction.</li>
+</ul>
+</li>
+<li><code>angle</code>: <code>(int)</code> The prediction result of document orientation classification. When enabled, it takes values from [0,1,2,3], corresponding to [0°,90°,180°,270°]; when disabled, it is -1.</li>
+</ul>
+</li>
+<li><code>layout_det_res</code>: <code>(Dict[str, List[Dict]])</code> The output result of the layout area detection module. It exists only when <code>use_layout_detection=True</code>.<ul>
+<li><code>input_path</code>: <code>(Union[str, None])</code> The image path accepted by the layout area detection module. When the input is a <code>numpy.ndarray</code>, it is saved as <code>None</code>.</li>
+<li><code>boxes</code>: <code>(List[Dict[int, str, float, List[float]]])</code> A list of layout area detection prediction results.<ul>
+<li><code>cls_id</code>: <code>(int)</code> The class ID predicted by layout area detection.</li>
+<li><code>label</code>: <code>(str)</code> The class label predicted by layout area detection.</li>
+<li><code>score</code>: <code>(float)</code> The confidence score of the predicted class.</li>
+<li><code>coordinate</code>: <code>(List[float])</code> The bounding box coordinates predicted by layout area detection, in the format [x_min, y_min, x_max, y_max], where (x_min, y_min) is the top-left corner and (x_max, y_max) is the bottom-right corner.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>formula_res_list</code>: <code>(List[Dict[str, int, List[float]]])</code> A list of formula recognition prediction results.<ul>
+<li><code>rec_formula</code>: <code>(str)</code> The LaTeX source code predicted by formula recognition.</li>
+<li><code>formula_region_id</code>: <code>(int)</code> The ID number predicted by formula recognition.</li>
+<li><code>dt_polys</code>: <code>(List[float])</code> The bounding box coordinates predicted by formula recognition, in the format [x_min, y_min, x_max, y_max], where (x_min, y_min) is the top-left corner and (x_max, y_max) is the bottom-right corner.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Calling the <code>save_to_json()</code> method will save the above content to the specified <code>save_path</code>. If a directory is specified, the saved path will be <code>save_path/{your_img_basename}.json</code>. If a file is specified, it will be saved directly to that file. Since JSON files do not support saving numpy arrays, <code>numpy.array</code> types will be converted to list format.</p>
+</li>
+<li>
+<p>Calling the <code>save_to_img()</code> method will save the visualization results to the specified <code>save_path</code>. If a directory is specified, the saved path will be <code>save_path/{your_img_basename}_formula_res_img.{your_img_extension}</code>. If a file is specified, it will be saved directly to that file. (The production line usually contains many result images, so it is not recommended to specify a specific file path directly, otherwise multiple images will be overwritten and only the last one will be retained.)</p>
+</li>
+<li>
+<p>In addition, you can also obtain the visualization image with results and the prediction results through attributes, as follows:</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Attribute Description</th>
+</tr>
+</thead>
+<tr>
+<td rowspan = "1"><code>json</code></td>
+<td rowspan = "1">Get the prediction results in <code>json</code> format</td>
+</tr>
+<tr>
+<td rowspan = "2"><code>img</code></td>
+<td rowspan = "2">Get the visualization image in <code>dict</code> format</td>
+</tr>
+</table>
+
+<ul>
+<li>The prediction results obtained through the <code>json</code> attribute are of the dict type, with content consistent with what is saved using the <code>save_to_json()</code> method.</li>
+<li>The prediction results returned by the <code>img</code> attribute are of the dictionary type. The keys are <code>preprocessed_img</code>, <code>layout_det_res</code>, and <code>formula_res_img</code>, corresponding to three <code>Image.Image</code> objects: the first one displays the visualization image of image preprocessing, the second one displays the visualization image of layout area detection, and the third one displays the visualization image of formula recognition. If the image preprocessing sub-module is not used, the dictionary does not contain <code>preprocessed_img</code>; if the layout area detection sub-module is not used, the dictionary does not contain <code>layout_det_res</code>.</li>
+</ul>
+<p>In addition, you can obtain the configuration file of the formula recognition production line and load the configuration file for prediction. You can execute the following command to save the results in <code>my_path</code>:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>paddlex --get_pipeline_config formula_recognition --save_path ./my_path
 </span></code></pre></div>
-<h3 id="23-formula-recognition-pipeline-visualization">2.3 Formula Recognition Pipeline Visualization<a class="headerlink" href="#23-formula-recognition-pipeline-visualization" title="Permanent link">&para;</a></h3>
-<p>If you need to visualize the formula recognition pipeline, you need to run the following command to install the LaTeX rendering environment:
-<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">sudo</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">texlive</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">texlive</span><span class="o">-</span><span class="n">latex</span><span class="o">-</span><span class="n">base</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">texlive</span><span class="o">-</span><span class="n">latex</span><span class="o">-</span><span class="n">extra</span>
-</span></code></pre></div>
-After that, use the <code>save_to_img</code> method to save the visualization image. The specific command is as follows:
-<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kn">from</span> <span class="nn">paddlex</span> <span class="kn">import</span> <span class="n">create_pipeline</span>
+<p>If you have obtained the configuration file, you can customize the settings for the formula recognition pipeline by simply modifying the value of the <code>pipeline</code> parameter in the <code>create_pipeline</code> method to the path of the pipeline configuration file. An example is shown below:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">paddlex</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_pipeline</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="n">pipeline</span> <span class="o">=</span> <span class="n">create_pipeline</span><span class="p">(</span><span class="n">pipeline</span><span class="o">=</span><span class="s2">&quot;formula_recognition&quot;</span><span class="p">)</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="n">pipeline</span> <span class="o">=</span> <span class="n">create_pipeline</span><span class="p">(</span><span class="n">pipeline</span><span class="o">=</span><span class="s2">&quot;./my_path/formula_recognition.yaml&quot;</span><span class="p">)</span>
 </span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="n">output</span> <span class="o">=</span> <span class="n">pipeline</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="s2">&quot;general_formula_recognition.png&quot;</span><span class="p">)</span>
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">output</span><span class="p">:</span>
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>    <span class="n">res</span><span class="o">.</span><span class="n">print</span><span class="p">()</span>
-</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>    <span class="n">res</span><span class="o">.</span><span class="n">save_to_img</span><span class="p">(</span><span class="s2">&quot;./output/&quot;</span><span class="p">)</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="n">output</span> <span class="o">=</span> <span class="n">pipeline</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>    <span class="nb">input</span><span class="o">=</span><span class="s2">&quot;./general_formula_recognition_001.png&quot;</span><span class="p">,</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>    <span class="n">use_layout_detection</span><span class="o">=</span><span class="kc">True</span> <span class="p">,</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>    <span class="n">use_doc_orientation_classify</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>    <span class="n">use_doc_unwarping</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>    <span class="n">layout_threshold</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>    <span class="n">layout_nms</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>    <span class="n">layout_unclip_ratio</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>    <span class="n">layout_merge_bboxes_mode</span><span class="o">=</span><span class="s2">&quot;large&quot;</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="p">)</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">output</span><span class="p">:</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>    <span class="n">res</span><span class="o">.</span><span class="n">print</span><span class="p">()</span>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>    <span class="n">res</span><span class="o">.</span><span class="n">save_to_img</span><span class="p">(</span><span class="n">save_path</span><span class="o">=</span><span class="s2">&quot;./output/&quot;</span><span class="p">)</span>
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>    <span class="n">res</span><span class="o">.</span><span class="n">save_to_json</span><span class="p">(</span><span class="n">save_path</span><span class="o">=</span><span class="s2">&quot;./output/&quot;</span><span class="p">)</span>
 </span></code></pre></div>
-<b>Note</b>: Since the formula recognition visualization process requires rendering each formula image, it may take a relatively long time. Please be patient.</p>
+<p><b>Note:</b> The parameters in the configuration file are initialization parameters for the production line. If you want to change the initialization parameters for the formula recognition production line, you can directly modify the parameters in the configuration file and load the configuration file for prediction. Additionally, CLI prediction also supports passing in a configuration file, simply specify the path of the configuration file with <code>--pipeline</code>.</p>
 <h2 id="3-development-integrationdeployment">3. Development Integration/Deployment<a class="headerlink" href="#3-development-integrationdeployment" title="Permanent link">&para;</a></h2>
-<p>If the formula recognition pipeline meets your requirements for inference speed and accuracy, you can proceed directly with development integration/deployment.</p>
-<p>If you need to apply the formula recognition pipeline directly in your Python project, refer to the example code in <a href="#22-python-script-integration">2.2 Python Script Integration</a>.</p>
-<p>Additionally, PaddleX provides three other deployment methods, detailed as follows:</p>
-<p>🚀 <b>High-Performance Inference</b>: In actual production environments, many applications have stringent standards for the performance metrics of deployment strategies (especially response speed) to ensure efficient system operation and smooth user experience. To this end, PaddleX provides high-performance inference plugins aimed at deeply optimizing model inference and pre/post-processing for significant end-to-end speedups. For detailed high-performance inference procedures, refer to the <a href="../../../pipeline_deploy/high_performance_inference.html">PaddleX High-Performance Inference Guide</a>.</p>
-<p>☁️ <b>Service-Oriented Deployment</b>: Service-oriented deployment is a common deployment form in actual production environments. By encapsulating inference functions as services, clients can access these services through network requests to obtain inference results. PaddleX supports users in achieving low-cost service-oriented deployment of pipelines. For detailed service-oriented deployment procedures, refer to the <a href="../../../pipeline_deploy/service_deploy.html">PaddleX Service-Oriented Deployment Guide</a>.</p>
-<p>Below are the API references and multi-language service invocation examples:</p>
+<p>If the formula recognition production line meets your requirements for inference speed and accuracy, you can proceed directly with development integration/deployment.</p>
+<p>If you need to integrate the formula recognition production line into your Python project, you can refer to the example code in <a href="#22-python脚本方式集成">2.2 Python Script Method</a>.</p>
+<p>In addition, PaddleX also provides three other deployment methods, which are detailed as follows:</p>
+<p>🚀 <b>High-Performance Inference</b>: In actual production environments, many applications have strict performance requirements for deployment strategies, especially in terms of response speed, to ensure efficient system operation and smooth user experience. To this end, PaddleX provides a high-performance inference plugin, which aims to deeply optimize the performance of model inference and pre/post-processing, significantly speeding up the end-to-end process. For detailed high-performance inference procedures, please refer to the <a href="../../../pipeline_deploy/high_performance_inference.html">PaddleX High-Performance Inference Guide</a>.</p>
+<p>☁️ <b>Service-Based Deployment</b>: Service-based deployment is a common form of deployment in actual production environments. By encapsulating inference capabilities into services, clients can access these services via network requests to obtain inference results. PaddleX supports multiple production line service-based deployment solutions. For detailed production line service-based deployment procedures, please refer to the <a href="../../../pipeline_deploy/serving.html">PaddleX Service-Based Deployment Guide</a>.</p>
+<p>Below are the API references for basic service-based deployment and multi-language service invocation examples:</p>
 <details><summary>API Reference</summary>
 
-<p>For main operations provided by the service:</p>
+<p>For the main operations provided by the service:</p>
 <ul>
 <li>The HTTP request method is POST.</li>
-<li>The request body and the response body are both JSON data (JSON objects).</li>
-<li>When the request is processed successfully, the response status code is <code>200</code>, and the response body properties are as follows:</li>
+<li>Both the request body and response body are JSON data (JSON objects).</li>
+<li>When the request is processed successfully, the response status code is <code>200</code>, and the attributes of the response body are as follows:</li>
 </ul>
 <table>
 <thead>
 <tr>
 <th>Name</th>
 <th>Type</th>
-<th>Description</th>
+<th>Meaning</th>
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><code>logId</code></td>
+<td><code>string</code></td>
+<td>The UUID of the request.</td>
+</tr>
 <tr>
 <td><code>errorCode</code></td>
 <td><code>integer</code></td>
@@ -4729,23 +5758,32 @@ After that, use the <code>save_to_img</code> method to save the visualization im
 <tr>
 <td><code>errorMsg</code></td>
 <td><code>string</code></td>
-<td>Error description. Fixed as <code>"Success"</code>.</td>
+<td>Error message. Fixed as <code>"Success"</code>.</td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>The result of the operation.</td>
 </tr>
 </tbody>
 </table>
-<p>The response body may also have a <code>result</code> property of type <code>object</code>, which stores the operation result information.</p>
 <ul>
-<li>When the request is not processed successfully, the response body properties are as follows:</li>
+<li>When the request is not processed successfully, the attributes of the response body are as follows:</li>
 </ul>
 <table>
 <thead>
 <tr>
 <th>Name</th>
 <th>Type</th>
-<th>Description</th>
+<th>Meaning</th>
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><code>logId</code></td>
+<td><code>string</code></td>
+<td>The UUID of the request.</td>
+</tr>
 <tr>
 <td><code>errorCode</code></td>
 <td><code>integer</code></td>
@@ -4754,523 +5792,234 @@ After that, use the <code>save_to_img</code> method to save the visualization im
 <tr>
 <td><code>errorMsg</code></td>
 <td><code>string</code></td>
-<td>Error description.</td>
+<td>Error message.</td>
 </tr>
 </tbody>
 </table>
-<p>Main operations provided by the service:</p>
+<p>The main operations provided by the service are as follows:</p>
 <ul>
 <li><b><code>infer</code></b></li>
 </ul>
-<p>Obtain formula recognition results from an image.</p>
+<p>Get the formula recognition result of an image.</p>
 <p><code>POST /formula-recognition</code></p>
 <ul>
-<li>Request body properties:</li>
+<li>The attributes of the request body are as follows:</li>
 </ul>
 <table>
 <thead>
 <tr>
 <th>Name</th>
 <th>Type</th>
-<th>Description</th>
+<th>Meaning</th>
 <th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>image</code></td>
+<td><code>file</code></td>
 <td><code>string</code></td>
-<td>The URL of an image file accessible by the service or the Base64 encoded result of the image file content.</td>
+<td>The URL of an image or PDF file accessible by the server, or the Base64-encoded content of the above file types. For PDF files exceeding 10 pages, only the content of the first 10 pages will be used.</td>
 <td>Yes</td>
 </tr>
 <tr>
-<td><code>inferenceParams</code></td>
-<td><code>object</code></td>
-<td>Inference parameters.</td>
-<td>No</td>
-</tr>
-</tbody>
-</table>
-<p>Properties of <code>inferenceParams</code>:</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-<th>Required</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>maxLongSide</code></td>
+<td><code>fileType</code></td>
 <td><code>integer</code></td>
-<td>During inference, if the length of the longer side of the input image for the layout detection model is greater than <code>maxLongSide</code>, the image will be scaled so that the length of the longer side equals <code>maxLongSide</code>.</td>
+<td>The type of the file. <code>0</code> indicates a PDF file, and <code>1</code> indicates an image file. If this attribute is missing in the request body, the file type will be inferred from the URL.</td>
 <td>No</td>
 </tr>
 </tbody>
 </table>
 <ul>
-<li>When the request is processed successfully, the <code>result</code> in the response body has the following properties:</li>
+<li>When the request is processed successfully, the <code>result</code> in the response body has the following attributes:</li>
 </ul>
 <table>
 <thead>
 <tr>
 <th>Name</th>
 <th>Type</th>
-<th>Description</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>formulaRecResults</code></td>
+<td><code>object</code></td>
+<td>The formula recognition result. The length of the array is 1 (for image input) or the smaller of the number of document pages and 10 (for PDF input). For PDF input, each element in the array represents the processing result of each page in the PDF file.</td>
+</tr>
+<tr>
+<td><code>dataInfo</code></td>
+<td><code>object</code></td>
+<td>Information about the input data.</td>
+</tr>
+</tbody>
+</table>
+<p>Each element in <code>formulaRecResults</code> is an <code>object</code> with the following attributes:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Meaning</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>formulas</code></td>
 <td><code>array</code></td>
-<td>Positions and contents of formulas.</td>
+<td>The positions and contents of the formulas.</td>
+</tr>
+<tr>
+<td><code>inputImage</code></td>
+<td><code>string</code></td>
+<td>The input image. The image is in JPEG format and is Base64-encoded.</td>
 </tr>
 <tr>
 <td><code>layoutImage</code></td>
 <td><code>string</code></td>
-<td>Layout area detection result image. The image is in JPEG format and encoded using Base64.</td>
-</tr>
-<tr>
-<td><code>ocrImage</code></td>
-<td><code>string</code></td>
-<td>OCR result image. The image is in JPEG format and encoded using Base64.</td>
+<td>The layout detection result image. The image is in JPEG format and is Base64-encoded.</td>
 </tr>
 </tbody>
 </table>
-<p>Each element in <code>formulas</code> is an <code>object</code> with the following properties:</p>
+<p>Each element in <code>formulas</code> is an <code>object</code> with the following attributes:</p>
 <table>
 <thead>
 <tr>
 <th>Name</th>
 <th>Type</th>
-<th>Description</th>
+<th>Meaning</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>poly</code></td>
 <td><code>array</code></td>
-<td>Formula position. Elements in the array are the vertex coordinates of the polygon enclosing the formula.</td>
+<td>The position of the formula. The elements in the array are the coordinates of the vertices of the polygon surrounding the text.</td>
 </tr>
 <tr>
 <td><code>latex</code></td>
 <td><code>string</code></td>
-<td>Formula content.</td>
+<td>The content of the formula.</td>
 </tr>
 </tbody>
 </table>
-<p>Example of <code>result</code>:</p>
-<pre><code class="language-json">{
-&quot;formulas&quot;: [
-{
-&quot;poly&quot;: [
-[
-444.0,
-244.0
-],
-[
-705.4,
-244.5
-],
-[
-705.8,
-311.3
-],
-[
-444.1,
-311.0
-]
-],
-&quot;latex&quot;: &quot;F({\bf x})=C(F_{1}(x_{1}),\cdot\cdot\cdot,F_{N}(x_{N})).\qquad\qquad\qquad(1)&quot;
-}
-],
-&quot;layoutImage&quot;: &quot;xxxxxx&quot;,
-&quot;ocrImage&quot;: &quot;xxxxxx&quot;
-}
-</code></pre></details>
+</details>
 
-<details><summary>Multi-Language Service Invocation Examples</summary>
+<details><summary>Multi-language Service Call Examples</summary>
 
 <details>
 <summary>Python</summary>
-
 
 <pre><code class="language-python">import base64
 import requests
 
 API_URL = &quot;http://localhost:8080/formula-recognition&quot;
-image_path = &quot;./demo.jpg&quot;
-layout_image_path = &quot;./layout.jpg&quot;
+file_path = &quot;./demo.jpg&quot;
 
-with open(image_path, &quot;rb&quot;) as file:
-    image_bytes = file.read()
-    image_data = base64.b64encode(image_bytes).decode(&quot;ascii&quot;)
+with open(file_path, &quot;rb&quot;) as file:
+    file_bytes = file.read()
+    file_data = base64.b64encode(file_bytes).decode(&quot;ascii&quot;)
 
-payload = {&quot;image&quot;: image_data}
+payload = {&quot;file&quot;: file_data, &quot;fileType&quot;: 1}
 
 response = requests.post(API_URL, json=payload)
 
 assert response.status_code == 200
 result = response.json()[&quot;result&quot;]
-with open(layout_image_path, &quot;wb&quot;) as file:
-    file.write(base64.b64decode(result[&quot;layoutImage&quot;]))
-print(f&quot;Output image saved at {layout_image_path}&quot;)
-print(&quot;\nDetected formulas:&quot;)
-print(result[&quot;formulas&quot;])
-</code></pre></details>
-
-<details><summary>C++</summary>
-
-<pre><code class="language-cpp">#include &lt;iostream&gt;
-#include &quot;cpp-httplib/httplib.h&quot; // https://github.com/Huiyicc/cpp-httplib
-#include &quot;nlohmann/json.hpp&quot; // https://github.com/nlohmann/json
-#include &quot;base64.hpp&quot; // https://github.com/tobiaslocker/base64
-
-int main() {
-    httplib::Client client(&quot;localhost:8080&quot;);
-    const std::string imagePath = &quot;./demo.jpg&quot;;
-    const std::string layoutImagePath = &quot;./layout.jpg&quot;;
-
-    httplib::Headers headers = {
-        {&quot;Content-Type&quot;, &quot;application/json&quot;}
-    };
-
-    std::ifstream file(imagePath, std::ios::binary | std::ios::ate);
-    std::streamsize size = file.tellg();
-    file.seekg(0, std::ios::beg);
-
-    std::vector&lt;char&gt; buffer(size);
-    if (!file.read(buffer.data(), size)) {
-        std::cerr &lt;&lt; &quot;Error reading file.&quot; &lt;&lt; std::endl;
-        return 1;
-    }
-    std::string bufferStr(reinterpret_cast&lt;const char*&gt;(buffer.data()), buffer.size());
-    std::string encodedImage = base64::to_base64(bufferStr);
-
-    nlohmann::json jsonObj;
-    jsonObj[&quot;image&quot;] = encodedImage;
-    std::string body = jsonObj.dump();
-
-    auto response = client.Post(&quot;/formula-recognition&quot;, headers, body, &quot;application/json&quot;);
-    if (response &amp;&amp; response-&gt;status == 200) {
-        nlohmann::json jsonResponse = nlohmann::json::parse(response-&gt;body);
-        auto result = jsonResponse[&quot;result&quot;];
-
-        encodedImage = result[&quot;layoutImage&quot;];
-        decodedString = base64::from_base64(encodedImage);
-        std::vector&lt;unsigned char&gt; decodedLayoutImage(decodedString.begin(), decodedString.end());
-        std::ofstream outputLayoutFile(layoutImagePath, std::ios::binary | std::ios::out);
-        if (outputLayoutFile.is_open()) {
-            outputLayoutFile.write(reinterpret_cast&lt;char*&gt;(decodedLayoutImage.data()), decodedLayoutImage.size());
-            outputLayoutFile.close();
-            std::cout &lt;&lt; &quot;Output image saved at &quot; &lt;&lt; layoutImagePath &lt;&lt; std::endl;
-        } else {
-            std::cerr &lt;&lt; &quot;Unable to open file for writing: &quot; &lt;&lt; layoutImagePath &lt;&lt; std::endl;
-        }
-
-        auto formulas = result[&quot;formulas&quot;];
-        std::cout &lt;&lt; &quot;\nDetected formulas:&quot; &lt;&lt; std::endl;
-        for (const auto&amp; formula : formulas) {
-            std::cout &lt;&lt; formula &lt;&lt; std::endl;
-        }
-    } else {
-        std::cout &lt;&lt; &quot;Failed to send HTTP request.&quot; &lt;&lt; std::endl;
-        return 1;
-    }
-
-    return 0;
-}
-</code></pre></details>
-
-<details><summary>Java</summary>
-
-<pre><code class="language-java">import okhttp3.*;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.node.ObjectNode;
-
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.util.Base64;
-
-public class Main {
-    public static void main(String[] args) throws IOException {
-        String API_URL = &quot;http://localhost:8080/formula-recognition&quot;;
-        String imagePath = &quot;./demo.jpg&quot;;
-        String layoutImagePath = &quot;./layout.jpg&quot;;
-
-        File file = new File(imagePath);
-        byte[] fileContent = java.nio.file.Files.readAllBytes(file.toPath());
-        String imageData = Base64.getEncoder().encodeToString(fileContent);
-
-        ObjectMapper objectMapper = new ObjectMapper();
-        ObjectNode params = objectMapper.createObjectNode();
-        params.put(&quot;image&quot;, imageData);
-
-        OkHttpClient client = new OkHttpClient();
-        MediaType JSON = MediaType.Companion.get(&quot;application/json; charset=utf-8&quot;);
-        RequestBody body = RequestBody.Companion.create(params.toString(), JSON);
-        Request request = new Request.Builder()
-                .url(API_URL)
-                .post(body)
-                .build();
-
-        try (Response response = client.newCall(request).execute()) {
-            if (response.isSuccessful()) {
-                String responseBody = response.body().string();
-                JsonNode resultNode = objectMapper.readTree(responseBody);
-                JsonNode result = resultNode.get(&quot;result&quot;);
-                String layoutBase64Image = result.get(&quot;layoutImage&quot;).asText();
-                JsonNode formulas = result.get(&quot;formulas&quot;);
-
-                imageBytes = Base64.getDecoder().decode(layoutBase64Image);
-                try (FileOutputStream fos = new FileOutputStream(layoutImagePath)) {
-                    fos.write(imageBytes);
-                }
-                System.out.println(&quot;Output image saved at &quot; + layoutImagePath);
-
-                System.out.println(&quot;\nDetected formulas: &quot; + formulas.toString());
-            } else {
-                System.err.println(&quot;Request failed with code: &quot; + response.code());
-            }
-        }
-    }
-}
-</code></pre></details>
-
-<details><summary>Go</summary>
-
-<pre><code class="language-go">package main
-
-import (
-    &quot;bytes&quot;
-    &quot;encoding/base64&quot;
-    &quot;encoding/json&quot;
-    &quot;fmt&quot;
-    &quot;io/ioutil&quot;
-    &quot;net/http&quot;
-)
-
-func main() {
-    API_URL := &quot;http://localhost:8080/formula-recognition&quot;
-    imagePath := &quot;./demo.jpg&quot;
-    layoutImagePath := &quot;./layout.jpg&quot;
-
-    imageBytes, err := ioutil.ReadFile(imagePath)
-    if err != nil {
-        fmt.Println(&quot;Error reading image file:&quot;, err)
-        return
-    }
-    imageData := base64.StdEncoding.EncodeToString(imageBytes)
-
-    payload := map[string]string{&quot;image&quot;: imageData}
-    payloadBytes, err := json.Marshal(payload)
-    if err != nil {
-        fmt.Println(&quot;Error marshaling payload:&quot;, err)
-        return
-    }
-
-    client := &amp;http.Client{}
-    req, err := http.NewRequest(&quot;POST&quot;, API_URL, bytes.NewBuffer(payloadBytes))
-    if err != nil {
-        fmt.Println(&quot;Error creating request:&quot;, err)
-        return
-    }
-
-    res, err := client.Do(req)
-    if err != nil {
-        fmt.Println(&quot;Error sending request:&quot;, err)
-        return
-    }
-    defer res.Body.Close()
-
-    body, err := ioutil.ReadAll(res.Body)
-    if err != nil {
-        fmt.Println(&quot;Error reading response body:&quot;, err)
-        return
-    }
-    type Response struct {
-        Result struct {
-            LayoutImage      string   `json:&quot;layoutImage&quot;`
-            Formulas []map[string]interface{} `json:&quot;formulas&quot;`
-        } `json:&quot;result&quot;`
-    }
-    var respData Response
-    err = json.Unmarshal([]byte(string(body)), &amp;respData)
-    if err != nil {
-        fmt.Println(&quot;Error unmarshaling response body:&quot;, err)
-        return
-    }
-
-    layoutImageData, err := base64.StdEncoding.DecodeString(respData.Result.LayoutImage)
-    if err != nil {
-        fmt.Println(&quot;Error decoding base64 image data:&quot;, err)
-        return
-    }
-    err = ioutil.WriteFile(layoutImagePath, layoutImageData, 0644)
-    if err != nil {
-        fmt.Println(&quot;Error writing image to file:&quot;, err)
-        return
-    }
-    fmt.Printf(&quot;Image saved at %s.jpg\n&quot;, layoutImagePath)
-
-    fmt.Println(&quot;\nDetected formulas:&quot;)
-    for _, formula := range respData.Result.Formulas {
-        fmt.Println(formula)
-    }
-}
-</code></pre></details>
-
-<details><summary>C#</summary>
-
-<pre><code class="language-csharp">using System;
-using System.IO;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Text;
-using System.Threading.Tasks;
-using Newtonsoft.Json.Linq;
-
-class Program
-{
-    static readonly string API_URL = &quot;http://localhost:8080/formula-recognition&quot;;
-    static readonly string imagePath = &quot;./demo.jpg&quot;;
-    static readonly string layoutImagePath = &quot;./layout.jpg&quot;;
-
-    static async Task Main(string[] args)
-    {
-        var httpClient = new HttpClient();
-
-        byte[] imageBytes = File.ReadAllBytes(imagePath);
-        string image_data = Convert.ToBase64String(imageBytes);
-
-        var payload = new JObject{ { &quot;image&quot;, image_data } };
-        var content = new StringContent(payload.ToString(), Encoding.UTF8, &quot;application/json&quot;);
-
-        HttpResponseMessage response = await httpClient.PostAsync(API_URL, content);
-        response.EnsureSuccessStatusCode();
-
-        string responseBody = await response.Content.ReadAsStringAsync();
-        JObject jsonResponse = JObject.Parse(responseBody);
-
-        string layoutBase64Image = jsonResponse[&quot;result&quot;][&quot;layoutImage&quot;].ToString();
-        byte[] layoutImageBytes = Convert.FromBase64String(layoutBase64Image);
-        File.WriteAllBytes(layoutImagePath, layoutImageBytes);
-        Console.WriteLine($&quot;Output image saved at {layoutImagePath}&quot;);
-
-        Console.WriteLine(&quot;\nDetected formulas:&quot;);
-        Console.WriteLine(jsonResponse[&quot;result&quot;][&quot;formulas&quot;].ToString());
-    }
-}
-</code></pre></details>
-
-<details><summary>Node.js</summary>
-
-<pre><code class="language-js">const axios = require('axios');
-const fs = require('fs');
-
-const API_URL = 'http://localhost:8080/formula-recognition'
-const imagePath = './demo.jpg'
-const layoutImagePath = &quot;./layout.jpg&quot;;
-
-let config = {
-   method: 'POST',
-   maxBodyLength: Infinity,
-   url: API_URL,
-   data: JSON.stringify({
-    'image': encodeImageToBase64(imagePath)
-  })
-};
-
-function encodeImageToBase64(filePath) {
-  const bitmap = fs.readFileSync(filePath);
-  return Buffer.from(bitmap).toString('base64');
-}
-
-axios.request(config)
-.then((response) =&gt; {
-    const result = response.data[&quot;result&quot;];
-
-    imageBuffer = Buffer.from(result[&quot;layoutImage&quot;], 'base64');
-    fs.writeFile(layoutImagePath, imageBuffer, (err) =&gt; {
-      if (err) throw err;
-      console.log(`Output image saved at ${layoutImagePath}`);
-    });
-
-    console.log(&quot;\nDetected formulas:&quot;);
-    console.log(result[&quot;formulas&quot;]);
-})
-.catch((error) =&gt; {
-  console.log(error);
-});
-</code></pre></details>
-
-<details><summary>PHP</summary>
-
-<pre><code class="language-php">&lt;?php
-
-$API_URL = &quot;http://localhost:8080/formula-recognition&quot;
-$image_path = &quot;./demo.jpg&quot;;
-$layout_image_path = &quot;./layout.jpg&quot;
-
-$image_data = base64_encode(file_get_contents($image_path));
-$payload = array(&quot;image&quot; =&gt; $image_data);
-
-$ch = curl_init($API_URL);
-curl_setopt($ch, CURLOPT_POST, true);
-curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($payload));
-curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-$response = curl_exec($ch);
-curl_close($ch);
-
-$result = json_decode($response, true)[&quot;result&quot;];
-
-file_put_contents($layout_image_path, base64_decode($result[&quot;layoutImage&quot;]));
-echo &quot;Output image saved at &quot; . $layout_image_path . &quot;\n&quot;;
-
-echo &quot;\nDetected formulas:\n&quot;;
-print_r($result[&quot;formulas&quot;]);
-
-?&gt;
+for i, res in enumerate(result[&quot;formulaRecResults&quot;]):
+    print(&quot;Detected formulas:&quot;)
+    print(res[&quot;formulas&quot;])
+    layout_img_path = f&quot;layout_{i}.jpg&quot;
+    with open(layout_img_path, &quot;wb&quot;) as f:
+        f.write(base64.b64decode(res[&quot;layoutImage&quot;]))
+    print(f&quot;Output image saved at {layout_img_path}&quot;)
 </code></pre></details>
 </details>
 <p><br/></p>
-<p>📱 <b>Edge Deployment</b>: Edge deployment is a method that places computing and data processing capabilities on user devices themselves, allowing devices to process data directly without relying on remote servers. PaddleX supports deploying models on edge devices such as Android. For detailed edge deployment procedures, refer to the <a href="../../../pipeline_deploy/edge_deploy.html">PaddleX Edge Deployment Guide</a>.
-You can choose the appropriate deployment method based on your needs to proceed with subsequent AI application integration.</p>
-<h2 id="4-custom-development">4. Custom Development<a class="headerlink" href="#4-custom-development" title="Permanent link">&para;</a></h2>
-<p>If the default model weights provided by the formula recognition pipeline do not meet your requirements for accuracy or speed in your specific scenario, you can try to further fine-tune the existing models using <b>your own domain-specific or application-specific data</b> to improve the recognition performance of the formula recognition pipeline in your scenario.</p>
-<h3 id="41-model-fine-tuning">4.1 Model Fine-tuning<a class="headerlink" href="#41-model-fine-tuning" title="Permanent link">&para;</a></h3>
-<p>Since the formula recognition pipeline consists of two modules (layout detection and formula recognition), unsatisfactory performance may stem from either module.</p>
-<p>You can analyze images with poor recognition results. If you find that many formula are undetected (i.e., formula miss detection), it may indicate that the layout detection model needs improvement. You should refer to the <a href="../../../module_usage/tutorials/ocr_modules/layout_detection.html#iv-custom-development">Customization</a> section in the <a href="../../../module_usage/tutorials/ocr_modules/layout_detection.html">Layout Detection Module Development Tutorial</a> and use your private dataset to fine-tune the layout detection model. If many recognition errors occur in detected formula (i.e., the recognized formula content does not match the actual formula content), it suggests that the formula recognition model requires further refinement. You should refer to the <a href="../../../module_usage/tutorials/ocr_modules/formula_recognition.html#iv-custom-development">Customization</a> section in the <a href="../../../module_usage/tutorials/ocr_modules/formula_recognition.html">Formula Recognition Module Development Tutorial</a> and fine-tune the formula recognition model.</p>
+<p>📱 <b>Edge Deployment</b>: Edge deployment is a method that places computing and data processing capabilities directly on user devices, allowing the device to process data without relying on remote servers. PaddleX supports deploying models on edge devices such as Android. For detailed deployment procedures, please refer to the <a href="../../../pipeline_deploy/edge_deploy.html">PaddleX Edge Deployment Guide</a>.
+You can choose the appropriate deployment method based on your needs to integrate the model pipeline into subsequent AI applications.</p>
+<h2 id="4-secondary-development">4. Secondary Development<a class="headerlink" href="#4-secondary-development" title="Permanent link">&para;</a></h2>
+<p>If the default model weights provided by the formula recognition pipeline do not meet your requirements in terms of accuracy or speed, you can try to <b>fine-tune</b> the existing models using <b>your own domain-specific or application-specific data</b> to improve the recognition performance of the formula recognition pipeline in your scenario.</p>
+<h3 id="41-model-fine-tuning">4.1 Model Fine-Tuning<a class="headerlink" href="#41-model-fine-tuning" title="Permanent link">&para;</a></h3>
+<p>Since the formula recognition pipeline consists of several modules, if the pipeline's performance is not satisfactory, the issue may arise from any one of these modules. You can analyze the poorly recognized images to determine which module is problematic and refer to the corresponding fine-tuning tutorial links in the table below for model fine-tuning.</p>
+<table>
+  <thead>
+    <tr>
+      <th>Scenario</th>
+      <th>Fine-Tuning Module</th>
+      <th>Reference Link</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Formulas are missing</td>
+      <td>Layout Area Detection Module</td>
+      <td><a href="../../../module_usage/tutorials/ocr_modules/layout_detection.en.md">Link</a></td>
+    </tr>
+    <tr>
+      <td>Formula content is inaccurate</td>
+      <td>Formula Recognition Module</td>
+      <td><a href="../../../module_usage/tutorials/ocr_modules/formula_recognition.en.md">Link</a></td>
+    </tr>
+    <tr>
+      <td>Whole-image rotation correction is inaccurate</td>
+      <td>Document Image Orientation Classification Module</td>
+      <td><a href="../../../module_usage/tutorials/ocr_modules/doc_img_orientation_classification.en.md">Link</a></td>
+    </tr>
+    <tr>
+      <td>Image distortion correction is inaccurate</td>
+      <td>Text Image Correction Module</td>
+      <td>Fine-tuning not supported</td>
+    </tr>
+  </tbody>
+</table>
+
 <h3 id="42-model-application">4.2 Model Application<a class="headerlink" href="#42-model-application" title="Permanent link">&para;</a></h3>
-<p>After fine-tuning with your private dataset, you will obtain local model weights files.</p>
-<p>If you need to use the fine-tuned model weights, simply modify the pipeline configuration file by replacing the local paths of the fine-tuned model weights to the corresponding positions in the pipeline configuration file:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>......
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>Pipeline:
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span>layout_model:<span class="w"> </span>RT-DETR-H_layout_17cls<span class="w"> </span><span class="c1"># Can be replaced with the local path of the fine-tuned layout detection model</span>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">  </span>formula_rec_model:<span class="w"> </span>LaTeX_OCR_rec<span class="w"> </span><span class="c1"># Can be replaced with the local path of the fine-tuned formula recognition model</span>
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">  </span>formula_rec_batch_size:<span class="w"> </span><span class="m">5</span>
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">  </span>device:<span class="w"> </span><span class="s2">&quot;gpu:0&quot;</span>
-</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>......
+<p>After fine-tuning with your private dataset, you will obtain the local model weight file.</p>
+<p>If you need to use the fine-tuned model weights, simply modify the pipeline configuration file and replace the local path of the fine-tuned model weights into the corresponding position in the pipeline configuration file:</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nn">...</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nt">SubModules</span><span class="p">:</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="nt">LayoutDetection</span><span class="p">:</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="nt">module_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">layout_detection</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="nt">model_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PP-DocLayout-L</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">    </span><span class="nt">model_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w"> </span><span class="c1"># 替换为微调后的版面区域检测模型权重路径</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="nn">...</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">  </span><span class="nt">FormulaRecognition</span><span class="p">:</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">    </span><span class="nt">module_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">formula_recognition</span>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">    </span><span class="nt">model_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PP-FormulaNet-L</span>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">    </span><span class="nt">model_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w"> </span><span class="c1"># 替换为微调后的公式识别模型权重路径</span>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="w">    </span><span class="nt">batch_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="nt">SubPipelines</span><span class="p">:</span>
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="w">  </span><span class="nt">DocPreprocessor</span><span class="p">:</span>
+</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="w">    </span><span class="nt">pipeline_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">doc_preprocessor</span>
+</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="w">    </span><span class="nt">use_doc_orientation_classify</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+</span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="w">    </span><span class="nt">use_doc_unwarping</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+</span><span id="__span-6-20"><a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a><span class="w">    </span><span class="nt">SubModules</span><span class="p">:</span>
+</span><span id="__span-6-21"><a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a><span class="w">      </span><span class="nt">DocOrientationClassify</span><span class="p">:</span>
+</span><span id="__span-6-22"><a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a><span class="w">        </span><span class="nt">module_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">doc_text_orientation</span>
+</span><span id="__span-6-23"><a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a><span class="w">        </span><span class="nt">model_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PP-LCNet_x1_0_doc_ori</span>
+</span><span id="__span-6-24"><a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a><span class="w">        </span><span class="nt">model_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w"> </span><span class="c1"># 替换为微调后的文档图像方向分类模型权重路径</span>
+</span><span id="__span-6-25"><a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a><span class="w">        </span><span class="nt">batch_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+</span><span id="__span-6-26"><a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a><span class="nn">...</span>
 </span></code></pre></div>
-<p>Then, refer to the command line method or Python script method in <a href="#2-quick-start">2. Quick Start</a> to load the modified pipeline configuration file.</p>
+<p>Then, refer to the command-line or Python script methods in <a href="#2-Quick-Start">2. Quick Start</a> to load the modified pipeline configuration file.</p>
 <h2 id="5-multi-hardware-support">5. Multi-Hardware Support<a class="headerlink" href="#5-multi-hardware-support" title="Permanent link">&para;</a></h2>
-<p>PaddleX supports various mainstream hardware devices such as NVIDIA GPU, Kunlun XPU, Ascend NPU, and Cambricon MLU. <b>Simply modifying the <code>--device</code> parameter</b> allows seamless switching between different hardware.</p>
-<p>For example, if you are using an NVIDIA GPU for formula pipeline inference, the Python command would be:</p>
-<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>paddlex<span class="w"> </span>--pipeline<span class="w"> </span>formula_recognition<span class="w"> </span>--input<span class="w"> </span>general_formula_recognition.png<span class="w"> </span>--device<span class="w"> </span>gpu:0
+<p>PaddleX supports a variety of mainstream hardware devices, including NVIDIA GPU, Kunlunxin XPU, Ascend NPU, and Cambricon MLU. You can seamlessly switch between different hardware devices by simply modifying the <code>--device</code> parameter.</p>
+<p>For example, if you use Ascend NPU for formula recognition pipeline inference, the Python command is:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>paddlex<span class="w"> </span>--pipeline<span class="w"> </span>formula_recognition<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">        </span>--input<span class="w"> </span>general_formula_recognition_001.png<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">        </span>--use_layout_detection<span class="w"> </span>True<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">        </span>--use_doc_orientation_classify<span class="w"> </span>False<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">        </span>--use_doc_unwarping<span class="w"> </span>False<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">        </span>--layout_threshold<span class="w"> </span><span class="m">0</span>.5<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">        </span>--layout_nms<span class="w"> </span>True<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">        </span>--layout_unclip_ratio<span class="w">  </span><span class="m">1</span>.0<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">        </span>--layout_merge_bboxes_mode<span class="w"> </span>large<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">        </span>--save_path<span class="w"> </span>./output<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="w">        </span>--device<span class="w"> </span>npu:0
 </span></code></pre></div>
-Now, if you want to switch the hardware to Ascend NPU, you only need to modify the <code>--device</code> in the Python command:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>paddlex<span class="w"> </span>--pipeline<span class="w"> </span>formula_recognition<span class="w"> </span>--input<span class="w"> </span>general_formula_recognition.png<span class="w"> </span>--device<span class="w"> </span>npu:0
-</span></code></pre></div>
-<p>If you want to use the formula recognition pipeline on more types of hardware, please refer to the <a href="../../../other_devices_support/multi_devices_use_guide.html">PaddleX Multi-Hardware Usage Guide</a>.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>For some frequently asked questions about our project, please refer to <a href="../../../FAQ.html">FAQ</a>. If your question has not been answered, feel free to raise it in <a href="https://github.com/PaddlePaddle/PaddleX/issues">Issues</a>.</p>
-</div>
+<p>If you want to use the formula recognition production line on more types of hardware, please refer to the <a href="../../../other_devices_support/multi_devices_use_guide.html">PaddleX Multi-Hardware Usage Guide</a>.</p>
 
 
 
@@ -5293,7 +6042,7 @@ Now, if you want to switch the hardware to Ascend NPU, you only need to modify t
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 13, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 6, 2025</span>
   </span>
 
     
@@ -5303,7 +6052,7 @@ Now, if you want to switch the hardware to Ascend NPU, you only need to modify t
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 13, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 6, 2025</span>
   </span>
 
     
@@ -5409,7 +6158,7 @@ Now, if you want to switch the hardware to Ascend NPU, you only need to modify t
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="layout_parsing.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: General Layout Parsing">
+          <a href="layout_parsing.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: 通用版面解析v2产线">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -5419,20 +6168,20 @@ Now, if you want to switch the hardware to Ascend NPU, you only need to modify t
                 Previous
               </span>
               <div class="md-ellipsis">
-                General Layout Parsing
+                通用版面解析v2产线
               </div>
             </div>
           </a>
         
         
           
-          <a href="seal_recognition.html" class="md-footer__link md-footer__link--next" aria-label="Next: Seal Recognition">
+          <a href="seal_recognition.html" class="md-footer__link md-footer__link--next" aria-label="Next: 印章文本识别产线">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Seal Recognition
+                印章文本识别产线
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -5466,7 +6215,7 @@ Now, if you want to switch the hardware to Ascend NPU, you only need to modify t
       
     
     <a href="https://github.com/PaddlePaddle/PaddleX" target="_blank" rel="noopener" title="github.com" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
     </a>
   
 </div>
@@ -5481,10 +6230,10 @@ Now, if you want to switch the hardware to Ascend NPU, you only need to modify t
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "navigation.expand", "navigation.path", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "navigation.expand", "navigation.path", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.f13b1293.min.js"></script>
       
         <script src="../../../../javascripts/katex.min.js"></script>
       
