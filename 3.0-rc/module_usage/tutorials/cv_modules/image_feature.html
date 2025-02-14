@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../../assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4">
     
     
       
@@ -26,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.d7758b05.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8608ea7d.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
@@ -841,7 +841,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../pipeline_usage/tutorials/information_extraction_pipelines/document_scene_information_extraction.html" class="md-nav__link">
+      <a href="../../../pipeline_usage/tutorials/information_extraction_pipelines/document_scene_information_extraction.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5393,42 +5393,81 @@ You're not viewing the latest version.
 <tr>
 <th>模型</th><th>模型下载链接</th>
 <th>recall@1 (%)</th>
-<th>GPU推理耗时 (ms)</th>
-<th>CPU推理耗时 (ms)</th>
+<th>GPU推理耗时（ms）<br/>[常规模式 / 高性能模式]</th>
+<th>CPU推理耗时（ms）<br/>[常规模式 / 高性能模式]</th>
 <th>模型存储大小 (M)</th>
 <th>介绍</th>
 </tr>
 <tr>
 <td>PP-ShiTuV2_rec</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0rc0/PP-ShiTuV2_rec_infer.tar">推理模型</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/PP-ShiTuV2_rec_pretrained.pdparams">训练模型</a></td>
 <td>84.2</td>
-<td>5.23428</td>
-<td>19.6005</td>
+<td>3.48 / 0.55</td>
+<td>8.04 / 4.04</td>
 <td>16.3 M</td>
 <td rowspan="3">PP-ShiTuV2是一个通用图像特征系统，由主体检测、特征提取、向量检索三个模块构成，这些模型是其中的特征提取模块的模型之一，可以根据系统的情况选择不同的模型。</td>
 </tr>
 <tr>
 <td>PP-ShiTuV2_rec_CLIP_vit_base</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0rc0/PP-ShiTuV2_rec_CLIP_vit_base_infer.tar">推理模型</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/PP-ShiTuV2_rec_CLIP_vit_base_pretrained.pdparams">训练模型</a></td>
 <td>88.69</td>
-<td>13.1957</td>
-<td>285.493</td>
+<td>12.94 / 2.88</td>
+<td>58.36 / 58.36</td>
 <td>306.6 M</td>
 </tr>
 <tr>
 <td>PP-ShiTuV2_rec_CLIP_vit_large</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0rc0/PP-ShiTuV2_rec_CLIP_vit_large_infer.tar">推理模型</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/PP-ShiTuV2_rec_CLIP_vit_large_pretrained.pdparams">训练模型</a></td>
 <td>91.03</td>
-<td>51.1284</td>
-<td>1131.28</td>
+<td>51.65 / 11.18</td>
+<td>255.78 / 255.78</td>
 <td>1.05 G</td>
 </tr>
 </table>
 
-<p><b>注：以上精度指标为 AliProducts recall@1。所有模型 GPU 推理耗时基于 NVIDIA Tesla T4 机器，精度类型为 FP32， CPU 推理速度基于 Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz，线程数为8，精度类型为 FP32。</b></p>
+<p><strong>测试环境说明：</strong></p>
+<ul>
+<li><strong>性能测试环境</strong></li>
+<li><strong>测试数据集</strong>：PaddleX自建数据集。</li>
+<li>
+<p><strong>硬件配置</strong>：</p>
+<ul>
+<li>GPU：NVIDIA Tesla T4</li>
+<li>CPU：Intel Xeon Gold 6271C @ 2.60GHz</li>
+<li>其他环境：Ubuntu 20.04 / cuDNN 8.6 / TensorRT 8.5.2.2</li>
+</ul>
+</li>
+<li>
+<p><strong>推理模式说明</strong></p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>模式</th>
+<th>GPU配置</th>
+<th>CPU配置</th>
+<th>加速技术组合</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>常规模式</td>
+<td>FP32精度 / 无TRT加速</td>
+<td>FP32精度 / 8线程</td>
+<td>PaddleInference</td>
+</tr>
+<tr>
+<td>高性能模式</td>
+<td>选择先验精度类型和加速策略的最优组合</td>
+<td>FP32精度 / 8线程</td>
+<td>选择先验最优后端（Paddle/OpenVINO/TRT等）</td>
+</tr>
+</tbody>
+</table>
 <h2 id="_4">三、快速集成<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>❗ 在快速集成前，请先安装 PaddleX 的 wheel 包，详细请参考 <a href="../../../installation/installation.html">PaddleX本地安装教程</a></p>
 </blockquote>
 <p>完成 wheel 包的安装后，几行代码即可完成图像特征模块的推理，可以任意切换该模块下的模型，您也可以将图像特征的模块中的模型推理集成到您的项目中。运行以下代码前，请您下载<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/general_image_recognition_001.jpg">示例图片</a>到本地。</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">paddlex</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_model</span>
+<p><div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">paddlex</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_model</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">model_name</span> <span class="o">=</span> <span class="s2">&quot;PP-ShiTuV2_rec&quot;</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">model</span> <span class="o">=</span> <span class="n">create_model</span><span class="p">(</span><span class="n">model_name</span><span class="p">)</span>
@@ -5437,17 +5476,12 @@ You're not viewing the latest version.
 </span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="n">res</span><span class="o">.</span><span class="n">print</span><span class="p">()</span>
 </span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="n">res</span><span class="o">.</span><span class="n">save_to_json</span><span class="p">(</span><span class="s2">&quot;./output/res.json&quot;</span><span class="p">)</span>
 </span></code></pre></div>
-<details><summary>👉 <b>运行后，得到的结果为：（点击展开）</b></summary>
-
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="o">{</span><span class="s1">&#39;res&#39;</span>:<span class="w"> </span><span class="o">{</span><span class="s1">&#39;input_path&#39;</span>:<span class="w"> </span><span class="s1">&#39;general_image_recognition_001.jpg&#39;</span>,<span class="w"> </span><span class="s1">&#39;feature&#39;</span>:<span class="w"> </span><span class="o">[</span><span class="m">0</span>.049109019339084625,<span class="w"> </span><span class="m">0</span>.003743218956515193,<span class="w"> </span><span class="m">0</span>.005219039972871542,<span class="w"> </span>-0.02721826359629631,<span class="w"> </span>-0.016909820958971977,<span class="w"> </span>-0.006206876132637262,<span class="w"> </span>-0.04125503450632095,<span class="w"> </span>-0.0019930789712816477,<span class="w"> </span>-0.022831404581665993,<span class="w"> </span>-0.047313764691352844,<span class="w"> </span><span class="m">0</span>.060403138399124146,<span class="w"> </span><span class="m">0</span>.0761566013097763,<span class="w"> </span><span class="m">0</span>.0017959520919248462,<span class="w"> </span><span class="m">0</span>.0493767075240612,<span class="w"> </span>-0.021170074120163918,<span class="w"> </span>-0.03655105456709862,<span class="w"> </span><span class="m">0</span>.02802395075559616,<span class="w"> </span><span class="m">0</span>.039860036224126816,<span class="w"> </span>-0.02787216380238533,<span class="w"> </span><span class="m">0</span>.02957169897854328,<span class="w"> </span><span class="m">0</span>.06538619846105576,<span class="w"> </span><span class="m">0</span>.006429907865822315,<span class="w"> </span><span class="m">0</span>.007104719523340464,<span class="w"> </span>-0.005089965183287859,<span class="w"> </span>-0.05652903392910957,<span class="w"> </span>-0.005592004396021366,<span class="w"> </span><span class="m">0</span>.03234156593680382,<span class="w"> </span><span class="m">0</span>.07858140766620636,<span class="w"> </span><span class="m">0</span>.031976014375686646,<span class="w"> </span><span class="m">0</span>.009858119301497936,<span class="w"> </span>-0.005774488672614098,<span class="w"> </span>-0.06363064795732498,<span class="w"> </span><span class="m">0</span>.022391995415091515,<span class="w"> </span><span class="m">0</span>.01687457598745823,<span class="w"> </span>-0.023193085566163063,<span class="w"> </span>-0.04410340636968613,<span class="w"> </span>-0.048582229763269424,<span class="w"> </span>-0.005215164739638567,<span class="w"> </span>-0.045220136642456055,<span class="w"> </span><span class="m">0</span>.02273370884358883,<span class="w"> </span><span class="m">0</span>.1008470356464386,<span class="w"> </span><span class="m">0</span>.020996153354644775,<span class="w"> </span><span class="m">0</span>.04300517961382866,<span class="w"> </span><span class="m">0</span>.012766947969794273,<span class="w"> </span><span class="m">0</span>.0331314392387867,<span class="w"> </span>-0.025111157447099686,<span class="w"> </span><span class="m">0</span>.04866917431354523,<span class="w"> </span>-0.0007637099479325116,<span class="w"> </span><span class="m">0</span>.09444739669561386,<span class="w"> </span>-0.11289195716381073,<span class="w"> </span>-0.07322289794683456,<span class="w"> </span>-0.0777730941772461,<span class="w"> </span>-0.015321447513997555,<span class="w"> </span>-0.004911054391413927,<span class="w"> </span><span class="m">0</span>.007349034305661917,<span class="w"> </span>-0.06889548897743225,<span class="w"> </span>-0.011488647200167179,<span class="w"> </span><span class="m">0</span>.0266891997307539,<span class="w"> </span><span class="m">0</span>.015688180923461914,<span class="w"> </span>-0.06728753447532654,<span class="w"> </span><span class="m">0</span>.03612099587917328,<span class="w"> </span><span class="m">0</span>.025985529646277428,<span class="w"> </span><span class="m">0</span>.03768249973654747,<span class="w"> </span>-0.08363037556409836,<span class="w"> </span>-0.048576220870018005,<span class="w"> </span><span class="m">0</span>.08420056849718094,<span class="w"> </span><span class="m">0</span>.023980043828487396,<span class="w"> </span><span class="m">0</span>.07883623242378235,<span class="w"> </span>-0.013208202086389065,<span class="w"> </span>-0.018564118072390556,<span class="w"> </span>-0.017457934096455574,<span class="w"> </span>-0.020058095455169678,<span class="w"> </span>-0.02541436441242695,<span class="w"> </span>-0.008189533837139606,<span class="w"> </span>-0.056144408881664276,<span class="w"> </span>-0.02954513393342495,<span class="w"> </span><span class="m">0</span>.010910517536103725,<span class="w"> </span><span class="m">0</span>.003301263554021716,<span class="w"> </span><span class="m">0</span>.06621509790420532,<span class="w"> </span>-0.06254079937934875,<span class="w"> </span><span class="m">0</span>.06691820919513702,<span class="w"> </span>-0.061315152794122696,<span class="w"> </span>-0.0664873942732811,<span class="w"> </span><span class="m">0</span>.03236202895641327,<span class="w"> </span><span class="m">0</span>.034841813147068024,<span class="w"> </span>-0.013619803823530674,<span class="w"> </span><span class="m">0</span>.10573607683181763,<span class="w"> </span><span class="m">0</span>.02072797901928425,<span class="w"> </span><span class="m">0</span>.055478695780038834,<span class="w"> </span><span class="m">0</span>.010184620507061481,<span class="w"> </span>-0.05034280940890312,<span class="w"> </span>-0.02191540040075779,<span class="w"> </span><span class="m">0</span>.047144751995801926,<span class="w"> </span>-0.031101807951927185,<span class="w"> </span>-0.016248639672994614,<span class="w"> </span><span class="m">0</span>.05873332917690277,<span class="w"> </span><span class="m">0</span>.015815891325473785,<span class="w"> </span>-0.001074428902938962,<span class="w"> </span>-0.010065405629575253,<span class="w"> </span>-0.045008182525634766,<span class="w"> </span><span class="m">0</span>.03385455906391144,<span class="w"> </span><span class="m">0</span>.0015282221138477325,<span class="w"> </span>-0.033003728836774826,<span class="w"> </span>-0.03174556791782379,<span class="w"> </span><span class="m">0</span>.11101125925779343,<span class="w"> </span>-0.006336087826639414,<span class="w"> </span><span class="m">0</span>.01115291379392147,<span class="w"> </span><span class="m">0</span>.05289424583315849,<span class="w"> </span>-0.031148016452789307,<span class="w"> </span>-0.025501884520053864,<span class="w"> </span>-0.04285573586821556,<span class="w"> </span>-0.025347966700792313,<span class="w"> </span><span class="m">0</span>.07360142469406128,<span class="w"> </span>-0.021775048226118088,<span class="w"> </span><span class="m">0</span>.06776975840330124,<span class="w"> </span>-0.027090832591056824,<span class="w"> </span><span class="m">0</span>.004754350520670414,<span class="w"> </span><span class="m">0</span>.020962830632925034,<span class="w"> </span>-0.015184056013822556,<span class="w"> </span><span class="m">0</span>.0010469526750966907,<span class="w"> </span><span class="m">0</span>.10906203091144562,<span class="w"> </span><span class="m">0</span>.023142946884036064,<span class="w"> </span>-0.014811648055911064,<span class="w"> </span><span class="m">0</span>.060142189264297485,<span class="w"> </span><span class="m">0</span>.00820994470268488,<span class="w"> </span>-0.02131684496998787,<span class="w"> </span><span class="m">0</span>.0638369619846344,<span class="w"> </span>-0.04250387102365494,<span class="w"> </span><span class="m">0</span>.008871919475495815,<span class="w"> </span>-0.008007975295186043,<span class="w"> </span><span class="m">0</span>.07150974124670029,<span class="w"> </span><span class="m">0</span>.011682109907269478,<span class="w"> </span>-0.006690092850476503,<span class="w"> </span><span class="m">0</span>.011732078157365322,<span class="w"> </span>-0.07107444852590561,<span class="w"> </span>-0.06642609089612961,<span class="w"> </span>-0.011343806982040405,<span class="w"> </span>-0.006821080576628447,<span class="w"> </span>-0.02998213842511177,<span class="w"> </span><span class="m">0</span>.028652319684624672,<span class="w"> </span><span class="m">0</span>.03125355765223503,<span class="w"> </span><span class="m">0</span>.07194835692644119,<span class="w"> </span><span class="m">0</span>.07021243870258331,<span class="w"> </span><span class="m">0</span>.002937359269708395,<span class="w"> </span>-0.0499102883040905,<span class="w"> </span><span class="m">0</span>.040573444217443466,<span class="w"> </span>-0.019794275984168053,<span class="w"> </span><span class="m">0</span>.03276952728629112,<span class="w"> </span>-0.11937176436185837,<span class="w"> </span>-0.05637907609343529,<span class="w"> </span>-0.016590707004070282,<span class="w"> </span>-0.020010240375995636,<span class="w"> </span><span class="m">0</span>.026032714173197746,<span class="w"> </span><span class="m">0</span>.0035290969535708427,<span class="w"> </span>-0.02005072496831417,<span class="w"> </span><span class="m">0</span>.010683903470635414,<span class="w"> </span><span class="m">0</span>.016347797587513924,<span class="w"> </span><span class="m">0</span>.015019580721855164,<span class="w"> </span>-0.013746236450970173,<span class="w"> </span><span class="m">0</span>.059569939970970154,<span class="w"> </span>-0.049140941351652145,<span class="w"> </span>-0.0019614780321717262,<span class="w"> </span>-0.08775275200605392,<span class="w"> </span>-0.10722333192825317,<span class="w"> </span>-0.042984429746866226,<span class="w"> </span>-0.00020981401030439883,<span class="w"> </span><span class="m">0</span>.019572105258703232,<span class="w"> </span>-0.06898674368858337,<span class="w"> </span><span class="m">0</span>.01378229632973671,<span class="w"> </span><span class="m">0</span>.010090887546539307,<span class="w"> </span><span class="m">0</span>.004062692169100046,<span class="w"> </span><span class="m">0</span>.03605732321739197,<span class="w"> </span>-0.030028242617845535,<span class="w"> </span>-0.071064792573452,<span class="w"> </span><span class="m">2</span>.3956217773957178e-05,<span class="w"> </span>-0.04649794474244118,<span class="w"> </span><span class="m">0</span>.006212098523974419,<span class="w"> </span><span class="m">0</span>.05053247511386871,<span class="w"> </span><span class="m">0</span>.017688272520899773,<span class="w"> </span><span class="m">0</span>.06759831309318542,<span class="w"> </span><span class="m">0</span>.06286999583244324,<span class="w"> </span>-0.0010359658626839519,<span class="w"> </span><span class="m">0</span>.02886095643043518,<span class="w"> </span><span class="m">0</span>.07879934459924698,<span class="w"> </span>-0.04438954219222069,<span class="w"> </span><span class="m">0</span>.03000231273472309,<span class="w"> </span><span class="m">0</span>.0032854368910193443,<span class="w"> </span><span class="m">0</span>.04237217828631401,<span class="w"> </span>-0.019776295870542526,<span class="w"> </span>-0.003197435289621353,<span class="w"> </span>-0.029772961512207985,<span class="w"> </span><span class="m">0</span>.014659246429800987,<span class="w"> </span><span class="m">0</span>.007493179757148027,<span class="w"> </span>-0.05654020234942436,<span class="w"> </span>-0.06438001990318298,<span class="w"> </span><span class="m">0</span>.09076389670372009,<span class="w"> </span><span class="m">0</span>.06214659661054611,<span class="w"> </span><span class="m">0</span>.004840471316128969,<span class="w"> </span><span class="m">0</span>.045114848762750626,<span class="w"> </span><span class="m">0</span>.07397229224443436,<span class="w"> </span>-0.032566577196121216,<span class="w"> </span>-0.02464713528752327,<span class="w"> </span>-0.001989303156733513,<span class="w"> </span><span class="m">0</span>.011997431516647339,<span class="w"> </span>-0.05213696509599686,<span class="w"> </span>-0.016684064641594887,<span class="w"> </span>-0.025001073256134987,<span class="w"> </span>-0.06234518438577652,<span class="w"> </span><span class="m">0</span>.08302164077758789,<span class="w"> </span><span class="m">0</span>.06388438493013382,<span class="w"> </span>-0.02603762038052082,<span class="w"> </span>-0.057507626712322235,<span class="w"> </span><span class="m">0</span>.010737594217061996,<span class="w"> </span><span class="m">0</span>.021288368850946426,<span class="w"> </span><span class="m">0</span>.050199754536151886,<span class="w"> </span><span class="m">0</span>.020688340067863464,<span class="w"> </span>-0.03297201544046402,<span class="w"> </span><span class="m">0</span>.046142708510160446,<span class="w"> </span>-0.010062780231237411,<span class="w"> </span>-0.009058497846126556,<span class="w"> </span>-0.028288882225751877,<span class="w"> </span><span class="m">0</span>.04905378818511963,<span class="w"> </span><span class="m">0</span>.014915363863110542,<span class="w"> </span><span class="m">0</span>.013268127106130123,<span class="w"> </span><span class="m">0</span>.0682050809264183,<span class="w"> </span>-0.05951741710305214,<span class="w"> </span><span class="m">0</span>.057072725147008896,<span class="w"> </span>-0.05045686662197113,<span class="w"> </span>-0.06781881302595139,<span class="w"> </span><span class="m">0</span>.013548677787184715,<span class="w"> </span><span class="m">0</span>.05480438843369484,<span class="w"> </span><span class="m">0</span>.004949226509779692,<span class="w"> </span>-0.06020767241716385,<span class="w"> </span><span class="m">0</span>.06817059963941574,<span class="w"> </span>-0.03284472972154617,<span class="w"> </span><span class="m">0</span>.014837299473583698,<span class="w"> </span>-0.02967672049999237,<span class="w"> </span><span class="m">0</span>.01816580630838871,<span class="w"> </span><span class="m">0</span>.02033187262713909,<span class="w"> </span><span class="m">0</span>.02823079377412796,<span class="w"> </span>-0.04500351473689079,<span class="w"> </span><span class="m">0</span>.08674795180559158,<span class="w"> </span>-0.029325610026717186,<span class="w"> </span><span class="m">0</span>.023551611229777336,<span class="w"> </span><span class="m">0</span>.06388993561267853,<span class="w"> </span>-0.009744416922330856,<span class="w"> </span>-0.03457322716712952,<span class="w"> </span><span class="m">0</span>.04782603681087494,<span class="w"> </span><span class="m">0</span>.02554101124405861,<span class="w"> </span>-0.0456324964761734,<span class="w"> </span>-0.028274627402424812,<span class="w"> </span><span class="m">0</span>.06662072241306305,<span class="w"> </span>-0.05609177425503731,<span class="w"> </span><span class="m">0</span>.05615284666419029,<span class="w"> </span><span class="m">0</span>.019022393971681595,<span class="w"> </span>-0.0025437776930630207,<span class="w"> </span><span class="m">0</span>.009997396729886532,<span class="w"> </span>-0.02311607636511326,<span class="w"> </span>-0.01859533227980137,<span class="w"> </span><span class="m">0</span>.014079087413847446,<span class="w"> </span>-0.004390522837638855,<span class="w"> </span><span class="m">0</span>.033753011375665665,<span class="w"> </span>-0.01057991199195385,<span class="w"> </span><span class="m">0</span>.06405404955148697,<span class="w"> </span>-0.044001828879117966,<span class="w"> </span><span class="m">0</span>.030532050877809525,<span class="w"> </span><span class="m">0</span>.07704707980155945,<span class="w"> </span>-0.008154668845236301,<span class="w"> </span><span class="m">0</span>.07150844484567642,<span class="w"> </span>-0.025875508785247803,<span class="w"> </span><span class="m">0</span>.012938959524035454,<span class="w"> </span><span class="m">0</span>.031110644340515137,<span class="w"> </span><span class="m">0</span>.040104109793901443,<span class="w"> </span>-0.015837285667657852,<span class="w"> </span><span class="m">0</span>.013013459742069244,<span class="w"> </span>-0.04932061582803726,<span class="w"> </span><span class="m">0</span>.1163453534245491,<span class="w"> </span>-0.018216004595160484,<span class="w"> </span><span class="m">0</span>.09031085669994354,<span class="w"> </span>-0.00798568595200777,<span class="w"> </span><span class="m">0</span>.03739010915160179,<span class="w"> </span><span class="m">0</span>.009020711295306683,<span class="w"> </span><span class="m">0</span>.0121764512732625,<span class="w"> </span><span class="m">0</span>.05221538990736008,<span class="w"> </span>-0.039455823600292206,<span class="w"> </span><span class="m">0</span>.0006922244210727513,<span class="w"> </span><span class="m">0</span>.015570797957479954,<span class="w"> </span><span class="m">0</span>.07312478870153427,<span class="w"> </span>-0.020688941702246666,<span class="w"> </span>-0.013934718444943428,<span class="w"> </span><span class="m">0</span>.008533086627721786,<span class="w"> </span><span class="m">0</span>.06440478563308716,<span class="w"> </span>-0.01079096831381321,<span class="w"> </span><span class="m">0</span>.01836889237165451,<span class="w"> </span><span class="m">0</span>.02253551408648491,<span class="w"> </span><span class="m">0</span>.013003944419324398,<span class="w"> </span>-0.09377135336399078,<span class="w"> </span>-0.0679609626531601,<span class="w"> </span><span class="m">0</span>.08662433922290802,<span class="w"> </span><span class="m">0</span>.04313892871141434,<span class="w"> </span>-0.0991244912147522,<span class="w"> </span><span class="m">0</span>.031046167016029358,<span class="w"> </span>-0.00529451621696353,<span class="w"> </span><span class="m">0</span>.03583913296461105,<span class="w"> </span>-0.036976899951696396,<span class="w"> </span>-0.02047165483236313,<span class="w"> </span><span class="m">0</span>.05907558649778366,<span class="w"> </span>-0.01609981805086136,<span class="w"> </span><span class="m">0</span>.025996552780270576,<span class="w"> </span>-0.020804448053240776,<span class="w"> </span>-0.08788128197193146,<span class="w"> </span><span class="m">0</span>.008795336820185184,<span class="w"> </span><span class="m">0</span>.02871711179614067,<span class="w"> </span><span class="m">0</span>.03529304638504982,<span class="w"> </span><span class="m">0</span>.03294558450579643,<span class="w"> </span>-0.042029064148664474,<span class="w"> </span><span class="m">0</span>.06038316339254379,<span class="w"> </span>-0.04894087836146355,<span class="w"> </span><span class="m">0</span>.062449462711811066,<span class="w"> </span><span class="m">0</span>.006345283705741167,<span class="w"> </span>-0.05110999941825867,<span class="w"> </span>-0.05251497030258179,<span class="w"> </span>-0.0485706627368927,<span class="w"> </span><span class="m">0</span>.01973171904683113,<span class="w"> </span><span class="m">0</span>.008282365277409554,<span class="w"> </span>-0.07566660642623901,<span class="w"> </span>-0.054833680391311646,<span class="w"> </span>-0.07128996402025223,<span class="w"> </span><span class="m">0</span>.04532742500305176,<span class="w"> </span><span class="m">0</span>.03617053106427193,<span class="w"> </span>-0.08390213549137115,<span class="w"> </span><span class="m">0</span>.059522684663534164,<span class="w"> </span>-0.0420474074780941,<span class="w"> </span>-0.01778397522866726,<span class="w"> </span>-0.0009484086185693741,<span class="w"> </span>-0.0005348647246137261,<span class="w"> </span><span class="m">0</span>.060148268938064575,<span class="w"> </span>-0.0330856516957283,<span class="w"> </span>-0.0246503297239542,<span class="w"> </span><span class="m">0</span>.017774641513824463,<span class="w"> </span><span class="m">0</span>.030457578599452972,<span class="w"> </span><span class="m">0</span>.05355843901634216,<span class="w"> </span>-0.0587775893509388,<span class="w"> </span>-0.10057137906551361,<span class="w"> </span><span class="m">0</span>.018445275723934174,<span class="w"> </span>-0.009815521538257599,<span class="w"> </span>-0.018039006739854813,<span class="w"> </span><span class="m">0</span>.07852229475975037,<span class="w"> </span><span class="m">0</span>.06736239790916443,<span class="w"> </span>-0.001333046704530716,<span class="w"> </span><span class="m">0</span>.007442455273121595,<span class="w"> </span><span class="m">0</span>.024762822315096855,<span class="w"> </span><span class="m">0</span>.01432487741112709,<span class="w"> </span>-0.015761420130729675,<span class="w"> </span>-0.06996625661849976,<span class="w"> </span>-0.046995896846055984,<span class="w"> </span><span class="m">0</span>.007052265573292971,<span class="w"> </span><span class="m">0</span>.01292750146239996,<span class="w"> </span>-0.040947142988443375,<span class="w"> </span>-0.04076245054602623,<span class="w"> </span><span class="m">0</span>.02297302521765232,<span class="w"> </span><span class="m">0</span>.031471725553274155,<span class="w"> </span>-0.00020813643641304225,<span class="w"> </span><span class="m">0</span>.038925208151340485,<span class="w"> </span>-0.06558586657047272,<span class="w"> </span>-0.007383601740002632,<span class="w"> </span>-0.023945683613419533,<span class="w"> </span>-0.00975192990154028,<span class="w"> </span>-0.02227136865258217,<span class="w"> </span><span class="m">0</span>.04719878360629082,<span class="w"> </span>-0.06225449591875076,<span class="w"> </span>-0.01973516121506691,<span class="w"> </span>-0.03993571922183037,<span class="w"> </span><span class="m">0</span>.05859784781932831,<span class="w"> </span>-0.033084310591220856,<span class="w"> </span>-0.09690506756305695,<span class="w"> </span>-0.023898473009467125,<span class="w"> </span>-0.021453123539686203,<span class="w"> </span>-0.03663061931729317,<span class="w"> </span>-0.017285870388150215,<span class="w"> </span><span class="m">0</span>.03141544386744499,<span class="w"> </span><span class="m">0</span>.03807565197348595,<span class="w"> </span>-0.026278872042894363,<span class="w"> </span>-0.01809430494904518,<span class="w"> </span>-0.015841489657759666,<span class="w"> </span><span class="m">0</span>.012133757583796978,<span class="w"> </span><span class="m">0</span>.015615759417414665,<span class="w"> </span><span class="m">0</span>.025031639263033867,<span class="w"> </span><span class="m">0</span>.024692615494132042,<span class="w"> </span><span class="m">0</span>.04616452008485794,<span class="w"> </span>-0.060463856905698776,<span class="w"> </span>-0.015853295102715492,<span class="w"> </span>-0.018289266154170036,<span class="w"> </span>-0.04386031627655029,<span class="w"> </span><span class="m">0</span>.03577912971377373,<span class="w"> </span>-0.027260515838861465,<span class="w"> </span><span class="m">0</span>.0262057613581419,<span class="w"> </span><span class="m">0</span>.057801421731710434,<span class="w"> </span>-0.03247777372598648,<span class="w"> </span>-0.025150176137685776,<span class="w"> </span><span class="m">0</span>.00601597735658288,<span class="w"> </span><span class="m">0</span>.04657217860221863,<span class="w"> </span>-0.080239437520504,<span class="w"> </span><span class="m">0</span>.03466523066163063,<span class="w"> </span>-0.030453147366642952,<span class="w"> </span><span class="m">0</span>.0482921376824379,<span class="w"> </span>-0.08164504170417786,<span class="w"> </span>-0.014207101427018642,<span class="w"> </span><span class="m">0</span>.009327770210802555,<span class="w"> </span>-0.04090266674757004,<span class="w"> </span><span class="m">0</span>.030108662322163582,<span class="w"> </span><span class="m">0</span>.009122633375227451,<span class="w"> </span>-0.014895373024046421,<span class="w"> </span>-0.05183123052120209,<span class="w"> </span>-0.013794025406241417,<span class="w"> </span><span class="m">0</span>.07302702963352203,<span class="w"> </span>-0.09872224181890488,<span class="w"> </span>-0.018709152936935425,<span class="w"> </span><span class="m">0</span>.0033975779078900814,<span class="w"> </span>-0.014089024625718594,<span class="w"> </span><span class="m">0</span>.03661659359931946,<span class="w"> </span><span class="m">0</span>.057056576013565063,<span class="w"> </span><span class="m">0</span>.020562296733260155,<span class="w"> </span><span class="m">0</span>.043459419161081314,<span class="w"> </span><span class="m">0</span>.01512663159519434,<span class="w"> </span>-0.08066604286432266,<span class="w"> </span>-0.004175281152129173,<span class="w"> </span>-0.01924264058470726,<span class="w"> </span><span class="m">0</span>.019628198817372322,<span class="w"> </span><span class="m">0</span>.0038949784357100725,<span class="w"> </span><span class="m">0</span>.0417584627866745,<span class="w"> </span><span class="m">0</span>.04380005970597267,<span class="w"> </span><span class="m">0</span>.07349026203155518,<span class="w"> </span><span class="m">0</span>.014636299572885036,<span class="w"> </span>-0.05216812714934349,<span class="w"> </span>-0.012727170251309872,<span class="w"> </span><span class="m">0</span>.045851919800043106,<span class="w"> </span>-0.01108911819756031,<span class="w"> </span><span class="m">0</span>.03997885435819626,<span class="w"> </span>-0.030407968908548355,<span class="w"> </span>-0.010511808097362518,<span class="w"> </span>-0.05589114874601364,<span class="w"> </span><span class="m">0</span>.044310227036476135,<span class="w"> </span><span class="m">0</span>.07810009270906448,<span class="w"> </span>-0.04502151906490326,<span class="w"> </span>-0.04358488321304321,<span class="w"> </span>-0.05491747707128525,<span class="w"> </span>-0.03352531045675278,<span class="w"> </span><span class="m">0</span>.05367979034781456,<span class="w"> </span>-0.051684021949768066,<span class="w"> </span>-0.09159758687019348,<span class="w"> </span>-0.06795314699411392,<span class="w"> </span><span class="m">0</span>.05151400715112686,<span class="w"> </span>-0.03667590394616127,<span class="w"> </span><span class="m">0</span>.0415973998606205,<span class="w"> </span><span class="m">0</span>.004540375899523497,<span class="w"> </span><span class="m">0</span>.05324205011129379,<span class="w"> </span><span class="m">0</span>.007202384993433952,<span class="w"> </span>-0.04345241189002991,<span class="w"> </span><span class="m">0</span>.050976917147636414,<span class="w"> </span>-0.04033355042338371,<span class="w"> </span><span class="m">0</span>.06330423802137375,<span class="w"> </span><span class="m">0</span>.05229709669947624,<span class="w"> </span><span class="m">0</span>.07360764592885971,<span class="w"> </span>-0.032564569264650345,<span class="w"> </span><span class="m">0</span>.05199885368347168,<span class="w"> </span>-0.00532008009031415,<span class="w"> </span>-0.0022711465135216713,<span class="w"> </span><span class="m">0</span>.02948114089667797,<span class="w"> </span>-0.016920195892453194,<span class="w"> </span>-0.02260630950331688,<span class="w"> </span><span class="m">0</span>.028158463537693024,<span class="w"> </span><span class="m">0</span>.07792772352695465,<span class="w"> </span>-0.018052909523248672,<span class="w"> </span>-0.03556442633271217,<span class="w"> </span><span class="m">0</span>.00789704080671072,<span class="w"> </span>-0.07626558840274811,<span class="w"> </span>-0.03160900995135307,<span class="w"> </span><span class="m">0</span>.01614975929260254,<span class="w"> </span><span class="m">0</span>.029233204200863838,<span class="w"> </span>-0.019288279116153717,<span class="w"> </span><span class="m">0</span>.042064376175403595,<span class="w"> </span><span class="m">0</span>.02296893298625946,<span class="w"> </span>-0.02441602759063244,<span class="w"> </span><span class="m">0</span>.0140019990503788,<span class="w"> </span>-0.06483341753482819,<span class="w"> </span><span class="m">0</span>.11968966573476791,<span class="w"> </span><span class="m">0</span>.03714313730597496,<span class="w"> </span>-0.06824050098657608,<span class="w"> </span>-0.016793427988886833,<span class="w"> </span><span class="m">0</span>.009564070962369442,<span class="w"> </span>-0.09704745560884476,<span class="w"> </span><span class="m">0</span>.01676984317600727,<span class="w"> </span>-0.02669912949204445,<span class="w"> </span><span class="m">0</span>.0003774994402192533,<span class="w"> </span>-0.06364470720291138,<span class="w"> </span><span class="m">0</span>.01929471455514431,<span class="w"> </span>-0.009203671477735043,<span class="w"> </span>-0.003950135316699743,<span class="w"> </span>-0.03651873394846916,<span class="w"> </span>-0.013927181251347065,<span class="w"> </span>-0.0008955051307566464,<span class="w"> </span><span class="m">0</span>.02604137919843197,<span class="w"> </span>-0.07753892242908478,<span class="w"> </span><span class="m">0</span>.015690961852669716,<span class="w"> </span><span class="m">0</span>.0001985478593269363,<span class="w"> </span>-0.029516037553548813,<span class="w"> </span>-0.028976714238524437,<span class="w"> </span>-0.07917939871549606,<span class="w"> </span><span class="m">0</span>.036289919167757034,<span class="w"> </span><span class="m">0</span>.03013240359723568,<span class="w"> </span>-0.07124550640583038<span class="o">]}}</span>
+运行后，得到的结果为：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="o">{</span><span class="s1">&#39;res&#39;</span>:<span class="w"> </span><span class="o">{</span><span class="s1">&#39;input_path&#39;</span>:<span class="w"> </span><span class="s1">&#39;general_image_recognition_001.jpg&#39;</span>,<span class="w"> </span><span class="s1">&#39;page_index&#39;</span>:<span class="w"> </span>None,<span class="w"> </span><span class="s1">&#39;feature&#39;</span>:<span class="w"> </span>array<span class="o">([</span><span class="w"> </span><span class="m">0</span>.04910231,<span class="w"> </span>...,<span class="w"> </span>-0.07126085<span class="o">]</span>,<span class="w"> </span><span class="nv">dtype</span><span class="o">=</span>float32<span class="o">)}}</span>
 </span></code></pre></div>
-
-参数含义如下：
-- `input_path`：输入的待预测图像的路径
-- `feature`：表示特征向量的浮点数列表，长度为512
-
-</details>
-
+<p>参数含义如下：
+- <code>input_path</code>：输入的待预测图像的路径
+- <code>feature</code>：提取的图像特征向量，维度为模型输出特征维度，此处为512维。</p>
 <p>相关方法、参数等说明如下：</p>
 <ul>
 <li><code>create_model</code>实例化图像特征模型（此处以<code>PP-ShiTuV2_rec</code>为例），具体说明如下：</li>
@@ -5476,6 +5510,13 @@ You're not viewing the latest version.
 <td>无</td>
 <td>无</td>
 </tr>
+<tr>
+<td><code>use_hpip</code></td>
+<td>是否启用高性能推理</td>
+<td><code>bool</code></td>
+<td>无</td>
+<td><code>False</code></td>
+</tr>
 </table>
 
 <ul>
@@ -5499,15 +5540,14 @@ You're not viewing the latest version.
 <tr>
 <td><code>input</code></td>
 <td>待预测数据，支持多种输入类型</td>
-<td><code>Python Var</code>/<code>str</code>/<code>dict</code>/<code>list</code></td>
+<td><code>Python Var</code>/<code>str</code>/<code>list</code></td>
 <td>
 <ul>
   <li><b>Python变量</b>，如<code>numpy.ndarray</code>表示的图像数据</li>
   <li><b>文件路径</b>，如图像文件的本地路径：<code>/root/data/img.jpg</code></li>
   <li><b>URL链接</b>，如图像文件的网络URL：<a href = "https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/general_ocr_rec_001.png">示例</a></li>
   <li><b>本地目录</b>，该目录下需包含待预测数据文件，如本地路径：<code>/root/data/</code></li>
-  <li><b>字典</b>，字典的<code>key</code>需与具体任务对应，如图像分类任务对应<code>\"img\"</code>，字典的<code>val</code>支持上述类型数据，例如：<code>{\"img\": \"/root/data1\"}</code></li>
-  <li><b>列表</b>，列表元素需为上述类型数据，如<code>[numpy.ndarray, numpy.ndarray]</code>，<code>[\"/root/data/img1.jpg\", \"/root/data/img2.jpg\"]</code>，<code>[\"/root/data1\", \"/root/data2\"]</code>，<code>[{\"img\": \"/root/data1\"}, {\"img\": \"/root/data2/img.jpg\"}]</code></li>
+  <li><b>列表</b>，列表元素需为上述类型数据，如<code>[numpy.ndarray, numpy.ndarray]</code>，<code>[\"/root/data/img1.jpg\", \"/root/data/img2.jpg\"]</code>，<code>[\"/root/data1\", \"/root/data2\"]</code>/li>
 </ul>
 </td>
 <td>无</td>
@@ -5536,8 +5576,8 @@ You're not viewing the latest version.
 </tr>
 </thead>
 <tr>
-<td rowspan = "3"><code>print()</code></td>
-<td rowspan = "3">打印结果到终端</td>
+<td rowspan="3"><code>print()</code></td>
+<td rowspan="3">打印结果到终端</td>
 <td><code>format_json</code></td>
 <td><code>bool</code></td>
 <td>是否对输出内容进行使用 <code>JSON</code> 缩进格式化</td>
@@ -5556,8 +5596,8 @@ You're not viewing the latest version.
 <td><code>False</code></td>
 </tr>
 <tr>
-<td rowspan = "3"><code>save_to_json()</code></td>
-<td rowspan = "3">将结果保存为json格式的文件</td>
+<td rowspan="3"><code>save_to_json()</code></td>
+<td rowspan="3">将结果保存为json格式的文件</td>
 <td><code>save_path</code></td>
 <td><code>str</code></td>
 <td>保存的文件路径，当为目录时，保存文件命名与输入文件类型命名一致</td>
@@ -5588,8 +5628,8 @@ You're not viewing the latest version.
 </tr>
 </thead>
 <tr>
-<td rowspan = "1"><code>json</code></td>
-<td rowspan = "1">获取预测的<code>json</code>格式的结果</td>
+<td rowspan="1"><code>json</code></td>
+<td rowspan="1">获取预测的<code>json</code>格式的结果</td>
 </tr>
 </table>
 
@@ -5610,58 +5650,57 @@ You're not viewing the latest version.
 </span></code></pre></div>
 执行上述命令后，PaddleX 会对数据集进行校验，并统计数据集的基本信息，命令运行成功后会在log中打印出<code>Check dataset passed !</code>信息。校验结果文件保存在<code>./output/check_dataset_result.json</code>，同时相关产出会保存在当前目录的<code>./output/check_dataset</code>目录下，产出目录中包括可视化的示例样本图片和样本分布直方图。</p>
 <details><summary>👉 <b>校验结果详情（点击展开）</b></summary>
-
 <p>校验结果文件具体内容为：</p>
 <pre><code class="language-bash">
-  &quot;done_flag&quot;: true,
-  &quot;check_pass&quot;: true,
-  &quot;attributes&quot;: {
-    &quot;train_samples&quot;: 1000,
-    &quot;train_sample_paths&quot;: [
-      &quot;check_dataset/demo_img/05_1_front.jpg&quot;,
-      &quot;check_dataset/demo_img/02_1_front.jpg&quot;,
-      &quot;check_dataset/demo_img/02_3_back.jpg&quot;,
-      &quot;check_dataset/demo_img/04_3_back.jpg&quot;,
-      &quot;check_dataset/demo_img/04_2_side.jpg&quot;,
-      &quot;check_dataset/demo_img/12_1_front.jpg&quot;,
-      &quot;check_dataset/demo_img/07_2_side.jpg&quot;,
-      &quot;check_dataset/demo_img/04_7_additional.jpg&quot;,
-      &quot;check_dataset/demo_img/04_4_full.jpg&quot;,
-      &quot;check_dataset/demo_img/01_1_front.jpg&quot;
+  "done_flag": true,
+  "check_pass": true,
+  "attributes": {
+    "train_samples": 1000,
+    "train_sample_paths": [
+      "check_dataset/demo_img/05_1_front.jpg",
+      "check_dataset/demo_img/02_1_front.jpg",
+      "check_dataset/demo_img/02_3_back.jpg",
+      "check_dataset/demo_img/04_3_back.jpg",
+      "check_dataset/demo_img/04_2_side.jpg",
+      "check_dataset/demo_img/12_1_front.jpg",
+      "check_dataset/demo_img/07_2_side.jpg",
+      "check_dataset/demo_img/04_7_additional.jpg",
+      "check_dataset/demo_img/04_4_full.jpg",
+      "check_dataset/demo_img/01_1_front.jpg"
     ],
-    &quot;gallery_samples&quot;: 110,
-    &quot;gallery_sample_paths&quot;: [
-      &quot;check_dataset/demo_img/06_2_side.jpg&quot;,
-      &quot;check_dataset/demo_img/01_4_full.jpg&quot;,
-      &quot;check_dataset/demo_img/04_7_additional.jpg&quot;,
-      &quot;check_dataset/demo_img/02_1_front.jpg&quot;,
-      &quot;check_dataset/demo_img/02_3_back.jpg&quot;,
-      &quot;check_dataset/demo_img/02_3_back.jpg&quot;,
-      &quot;check_dataset/demo_img/02_4_full.jpg&quot;,
-      &quot;check_dataset/demo_img/03_4_full.jpg&quot;,
-      &quot;check_dataset/demo_img/02_2_side.jpg&quot;,
-      &quot;check_dataset/demo_img/03_2_side.jpg&quot;
+    "gallery_samples": 110,
+    "gallery_sample_paths": [
+      "check_dataset/demo_img/06_2_side.jpg",
+      "check_dataset/demo_img/01_4_full.jpg",
+      "check_dataset/demo_img/04_7_additional.jpg",
+      "check_dataset/demo_img/02_1_front.jpg",
+      "check_dataset/demo_img/02_3_back.jpg",
+      "check_dataset/demo_img/02_3_back.jpg",
+      "check_dataset/demo_img/02_4_full.jpg",
+      "check_dataset/demo_img/03_4_full.jpg",
+      "check_dataset/demo_img/02_2_side.jpg",
+      "check_dataset/demo_img/03_2_side.jpg"
     ],
-    &quot;query_samples&quot;: 125,
-    &quot;query_sample_paths&quot;: [
-      &quot;check_dataset/demo_img/08_7_additional.jpg&quot;,
-      &quot;check_dataset/demo_img/01_7_additional.jpg&quot;,
-      &quot;check_dataset/demo_img/02_4_full.jpg&quot;,
-      &quot;check_dataset/demo_img/04_4_full.jpg&quot;,
-      &quot;check_dataset/demo_img/09_7_additional.jpg&quot;,
-      &quot;check_dataset/demo_img/04_3_back.jpg&quot;,
-      &quot;check_dataset/demo_img/02_1_front.jpg&quot;,
-      &quot;check_dataset/demo_img/06_2_side.jpg&quot;,
-      &quot;check_dataset/demo_img/02_7_additional.jpg&quot;,
-      &quot;check_dataset/demo_img/02_2_side.jpg&quot;
+    "query_samples": 125,
+    "query_sample_paths": [
+      "check_dataset/demo_img/08_7_additional.jpg",
+      "check_dataset/demo_img/01_7_additional.jpg",
+      "check_dataset/demo_img/02_4_full.jpg",
+      "check_dataset/demo_img/04_4_full.jpg",
+      "check_dataset/demo_img/09_7_additional.jpg",
+      "check_dataset/demo_img/04_3_back.jpg",
+      "check_dataset/demo_img/02_1_front.jpg",
+      "check_dataset/demo_img/06_2_side.jpg",
+      "check_dataset/demo_img/02_7_additional.jpg",
+      "check_dataset/demo_img/02_2_side.jpg"
     ]
   },
-  &quot;analysis&quot;: {
-    &quot;histogram&quot;: &quot;check_dataset/histogram.png&quot;
+  "analysis": {
+    "histogram": "check_dataset/histogram.png"
   },
-  &quot;dataset_path&quot;: &quot;./dataset/Inshop_examples&quot;,
-  &quot;show_type&quot;: &quot;image&quot;,
-  &quot;dataset_type&quot;: &quot;ShiTuRecDataset&quot;
+  "dataset_path": "./dataset/Inshop_examples",
+  "show_type": "image",
+  "dataset_type": "ShiTuRecDataset"
 }
 </code></pre>
 <p>上述校验结果中，check_pass  为 true 表示数据集格式符合要求，其他部分指标的说明如下：</p>
@@ -5674,12 +5713,11 @@ You're not viewing the latest version.
 <li><code>attributes.query_sample_paths</code>：该数据集查询样本可视化图片相对路径列表；
 另外，数据集校验还对数据集中图像数量和图像类别情况进行了分析，并绘制了分布直方图（histogram.png）：</li>
 </ul>
-<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/modules/img_recognition/01.png"></p></details>
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/modules/img_recognition/01.png"/></p></details>
 
 <h3 id="413">4.1.3 数据集格式转换/数据集划分（可选）<a class="headerlink" href="#413" title="Permanent link">&para;</a></h3>
 <p>在您完成数据校验之后，可以通过<b>修改配置文件</b>或是<b>追加超参数</b>的方式对数据集的格式进行转换，也可以对数据集的训练/验证比例进行重新划分。</p>
 <details><summary>👉 <b>格式转换/数据集划分详情（点击展开）</b></summary>
-
 <p><b>（1）数据集格式转换</b></p>
 <p>图像特征任务支持 <code>LabelMe</code>格式的数据集转换为 <code>ShiTuRecDataset</code>格式，数据集格式转换的参数可以通过修改配置文件中 <code>CheckDataset</code> 下的字段进行设置，配置文件中部分参数的示例说明如下：</p>
 <ul>
@@ -5766,7 +5804,6 @@ CheckDataset:
 其他相关参数均可通过修改<code>.yaml</code>配置文件中的<code>Global</code>和<code>Train</code>下的字段来进行设置，也可以通过在命令行中追加参数来进行调整。如指定前 2 卡 gpu 训练：<code>-o Global.device=gpu:0,1</code>；设置训练轮次数为 10：<code>-o Train.epochs_iters=10</code>。更多可修改的参数及其详细解释，可以查阅模型对应任务模块的配置文件说明<a href="../../instructions/config_parameters_common.html">PaddleX通用模型配置文件参数说明</a>。</li>
 </ul>
 <details><summary>👉 <b>更多说明（点击展开）</b></summary>
-
 <ul>
 <li>模型训练过程中，PaddleX 会自动保存模型权重文件，默认为<code>output</code>，如需指定保存路径，可通过配置文件中 <code>-o Global.output</code> 字段进行设置。</li>
 <li>PaddleX 对您屏蔽了动态图权重和静态图权重的概念。在模型训练的过程中，会同时产出动态图和静态图的权重，在模型推理时，默认选择静态图权重推理。</li>
@@ -5795,7 +5832,6 @@ CheckDataset:
 其他相关参数均可通过修改<code>.yaml</code>配置文件中的<code>Global</code>和<code>Evaluate</code>下的字段来进行设置，详细请参考<a href="../../instructions/config_parameters_common.html">PaddleX通用模型配置文件参数说明</a>。</li>
 </ul>
 <details><summary>👉 <b>更多说明（点击展开）</b></summary>
-
 <p>在模型评估时，需要指定模型权重文件路径，每个配置文件中都内置了默认的权重保存路径，如需要改变，只需要通过追加命令行参数的形式进行设置即可，如<code>-o Evaluate.weight_path=./output/best_model/best_model.pdparams</code>。</p>
 <p>在完成模型评估后，会产出<code>evaluate_result.json，其记录了</code>评估的结果，具体来说，记录了评估任务是否正常完成，以及模型的评估指标，包含 recall1、recall5、mAP；</p></details>
 
@@ -5825,6 +5861,7 @@ CheckDataset:
 <p>图像特征模块可以集成的 PaddleX 产线有<b>通用图像特征产线</b>(comming soon)，只需要替换模型路径即可完成相关产线的图像特征模块的模型更新。在产线集成中，你可以使用服务化部署来部署你得到的模型。</p>
 <p>2.<b>模块集成</b></p>
 <p>您产出的权重可以直接集成到图像特征模块中，可以参考<a href="#三快速集成">快速集成</a>的 Python 示例代码，只需要将模型替换为你训练的到的模型路径即可。</p>
+<p>您也可以利用 PaddleX 高性能推理插件来优化您模型的推理过程，进一步提升效率，详细的流程请参考<a href="../../../pipeline_deploy/high_performance_inference.html">PaddleX高性能推理指南</a>。</p>
 
 
 
@@ -5847,7 +5884,7 @@ CheckDataset:
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2025年2月6日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2025年2月14日</span>
   </span>
 
     
@@ -5857,7 +5894,7 @@ CheckDataset:
     <span class="md-icon" title="创建日期">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2025年2月6日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2025年2月14日</span>
   </span>
 
     
@@ -6038,7 +6075,7 @@ CheckDataset:
     <script id="__config" type="application/json">{"base": "../../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "navigation.expand", "navigation.path", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.f13b1293.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.f1b6f286.min.js"></script>
       
         <script src="../../../javascripts/katex.min.js"></script>
       

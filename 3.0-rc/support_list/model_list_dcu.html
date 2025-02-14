@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4">
     
     
       
@@ -26,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.d7758b05.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.8608ea7d.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
@@ -839,7 +839,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../pipeline_usage/tutorials/information_extraction_pipelines/document_scene_information_extraction.html" class="md-nav__link">
+      <a href="../pipeline_usage/tutorials/information_extraction_pipelines/document_scene_information_extraction.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4644,6 +4644,15 @@ You're not viewing the latest version.
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      时序预测模块
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -5222,6 +5231,15 @@ You're not viewing the latest version.
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      时序预测模块
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -5256,7 +5274,7 @@ You're not viewing the latest version.
 
 <h1 id="paddlex-dcu">PaddleX模型列表（海光 DCU）<a class="headerlink" href="#paddlex-dcu" title="Permanent link">&para;</a></h1>
 <p>PaddleX 内置了多条产线，每条产线都包含了若干模块，每个模块包含若干模型，具体使用哪些模型，您可以根据下边的 benchmark 数据来选择。如您更考虑模型精度，请选择精度较高的模型，如您更考虑模型存储大小，请选择存储大小较小的模型。</p>
-<h2 id="_1">图像分类模块<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="_1"><a href="../module_usage/tutorials/cv_modules/image_classification.html">图像分类模块</a><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -5291,6 +5309,11 @@ You're not viewing the latest version.
 <td>78.3</td>
 <td>214.2 M</td>
 <td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0rc0/ResNet152_infer.tar">推理模型</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/ResNet152_pretrained.pdparams">训练模型</a></td></tr>
+<tr>
+<td>PP-LCNet_x1_0</td>
+<td>71.32</td>
+<td>10.5 M</td>
+<td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0rc0/PP-LCNet_x1_0_infer.tar">推理模型</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/PP-LCNet_x1_0_pretrained.pdparams">训练模型</a></td></tr>
 </tbody>
 </table>
 <p><b>注：以上精度指标为</b><a href="https://www.image-net.org/index.php">ImageNet-1k</a><b>验证集 Top1 Acc。</b></p>
@@ -5345,7 +5368,7 @@ You're not viewing the latest version.
 </tbody>
 </table>
 <p><b>注：以上精度指标为 AliProducts recall@1。</b></p>
-<h2 id="_4">目标检测模块<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h2 id="_4"><a href="../module_usage/tutorials/cv_modules/object_detection.html">目标检测模块</a><a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -5395,6 +5418,31 @@ You're not viewing the latest version.
 <td>54.7</td>
 <td>349.4 M</td>
 <td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0rc0/PP-YOLOE_plus-X_infer.tar">推理模型</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/PP-YOLOE_plus-X_pretrained.pdparams">训练模型</a></td></tr>
+<tr>
+<td>RT-DETR-R18</td>
+<td>46.5</td>
+<td>70.7 M</td>
+<td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0rc0/RT-DETR-R18_infer.tar">推理模型</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/RT-DETR-R18_pretrained.pdparams">训练模型</a></td></tr>
+<tr>
+<td>FCOS-ResNet50</td>
+<td>39.6</td>
+<td>124.2 M</td>
+<td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0rc0/FCOS-ResNet50_infer.tar">推理模型</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/FCOS-ResNet50_pretrained.pdparams">训练模型</a></td></tr>
+<tr>
+<td>YOLOX-N</td>
+<td>26.1</td>
+<td>3.4M</td>
+<td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0rc0/YOLOX-N_infer.tar">推理模型</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/YOLOX-N_pretrained.pdparams">训练模型</a></td></tr>
+<tr>
+<td>FasterRCNN-ResNet34-FPN</td>
+<td>37.8</td>
+<td>137.5 M</td>
+<td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0rc0/FasterRCNN-ResNet34-FPN_infer.tar">推理模型</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/FasterRCNN-ResNet34-FPN_pretrained.pdparams">训练模型</a></td></tr>
+<tr>
+<td>Cascade-FasterRCNN-ResNet50-FPN</td>
+<td>41.1</td>
+<td>245.4 M</td>
+<td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0rc0/Cascade-FasterRCNN-ResNet50-FPN_infer.tar">推理模型</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/Cascade-FasterRCNN-ResNet50-FPN_pretrained.pdparams">训练模型</a></td></tr>
 </tbody>
 </table>
 <p><b>注：以上精度指标为</b><a href="https://cocodataset.org/#home">COCO2017</a><b>验证集 mAP(0.5:0.95)。</b></p>
@@ -5426,7 +5474,7 @@ You're not viewing the latest version.
 </tbody>
 </table>
 <p><b>注：以上精度指标为 </b><a href="https://github.com/VisDrone/VisDrone-Dataset">VisDrone-DET</a><b> 验证集 mAP(0.5:0.95)。</b></p>
-<h2 id="_6">语义分割模块<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h2 id="_6"><a href="../module_usage/tutorials/cv_modules/semantic_segmentation.html">语义分割模块</a><a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -5446,6 +5494,11 @@ You're not viewing the latest version.
 <td>81.10</td>
 <td>162.5 M</td>
 <td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0rc0/Deeplabv3_Plus-R101_infer.tar">推理模型</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/Deeplabv3_Plus-R101_pretrained.pdparams">训练模型</a></td></tr>
+<tr>
+<td>PP-LiteSeg-T</td>
+<td>73.10</td>
+<td>28.5 M</td>
+<td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0rc0/PP-LiteSeg-T_infer.tar">推理模型</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/PP-LiteSeg-T_pretrained.pdparams">训练模型</a></td></tr>
 </tbody>
 </table>
 <p><b>注：以上精度指标为</b><a href="https://www.cityscapes-dataset.com/">Cityscapes</a><b>数据集 mloU。</b></p>
@@ -5486,7 +5539,7 @@ You're not viewing the latest version.
 </table>
 <p><strong>注：以上精度指标是在WIDER-FACE验证集上，以640
 *640作为输入尺寸评估得到的。</strong></p>
-<h2 id="_9">文本检测模块<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<h2 id="_9"><a href="../module_usage/tutorials/ocr_modules/text_detection.html">文本检测模块</a><a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -5509,7 +5562,7 @@ You're not viewing the latest version.
 </tbody>
 </table>
 <p><b>注：以上精度指标的评估集是 PaddleOCR 自建的中文数据集，覆盖街景、网图、文档、手写多个场景，其中检测包含 500 张图片。</b></p>
-<h2 id="_10">文本识别模块<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<h2 id="_10"><a href="../module_usage/tutorials/ocr_modules/text_recognition.html">文本识别模块</a><a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -5532,6 +5585,38 @@ You're not viewing the latest version.
 </tbody>
 </table>
 <p><b>注：以上精度指标的评估集是 PaddleOCR 自建的中文数据集，覆盖街景、网图、文档、手写多个场景，其中文本识别包含 1.1w 张图片。</b></p>
+<h2 id="_11"><a href="../module_usage/tutorials/time_series_modules/time_series_forecasting.html">时序预测模块</a><a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>模型名称</th>
+<th>mse</th>
+<th>mae</th>
+<th>模型存储大小（M)</th>
+<th>模型下载链接</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>DLinear</td>
+<td>0.382</td>
+<td>0.394</td>
+<td>72K</td>
+<td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0rc0/DLinear_infer.tar">推理模型</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/DLinear_pretrained.pdparams">训练模型</a></td></tr>
+<tr>
+<td>NLinear</td>
+<td>0.386</td>
+<td>0.392</td>
+<td>40K</td>
+<td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0rc0/NLinear_infer.tar">推理模型</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/NLinear_pretrained.pdparams">训练模型</a></td></tr>
+<tr>
+<td>RLinear</td>
+<td>0.384</td>
+<td>0.392</td>
+<td>40K</td>
+<td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0rc0/RLinear_infer.tar">推理模型</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/RLinear_pretrained.pdparams">训练模型</a></td></tr>
+</tbody>
+</table>
+<p><b>注：以上精度指标测量自</b><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/data/Etth1.tar">ETTH1</a><b>数据集 </b><b>（在测试集test.csv上的评测结果）</b><b>。</b></p>
 
 
 
@@ -5554,7 +5639,7 @@ You're not viewing the latest version.
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2025年2月6日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2025年2月14日</span>
   </span>
 
     
@@ -5564,7 +5649,7 @@ You're not viewing the latest version.
     <span class="md-icon" title="创建日期">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2025年2月6日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2025年2月14日</span>
   </span>
 
     
@@ -5745,7 +5830,7 @@ You're not viewing the latest version.
     <script id="__config" type="application/json">{"base": "..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "navigation.expand", "navigation.path", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.f13b1293.min.js"></script>
+      <script src="../assets/javascripts/bundle.f1b6f286.min.js"></script>
       
         <script src="../javascripts/katex.min.js"></script>
       

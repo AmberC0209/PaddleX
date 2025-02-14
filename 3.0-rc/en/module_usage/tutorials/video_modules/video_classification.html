@@ -14,7 +14,7 @@
       
       
       <link rel="icon" href="../../../../assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4">
     
     
       
@@ -22,7 +22,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.d7758b05.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.8608ea7d.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
@@ -833,7 +833,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../pipeline_usage/tutorials/information_extraction_pipelines/document_scene_information_extraction.html" class="md-nav__link">
+      <a href="../../../../pipeline_usage/tutorials/information_extraction_pipelines/document_scene_information_extraction.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5177,7 +5177,7 @@ You're not viewing the latest version.
 <th>Description</th>
 </tr>
 <tr>
-<td>PPTSM_ResNet50_k400_8frames_uniform</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0rc0/PPTSM_ResNet50_k400_8frames_uniform_infer.tar">Inference Model</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/PPTSM_ResNet50_k400_8frames_uniform_pretrained.pdparams">Trained Model</a></td>
+<td>PP-TSM-R50_8frames_uniform</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0rc0/PP-TSM-R50_8frames_uniform_infer.tar">Inference Model</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/PP-TSM-R50_8frames_uniform_pretrained.pdparams">Trained Model</a></td>
 <td>74.36</td>
 <td>93.4 M</td>
 <td rowspan="1">
@@ -5192,16 +5192,60 @@ PP-TSM is a video classification model developed by Baidu PaddlePaddle's Vision 
 <td rowspan="2">PP-TSMv2 is a lightweight video classification model optimized based on the CPU-oriented model PP-LCNetV2. It undergoes model tuning in seven aspects: backbone network and pre-trained model selection, data augmentation, TSM module tuning, input frame number optimization, decoding speed optimization, DML distillation, and LTA module. Under the center crop evaluation method, it achieves an accuracy of 75.16%, with an inference speed of only 456ms on the CPU for a 10-second video input.</td>
 </tr>
 <tr>
-<td>PPTSMv2_LCNet_k400_16frames_uniform</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0rc0/PPTSMv2_LCNet_k400_16frames_uniform_infer.tar">Inference Model</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/PPTSMv2_LCNet_k400_16frames_uniform_pretrained.pdparams">Trained Model</a></td>
+<td>PP-TSMv2-LCNetV2_16frames_uniform</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0rc0/PP-TSMv2-LCNetV2_16frames_uniform_infer.tar">Inference Model</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/PP-TSMv2-LCNetV2_16frames_uniform_pretrained.pdparams">Trained Model</a></td>
 <td>73.11</td>
 <td>22.5 M</td>
 </tr>
 
 </table>
 
-<p><b>Note: The above accuracy metrics refer to Top-1 Accuracy on the <a href="https://github.com/PaddlePaddle/PaddleVideo/blob/develop/docs/zh-CN/dataset/k400.md">K400</a> validation set. </b><b>All model GPU inference times are based on NVIDIA Tesla T4 machines, with precision type FP32. CPU inference speeds are based on Intel® Xeon® Gold 5117 CPU @ 2.00GHz, with 8 threads and precision type FP32.</b></p>
-</details>
-<h2 id="iii-quick-integration"><span id="lable">III. Quick Integration</span><a class="headerlink" href="#iii-quick-integration" title="Permanent link">&para;</a></h2>
+<p><strong>Test Environment Description</strong>:</p>
+<ul>
+<li><strong>Performance Test Environment</strong></li>
+<li><strong>Test Dataset</strong>: <a href="https://github.com/PaddlePaddle/PaddleVideo/blob/develop/docs/zh-CN/dataset/k400.md">K400</a> validation set.</li>
+<li>
+<p><strong>Hardware Configuration</strong>:</p>
+<ul>
+<li>GPU: NVIDIA Tesla T4</li>
+<li>CPU: Intel Xeon Gold 6271C @ 2.60GHz</li>
+<li>Other Environments: Ubuntu 20.04 / cuDNN 8.6 / TensorRT 8.5.2.2</li>
+</ul>
+</li>
+<li>
+<p><strong>Inference Mode Description</strong></p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>GPU Configuration</th>
+<th>CPU Configuration</th>
+<th>Acceleration Technology Combination</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Regular Mode</td>
+<td>FP32 Precision / No TRT Acceleration</td>
+<td>FP32 Precision / 8 Threads</td>
+<td>PaddleInference</td>
+</tr>
+<tr>
+<td>High-Performance Mode</td>
+<td>Optimal combination of pre-selected precision types and acceleration strategies</td>
+<td>FP32 Precision / 8 Threads</td>
+<td>Pre-selected optimal backend (Paddle/OpenVINO/TRT, etc.)</td>
+</tr>
+<tr>
+<td></details></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="iii-quick-integration">III. Quick Integration<a class="headerlink" href="#iii-quick-integration" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>❗ Before quick integration, please install the PaddleX wheel package. For detailed instructions, refer to the <a href="../../../installation/installation.html">PaddleX Local Installation Guide</a>.</p>
 </blockquote>
@@ -5224,7 +5268,6 @@ PP-TSM is a video classification model developed by Baidu PaddlePaddle's Vision 
 - <code>label_names</code>: Indicates the classification label names of the video.</p>
 <p>The visualization video is as follows:</p>
 <p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/refs/heads/main/images/modules/video_classification/general_video_classification_001.jpg" alt="Visualization Image"></p>
-<p>Note: Due to network issues, the above URL may not be accessible. If you need to access the content of this link, please check the validity of the link and try again. If you encounter any problems, it might be related to the link itself or the network connection.</p>
 <p>The Python script above performs the following steps:
 * <code>create_model</code> instantiates a video classification model (here using <code>PP-TSMv2-LCNetV2_8frames_uniform</code> as an example), with specific explanations as follows:</p>
 <table>
@@ -5250,6 +5293,13 @@ PP-TSM is a video classification model developed by Baidu PaddlePaddle's Vision 
 <td><code>str</code></td>
 <td>None</td>
 <td>None</td>
+</tr>
+<tr>
+<td><code> topk</code></td>
+<td>The top `topk` categories and corresponding classification probabilities of the prediction result；if not specified, the default configuration of the PaddleX official model will be used</td>
+<td><code>int</code></td>
+<td>None</td>
+<td><code>1</code></td>
 </tr>
 </table>
 
@@ -5401,42 +5451,44 @@ PP-TSM is a video classification model developed by Baidu PaddlePaddle's Vision 
 After executing the above command, PaddleX will validate the dataset and summarize its basic information. If the command runs successfully, it will print <code>Check dataset passed !</code> in the log. The validation results file is saved in <code>./output/check_dataset_result.json</code>, and related outputs are saved in the <code>./output/check_dataset</code> directory in the current directory, including visual examples of sample images and sample distribution histograms.</p>
 <details><summary>👉 <b>Validation Results Details (Click to Expand)</b></summary>
 
-<pre><code class="language-bash">{ "done_flag": true,
+<pre><code class="language-bash">
+{
+  "done_flag": true,
   "check_pass": true,
   "attributes": {
-    "label_file": "../../dataset/k400_examples/label.txt",
+    "label_file": "..\/..\/dataset\/k400_examples\/label.txt",
     "num_classes": 5,
     "train_samples": 250,
     "train_sample_paths": [
-      "check_dataset/../../dataset/k400_examples/videos/Wary2ON3aSo_000079_000089.mp4",
-      "check_dataset/../../dataset/k400_examples/videos/_LHpfh0rXjk_000012_000022.mp4",
-      "check_dataset/../../dataset/k400_examples/videos/dyoiNbn80q0_000039_000049.mp4",
-      "check_dataset/../../dataset/k400_examples/videos/brBw6cFwock_000049_000059.mp4",
-      "check_dataset/../../dataset/k400_examples/videos/-o4X5Z_Isyc_000085_000095.mp4",
-      "check_dataset/../../dataset/k400_examples/videos/e24p-4W3TiU_000011_000021.mp4",
-      "check_dataset/../../dataset/k400_examples/videos/2Grg_zwmYZE_000004_000014.mp4",
-      "check_dataset/../../dataset/k400_examples/videos/aZY_0UqRNgA_000098_000108.mp4",
-      "check_dataset/../../dataset/k400_examples/videos/WZlsi4nQHOo_000025_000035.mp4",
-      "check_dataset/../../dataset/k400_examples/videos/rRh-lkFj4Tw_000001_000011.mp4"
+      "check_dataset\/..\/..\/dataset\/k400_examples\/videos\/Wary2ON3aSo_000079_000089.mp4",
+      "check_dataset\/..\/..\/dataset\/k400_examples\/videos\/_LHpfh0rXjk_000012_000022.mp4",
+      "check_dataset\/..\/..\/dataset\/k400_examples\/videos\/dyoiNbn80q0_000039_000049.mp4",
+      "check_dataset\/..\/..\/dataset\/k400_examples\/videos\/brBw6cFwock_000049_000059.mp4",
+      "check_dataset\/..\/..\/dataset\/k400_examples\/videos\/-o4X5Z_Isyc_000085_000095.mp4",
+      "check_dataset\/..\/..\/dataset\/k400_examples\/videos\/e24p-4W3TiU_000011_000021.mp4",
+      "check_dataset\/..\/..\/dataset\/k400_examples\/videos\/2Grg_zwmYZE_000004_000014.mp4",
+      "check_dataset\/..\/..\/dataset\/k400_examples\/videos\/aZY_0UqRNgA_000098_000108.mp4",
+      "check_dataset\/..\/..\/dataset\/k400_examples\/videos\/WZlsi4nQHOo_000025_000035.mp4",
+      "check_dataset\/..\/..\/dataset\/k400_examples\/videos\/rRh-lkFj4Tw_000001_000011.mp4"
     ],
     "val_samples": 50,
     "val_sample_paths": [
-      "check_dataset/../../dataset/k400_examples/videos/7Mga5kywfU4.mp4",
-      "check_dataset/../../dataset/k400_examples/videos/w5UCdQ2NmfY.mp4",
-      "check_dataset/../../dataset/k400_examples/videos/Qbo_tnzfjOY.mp4",
-      "check_dataset/../../dataset/k400_examples/videos/LgW8pMDtylE.mkv",
-      "check_dataset/../../dataset/k400_examples/videos/BY0883Dvt1c.mp4",
-      "check_dataset/../../dataset/k400_examples/videos/PHQkMPu-KNo.mp4",
-      "check_dataset/../../dataset/k400_examples/videos/7LSJ2Ryv1a8.mp4",
-      "check_dataset/../../dataset/k400_examples/videos/oBYZWvlI8Uk.mp4",
-      "check_dataset/../../dataset/k400_examples/videos/dpn2eg9O3Rs.mkv",
-      "check_dataset/../../dataset/k400_examples/videos/hXtsZAaZ3yc.mkv"
+      "check_dataset\/..\/..\/dataset\/k400_examples\/videos\/7Mga5kywfU4.mp4",
+      "check_dataset\/..\/..\/dataset\/k400_examples\/videos\/w5UCdQ2NmfY.mp4",
+      "check_dataset\/..\/..\/dataset\/k400_examples\/videos\/Qbo_tnzfjOY.mp4",
+      "check_dataset\/..\/..\/dataset\/k400_examples\/videos\/LgW8pMDtylE.mkv",
+      "check_dataset\/..\/..\/dataset\/k400_examples\/videos\/BY0883Dvt1c.mp4",
+      "check_dataset\/..\/..\/dataset\/k400_examples\/videos\/PHQkMPu-KNo.mp4",
+      "check_dataset\/..\/..\/dataset\/k400_examples\/videos\/7LSJ2Ryv1a8.mp4",
+      "check_dataset\/..\/..\/dataset\/k400_examples\/videos\/oBYZWvlI8Uk.mp4",
+      "check_dataset\/..\/..\/dataset\/k400_examples\/videos\/dpn2eg9O3Rs.mkv",
+      "check_dataset\/..\/..\/dataset\/k400_examples\/videos\/hXtsZAaZ3yc.mkv"
     ]
   },
   "analysis": {
-    "histogram": "check_dataset/histogram.png"
+    "histogram": "check_dataset\/histogram.png"
   },
-  "dataset_path": "./dataset/k400_examples",
+  "dataset_path": "k400_examples",
   "show_type": "video",
   "dataset_type": "VideoClsDataset"
 }
@@ -5529,7 +5581,7 @@ Similar to model training, the following steps are required:</p>
 <ul>
 <li>Specify the path of the model's <code>.yaml</code> configuration file (here it is <code>PP-TSMv2-LCNetV2_8frames_uniform.yaml</code>)</li>
 <li>Specify the mode as model evaluation: <code>-o Global.mode=evaluate</code></li>
-<li>Specify the path of the validation dataset: <code>-o Global.dataset_dir</code>. Other related parameters can be set by modifying the fields under <code>Global</code> and <code>Evaluate</code> in the <code>.yaml</code> configuration. Other related parameters can be set by modifying the fields under <code>Global</code> and <code>Evaluate</code> in the <code>.yaml</code> configuration file. For details, please refer to <a href="../../instructions/config_parameters_common.html">PaddleX Common Model Configuration File Parameter Description</a>.</li>
+<li>Specify the path of the validation dataset: <code>-o Global.dataset_dir</code>.  Other related parameters can be set by modifying the fields under <code>Global</code> and <code>Evaluate</code> in the <code>.yaml</code> configuration file. For details, please refer to <a href="../../instructions/config_parameters_common.html">PaddleX Common Model Configuration File Parameter Description</a>.</li>
 </ul>
 <details><summary>👉 <b>More Details (Click to Expand)</b></summary>
 
@@ -5581,7 +5633,7 @@ Other related parameters can be set by modifying the fields under <code>Global</
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 6, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 14, 2025</span>
   </span>
 
     
@@ -5591,7 +5643,7 @@ Other related parameters can be set by modifying the fields under <code>Global</
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 6, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 14, 2025</span>
   </span>
 
     
@@ -5734,7 +5786,7 @@ Other related parameters can be set by modifying the fields under <code>Global</
     <script id="__config" type="application/json">{"base": "../../../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "navigation.expand", "navigation.path", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.f13b1293.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.f1b6f286.min.js"></script>
       
         <script src="../../../../javascripts/katex.min.js"></script>
       

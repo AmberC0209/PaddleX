@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../../../assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4">
     
     
       
@@ -26,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.d7758b05.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.8608ea7d.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
@@ -845,7 +845,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../information_extraction_pipelines/document_scene_information_extraction.html" class="md-nav__link">
+      <a href="../../../../pipeline_usage/tutorials/information_extraction_pipelines/document_scene_information_extraction.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5331,17 +5331,17 @@ You're not viewing the latest version.
 
 <h1 id="pedestrian-attribute-recognition-pipeline-tutorial">Pedestrian Attribute Recognition Pipeline Tutorial<a class="headerlink" href="#pedestrian-attribute-recognition-pipeline-tutorial" title="Permanent link">&para;</a></h1>
 <h2 id="1-introduction-to-pedestrian-attribute-recognition-pipeline">1. Introduction to Pedestrian Attribute Recognition Pipeline<a class="headerlink" href="#1-introduction-to-pedestrian-attribute-recognition-pipeline" title="Permanent link">&para;</a></h2>
-<p>Pedestrian attribute recognition is a key function in computer vision systems, used to locate and label specific characteristics of pedestrians in images or videos, such as gender, age, clothing color, and style. This task not only requires accurately detecting pedestrians but also identifying detailed attribute information for each pedestrian. The pedestrian attribute recognition pipeline is an end-to-end serial system for locating and recognizing pedestrian attributes, widely used in smart cities, security surveillance, and other fields, significantly enhancing the system's intelligence level and management efficiency.</p>
-<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/refs/heads/main/images/pipelines/pedestrian_attribute_recognition/01.jpg"></p>
-<p><b>The pedestrian attribute recognition pipeline includes a pedestrian detection module and a pedestrian attribute recognition module</b>, with several models in each module. Which models to use specifically can be selected based on the benchmark data below. <b>If you prioritize model accuracy, choose models with higher accuracy; if you prioritize inference speed, choose models with faster inference; if you prioritize model storage size, choose models with smaller storage</b>.</p>
+<p>Pedestrian attribute recognition is a key function in computer vision systems, used to locate and label specific characteristics of pedestrians in images or videos, such as gender, age, clothing color, and style. This task not only requires accurately detecting pedestrians but also identifying detailed attribute information for each pedestrian. The pedestrian attribute recognition pipeline is an end-to-end serial system for locating and recognizing pedestrian attributes, widely used in smart cities, security surveillance, and other fields, significantly enhancing the system's intelligence level and management efficiency.This pipeline also offers a flexible service-oriented deployment approach, supporting the use of multiple programming languages on various hardware platforms. Moreover, this pipeline provides the capability for secondary development. You can train and optimize models on your own dataset based on this pipeline, and the trained models can be seamlessly integrated.</p>
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/refs/heads/main/images/pipelines/pedestrian_attribute_recognition/01.jpg"/>
+<b>The pedestrian attribute recognition pipeline includes a pedestrian detection module and a pedestrian attribute recognition module</b>, with several models in each module. Which models to use specifically can be selected based on the benchmark data below. <b>If you prioritize model accuracy, choose models with higher accuracy; if you prioritize inference speed, choose models with faster inference; if you prioritize model storage size, choose models with smaller storage</b>.</p>
 <p><b>Pedestrian Detection Module</b>:</p>
 <table>
 <tr>
 <th>Model</th><th>Model Download Link</th>
 <th>mAP(0.5:0.95)</th>
 <th>mAP(0.5)</th>
-<th>GPU Inference Time (ms)</th>
-<th>CPU Inference Time (ms)</th>
+<th>CPU Inference Time (ms)<br/>[Normal Mode / High-Performance Mode]</th>
+<th>CPU Inference Time (ms)<br/>[Normal Mode / High-Performance Mode]</th>
 <th>Model Size (M)</th>
 <th>Description</th>
 </tr>
@@ -5349,8 +5349,8 @@ You're not viewing the latest version.
 <td>PP-YOLOE-L_human</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0rc0/PP-YOLOE-L_human_infer.tar">Inference Model</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/PP-YOLOE-L_human_pretrained.pdparams">Trained Model</a></td>
 <td>48.0</td>
 <td>81.9</td>
-<td>32.8</td>
-<td>777.7</td>
+<td>33.27 / 9.19</td>
+<td>173.72 / 173.72</td>
 <td>196.02</td>
 <td rowspan="2">Pedestrian detection model based on PP-YOLOE</td>
 </tr>
@@ -5358,21 +5358,19 @@ You're not viewing the latest version.
 <td>PP-YOLOE-S_human</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0rc0/PP-YOLOE-S_human_infer.tar">Inference Model</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/PP-YOLOE-S_human_pretrained.pdparams">Trained Model</a></td>
 <td>42.5</td>
 <td>77.9</td>
-<td>15.0</td>
-<td>179.3</td>
+<td>9.94 / 3.42</td>
+<td>54.48 / 46.52</td>
 <td>28.79</td>
 </tr>
 </table>
-
-<p><b>Note: The above accuracy metrics are mAP(0.5:0.95) on the CrowdHuman dataset. All model GPU inference times are based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speeds are based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b></p>
 <p><b>Pedestrian Attribute Recognition Module</b>:</p>
 <table>
 <thead>
 <tr>
 <th>Model</th><th>Model Download Link</th>
 <th>mAP (%)</th>
-<th>GPU Inference Time (ms)</th>
-<th>CPU Inference Time (ms)</th>
+<th>CPU Inference Time (ms)<br/>[Normal Mode / High-Performance Mode]</th>
+<th>CPU Inference Time (ms)<br/>[Normal Mode / High-Performance Mode]</th>
 <th>Model Size (M)</th>
 <th>Description</th>
 </tr>
@@ -5381,24 +5379,69 @@ You're not viewing the latest version.
 <tr>
 <td>PP-LCNet_x1_0_pedestrian_attribute</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0rc0/PP-LCNet_x1_0_pedestrian_attribute_infer.tar">Inference Model</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/PP-LCNet_x1_0_pedestrian_attribute_pretrained.pdparams">Trained Model</a></td>
 <td>92.2</td>
-<td>3.84845</td>
-<td>9.23735</td>
+<td>2.35 / 0.49</td>
+<td>3.17 / 1.25</td>
 <td>6.7 M</td>
 <td>PP-LCNet_x1_0_pedestrian_attribute is a lightweight pedestrian attribute recognition model based on PP-LCNet, covering 26 categories.</td>
 </tr>
 </tbody>
 </table>
-<p><b>Note: The above accuracy metrics are mA on PaddleX's internally built dataset. GPU inference times are based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speeds are based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b></p>
 
+<p><strong>Test Environment Description</strong>:</p>
+<ul>
+<li><strong>Performance Test Environment</strong></li>
+<li><strong>Test Dataset</strong>:<ul>
+<li>Pedestrian Detection Model: CrowdHuman Dataset.</li>
+<li>Pedestrian Attribute Recognition Model: PaddleX Internal Self-built Dataset.</li>
+</ul>
+</li>
+<li>
+<p><strong>Hardware Configuration</strong>:</p>
+<ul>
+<li>GPU: NVIDIA Tesla T4</li>
+<li>CPU: Intel Xeon Gold 6271C @ 2.60GHz</li>
+<li>Other Environments: Ubuntu 20.04 / cuDNN 8.6 / TensorRT 8.5.2.2</li>
+</ul>
+</li>
+<li>
+<p><strong>Inference Mode Description</strong></p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>GPU Configuration</th>
+<th>CPU Configuration</th>
+<th>Acceleration Technology Combination</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Regular Mode</td>
+<td>FP32 Precision / No TRT Acceleration</td>
+<td>FP32 Precision / 8 Threads</td>
+<td>PaddleInference</td>
+</tr>
+<tr>
+<td>High-Performance Mode</td>
+<td>Optimal combination of pre-selected precision types and acceleration strategies</td>
+<td>FP32 Precision / 8 Threads</td>
+<td>Pre-selected optimal backend (Paddle/OpenVINO/TRT, etc.)</td>
+</tr>
+</tbody>
+</table>
 <h2 id="2-quick-start">2. Quick Start<a class="headerlink" href="#2-quick-start" title="Permanent link">&para;</a></h2>
-<p>The model pipelines provided by PaddleX can be experienced locally using the command line or Python for pedestrian attribute recognition.</p>
+<p>All model pipelines provided by PaddleX can be quickly experienced. You can experience the effect of the pedestrian attribute recognition pipeline on the community platform, or you can use the command line or Python locally to experience the effect of the pedestrian attribute recognition pipeline.</p>
 <h3 id="21-online-experience">2.1 Online Experience<a class="headerlink" href="#21-online-experience" title="Permanent link">&para;</a></h3>
-<p>Online experience is not currently supported.</p>
+<p>You can <a href="https://aistudio.baidu.com/community/app/387978/webUI?source=appCenter">experience the pedestrian attribute recognition pipeline online</a> by recognizing the demo images provided by the official platform, for example:</p>
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/pedestrian_attribute_recognition/ped_attr_aistudio.png"/></p>
+<p>If you are satisfied with the performance of the pipeline, you can directly integrate and deploy it. You can choose to download the deployment package from the cloud, or refer to the methods in <a href="#22-local-experience">Section 2.2 Local Experience</a> for local deployment. If you are not satisfied with the effect, you can <b>fine-tune the models in the pipeline using your private data</b>. If you have local hardware resources for training, you can start training directly on your local machine; if not, the Star River Zero-Code platform provides a one-click training service. You don't need to write any code—just upload your data and start the training task with one click.</p>
 <h3 id="22-local-experience">2.2 Local Experience<a class="headerlink" href="#22-local-experience" title="Permanent link">&para;</a></h3>
 <p>Before using the pedestrian attribute recognition pipeline locally, please ensure that you have completed the installation of the PaddleX wheel package according to the <a href="../../../installation/installation.html">PaddleX Local Installation Guide</a>.</p>
 <h4 id="221-command-line-experience">2.2.1 Command Line Experience<a class="headerlink" href="#221-command-line-experience" title="Permanent link">&para;</a></h4>
 <p>You can quickly experience the pedestrian attribute recognition pipeline with a single command. Use <a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/pedestrian_attribute_002.jpg">the test image</a> and replace <code>--input</code> with your local path for prediction.</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>paddlex<span class="w"> </span>--pipeline<span class="w"> </span>pedestrian_attribute_recognition<span class="w"> </span>--input<span class="w"> </span>pedestrian_attribute_002.jpg<span class="w"> </span>--device<span class="w"> </span>gpu:0
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>paddlex<span class="w"> </span>--pipeline<span class="w"> </span>pedestrian_attribute_recognition<span class="w"> </span>--input<span class="w"> </span>pedestrian_attribute_002.jpg<span class="w"> </span>--device<span class="w"> </span>gpu:0<span class="w"> </span>--save_path<span class="w"> </span>./output/
 </span></code></pre></div>
 <p>The relevant parameter descriptions can be found in the parameter explanation section of <a href="#222-python脚本方式集成">2.2.2 Python Script Integration</a>.</p>
 <p>After running, the result will be printed to the terminal, as shown below:</p>
@@ -5406,7 +5449,7 @@ You're not viewing the latest version.
 </span></code></pre></div>
 <p>For the explanation of the running result parameters, you can refer to the result interpretation in <a href="#222-integration-via-python-script">Section 2.2.2 Integration via Python Script</a>.</p>
 <p>The visualization results are saved under <code>save_path</code>, and the visualization result is as follows:</p>
-<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/refs/heads/main/images/pipelines/pedestrian_attribute_recognition/01.jpg"></p>
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/refs/heads/main/images/pipelines/pedestrian_attribute_recognition/01.jpg"/></p>
 <h4 id="222-integration-via-python-script">2.2.2 Integration via Python Script<a class="headerlink" href="#222-integration-via-python-script" title="Permanent link">&para;</a></h4>
 <ul>
 <li>The above command line is for quick experience and viewing of results. Generally, in projects, integration through code is often required. You can complete the pipeline's fast inference with just a few lines of code. The inference code is as follows:</li>
@@ -5423,7 +5466,7 @@ You're not viewing the latest version.
 </span></code></pre></div>
 <p>The results obtained are the same as those from the command line method.</p>
 <p>In the above Python script, the following steps are executed:</p>
-<p>(1) The pedestrian attribute recognition production line object is instantiated via <code>create_pipeline()</code>. The specific parameter descriptions are as follows:</p>
+<p>(1) The pedestrian attribute recognition pipeline object is instantiated via <code>create_pipeline()</code>. The specific parameter descriptions are as follows:</p>
 <table>
 <thead>
 <tr>
@@ -5436,26 +5479,32 @@ You're not viewing the latest version.
 <tbody>
 <tr>
 <td><code>pipeline</code></td>
-<td>The name of the production line or the path to the production line configuration file. If it is the name of a production line, it must be supported by PaddleX.</td>
+<td>The name of the pipeline or the path to the pipeline configuration file. If it is the name of a pipeline, it must be supported by PaddleX.</td>
 <td><code>str</code></td>
 <td>None</td>
 </tr>
 <tr>
+<td><code>config</code></td>
+<td>Specific configuration information for the pipeline (if set simultaneously with <code>pipeline</code>, it has higher priority than <code>pipeline</code>, and the pipeline name must be consistent with <code>pipeline</code>).</td>
+<td><code>dict[str, Any]</code></td>
+<td><code>None</code></td>
+</tr>
+<tr>
 <td><code>device</code></td>
-<td>The device used for production line inference. It supports specifying the specific card number of GPUs, such as "gpu:0", other hardware card numbers, such as "npu:0", and CPUs, such as "cpu".</td>
+<td>The device used for pipeline inference. It supports specifying the specific card number of GPUs, such as "gpu:0", other hardware card numbers, such as "npu:0", and CPUs, such as "cpu".</td>
 <td><code>str</code></td>
 <td><code>gpu:0</code></td>
 </tr>
 <tr>
 <td><code>use_hpip</code></td>
-<td>Whether to enable high-performance inference. This is only available if the production line supports high-performance inference.</td>
+<td>Whether to enable high-performance inference. This is only available if the pipeline supports high-performance inference.</td>
 <td><code>bool</code></td>
 <td><code>False</code></td>
 </tr>
 </tbody>
 </table>
 
-<p>(2) The <code>predict()</code> method of the pedestrian attribute recognition production line object is called to perform inference prediction. This method returns a <code>generator</code>. Below are the parameters and their descriptions for the <code>predict()</code> method:</p>
+<p>(2) The <code>predict()</code> method of the pedestrian attribute recognition pipeline object is called to perform inference prediction. This method returns a <code>generator</code>. Below are the parameters and their descriptions for the <code>predict()</code> method:</p>
 <table>
 <thead>
 <tr>
@@ -5472,26 +5521,26 @@ You're not viewing the latest version.
 <td><code>Python Var|str|list</code></td>
 <td>
 <ul>
-  <li><b>Python Var</b>: Image data represented by <code>numpy.ndarray</code>.</li>
-  <li><b>str</b>: Local path of the image file, such as <code>/root/data/img.jpg</code>; <b>URL link</b>, such as the network URL of the image file: <a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/pedestrian_attribute_002.jpg">Example</a>; <b>Local directory</b>, which should contain images to be predicted, such as <code>/root/data/</code>.</li>
-  <li><b>List</b>: Elements of the list must be of the above types, such as <code>[numpy.ndarray, numpy.ndarray]</code>, <code>["/root/data/img1.jpg", "/root/data/img2.jpg"]</code>, <code>["/root/data1", "/root/data2"]</code>.</li>
+<li><b>Python Var</b>: Image data represented by <code>numpy.ndarray</code>.</li>
+<li><b>str</b>: Local path of the image file, such as <code>/root/data/img.jpg</code>; <b>URL link</b>, such as the network URL of the image file: <a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/pedestrian_attribute_002.jpg">Example</a>; <b>Local directory</b>, which should contain images to be predicted, such as <code>/root/data/</code>.</li>
+<li><b>List</b>: Elements of the list must be of the above types, such as <code>[numpy.ndarray, numpy.ndarray]</code>, <code>["/root/data/img1.jpg", "/root/data/img2.jpg"]</code>, <code>["/root/data1", "/root/data2"]</code>.</li>
 </ul>
 </td>
 <td><code>None</code></td>
 </tr>
 <tr>
 <td><code>device</code></td>
-<td>The device used for production line inference.</td>
+<td>The device used for pipeline inference.</td>
 <td><code>str|None</code></td>
 <td>
 <ul>
-  <li><b>CPU</b>: Use CPU for inference, such as <code>cpu</code>.</li>
-  <li><b>GPU</b>: Use the specified GPU for inference, such as <code>gpu:0</code> for the first GPU.</li>
-  <li><b>NPU</b>: Use the specified NPU for inference, such as <code>npu:0</code> for the first NPU.</li>
-  <li><b>XPU</b>: Use the specified XPU for inference, such as <code>xpu:0</code> for the first XPU.</li>
-  <li><b>MLU</b>: Use the specified MLU for inference, such as <code>mlu:0</code> for the first MLU.</li>
-  <li><b>DCU</b>: Use the specified DCU for inference, such as <code>dcu:0</code> for the first DCU.</li>
-  <li><b>None</b>: If set to <code>None</code>, the default value from the production line initialization will be used. During initialization, it will prioritize the local GPU device 0; if unavailable, it will use the CPU.</li>
+<li><b>CPU</b>: Use CPU for inference, such as <code>cpu</code>.</li>
+<li><b>GPU</b>: Use the specified GPU for inference, such as <code>gpu:0</code> for the first GPU.</li>
+<li><b>NPU</b>: Use the specified NPU for inference, such as <code>npu:0</code> for the first NPU.</li>
+<li><b>XPU</b>: Use the specified XPU for inference, such as <code>xpu:0</code> for the first XPU.</li>
+<li><b>MLU</b>: Use the specified MLU for inference, such as <code>mlu:0</code> for the first MLU.</li>
+<li><b>DCU</b>: Use the specified DCU for inference, such as <code>dcu:0</code> for the first DCU.</li>
+<li><b>None</b>: If set to <code>None</code>, the default value from the pipeline initialization will be used. During initialization, it will prioritize the local GPU device 0; if unavailable, it will use the CPU.</li>
 </ul>
 </td>
 <td><code>None</code></td>
@@ -5502,8 +5551,8 @@ You're not viewing the latest version.
 <td><code>float | None</code></td>
 <td>
 <ul>
-  <li><b>float</b>: For example, <code>0.5</code>, which means filtering out all bounding boxes with a score less than <code>0.5</code>.</li>
-  <li><b>None</b>: If set to <code>None</code>, the default value from the production line initialization will be used, initialized to <code>0.5</code>.</li>
+<li><b>float</b>: For example, <code>0.5</code>, which means filtering out all bounding boxes with a score less than <code>0.5</code>.</li>
+<li><b>None</b>: If set to <code>None</code>, the default value from the pipeline initialization will be used, initialized to <code>0.5</code>.</li>
 </ul>
 </td>
 <td><code>0.5</code></td>
@@ -5514,10 +5563,10 @@ You're not viewing the latest version.
 <td><code>float | dict | list | None</code></td>
 <td>
 <ul>
-  <li><b>float</b>: A uniform threshold for attribute recognition.</li>
-  <li><b>list</b>: For example, <code>[0.5, 0.45, 0.48, 0.4]</code>, which means different thresholds for different classes in the order of <code>label list</code>.</li>
-  <li><b>dict</b>: The key is <code>default</code> or <code>int</code> type, and the value is a <code>float</code> threshold. For example, <code>{"default": 0.5, 0: 0.45, 2: 0.48, 7: 0.4}</code>. <code>default</code> represents the uniform threshold for multi-label classification, while other <code>int</code> types apply specific thresholds to classes with cls_id 0, 2, and 7.</li>
-  <li><b>None</b>: If set to <code>None</code>, the default value from the production line initialization will be used, initialized to <code>0.7</code>.</li>
+<li><b>float</b>: A uniform threshold for attribute recognition.</li>
+<li><b>list</b>: For example, <code>[0.5, 0.45, 0.48, 0.4]</code>, which means different thresholds for different classes in the order of <code>label list</code>.</li>
+<li><b>dict</b>: The key is <code>default</code> or <code>int</code> type, and the value is a <code>float</code> threshold. For example, <code>{"default": 0.5, 0: 0.45, 2: 0.48, 7: 0.4}</code>. <code>default</code> represents the uniform threshold for multi-label classification, while other <code>int</code> types apply specific thresholds to classes with cls_id 0, 2, and 7.</li>
+<li><b>None</b>: If set to <code>None</code>, the default value from the pipeline initialization will be used, initialized to <code>0.7</code>.</li>
 </ul>
 </td>
 <td><code>0.7</code></td>
@@ -5537,8 +5586,8 @@ You're not viewing the latest version.
 </tr>
 </thead>
 <tr>
-<td rowspan = "3"><code>print()</code></td>
-<td rowspan = "3">Print the result to the terminal</td>
+<td rowspan="3"><code>print()</code></td>
+<td rowspan="3">Print the result to the terminal</td>
 <td><code>format_json</code></td>
 <td><code>bool</code></td>
 <td>Whether to format the output content using <code>JSON</code> indentation</td>
@@ -5557,8 +5606,8 @@ You're not viewing the latest version.
 <td><code>False</code></td>
 </tr>
 <tr>
-<td rowspan = "3"><code>save_to_json()</code></td>
-<td rowspan = "3">Save the result as a JSON file</td>
+<td rowspan="3"><code>save_to_json()</code></td>
+<td rowspan="3">Save the result as a JSON file</td>
 <td><code>save_path</code></td>
 <td><code>str</code></td>
 <td>The path to save the file. If it is a directory, the saved file will have the same name as the input file</td>
@@ -5591,6 +5640,7 @@ You're not viewing the latest version.
 <p>Calling the <code>print()</code> method will print the result to the terminal, and the content printed to the terminal is explained as follows:</p>
 <ul>
 <li><code>input_path</code>: <code>(str)</code> The input path of the image to be predicted.</li>
+<li><code>page_index</code>: <code>(Union[int, None])</code> If the input is a PDF file, it indicates the current page number of the PDF; otherwise, it is <code>None</code>.</li>
 <li><code>boxes</code>: <code>(List[Dict])</code> Indicates the category ID of the prediction result.</li>
 <li><code>labels</code>: <code>(List[str])</code> Indicates the category name of the prediction result.</li>
 <li><code>cls_scores</code>: <code>(List[numpy.ndarray])</code> Indicates the confidence of the attribute prediction result.</li>
@@ -5598,10 +5648,10 @@ You're not viewing the latest version.
 </ul>
 </li>
 <li>
-<p>Calling the <code>save_to_json()</code> method will save the above content to the specified <code>save_path</code>. If a directory is specified, the saved path will be <code>save_path/{your_img_basename}.json</code>. If a file is specified, it will be saved directly to that file. Since JSON files do not support saving numpy arrays, the <code>numpy.array</code> type will be converted to a list format.</p>
+<p>Calling the <code>save_to_json()</code> method will save the above content to the specified <code>save_path</code>. If a directory is specified, the saved path will be <code>save_path/{your_img_basename}_res.json</code>. If a file is specified, it will be saved directly to that file. Since JSON files do not support saving numpy arrays, the <code>numpy.array</code> type will be converted to a list format.</p>
 </li>
 <li>
-<p>Calling the <code>save_to_img()</code> method will save the visualization result to the specified <code>save_path</code>. If a directory is specified, the saved path will be <code>save_path/{your_img_basename}_res.{your_img_extension}</code>. If a file is specified, it will be saved directly to that file. (The production line usually contains many result images, so it is not recommended to specify a specific file path directly, otherwise multiple images will be overwritten, and only the last image will be retained.)</p>
+<p>Calling the <code>save_to_img()</code> method will save the visualization result to the specified <code>save_path</code>. If a directory is specified, the saved path will be <code>save_path/{your_img_basename}_res.{your_img_extension}</code>. If a file is specified, it will be saved directly to that file. (The pipeline usually contains many result images, so it is not recommended to specify a specific file path directly, otherwise multiple images will be overwritten, and only the last image will be retained.)</p>
 </li>
 <li>
 <p>Additionally, it also supports obtaining visualized images with results and prediction results through attributes, as follows:</p>
@@ -5631,7 +5681,7 @@ You're not viewing the latest version.
 <p>Additionally, you can obtain the pedestrian attribute recognition pipeline configuration file and load the configuration file for prediction. You can execute the following command to save the result in <code>my_path</code>:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>paddlex<span class="w"> </span>--get_pipeline_config<span class="w"> </span>pedestrian_attribute_recognition<span class="w"> </span>--save_path<span class="w"> </span>./my_path
 </span></code></pre></div>
-<p>If you have obtained the configuration file, you can customize the settings for the OCR pipeline. Simply modify the <code>pipeline</code> parameter value in the <code>create_pipeline</code> method to the path of the pipeline configuration file. An example is as follows:</p>
+<p>If you have obtained the configuration file, you can customize the settings for the pedestrian attribute recognition pipeline by simply modifying the value of the <code>pipeline</code> parameter in the <code>create_pipeline</code> method to the path of the pipeline configuration file. The example is as follows:</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">paddlex</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_pipeline</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">pipeline</span> <span class="o">=</span> <span class="n">create_pipeline</span><span class="p">(</span><span class="n">pipeline</span><span class="o">=</span><span class="s2">&quot;./my_path/pedestrian_attribute_recognition.yaml&quot;</span><span class="p">)</span>
@@ -5644,16 +5694,15 @@ You're not viewing the latest version.
 </span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>    <span class="n">res</span><span class="o">.</span><span class="n">save_to_img</span><span class="p">(</span><span class="s2">&quot;./output/&quot;</span><span class="p">)</span>
 </span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>    <span class="n">res</span><span class="o">.</span><span class="n">save_to_json</span><span class="p">(</span><span class="s2">&quot;./output/&quot;</span><span class="p">)</span>
 </span></code></pre></div>
-<p><b>Note:</b> The parameters in the configuration file are the initialization parameters for the production line. If you wish to change the initialization parameters for the pedestrian attribute recognition production line, you can directly modify the parameters in the configuration file and load the configuration file for prediction. Additionally, CLI prediction also supports passing in a configuration file, simply specify the path to the configuration file with <code>--pipeline</code>.</p>
+<p><b>Note:</b> The parameters in the configuration file are the initialization parameters for the pipeline. If you wish to change the initialization parameters for the pedestrian attribute recognition pipeline, you can directly modify the parameters in the configuration file and load the configuration file for prediction. Additionally, CLI prediction also supports passing in a configuration file, simply specify the path to the configuration file with <code>--pipeline</code>.</p>
 <h2 id="3-development-integrationdeployment">3. Development Integration/Deployment<a class="headerlink" href="#3-development-integrationdeployment" title="Permanent link">&para;</a></h2>
-<p>If the production line meets your requirements for inference speed and accuracy, you can proceed directly with development integration/deployment.</p>
-<p>If you need to integrate the production line directly into your Python project, you can refer to the example code in <a href="#222-python脚本方式集成">2.2.2 Python Script Integration</a>.</p>
+<p>If the pipeline meets your requirements for inference speed and accuracy, you can proceed directly with development integration/deployment.</p>
+<p>If you need to integrate the pipeline directly into your Python project, you can refer to the example code in <a href="#222-python脚本方式集成">2.2.2 Python Script Integration</a>.</p>
 <p>In addition, PaddleX also provides three other deployment methods, which are detailed as follows:</p>
 <p>🚀 <b>High-Performance Inference</b>: In practical production environments, many applications have strict performance requirements for deployment strategies, especially in terms of response speed, to ensure the efficient operation of the system and a smooth user experience. To this end, PaddleX provides a high-performance inference plugin, which aims to deeply optimize the performance of model inference and pre/post-processing to significantly speed up the end-to-end process. For detailed information on high-performance inference, please refer to the <a href="../../../pipeline_deploy/high_performance_inference.html">PaddleX High-Performance Inference Guide</a>.</p>
-<p>☁️ <b>Service-Oriented Deployment</b>: Service-oriented deployment is a common form of deployment in practical production environments. By encapsulating the inference functionality into a service, clients can access these services via network requests to obtain inference results. PaddleX supports multiple service-oriented deployment solutions for production lines. For detailed information on service-oriented deployment, please refer to the <a href="../../../pipeline_deploy/serving.html">PaddleX Service-Oriented Deployment Guide</a>.</p>
+<p>☁️ <b>Service-Oriented Deployment</b>: Service-oriented deployment is a common form of deployment in practical production environments. By encapsulating the inference functionality into a service, clients can access these services via network requests to obtain inference results. PaddleX supports multiple service-oriented deployment solutions for pipelines. For detailed information on service-oriented deployment, please refer to the <a href="../../../pipeline_deploy/serving.html">PaddleX Service-Oriented Deployment Guide</a>.</p>
 <p>Below are the API references for basic service-oriented deployment and examples of multi-language service calls:</p>
 <details><summary>API Reference</summary>
-
 <p>For the main operations provided by the service:</p>
 <ul>
 <li>The HTTP request method is POST.</li>
@@ -5745,6 +5794,18 @@ You're not viewing the latest version.
 <td>The URL of an image file accessible by the server or the Base64-encoded content of an image file.</td>
 <td>Yes</td>
 </tr>
+<tr>
+<td><code>detThreshold</code></td>
+<td><code>number</code> | <code>null</code></td>
+<td>Refer to the <code>det_threshold</code> parameter description in the pipeline <code>predict</code> method.</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>clsThreshold</code></td>
+<td><code>number</code> | <code>array</code> | <code>object</code> | <code>null</code></td>
+<td>Refer to the <code>cls_threshold</code> parameter description in the pipeline <code>predict</code> method.</td>
+<td>No</td>
+</tr>
 </tbody>
 </table>
 <ul>
@@ -5766,7 +5827,7 @@ You're not viewing the latest version.
 </tr>
 <tr>
 <td><code>image</code></td>
-<td><code>string</code></td>
+<td><code>string</code>| <code>null</code></td>
 <td>The result image of pedestrian attribute recognition. The image is in JPEG format and is Base64-encoded.</td>
 </tr>
 </tbody>
@@ -5821,12 +5882,9 @@ You're not viewing the latest version.
 </tbody>
 </table>
 </details>
-
 <details><summary>Multi-Language Service Call Examples</summary>
-
 <details>
 <summary>Python</summary>
-
 <pre><code class="language-python">import base64
 import requests
 
@@ -5861,55 +5919,55 @@ print(result["pedestrians"])
 <h3 id="41-model-fine-tuning">4.1 Model Fine-Tuning<a class="headerlink" href="#41-model-fine-tuning" title="Permanent link">&para;</a></h3>
 <p>Since the pedestrian attribute recognition pipeline includes both a pedestrian attribute recognition module and a pedestrian detection module, if the pipeline's performance does not meet expectations, the issue may stem from either module. You can analyze the images with poor recognition results to determine which module is problematic and refer to the corresponding fine-tuning tutorial links in the table below for model fine-tuning.</p>
 <table>
-  <thead>
-    <tr>
-      <th>Scenario</th>
-      <th>Fine-Tuning Module</th>
-      <th>Fine-Tuning Reference Link</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Inaccurate pedestrian detection</td>
-      <td>Pedestrian Detection Module</td>
-      <td><a href="../../../module_usage/tutorials/cv_modules/human_detection.en.md">Link</a></td>
-    </tr>
-    <tr>
-      <td>Inaccurate attribute recognition</td>
-      <td>Pedestrian Attribute Recognition Module</td>
-      <td><a href="../../../module_usage/tutorials/cv_modules/pedestrian_attribute_recognition.en.md">Link</a></td>
-    </tr>
-  </tbody>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Fine-Tuning Module</th>
+<th>Fine-Tuning Reference Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Inaccurate pedestrian detection</td>
+<td>Pedestrian Detection Module</td>
+<td><a href="../../../module_usage/tutorials/cv_modules/human_detection.en.md">Link</a></td>
+</tr>
+<tr>
+<td>Inaccurate attribute recognition</td>
+<td>Pedestrian Attribute Recognition Module</td>
+<td><a href="../../../module_usage/tutorials/cv_modules/pedestrian_attribute_recognition.en.md">Link</a></td>
+</tr>
+</tbody>
 </table>
 
 <h3 id="42-model-application">4.2 Model Application<a class="headerlink" href="#42-model-application" title="Permanent link">&para;</a></h3>
 <p>After you complete fine-tuning with your private dataset, you will obtain a local model weight file.</p>
-<p>If you need to use the fine-tuned model weights, simply modify the production line configuration file by replacing the local path of the fine-tuned model weights to the corresponding position in the file:</p>
+<p>If you need to use the fine-tuned model weights, simply modify the pipeline configuration file by replacing the local path of the fine-tuned model weights to the corresponding position in the file:</p>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">pipeline_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pedestrian_attribute_recognition</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
 </span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nt">SubModules</span><span class="p">:</span>
 </span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span><span class="nt">Detection</span><span class="p">:</span>
 </span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="nt">module_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">object_detection</span>
 </span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="nt">model_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PP-YOLOE-L_human</span>
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span><span class="nt">model_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span><span class="nt">model_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w"> </span><span class="c1"># Replace with the path to the fine-tuned pedestrian detection model weights</span>
 </span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">    </span><span class="nt">batch_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
 </span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">    </span><span class="nt">threshold</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.5</span>
 </span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">  </span><span class="nt">Classification</span><span class="p">:</span>
 </span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">    </span><span class="nt">module_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">multilabel_classification</span>
 </span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">    </span><span class="nt">model_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PP-LCNet_x1_0_pedestrian_attribute</span>
-</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">    </span><span class="nt">model_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">    </span><span class="nt">model_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w"> </span><span class="c1"># Replace with the path to the fine-tuned pedestrian attribute recognition model weights</span>
 </span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">    </span><span class="nt">batch_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
 </span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">    </span><span class="nt">threshold</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.7</span>
 </span></code></pre></div>
-<p>Subsequently, refer to the command line method or Python script method in the local experience section to load the modified production line configuration file.</p>
+<p>Subsequently, refer to the command line method or Python script method in the local experience section to load the modified pipeline configuration file.</p>
 <h2 id="5-multi-hardware-support">5. Multi-Hardware Support<a class="headerlink" href="#5-multi-hardware-support" title="Permanent link">&para;</a></h2>
 <p>PaddleX supports a variety of mainstream hardware devices, including NVIDIA GPU, Kunlunxin XPU, Ascend NPU, and Cambricon MLU. <b>Simply modify the --device parameter</b> to seamlessly switch between different hardware devices.
-For example, if you are using Ascend NPU for inference in the pedestrian attribute recognition production line, the Python command you would use is:</p>
+For example, if you are using Ascend NPU for inference in the pedestrian attribute recognition pipeline, the Python command you would use is:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>paddlex<span class="w"> </span>--pipeline<span class="w"> </span>pedestrian_attribute_recognition<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">        </span>--input<span class="w"> </span>pedestrian_attribute_002.jpg<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">        </span>--device<span class="w"> </span>npu:0
 </span></code></pre></div>
-<p>If you want to use the general OCR production line on a wider range of hardware devices, please refer to the <a href="../../../other_devices_support/multi_devices_use_guide.html">PaddleX Multi-Hardware Usage Guide</a>.</p>
+<p>If you want to use the general Pedestrian Attribute Recognition pipeline on a wider range of hardware devices, please refer to the <a href="../../../other_devices_support/multi_devices_use_guide.html">PaddleX Multi-Hardware Usage Guide</a>.</p>
 
 
 
@@ -5932,7 +5990,7 @@ For example, if you are using Ascend NPU for inference in the pedestrian attribu
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 6, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 14, 2025</span>
   </span>
 
     
@@ -5942,7 +6000,7 @@ For example, if you are using Ascend NPU for inference in the pedestrian attribu
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 6, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 14, 2025</span>
   </span>
 
     
@@ -6123,7 +6181,7 @@ For example, if you are using Ascend NPU for inference in the pedestrian attribu
     <script id="__config" type="application/json">{"base": "../../../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "navigation.expand", "navigation.path", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.f13b1293.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.f1b6f286.min.js"></script>
       
         <script src="../../../../javascripts/katex.min.js"></script>
       

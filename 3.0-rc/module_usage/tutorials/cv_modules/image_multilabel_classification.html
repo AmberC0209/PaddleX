@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../../assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4">
     
     
       
@@ -26,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.d7758b05.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8608ea7d.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
@@ -841,7 +841,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../pipeline_usage/tutorials/information_extraction_pipelines/document_scene_information_extraction.html" class="md-nav__link">
+      <a href="../../../pipeline_usage/tutorials/information_extraction_pipelines/document_scene_information_extraction.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5393,46 +5393,99 @@ You're not viewing the latest version.
 <tr>
 <th>模型</th><th>模型下载链接</th>
 <th>mAP(%)</th>
+<th>GPU推理耗时（ms）<br/>[常规模式 / 高性能模式]</th>
+<th>CPU推理耗时（ms）<br/>[常规模式 / 高性能模式]</th>
 <th>模型存储大小 (M)</th>
 <th>介绍</th>
 </tr>
 <tr>
 <td>CLIP_vit_base_patch16_448_ML</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0rc0/CLIP_vit_base_patch16_448_ML_infer.tar">推理模型</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/CLIP_vit_base_patch16_448_ML_pretrained.pdparams">训练模型</a></td>
 <td>89.15</td>
+<td>54.75 / 14.30</td>
+<td>280.23 / 280.23</td>
 <td>325.6 M</td>
 <td>CLIP_ML是一种基于CLIP的图像多标签分类模型，通过结合ML-Decoder，显著提升了模型在图像多标签分类任务上的准确性。</td>
 </tr>
 <tr>
 <td>PP-HGNetV2-B0_ML</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0rc0/PP-HGNetV2-B0_ML_infer.tar">推理模型</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/PP-HGNetV2-B0_ML_pretrained.pdparams">训练模型</a></td>
 <td>80.98</td>
+<td>6.47 / 1.38</td>
+<td>21.56 / 13.69</td>
 <td>39.6 M</td>
 <td rowspan="3">PP-HGNetV2_ML是一种基于PP-HGNetV2的图像多标签分类模型，通过结合ML-Decoder，显著提升了模型在图像多标签分类任务上的准确性。</td>
 </tr>
 <tr>
 <td>PP-HGNetV2-B4_ML</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0rc0/PP-HGNetV2-B4_ML_infer.tar">推理模型</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/PP-HGNetV2-B4_ML_pretrained.pdparams">训练模型</a></td>
 <td>87.96</td>
+<td>9.63 / 2.79</td>
+<td>43.98 / 36.63</td>
 <td>88.5 M</td>
 </tr>
 <tr>
 <td>PP-HGNetV2-B6_ML</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0rc0/PP-HGNetV2-B6_ML_infer.tar">推理模型</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/PP-HGNetV2-B6_ML_pretrained.pdparams">训练模型</a></td>
 <td>91.25</td>
+<td>37.07 / 9.43</td>
+<td>188.58 / 188.58</td>
 <td>286.5 M</td>
 </tr>
 <tr>
 <td>PP-LCNet_x1_0_ML</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0rc0/PP-LCNet_x1_0_ML_infer.tar">推理模型</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/PP-LCNet_x1_0_ML_pretrained.pdparams">训练模型</a></td>
 <td>77.96</td>
+<td>4.04 / 1.15</td>
+<td>11.76 / 8.32</td>
 <td>29.4 M</td>
 <td>PP-LCNet_ML是一种基于PP-LCNet的图像多标签分类模型，通过结合ML-Decoder，显著提升了模型在图像多标签分类任务上的准确性。</td>
 </tr>
 <tr>
 <td>ResNet50_ML</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0rc0/ResNet50_ML_infer.tar">推理模型</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/ResNet50_ML_pretrained.pdparams">训练模型</a></td>
 <td>83.50</td>
+<td>12.12 / 3.27</td>
+<td>51.79 / 44.36</td>
 <td>108.9 M</td>
 <td>ResNet50_ML是一种基于ResNet50的图像多标签分类模型，通过结合ML-Decoder，显著提升了模型在图像多标签分类任务上的准确性。</td>
 </tr>
 </table>
 
-<p><b>注：以上精度指标为<a href="https://cocodataset.org/#home">COCO2017</a>的多标签分类任务mAP。</b></p>
+<p><strong>测试环境说明：</strong></p>
+<ul>
+<li><strong>性能测试环境</strong></li>
+<li><strong>测试数据集</strong>：<a href="https://cocodataset.org/#home">COCO2017</a>的多标签分类任务。</li>
+<li>
+<p><strong>硬件配置</strong>：</p>
+<ul>
+<li>GPU：NVIDIA Tesla T4</li>
+<li>CPU：Intel Xeon Gold 6271C @ 2.60GHz</li>
+<li>其他环境：Ubuntu 20.04 / cuDNN 8.6 / TensorRT 8.5.2.2</li>
+</ul>
+</li>
+<li>
+<p><strong>推理模式说明</strong></p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>模式</th>
+<th>GPU配置</th>
+<th>CPU配置</th>
+<th>加速技术组合</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>常规模式</td>
+<td>FP32精度 / 无TRT加速</td>
+<td>FP32精度 / 8线程</td>
+<td>PaddleInference</td>
+</tr>
+<tr>
+<td>高性能模式</td>
+<td>选择先验精度类型和加速策略的最优组合</td>
+<td>FP32精度 / 8线程</td>
+<td>选择先验最优后端（Paddle/OpenVINO/TRT等）</td>
+</tr>
+</tbody>
+</table>
 <h2 id="_4">三、快速集成<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>❗ 在快速集成前，请先安装 PaddleX 的 wheel 包，详细请参考 <a href="../../../installation/installation.html">PaddleX本地安装教程</a></p>
@@ -5451,11 +5504,12 @@ You're not viewing the latest version.
 </span></code></pre></div></p>
 <p>运行结果参数含义如下：
 - <code>input_path</code>：表示输入待预测多类别图像的路径
+- <code>page_index</code>：如果输入是PDF文件，则表示当前是PDF的第几页，否则为 <code>None</code>
 - <code>class_ids</code>：表示多类别图像的预测标签ID
 - <code>scores</code>：表示多类别图像的预测标签置信度
 - <code>label_names</code>：表示多类别图像的预测标签名称</p>
 <p>可视化图片如下：</p>
-<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/refs/heads/main/images/modules/image_multilabel_classification/multilabel_classification_005_result.png"></p>
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/refs/heads/main/images/modules/image_multilabel_classification/multilabel_classification_005_result.png"/></p>
 <p>相关方法、参数等说明如下：</p>
 <ul>
 <li><code>create_model</code>实例化多标签分类模型（此处以<code>PP-LCNet_x1_0_ML</code>为例），具体说明如下：</li>
@@ -5495,6 +5549,13 @@ You're not viewing the latest version.
 </td>
 <td>0.5</td>
 </tr>
+<tr>
+<td><code>use_hpip</code></td>
+<td>是否启用高性能推理</td>
+<td><code>bool</code></td>
+<td>无</td>
+<td><code>False</code></td>
+</tr>
 </table>
 
 <ul>
@@ -5521,15 +5582,14 @@ You're not viewing the latest version.
 <tr>
 <td><code>input</code></td>
 <td>待预测数据，支持多种输入类型</td>
-<td><code>Python Var</code>/<code>str</code>/<code>dict</code>/<code>list</code></td>
+<td><code>Python Var</code>/<code>str</code>/<code>list</code></td>
 <td>
 <ul>
-  <li><b>Python变量</b>，如<code>numpy.ndarray</code>表示的图像数据</li>
-  <li><b>文件路径</b>，如图像文件的本地路径：<code>/root/data/img.jpg</code></li>
-  <li><b>URL链接</b>，如图像文件的网络URL：<a href = "https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/multilabel_classification_005.png">示例</a></li>
-  <li><b>本地目录</b>，该目录下需包含待预测数据文件，如本地路径：<code>/root/data/</code></li>
-  <li><b>字典</b>，字典的<code>key</code>需与具体任务对应，如图像分类任务对应<code>\"img\"</code>，字典的<code>val</code>支持上述类型数据，例如：<code>{\"img\": \"/root/data1\"}</code></li>
-  <li><b>列表</b>，列表元素需为上述类型数据，如<code>[numpy.ndarray, numpy.ndarray]</code>，<code>[\"/root/data/img1.jpg\", \"/root/data/img2.jpg\"]</code>，<code>[\"/root/data1\", \"/root/data2\"]</code>，<code>[{\"img\": \"/root/data1\"}, {\"img\": \"/root/data2/img.jpg\"}]</code></li>
+<li><b>Python变量</b>，如<code>numpy.ndarray</code>表示的图像数据</li>
+<li><b>文件路径</b>，如图像文件的本地路径：<code>/root/data/img.jpg</code></li>
+<li><b>URL链接</b>，如图像文件的网络URL：<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/multilabel_classification_005.png">示例</a></li>
+<li><b>本地目录</b>，该目录下需包含待预测数据文件，如本地路径：<code>/root/data/</code></li>
+<li><b>列表</b>，列表元素需为上述类型数据，如<code>[numpy.ndarray, numpy.ndarray]</code>，<code>[\"/root/data/img1.jpg\", \"/root/data/img2.jpg\"]</code>，<code>[\"/root/data1\", \"/root/data2\"]</code></li>
 </ul>
 </td>
 <td>无</td>
@@ -5569,8 +5629,8 @@ You're not viewing the latest version.
 </tr>
 </thead>
 <tr>
-<td rowspan = "3"><code>print()</code></td>
-<td rowspan = "3">打印结果到终端</td>
+<td rowspan="3"><code>print()</code></td>
+<td rowspan="3">打印结果到终端</td>
 <td><code>format_json</code></td>
 <td><code>bool</code></td>
 <td>是否对输出内容进行使用 <code>JSON</code> 缩进格式化</td>
@@ -5589,8 +5649,8 @@ You're not viewing the latest version.
 <td><code>False</code></td>
 </tr>
 <tr>
-<td rowspan = "3"><code>save_to_json()</code></td>
-<td rowspan = "3">将结果保存为json格式的文件</td>
+<td rowspan="3"><code>save_to_json()</code></td>
+<td rowspan="3">将结果保存为json格式的文件</td>
 <td><code>save_path</code></td>
 <td><code>str</code></td>
 <td>保存的文件路径，当为目录时，保存文件命名与输入文件类型命名一致</td>
@@ -5629,14 +5689,13 @@ You're not viewing the latest version.
 </tr>
 </thead>
 <tr>
-<td rowspan = "1"><code>json</code></td>
-<td rowspan = "1">获取预测的<code>json</code>格式的结果</td>
+<td rowspan="1"><code>json</code></td>
+<td rowspan="1">获取预测的<code>json</code>格式的结果</td>
 </tr>
 <tr>
-<td rowspan = "1"><code>img</code></td>
-<td rowspan = "1">获取格式为<code>dict</code>的可视化图像</td>
+<td rowspan="1"><code>img</code></td>
+<td rowspan="1">获取格式为<code>dict</code>的可视化图像</td>
 </tr>
-
 </table>
 
 <p>关于更多 PaddleX 的单模型推理的 API 的使用方法，可以参考的使用方法，可以参考<a href="../../instructions/model_python_API.html">PaddleX单模型Python脚本使用说明</a>。</p>
@@ -5657,45 +5716,44 @@ You're not viewing the latest version.
 </span></code></pre></div>
 执行上述命令后，PaddleX 会对数据集进行校验，并统计数据集的基本信息，命令运行成功后会在 log 中打印出<code>Check dataset passed !</code>信息。校验结果文件保存在<code>./output/check_dataset_result.json</code>，同时相关产出会保存在当前目录的<code>./output/check_dataset</code>目录下，产出目录中包括可视化的示例样本图片和样本分布直方图。</p>
 <details><summary>👉 <b>校验结果详情（点击展开）</b></summary>
-
 <p>校验结果文件具体内容为：</p>
 <pre><code class="language-bash">{
-  &quot;done_flag&quot;: true,
-  &quot;check_pass&quot;: true,
-  &quot;attributes&quot;: {
-    &quot;label_file&quot;: &quot;../../dataset/mlcls_nus_examples/label.txt&quot;,
-    &quot;num_classes&quot;: 33,
-    &quot;train_samples&quot;: 17463,
-    &quot;train_sample_paths&quot;: [
-      &quot;check_dataset/demo_img/0543_4338693.jpg&quot;,
-      &quot;check_dataset/demo_img/0272_347806939.jpg&quot;,
-      &quot;check_dataset/demo_img/0069_2291994812.jpg&quot;,
-      &quot;check_dataset/demo_img/0012_1222850604.jpg&quot;,
-      &quot;check_dataset/demo_img/0238_53773041.jpg&quot;,
-      &quot;check_dataset/demo_img/0373_541261977.jpg&quot;,
-      &quot;check_dataset/demo_img/0567_519506868.jpg&quot;,
-      &quot;check_dataset/demo_img/0023_289621557.jpg&quot;,
-      &quot;check_dataset/demo_img/0581_484524659.jpg&quot;,
-      &quot;check_dataset/demo_img/0325_120753036.jpg&quot;
+  "done_flag": true,
+  "check_pass": true,
+  "attributes": {
+    "label_file": "../../dataset/mlcls_nus_examples/label.txt",
+    "num_classes": 33,
+    "train_samples": 17463,
+    "train_sample_paths": [
+      "check_dataset/demo_img/0543_4338693.jpg",
+      "check_dataset/demo_img/0272_347806939.jpg",
+      "check_dataset/demo_img/0069_2291994812.jpg",
+      "check_dataset/demo_img/0012_1222850604.jpg",
+      "check_dataset/demo_img/0238_53773041.jpg",
+      "check_dataset/demo_img/0373_541261977.jpg",
+      "check_dataset/demo_img/0567_519506868.jpg",
+      "check_dataset/demo_img/0023_289621557.jpg",
+      "check_dataset/demo_img/0581_484524659.jpg",
+      "check_dataset/demo_img/0325_120753036.jpg"
     ],
-    &quot;val_samples&quot;: 17463,
-    &quot;val_sample_paths&quot;: [
-      &quot;check_dataset/demo_img/0546_130758157.jpg&quot;,
-      &quot;check_dataset/demo_img/0284_2230710138.jpg&quot;,
-      &quot;check_dataset/demo_img/0090_1491261559.jpg&quot;,
-      &quot;check_dataset/demo_img/0013_392798436.jpg&quot;,
-      &quot;check_dataset/demo_img/0246_2248376356.jpg&quot;,
-      &quot;check_dataset/demo_img/0377_1349296474.jpg&quot;,
-      &quot;check_dataset/demo_img/0570_2457645006.jpg&quot;,
-      &quot;check_dataset/demo_img/0027_309333946.jpg&quot;,
-      &quot;check_dataset/demo_img/0584_132639537.jpg&quot;,
-      &quot;check_dataset/demo_img/0329_206031527.jpg&quot;
+    "val_samples": 17463,
+    "val_sample_paths": [
+      "check_dataset/demo_img/0546_130758157.jpg",
+      "check_dataset/demo_img/0284_2230710138.jpg",
+      "check_dataset/demo_img/0090_1491261559.jpg",
+      "check_dataset/demo_img/0013_392798436.jpg",
+      "check_dataset/demo_img/0246_2248376356.jpg",
+      "check_dataset/demo_img/0377_1349296474.jpg",
+      "check_dataset/demo_img/0570_2457645006.jpg",
+      "check_dataset/demo_img/0027_309333946.jpg",
+      "check_dataset/demo_img/0584_132639537.jpg",
+      "check_dataset/demo_img/0329_206031527.jpg"
     ]
   },
-  &quot;analysis&quot;: {
-    &quot;histogram&quot;: &quot;check_dataset/histogram.png&quot;
+  "analysis": {
+    "histogram": "check_dataset/histogram.png"
   },
-  &quot;dataset_path&quot;: &quot;./dataset/mlcls_nus_examples&quot;,
+  &quot;dataset_path&quot;: &quot;mlcls_nus_examples&quot;,
   &quot;show_type&quot;: &quot;image&quot;,
   &quot;dataset_type&quot;: &quot;MLClsDataset&quot;
 }
@@ -5709,12 +5767,11 @@ You're not viewing the latest version.
 <li><code>attributes.val_sample_paths</code>：该数据集验证集样本可视化图片相对路径列表；</li>
 </ul>
 <p>另外，数据集校验还对数据集中所有类别的样本数量分布情况进行了分析，并绘制了分布直方图（histogram.png）：</p>
-<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/modules/ml_classification/01.png"></p></details>
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/modules/ml_classification/01.png"/></p></details>
 
 <h4 id="413">4.1.3 数据集格式转换/数据集划分（可选）<a class="headerlink" href="#413" title="Permanent link">&para;</a></h4>
 <p>在您完成数据校验之后，可以通过<b>修改配置文件</b>或是<b>追加超参数</b>的方式对数据集的格式进行转换，也可以对数据集的训练/验证比例进行重新划分。</p>
 <details><summary>👉 <b>格式转换/数据集划分详情（点击展开）</b></summary>
-
 <p><b>（1）数据集格式转换</b></p>
 <p>图像多标签分类支持 <code>COCO</code>格式的数据集转换为 <code>MLClsDataset</code>格式，数据集格式转换的参数可以通过修改配置文件中 <code>CheckDataset</code> 下的字段进行设置，配置文件中部分参数的示例说明如下：</p>
 <ul>
@@ -5797,7 +5854,6 @@ CheckDataset:
 其他相关参数均可通过修改<code>.yaml</code>配置文件中的<code>Global</code>和<code>Train</code>下的字段来进行设置，也可以通过在命令行中追加参数来进行调整。如指定前 2 卡 gpu 训练：<code>-o Global.device=gpu:0,1</code>；设置训练轮次数为 10：<code>-o Train.epochs_iters=10</code>。更多可修改的参数及其详细解释，可以查阅模型对应任务模块的配置文件说明<a href="../../instructions/config_parameters_common.html">PaddleX通用模型配置文件参数说明</a>。</li>
 </ul>
 <details><summary>👉 <b>更多说明（点击展开）</b></summary>
-
 <ul>
 <li>模型训练过程中，PaddleX 会自动保存模型权重文件，默认为<code>output</code>，如需指定保存路径，可通过配置文件中 <code>-o Global.output</code> 字段进行设置。</li>
 <li>PaddleX 对您屏蔽了动态图权重和静态图权重的概念。在模型训练的过程中，会同时产出动态图和静态图的权重，在模型推理时，默认选择静态图权重推理。</li>
@@ -5826,7 +5882,6 @@ CheckDataset:
 其他相关参数均可通过修改<code>.yaml</code>配置文件中的<code>Global</code>和<code>Evaluate</code>下的字段来进行设置，详细请参考<a href="../../instructions/config_parameters_common.html">PaddleX通用模型配置文件参数说明</a>。</li>
 </ul>
 <details><summary>👉 <b>更多说明（点击展开）</b></summary>
-
 <p>在模型评估时，需要指定模型权重文件路径，每个配置文件中都内置了默认的权重保存路径，如需要改变，只需要通过追加命令行参数的形式进行设置即可，如<code>-o Evaluate.weight_path=./output/best_model/best_model.pdparams</code>。</p>
 <p>在完成模型评估后，会产出<code>evaluate_result.json，其记录了</code>评估的结果，具体来说，记录了评估任务是否正常完成，以及模型的评估指标，包括 MultiLabelMAP；</p></details>
 
@@ -5857,6 +5912,7 @@ CheckDataset:
 <p>图像多标签分类模块可以集成的PaddleX产线有<a href="../../../pipeline_usage/tutorials/cv_pipelines/image_multi_label_classification.html">通用图像多标签分类产线</a>，只需要替换模型路径即可完成相关产线的图像多标签分类模块的模型更新。在产线集成中，你可以使用高性能部署和服务化部署来部署你得到的模型。</p>
 <p>2.<b>模块集成</b></p>
 <p>您产出的权重可以直接集成到图像多标签分类模块中，可以参考<a href="#三快速集成">快速集成</a>的 Python 示例代码，只需要将模型替换为你训练的到的模型路径即可。</p>
+<p>您也可以利用 PaddleX 高性能推理插件来优化您模型的推理过程，进一步提升效率，详细的流程请参考<a href="../../../pipeline_deploy/high_performance_inference.html">PaddleX高性能推理指南</a>。</p>
 
 
 
@@ -5879,7 +5935,7 @@ CheckDataset:
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2025年2月6日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2025年2月14日</span>
   </span>
 
     
@@ -5889,7 +5945,7 @@ CheckDataset:
     <span class="md-icon" title="创建日期">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2025年2月6日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2025年2月14日</span>
   </span>
 
     
@@ -6070,7 +6126,7 @@ CheckDataset:
     <script id="__config" type="application/json">{"base": "../../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "navigation.expand", "navigation.path", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.f13b1293.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.f1b6f286.min.js"></script>
       
         <script src="../../../javascripts/katex.min.js"></script>
       

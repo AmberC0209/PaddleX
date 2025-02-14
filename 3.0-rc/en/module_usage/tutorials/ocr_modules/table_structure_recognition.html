@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../../../assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4">
     
     
       
@@ -26,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.d7758b05.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.8608ea7d.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
@@ -841,7 +841,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../pipeline_usage/tutorials/information_extraction_pipelines/document_scene_information_extraction.html" class="md-nav__link">
+      <a href="../../../../pipeline_usage/tutorials/information_extraction_pipelines/document_scene_information_extraction.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5393,33 +5393,84 @@ You're not viewing the latest version.
 <tr>
 <th>Model</th><th>Model Download Link</th>
 <th>Accuracy (%)</th>
-<th>GPU Inference Time (ms)</th>
-<th>CPU Inference Time (ms)</th>
+<th>CPU Inference Time (ms)<br/>[Normal Mode / High-Performance Mode]</th>
+<th>CPU Inference Time (ms)<br/>[Normal Mode / High-Performance Mode]</th>
 <th>Model Size (M)</th>
 <th>Description</th>
 </tr>
 <tr>
 <td>SLANet</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0rc0/SLANet_infer.tar">Inference Model</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/SLANet_pretrained.pdparams">Trained Model</a></td>
 <td>59.52</td>
-<td>522.536</td>
-<td>1845.37</td>
+<td>103.08 / 103.08</td>
+<td>197.99 / 197.99</td>
 <td>6.9 M</td>
 <td rowspan="1">SLANet is a table structure recognition model developed by Baidu PaddlePaddle Vision Team. The model significantly improves the accuracy and inference speed of table structure recognition by adopting a CPU-friendly lightweight backbone network PP-LCNet, a high-low-level feature fusion module CSP-PAN, and a feature decoding module SLA Head that aligns structural and positional information.</td>
 </tr>
-
 <tr>
 <td>SLANet_plus</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0rc0/SLANet_plus_infer.tar">Inference Model</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/SLANet_plus_pretrained.pdparams">Trained Model</a></td>
 <td>63.69</td>
-<td>522.536</td>
-<td>1845.37</td>
+<td>140.29 / 140.29</td>
+<td>195.39 / 195.39</td>
 <td>6.9 M</td>
 <td rowspan="1">
 SLANet_plus is an enhanced version of SLANet, a table structure recognition model developed by Baidu PaddlePaddle's Vision Team. Compared to SLANet, SLANet_plus significantly improves its recognition capabilities for wireless and complex tables, while reducing the model's sensitivity to the accuracy of table localization. Even when there are offsets in table localization, it can still perform relatively accurate recognition.
 </td>
 </tr>
+<tr>
+<td>SLANeXt_wired</td>
+<td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0rc0/SLANeXt_wired_infer.tar">Inference Model</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/SLANeXt_wired_pretrained.pdparams">Trained Model</a></td>
+<td rowspan="2">69.65</td>
+<td rowspan="2"></td>
+<td rowspan="2"></td>
+<td rowspan="2">351M</td>
+<td rowspan="2">SLANeXt series is a new generation of form structure recognition model developed by Baidu PaddlePaddle's Vision Team. Compared with SLANet and SLANet_plus, SLANeXt focuses on the recognition of form structure, and special weights are trained for the recognition of wired and wireless forms, which significantly improves the recognition ability of all types of forms, especially the recognition ability of wired forms is greatly improved.</td>
+</tr>
+<tr>
+<td>SLANeXt_wireless</td>
+<td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0rc0/SLANeXt_wireless_infer.tar">Inference Model</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/SLANeXt_wireless_pretrained.pdparams">Trained Model</a></td>
+</tr>
 </table>
 
-<p><b>Note: The above accuracy metrics are evaluated on a self-built English table recognition dataset by PaddleX. All GPU inference times are based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speeds are based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b></p>
+<p><strong>Test Environment Description</strong>:</p>
+<ul>
+<li><strong>Performance Test Environment</strong></li>
+<li><strong>Test Dataset</strong>: PaddleX Internal Self-built High-difficulty Chinese Table Recognition Dataset.</li>
+<li>
+<p><strong>Hardware Configuration</strong>:</p>
+<ul>
+<li>GPU: NVIDIA Tesla T4</li>
+<li>CPU: Intel Xeon Gold 6271C @ 2.60GHz</li>
+<li>Other Environments: Ubuntu 20.04 / cuDNN 8.6 / TensorRT 8.5.2.2</li>
+</ul>
+</li>
+<li>
+<p><strong>Inference Mode Description</strong></p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>GPU Configuration</th>
+<th>CPU Configuration</th>
+<th>Acceleration Technology Combination</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Regular Mode</td>
+<td>FP32 Precision / No TRT Acceleration</td>
+<td>FP32 Precision / 8 Threads</td>
+<td>PaddleInference</td>
+</tr>
+<tr>
+<td>High-Performance Mode</td>
+<td>Optimal combination of pre-selected precision types and acceleration strategies</td>
+<td>FP32 Precision / 8 Threads</td>
+<td>Pre-selected optimal backend (Paddle/OpenVINO/TRT, etc.)</td>
+</tr>
+</tbody>
+</table>
 <h2 id="iii-quick-integration">III. Quick Integration<a class="headerlink" href="#iii-quick-integration" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>❗ Before quick integration, please install the PaddleX wheel package. For detailed instructions, refer to <a href="../../../installation/installation.html">PaddleX Local Installation Guide</a></p>
@@ -5434,15 +5485,16 @@ SLANet_plus is an enhanced version of SLANet, a table structure recognition mode
 </span></code></pre></div>
 <details><summary>👉 <b>After running, the result is: (Click to expand)</b></summary>
 
-<div class="language-json highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span><span class="err">&#39;res&#39;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">&#39;i</span><span class="kc">n</span><span class="err">pu</span><span class="kc">t</span><span class="err">_pa</span><span class="kc">t</span><span class="err">h&#39;</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;</span><span class="kc">ta</span><span class="err">ble_recog</span><span class="kc">n</span><span class="err">i</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span><span class="err">.jpg&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;bbox&#39;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">array(</span><span class="p">[</span><span class="w"> </span><span class="mi">42</span><span class="p">,</span><span class="w">   </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">390</span><span class="p">,</span><span class="w">   </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">388</span><span class="p">,</span><span class="w">  </span><span class="mi">27</span><span class="p">,</span><span class="w">  </span><span class="mi">40</span><span class="p">,</span><span class="w">  </span><span class="mi">26</span><span class="p">]</span><span class="err">)</span><span class="p">,</span><span class="w"> </span><span class="err">array(</span><span class="p">[</span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="mi">35</span><span class="p">,</span><span class="w"> </span><span class="mi">89</span><span class="p">,</span><span class="w"> </span><span class="mi">35</span><span class="p">,</span><span class="w"> </span><span class="mi">87</span><span class="p">,</span><span class="w"> </span><span class="mi">63</span><span class="p">,</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="mi">63</span><span class="p">]</span><span class="err">)</span><span class="p">,</span><span class="w"> </span><span class="err">array(</span><span class="p">[</span><span class="mi">113</span><span class="p">,</span><span class="w">  </span><span class="mi">34</span><span class="p">,</span><span class="w"> </span><span class="mi">192</span><span class="p">,</span><span class="w">  </span><span class="mi">34</span><span class="p">,</span><span class="w"> </span><span class="mi">186</span><span class="p">,</span><span class="w">  </span><span class="mi">64</span><span class="p">,</span><span class="w"> </span><span class="mi">109</span><span class="p">,</span><span class="w">  </span><span class="mi">64</span><span class="p">]</span><span class="err">)</span><span class="p">,</span><span class="w"> </span><span class="err">array(</span><span class="p">[</span><span class="mi">219</span><span class="p">,</span><span class="w">  </span><span class="mi">33</span><span class="p">,</span><span class="w"> </span><span class="mi">399</span><span class="p">,</span><span class="w">  </span><span class="mi">33</span><span class="p">,</span><span class="w"> </span><span class="mi">393</span><span class="p">,</span><span class="w">  </span><span class="mi">62</span><span class="p">,</span><span class="w"> </span><span class="mi">212</span><span class="p">,</span><span class="w">  </span><span class="mi">62</span><span class="p">]</span><span class="err">)</span><span class="p">,</span><span class="w"> </span><span class="err">array(</span><span class="p">[</span><span class="mi">413</span><span class="p">,</span><span class="w">  </span><span class="mi">33</span><span class="p">,</span><span class="w"> </span><span class="mi">544</span><span class="p">,</span><span class="w">  </span><span class="mi">33</span><span class="p">,</span><span class="w"> </span><span class="mi">544</span><span class="p">,</span><span class="w">  </span><span class="mi">64</span><span class="p">,</span><span class="w"> </span><span class="mi">407</span><span class="p">,</span><span class="w">  </span><span class="mi">64</span><span class="p">]</span><span class="err">)</span><span class="p">,</span><span class="w"> </span><span class="err">array(</span><span class="p">[</span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="mi">67</span><span class="p">,</span><span class="w"> </span><span class="mi">98</span><span class="p">,</span><span class="w"> </span><span class="mi">68</span><span class="p">,</span><span class="w"> </span><span class="mi">96</span><span class="p">,</span><span class="w"> </span><span class="mi">93</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="mi">93</span><span class="p">]</span><span class="err">)</span><span class="p">,</span><span class="w"> </span><span class="err">array(</span><span class="p">[</span><span class="mi">115</span><span class="p">,</span><span class="w">  </span><span class="mi">66</span><span class="p">,</span><span class="w"> </span><span class="mi">205</span><span class="p">,</span><span class="w">  </span><span class="mi">66</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">  </span><span class="mi">91</span><span class="p">,</span><span class="w"> </span><span class="mi">111</span><span class="p">,</span><span class="w">  </span><span class="mi">91</span><span class="p">]</span><span class="err">)</span><span class="p">,</span><span class="w"> </span><span class="err">array(</span><span class="p">[</span><span class="mi">234</span><span class="p">,</span><span class="w">  </span><span class="mi">65</span><span class="p">,</span><span class="w"> </span><span class="mi">390</span><span class="p">,</span><span class="w">  </span><span class="mi">65</span><span class="p">,</span><span class="w"> </span><span class="mi">385</span><span class="p">,</span><span class="w">  </span><span class="mi">92</span><span class="p">,</span><span class="w"> </span><span class="mi">227</span><span class="p">,</span><span class="w">  </span><span class="mi">92</span><span class="p">]</span><span class="err">)</span><span class="p">,</span><span class="w"> </span><span class="err">array(</span><span class="p">[</span><span class="mi">414</span><span class="p">,</span><span class="w">  </span><span class="mi">66</span><span class="p">,</span><span class="w"> </span><span class="mi">537</span><span class="p">,</span><span class="w">  </span><span class="mi">67</span><span class="p">,</span><span class="w"> </span><span class="mi">537</span><span class="p">,</span><span class="w">  </span><span class="mi">95</span><span class="p">,</span><span class="w"> </span><span class="mi">409</span><span class="p">,</span><span class="w">  </span><span class="mi">95</span><span class="p">]</span><span class="err">)</span><span class="p">,</span><span class="w"> </span><span class="err">array(</span><span class="p">[</span><span class="w">  </span><span class="mi">7</span><span class="p">,</span><span class="w">  </span><span class="mi">97</span><span class="p">,</span><span class="w"> </span><span class="mi">106</span><span class="p">,</span><span class="w">  </span><span class="mi">97</span><span class="p">,</span><span class="w"> </span><span class="mi">104</span><span class="p">,</span><span class="w"> </span><span class="mi">128</span><span class="p">,</span><span class="w">   </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">128</span><span class="p">]</span><span class="err">)</span><span class="p">,</span><span class="w"> </span><span class="err">array(</span><span class="p">[</span><span class="mi">113</span><span class="p">,</span><span class="w">  </span><span class="mi">96</span><span class="p">,</span><span class="w"> </span><span class="mi">206</span><span class="p">,</span><span class="w">  </span><span class="mi">95</span><span class="p">,</span><span class="w"> </span><span class="mi">201</span><span class="p">,</span><span class="w"> </span><span class="mi">127</span><span class="p">,</span><span class="w"> </span><span class="mi">109</span><span class="p">,</span><span class="w"> </span><span class="mi">127</span><span class="p">]</span><span class="err">)</span><span class="p">,</span><span class="w"> </span><span class="err">array(</span><span class="p">[</span><span class="mi">236</span><span class="p">,</span><span class="w">  </span><span class="mi">96</span><span class="p">,</span><span class="w"> </span><span class="mi">386</span><span class="p">,</span><span class="w">  </span><span class="mi">96</span><span class="p">,</span><span class="w"> </span><span class="mi">381</span><span class="p">,</span><span class="w"> </span><span class="mi">128</span><span class="p">,</span><span class="w"> </span><span class="mi">230</span><span class="p">,</span><span class="w"> </span><span class="mi">128</span><span class="p">]</span><span class="err">)</span><span class="p">,</span><span class="w"> </span><span class="err">array(</span><span class="p">[</span><span class="mi">413</span><span class="p">,</span><span class="w">  </span><span class="mi">96</span><span class="p">,</span><span class="w"> </span><span class="mi">534</span><span class="p">,</span><span class="w">  </span><span class="mi">95</span><span class="p">,</span><span class="w"> </span><span class="mi">533</span><span class="p">,</span><span class="w"> </span><span class="mi">127</span><span class="p">,</span><span class="w"> </span><span class="mi">408</span><span class="p">,</span><span class="w"> </span><span class="mi">127</span><span class="p">]</span><span class="err">)</span><span class="p">],</span><span class="w"> </span><span class="err">&#39;s</span><span class="kc">tru</span><span class="err">c</span><span class="kc">ture</span><span class="err">&#39;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">&#39;&lt;h</span><span class="kc">t</span><span class="err">ml&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;&lt;body&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;&lt;</span><span class="kc">ta</span><span class="err">ble&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;&lt;</span><span class="kc">tr</span><span class="err">&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;&lt;</span><span class="kc">t</span><span class="err">d&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;</span><span class="w"> </span><span class="err">colspa</span><span class="kc">n</span><span class="err">=</span><span class="s2">&quot;4&quot;</span><span class="err">&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;&lt;/</span><span class="kc">t</span><span class="err">d&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;&lt;/</span><span class="kc">tr</span><span class="err">&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;&lt;</span><span class="kc">tr</span><span class="err">&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;&lt;</span><span class="kc">t</span><span class="err">d&gt;&lt;/</span><span class="kc">t</span><span class="err">d&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;&lt;</span><span class="kc">t</span><span class="err">d&gt;&lt;/</span><span class="kc">t</span><span class="err">d&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;&lt;</span><span class="kc">t</span><span class="err">d&gt;&lt;/</span><span class="kc">t</span><span class="err">d&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;&lt;</span><span class="kc">t</span><span class="err">d&gt;&lt;/</span><span class="kc">t</span><span class="err">d&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;&lt;/</span><span class="kc">tr</span><span class="err">&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;&lt;</span><span class="kc">tr</span><span class="err">&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;&lt;</span><span class="kc">t</span><span class="err">d&gt;&lt;/</span><span class="kc">t</span><span class="err">d&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;&lt;</span><span class="kc">t</span><span class="err">d&gt;&lt;/</span><span class="kc">t</span><span class="err">d&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;&lt;</span><span class="kc">t</span><span class="err">d&gt;&lt;/</span><span class="kc">t</span><span class="err">d&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;&lt;</span><span class="kc">t</span><span class="err">d&gt;&lt;/</span><span class="kc">t</span><span class="err">d&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;&lt;/</span><span class="kc">tr</span><span class="err">&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;&lt;</span><span class="kc">tr</span><span class="err">&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;&lt;</span><span class="kc">t</span><span class="err">d&gt;&lt;/</span><span class="kc">t</span><span class="err">d&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;&lt;</span><span class="kc">t</span><span class="err">d&gt;&lt;/</span><span class="kc">t</span><span class="err">d&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;&lt;</span><span class="kc">t</span><span class="err">d&gt;&lt;/</span><span class="kc">t</span><span class="err">d&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;&lt;</span><span class="kc">t</span><span class="err">d&gt;&lt;/</span><span class="kc">t</span><span class="err">d&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;&lt;/</span><span class="kc">tr</span><span class="err">&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;&lt;/</span><span class="kc">ta</span><span class="err">ble&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;&lt;/body&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;&lt;/h</span><span class="kc">t</span><span class="err">ml&gt;&#39;</span><span class="p">],</span><span class="w"> </span><span class="err">&#39;s</span><span class="kc">tru</span><span class="err">c</span><span class="kc">ture</span><span class="err">_score&#39;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.99948007</span><span class="p">}}</span>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>{&#39;res&#39;: {&#39;input_path&#39;: &#39;table_recognition.jpg&#39;, &#39;page_index&#39;: None, &#39;bbox&#39;: [array([ 42,   2, 390,   2, 388,  27,  40,  26]), array([11, 35, 89, 35, 87, 63, 11, 63]), array([113,  34, 192,  34, 186,  64, 109,  64]), array([219,  33, 399,  33, 393,  62, 212,  62]), array([413,  33, 544,  33, 544,  64, 407,  64]), array([12, 67, 98, 68, 96, 93, 12, 93]), array([115,  66, 205,  66, 200,  91, 111,  91]), array([234,  65, 390,  65, 385,  92, 227,  92]), array([414,  66, 537,  67, 537,  95, 409,  95]), array([  7,  97, 106,  97, 104, 128,   7, 128]), array([113,  96, 206,  95, 201, 127, 109, 127]), array([236,  96, 386,  96, 381, 128, 230, 128]), array([413,  96, 534,  95, 533, 127, 408, 127])], &#39;structure&#39;: [&#39;&lt;html&gt;&#39;, &#39;&lt;body&gt;&#39;, &#39;&lt;table&gt;&#39;, &#39;&lt;tr&gt;&#39;, &#39;&lt;td&#39;, &#39; colspan=&quot;4&quot;&#39;, &#39;&gt;&#39;, &#39;&lt;/td&gt;&#39;, &#39;&lt;/tr&gt;&#39;, &#39;&lt;tr&gt;&#39;, &#39;&lt;td&gt;&lt;/td&gt;&#39;, &#39;&lt;td&gt;&lt;/td&gt;&#39;, &#39;&lt;td&gt;&lt;/td&gt;&#39;, &#39;&lt;td&gt;&lt;/td&gt;&#39;, &#39;&lt;/tr&gt;&#39;, &#39;&lt;tr&gt;&#39;, &#39;&lt;td&gt;&lt;/td&gt;&#39;, &#39;&lt;td&gt;&lt;/td&gt;&#39;, &#39;&lt;td&gt;&lt;/td&gt;&#39;, &#39;&lt;td&gt;&lt;/td&gt;&#39;, &#39;&lt;/tr&gt;&#39;, &#39;&lt;tr&gt;&#39;, &#39;&lt;td&gt;&lt;/td&gt;&#39;, &#39;&lt;td&gt;&lt;/td&gt;&#39;, &#39;&lt;td&gt;&lt;/td&gt;&#39;, &#39;&lt;td&gt;&lt;/td&gt;&#39;, &#39;&lt;/tr&gt;&#39;, &#39;&lt;/table&gt;&#39;, &#39;&lt;/body&gt;&#39;, &#39;&lt;/html&gt;&#39;], &#39;structure_score&#39;: 0.99948007}}
 </span></code></pre></div>
 
 Parameter meanings are as follows:
 <ul>
-    <li><code>input_path</code>: The path of the input image to be predicted</li>
-    <li><code>boxes</code>: Predicted table cell information, a list composed of several predicted table cell coordinates. Note that the table cell predictions from the SLANeXt series models are invalid</li>
-    <li><code>structure</code>: Predicted table structure in HTML expressions, a list composed of several predicted HTML keywords in order</li>
-    <li><code>structure_score</code>: Confidence score of the predicted table structure</li>
+<li><code>input_path</code>: The path of the input image to be predicted</li>
+<li><code>page_index</code>：If the input is a PDF file, this indicates the current page number of the PDF. Otherwise, it is `None`</li>
+<li><code>boxes</code>: Predicted table cell information, a list composed of several predicted table cell coordinates. Note that the table cell predictions from the SLANeXt series models are invalid</li>
+<li><code>structure</code>: Predicted table structure in HTML expressions, a list composed of several predicted HTML keywords in order</li>
+<li><code>structure_score</code>: Confidence score of the predicted table structure</li>
 </ul>
 </details>
 
@@ -5497,15 +5549,14 @@ Parameter meanings are as follows:
 <tr>
 <td><code>input</code></td>
 <td>Data to be predicted, supporting multiple input types</td>
-<td><code>Python Var</code>/<code>str</code>/<code>dict</code>/<code>list</code></td>
+<td><code>Python Var</code>/<code>str</code>/<code>list</code></td>
 <td>
 <ul>
-    <li><b>Python variable</b>, such as image data represented by <code>numpy.ndarray</code></li>
-    <li><b>File path</b>, such as the local path of an image file: <code>/root/data/img.jpg</code></li>
-    <li><b>URL link</b>, such as the network URL of an image file: <a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/table_recognition.jpg">Example</a></li>
-    <li><b>Local directory</b>, this directory must contain data files to be predicted, such as the local path: <code>/root/data/</code></li>
-    <li><b>Dictionary</b>, the <code>key</code> of the dictionary must correspond to the specific task, such as <code>"img"</code> for image classification tasks. The <code>val</code> of the dictionary supports the above types of data, for example: <code>{"img": "/root/data1"}</code></li>
-    <li><b>List</b>, elements of the list must be of the above types of data, such as <code>[numpy.ndarray, numpy.ndarray]</code>, <code>["/root/data/img1.jpg", "/root/data/img2.jpg"]</code>, <code>["/root/data1", "/root/data2"]</code>, <code>[{"img": "/root/data1"}, {"img": "/root/data2/img.jpg"}]</code></li>
+<li><b>Python Variable</b>, such as image data represented by <code>numpy.ndarray</code></li>
+<li><b>File Path</b>, such as the local path of an image file: <code>/root/data/img.jpg</code></li>
+<li><b>URL Link</b>, such as the web URL of an image file: <a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/general_ocr_rec_001.png">Example</a></li>
+<li><b>Local Directory</b>, the directory should contain the data files to be predicted, such as the local path: <code>/root/data/</code></li>
+<li><b>List</b>, the elements of the list should be of the above-mentioned data types, such as <code>[numpy.ndarray, numpy.ndarray]</code>, <code>[\"/root/data/img1.jpg\", \"/root/data/img2.jpg\"]</code>, <code>[\"/root/data1\", \"/root/data2\"]</code></li>
 </ul>
 </td>
 <td>None</td>
@@ -5534,8 +5585,8 @@ Parameter meanings are as follows:
 </tr>
 </thead>
 <tr>
-<td rowspan = "3"><code>print()</code></td>
-<td rowspan = "3">Print the result to the terminal</td>
+<td rowspan="3"><code>print()</code></td>
+<td rowspan="3">Print the result to the terminal</td>
 <td><code>format_json</code></td>
 <td><code>bool</code></td>
 <td>Whether to format the output content using <code>JSON</code> indentation</td>
@@ -5554,8 +5605,8 @@ Parameter meanings are as follows:
 <td><code>False</code></td>
 </tr>
 <tr>
-<td rowspan = "3"><code>save_to_json()</code></td>
-<td rowspan = "3">Save the result as a JSON-formatted file</td>
+<td rowspan="3"><code>save_to_json()</code></td>
+<td rowspan="3">Save the result as a JSON-formatted file</td>
 <td><code>save_path</code></td>
 <td><code>str</code></td>
 <td>The path to save the file. If it is a directory, the saved file will have the same name as the input file</td>
@@ -5576,7 +5627,7 @@ Parameter meanings are as follows:
 </table>
 
 <ul>
-<li>In addition, it also supports obtaining a visualization image with results through attributes, as follows:</li>
+<li>In addition, it also supports obtaining results through attributes, as follows:</li>
 </ul>
 <table>
 <thead>
@@ -5586,8 +5637,8 @@ Parameter meanings are as follows:
 </tr>
 </thead>
 <tr>
-<td rowspan = "1"><code>json</code></td>
-<td rowspan = "1">Get the prediction result in <code>json</code> format</td>
+<td rowspan="1"><code>json</code></td>
+<td rowspan="1">Get the prediction result in <code>json</code> format</td>
 </tr>
 </table>
 
@@ -5609,43 +5660,32 @@ Parameter meanings are as follows:
 </span></code></pre></div>
 After executing the above command, PaddleX will validate the dataset and summarize its basic information. If the command runs successfully, it will print <code>Check dataset passed !</code> in the log. The validation results file is saved in <code>./output/check_dataset_result.json</code>, and related outputs are saved in the <code>./output/check_dataset</code> directory in the current directory, including visual examples of sample images and sample distribution histograms.</p>
 <details><summary>👉 <b>Details of Validation Results (Click to Expand)</b></summary>
-
 <p>The specific content of the validation result file is:</p>
 <pre><code class="language-bash">{
-  &quot;done_flag&quot;: true,
-  &quot;check_pass&quot;: true,
-  &quot;attributes&quot;: {
-    &quot;train_samples&quot;: 2000,
-    &quot;train_sample_paths&quot;: [
-      &quot;../dataset/table_rec_dataset_examples/images/border_right_7384_X9UFEPKVMLALY7DDB11A.jpg&quot;,
-      &quot;../dataset/table_rec_dataset_examples/images/border_top_13708_VE2DGBD4DCQU2ITLBTEA.jpg&quot;,
-      &quot;../dataset/table_rec_dataset_examples/images/border_top_6490_14Z6ZN6G52GG4XA0K4XU.jpg&quot;,
-      &quot;../dataset/table_rec_dataset_examples/images/border_top_14236_DG96EX0EDKIIDK8P6ENG.jpg&quot;,
-      &quot;../dataset/table_rec_dataset_examples/images/border_19648_SV8B7X34RTYRAT2T5CPI.jpg&quot;,
-      &quot;../dataset/table_rec_dataset_examples/images/border_bottom_7186_HODBC25HISMCSVKY0HJ9.jpg&quot;,
-      &quot;../dataset/table_rec_dataset_examples/images/head_border_bottom_5773_4K4H9OVK9X9YVHE4Y1BQ.jpg&quot;,
-      &quot;../dataset/table_rec_dataset_examples/images/border_7760_8C62CCH5T57QUGE0NTHZ.jpg&quot;,
-      &quot;../dataset/table_rec_dataset_examples/images/border_bottom_15707_B1YVOU3X4NHHB6TL269O.jpg&quot;,
-      &quot;../dataset/table_rec_dataset_examples/images/no_border_5223_HLG406UK35UD5EUYC2AV.jpg&quot;
+  "done_flag": true,
+  "check_pass": true,
+  "attributes": {
+    "train_samples": 2000,
+    "train_sample_paths": [
+      "check_dataset/demo_img/border_right_7384_X9UFEPKVMLALY7DDB11A.jpg",
+      "check_dataset/demo_img/border_top_13708_VE2DGBD4DCQU2ITLBTEA.jpg",
+      "check_dataset/demo_img/border_top_6490_14Z6ZN6G52GG4XA0K4XU.jpg",
+      "check_dataset/demo_img/border_top_14236_DG96EX0EDKIIDK8P6ENG.jpg",
+      "check_dataset/demo_img/border_19648_SV8B7X34RTYRAT2T5CPI.jpg",
     ],
-    &quot;val_samples&quot;: 100,
-    &quot;val_sample_paths&quot;: [
-      &quot;../dataset/table_rec_dataset_examples/images/border_2945_L7MSRHBZRW6Y347G39O6.jpg&quot;,
-      &quot;../dataset/table_rec_dataset_examples/images/head_border_bottom_4825_LH9WI6X104CP3VFXPSON.jpg&quot;,
-      &quot;../dataset/table_rec_dataset_examples/images/head_border_bottom_16837_79KHWU9WDM9ZQHNBGQAL.jpg&quot;,
-      &quot;../dataset/table_rec_dataset_examples/images/border_bottom_10107_9ENLLC29SQ6XI8WZY53E.jpg&quot;,
-      &quot;../dataset/table_rec_dataset_examples/images/border_top_16668_JIS0YFDZKTKETZIEKCKX.jpg&quot;,
-      &quot;../dataset/table_rec_dataset_examples/images/border_18653_J9SSKHLFTRJD4J8W17OW.jpg&quot;,
-      &quot;../dataset/table_rec_dataset_examples/images/border_bottom_8396_VJ3QJ3I0DP63P4JR77FE.jpg&quot;,
-      &quot;../dataset/table_rec_dataset_examples/images/border_9017_K2V7QBWSU2BA4R3AJSO7.jpg&quot;,
-      &quot;../dataset/table_rec_dataset_examples/images/border_top_19494_SDFMWP92NOB2OT7109FI.jpg&quot;,
-      &quot;../dataset/table_rec_dataset_examples/images/no_border_288_6LK683JUCMOQ38V5BV29.jpg&quot;
+    "val_samples": 100,
+    "val_sample_paths": [
+      "check_dataset/demo_img/border_18653_J9SSKHLFTRJD4J8W17OW.jpg",
+      "check_dataset/demo_img/border_bottom_8396_VJ3QJ3I0DP63P4JR77FE.jpg",
+      "check_dataset/demo_img/border_9017_K2V7QBWSU2BA4R3AJSO7.jpg",
+      "check_dataset/demo_img/border_top_19494_SDFMWP92NOB2OT7109FI.jpg",
+      "check_dataset/demo_img/no_border_288_6LK683JUCMOQ38V5BV29.jpg"
     ]
   },
-  &quot;analysis&quot;: {},
-  &quot;dataset_path&quot;: &quot;./dataset/table_rec_dataset_examples&quot;,
-  &quot;show_type&quot;: &quot;image&quot;,
-  &quot;dataset_type&quot;: &quot;PubTabTableRecDataset&quot;
+  "analysis": {},
+  "dataset_path": "./dataset/table_rec_dataset_examples",
+  "show_type": "image",
+  "dataset_type": "PubTabTableRecDataset"
 }
 </code></pre>
 <p>In the above validation results, <code>check_pass</code> being True indicates that the dataset format meets the requirements. Explanations for other indicators are as follows:</p>
@@ -5659,7 +5699,6 @@ After executing the above command, PaddleX will validate the dataset and summari
 <h4 id="413-dataset-format-conversion-dataset-splitting-optional">4.1.3 Dataset Format Conversion / Dataset Splitting (Optional)<a class="headerlink" href="#413-dataset-format-conversion-dataset-splitting-optional" title="Permanent link">&para;</a></h4>
 <p>After completing the dataset verification, you can convert the dataset format or re-split the training/validation ratio by <b>modifying the configuration file</b> or <b>appending hyperparameters</b>.</p>
 <details><summary>👉 <b>Details on Format Conversion / Dataset Splitting (Click to Expand)</b></summary>
-
 <p><b>(1) Dataset Format Conversion</b></p>
 <p>Table structure recognition does not support data format conversion.</p>
 <p><b>(2) Dataset Splitting</b></p>
@@ -5708,7 +5747,6 @@ the following steps are required:</p>
 <li>Specify the path of the training dataset: <code>-o Global.dataset_dir</code>. Other related parameters can be set by modifying the fields under <code>Global</code> and <code>Train</code> in the <code>.yaml</code> configuration file, or adjusted by appending parameters in the command line. For example, to specify training on the first 2 GPUs: <code>-o Global.device=gpu:0,1</code>; to set the number of training epochs to 10: <code>-o Train.epochs_iters=10</code>. For more modifiable parameters and their detailed explanations, refer to the configuration file parameter instructions for the corresponding task module of the model <a href="../../instructions/config_parameters_common.html">PaddleX Common Model Configuration File Parameters</a>.</li>
 </ul>
 <details><summary>👉 <b>More Details (Click to Expand)</b></summary>
-
 <ul>
 <li>During model training, PaddleX automatically saves the model weight files, with the default being <code>output</code>. If you need to specify a save path, you can set it through the <code>-o Global.output</code> field in the configuration file.</li>
 <li>PaddleX shields you from the concepts of dynamic graph weights and static graph weights. During model training, both dynamic and static graph weights are produced, and static graph weights are selected by default for model inference.</li>
@@ -5737,7 +5775,6 @@ Similar to model training, the following steps are required:</p>
 Other related parameters can be set by modifying the <code>Global</code> and <code>Evaluate</code> fields in the <code>.yaml</code> configuration file. For details, refer to <a href="../../instructions/config_parameters_common.html">PaddleX Common Model Configuration File Parameter Description</a>.</li>
 </ul>
 <details><summary>👉 <b>More Details (Click to Expand)</b></summary>
-
 <p>When evaluating the model, you need to specify the model weights file path. Each configuration file has a default weight save path. If you need to change it, simply append the command line parameter to set it, such as <code>-o Evaluate.weight_path=./output/best_accuracy/best_accuracy.pdparams</code>.</p>
 <p>After completing the model evaluation, an <code>evaluate_result.json</code> file will be produced, which records the evaluation results, specifically, whether the evaluation task was completed successfully and the model's evaluation metrics, including acc ;</p></details>
 
@@ -5765,9 +5802,10 @@ Similar to model training and evaluation, the following steps are required:</p>
 <h4 id="442-model-integration">4.4.2 Model Integration<a class="headerlink" href="#442-model-integration" title="Permanent link">&para;</a></h4>
 <p>The model can be directly integrated into the PaddleX pipeline or directly into your own project.</p>
 <p>1.<b>Pipeline Integration</b></p>
-<p>The table structure recognition module can be integrated into PaddleX pipelines such as the <a href="../../../pipeline_usage/tutorials/ocr_pipelines/table_recognition.html">General Table Recognition Pipeline</a> and the <a href="../../../pipeline_usage/tutorials/information_extraction_pipelines/document_scene_information_extraction.html">Document Scene Information Extraction Pipeline v3 (PP-ChatOCRv3)</a>. Simply replace the model path to update the table structure recognition module in the relevant pipelines. For pipeline integration, you can deploy your obtained model using high-performance inference and service-oriented deployment.</p>
+<p>The table structure recognition module can be integrated into PaddleX pipelines such as the <a href="../../../pipeline_usage/tutorials/ocr_pipelines/table_recognition.html">General Table Recognition Pipeline</a> and the <a href="../../../pipeline_usage/tutorials/information_extraction_pipelines/document_scene_information_extraction_v3.html">Document Scene Information Extraction Pipeline v3 (PP-ChatOCRv3-doc)</a>. Simply replace the model path to update the table structure recognition module in the relevant pipelines. For pipeline integration, you can deploy your obtained model using high-performance inference and service-oriented deployment.</p>
 <p>2.<b>Module Integration</b></p>
 <p>The model weights you produce can be directly integrated into the table structure recognition module. Refer to the Python example code in <a href="#iii-quick-integration">Quick Integration</a> , and simply replace the model with the path to your trained model.</p>
+<p>You can also use the PaddleX high-performance inference plugin to optimize the inference process of your model and further improve efficiency. For detailed procedures, please refer to the <a href="../../../pipeline_deploy/high_performance_inference.html">PaddleX High-Performance Inference Guide</a>.</p>
 
 
 
@@ -5790,7 +5828,7 @@ Similar to model training and evaluation, the following steps are required:</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 6, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 14, 2025</span>
   </span>
 
     
@@ -5800,7 +5838,7 @@ Similar to model training and evaluation, the following steps are required:</p>
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 6, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 14, 2025</span>
   </span>
 
     
@@ -5981,7 +6019,7 @@ Similar to model training and evaluation, the following steps are required:</p>
     <script id="__config" type="application/json">{"base": "../../../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "navigation.expand", "navigation.path", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.f13b1293.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.f1b6f286.min.js"></script>
       
         <script src="../../../../javascripts/katex.min.js"></script>
       

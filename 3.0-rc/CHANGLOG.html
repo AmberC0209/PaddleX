@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.d7758b05.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.8608ea7d.min.css">
       
         
         <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
@@ -837,7 +837,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="pipeline_usage/tutorials/information_extraction_pipelines/document_scene_information_extraction.html" class="md-nav__link">
+      <a href="pipeline_usage/tutorials/information_extraction_pipelines/document_scene_information_extraction.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5014,6 +5014,15 @@ You're not viewing the latest version.
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#paddlex-v300rc02142025" class="md-nav__link">
+    <span class="md-ellipsis">
+      PaddleX v3.0.0rc0(2.14/2025)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#paddlex-v300beta211152024" class="md-nav__link">
     <span class="md-ellipsis">
       PaddleX v3.0.0beta2(11.15/2024)
@@ -5153,6 +5162,15 @@ You're not viewing the latest version.
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#paddlex-v300rc02142025" class="md-nav__link">
+    <span class="md-ellipsis">
+      PaddleX v3.0.0rc0(2.14/2025)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#paddlex-v300beta211152024" class="md-nav__link">
     <span class="md-ellipsis">
       PaddleX v3.0.0beta2(11.15/2024)
@@ -5281,6 +5299,75 @@ You're not viewing the latest version.
 
 <h1 id="_1">版本更新信息<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <h2 id="_2">最新版本信息<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="paddlex-v300rc02142025">PaddleX v3.0.0rc0(2.14/2025)<a class="headerlink" href="#paddlex-v300rc02142025" title="Permanent link">&para;</a></h3>
+<p>PaddleX 3.0 rc0 全面适配 PaddlePaddle 3.0rc0 版本，新增10+条产线，40+个模型，优化模型和产线API，多硬件适配更多模型。全面升级高性能推理和服务化部署能力。具体新增能力如下：</p>
+<ul>
+<li>新增产线：</li>
+<li>新增<a href="pipeline_usage/tutorials/ocr_pipelines/doc_preprocessor.html">文档预处理产线</a>，支持将矫正旋转和扭曲的文档图像。</li>
+<li>新增<a href="pipeline_usage/tutorials/information_extraction_pipelines/document_scene_information_extraction_v4.html">文档场景信息抽取v4产线</a>，在文档场景信息抽取v3产线的基础上，融合了多模态能力，增强了OCR识别能力，优化了Prompt，最终文档信息抽取的准确率提升15个百分点。支持本地大模型OpenAI接口调用。</li>
+<li>新增<a href="pipeline_usage/tutorials/ocr_pipelines/layout_parsing_v2.html">通用版面解析v2产线</a>，PP-StructureV3 的核心方案。在通用版面解析v1产线的基础上，优化了版面区域检测、表格识别、公式识别、阅读顺序恢复的能力，支持将不同类型的文档图像和文档PDF文件转换为标准的Markdown文件，在大多数场景的文档恢复能力表现强劲。</li>
+<li>新增<a href="pipeline_usage/tutorials/ocr_pipelines/table_recognition_v2.html">通用表格识别v2产线</a>，采用了“表格分类+表格结构识别+单元格检测”的多模型串联组网方案，实现更高精度的端到端表格识别。</li>
+<li>新增<a href="pipeline_usage/tutorials/cv_pipelines/rotated_object_detection.html">旋转框检测产线</a>，支持对旋转目标进行检测。</li>
+<li>新增<a href="pipeline_usage/tutorials/cv_pipelines/human_keypoint_detection.html">人体关键点检测产线</a>，支持精确获取人体的关键点位置，如肩膀、肘部、膝盖等，从而进行姿态估计和行为识别。</li>
+<li>新增<a href="pipeline_usage/tutorials/cv_pipelines/open_vocabulary_detection.html">开放词汇目标检测产线</a>，支持对开放域目标进行检测，并预测类别。</li>
+<li>新增<a href="pipeline_usage/tutorials/cv_pipelines/open_vocabulary_segmentation.html">开放词汇分割产线</a>，支持对开放域目标进行图像分割。</li>
+<li>新增<a href="pipeline_usage/tutorials/video_pipelines/video_detection.html">通用视频检测产线</a>，支持高效提取视频中的空间和时间特征，实现视频中目标的精准识别和定位。</li>
+<li>新增<a href="pipeline_usage/tutorials/video_pipelines/video_classification.html">通用视频分类产线</a>，支持提取视频中的时空特征并进行准确分类。</li>
+<li>新增<a href="pipeline_usage/tutorials/speech_pipelines/multilingual_speech_recognition.html">多语种语音识别产线</a>，支持将人类口述的多种语言自动转换为相应的文本或命令。</li>
+<li>
+<p>新增<a href="pipeline_usage/tutorials/cv_pipelines/3d_bev_detection.html">3D多模态融合检测产线</a>，支持输入多种传感器（激光雷达、环视RGB相机等）数据，通过深度学习等方法对数据进行处理，输出三维空间中物体的位置、形状、朝向、类别等信息。</p>
+</li>
+<li>
+<p>新增模型：</p>
+</li>
+<li>新增 OCR 类模型 28 个，其中包含兼顾高精度和高效率的自研版面区域检测模型 PP-DocLayout 系列、兼顾高精度和高效率的自研公式识别模型 PP-FormulaNet 系列、自研表格结构识别模型 SLANeXt 系列、更高识别精度的自研文本识别模型 PP-OCRv4_server_rec_doc 模型等。</li>
+<li>新增 CV 类模型 11 个，新增了 3D 多模态融合检测模型、开放词汇目标检测和分割模型、旋转框检测模型、人体关键点检测模型等。</li>
+<li>新增 Speech 类模型 5 个，新增了 Whisper 系列的 5 个模型。</li>
+<li>
+<p>新增 Video 类模型 4 个，包含视频检测模型 1 个、视频分类模型 3 个。</p>
+</li>
+<li>
+<p>模型和产线能力升级：</p>
+</li>
+<li>模型和产线支持更多参数，如目标检测模型的类别阈值、文本检测模型的膨胀系数等，CV 类和 OCR 类模型支持 PDF 格式文件输入。</li>
+<li>OCR 类产线支持文档前处理操作，如文档方向分类、文档矫正等，内置文本行方向分类模型。</li>
+<li>文档场景信息抽取 v3 产线支持标准 OpenAI 接口调用大语言模型，支持更多大语言模型的调用。</li>
+<li>
+<p>优化使用体验，部分模型和产线接口发生变化，详情参考 <a href="API_change_log/v3.0.0rc.html">API升级文档</a>。</p>
+</li>
+<li>
+<p>多硬件支持：</p>
+</li>
+<li>新增燧原 GCU 硬件的模型训推能力，支持模型数量90+，<a href="support_list/model_list_gcu.html">GCU 模型列表</a></li>
+<li>昇腾 NPU 新增模型数量 50+，<a href="support_list/model_list_npu.html">NPU 模型列表</a></li>
+<li>昆仑芯 XPU 新增模型数量 10+，<a href="support_list/model_list_xpu.html">XPU 模型列表</a></li>
+<li>寒武纪 MLU 新增模型数量 10+，<a href="support_list/model_list_mlu.html">MLU 模型列表</a></li>
+<li>
+<p>海光 DCU 新增模型数量 30+，<a href="support_list/model_list_dcu.html">DCU 模型列表</a></p>
+</li>
+<li>
+<p>多环境适配</p>
+</li>
+<li>适配 Windows 系统，支持在 Windows 下使用 PaddleX 进行模型训练和推理。修复部分 Windows 系统下安装失败的问题。</li>
+<li>
+<p>训练和推理全面适配 Python3.11，Python3.12。</p>
+</li>
+<li>
+<p>部署能力全面升级：</p>
+</li>
+<li>高性能推理：<ul>
+<li>安装使用简化：支持使用 PaddleX CLI 一键安装高性能推理插件；使用高性能推理插件无需进行鉴权。</li>
+<li>跨平台支持：新增对 Windows 系统的支持。</li>
+<li>模型支持扩展：扩增支持模型数量，目前总计支持 220+ 个模型。</li>
+<li>核心代码开源：开源核心推理库 ultra-infer，便于开发者进行二次开发和定制。</li>
+</ul>
+</li>
+<li>服务化部署：<ul>
+<li>基础服务化部署方案升级：升级基础服务化部署方案，支持新增产线，并适配原有产线新增功能。</li>
+<li>高稳定性服务化部署方案支持：新增高稳定性服务化部署方案，支持灵活调整服务配置以优化服务性能，多种部署方案满足不同用户需求。</li>
+</ul>
+</li>
+</ul>
 <h3 id="paddlex-v300beta211152024">PaddleX v3.0.0beta2(11.15/2024)<a class="headerlink" href="#paddlex-v300beta211152024" title="Permanent link">&para;</a></h3>
 <p>PaddleX 3.0 Beta2 全面适配 PaddlePaddle 3.0b2 版本。<strong>新增通用图像识别、人脸识别、车辆属性识别和行人属性识别产线，同时新增 42 个模型开发全流程适配昇腾 910B，并全面支持<a href="https://paddlepaddle.github.io/PaddleX/latest/index.html">GitHub 站点文档</a>。</strong> 具体新增能力如下：</p>
 <ul>
@@ -5319,7 +5406,7 @@ You're not viewing the latest version.
 <li>修复 SLANet、SLANet_plus 训练精度为 0 的bug。</li>
 </ul>
 <h3 id="paddlex-v300beta19302024">PaddleX v3.0.0beta1(9.30/2024)<a class="headerlink" href="#paddlex-v300beta19302024" title="Permanent link">&para;</a></h3>
-<p>PaddleX 3.0 Beta1 提供 200+ 模型通过极简的 Python API 一键调用；实现基于统一命令的模型全流程开发，并开源 PP-ChatOCRv3 特色模型产线基础能力；支持 100+ 模型高性能推理和服务化部署，7 类重点视觉模型端侧部署；70+ 模型开发全流程适配昇腾 910B，15+ 模型开发全流程适配昆仑芯和寒武纪。</p>
+<p>PaddleX 3.0 Beta1 提供 200+ 模型通过极简的 Python API 一键调用；实现基于统一命令的模型全流程开发，并开源 PP-ChatOCRv3-doc 特色模型产线基础能力；支持 100+ 模型高性能推理和服务化部署，7 类重点视觉模型端侧部署；70+ 模型开发全流程适配昇腾 910B，15+ 模型开发全流程适配昆仑芯和寒武纪。</p>
 <ul>
 <li><b>模型丰富一键调用：</b> 将覆盖文档图像智能分析、OCR、目标检测、时序预测等多个关键领域的 200+ 飞桨模型整合为 13 条模型产线，通过极简的 Python API 一键调用，快速体验模型效果。同时支持 20+ 单功能模块，方便开发者进行模型组合使用。</li>
 <li><b>提高效率降低门槛：</b> 实现基于图形界面和统一命令的模型全流程开发，打造大小模型结合、大模型半监督学习和多模型融合的8条特色模型产线，大幅度降低迭代模型的成本。</li>
@@ -5533,7 +5620,7 @@ You're not viewing the latest version.
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2025年2月6日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2025年2月14日</span>
   </span>
 
     
@@ -5543,7 +5630,7 @@ You're not viewing the latest version.
     <span class="md-icon" title="创建日期">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2025年2月6日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2025年2月14日</span>
   </span>
 
     
@@ -5708,7 +5795,7 @@ You're not viewing the latest version.
     <script id="__config" type="application/json">{"base": ".", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "navigation.expand", "navigation.path", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="assets/javascripts/bundle.f13b1293.min.js"></script>
+      <script src="assets/javascripts/bundle.f1b6f286.min.js"></script>
       
         <script src="javascripts/katex.min.js"></script>
       

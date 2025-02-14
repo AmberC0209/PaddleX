@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4">
     
     
       
@@ -26,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.d7758b05.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8608ea7d.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -839,7 +839,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../pipeline_usage/tutorials/information_extraction_pipelines/document_scene_information_extraction.html" class="md-nav__link">
+      <a href="../../pipeline_usage/tutorials/information_extraction_pipelines/document_scene_information_extraction.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5355,38 +5355,54 @@ You're not viewing the latest version.
 <p></center></p>
 <p>After experiencing the pipeline, determine if it meets your expectations (including accuracy, speed, etc.), and whether the models included in the pipeline need further fine-tuning. If the speed or accuracy of the models does not meet expectations, select replaceable models for continued testing to determine satisfaction. If the final results are unsatisfactory, fine-tune the models.</p>
 <h2 id="3-select-a-model">3. Select a Model<a class="headerlink" href="#3-select-a-model" title="Permanent link">&para;</a></h2>
-<p>PaddleX provides two end-to-end text detection models. For details, refer to the <a href="../support_list/models_list.html">Model List</a>. The benchmarks of the models are as follows:</p>
+<p>PaddleX provides 4 end-to-end text detection models. For details, refer to the <a href="../support_list/models_list.html">Model List</a>. The benchmarks of the models are as follows:</p>
 <table>
 <thead>
 <tr>
-<th>Model List</th>
-<th>Detection Hmean(%)</th>
-<th>Recognition Avg Accuracy(%)</th>
-<th>GPU Inference Time(ms)</th>
-<th>CPU Inference Time(ms)</th>
-<th>Model Size(M)</th>
+<th>Model</th>
+<th>Detection Hmean (%)</th>
+<th>GPU Inference Time (ms)</th>
+<th>CPU Inference Time (ms)</th>
+<th>Model Storage Size (M)</th>
+<th>Introduction</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>PP-OCRv4_server</td>
-<td>82.69</td>
-<td>79.20</td>
-<td>22.20346</td>
-<td>2662.158</td>
-<td>198</td>
+<td>PP-OCRv4_server_det</td>
+<td>82.56</td>
+<td>83.3501</td>
+<td>2434.01</td>
+<td>109</td>
+<td>The server-side text detection model of PP-OCRv4, with higher accuracy, suitable for deployment on high-performance servers</td>
 </tr>
 <tr>
-<td>PP-OCRv4_mobile</td>
-<td>77.79</td>
-<td>78.20</td>
-<td>2.719474</td>
-<td>79.1097</td>
-<td>15</td>
+<td>PP-OCRv4_mobile_det</td>
+<td>77.35</td>
+<td>10.6923</td>
+<td>120.177</td>
+<td>4.7</td>
+<td>The mobile text detection model of PP-OCRv4, with higher efficiency, suitable for deployment on edge devices</td>
+</tr>
+<tr>
+<td>PP-OCRv3_mobile_det</td>
+<td>78.68</td>
+<td>-</td>
+<td>-</td>
+<td>2.1</td>
+<td>The mobile text detection model of PP-OCRv3, with higher efficiency, suitable for deployment on edge devices</td>
+</tr>
+<tr>
+<td>PP-OCRv3_server_det</td>
+<td>80.11</td>
+<td>-</td>
+<td>-</td>
+<td>102.1</td>
+<td>The server-side text detection model of PP-OCRv3, with higher accuracy, suitable for deployment on high-performance servers</td>
 </tr>
 </tbody>
 </table>
-<p><b>Note: The above accuracy metrics are for the Detection Hmean and Recognition Avg Accuracy on PaddleOCR's self-built Chinese dataset validation set. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b></p>
+
 <p>In short, the models listed from top to bottom have faster inference speeds, while from bottom to top, they have higher accuracy. This tutorial uses the <code>PP-OCRv4_server</code> model as an example to complete a full model development process. Depending on your actual usage scenario, choose a suitable model for training. After training, evaluate the appropriate model weights within the pipeline and use them in practical scenarios.</p>
 <h2 id="4-data-preparation-and-validation">4. Data Preparation and Validation<a class="headerlink" href="#4-data-preparation-and-validation" title="Permanent link">&para;</a></h2>
 <h3 id="41-data-preparation">4.1 Data Preparation<a class="headerlink" href="#41-data-preparation" title="Permanent link">&para;</a></h3>
@@ -5398,7 +5414,7 @@ You're not viewing the latest version.
 </span></code></pre></div></p>
 <h3 id="42-dataset-validation">4.2 Dataset Validation<a class="headerlink" href="#42-dataset-validation" title="Permanent link">&para;</a></h3>
 <p>To validate the dataset, simply use the following command:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>python<span class="w"> </span>main.py<span class="w"> </span>-c<span class="w"> </span>paddlex/configs/text_detection/PP-OCRv4_server_det.yaml<span class="w"> </span><span class="se">\</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>python<span class="w"> </span>main.py<span class="w"> </span>-c<span class="w"> </span>paddlex/configs/modules/text_detection/PP-OCRv4_server_det.yaml<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span>-o<span class="w"> </span>Global.mode<span class="o">=</span>check_dataset<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span>-o<span class="w"> </span>Global.dataset_dir<span class="o">=</span>./dataset/ccpd_text_det
 </span></code></pre></div>
@@ -5409,35 +5425,35 @@ You're not viewing the latest version.
 </span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>  &quot;attributes&quot;: {
 </span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    &quot;train_samples&quot;: 5769,
 </span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    &quot;train_sample_paths&quot;: [
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>      &quot;..\/..\/ccpd_text_det\/images\/0274305555556-90_266-204&amp;460_520&amp;548-516&amp;548_209&amp;547_204&amp;464_520&amp;460-0_0_3_25_24_24_24_26-63-89.jpg&quot;,
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>      &quot;..\/..\/ccpd_text_det\/images\/0126171875-90_267-294&amp;424_498&amp;486-498&amp;486_296&amp;485_294&amp;425_496&amp;424-0_0_3_24_33_32_30_31-157-29.jpg&quot;,
-</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>      &quot;..\/..\/ccpd_text_det\/images\/0371516927083-89_254-178&amp;423_517&amp;534-517&amp;534_204&amp;525_178&amp;431_496&amp;423-1_0_3_24_33_31_29_31-117-667.jpg&quot;,
-</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>      &quot;..\/..\/ccpd_text_det\/images\/03349609375-90_268-211&amp;469_526&amp;576-526&amp;567_214&amp;576_211&amp;473_520&amp;469-0_0_3_27_31_32_29_32-174-48.jpg&quot;,
-</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>      &quot;..\/..\/ccpd_text_det\/images\/0388454861111-90_269-138&amp;409_496&amp;518-496&amp;518_138&amp;517_139&amp;410_491&amp;409-0_0_3_24_27_26_26_30-174-148.jpg&quot;,
-</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>      &quot;..\/..\/ccpd_text_det\/images\/0198741319444-89_112-208&amp;517_449&amp;600-423&amp;593_208&amp;600_233&amp;517_449&amp;518-0_0_3_24_28_26_26_26-87-268.jpg&quot;,
-</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>      &quot;..\/..\/ccpd_text_det\/images\/3027782118055555555-91_92-186&amp;493_532&amp;574-529&amp;574_199&amp;565_186&amp;497_532&amp;493-0_0_3_27_26_30_33_32-73-336.jpg&quot;,
-</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>      &quot;..\/..\/ccpd_text_det\/images\/034375-90_258-168&amp;449_528&amp;546-528&amp;542_186&amp;546_168&amp;449_525&amp;449-0_0_3_26_30_30_26_33-94-221.jpg&quot;,
-</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>      &quot;..\/..\/ccpd_text_det\/images\/0286501736111-89_92-290&amp;486_577&amp;587-576&amp;577_290&amp;587_292&amp;491_577&amp;486-0_0_3_17_25_28_30_33-134-122.jpg&quot;,
-</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>      &quot;..\/..\/ccpd_text_det\/images\/02001953125-92_103-212&amp;486_458&amp;569-458&amp;569_224&amp;555_212&amp;486_446&amp;494-0_0_3_24_24_25_24_24-88-24.jpg&quot;
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>      &quot;check_dataset\/demo_img\/0274305555556-90_266-204&amp;460_520&amp;548-516&amp;548_209&amp;547_204&amp;464_520&amp;460-0_0_3_25_24_24_24_26-63-89.jpg&quot;,
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>      &quot;check_dataset\/demo_img\/0126171875-90_267-294&amp;424_498&amp;486-498&amp;486_296&amp;485_294&amp;425_496&amp;424-0_0_3_24_33_32_30_31-157-29.jpg&quot;,
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>      &quot;check_dataset\/demo_img\/0371516927083-89_254-178&amp;423_517&amp;534-517&amp;534_204&amp;525_178&amp;431_496&amp;423-1_0_3_24_33_31_29_31-117-667.jpg&quot;,
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>      &quot;check_dataset\/demo_img\/03349609375-90_268-211&amp;469_526&amp;576-526&amp;567_214&amp;576_211&amp;473_520&amp;469-0_0_3_27_31_32_29_32-174-48.jpg&quot;,
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>      &quot;check_dataset\/demo_img\/0388454861111-90_269-138&amp;409_496&amp;518-496&amp;518_138&amp;517_139&amp;410_491&amp;409-0_0_3_24_27_26_26_30-174-148.jpg&quot;,
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>      &quot;check_dataset\/demo_img\/0198741319444-89_112-208&amp;517_449&amp;600-423&amp;593_208&amp;600_233&amp;517_449&amp;518-0_0_3_24_28_26_26_26-87-268.jpg&quot;,
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>      &quot;check_dataset\/demo_img\/3027782118055555555-91_92-186&amp;493_532&amp;574-529&amp;574_199&amp;565_186&amp;497_532&amp;493-0_0_3_27_26_30_33_32-73-336.jpg&quot;,
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>      &quot;check_dataset\/demo_img\/034375-90_258-168&amp;449_528&amp;546-528&amp;542_186&amp;546_168&amp;449_525&amp;449-0_0_3_26_30_30_26_33-94-221.jpg&quot;,
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>      &quot;check_dataset\/demo_img\/0286501736111-89_92-290&amp;486_577&amp;587-576&amp;577_290&amp;587_292&amp;491_577&amp;486-0_0_3_17_25_28_30_33-134-122.jpg&quot;,
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>      &quot;check_dataset\/demo_img\/02001953125-92_103-212&amp;486_458&amp;569-458&amp;569_224&amp;555_212&amp;486_446&amp;494-0_0_3_24_24_25_24_24-88-24.jpg&quot;
 </span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>    ],
 </span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>    &quot;val_samples&quot;: 1001,
 </span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>    &quot;val_sample_paths&quot;: [
-</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>      &quot;..\/..\/ccpd_text_det\/images\/3056141493055555554-88_93-205&amp;455_603&amp;597-603&amp;575_207&amp;597_205&amp;468_595&amp;455-0_0_3_24_32_27_31_33-90-213.jpg&quot;,
-</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>      &quot;..\/..\/ccpd_text_det\/images\/0680295138889-88_94-120&amp;474_581&amp;623-577&amp;605_126&amp;623_120&amp;483_581&amp;474-0_0_5_24_31_24_24_24-116-518.jpg&quot;,
-</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>      &quot;..\/..\/ccpd_text_det\/images\/0482421875-87_265-154&amp;388_496&amp;530-490&amp;495_154&amp;530_156&amp;411_496&amp;388-0_0_5_25_33_33_33_33-84-104.jpg&quot;,
-</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>      &quot;..\/..\/ccpd_text_det\/images\/0347504340278-105_106-235&amp;443_474&amp;589-474&amp;589_240&amp;518_235&amp;443_473&amp;503-0_0_3_25_30_33_27_30-162-4.jpg&quot;,
-</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>      &quot;..\/..\/ccpd_text_det\/images\/0205338541667-93_262-182&amp;428_410&amp;519-410&amp;519_187&amp;499_182&amp;428_402&amp;442-0_0_3_24_26_29_32_24-83-63.jpg&quot;,
-</span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>      &quot;..\/..\/ccpd_text_det\/images\/0380913628472-97_250-234&amp;403_529&amp;534-529&amp;534_250&amp;480_234&amp;403_528&amp;446-0_0_3_25_25_24_25_25-185-85.jpg&quot;,
-</span><span id="__span-3-26"><a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>      &quot;..\/..\/ccpd_text_det\/images\/020598958333333334-93_267-256&amp;471_482&amp;563-478&amp;563_256&amp;546_262&amp;471_482&amp;484-0_0_3_26_24_25_32_24-102-115.jpg&quot;,
-</span><span id="__span-3-27"><a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>      &quot;..\/..\/ccpd_text_det\/images\/3030323350694444445-86_131-170&amp;495_484&amp;593-434&amp;569_170&amp;593_226&amp;511_484&amp;495-11_0_5_30_30_31_33_24-118-59.jpg&quot;,
-</span><span id="__span-3-28"><a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>      &quot;..\/..\/ccpd_text_det\/images\/3016158854166666667-86_97-243&amp;471_462&amp;546-462&amp;527_245&amp;546_243&amp;479_453&amp;471-0_0_3_24_30_27_24_29-98-40.jpg&quot;,
-</span><span id="__span-3-29"><a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>      &quot;..\/..\/ccpd_text_det\/images\/0340831163194-89_264-177&amp;412_488&amp;523-477&amp;506_177&amp;523_185&amp;420_488&amp;412-0_0_3_24_30_29_31_31-109-46.jpg&quot;
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>      &quot;check_dataset\/demo_img\/3056141493055555554-88_93-205&amp;455_603&amp;597-603&amp;575_207&amp;597_205&amp;468_595&amp;455-0_0_3_24_32_27_31_33-90-213.jpg&quot;,
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>      &quot;check_dataset\/demo_img\/0680295138889-88_94-120&amp;474_581&amp;623-577&amp;605_126&amp;623_120&amp;483_581&amp;474-0_0_5_24_31_24_24_24-116-518.jpg&quot;,
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>      &quot;check_dataset\/demo_img\/0482421875-87_265-154&amp;388_496&amp;530-490&amp;495_154&amp;530_156&amp;411_496&amp;388-0_0_5_25_33_33_33_33-84-104.jpg&quot;,
+</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>      &quot;check_dataset\/demo_img\/0347504340278-105_106-235&amp;443_474&amp;589-474&amp;589_240&amp;518_235&amp;443_473&amp;503-0_0_3_25_30_33_27_30-162-4.jpg&quot;,
+</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>      &quot;check_dataset\/demo_img\/0205338541667-93_262-182&amp;428_410&amp;519-410&amp;519_187&amp;499_182&amp;428_402&amp;442-0_0_3_24_26_29_32_24-83-63.jpg&quot;,
+</span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>      &quot;check_dataset\/demo_img\/0380913628472-97_250-234&amp;403_529&amp;534-529&amp;534_250&amp;480_234&amp;403_528&amp;446-0_0_3_25_25_24_25_25-185-85.jpg&quot;,
+</span><span id="__span-3-26"><a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>      &quot;check_dataset\/demo_img\/020598958333333334-93_267-256&amp;471_482&amp;563-478&amp;563_256&amp;546_262&amp;471_482&amp;484-0_0_3_26_24_25_32_24-102-115.jpg&quot;,
+</span><span id="__span-3-27"><a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>      &quot;check_dataset\/demo_img\/3030323350694444445-86_131-170&amp;495_484&amp;593-434&amp;569_170&amp;593_226&amp;511_484&amp;495-11_0_5_30_30_31_33_24-118-59.jpg&quot;,
+</span><span id="__span-3-28"><a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>      &quot;check_dataset\/demo_img\/3016158854166666667-86_97-243&amp;471_462&amp;546-462&amp;527_245&amp;546_243&amp;479_453&amp;471-0_0_3_24_30_27_24_29-98-40.jpg&quot;,
+</span><span id="__span-3-29"><a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>      &quot;check_dataset\/demo_img\/0340831163194-89_264-177&amp;412_488&amp;523-477&amp;506_177&amp;523_185&amp;420_488&amp;412-0_0_3_24_30_29_31_31-109-46.jpg&quot;
 </span><span id="__span-3-30"><a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a>    ]
 </span><span id="__span-3-31"><a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a>  },
 </span><span id="__span-3-32"><a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a>  &quot;analysis&quot;: {
 </span><span id="__span-3-33"><a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a>    &quot;histogram&quot;: &quot;check_dataset\/histogram.png&quot;
 </span><span id="__span-3-34"><a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a>  },
-</span><span id="__span-3-35"><a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a>  &quot;dataset_path&quot;: &quot;\/mnt\/liujiaxuan01\/new\/new2\/ccpd_text_det&quot;,
+</span><span id="__span-3-35"><a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a>  &quot;dataset_path&quot;: &quot;ccpd_text_det&quot;,
 </span><span id="__span-3-36"><a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a>  &quot;show_type&quot;: &quot;image&quot;,
 </span><span id="__span-3-37"><a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a>  &quot;dataset_type&quot;: &quot;TextDetDataset&quot;
 </span><span id="__span-3-38"><a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a>}
@@ -5472,7 +5488,7 @@ You're not viewing the latest version.
 <h2 id="5-model-training-and-evaluation">5. Model Training and Evaluation<a class="headerlink" href="#5-model-training-and-evaluation" title="Permanent link">&para;</a></h2>
 <h3 id="51-model-training">5.1 Model Training<a class="headerlink" href="#51-model-training" title="Permanent link">&para;</a></h3>
 <p>Before training, ensure you have verified the dataset. To complete PaddleX model training, simply use the following command:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>python<span class="w"> </span>main.py<span class="w"> </span>-c<span class="w"> </span>paddlex/configs/text_detection/PP-OCRv4_server_det.yaml<span class="w"> </span><span class="se">\</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>python<span class="w"> </span>main.py<span class="w"> </span>-c<span class="w"> </span>paddlex/configs/modules/text_detection/PP-OCRv4_server_det.yaml<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span>-o<span class="w"> </span>Global.mode<span class="o">=</span>train<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span>-o<span class="w"> </span>Global.dataset_dir<span class="o">=</span>./dataset/ccpd_text_det
 </span></code></pre></div>
@@ -5505,7 +5521,7 @@ You're not viewing the latest version.
 </ul>
 <h3 id="52-model-evaluation">5.2 Model Evaluation<a class="headerlink" href="#52-model-evaluation" title="Permanent link">&para;</a></h3>
 <p>After completing model training, you can evaluate the specified model weights file on the validation set to verify the model's accuracy. Using PaddleX for model evaluation requires only one command:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>python<span class="w"> </span>main.py<span class="w"> </span>-c<span class="w"> </span>paddlex/configs/text_detection/PP-OCRv4_server_det.yaml<span class="w"> </span><span class="se">\</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>python<span class="w"> </span>main.py<span class="w"> </span>-c<span class="w"> </span>paddlex/configs/modules/text_detection/PP-OCRv4_server_det.yaml<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span>-o<span class="w"> </span>Global.mode<span class="o">=</span>evaluate<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span>-o<span class="w"> </span>Global.dataset_dir<span class="o">=</span>./dataset/ccpd_text_det
 </span></code></pre></div>
@@ -5579,11 +5595,32 @@ You're not viewing the latest version.
 <p></center></p>
 <p><b>Note: This tutorial is designed for 4 GPUs. If you only have 1 GPU, you can complete the experiment by adjusting the number of training GPUs, but the final metrics may not align with the above indicators, which is normal.</b></p>
 <h2 id="6-production-line-testing">6. Production Line Testing<a class="headerlink" href="#6-production-line-testing" title="Permanent link">&para;</a></h2>
-<p>Replace the models in the production line with the fine-tuned models for testing, for example:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>paddlex<span class="w"> </span>--pipeline<span class="w"> </span>OCR<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">        </span>--model<span class="w"> </span>PP-OCRv4_server_det<span class="w"> </span>PP-OCRv4_server_rec<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">        </span>--model_dir<span class="w"> </span>output/best_accuracy/inference<span class="w"> </span>None<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">        </span>--input<span class="w"> </span>https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/doc_images/practical_tutorial/OCR/case1.jpg
+<p>Replace the model in the production line with the fine-tuned model for testing. You can obtain the OCR production configuration file and load the configuration file for prediction. You can execute the following command to save the results in <code>my_path</code>:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>paddlex<span class="w"> </span>--get_pipeline_config<span class="w"> </span>OCR<span class="w"> </span>--save_path<span class="w"> </span>./my_path
+</span></code></pre></div>
+<p>Modify the <code>SubModules.TextDetection.model_dir</code> in the configuration file to your model path.</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nt">SubModules</span><span class="p">:</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="nt">TextDetection</span><span class="p">:</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="nt">module_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text_detection</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="nt">model_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PP-OCRv4_mobile_det</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">    </span><span class="nt">model_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">output/best_accuracy/inference</span><span class="w"> </span><span class="c1"># 替换为微调后的文本检测模型权重路径</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+</span></code></pre></div>
+<p>Subsequently, based on the Python script method, you can load the modified production configuration file:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">paddlex</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_pipeline</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="n">pipeline</span> <span class="o">=</span> <span class="n">create_pipeline</span><span class="p">(</span><span class="n">pipeline</span><span class="o">=</span><span class="s2">&quot;my_path/OCR.yaml&quot;</span><span class="p">)</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="n">output</span> <span class="o">=</span> <span class="n">pipeline</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>    <span class="nb">input</span><span class="o">=</span><span class="s2">&quot;https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/doc_images/practical_tutorial/OCR/case1.jpg&quot;</span><span class="p">,</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>    <span class="n">use_doc_orientation_classify</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>    <span class="n">use_doc_unwarping</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>    <span class="n">use_textline_orientation</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="p">)</span>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">output</span><span class="p">:</span>
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>    <span class="n">res</span><span class="o">.</span><span class="n">print</span><span class="p">()</span>
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>    <span class="n">res</span><span class="o">.</span><span class="n">save_to_img</span><span class="p">(</span><span class="n">save_path</span><span class="o">=</span><span class="s2">&quot;./output/&quot;</span><span class="p">)</span>
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>    <span class="n">res</span><span class="o">.</span><span class="n">save_to_json</span><span class="p">(</span><span class="n">save_path</span><span class="o">=</span><span class="s2">&quot;./output/&quot;</span><span class="p">)</span>
 </span></code></pre></div>
 <p>This will generate prediction results under <code>./output</code>, where the prediction result for <code>case1.jpg</code> is shown below:
 <center></p>
@@ -5591,14 +5628,19 @@ You're not viewing the latest version.
 <p></center></p>
 <h2 id="7-development-integrationdeployment">7. Development Integration/Deployment<a class="headerlink" href="#7-development-integrationdeployment" title="Permanent link">&para;</a></h2>
 <p>If the general OCR pipeline meets your requirements for inference speed and accuracy in the production line, you can proceed directly with development integration/deployment.
-1. Directly apply the trained model in your Python project by referring to the following sample code, and modify the <code>Pipeline.model</code> in the <code>paddlex/pipelines/OCR.yaml</code> configuration file to your own model path:
-<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">paddlex</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_pipeline</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">pipeline</span> <span class="o">=</span> <span class="n">create_pipeline</span><span class="p">(</span><span class="n">pipeline</span><span class="o">=</span><span class="s2">&quot;paddlex/pipelines/OCR.yaml&quot;</span><span class="p">)</span>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">output</span> <span class="o">=</span> <span class="n">pipeline</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="s2">&quot;https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/doc_images/practical_tutorial/OCR/case1.jpg&quot;</span><span class="p">)</span>
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">output</span><span class="p">:</span>
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>    <span class="n">res</span><span class="o">.</span><span class="n">print</span><span class="p">()</span> <span class="c1"># Print the structured output of the prediction</span>
-</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>    <span class="n">res</span><span class="o">.</span><span class="n">save_to_img</span><span class="p">(</span><span class="s2">&quot;./output/&quot;</span><span class="p">)</span> <span class="c1"># Save the visualized image of the result</span>
-</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>    <span class="n">res</span><span class="o">.</span><span class="n">save_to_json</span><span class="p">(</span><span class="s2">&quot;./output/&quot;</span><span class="p">)</span> <span class="c1"># Save the structured output of the prediction</span>
+1. Directly apply the trained model in your Python project. You can refer to the following example:</p>
+<p><div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">paddlex</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_pipeline</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="n">pipeline</span> <span class="o">=</span> <span class="n">create_pipeline</span><span class="p">(</span><span class="n">pipeline</span><span class="o">=</span><span class="s2">&quot;paddlex/configs/pipelines/OCR.yaml&quot;</span><span class="p">)</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="n">output</span> <span class="o">=</span> <span class="n">pipeline</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>    <span class="nb">input</span><span class="o">=</span><span class="s2">&quot;https://paddle-model-ecology.bj.bcebos.com/paddlex/PaddleX3.0/doc_images/practical_tutorial/OCR/case1.jpg&quot;</span><span class="p">,</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>    <span class="n">use_doc_orientation_classify</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>    <span class="n">use_doc_unwarping</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>    <span class="n">use_textline_orientation</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="p">)</span>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>    <span class="n">res</span><span class="o">.</span><span class="n">print</span><span class="p">()</span>
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>    <span class="n">res</span><span class="o">.</span><span class="n">save_to_img</span><span class="p">(</span><span class="n">save_path</span><span class="o">=</span><span class="s2">&quot;./output/&quot;</span><span class="p">)</span>
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>    <span class="n">res</span><span class="o">.</span><span class="n">save_to_json</span><span class="p">(</span><span class="n">save_path</span><span class="o">=</span><span class="s2">&quot;./output/&quot;</span><span class="p">)</span>
 </span></code></pre></div>
 For more parameters, please refer to the <a href="../pipeline_usage/tutorials/ocr_pipelines/OCR.html">General OCR Pipeline Usage Tutorial</a>.</p>
 <ol>
@@ -5634,7 +5676,7 @@ For more parameters, please refer to the <a href="../pipeline_usage/tutorials/oc
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 6, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 14, 2025</span>
   </span>
 
     
@@ -5644,7 +5686,7 @@ For more parameters, please refer to the <a href="../pipeline_usage/tutorials/oc
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 6, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 14, 2025</span>
   </span>
 
     
@@ -5825,7 +5867,7 @@ For more parameters, please refer to the <a href="../pipeline_usage/tutorials/oc
     <script id="__config" type="application/json">{"base": "../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "navigation.expand", "navigation.path", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.f13b1293.min.js"></script>
+      <script src="../../assets/javascripts/bundle.f1b6f286.min.js"></script>
       
         <script src="../../javascripts/katex.min.js"></script>
       

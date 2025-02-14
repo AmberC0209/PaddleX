@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../../../assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4">
     
     
       
@@ -26,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.d7758b05.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.8608ea7d.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
@@ -841,7 +841,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../pipeline_usage/tutorials/information_extraction_pipelines/document_scene_information_extraction.html" class="md-nav__link">
+      <a href="../../../../pipeline_usage/tutorials/information_extraction_pipelines/document_scene_information_extraction.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5317,8 +5317,8 @@ You're not viewing the latest version.
 <th>Model</th><th>Model Download Link</th>
 <th>Output Feature Dimension</th>
 <th>Acc (%)<br/>AgeDB-30/CFP-FP/LFW</th>
-<th>GPU Inference Time (ms)</th>
-<th>CPU Inference Time (ms)</th>
+<th>GPU Inference Time (ms)<br/>[Normal Mode / High-Performance Mode]</th>
+<th>CPU Inference Time (ms)<br/>[Normal Mode / High-Performance Mode]</th>
 <th>Model Size (M)</th>
 <th>Description</th>
 </tr>
@@ -5328,8 +5328,8 @@ You're not viewing the latest version.
 <td>MobileFaceNet</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0rc0/MobileFaceNet_infer.tar">Inference Model</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/MobileFaceNet_pretrained.pdparams">Trained Model</a></td>
 <td>128</td>
 <td>96.28/96.71/99.58</td>
-<td>5.7</td>
-<td>101.6</td>
+<td>3.16 / 0.48</td>
+<td>6.49 / 6.49</td>
 <td>4.1</td>
 <td>Face feature model trained on MobileFaceNet with MS1Mv3 dataset</td>
 </tr>
@@ -5337,15 +5337,54 @@ You're not viewing the latest version.
 <td>ResNet50_face</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0rc0/ResNet50_face_infer.tar">Inference Model</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/ResNet50_face_pretrained.pdparams">Trained Model</a></td>
 <td>512</td>
 <td>98.12/98.56/99.77</td>
-<td>8.7</td>
-<td>200.7</td>
+<td>5.68 / 1.09</td>
+<td>14.96 / 11.90</td>
 <td>87.2</td>
 <td>Face feature model trained on ResNet50 with MS1Mv3 dataset</td>
 </tr>
 </tbody>
 </table>
-<p>Note: The above accuracy metrics are Accuracy scores measured on the AgeDB-30, CFP-FP, and LFW datasets, respectively. All model GPU inference times are based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speeds are based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</p>
 
+<p><strong>Test Environment Description</strong>:</p>
+<ul>
+<li><strong>Performance Test Environment</strong></li>
+<li><strong>Test Dataset</strong>: The above accuracy metrics are Accuracy scores measured on the AgeDB-30, CFP-FP, and LFW datasets.</li>
+<li>
+<p><strong>Hardware Configuration</strong>:</p>
+<ul>
+<li>GPU: NVIDIA Tesla T4</li>
+<li>CPU: Intel Xeon Gold 6271C @ 2.60GHz</li>
+<li>Other Environments: Ubuntu 20.04 / cuDNN 8.6 / TensorRT 8.5.2.2</li>
+</ul>
+</li>
+<li>
+<p><strong>Inference Mode Description</strong></p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>GPU Configuration</th>
+<th>CPU Configuration</th>
+<th>Acceleration Technology Combination</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Regular Mode</td>
+<td>FP32 Precision / No TRT Acceleration</td>
+<td>FP32 Precision / 8 Threads</td>
+<td>PaddleInference</td>
+</tr>
+<tr>
+<td>High-Performance Mode</td>
+<td>Optimal combination of pre-selected precision types and acceleration strategies</td>
+<td>FP32 Precision / 8 Threads</td>
+<td>Pre-selected optimal backend (Paddle/OpenVINO/TRT, etc.)</td>
+</tr>
+</tbody>
+</table>
 <h2 id="iii-quick-integration">III. Quick Integration<a class="headerlink" href="#iii-quick-integration" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>❗ Before quick integration, please install the PaddleX wheel package. For details, refer to the <a href="../../../installation/installation.html">PaddleX Local Installation Tutorial</a></p>
@@ -5431,15 +5470,14 @@ Parameter meanings are as follows:
 <tr>
 <td><code>input</code></td>
 <td>Data to be predicted, supporting multiple input types</td>
-<td><code>Python Var</code>/<code>str</code>/<code>dict</code>/<code>list</code></td>
+<td><code>Python Var</code>/<code>str</code>/<code>list</code></td>
 <td>
 <ul>
-  <li><b>Python variable</b>, such as image data represented by <code>numpy.ndarray</code></li>
-  <li><b>File path</b>, such as the local path of an image file: <code>/root/data/img.jpg</code></li>
-  <li><b>URL link</b>, such as the network URL of an image file: <a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/general_ocr_rec_001.png">Example</a></li>
-  <li><b>Local directory</b>, the directory should contain data files to be predicted, such as the local path: <code>/root/data/</code></li>
-  <li><b>Dictionary</b>, the <code>key</code> of the dictionary must correspond to the specific task, such as <code>"img"</code> for image classification tasks. The <code>value</code> of the dictionary supports the above types of data, for example: <code>{"img": "/root/data1"}</code></li>
-  <li><b>List</b>, elements of the list must be of the above types of data, such as <code>[numpy.ndarray, numpy.ndarray]</code>, <code>["/root/data/img1.jpg", "/root/data/img2.jpg"]</code>, <code>["/root/data1", "/root/data2"]</code>, <code>[{"img": "/root/data1"}, {"img": "/root/data2/img.jpg"}]</code></li>
+<li><b>Python Variable</b>, such as image data represented by <code>numpy.ndarray</code></li>
+<li><b>File Path</b>, such as the local path of an image file: <code>/root/data/img.jpg</code></li>
+<li><b>URL Link</b>, such as the web URL of an image file: <a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/general_ocr_rec_001.png">Example</a></li>
+<li><b>Local Directory</b>, the directory should contain the data files to be predicted, such as the local path: <code>/root/data/</code></li>
+<li><b>List</b>, the elements of the list should be of the above-mentioned data types, such as <code>[numpy.ndarray, numpy.ndarray]</code>, <code>[\"/root/data/img1.jpg\", \"/root/data/img2.jpg\"]</code>, <code>[\"/root/data1\", \"/root/data2\"]</code></li>
 </ul>
 </td>
 <td>None</td>
@@ -5544,47 +5582,46 @@ Parameter meanings are as follows:
 </span></code></pre></div>
 <p>After executing the above command, PaddleX will validate the dataset and collect its basic information. Upon successful execution, the log will print the message <code>Check dataset passed !</code>. The validation result file will be saved in <code>./output/check_dataset_result.json</code>, and related outputs will be saved in the <code>./output/check_dataset</code> directory of the current directory. The output directory includes visualized example images and histograms of sample distributions.</p>
 <details><summary>👉 <b>Validation Result Details (Click to Expand)</b></summary>
-
 <p>The specific content of the validation result file is:</p>
 <pre><code class="language-bash">{
-  &quot;done_flag&quot;: true,
-  &quot;check_pass&quot;: true,
-  &quot;attributes&quot;: {
-    &quot;train_label_file&quot;: &quot;../../dataset/face_rec_examples/train/label.txt&quot;,
-    &quot;train_num_classes&quot;: 995,
-    &quot;train_samples&quot;: 1000,
-    &quot;train_sample_paths&quot;: [
-      &quot;check_dataset/demo_img/01378592.jpg&quot;,
-      &quot;check_dataset/demo_img/04331410.jpg&quot;,
-      &quot;check_dataset/demo_img/03485713.jpg&quot;,
-      &quot;check_dataset/demo_img/02382123.jpg&quot;,
-      &quot;check_dataset/demo_img/01722397.jpg&quot;,
-      &quot;check_dataset/demo_img/02682349.jpg&quot;,
-      &quot;check_dataset/demo_img/00272794.jpg&quot;,
-      &quot;check_dataset/demo_img/03151987.jpg&quot;,
-      &quot;check_dataset/demo_img/01725764.jpg&quot;,
-      &quot;check_dataset/demo_img/02580369.jpg&quot;
+  "done_flag": true,
+  "check_pass": true,
+  "attributes": {
+    "train_label_file": "../../dataset/face_rec_examples/train/label.txt",
+    "train_num_classes": 995,
+    "train_samples": 1000,
+    "train_sample_paths": [
+      "check_dataset/demo_img/01378592.jpg",
+      "check_dataset/demo_img/04331410.jpg",
+      "check_dataset/demo_img/03485713.jpg",
+      "check_dataset/demo_img/02382123.jpg",
+      "check_dataset/demo_img/01722397.jpg",
+      "check_dataset/demo_img/02682349.jpg",
+      "check_dataset/demo_img/00272794.jpg",
+      "check_dataset/demo_img/03151987.jpg",
+      "check_dataset/demo_img/01725764.jpg",
+      "check_dataset/demo_img/02580369.jpg"
     ],
-    &quot;val_label_file&quot;: &quot;../../dataset/face_rec_examples/val/pair_label.txt&quot;,
-    &quot;val_num_classes&quot;: 2,
-    &quot;val_samples&quot;: 500,
-    &quot;val_sample_paths&quot;: [
-      &quot;check_dataset/demo_img/Don_Carcieri_0001.jpg&quot;,
-      &quot;check_dataset/demo_img/Eric_Fehr_0001.jpg&quot;,
-      &quot;check_dataset/demo_img/Harry_Kalas_0001.jpg&quot;,
-      &quot;check_dataset/demo_img/Francis_Ford_Coppola_0001.jpg&quot;,
-      &quot;check_dataset/demo_img/Amer_al-Saadi_0001.jpg&quot;,
-      &quot;check_dataset/demo_img/Sergei_Ivanov_0001.jpg&quot;,
-      &quot;check_dataset/demo_img/Erin_Runnion_0003.jpg&quot;,
-      &quot;check_dataset/demo_img/Bill_Stapleton_0001.jpg&quot;,
-      &quot;check_dataset/demo_img/Daniel_Bruehl_0001.jpg&quot;,
-      &quot;check_dataset/demo_img/Clare_Short_0004.jpg&quot;
+    "val_label_file": "../../dataset/face_rec_examples/val/pair_label.txt",
+    "val_num_classes": 2,
+    "val_samples": 500,
+    "val_sample_paths": [
+      "check_dataset/demo_img/Don_Carcieri_0001.jpg",
+      "check_dataset/demo_img/Eric_Fehr_0001.jpg",
+      "check_dataset/demo_img/Harry_Kalas_0001.jpg",
+      "check_dataset/demo_img/Francis_Ford_Coppola_0001.jpg",
+      "check_dataset/demo_img/Amer_al-Saadi_0001.jpg",
+      "check_dataset/demo_img/Sergei_Ivanov_0001.jpg",
+      "check_dataset/demo_img/Erin_Runnion_0003.jpg",
+      "check_dataset/demo_img/Bill_Stapleton_0001.jpg",
+      "check_dataset/demo_img/Daniel_Bruehl_0001.jpg",
+      "check_dataset/demo_img/Clare_Short_0004.jpg"
     ]
   },
-  &quot;analysis&quot;: {},
-  &quot;dataset_path&quot;: &quot;./dataset/face_rec_examples&quot;,
-  &quot;show_type&quot;: &quot;image&quot;,
-  &quot;dataset_type&quot;: &quot;ClsDataset&quot;
+  "analysis": {},
+  "dataset_path": "./dataset/face_rec_examples",
+  "show_type": "image",
+  "dataset_type": "ClsDataset"
 }
 </code></pre>
 <p>The verification results mentioned above indicate that <code>check_pass</code> being <code>True</code> means the dataset format meets the requirements. Details of other indicators are as follows:</p>
@@ -5599,7 +5636,6 @@ Parameter meanings are as follows:
 <h4 id="413-dataset-format-conversion-dataset-splitting-optional">4.1.3 Dataset Format Conversion / Dataset Splitting (Optional)<a class="headerlink" href="#413-dataset-format-conversion-dataset-splitting-optional" title="Permanent link">&para;</a></h4>
 <p>After completing the data validation, you can convert the dataset format and re-split the training/validation ratio by <b>modifying the configuration file</b> or <b>adding hyperparameters</b>.</p>
 <details><summary>👉 <b>Details on Format Conversion / Dataset Splitting (Click to Expand)</b></summary>
-
 <p>The face feature module does not support data format conversion or dataset splitting.</p></details>
 
 <h4 id="414-data-organization-for-face-feature-module">4.1.4 Data Organization for Face Feature Module<a class="headerlink" href="#414-data-organization-for-face-feature-module" title="Permanent link">&para;</a></h4>
@@ -5640,7 +5676,6 @@ The steps required are:</p>
 Other related parameters can be set by modifying the <code>Global</code> and <code>Train</code> fields in the <code>.yaml</code> configuration file or by appending parameters in the command line. For example, to specify the first two GPUs for training: <code>-o Global.device=gpu:0,1</code>; to set the number of training epochs to 10: <code>-o Train.epochs_iters=10</code>. For more modifiable parameters and their detailed explanations, refer to the configuration file instructions for the corresponding task module <a href="../../instructions/config_parameters_common.html">PaddleX Common Configuration Parameters for Model Tasks</a>.</li>
 </ul>
 <details><summary>👉 <b>More Details (Click to Expand)</b></summary>
-
 <ul>
 <li>During model training, PaddleX automatically saves model weight files, defaulting to <code>output</code>. To specify a save path, use the <code>-o Global.output</code> field in the configuration file.</li>
 <li>PaddleX shields you from the concepts of dynamic graph weights and static graph weights. During model training, both dynamic and static graph weights are produced, and static graph weights are selected by default for model inference.</li>
@@ -5670,11 +5705,14 @@ Similar to model training, the process involves the following steps:
 Other related parameters can be configured by modifying the fields under `Global` and `Evaluate` in the `.yaml` configuration file. For detailed information, please refer to [PaddleX Common Configuration Parameters for Models](../../instructions/config_parameters_common.en.md)。
 
 <details>
+
 <summary>👉 <b>More Details (Click to Expand)</b></summary>
 
 During model evaluation, the path to the model weights file needs to be specified. Each configuration file has a default weight save path built in. If you need to change it, you can set it by appending a command line parameter, such as `-o Evaluate.weight_path="./output/best_model/best_model/model.pdparams"`.
 
-After completing the model evaluation, an `evaluate_result.json` file will be produced, which records the evaluation results. Specifically, it records whether the evaluation task was completed normally and the model's evaluation metrics, including Accuracy.</details>
+After completing the model evaluation, an `evaluate_result.json` file will be produced, which records the evaluation results. Specifically, it records whether the evaluation task was completed normally and the model's evaluation metrics, including Accuracy.
+
+</details>
 
 ### <b>4.4 Model Inference</b>
 After completing model training and evaluation, you can use the trained model weights for inference predictions. In PaddleX, model inference predictions can be implemented through two methods: command line and wheel package.
@@ -5692,7 +5730,7 @@ Similar to model training and evaluation, the following steps are required:
 * Specify the mode as model inference prediction: `-o Global.mode=predict`
 * Specify the path to the model weights: `-o Predict.model_dir="./output/best_model/inference"`
 * Specify the path to the input data: `-o Predict.input="..."`
-Other related parameters can be set by modifying the fields under `Global` and `Predict` in the `.yaml` configuration file. For details, please refer to [PaddleX Common Model Configuration File Parameter Description](../../instructions/config_parameters_common.md).
+Other related parameters can be set by modifying the fields under `Global` and `Predict` in the `.yaml` configuration file. For details, please refer to [PaddleX Common Model Configuration File Parameter Description](../../instructions/config_parameters_common.en.md).
 
 #### 4.4.2 Model Integration
 The model can be directly integrated into the PaddleX pipeline or into your own project.
@@ -5704,6 +5742,8 @@ The face feature module can be integrated into the PaddleX pipeline for [<b>Face
 2. <b>Module Integration</b>
 
 The weights you produced can be directly integrated into the face feature module. You can refer to the Python example code in [Quick Integration](#III.-Quick-Integration) and only need to replace the model with the path to the model you trained.
+
+You can also use the PaddleX high-performance inference plugin to optimize the inference process of your model and further improve efficiency. For detailed procedures, please refer to the [PaddleX High-Performance Inference Guide](../../../pipeline_deploy/high_performance_inference.en.md).
 
 
 
@@ -5726,7 +5766,7 @@ The weights you produced can be directly integrated into the face feature module
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 6, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 14, 2025</span>
   </span>
 
     
@@ -5736,7 +5776,7 @@ The weights you produced can be directly integrated into the face feature module
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 6, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 14, 2025</span>
   </span>
 
     
@@ -5917,7 +5957,7 @@ The weights you produced can be directly integrated into the face feature module
     <script id="__config" type="application/json">{"base": "../../../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "navigation.expand", "navigation.path", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.f13b1293.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.f1b6f286.min.js"></script>
       
         <script src="../../../../javascripts/katex.min.js"></script>
       

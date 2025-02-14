@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../../../assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4">
     
     
       
@@ -26,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.d7758b05.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.8608ea7d.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
@@ -841,7 +841,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../pipeline_usage/tutorials/information_extraction_pipelines/document_scene_information_extraction.html" class="md-nav__link">
+      <a href="../../../../pipeline_usage/tutorials/information_extraction_pipelines/document_scene_information_extraction.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5382,8 +5382,8 @@ You're not viewing the latest version.
 <tr>
 <th>Model</th><th>Model Download Link</th>
 <th>Top-1 Accuracy (%)</th>
-<th>GPU Inference Time (ms)</th>
-<th>CPU Inference Time (ms)</th>
+<th>CPU Inference Time (ms)<br/>[Normal Mode / High-Performance Mode]</th>
+<th>CPU Inference Time (ms)<br/>[Normal Mode / High-Performance Mode]</th>
 <th>Model Size (M)</th>
 <th>Description</th>
 </tr>
@@ -5392,26 +5392,67 @@ You're not viewing the latest version.
 <tr>
 <td>PP-LCNet_x1_0_doc_ori</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0rc0/PP-LCNet_x1_0_doc_ori_infer.tar">Inference Model</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/PP-LCNet_x1_0_doc_ori_pretrained.pdparams">Trained Model</a></td>
 <td>99.06</td>
-<td>3.84845</td>
-<td>9.23735</td>
+<td>2.31 / 0.43</td>
+<td>3.37 / 1.27</td>
 <td>7</td>
 <td>A document image classification model based on PP-LCNet_x1_0, with four categories: 0°, 90°, 180°, 270°</td>
 </tr>
 </tbody>
 </table>
-<p><b>Note: The above accuracy metrics are evaluated on a self-built dataset covering various scenarios such as IDs and documents, containing 1000 images. GPU inference time is based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speed is based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b></p>
+
+<p><strong>Test Environment Description</strong>:</p>
+<ul>
+<li><strong>Performance Test Environment</strong></li>
+<li><strong>Test Dataset</strong>: Self-built multi-scene dataset (1000 images, including ID cards/documents, etc.)</li>
+<li>
+<p><strong>Hardware Configuration</strong>:</p>
+<ul>
+<li>GPU: NVIDIA Tesla T4</li>
+<li>CPU: Intel Xeon Gold 6271C @ 2.60GHz</li>
+<li>Other Environments: Ubuntu 20.04 / cuDNN 8.6 / TensorRT 8.5.2.2</li>
+</ul>
+</li>
+<li>
+<p><strong>Inference Mode Description</strong></p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>GPU Configuration</th>
+<th>CPU Configuration</th>
+<th>Acceleration Technology Combination</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Regular Mode</td>
+<td>FP32 Precision / No TRT Acceleration</td>
+<td>FP32 Precision / 8 Threads</td>
+<td>PaddleInference</td>
+</tr>
+<tr>
+<td>High-Performance Mode</td>
+<td>Optimal combination of pre-selected precision types and acceleration strategies</td>
+<td>FP32 Precision / 8 Threads</td>
+<td>Pre-selected optimal backend (Paddle/OpenVINO/TRT, etc.)</td>
+</tr>
+</tbody>
+</table>
 <h2 id="iii-quick-integration">III. Quick Integration<a class="headerlink" href="#iii-quick-integration" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>❗ Before quick integration, please install the PaddleX wheel package. For detailed instructions, refer to <a href="../../../installation/installation.html">PaddleX Local Installation Tutorial</a></p>
 </blockquote>
 <p>After completing the installation of the wheel package, you can perform inference on the document image orientation classification module with just a few lines of code. You can switch models under this module at will, and you can also integrate the model inference of the document image orientation classification module into your project. Before running the following code, please download the <a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/img_rot180_demo.jpg">example image</a> to your local machine.</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>from<span class="w"> </span>paddlex<span class="w"> </span>import<span class="w"> </span>create_model
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nv">model</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>create_model<span class="o">(</span><span class="nv">model_name</span><span class="o">=</span><span class="s2">&quot;PP-LCNet_x1_0_doc_ori&quot;</span><span class="o">)</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nv">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>model.predict<span class="o">(</span><span class="s2">&quot;img_rot180_demo.jpg&quot;</span>,<span class="w">  </span><span class="nv">batch_size</span><span class="o">=</span><span class="m">1</span><span class="o">)</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="k">for</span><span class="w"> </span>res<span class="w"> </span><span class="k">in</span><span class="w"> </span>output:
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span>res.print<span class="o">(</span><span class="nv">json_format</span><span class="o">=</span>False<span class="o">)</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span>res.save_to_img<span class="o">(</span><span class="s2">&quot;./output/demo.png&quot;</span><span class="o">)</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span>res.save_to_json<span class="o">(</span><span class="s2">&quot;./output/res.json&quot;</span><span class="o">)</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">paddlex</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_model</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">model</span> <span class="o">=</span> <span class="n">create_model</span><span class="p">(</span><span class="n">model_name</span><span class="o">=</span><span class="s2">&quot;PP-LCNet_x1_0_doc_ori&quot;</span><span class="p">)</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">output</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="s2">&quot;img_rot180_demo.jpg&quot;</span><span class="p">,</span>  <span class="n">batch_size</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">output</span><span class="p">:</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="n">res</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="n">json_format</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="n">res</span><span class="o">.</span><span class="n">save_to_img</span><span class="p">(</span><span class="s2">&quot;./output/demo.png&quot;</span><span class="p">)</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="n">res</span><span class="o">.</span><span class="n">save_to_json</span><span class="p">(</span><span class="s2">&quot;./output/res.json&quot;</span><span class="p">)</span>
 </span></code></pre></div>
 <p>After running, the result obtained is:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>{&#39;res&#39;: {&#39;input_path&#39;: &#39;test_imgs/img_rot180_demo.jpg&#39;, &#39;class_ids&#39;: [2], &#39;scores&#39;: [0.8816400170326233], &#39;label_names&#39;: [&#39;180&#39;]}}
@@ -5424,7 +5465,7 @@ You're not viewing the latest version.
 <li><code>label_names</code>： Indicates the class name of the prediction result.
 The visualized image is as follows:</li>
 </ul>
-<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/refs/heads/main/images/modules/doc_img_ori_classification/img_rot180_demo_res.jpg"></p>
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/refs/heads/main/images/modules/doc_img_ori_classification/img_rot180_demo_res.jpg"/></p>
 <p>Related methods, parameters, and other explanations are as follows:</p>
 <ul>
 <li>The <code>create_model</code> instantiates a text recognition model (here we use <code>PP-LCNet_x1_0_doc_ori</code> as an example), with specific explanations as follows:</li>
@@ -5476,15 +5517,14 @@ The visualized image is as follows:</li>
 <tr>
 <td><code>input</code></td>
 <td>Data to be predicted, supporting multiple input types</td>
-<td><code>Python Var</code>/<code>str</code>/<code>dict</code>/<code>list</code></td>
+<td><code>Python Var</code>/<code>str</code>/<code>list</code></td>
 <td>
 <ul>
-  <li><b>Python variable</b>, such as image data represented by <code>numpy.ndarray</code></li>
-  <li><b>File path</b>, such as the local path of an image file: <code>/root/data/img.jpg</code></li>
-  <li><b>URL link</b>, such as the network URL of an image file: <a href = "https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/img_rot180_demo.jpg">Example</a></li></url>
-  <li><b>Local directory</b>, the directory should contain data files to be predicted, such as the local path: <code>/root/data/</code></li>
-  <li><b>Dictionary</b>, the <code>key</code> of the dictionary must correspond to the specific task, such as <code>"img"</code> for image classification tasks. The <code>value</code> of the dictionary supports the above types of data, for example: <code>{"img": "/root/data1"}</code></li>
-  <li><b>List</b>, elements of the list must be the above types of data, such as <code>[numpy.ndarray, numpy.ndarray]</code>, <code>["/root/data/img1.jpg", "/root/data/img2.jpg"]</code>, <code>["/root/data1", "/root/data2"]</code>, <code>[{"img": "/root/data1"}, {"img": "/root/data2/img.jpg"}]</code></li>
+<li><b>Python variable</b>, such as image data represented by <code>numpy.ndarray</code></li>
+<li><b>File path</b>, such as the local path of an image file: <code>/root/data/img.jpg</code></li>
+<li><b>URL link</b>, such as the network URL of an image file: <a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/img_rot180_demo.jpg">Example</a></li>
+<li><b>Local directory</b>, the directory should contain data files to be predicted, such as the local path: <code>/root/data/</code></li>
+<li><b>List</b>, the elements of the list should be of the above-mentioned data types, such as <code>[numpy.ndarray, numpy.ndarray]</code>, <code>[\"/root/data/img1.jpg\", \"/root/data/img2.jpg\"]</code>, <code>[\"/root/data1\", \"/root/data2\"]</code></li>
 </ul>
 </td>
 <td>None</td>
@@ -5513,8 +5553,8 @@ The visualized image is as follows:</li>
 </tr>
 </thead>
 <tr>
-<td rowspan = "3"><code>print()</code></td>
-<td rowspan = "3">Print the result to the terminal</td>
+<td rowspan="3"><code>print()</code></td>
+<td rowspan="3">Print the result to the terminal</td>
 <td><code>format_json</code></td>
 <td><code>bool</code></td>
 <td>Whether to format the output content using <code>JSON</code> indentation</td>
@@ -5533,8 +5573,8 @@ The visualized image is as follows:</li>
 <td><code>False</code></td>
 </tr>
 <tr>
-<td rowspan = "3"><code>save_to_json()</code></td>
-<td rowspan = "3">Save the result as a JSON file</td>
+<td rowspan="3"><code>save_to_json()</code></td>
+<td rowspan="3">Save the result as a JSON file</td>
 <td><code>save_path</code></td>
 <td><code>str</code></td>
 <td>The path to save the file. When it is a directory, the saved file name is consistent with the input file name</td>
@@ -5573,12 +5613,12 @@ The visualized image is as follows:</li>
 </tr>
 </thead>
 <tr>
-<td rowspan = "1"><code>json</code></td>
-<td rowspan = "1">Get the prediction result in <code>json</code> format</td>
+<td rowspan="1"><code>json</code></td>
+<td rowspan="1">Get the prediction result in <code>json</code> format</td>
 </tr>
 <tr>
-<td rowspan = "1"><code>img</code></td>
-<td rowspan = "1">Get the visualized image in <code>dict</code> format</td>
+<td rowspan="1"><code>img</code></td>
+<td rowspan="1">Get the visualized image in <code>dict</code> format</td>
 </tr>
 </table>
 
@@ -5600,47 +5640,46 @@ The visualized image is as follows:</li>
 </span></code></pre></div>
 <p>After executing the above command, PaddleX will verify the dataset and collect basic information about it. Once the command runs successfully, a message saying <code>Check dataset passed !</code> will be printed in the log. The verification results will be saved in <code>./output/check_dataset_result.json</code>, and related outputs will be stored in the <code>./output/check_dataset</code> directory, including visual examples of sample images and a histogram of sample distribution.</p>
 <details><summary>👉 <b>Verification Result Details (click to expand)</b></summary>
-
 <p>The specific content of the verification result file is:</p>
 <pre><code class="language-bash">{
-  &quot;done_flag&quot;: true,
-  &quot;check_pass&quot;: true,
-  &quot;attributes&quot;: {
-    &quot;label_file&quot;: &quot;..\/..\/text_image_orientation\/label.txt&quot;,
-    &quot;num_classes&quot;: 4,
-    &quot;train_samples&quot;: 1553,
-    &quot;train_sample_paths&quot;: [
-      &quot;check_dataset\/demo_img\/img_rot270_10351.jpg&quot;,
-      &quot;check_dataset\/demo_img\/img_rot0_3908.jpg&quot;,
-      &quot;check_dataset\/demo_img\/img_rot180_7712.jpg&quot;,
-      &quot;check_dataset\/demo_img\/img_rot0_7480.jpg&quot;,
-      &quot;check_dataset\/demo_img\/img_rot270_9599.jpg&quot;,
-      &quot;check_dataset\/demo_img\/img_rot90_10323.jpg&quot;,
-      &quot;check_dataset\/demo_img\/img_rot90_4885.jpg&quot;,
-      &quot;check_dataset\/demo_img\/img_rot180_3939.jpg&quot;,
-      &quot;check_dataset\/demo_img\/img_rot90_7153.jpg&quot;,
-      &quot;check_dataset\/demo_img\/img_rot180_1747.jpg&quot;
+  "done_flag": true,
+  "check_pass": true,
+  "attributes": {
+    "label_file": "..\/..\/text_image_orientation\/label.txt",
+    "num_classes": 4,
+    "train_samples": 1553,
+    "train_sample_paths": [
+      "check_dataset\/demo_img\/img_rot270_10351.jpg",
+      "check_dataset\/demo_img\/img_rot0_3908.jpg",
+      "check_dataset\/demo_img\/img_rot180_7712.jpg",
+      "check_dataset\/demo_img\/img_rot0_7480.jpg",
+      "check_dataset\/demo_img\/img_rot270_9599.jpg",
+      "check_dataset\/demo_img\/img_rot90_10323.jpg",
+      "check_dataset\/demo_img\/img_rot90_4885.jpg",
+      "check_dataset\/demo_img\/img_rot180_3939.jpg",
+      "check_dataset\/demo_img\/img_rot90_7153.jpg",
+      "check_dataset\/demo_img\/img_rot180_1747.jpg"
     ],
-    &quot;val_samples&quot;: 2593,
-    &quot;val_sample_paths&quot;: [
-      &quot;check_dataset\/demo_img\/img_rot270_3190.jpg&quot;,
-      &quot;check_dataset\/demo_img\/img_rot0_10272.jpg&quot;,
-      &quot;check_dataset\/demo_img\/img_rot0_9930.jpg&quot;,
-      &quot;check_dataset\/demo_img\/img_rot90_918.jpg&quot;,
-      &quot;check_dataset\/demo_img\/img_rot180_2079.jpg&quot;,
-      &quot;check_dataset\/demo_img\/img_rot90_8574.jpg&quot;,
-      &quot;check_dataset\/demo_img\/img_rot90_7595.jpg&quot;,
-      &quot;check_dataset\/demo_img\/img_rot90_1751.jpg&quot;,
-      &quot;check_dataset\/demo_img\/img_rot180_1573.jpg&quot;,
-      &quot;check_dataset\/demo_img\/img_rot90_4401.jpg&quot;
+    "val_samples": 2593,
+    "val_sample_paths": [
+      "check_dataset\/demo_img\/img_rot270_3190.jpg",
+      "check_dataset\/demo_img\/img_rot0_10272.jpg",
+      "check_dataset\/demo_img\/img_rot0_9930.jpg",
+      "check_dataset\/demo_img\/img_rot90_918.jpg",
+      "check_dataset\/demo_img\/img_rot180_2079.jpg",
+      "check_dataset\/demo_img\/img_rot90_8574.jpg",
+      "check_dataset\/demo_img\/img_rot90_7595.jpg",
+      "check_dataset\/demo_img\/img_rot90_1751.jpg",
+      "check_dataset\/demo_img\/img_rot180_1573.jpg",
+      "check_dataset\/demo_img\/img_rot90_4401.jpg"
     ]
   },
-  &quot;analysis&quot;: {
-    &quot;histogram&quot;: &quot;check_dataset\/histogram.png&quot;
+  "analysis": {
+    "histogram": "check_dataset\/histogram.png"
   },
-  &quot;dataset_path&quot;: &quot;.\/text_image_orientation&quot;,
-  &quot;show_type&quot;: &quot;image&quot;,
-  &quot;dataset_type&quot;: &quot;ClsDataset&quot;
+  "dataset_path": ".\/text_image_orientation",
+  "show_type": "image",
+  "dataset_type": "ClsDataset"
 }
 </code></pre>
 <p>In the verification results above, <code>check_pass</code> being True indicates that the dataset format meets the requirements. Explanations of other indicators are as follows:</p>
@@ -5652,12 +5691,11 @@ The visualized image is as follows:</li>
 <li><code>attributes.val_sample_paths</code>: A list of relative paths to the visual samples in the validation set of this dataset;</li>
 </ul>
 <p>Additionally, the dataset validation analyzes the sample number distribution across all classes in the dataset and generates a distribution histogram (histogram.png):</p>
-<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/modules/doc_img_ori_classification/01.png"></p></details>
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/modules/doc_img_ori_classification/01.png"/></p></details>
 
 <h4 id="413-dataset-format-conversion-dataset-splitting-optional">4.1.3 Dataset Format Conversion / Dataset Splitting (Optional)<a class="headerlink" href="#413-dataset-format-conversion-dataset-splitting-optional" title="Permanent link">&para;</a></h4>
 <p>After completing data validation, you can convert the dataset format and re-split the training/validation ratio by <b>modifying the configuration file</b> or <b>appending hyperparameters</b>.</p>
 <details><summary>👉 <b>Details of Format Conversion / Dataset Splitting (Click to Expand)</b></summary>
-
 <p><b>(1) Dataset Format Conversion</b></p>
 <p>Document image orientation classification does not currently support dataset format conversion.</p>
 <p><b>(2) Dataset Splitting</b></p>
@@ -5707,7 +5745,6 @@ CheckDataset:
 </ul>
 <p>Other relevant parameters can be set by modifying fields under <code>Global</code> and <code>Train</code> in the <code>.yaml</code> configuration file, or by appending arguments to the command line. For example, to specify the first two GPUs for training: <code>-o Global.device=gpu:0,1</code>; to set the number of training epochs to 10: <code>-o Train.epochs_iters=10</code>. For more modifiable parameters and detailed explanations, refer to the <a href="../../instructions/config_parameters_common.html">PaddleX General Model Configuration File Parameters</a>.</p>
 <details><summary>👉 <b>More Information (click to expand)</b></summary>
-
 <ul>
 <li>During model training, PaddleX automatically saves the model weight files, defaulting to <code>output</code>. If you want to specify a different save path, you can set it using the <code>-o Global.output</code> field in the configuration file.</li>
 <li>PaddleX abstracts away the concept of dynamic graph weights and static graph weights. During model training, it produces both dynamic and static graph weights. For model inference, it defaults to using static graph weights.</li>
@@ -5737,7 +5774,6 @@ Similar to model training and evaluation, the following steps are required:</p>
 Other relevant parameters can be set by modifying the fields under <code>Global</code> and <code>Predict</code> in the <code>.yaml</code> configuration file. For details, please refer to <a href="../../instructions/config_parameters_common.html">PaddleX General Model Configuration File Parameter Description</a>.</li>
 </ul>
 <details><summary>👉 <b>More Information (click to expand)</b></summary>
-
 <ul>
 <li>
 <p>When conducting model evaluation, it is necessary to specify the model weight file path. Each configuration file has a built-in default path for saving weights. If you need to change this path, you can simply append a command line argument to set it, for example: <code>-o Evaluate.weight_path=./output/best_model/best_model.pdparams</code>.</p>
@@ -5776,9 +5812,10 @@ Other relevant parameters can be set by modifying the fields under <code>Global<
 <h4 id="442-model-integration">4.4.2 Model Integration<a class="headerlink" href="#442-model-integration" title="Permanent link">&para;</a></h4>
 <p>The model can be directly integrated into the PaddleX pipeline or into your own projects.</p>
 <p>1.<b>Pipeline Integration</b></p>
-<p>The document image classification module can be integrated into PaddleX pipelines such as the <a href="../../../pipeline_usage/tutorials/information_extraction_pipelines/document_scene_information_extraction.html">Document Scene Information Extraction Pipeline (PP-ChatOCRv3)</a>. Simply replace the model path to update the The document image classification module's model.</p>
+<p>The document image classification module can be integrated into PaddleX pipelines such as the <a href="../../../pipeline_usage/tutorials/information_extraction_pipelines/document_scene_information_extraction_v3.html">Document Scene Information Extraction Pipeline (PP-ChatOCRv3-doc)</a>. Simply replace the model path to update the The document image classification module's model.</p>
 <p>2.<b>Module Integration</b></p>
 <p>The weights you produce can be directly integrated into the document image orientation classification module. You can refer to the Python sample code in <a href="#iii-quick-integration">Quick Integration</a> and just replace the model with the path to the model you trained.</p>
+<p>You can also use the PaddleX high-performance inference plugin to optimize the inference process of your model and further improve efficiency. For detailed procedures, please refer to the <a href="../../../pipeline_deploy/high_performance_inference.html">PaddleX High-Performance Inference Guide</a>.</p>
 
 
 
@@ -5801,7 +5838,7 @@ Other relevant parameters can be set by modifying the fields under <code>Global<
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 6, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 14, 2025</span>
   </span>
 
     
@@ -5811,7 +5848,7 @@ Other relevant parameters can be set by modifying the fields under <code>Global<
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 6, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 14, 2025</span>
   </span>
 
     
@@ -5992,7 +6029,7 @@ Other relevant parameters can be set by modifying the fields under <code>Global<
     <script id="__config" type="application/json">{"base": "../../../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "navigation.expand", "navigation.path", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.f13b1293.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.f1b6f286.min.js"></script>
       
         <script src="../../../../javascripts/katex.min.js"></script>
       

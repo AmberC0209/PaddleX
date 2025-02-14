@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../../assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4">
     
     
       
@@ -26,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.d7758b05.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8608ea7d.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
@@ -845,7 +845,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../tutorials/information_extraction_pipelines/document_scene_information_extraction.html" class="md-nav__link">
+      <a href="../../../pipeline_usage/tutorials/information_extraction_pipelines/document_scene_information_extraction.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2052,30 +2052,6 @@ You're not viewing the latest version.
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-visualize-the-prediction-results_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Visualize the Prediction Results
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3. Visualize the Prediction Results">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#attributes_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Attributes:
-    </span>
-  </a>
-  
-</li>
-        
           <li class="md-nav__item">
   <a href="#methods" class="md-nav__link">
     <span class="md-ellipsis">
@@ -2101,7 +2077,7 @@ You're not viewing the latest version.
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#attributes_2" class="md-nav__link">
+  <a href="#attributes_1" class="md-nav__link">
     <span class="md-ellipsis">
       Attributes:
     </span>
@@ -5251,30 +5227,6 @@ You're not viewing the latest version.
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-visualize-the-prediction-results_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Visualize the Prediction Results
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3. Visualize the Prediction Results">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#attributes_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Attributes:
-    </span>
-  </a>
-  
-</li>
-        
           <li class="md-nav__item">
   <a href="#methods" class="md-nav__link">
     <span class="md-ellipsis">
@@ -5300,7 +5252,7 @@ You're not viewing the latest version.
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#attributes_2" class="md-nav__link">
+  <a href="#attributes_1" class="md-nav__link">
     <span class="md-ellipsis">
       Attributes:
     </span>
@@ -5363,28 +5315,28 @@ You're not viewing the latest version.
 <p>Before using Python scripts for rapid inference on model pipelines, please ensure you have installed PaddleX following the <a href="../../installation/installation.html">PaddleX Local Installation Guide</a>.</p>
 <h2 id="i-usage-example">I. Usage Example<a class="headerlink" href="#i-usage-example" title="Permanent link">&para;</a></h2>
 <p>Taking the image classification pipeline as an example, the usage is as follows:</p>
-<p><div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">paddlex</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_pipeline</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">paddlex</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_pipeline</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">pipeline</span> <span class="o">=</span> <span class="n">create_pipeline</span><span class="p">(</span><span class="s2">&quot;image_classification&quot;</span><span class="p">)</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">output</span> <span class="o">=</span> <span class="n">pipeline</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="s2">&quot;https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/general_image_classification_001.jpg&quot;</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">output</span> <span class="o">=</span> <span class="n">pipeline</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="s2">&quot;https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/general_image_classification_001.jpg&quot;</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">topk</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">output</span><span class="p">:</span>
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="n">res</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="n">json_format</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="n">res</span><span class="o">.</span><span class="n">save_to_img</span><span class="p">(</span><span class="s2">&quot;./output/&quot;</span><span class="p">)</span>
 </span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="n">res</span><span class="o">.</span><span class="n">save_to_json</span><span class="p">(</span><span class="s2">&quot;./output/res.json&quot;</span><span class="p">)</span>
 </span></code></pre></div>
-In short, there are only three steps:</p>
+<p>In short, there are only three steps:</p>
 <ul>
 <li>Call the <code>create_pipeline()</code> method to instantiate the prediction model pipeline object;</li>
 <li>Call the <code>predict()</code> method of the prediction model pipeline object for inference;</li>
-<li>Call <code>print()</code>, <code>save_to_xxx()</code> and other related methods to visualize or save the prediction results.</li>
+<li>Call <code>print()</code>, <code>save_to_xxx()</code> and other related methods to print or save the prediction results.</li>
 </ul>
 <h2 id="ii-api-description">II. API Description<a class="headerlink" href="#ii-api-description" title="Permanent link">&para;</a></h2>
 <h3 id="1-instantiate-the-prediction-model-pipeline-object-by-calling-create_pipeline">1. Instantiate the Prediction Model Pipeline Object by Calling <code>create_pipeline()</code><a class="headerlink" href="#1-instantiate-the-prediction-model-pipeline-object-by-calling-create_pipeline" title="Permanent link">&para;</a></h3>
 <ul>
 <li><code>create_pipeline</code>: Instantiates the prediction model pipeline object;</li>
 <li>Parameters:<ul>
-<li><code>pipeline_name</code>: <code>str</code> type, the pipeline name or the local pipeline configuration file path, such as "image_classification", "/path/to/image_classification.yaml";</li>
-<li><code>device</code>: <code>str</code> type, used to set the model inference device, such as "cpu" or "gpu:2" for GPU settings;</li>
-<li><code>pp_option</code>: <code>PaddlePredictorOption</code> type, used to set the model inference backend;</li>
+<li><code>pipeline</code>: <code>str</code> type, the pipeline name or the local pipeline configuration file path, such as "image_classification", "/path/to/image_classification.yaml";</li>
+<li><code>device</code>: <code>str</code> type, used to set the inference device. If set for GPU, you can specify the card number, such as "cpu", "gpu:2". By default, using 0 id GPU if available, otherwise CPU;</li>
+<li><code>pp_option</code>: <code>PaddlePredictorOption</code> type, used to set the inference engine. Please refer to <a href="#4-inference-backend-configuration">4-Inference Backend Configuration</a> for more details;</li>
 </ul>
 </li>
 <li>Return Value: <code>BasePredictor</code> type.</li>
@@ -5399,7 +5351,7 @@ In short, there are only three steps:</p>
 <li>Return Value: <code>generator</code>, returns the prediction result of one sample per call;</li>
 </ul>
 <h3 id="3-visualize-the-prediction-results">3. Visualize the Prediction Results<a class="headerlink" href="#3-visualize-the-prediction-results" title="Permanent link">&para;</a></h3>
-<p>The prediction results of the model pipeline support access, visualization, and saving, which can be achieved through corresponding attributes or methods, specifically as follows:</p>
+<p>The prediction results of the pipeline support to be accessed and saved, which can be achieved through corresponding attributes or methods, specifically as follows:</p>
 <h4 id="attributes">Attributes:<a class="headerlink" href="#attributes" title="Permanent link">&para;</a></h4>
 <ul>
 <li><code>str</code>: <code>str</code> type representation of the prediction result;</li>
@@ -5410,19 +5362,7 @@ In short, there are only three steps:</p>
 <li>Return Value: <code>PIL.Image</code> type;</li>
 <li><code>html</code>: HTML representation of the prediction result;</li>
 <li>Return Value: <code>str</code> type;</li>
-</ul>
-<h3 id="3-visualize-the-prediction-results_1">3. Visualize the Prediction Results<a class="headerlink" href="#3-visualize-the-prediction-results_1" title="Permanent link">&para;</a></h3>
-<p>The prediction results support to be accessed, visualized, and saved, which can be achieved through corresponding attributes or methods, specifically as follows:</p>
-<h4 id="attributes_1">Attributes:<a class="headerlink" href="#attributes_1" title="Permanent link">&para;</a></h4>
-<ul>
-<li><code>str</code>: Representation of the prediction result in <code>str</code> type;</li>
-<li>Returns: A <code>str</code> type, the string representation of the prediction result.</li>
-<li><code>json</code>: The prediction result in JSON format;</li>
-<li>Returns: A <code>dict</code> type.</li>
-<li><code>img</code>: The visualization image of the prediction result;</li>
-<li>Returns: A <code>PIL.Image</code> type.</li>
-<li><code>html</code>: The HTML representation of the prediction result;</li>
-<li>Returns: A <code>str</code> type.</li>
+<li><em><code>more attrs</code></em>: The prediction result of different pipelines support different representation methods. Please refer to the specific pipeline tutorial documentation for details.</li>
 </ul>
 <h4 id="methods">Methods:<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h4>
 <ul>
@@ -5466,10 +5406,11 @@ In short, there are only three steps:</p>
 </ul>
 </li>
 <li>Returns: None.</li>
+<li><em><code>more funcs</code></em>: The prediction result of different pipelines support different saving methods. Please refer to the specific pipeline tutorial documentation for details.</li>
 </ul>
 <h3 id="4-inference-backend-configuration">4. Inference Backend Configuration<a class="headerlink" href="#4-inference-backend-configuration" title="Permanent link">&para;</a></h3>
 <p>PaddleX supports configuring the inference backend through <code>PaddlePredictorOption</code>. Relevant APIs are as follows:</p>
-<h4 id="attributes_2">Attributes:<a class="headerlink" href="#attributes_2" title="Permanent link">&para;</a></h4>
+<h4 id="attributes_1">Attributes:<a class="headerlink" href="#attributes_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li><code>device</code>: Inference device;</li>
 <li>Supports setting the device type and card number represented by <code>str</code>. Device types include 'gpu', 'cpu', 'npu', 'xpu', 'mlu'. When using an accelerator card, you can specify the card number, e.g., 'gpu:0' for GPU 0. The default is 'gpu:0';</li>
@@ -5516,7 +5457,7 @@ In short, there are only three steps:</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 6, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 14, 2025</span>
   </span>
 
     
@@ -5526,7 +5467,7 @@ In short, there are only three steps:</p>
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 6, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 14, 2025</span>
   </span>
 
     
@@ -5707,7 +5648,7 @@ In short, there are only three steps:</p>
     <script id="__config" type="application/json">{"base": "../../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "navigation.expand", "navigation.path", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.f13b1293.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.f1b6f286.min.js"></script>
       
         <script src="../../../javascripts/katex.min.js"></script>
       

@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../../../assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4">
     
     
       
@@ -26,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.d7758b05.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.8608ea7d.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
@@ -845,7 +845,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../information_extraction_pipelines/document_scene_information_extraction.html" class="md-nav__link">
+      <a href="../../../../pipeline_usage/tutorials/information_extraction_pipelines/document_scene_information_extraction.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1380,19 +1380,28 @@ You're not viewing the latest version.
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#21-local-experience" class="md-nav__link">
+  <a href="#21-online-experience" class="md-nav__link">
     <span class="md-ellipsis">
-      2.1 Local Experience
+      2.1 Online Experience
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="2.1 Local Experience">
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-local-experience" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Local Experience
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2 Local Experience">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#211-command-line-experience" class="md-nav__link">
+  <a href="#221-command-line-experience" class="md-nav__link">
     <span class="md-ellipsis">
-      2.1.1 Command Line Experience
+      2.2.1 Command Line Experience
     </span>
   </a>
   
@@ -5191,19 +5200,28 @@ You're not viewing the latest version.
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#21-local-experience" class="md-nav__link">
+  <a href="#21-online-experience" class="md-nav__link">
     <span class="md-ellipsis">
-      2.1 Local Experience
+      2.1 Online Experience
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="2.1 Local Experience">
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-local-experience" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Local Experience
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2 Local Experience">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#211-command-line-experience" class="md-nav__link">
+  <a href="#221-command-line-experience" class="md-nav__link">
     <span class="md-ellipsis">
-      2.1.1 Command Line Experience
+      2.2.1 Command Line Experience
     </span>
   </a>
   
@@ -5314,15 +5332,15 @@ You're not viewing the latest version.
 <h1 id="small-object-detection-pipeline-tutorial">Small Object Detection Pipeline Tutorial<a class="headerlink" href="#small-object-detection-pipeline-tutorial" title="Permanent link">&para;</a></h1>
 <h2 id="1-introduction-to-small-object-detection-pipeline">1. Introduction to Small Object Detection Pipeline<a class="headerlink" href="#1-introduction-to-small-object-detection-pipeline" title="Permanent link">&para;</a></h2>
 <p>Small object detection is a specialized technique for identifying tiny objects within images, widely applied in fields such as surveillance, autonomous driving, and satellite image analysis. It can accurately locate and classify small-sized objects like pedestrians, traffic signs, or small animals within complex scenes. By leveraging deep learning algorithms and optimized Convolutional Neural Networks (CNNs), small object detection significantly enhances the recognition capabilities for small objects, ensuring no critical information is overlooked in practical applications. This technology plays a pivotal role in enhancing safety and automation levels.</p>
-<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/small_object_detection/01.png"></p>
-<p><b>The small object detection pipeline includes a small object detection module. If you prioritize model accuracy, choose a model with higher accuracy. If you prioritize inference speed, select a model with faster inference. If you prioritize model storage size, opt for a model with a smaller storage size.</b></p>
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/small_object_detection/01.png"/>
+<b>The small object detection pipeline includes a small object detection module. If you prioritize model accuracy, choose a model with higher accuracy. If you prioritize inference speed, select a model with faster inference. If you prioritize model storage size, opt for a model with a smaller storage size.</b></p>
 <table>
 <thead>
 <tr>
 <th>Model Name</th><th>Model Download Link</th>
 <th>mAP (%)</th>
-<th>GPU Inference Time (ms)</th>
-<th>CPU Inference Time (ms)</th>
+<th>CPU Inference Time (ms)<br/>[Normal Mode / High-Performance Mode]</th>
+<th>CPU Inference Time (ms)<br/>[Normal Mode / High-Performance Mode]</th>
 <th>Model Size (M)</th>
 </tr>
 </thead>
@@ -5330,36 +5348,77 @@ You're not viewing the latest version.
 <tr>
 <td>PP-YOLOE_plus_SOD-S</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0rc0/PP-YOLOE_plus_SOD-S_infer.tar">Inference Model</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/PP-YOLOE_plus_SOD-S_pretrained.pdparams">Trained Model</a></td>
 <td>25.1</td>
-<td>65.4608</td>
-<td>324.37</td>
+<td>135.68 / 122.94</td>
+<td>188.09 / 107.74</td>
 <td>77.3 M</td>
 </tr>
 <tr>
 <td>PP-YOLOE_plus_SOD-L</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0rc0/PP-YOLOE_plus_SOD-L_infer.tar">Inference Model</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/PP-YOLOE_plus_SOD-L_pretrained.pdparams">Trained Model</a></td>
 <td>31.9</td>
-<td>57.1448</td>
-<td>1006.98</td>
+<td>114.24 / 93.98</td>
+<td>285.39 / 285.39</td>
 <td>325.0 M</td>
 </tr>
 <tr>
 <td>PP-YOLOE_plus_SOD-largesize-L</td><td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0rc0/PP-YOLOE_plus_SOD-largesize-L_infer.tar">Inference Model</a>/<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/PP-YOLOE_plus_SOD-largesize-L_pretrained.pdparams">Trained Model</a></td>
 <td>42.7</td>
-<td>458.521</td>
-<td>11172.7</td>
+<td>639.57 / 332.79</td>
+<td>2807.12 / 2807.12</td>
 <td>340.5 M</td>
 </tr>
 </tbody>
 </table>
 <p><b>Note: The above accuracy metrics are based on the </b><a href="https://github.com/VisDrone/VisDrone-Dataset">VisDrone-DET</a><b> validation set mAP(0.5:0.95). All GPU inference times are based on an NVIDIA Tesla T4 machine with FP32 precision. CPU inference speeds are based on an Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz with 8 threads and FP32 precision.</b></p>
 
+<p><strong>Test Environment Description</strong>:</p>
+<ul>
+<li><strong>Performance Test Environment</strong></li>
+<li><strong>Test Dataset</strong>: <a href="https://github.com/VisDrone/VisDrone-Dataset">VisDrone-DET</a> validation set.</li>
+<li>
+<p><strong>Hardware Configuration</strong>:</p>
+<ul>
+<li>GPU: NVIDIA Tesla T4</li>
+<li>CPU: Intel Xeon Gold 6271C @ 2.60GHz</li>
+<li>Other Environments: Ubuntu 20.04 / cuDNN 8.6 / TensorRT 8.5.2.2</li>
+</ul>
+</li>
+<li>
+<p><strong>Inference Mode Description</strong></p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>GPU Configuration</th>
+<th>CPU Configuration</th>
+<th>Acceleration Technology Combination</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Regular Mode</td>
+<td>FP32 Precision / No TRT Acceleration</td>
+<td>FP32 Precision / 8 Threads</td>
+<td>PaddleInference</td>
+</tr>
+<tr>
+<td>High-Performance Mode</td>
+<td>Optimal combination of pre-selected precision types and acceleration strategies</td>
+<td>FP32 Precision / 8 Threads</td>
+<td>Pre-selected optimal backend (Paddle/OpenVINO/TRT, etc.)</td>
+</tr>
+</tbody>
+</table>
 <h2 id="2-quick-start">2. Quick Start<a class="headerlink" href="#2-quick-start" title="Permanent link">&para;</a></h2>
-<p>PaddleX supports experiencing the small object detection pipeline's effects through command line or Python locally.</p>
-<p>Before using the small object detection pipeline locally, ensure you have installed the PaddleX wheel package following the <a href="../../../installation/installation.html">PaddleX Local Installation Tutorial</a>.</p>
-<h3 id="21-local-experience">2.1 Local Experience<a class="headerlink" href="#21-local-experience" title="Permanent link">&para;</a></h3>
-<blockquote>
-<p>❗ Before using the general small object detection pipeline locally, please ensure that you have completed the installation of the PaddleX wheel package according to the <a href="../../../installation/installation.html">PaddleX Local Installation Guide</a>.</p>
-</blockquote>
-<h4 id="211-command-line-experience">2.1.1 Command Line Experience<a class="headerlink" href="#211-command-line-experience" title="Permanent link">&para;</a></h4>
+<p>All model pipelines provided by PaddleX can be quickly experienced. You can experience the effect of the small object detection pipeline on the community platform, or you can use the command line or Python locally to experience the effect of the small object detection pipeline.</p>
+<h3 id="21-online-experience">2.1 Online Experience<a class="headerlink" href="#21-online-experience" title="Permanent link">&para;</a></h3>
+<p>You can <a href="https://aistudio.baidu.com/community/app/387975/webUI?source=appCenter">experience the small object detection pipeline online</a> by recognizing the demo images provided by the official platform, for example:</p>
+<p><img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/small_object_detection/small_obj_det_aistudio.jpg"/></p>
+<p>If you are satisfied with the performance of the pipeline, you can directly integrate and deploy it. You can choose to download the deployment package from the cloud, or refer to the methods in <a href="#22-local-experience">Section 2.2 Local Experience</a> for local deployment. If you are not satisfied with the effect, you can <b>fine-tune the models in the pipeline using your private data</b>. If you have local hardware resources for training, you can start training directly on your local machine; if not, the Star River Zero-Code platform provides a one-click training service. You don't need to write any code—just upload your data and start the training task with one click.</p>
+<h3 id="22-local-experience">2.2 Local Experience<a class="headerlink" href="#22-local-experience" title="Permanent link">&para;</a></h3>
+<p>Before using the small object detection pipeline locally, please ensure that you have completed the installation of the PaddleX wheel package according to the <a href="../../../installation/installation.html">PaddleX Local Installation Guide</a>.</p>
+<h4 id="221-command-line-experience">2.2.1 Command Line Experience<a class="headerlink" href="#221-command-line-experience" title="Permanent link">&para;</a></h4>
 <ul>
 <li>You can quickly experience the small object detection pipeline effect with a single command. Use the <a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/small_object_detection.jpg">test file</a>, and replace <code>--input</code> with the local path for prediction.</li>
 </ul>
@@ -5367,7 +5426,7 @@ You're not viewing the latest version.
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">        </span>--input<span class="w"> </span>small_object_detection.jpg<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">        </span>--threshold<span class="w"> </span><span class="m">0</span>.5<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">        </span>--save_path<span class="w"> </span>./output<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">        </span>--device<span class="w"> </span>gpu:0<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">        </span>--device<span class="w"> </span>gpu:0
 </span></code></pre></div>
 <p>The relevant parameter descriptions can be referred to in the parameter explanations in <a href="#222-python-script-integration">2.2.2 Python Script Integration</a>.</p>
 <p>After running, the result will be printed to the terminal as follows:</p>
@@ -5375,10 +5434,10 @@ You're not viewing the latest version.
 </span></code></pre></div>
 <p>The explanation of the result parameters can be referred to in <a href="#222-python脚本方式集成">2.2.2 Python Script Integration</a>.</p>
 <p>The visualization results are saved under <code>save_path</code>, and the visualization result of small object detection is as follows:
-<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/small_object_detection/02.png"></p>
+<img src="https://raw.githubusercontent.com/cuicheng01/PaddleX_doc_images/main/images/pipelines/small_object_detection/02.png"/></p>
 <h4 id="212-python-script-integration">2.1.2 Python Script Integration<a class="headerlink" href="#212-python-script-integration" title="Permanent link">&para;</a></h4>
 <ul>
-<li>The above command line is for quickly experiencing and viewing the effect. Generally, in a project, it is often necessary to integrate through code. You can complete the quick inference of the production line with just a few lines of code. The inference code is as follows:</li>
+<li>The above command line is for quickly experiencing and viewing the effect. Generally, in a project, it is often necessary to integrate through code. You can complete the quick inference of the pipeline with just a few lines of code. The inference code is as follows:</li>
 </ul>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">paddlex</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_pipeline</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">pipeline</span> <span class="o">=</span> <span class="n">create_pipeline</span><span class="p">(</span><span class="n">pipeline</span><span class="o">=</span><span class="s2">&quot;small_object_detection&quot;</span><span class="p">)</span>
@@ -5445,9 +5504,9 @@ You're not viewing the latest version.
 <td><code>Python Var|str|list</code></td>
 <td>
 <ul>
-  <li><b>Python Var</b>: Image data represented by <code>numpy.ndarray</code></li>
-  <li><b>str</b>: Local path of an image file or PDF file, such as <code>/root/data/img.jpg</code>; <b>URL link</b>, such as a network URL of an image file or PDF file: <a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/small_object_detection.jpg">Example</a>; <b>Local directory</b>, which should contain images to be predicted, such as <code>/root/data/</code> (currently does not support prediction of directories containing PDF files, PDF files need to be specified to specific file paths)</li>
-  <li><b>List</b>: Elements of the list must be of the above types, such as <code>[numpy.ndarray, numpy.ndarray]</code>, <code>["/root/data/img1.jpg", "/root/data/img2.jpg"]</code>, <code>["/root/data1", "/root/data2"]</code></li>
+<li><b>Python Var</b>: Image data represented by <code>numpy.ndarray</code></li>
+<li><b>str</b>: Local path of an image file or PDF file, such as <code>/root/data/img.jpg</code>; <b>URL link</b>, such as a network URL of an image file or PDF file: <a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/small_object_detection.jpg">Example</a>; <b>Local directory</b>, which should contain images to be predicted, such as <code>/root/data/</code> (currently does not support prediction of directories containing PDF files, PDF files need to be specified to specific file paths)</li>
+<li><b>List</b>: Elements of the list must be of the above types, such as <code>[numpy.ndarray, numpy.ndarray]</code>, <code>["/root/data/img1.jpg", "/root/data/img2.jpg"]</code>, <code>["/root/data1", "/root/data2"]</code></li>
 </ul>
 </td>
 <td><code>None</code></td>
@@ -5458,13 +5517,13 @@ You're not viewing the latest version.
 <td><code>str|None</code></td>
 <td>
 <ul>
-  <li><b>CPU</b>: Such as <code>cpu</code> indicates using CPU for inference;</li>
-  <li><b>GPU</b>: Such as <code>gpu:0</code> indicates using the 1st GPU for inference;</li>
-  <li><b>NPU</b>: Such as <code>npu:0</code> indicates using the 1st NPU for inference;</li>
-  <li><b>XPU</b>: Such as <code>xpu:0</code> indicates using the 1st XPU for inference;</li>
-  <li><b>MLU</b>: Such as <code>mlu:0</code> indicates using the 1st MLU for inference;</li>
-  <li><b>DCU</b>: Such as <code>dcu:0</code> indicates using the 1st DCU for inference;</li>
-  <li><b>None</b>: If set to <code>None</code>, the default value initialized by the pipeline will be used. During initialization, it will preferentially use the local GPU 0 device, if not available, the CPU device will be used;</li>
+<li><b>CPU</b>: Such as <code>cpu</code> indicates using CPU for inference;</li>
+<li><b>GPU</b>: Such as <code>gpu:0</code> indicates using the 1st GPU for inference;</li>
+<li><b>NPU</b>: Such as <code>npu:0</code> indicates using the 1st NPU for inference;</li>
+<li><b>XPU</b>: Such as <code>xpu:0</code> indicates using the 1st XPU for inference;</li>
+<li><b>MLU</b>: Such as <code>mlu:0</code> indicates using the 1st MLU for inference;</li>
+<li><b>DCU</b>: Such as <code>dcu:0</code> indicates using the 1st DCU for inference;</li>
+<li><b>None</b>: If set to <code>None</code>, the default value initialized by the pipeline will be used. During initialization, it will preferentially use the local GPU 0 device, if not available, the CPU device will be used;</li>
 </ul>
 </td>
 <td><code>None</code></td>
@@ -5474,13 +5533,12 @@ You're not viewing the latest version.
 <td><code>None|float|dict[int, float]</code></td>
 <td>
 <ul>
-    <li><b>None</b>: If set to <code>None</code>, the default initialization parameter <code>0.5</code> will be used, i.e., 0.5 will be used as the low-score object filtering threshold for all categories</li>
-    <li><b>float</b>: Any floating-point number greater than 0 and less than 1</li>
-    <li><b>dict[int, float]</b>: The key represents the category ID, and the value represents the threshold corresponding to the category, indicating different low-score filtering thresholds for different categories, such as <code>{0:0.5, 1:0.35}</code> means using 0.5 and 0.35 as low-score filtering thresholds for category 0 and category 1 respectively</li>
+<li><b>None</b>: If set to <code>None</code>, the default initialization parameter <code>0.5</code> will be used, i.e., 0.5 will be used as the low-score object filtering threshold for all categories</li>
+<li><b>float</b>: Any floating-point number greater than 0 and less than 1</li>
+<li><b>dict[int, float]</b>: The key represents the category ID, and the value represents the threshold corresponding to the category, indicating different low-score filtering thresholds for different categories, such as <code>{0:0.5, 1:0.35}</code> means using 0.5 and 0.35 as low-score filtering thresholds for category 0 and category 1 respectively</li>
 </ul>
 </td>
 <td><code>None</code></td>
-</tr>
 
 </table>
 
@@ -5497,8 +5555,8 @@ You're not viewing the latest version.
 </tr>
 </thead>
 <tr>
-<td rowspan = "3"><code>print()</code></td>
-<td rowspan = "3">Print the result to the terminal</td>
+<td rowspan="3"><code>print()</code></td>
+<td rowspan="3">Print the result to the terminal</td>
 <td><code>format_json</code></td>
 <td><code>bool</code></td>
 <td>Whether to format the output content using <code>JSON</code> indentation</td>
@@ -5517,8 +5575,8 @@ You're not viewing the latest version.
 <td><code>False</code></td>
 </tr>
 <tr>
-<td rowspan = "3"><code>save_to_json()</code></td>
-<td rowspan = "3">Save the result as a json file</td>
+<td rowspan="3"><code>save_to_json()</code></td>
+<td rowspan="3">Save the result as a json file</td>
 <td><code>save_path</code></td>
 <td><code>str</code></td>
 <td>Path to save the file. If it is a directory, the saved file name will be consistent with the input file type</td>
@@ -5583,12 +5641,12 @@ You're not viewing the latest version.
 </tr>
 </thead>
 <tr>
-<td rowspan = "1"><code>json</code></td>
-<td rowspan = "1">Get the prediction result in <code>json</code> format</td>
+<td rowspan="1"><code>json</code></td>
+<td rowspan="1">Get the prediction result in <code>json</code> format</td>
 </tr>
 <tr>
-<td rowspan = "2"><code>img</code></td>
-<td rowspan = "2">Get the visualized image in <code>dict</code> format</td>
+<td rowspan="2"><code>img</code></td>
+<td rowspan="2">Get the visualized image in <code>dict</code> format</td>
 </tr>
 </table>
 
@@ -5599,7 +5657,7 @@ You're not viewing the latest version.
 <p>In addition, you can obtain the small object detection pipeline configuration file and load the configuration file for prediction. You can execute the following command to save the result in <code>my_path</code>:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>paddlex --get_pipeline_config small_object_detection --save_path ./my_path
 </span></code></pre></div>
-<p>If you have obtained the configuration file, you can customize the settings for the small object detection production line by simply modifying the <code>pipeline</code> parameter value in the <code>create_pipeline</code> method to the path of the configuration file. An example is as follows:</p>
+<p>If you have obtained the configuration file, you can customize the settings for the small object detection pipeline by simply modifying the <code>pipeline</code> parameter value in the <code>create_pipeline</code> method to the path of the configuration file. An example is as follows:</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">paddlex</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_pipeline</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">pipeline</span> <span class="o">=</span> <span class="n">create_pipeline</span><span class="p">(</span><span class="n">pipeline</span><span class="o">=</span><span class="s2">&quot;./my_path/small_object_detection.yaml&quot;</span><span class="p">)</span>
@@ -5616,13 +5674,12 @@ You're not viewing the latest version.
 <p><b>Note:</b> The parameters in the configuration file are the initialization parameters of the pipeline. If you wish to change the initialization parameters of the general small object detection pipeline, you can directly modify the parameters in the configuration file and load the configuration file for prediction. At the same time, CLI prediction also supports passing in the configuration file, just specify the path of the configuration file with <code>--pipeline</code>.</p>
 <h2 id="3-development-integrationdeployment">3. Development Integration/Deployment<a class="headerlink" href="#3-development-integrationdeployment" title="Permanent link">&para;</a></h2>
 <p>If the pipeline meets your requirements for inference speed and accuracy, you can proceed with development integration/deployment.</p>
-<p>If you need to apply the pipeline directly in your Python project, you can refer to the example code in <a href="#22-python-script-integration">2.2 Python Script Integration</a>.</p>
+<p>If you need to apply the pipeline directly in your Python project, you can refer to the example code in <a href="#212-python-script-integration">2.1.2 Python Script Integration</a>.</p>
 <p>In addition, PaddleX also provides three other deployment methods, detailed as follows:</p>
 <p>🚀 <b>High-Performance Inference</b>: In actual production environments, many applications have stringent standards for the performance metrics of deployment strategies (especially response speed) to ensure efficient system operation and smooth user experience. To this end, PaddleX provides a high-performance inference plugin, designed to deeply optimize the performance of model inference and pre/post-processing, achieving significant acceleration of the end-to-end process. For detailed high-performance inference procedures, please refer to the <a href="../../../pipeline_deploy/high_performance_inference.html">PaddleX High-Performance Inference Guide</a>.</p>
 <p>☁️ <b>Service Deployment</b>: Service deployment is a common form of deployment in actual production environments. By encapsulating inference functions as services, clients can access these services through network requests to obtain inference results. PaddleX supports multiple pipeline service deployment solutions. For detailed pipeline service deployment procedures, please refer to the <a href="../../../pipeline_deploy/serving.html">PaddleX Service Deployment Guide</a>.</p>
 <p>Below is the API reference for basic service deployment and multi-language service call examples:</p>
 <details><summary>API Reference</summary>
-
 <p>For the main operations provided by the service:</p>
 <ul>
 <li>The HTTP request method is POST.</li>
@@ -5714,6 +5771,12 @@ You're not viewing the latest version.
 <td>The URL of an image file accessible by the server or the Base64-encoded content of an image file.</td>
 <td>Yes</td>
 </tr>
+<tr>
+<td><code>threshold</code></td>
+<td><code>number</code> | <code>object</code> | <code>null</code></td>
+<td>Refer to the <code>threshold</code> parameter description in the pipeline <code>predict</code> method.</td>
+<td>No</td>
+</tr>
 </tbody>
 </table>
 <ul>
@@ -5735,7 +5798,7 @@ You're not viewing the latest version.
 </tr>
 <tr>
 <td><code>image</code></td>
-<td><code>string</code></td>
+<td><code>string</code>| <code>null</code></td>
 <td>The result image of object detection. The image is in JPEG format and is Base64-encoded.</td>
 </tr>
 </tbody>
@@ -5761,47 +5824,49 @@ You're not viewing the latest version.
 <td>The category ID of the detected object.</td>
 </tr>
 <tr>
+<td><code>categoryName</code></td>
+<td><code>string</code></td>
+<td>The name of the target category.</td>
+</tr>
+<tr>
 <td><code>score</code></td>
 <td><code>number</code></td>
 <td>The score of the detected object.</td>
 </tr>
 </tbody>
 </table>
-
 <p><code>result</code> example is as follows:</p>
 <pre><code class="language-json">{
-&quot;detectedObjects&quot;: [
+"detectedObjects": [
 {
-&quot;bbox&quot;: [
+"bbox": [
 404.4967956542969,
 90.15770721435547,
 506.2465515136719,
 285.4187316894531
 ],
-&quot;categoryId&quot;: 0,
-&quot;score&quot;: 0.7418514490127563
+"categoryId": 0,
+"categoryName": "person",
+"score": 0.7418514490127563
 },
 {
-&quot;bbox&quot;: [
+"bbox": [
 155.33145141601562,
 81.10954284667969,
 199.71136474609375,
 167.4235382080078
 ],
-&quot;categoryId&quot;: 1,
-&quot;score&quot;: 0.7328268885612488
+"categoryId": 1,
+"categoryName": "bottle",
+"score": 0.7328268885612488
 }
 ],
-&quot;image&quot;: &quot;xxxxxx&quot;
+"image": "xxxxxx"
 }
 </code></pre></details>
-
 <details><summary>Multi-language Service Call Examples</summary>
-
 <details>
 <summary>Python</summary>
-
-
 <pre><code class="language-python">import base64
 import requests
 
@@ -5828,9 +5893,7 @@ print(f"Output image saved at {output_image_path}")
 print("\nDetected objects:")
 print(result["detectedObjects"])
 </code></pre></details>
-
 <details><summary>C++</summary>
-
 <pre><code class="language-cpp">#include <iostream>
 #include "cpp-httplib/httplib.h" // [GitHub - Huiyicc/cpp-httplib: A C++ header-only HTTP/HTTPS server and client library](https://github.com/Huiyicc/cpp-httplib)
 #include "nlohmann/json.hpp" // [GitHub - nlohmann/json: JSON for Modern C++](https://github.com/nlohmann/json)
@@ -5852,10 +5915,10 @@ int main() {
 
     std::vector<char> buffer(size);
     if (!file.read(buffer.data(), size)) {
-        std::cerr << "Error reading file." << std::endl;
+        std::cerr &lt;&lt; "Error reading file." &lt;&lt; std::endl;
         return 1;
     }
-    std::string bufferStr(reinterpret_cast<const char*>(buffer.data()), buffer.size());
+    std::string bufferStr(reinterpret_cast<const char*="">(buffer.data()), buffer.size());
     std::string encodedImage = base64::to_base64(bufferStr);
 
     nlohmann::json jsonObj;
@@ -5865,38 +5928,36 @@ int main() {
     // Call the API
     auto response = client.Post("/small-object-detection", headers, body, "application/json");
     // Process the API response data
-    if (response && response->status == 200) {
-        nlohmann::json jsonResponse = nlohmann::json::parse(response->body);
+    if (response &amp;&amp; response-&gt;status == 200) {
+        nlohmann::json jsonResponse = nlohmann::json::parse(response-&gt;body);
         auto result = jsonResponse["result"];
 
         encodedImage = result["image"];
         std::string decodedString = base64::from_base64(encodedImage);
-        std::vector<unsigned char> decodedImage(decodedString.begin(), decodedString.end());
+        std::vector<unsigned char=""> decodedImage(decodedString.begin(), decodedString.end());
         std::ofstream outputImage(outputImagePath, std::ios::binary | std::ios::out);
         if (outputImage.is_open()) {
             outputImage.write(reinterpret_cast<char*>(decodedImage.data()), decodedImage.size());
             outputImage.close();
-            std::cout << "Output image saved at " << outputImagePath << std::endl;
+            std::cout &lt;&lt; "Output image saved at " &lt;&lt; outputImagePath &lt;&lt; std::endl;
         } else {
-            std::cerr << "Unable to open file for writing: " << outputImagePath << std::endl;
+            std::cerr &lt;&lt; "Unable to open file for writing: " &lt;&lt; outputImagePath &lt;&lt; std::endl;
         }
 
         auto detectedObjects = result["detectedObjects"];
-        std::cout << "\nDetected objects:" << std::endl;
-        for (const auto& category : detectedObjects) {
-            std::cout << category << std::endl;
+        std::cout &lt;&lt; "\nDetected objects:" &lt;&lt; std::endl;
+        for (const auto&amp; category : detectedObjects) {
+            std::cout &lt;&lt; category &lt;&lt; std::endl;
         }
     } else {
-        std::cout << "Failed to send HTTP request." << std::endl;
+        std::cout &lt;&lt; "Failed to send HTTP request." &lt;&lt; std::endl;
         return 1;
     }
 
     return 0;
 }
-</code></pre></details>
-
+</char*></unsigned></const></char></iostream></code></pre></details>
 <details><summary>Java</summary>
-
 <pre><code class="language-java">import okhttp3.*;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -5953,51 +6014,49 @@ public class Main {
     }
 }
 </code></pre></details>
-
 <details><summary>Go</summary>
-
 <pre><code class="language-go">package main
 
 import (
-    &quot;bytes&quot;
-    &quot;encoding/base64&quot;
-    &quot;encoding/json&quot;
-    &quot;fmt&quot;
-    &quot;io/ioutil&quot;
-    &quot;net/http&quot;
+    "bytes"
+    "encoding/base64"
+    "encoding/json"
+    "fmt"
+    "io/ioutil"
+    "net/http"
 )
 
 func main() {
-    API_URL := &quot;http://localhost:8080/small-object-detection&quot;
-    imagePath := &quot;./demo.jpg&quot;
-    outputImagePath := &quot;./out.jpg&quot;
+    API_URL := "http://localhost:8080/small-object-detection"
+    imagePath := "./demo.jpg"
+    outputImagePath := "./out.jpg"
 
     // Encode the local image to Base64
     imageBytes, err := ioutil.ReadFile(imagePath)
     if err != nil {
-        fmt.Println(&quot;Error reading image file:&quot;, err)
+        fmt.Println("Error reading image file:", err)
         return
     }
     imageData := base64.StdEncoding.EncodeToString(imageBytes)
 
-    payload := map[string]string{&quot;image&quot;: imageData} // Base64-encoded file content or image URL
+    payload := map[string]string{"image": imageData} // Base64-encoded file content or image URL
     payloadBytes, err := json.Marshal(payload)
     if err != nil {
-        fmt.Println(&quot;Error marshaling payload:&quot;, err)
+        fmt.Println("Error marshaling payload:", err)
         return
     }
 
     // Call the API
     client := &amp;http.Client{}
-    req, err := http.NewRequest(&quot;POST&quot;, API_URL, bytes.NewBuffer(payloadBytes))
+    req, err := http.NewRequest("POST", API_URL, bytes.NewBuffer(payloadBytes))
     if err != nil {
-        fmt.Println(&quot;Error creating request:&quot;, err)
+        fmt.Println("Error creating request:", err)
         return
     }
 
     res, err := client.Do(req)
     if err != nil {
-        fmt.Println(&quot;Error sending request:&quot;, err)
+        fmt.Println("Error sending request:", err)
         return
     }
     defer res.Body.Close()
@@ -6005,42 +6064,40 @@ func main() {
     // Process the response data
     body, err := ioutil.ReadAll(res.Body)
     if err != nil {
-        fmt.Println(&quot;Error reading response body:&quot;, err)
+        fmt.Println("Error reading response body:", err)
         return
     }
     type Response struct {
         Result struct {
-            Image            string   `json:&quot;image&quot;`
-            DetectedObjects  []map[string]interface{} `json:&quot;detectedObjects&quot;`
-        } `json:&quot;result&quot;`
+            Image            string   `json:"image"`
+            DetectedObjects  []map[string]interface{} `json:"detectedObjects"`
+        } `json:"result"`
     }
     var respData Response
     err = json.Unmarshal([]byte(string(body)), &amp;respData)
     if err != nil {
-        fmt.Println(&quot;Error unmarshaling response body:&quot;, err)
+        fmt.Println("Error unmarshaling response body:", err)
         return
     }
 
     outputImageData, err := base64.StdEncoding.DecodeString(respData.Result.Image)
     if err != nil {
-        fmt.Println(&quot;Error decoding base64 image data:&quot;, err)
+        fmt.Println("Error decoding base64 image data:", err)
         return
     }
     err = ioutil.WriteFile(outputImagePath, outputImageData, 0644)
     if err != nil {
-        fmt.Println(&quot;Error writing image to file:&quot;, err)
+        fmt.Println("Error writing image to file:", err)
         return
     }
-    fmt.Printf(&quot;Image saved at %s.jpg\n&quot;, outputImagePath)
-    fmt.Println(&quot;\nDetected objects:&quot;)
+    fmt.Printf("Image saved at %s.jpg\n", outputImagePath)
+    fmt.Println("\nDetected objects:")
     for _, category := range respData.Result.DetectedObjects {
         fmt.Println(category)
     }
 }
 </code></pre></details>
-
 <details><summary>C#</summary>
-
 <pre><code class="language-csharp">using System;
 using System.IO;
 using System.Net.Http;
@@ -6051,9 +6108,9 @@ using Newtonsoft.Json.Linq;
 
 class Program
 {
-    static readonly string API_URL = &quot;http://localhost:8080/small-object-detection&quot;;
-    static readonly string imagePath = &quot;./demo.jpg&quot;;
-    static readonly string outputImagePath = &quot;./out.jpg&quot;;
+    static readonly string API_URL = "http://localhost:8080/small-object-detection";
+    static readonly string imagePath = "./demo.jpg";
+    static readonly string outputImagePath = "./out.jpg";
 
     static async Task Main(string[] args)
     {
@@ -6063,8 +6120,8 @@ class Program
         byte[] imageBytes = File.ReadAllBytes(imagePath);
         string image_data = Convert.ToBase64String(imageBytes);
 
-        var payload = new JObject{ { &quot;image&quot;, image_data } }; // Base64-encoded file content or image URL
-        var content = new StringContent(payload.ToString(), Encoding.UTF8, &quot;application/json&quot;);
+        var payload = new JObject{ { "image", image_data } }; // Base64-encoded file content or image URL
+        var content = new StringContent(payload.ToString(), Encoding.UTF8, "application/json");
 
         // Call the API
         HttpResponseMessage response = await httpClient.PostAsync(API_URL, content);
@@ -6074,19 +6131,17 @@ class Program
         string responseBody = await response.Content.ReadAsStringAsync();
         JObject jsonResponse = JObject.Parse(responseBody);
 
-        string base64Image = jsonResponse[&quot;result&quot;][&quot;image&quot;].ToString();
+        string base64Image = jsonResponse["result"]["image"].ToString();
         byte[] outputImageBytes = Convert.FromBase64String(base64Image);
 
         File.WriteAllBytes(outputImagePath, outputImageBytes);
-        Console.WriteLine($&quot;Output image saved at {outputImagePath}&quot;);
-        Console.WriteLine(&quot;\nDetected objects:&quot;);
-        Console.WriteLine(jsonResponse[&quot;result&quot;][&quot;detectedObjects&quot;].ToString());
+        Console.WriteLine($"Output image saved at {outputImagePath}");
+        Console.WriteLine("\nDetected objects:");
+        Console.WriteLine(jsonResponse["result"]["detectedObjects"].ToString());
     }
 }
 </code></pre></details>
-
 <details><summary>Node.js</summary>
-
 <pre><code class="language-js">const axios = require('axios');
 const fs = require('fs');
 
@@ -6111,33 +6166,31 @@ function encodeImageToBase64(filePath) {
 
 // Call the API
 axios.request(config)
-.then((response) => {
+.then((response) =&gt; {
     // Process the API response data
     const result = response.data["result"];
     const imageBuffer = Buffer.from(result["image"], 'base64');
-    fs.writeFile(outputImagePath, imageBuffer, (err) => {
+    fs.writeFile(outputImagePath, imageBuffer, (err) =&gt; {
       if (err) throw err;
       console.log(`Output image saved at ${outputImagePath}`);
     });
     console.log("\nDetected objects:");
     console.log(result["detectedObjects"]);
 })
-.catch((error) => {
+.catch((error) =&gt; {
   console.log(error);
 });
 </code></pre></details>
-
 <details><summary>PHP</summary>
-
 <pre><code class="language-php">&lt;?php
 
-$API_URL = &quot;http://localhost:8080/small-object-detection&quot;; // Service URL
-$image_path = &quot;./demo.jpg&quot;;
-$output_image_path = &quot;./out.jpg&quot;;
+$API_URL = "http://localhost:8080/small-object-detection"; // Service URL
+$image_path = "./demo.jpg";
+$output_image_path = "./out.jpg";
 
 // Encode the local image with Base64
 $image_data = base64_encode(file_get_contents($image_path));
-$payload = array(&quot;image&quot; =&gt; $image_data); // Base64 encoded file content or image URL
+$payload = array("image" =&gt; $image_data); // Base64 encoded file content or image URL
 
 // Call the API
 $ch = curl_init($API_URL);
@@ -6149,11 +6202,11 @@ $response = curl_exec($ch);
 curl_close($ch);
 
 // Process the returned data from the interface
-$result = json_decode($response, true)[&quot;result&quot;];
-file_put_contents($output_image_path, base64_decode($result[&quot;image&quot;]));
-echo &quot;Output image saved at &quot; . $output_image_path . &quot;\n&quot;;
-echo &quot;\nDetected objects:\n&quot;;
-print_r($result[&quot;detectedObjects&quot;]);
+$result = json_decode($response, true)["result"];
+file_put_contents($output_image_path, base64_decode($result["image"]));
+echo "Output image saved at " . $output_image_path . "\n";
+echo "\nDetected objects:\n";
+print_r($result["detectedObjects"]);
 
 ?&gt;
 </code></pre></details>
@@ -6166,20 +6219,20 @@ You can choose the appropriate deployment method based on your needs to integrat
 <h3 id="41-model-fine-tuning">4.1 Model Fine-Tuning<a class="headerlink" href="#41-model-fine-tuning" title="Permanent link">&para;</a></h3>
 <p>Since the general small object detection pipeline includes a small object detection module, if the pipeline's performance does not meet expectations, you can analyze the images with poor segmentation results and refer to the fine-tuning tutorial links in the table below for model fine-tuning.</p>
 <table>
-  <thead>
-    <tr>
-      <th>Scenario</th>
-      <th>Fine-Tuning Module</th>
-      <th>Reference Link</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Prediction results are not as expected</td>
-      <td>Small Object Detection Module</td>
-      <td><a href="../../../module_usage/tutorials/cv_modules/small_object_detection.en.md">Link</a></td>
-    </tr>
-  </tbody>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Fine-Tuning Module</th>
+<th>Reference Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Prediction results are not as expected</td>
+<td>Small Object Detection Module</td>
+<td><a href="../../../module_usage/tutorials/cv_modules/small_object_detection.en.md">Link</a></td>
+</tr>
+</tbody>
 </table>
 
 <h3 id="42-model-application">4.2 Model Application<a class="headerlink" href="#42-model-application" title="Permanent link">&para;</a></h3>
@@ -6189,21 +6242,21 @@ You can choose the appropriate deployment method based on your needs to integrat
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nt">SmallObjectDetection</span><span class="p">:</span>
 </span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="nt">module_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">small_object_detection</span>
 </span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="nt">model_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PP-YOLOE_plus_SOD-L</span>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="nt">model_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w"> </span><span class="c1"># 替换为微调后的小目标检测模型权重路径</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="nt">model_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w"> </span><span class="c1"># Here replaced with the newly fine-tuned weight path.</span>
 </span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="nt">batch_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
 </span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span><span class="nt">threshold</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.5</span>
 </span></code></pre></div>
-<p>Subsequently, refer to the command-line method or Python script method in the local experience to load the modified production line configuration file.</p>
+<p>Subsequently, refer to the command-line method or Python script method in the <a href="#21-local-experience">local experience</a> to load the modified pipeline configuration file.</p>
 <h2 id="5-multi-hardware-support">5. Multi-Hardware Support<a class="headerlink" href="#5-multi-hardware-support" title="Permanent link">&para;</a></h2>
 <p>PaddleX supports a variety of mainstream hardware devices, including NVIDIA GPU, Kunlunxin XPU, Ascend NPU, and Cambricon MLU. <b>Simply modify the <code>--device</code> parameter</b> to seamlessly switch between different hardware devices.</p>
-<p>For example, if you use Ascend NPU for small object detection in the production line, the Python command used is:</p>
+<p>For example, if you use Ascend NPU for small object detection in the pipeline, the Python command used is:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>paddlex<span class="w"> </span>--pipeline<span class="w"> </span>small_object_detection<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">        </span>--input<span class="w"> </span>small_object_detection.jpg<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">        </span>--threshold<span class="w"> </span><span class="m">0</span>.5<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">        </span>--save_path<span class="w"> </span>./output<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">        </span>--device<span class="w"> </span>npu:0
 </span></code></pre></div>
-<p>If you want to use the universal small object detection production line on more types of hardware, please refer to the <a href="../../../other_devices_support/multi_devices_use_guide.html">PaddleX Multi-Hardware Usage Guide</a>.</p>
+<p>If you want to use the universal small object detection pipeline on more types of hardware, please refer to the <a href="../../../other_devices_support/multi_devices_use_guide.html">PaddleX Multi-Hardware Usage Guide</a>.</p>
 
 
 
@@ -6226,7 +6279,7 @@ You can choose the appropriate deployment method based on your needs to integrat
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 6, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 14, 2025</span>
   </span>
 
     
@@ -6236,7 +6289,7 @@ You can choose the appropriate deployment method based on your needs to integrat
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 6, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 14, 2025</span>
   </span>
 
     
@@ -6417,7 +6470,7 @@ You can choose the appropriate deployment method based on your needs to integrat
     <script id="__config" type="application/json">{"base": "../../../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "navigation.expand", "navigation.path", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.f13b1293.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.f1b6f286.min.js"></script>
       
         <script src="../../../../javascripts/katex.min.js"></script>
       
